@@ -1,6 +1,9 @@
 'use strict';
 // EchoLạc clickable prototype. Mock data only: no real ASR, scoring or LLM yet (see AGENT.md for the target stack).
 
+// Camera recognition (PRD R-11): Teachable Machine image model in model/. map = class NAME from metadata.json → scenario id.
+const CAM = { modelUrl: 'model/', threshold: 0.85, holdMs: 800, map: { 'Cầu Rồng': 'dragon' } };
+
 /* ================= Helpers ================= */
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -60,6 +63,7 @@ const I = {
   trash: '<path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/>',
   send: '<path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/>',
   shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  scan: '<path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3"/>',
 };
 const icon = (n, cls = '') => `<svg class="ico ${cls}" viewBox="0 0 24 24" aria-hidden="true">${I[n]}</svg>`;
 const img = (n, cls = '', alt = '') => `<img src="assets/3d/${n}.png" class="${cls}" alt="${alt}" loading="lazy">`;
@@ -452,6 +456,11 @@ function selfTest() {
     const want = { A: 'confirmed', B: 'confirmed', C: 'needs_confirmation', D: 'needs_confirmation', E: 'needs_confirmation', F: 'rejected' };
     Object.entries(cases).forEach(([k, v]) => console.assert(v.case === k && v.status === want[k], `crossValidate case ${k}`, v.case, v.status));
     console.assert(cases.A.finalId === db.id && cases.C.finalId === null && cases.F.finalId === null, 'only agreement yields a final id');
+    const named = resolveMap(['Chùa Cầu', 'Ngũ Hành Sơn', 'Cầu Rồng']), fallback = resolveMap(['Chùa Cầu', 'Ngũ Hành Sơn', 'Class 3']);
+    console.assert(named[2] === 'dragon' && fallback[2] === 'dragon' && !named[0] && !named[1], 'resolveMap: by name, else index 2');
+    const h0 = holdStep({ cls: -1, since: 0 }, 2, 0.9, 1000);
+    console.assert(!h0.hit && !holdStep(h0, 2, 0.9, 1700).hit && holdStep(h0, 2, 0.9, 1800).hit, 'holdStep: needs holdMs');
+    console.assert(holdStep(h0, 2, 0.6, 1500).cls === -1 && !holdStep(holdStep(h0, 2, 0.6, 1500), 2, 0.9, 1900).hit && !holdStep(h0, 1, 0.95, 1900).hit, 'holdStep: a dip or a class switch restarts the timer');
     console.assert(labelLoc('Chùa Cầu') === cb && labelLoc('Chùa Cầu') === cb && labelLoc('Class 3') === undefined, 'model labels map to places (NFC-safe)');
   }
   console.assert(fix('It have more than four hundred years') === 'It is more than four hundred years old', fix('It have more than four hundred years'));
@@ -610,7 +619,10 @@ const VIEWS = {
           <div><div class="row" style="gap:8px"><span class="hello">${V('Chào', 'Hi')} ${esc(S.user.name.split(' ').pop())}!</span><span class="pill navy">Lv. ${level()}</span></div>
           <div class="xp-line">${img('bolt')} ${fmt(S.xp)} XP${S.place !== 'other' ? ` · <span class="place-chip">${img(theme(S.place).icon)} ${L(theme(S.place).name)}</span>` : ''}</div></div>
         </div>
-        <button class="icon-btn" onclick="toast(V('Chưa có thông báo mới','No new notifications'))" aria-label="${V('Thông báo', 'Notifications')}">${icon('bell')}<span class="badge-dot"></span></button>
+        <div class="row" style="gap:10px">
+          <a class="icon-btn" href="#camera" aria-label="${V('Quét địa danh bằng camera', 'Scan a landmark with the camera')}">${icon('scan')}</a>
+          <button class="icon-btn" onclick="toast(V('Chưa có thông báo mới','No new notifications'))" aria-label="${V('Thông báo', 'Notifications')}">${icon('bell')}<span class="badge-dot"></span></button>
+        </div>
       </header>
       <a class="card blue hero reveal" href="${rec.href}" style="--d:80ms;display:block">
         ${img('target', 'peek')}
@@ -660,7 +672,7 @@ const VIEWS = {
       <div class="topbar reveal">
         <h1>${V('Nhập vai', 'Roleplay')}</h1>
         <div class="stats-mini"><span>${img('star')} ${fmt(S.xp)} XP</span><span style="color:var(--lantern-b)">${img('fire')} ${streakNow()}</span></div>
-        <a class="icon-btn" href="#explore" aria-label="${V('Học qua ống kính', 'Learn with your camera')}">${icon('camera')}</a>
+        <a class="icon-btn" href="#camera" aria-label="${V('Quét địa danh bằng camera', 'Scan a landmark with the camera')}">${icon('scan')}</a>
       </div>
       <div class="seg reveal" role="tablist">
         <button class="${S.rpMode === 'journey' ? 'on' : ''}" onclick="setRpMode('journey')">${V('Hành trình', 'Journey')}</button>
@@ -766,7 +778,7 @@ const VIEWS = {
         <li><span class="n">3</span><span><b>${V('Đối chiếu chéo', 'Cross-check')}</b><small>${V('Chỉ khi hai kết quả trùng nhau, bài học mới được mở tự động. Lệch nhau thì bạn tự xác nhận.', 'A lesson opens automatically only when both agree. If they differ, you confirm.')}</small></span></li>
       </ol>
       <div class="section-title reveal"><span>${V('Kịch bản demo', 'Demo scenario')}</span></div>
-      <div class="chips reveal" role="radiogroup" aria-label="${V('Kịch bản demo', 'Demo scenario')}">${Object.entries(SCENARIOS).map(([k, s]) => `<button class="chip ${CAM.scen === k ? 'active' : ''}" role="radio" aria-checked="${CAM.scen === k}" onclick="setScen('${k}')">${L(s)}</button>`).join('')}</div>
+      <div class="chips reveal" role="radiogroup" aria-label="${V('Kịch bản demo', 'Demo scenario')}">${Object.entries(SCENARIOS).map(([k, s]) => `<button class="chip ${CL.scen === k ? 'active' : ''}" role="radio" aria-checked="${CL.scen === k}" onclick="setScen('${k}')">${L(s)}</button>`).join('')}</div>
       <div class="demo-note reveal" id="scen-note">${scenNote()}</div>
       <div class="section-title reveal"><span>${V('Địa danh được hỗ trợ', 'Supported places')}</span><span class="tiny muted">${LOCS.length}</span></div>
       ${LOCS.length ? `<p class="tiny muted reveal" style="margin:-6px 0 12px">${V('Mở từ danh sách là học kiểu thư viện, không xác minh vị trí.', 'Opening from this list is library study, with no location check.')}</p><div class="reveal">${LOCS.map(l => locRow(l, null, 'library', progLabel(l))).join('')}</div>`
@@ -810,7 +822,7 @@ const VIEWS = {
           <div class="gps-chip" role="status" data-s="${gpsTone(G.gps)}">${icon('pin', 'sm')}<span>${gpsShort(G.gps)}</span></div>
           <button class="cam-btn" id="torch" hidden aria-pressed="false" onclick="toggleTorch(this)" aria-label="${V('Đèn flash', 'Flash')}">${icon('bolt')}</button>
         </div>
-        ${isDemo() ? `<span class="cam-demo">${V('Demo', 'Demo')} · ${L(SCENARIOS[CAM.scen])}</span>` : ''}
+        ${isDemo() ? `<span class="cam-demo">${V('Demo', 'Demo')} · ${L(SCENARIOS[CL.scen])}</span>` : ''}
         <div class="cam-guide" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
         <p class="cam-hint" id="cam-hint">${V('Hướng camera vào một địa danh được hỗ trợ để bắt đầu học.', 'Point your camera at a supported landmark to start learning.')}</p>
         <div class="cam-bottom">
@@ -828,7 +840,7 @@ const VIEWS = {
     render(id) {
       const l = loc(id);
       if (!l) { location.hash = '#explore'; return ''; }
-      const photo = CAM.photoFor === l.id && CAM.photo, tabs = [['discover', 'Khám phá', 'Discover'], ['words', 'Học tiếng Anh', 'Learn English'], ['practice', 'Luyện nói', 'Practice']];
+      const photo = CL.photoFor === l.id && CL.photo, tabs = [['discover', 'Khám phá', 'Discover'], ['words', 'Học tiếng Anh', 'Learn English'], ['practice', 'Luyện nói', 'Practice']];
       return `
       <div class="topbar centered reveal">
         <a class="icon-btn" href="#explore" aria-label="${V('Quay lại', 'Back')}">${icon('left')}</a>
@@ -847,6 +859,21 @@ const VIEWS = {
       <div class="lt-body" id="lt" role="tabpanel" aria-labelledby="tab-${S.learnTab}" data-id="${l.id}">${tabHtml(l)}</div>`;
     },
     mount: id => S.learnTab === 'practice' && loc(id) && startPractice(loc(id)),
+  },
+
+  // R-11: live landmark recognition → straight into the existing scenario
+  camera: {
+    render: () => `
+      <div class="tm" id="tm" data-state="intro">
+        <video id="tm-v" playsinline muted autoplay aria-hidden="true"></video>
+        <div class="tm-frame" aria-hidden="true"></div>
+        <div class="tm-top">
+          <a class="tm-btn" href="#roleplay" onclick="history.length>1&&(event.preventDefault(),history.back())" aria-label="${V('Quay lại / Back', 'Back / Quay lại')}">${icon('left')}</a>
+          <p class="tm-label" id="tm-label" role="status" aria-live="polite"></p>
+        </div>
+        <section class="tm-panel" id="tm-panel"></section>
+      </div>`,
+    mount: () => (SC.ok ? startScan() : scanState('intro')),
   },
 
   tutor: {
@@ -1378,7 +1405,7 @@ const distM = (a, b) => {
 const km = d => (d < 1000 ? `${Math.round(d / 10) * 10} m` : `${(d / 1000).toFixed(1)} km`);
 const refUrl = l => l.referenceImages[0]?.url || `assets/3d/${l.icon}.png`;
 const G = { gps: null }; // memory only: precise location is never saved
-const CAM = { stream: null, tok: null, photo: '', photoFor: '', intro: false, scen: 'agree', verify: null };
+const CL = { stream: null, tok: null, photo: '', photoFor: '', intro: false, scen: 'agree', verify: null };
 
 /* Double matching, spec §2: GPS → candidates, image → visual candidates, cross-validation decides. */
 const GPS_MAX_ACC = 500;  // metres; worse than this and GPS can't vouch for a place
@@ -1409,10 +1436,11 @@ function imageMatch(scores, simulated) {
 // Real image matcher: the Teachable Machine model in model/, loaded only when a photo needs it
 const TM_LIBS = ['https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js', 'https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.5/dist/teachablemachine-image.min.js'];
 const loadScript = src => new Promise((ok, fail) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = () => fail(new Error('Could not load ' + src)); document.head.append(s); });
+const loadTmLibs = () => TM_LIBS.reduce((p, src) => p.then(() => window.tmImage || loadScript(src)), Promise.resolve());
 let tmModel = null;
 function loadModel() {
-  tmModel ||= TM_LIBS.reduce((p, src) => p.then(() => window.tmImage || loadScript(src)), Promise.resolve())
-    .then(() => tmImage.load('model/model.json', 'model/metadata.json'))
+  tmModel ||= loadTmLibs()
+    .then(() => tmImage.load(CAM.modelUrl + 'model.json', CAM.modelUrl + 'metadata.json'))
     .catch(e => { tmModel = null; throw e; }); // let the next photo retry
   return tmModel;
 }
@@ -1455,22 +1483,22 @@ const SCENARIOS = {
   nogps: { vi: '5 · Không có GPS', en: '5 · No GPS', at: null, sim: { 'hoi-an-ancient-town': 0.84, 'covered-bridge': 0.49 } },
   model: { vi: '6 · Model thật, GPS mẫu Hội An', en: '6 · Real model, sample GPS (Hoi An)', at: 'covered-bridge', real: true },
 };
-const isDemo = () => CAM.scen !== 'live';
-const realImage = () => !isDemo() || !!SCENARIOS[CAM.scen].real; // image result comes from the actual model
+const isDemo = () => CL.scen !== 'live';
+const realImage = () => !isDemo() || !!SCENARIOS[CL.scen].real; // image result comes from the actual model
 const demoLabel = () => (realImage() ? V('Demo: GPS mẫu, ảnh nhận diện thật', 'Demo: sample GPS, real image model') : V('Demo, mô phỏng', 'Demo, simulated'));
 const topSim = s => Object.entries(s.sim).sort((a, b) => b[1] - a[1])[0][0];
 const MODEL_NOTE = () => V('Ảnh được nhận diện bằng model Teachable Machine thật trong thư mục model/. Model hiện chỉ học vài địa danh; nơi khác sẽ ra “không nhận diện được”.', 'Photos are recognised by the real Teachable Machine model in model/. It only knows a few places so far; others come out “not recognised”.');
 function scenNote() {
-  const s = SCENARIOS[CAM.scen];
+  const s = SCENARIOS[CL.scen];
   if (!isDemo()) return `${icon('bulb')}<p>${V('<b>Chế độ thật.</b> Dùng GPS và camera của bạn.', '<b>Live mode.</b> Uses your real GPS and camera.')} ${MODEL_NOTE()}</p>`;
   if (s.real) return `${icon('bulb')}<p><b>${demoLabel()}.</b> ${V('GPS mẫu: cạnh Chùa Cầu (Chùa Cầu và Phố cổ Hội An đều trong bán kính).', 'Sample GPS: next to the Covered Bridge (it and Hoi An Ancient Town are both in range).')} ${MODEL_NOTE()} ${V('Thử chụp ảnh Chùa Cầu, Ngũ Hành Sơn, hoặc nơi khác.', 'Try a photo of the Covered Bridge, the Marble Mountains, or somewhere else.')}</p>`;
   const at = loc(s.at), top = loc(topSim(s));
   return `${icon('bulb')}<p><b>${V('Chế độ Demo, kết quả mô phỏng.', 'Demo Mode, simulated results.')}</b> ${V('GPS mẫu', 'Sample GPS')}: ${at ? `${V('cạnh', 'next to')} ${esc(at.name.en)}` : V('bị tắt', 'off')} · ${V('Ảnh mô phỏng', 'Simulated image')}: ${esc(top?.name.en || '?')} ${s.sim[topSim(s)].toFixed(2)}. ${V('Camera vẫn là thật; không có camera thì nút chụp dùng ảnh mẫu.', 'The camera is still real; without one, the shutter uses a sample image.')}</p>`;
 }
-function setScen(k) { CAM.scen = k; G.gps = null; const y = scrollY; route(); scrollTo(0, y); document.querySelectorAll('.reveal').forEach(show); }
+function setScen(k) { CL.scen = k; G.gps = null; const y = scrollY; route(); scrollTo(0, y); document.querySelectorAll('.reveal').forEach(show); }
 
 function locate() {
-  const s = SCENARIOS[CAM.scen], at = loc(s.at);
+  const s = SCENARIOS[CL.scen], at = loc(s.at);
   if (isDemo()) return new Promise(r => setTimeout(r, 700)).then(() => (G.gps = gpsMatch(at && { lat: at.lat + 0.0003, lng: at.lng, acc: 20 }))); // ~30 m from the sample place
   if (!('geolocation' in navigator)) return Promise.resolve(G.gps = gpsMatch(null));
   return new Promise(res => navigator.geolocation.getCurrentPosition(
@@ -1510,26 +1538,26 @@ function locateHtml() {
 
 function camIntro() {
   G.gps = null; // every run starts with a fresh GPS stage
-  if (CAM.intro) { location.hash = '#locate'; return; }
+  if (CL.intro) { location.hash = '#locate'; return; }
   openSheet(`
     <h2>${V('Trước khi mở camera', 'Before we open the camera')}</h2>
     <p class="small muted mt-8">${V('Trình duyệt sẽ hỏi quyền. Bạn có thể từ chối và vẫn chọn địa điểm thủ công.', 'Your browser will ask for permission. You can say no and still choose a place by hand.')}</p>
     <div class="perm mt-16"><span class="ic">${icon('pin')}</span><div><b>${V('Vị trí', 'Location')}</b><p>${isDemo() ? V('Chế độ Demo dùng vị trí mẫu, không hỏi quyền GPS.', 'Demo Mode uses a sample location and doesn’t ask for GPS.') : V('Để biết bạn đang ở gần địa danh nào được hỗ trợ. Chỉ kiểm tra lúc này, không lưu và không chia sẻ.', 'To see which supported landmark you are near. Checked only now, never saved or shared.')}</p></div></div>
     <div class="perm"><span class="ic">${icon('camera')}</span><div><b>Camera</b><p>${V('Để chụp một tấm ảnh địa danh. Ảnh ở lại trên máy này, không tải lên.', 'To take one photo of the landmark. It stays on this device and is never uploaded.')}</p></div></div>
-    <button class="btn mt-24" onclick="CAM.intro=true;closeSheet();location.hash='#locate'">${V('Tiếp tục', 'Continue')}</button>
+    <button class="btn mt-24" onclick="CL.intro=true;closeSheet();location.hash='#locate'">${V('Tiếp tục', 'Continue')}</button>
     <button class="btn white mt-16" onclick="choosePlace('library')">${V('Chọn địa điểm thủ công', 'Choose a place manually')}</button>`);
 }
 async function startCam() {
-  const tok = CAM.tok = {};
+  const tok = CL.tok = {};
   if (!navigator.mediaDevices?.getUserMedia) return camFail('');
   try {
     const s = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: 'environment' } }, audio: false });
-    if (CAM.tok !== tok) return s.getTracks().forEach(t => t.stop()); // learner left while the permission prompt was open
-    CAM.stream = s;
+    if (CL.tok !== tok) return s.getTracks().forEach(t => t.stop()); // learner left while the permission prompt was open
+    CL.stream = s;
     const v = $('#cam-v'); v.srcObject = s; await v.play().catch(() => {});
     $('#shutter').disabled = false;
     if (s.getVideoTracks()[0].getCapabilities?.().torch) $('#torch').hidden = false;
-  } catch (e) { if (CAM.tok === tok) camFail(e.name); }
+  } catch (e) { if (CL.tok === tok) camFail(e.name); }
 }
 function camFail(name) {
   $('#cam').classList.add('nocam');
@@ -1538,16 +1566,16 @@ function camFail(name) {
     : V('Không mở được camera trên thiết bị này. Hãy chọn một ảnh có sẵn hoặc chọn nơi thủ công.', 'The camera can’t open on this device. Pick a photo or choose the place by hand.');
   if (!realImage()) { $('#shutter').disabled = false; $('#cam-hint').textContent += ' ' + V('Demo: nút chụp sẽ dùng ảnh mẫu.', 'Demo: the shutter will use a sample image.'); }
 }
-function stopCam() { CAM.tok = null; CAM.stream?.getTracks().forEach(t => t.stop()); CAM.stream = null; }
+function stopCam() { CL.tok = null; CL.stream?.getTracks().forEach(t => t.stop()); CL.stream = null; }
 async function toggleTorch(b) {
-  const tr = CAM.stream?.getVideoTracks()[0], on = b.getAttribute('aria-pressed') !== 'true';
+  const tr = CL.stream?.getVideoTracks()[0], on = b.getAttribute('aria-pressed') !== 'true';
   try { await tr.applyConstraints({ advanced: [{ torch: on }] }); b.setAttribute('aria-pressed', on); } catch { toast(V('Không bật được đèn flash', 'Couldn’t switch the flash')); }
 }
-const setPhoto = url => { if (CAM.photo.startsWith('blob:')) URL.revokeObjectURL(CAM.photo); CAM.photo = url; CAM.photoFor = ''; };
+const setPhoto = url => { if (CL.photo.startsWith('blob:')) URL.revokeObjectURL(CL.photo); CL.photo = url; CL.photoFor = ''; };
 function shoot() {
   const v = $('#cam-v');
-  if (!CAM.stream && !realImage()) { stopCam(); setPhoto(refUrl(loc(topSim(SCENARIOS[CAM.scen])))); return recognise(); } // no camera: sample image, still simulated
-  if (!CAM.stream || !v.videoWidth) return;
+  if (!CL.stream && !realImage()) { stopCam(); setPhoto(refUrl(loc(topSim(SCENARIOS[CL.scen])))); return recognise(); } // no camera: sample image, still simulated
+  if (!CL.stream || !v.videoWidth) return;
   const c = document.createElement('canvas'); c.width = v.videoWidth; c.height = v.videoHeight;
   c.getContext('2d').drawImage(v, 0, 0);
   stopCam(); // one still, then the camera turns off: no footage keeps streaming
@@ -1559,14 +1587,14 @@ function usePhoto(file) {
   recognise();
 }
 async function recognise() {
-  const cam = $('#cam'), rec = $('#rec'), shot = $('#cam-shot'), g = G.gps, s = SCENARIOS[CAM.scen];
-  cam.classList.add('scanning'); shot.src = CAM.photo; shot.hidden = false; rec.hidden = false;
+  const cam = $('#cam'), rec = $('#rec'), shot = $('#cam-shot'), g = G.gps, s = SCENARIOS[CL.scen];
+  cam.classList.add('scanning'); shot.src = CL.photo; shot.hidden = false; rec.hidden = false;
   rec.innerHTML = `<h2>${V('Đang xác minh…', 'Verifying…')}</h2><ol class="rec-steps">${[V('Kết quả khớp GPS', 'GPS matching result'), V('Khớp ảnh với ảnh tham chiếu', 'Image vs reference images'), V('Đối chiếu chéo', 'Cross-validation')].map(t => `<li><b>${t}</b><small></small></li>`).join('')}</ol><div id="rec-out"></div>`;
   const li = [...rec.querySelectorAll('li')], step = (i, st, note = '') => { li[i].dataset.s = st; li[i].querySelector('small').innerHTML = note; };
   const wait = ms => new Promise(r => setTimeout(r, ms)), gone = () => !rec.isConnected;
   step(0, gpsTone(g) === 'ok' ? 'done' : 'warn', `${V(...GPS_ST[g.gpsStatus])} · ${V(...GPS_MT[g.status])}`);
   step(1, 'run', realImage() ? V('Đang chạy model nhận diện ảnh…', 'Running the image model…') : '');
-  const [scores] = await Promise.all([realImage() ? similarityService(CAM.photo) : s.sim, wait(1100)]); if (gone()) return;
+  const [scores] = await Promise.all([realImage() ? similarityService(CL.photo) : s.sim, wait(1100)]); if (gone()) return;
   const im = imageMatch(scores, !realImage());
   step(1, im.status === 'matched' ? 'done' : im.status === 'uncertain' ? 'warn' : 'fail', `${V(...IMG_ST[im.status])}${im.simulated ? ` <span class="tag amber">${V('mô phỏng', 'simulated')}</span>` : ''}`);
   step(2, 'run'); await wait(600); if (gone()) return;
@@ -1585,7 +1613,7 @@ function imageHtml(im) {
   const best = loc(im.bestId), sample = best && !best.referenceImages[0];
   return `<section class="vsec"><h3>${V('Khớp ảnh', 'Image matching')}</h3>
     <div class="cmp">
-      <figure><img src="${esc(CAM.photo)}" alt="${V('Ảnh của bạn', 'Your photo')}"><figcaption>${V('Ảnh của bạn', 'Your photo')}</figcaption></figure>
+      <figure><img src="${esc(CL.photo)}" alt="${V('Ảnh của bạn', 'Your photo')}"><figcaption>${V('Ảnh của bạn', 'Your photo')}</figcaption></figure>
       <figure>${best ? `<img src="${esc(refUrl(best))}" alt="${V('Ảnh tham chiếu', 'Reference image')} ${esc(best.name.en)}">` : `<div class="cmp-empty">${icon('image')}</div>`}<figcaption>${best ? `${V('Tham chiếu', 'Reference')}${best.referenceImages[0]?.sample || sample ? V(' · mẫu minh hoạ', ' · sample illustration') : ''}` : V('Không có ảnh khớp', 'No matching reference')}</figcaption></figure>
     </div>
     <dl class="kv">
@@ -1630,12 +1658,12 @@ function choosePlace(how) {
 // how: 'auto' = both matchers agreed, 'manual' = learner confirmed, 'library' = opened from the list, no check
 function openLesson(id, how) {
   S.learnTab = 'discover';
-  CAM.verify = { id, how, demo: isDemo() && how !== 'library' };
-  CAM.photoFor = how !== 'library' && CAM.photo ? id : '';
+  CL.verify = { id, how, demo: isDemo() && how !== 'library' };
+  CL.photoFor = how !== 'library' && CL.photo ? id : '';
   location.hash = '#learn/' + id;
 }
 function verifyTag(id) {
-  const v = CAM.verify?.id === id ? CAM.verify : { how: 'library' }, demo = v.demo ? ` · ${V('Demo', 'Demo')}` : '';
+  const v = CL.verify?.id === id ? CL.verify : { how: 'library' }, demo = v.demo ? ` · ${V('Demo', 'Demo')}` : '';
   return v.how === 'auto' ? `<span class="tag green">${icon('check', 'sm')} ${V('Đã xác minh kép: GPS + ảnh', 'Double-verified: GPS + image')}${demo}</span>`
     : v.how === 'manual' ? `<span class="tag amber">${V('Bạn tự xác nhận', 'Confirmed by you')}${demo}</span>`
     : `<span class="tag">${V('Học từ thư viện · không xác minh vị trí', 'Library study · location not checked')}</span>`;
@@ -1644,7 +1672,7 @@ function clearCamSheet() {
   openSheet(`<h2>${V('Xoá lịch sử học?', 'Delete learning history?')}</h2><p class="muted mt-8">${V('Tiến độ học của mọi địa danh và ảnh đang mở sẽ bị xoá. Không thể hoàn tác.', 'Lesson progress for every place and any open photo will be deleted. This can’t be undone.')}</p>
     <button class="btn mt-24" onclick="clearCam()">${icon('trash')} ${V('Xoá', 'Delete')}</button><button class="btn white mt-16" onclick="closeSheet()">${V('Huỷ', 'Cancel')}</button>`);
 }
-function clearCam() { S.cam = {}; setPhoto(''); CAM.verify = null; save(); route(); toast(V('Đã xoá lịch sử học', 'Learning history deleted')); }
+function clearCam() { S.cam = {}; setPhoto(''); CL.verify = null; save(); route(); toast(V('Đã xoá lịch sử học', 'Learning history deleted')); }
 
 // Lesson progress: d = Discover read, w = vocab indexes heard, p = practice finished
 const prog = id => S.cam[id] || { d: 0, w: [], p: 0 };
@@ -1814,6 +1842,112 @@ function finishPractice() {
   checkComplete(l);
 }
 
+/* ================= Camera recognition (R-11) =================
+   Frames never leave the device: predict() runs in the browser, nothing is stored or sent. */
+const SC = { ok: false, stream: null, model: null, raf: 0, tok: null, last: 0, busy: false, hold: { cls: -1, since: 0 }, map: {}, warned: false, canvas: null };
+const BG_CLASS = /^(background|nothing|none|other|nền|khác)$/i; // "nothing here" classes only ever show the hint
+
+// Class index → scenario id, by class NAME from metadata.json.
+// shortcut: a missing name falls back to index 2 (the spec's "3rd class is Cầu Rồng"); fine for one mapped class, give each class its real name in Teachable Machine before mapping more.
+function resolveMap(labels) {
+  const out = {};
+  Object.entries(CAM.map).forEach(([name, id]) => {
+    let i = labels.findIndex(l => norm(l) === norm(name));
+    if (i < 0) { i = 2; if (!SC.warned) { SC.warned = true; console.warn(`[EchoLac] class "${name}" not found in metadata.json, using index 2 ("${labels[2]}")`); } }
+    if (i < labels.length) out[i] = id;
+  });
+  return out;
+}
+// A class counts only after it stays >= threshold for holdMs without a break, so a flicker never triggers
+function holdStep(hold, cls, p, now) {
+  if (p < CAM.threshold) return { cls: -1, since: 0, hit: false };
+  const since = hold.cls === cls ? hold.since : now;
+  return { cls, since, hit: now - since >= CAM.holdMs };
+}
+const loadScanModel = () => loadTmLibs().then(() => tmImage.load(CAM.modelUrl + 'model.json', CAM.modelUrl + 'metadata.json'));
+const firstSentence = s => s.split(/(?<=[.!?])\s/)[0];
+
+function scanState(st) {
+  const tm = $('#tm'); if (!tm) return;
+  tm.dataset.state = st;
+  const back = `<a class="btn white mt-16" href="#roleplay">${V('Quay lại Nhập vai', 'Back to Roleplay')}</a>`;
+  const retry = `<button class="btn mt-24" onclick="startScan()">${icon('refresh')} ${V('Thử lại', 'Try again')}</button>`;
+  $('#tm-panel').innerHTML = {
+    intro: `<span class="tm-ic">${icon('camera', 'lg')}</span><h2>${V('Vì sao cần camera?', 'Why the camera?')}</h2>
+      <p>${V('EchoLạc dùng camera sau để nhận ra địa danh trước mặt bạn rồi mở đúng bài nói. Hình ảnh được xử lý ngay trên máy, không lưu và không gửi đi đâu.', 'EchoLạc uses your back camera to recognise the landmark in front of you and open its speaking lesson. Images are processed on this device only, never stored or sent anywhere.')}</p>
+      <button class="btn mt-24" onclick="SC.ok=true;startScan()">${icon('camera')} ${V('Bật camera', 'Turn on camera')}</button>${back}`,
+    loading: `<div class="tm-skel" aria-hidden="true"><i></i><i></i><i></i></div><p role="status">${V('Đang tải model nhận diện…', 'Loading the recognition model…')}</p>`,
+    live: '',
+    denied: `<h2>${V('Camera đang bị chặn', 'Camera access is blocked')}</h2><p>${V('Trên máy tính: bấm biểu tượng ổ khoá cạnh địa chỉ web → Camera → Cho phép. Trên điện thoại: Cài đặt → trình duyệt → Camera → Cho phép. Sau đó bấm Thử lại.', 'On a computer: click the lock icon next to the address → Camera → Allow. On a phone: Settings → your browser → Camera → Allow. Then tap Try again.')}</p>${retry}${back}`,
+    nocam: `<h2>${V('Không tìm thấy camera', 'No camera found')}</h2><p>${V('Thiết bị này không có camera, hoặc camera đang được ứng dụng khác dùng.', 'This device has no camera, or another app is using it.')}</p>${retry}${back}`,
+    model: `<h2>${V('Không tải được model', 'The model didn’t load')}</h2><p>${V('Kiểm tra kết nối mạng rồi thử lại.', 'Check your connection and try again.')}</p>${retry}${back}`,
+    offline: `<h2>${V('Bạn đang ngoại tuyến', 'You’re offline')}</h2><p>${V('Lần đầu cần mạng để tải model nhận diện (khoảng 3 MB). Hãy kết nối rồi thử lại.', 'The first scan needs internet to download the recognition model (about 3 MB). Connect and try again.')}</p>${retry}${back}`,
+    paused: `<p>${V('Camera đã tắt.', 'The camera is off.')}</p><button class="btn mt-16" onclick="startScan()">${icon('scan')} ${V('Quét lại', 'Scan again')}</button>`,
+  }[st];
+  $('#tm-label').innerHTML = st === 'live' ? `<span>${V('Hướng camera vào địa danh', 'Point the camera at a landmark')}</span>` : '';
+}
+
+async function startScan() {
+  stopScan();
+  const tok = SC.tok = {};
+  if (!navigator.onLine && !window.tmImage) return scanState('offline'); // no service worker caches the model yet
+  if (!navigator.mediaDevices?.getUserMedia) return scanState('nocam');
+  scanState('loading');
+  const [cam, mdl] = await Promise.allSettled([
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: 'environment' } }, audio: false }),
+    SC.model ? Promise.resolve(SC.model) : loadScanModel(),
+  ]);
+  if (SC.tok !== tok) { cam.value?.getTracks().forEach(t => t.stop()); if (mdl.value && mdl.value !== SC.model) try { mdl.value.model.dispose(); } catch { /* already freed */ } return; } // learner left while loading
+  if (mdl.status === 'fulfilled') SC.model = mdl.value;
+  if (cam.status === 'rejected') return scanState(['NotAllowedError', 'SecurityError'].includes(cam.reason?.name) ? 'denied' : 'nocam');
+  if (mdl.status === 'rejected') { cam.value.getTracks().forEach(t => t.stop()); console.warn('[EchoLac] model failed to load', mdl.reason); return scanState(navigator.onLine ? 'model' : 'offline'); }
+  SC.stream = cam.value; SC.map = resolveMap(SC.model.getClassLabels()); SC.hold = { cls: -1, since: 0 };
+  const v = $('#tm-v'); v.srcObject = SC.stream; await v.play().catch(() => {});
+  scanState('live');
+  SC.raf = requestAnimationFrame(scanLoop);
+}
+async function scanLoop(now) {
+  const tok = SC.tok; if (!tok) return;
+  SC.raf = requestAnimationFrame(scanLoop);
+  const v = $('#tm-v');
+  if (SC.busy || now - SC.last < 200 || !v || v.readyState < 2) return; // ~5 fps
+  SC.last = now; SC.busy = true;
+  let preds = null;
+  try {
+    // Centre square at 224 px, as Teachable Machine trained it; a <video> has no usable width/height for tmImage's own crop
+    const c = SC.canvas ||= Object.assign(document.createElement('canvas'), { width: 224, height: 224 }), s = Math.min(v.videoWidth, v.videoHeight);
+    c.getContext('2d').drawImage(v, (v.videoWidth - s) / 2, (v.videoHeight - s) / 2, s, s, 0, 0, 224, 224);
+    preds = await SC.model.predict(c);
+  } catch (e) { console.warn('[EchoLac] predict failed', e); } finally { SC.busy = false; }
+  if (SC.tok !== tok || !preds) return;
+  const top = preds.reduce((b, p, i) => (p.probability > b.p ? { i, p: p.probability, name: p.className.trim() } : b), { i: -1, p: 0, name: '' });
+  const bg = BG_CLASS.test(top.name);
+  SC.hold = bg ? { cls: -1, since: 0, hit: false } : holdStep(SC.hold, top.i, top.p, now);
+  const id = SC.map[top.i], lbl = $('#tm-label');
+  lbl.innerHTML = bg || top.p < CAM.threshold ? `<span>${V('Hướng camera vào địa danh', 'Point the camera at a landmark')}</span>`
+    : `<b>${esc(id ? L(scen(id).name) : top.name)}</b> <span class="tm-pct">${Math.round(top.p * 100)}%</span>${SC.hold.hit && !id ? ` · ${V('Chưa có bài cho địa danh này', 'No lesson for this place yet')}` : ''}`;
+  if (SC.hold.hit && id) recognised(id);
+}
+function recognised(id) {
+  const s = scen(id);
+  stopScan(); scanState('paused');
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) confetti();
+  openSheet(`
+    <div class="center"><span class="tile-3d" style="margin:0 auto;background:linear-gradient(145deg,${s.bg[0]},${s.bg[1]})">${img(s.icon)}</span>
+      <h2 class="mt-16" style="font-size:24px">${esc(L(s.name))}</h2></div>
+    <p class="muted mt-8 center">${esc(firstSentence(L(s.facts)))}</p>
+    <a class="btn mt-24" href="#scenario/${id}">${icon('mic')} ${V('Bắt đầu nói', 'Start talking')}</a>
+    <button class="btn white mt-16" onclick="closeSheet();startScan()">${icon('scan')} ${V('Quét lại', 'Scan again')}</button>`);
+}
+function stopScan(dispose) {
+  SC.tok = null; cancelAnimationFrame(SC.raf);
+  SC.stream?.getTracks().forEach(t => t.stop()); SC.stream = null; // turns the camera light off
+  const v = $('#tm-v'); if (v) v.srcObject = null;
+  // tmImage 0.8.5's own dispose() throws on a loaded model, so free the tf.LayersModel inside; never let this break route()
+  if (dispose && SC.model) { try { SC.model.model.dispose(); } catch (e) { console.warn('[EchoLac] model dispose failed', e); } SC.model = null; }
+}
+document.addEventListener('visibilitychange', () => { if (document.hidden && SC.stream) { stopScan(); scanState('paused'); } });
+
 /* ================= Router ================= */
 const TABS = [['home', 'home'], ['roleplay', 'chat'], ['tutor', 'micAi'], ['radar', 'radar'], ['profile', 'user']];
 const TAB_NAMES = { home: ['Trang chủ', 'Home'], roleplay: ['Nhập vai', 'Roleplay'], tutor: ['Gia sư', 'Tutor'], radar: ['Bản đồ lỗi', 'Radar'], profile: ['Hồ sơ', 'Profile'] };
@@ -1826,7 +1960,7 @@ function route() {
   const [name, arg] = (location.hash.slice(1) || (S.user ? 'home' : 'signup')).split('/');
   let view = VIEWS[name] ? name : 'home';
   if (!S.user && !['signup', 'signin'].includes(view)) view = 'signup';
-  clearTalk(); clearTimeout(P); P = null; closeSheet(); stopCam(); clearPractice();
+  clearTalk(); clearTimeout(P); P = null; closeSheet(); stopCam(); clearPractice(); stopScan(true);
   const app = $('#app');
   VIEWS[view].init?.(arg);
   app.innerHTML = VIEWS[view].render(arg);
