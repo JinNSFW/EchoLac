@@ -1,0 +1,13 @@
+# Secrets: never commit or upload these
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Not part of the site
+app/
+.claude/
+node_modules/
+.impeccable/
