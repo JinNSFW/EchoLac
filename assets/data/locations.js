@@ -5,7 +5,7 @@
      name {vi,en}, description {vi,en}
      lat, lng, radius      decimal degrees + GPS recognition radius in metres (sample coordinates are approximate: check on a map before production)
      icon, bg              illustration from assets/3d/ + two gradient colours, used when the learner has no photo
-     referenceImages       [{ url, credit, license }] photos the team may use for image matching
+     referenceImages       [{ url, credit, license, sample? }] photos the team may use for image matching; sample = demo illustration, not a real photo
      streetView            { panoId, attribution } when Google Maps Platform terms permit; null otherwise. Never copy Street View imagery here.
      visualKeywords        what the landmark looks like, for the image-matching service
      built, historicalSignificance, culturalBackground, architecture   {vi,en} or null. null shows "not verified yet": never guess.
@@ -21,7 +21,7 @@ window.ECHOLAC_LOCATIONS = [
     description: { vi: 'Cây cầu bắc qua sông Hàn ở Đà Nẵng.', en: 'A bridge across the Han River in Da Nang.' },
     lat: 16.0612, lng: 108.2272, radius: 300,
     icon: 'dragon', bg: ['#DCE7FF', '#9DB7F4'],
-    referenceImages: [], streetView: null,
+    referenceImages: [{ url: 'assets/3d/dragon.png', credit: 'EchoLạc 3D icon set (illustration, not a photo)', license: 'assets/3d/LICENSE.txt', sample: true }], streetView: null,
     visualKeywords: ['dragon head', 'bridge over a river', 'arches'],
     built: { vi: 'Cầu khánh thành năm 2013.', en: 'It opened in 2013.' },
     historicalSignificance: null, culturalBackground: null, architecture: null,
@@ -51,7 +51,7 @@ window.ECHOLAC_LOCATIONS = [
     description: { vi: 'Cây cầu có mái che nhỏ trong phố cổ Hội An.', en: 'A small covered bridge in Hoi An Ancient Town.' },
     lat: 15.8771, lng: 108.3262, radius: 120,
     icon: 'bridge', bg: ['#FDE3D6', '#F3AE96'],
-    referenceImages: [], streetView: null,
+    referenceImages: [{ url: 'assets/3d/bridge.png', credit: 'EchoLạc 3D icon set (illustration, not a photo)', license: 'assets/3d/LICENSE.txt', sample: true }], streetView: null,
     visualKeywords: ['small covered bridge', 'tiled roof', 'old town'],
     built: { vi: 'Cộng đồng người Nhật xây cầu vào khoảng những năm 1590.', en: 'The Japanese community built it in the 1590s.' },
     historicalSignificance: null, culturalBackground: null,
@@ -82,7 +82,7 @@ window.ECHOLAC_LOCATIONS = [
     description: { vi: 'Một thương cảng cổ, Di sản Thế giới UNESCO.', en: 'An ancient trading port and a UNESCO World Heritage Site.' },
     lat: 15.8775, lng: 108.3300, radius: 700,
     icon: 'houses', bg: ['#FFEBCB', '#FFC27F'],
-    referenceImages: [], streetView: null,
+    referenceImages: [{ url: 'assets/3d/houses.png', credit: 'EchoLạc 3D icon set (illustration, not a photo)', license: 'assets/3d/LICENSE.txt', sample: true }], streetView: null,
     visualKeywords: ['yellow merchant houses', 'lanterns', 'narrow streets'],
     built: null,
     historicalSignificance: { vi: 'Thương nhân Nhật, Hoa và châu Âu sống và buôn bán ở đây từ thế kỷ 15 đến 19.', en: 'Japanese, Chinese and European traders lived and traded here from the 15th to the 19th century.' },
@@ -118,7 +118,7 @@ window.ECHOLAC_LOCATIONS = [
     description: { vi: 'Năm ngọn núi đá vôi và cẩm thạch ở Đà Nẵng.', en: 'Five marble and limestone hills in Da Nang.' },
     lat: 16.0040, lng: 108.2630, radius: 500,
     icon: 'mountain', bg: ['#E3E6EE', '#B6C0D4'],
-    referenceImages: [], streetView: null,
+    referenceImages: [{ url: 'assets/3d/mountain.png', credit: 'EchoLạc 3D icon set (illustration, not a photo)', license: 'assets/3d/LICENSE.txt', sample: true }], streetView: null,
     visualKeywords: ['limestone hills', 'cave entrance', 'pagoda'],
     built: null, historicalSignificance: null, culturalBackground: null, architecture: null,
     interestingFacts: [
@@ -146,7 +146,7 @@ window.ECHOLAC_LOCATIONS = [
     description: { vi: 'Khu chợ trong nhà nhộn nhịp gần sông Hàn.', en: 'A busy indoor market near the Han River.' },
     lat: 16.0683, lng: 108.2240, radius: 200,
     icon: 'bags', bg: ['#FCE4EF', '#EFAFCB'],
-    referenceImages: [], streetView: null,
+    referenceImages: [{ url: 'assets/3d/bags.png', credit: 'EchoLạc 3D icon set (illustration, not a photo)', license: 'assets/3d/LICENSE.txt', sample: true }], streetView: null,
     visualKeywords: ['market building', 'stalls', 'riverside street'],
     built: null, historicalSignificance: null, culturalBackground: null, architecture: null,
     interestingFacts: [

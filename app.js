@@ -438,11 +438,21 @@ function selfTest() {
   const bad = rows.flatMap(r => Object.entries(r).filter(([k, v]) => k !== 'id' && v < 4.5).map(([k, v]) => `${r.id} ${k} ${v}`));
   console.table(rows);
   console.assert(!bad.length, 'Contrast below 4.5:1 →', bad);
-  // Camera learning: geo filter, score combining, language feedback, fact lookup
+  // Camera learning: double matching (cases A–F), language feedback, fact lookup
   const db = loc('dragon-bridge'), cb = loc('covered-bridge'), fix = t => checkAnswer(t, { vocab: [] }).fix?.better;
   if (db && loc('han-market')) { const d = distM(db, loc('han-market')); console.assert(d > 700 && d < 1000, 'distM Dragon Bridge → Han Market', d); }
-  if (cb) console.assert(nearby(cb).length >= 2, 'Covered Bridge sits inside the old-town radius too');
-  console.assert(combine(1, 0, 100) === 1 && combine(0.8, 100, 100) < MATCH_MIN, 'combine');
+  if (db && cb) {
+    const at = (l, acc = 20) => gpsMatch({ lat: l.lat, lng: l.lng, acc }), xv = (g, sim) => crossValidate(g, imageMatch(sim, true));
+    console.assert(at(cb).status === 'multiple' && at(db).status === 'matched' && at(db, 900).gpsStatus === 'inaccurate', 'gpsMatch');
+    console.assert(imageMatch({ [db.id]: 0.6 }, true).status === 'uncertain' && imageMatch({ [db.id]: 0.3 }, true).bestId === null && !imageMatch(null).service, 'imageMatch');
+    const cases = {
+      A: xv(at(db), { [db.id]: 0.9 }), B: xv(at(cb), { [cb.id]: 0.9 }), C: xv(at(db), { [cb.id]: 0.9 }),
+      D: xv(gpsMatch(null), { [db.id]: 0.9 }), E: xv(at(db), { [db.id]: 0.2 }), F: xv(gpsMatch({ lat: 21.03, lng: 105.85, acc: 20 }), { [db.id]: 0.9 }),
+    };
+    const want = { A: 'confirmed', B: 'confirmed', C: 'needs_confirmation', D: 'needs_confirmation', E: 'needs_confirmation', F: 'rejected' };
+    Object.entries(cases).forEach(([k, v]) => console.assert(v.case === k && v.status === want[k], `crossValidate case ${k}`, v.case, v.status));
+    console.assert(cases.A.finalId === db.id && cases.C.finalId === null && cases.F.finalId === null, 'only agreement yields a final id');
+  }
   console.assert(fix('It have more than four hundred years') === 'It is more than four hundred years old', fix('It have more than four hundred years'));
   console.assert(fix('The bridge have a small temple.') === 'The bridge has a small temple.', fix('The bridge have a small temple.'));
   console.assert(fix('i think it is lovely.') === 'I think it is lovely.', fix('i think it is lovely.'));
@@ -746,17 +756,19 @@ const VIEWS = {
       </div>
       <section class="cam-hero reveal zoom">
         <div class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i>${img('bridge')}</div>
-        <h2>${V('Khám phá văn hoá Việt qua ống kính', 'Explore Vietnamese culture through your camera')}</h2>
+        <h2>${V('Hướng camera, xác minh vị trí, khám phá văn hoá Việt', 'Point your camera, verify your location, discover Vietnamese culture')}</h2>
         <p>${V('và học tiếng Anh từ chính thế giới quanh bạn.', 'and learn English through the world around you.')}</p>
       </section>
-      <div class="demo-note reveal">${icon('bulb')}<p>${V('<b>Chế độ Demo.</b> GPS và camera là thật. So khớp ảnh và gia sư AI đang được <b>mô phỏng</b>; thông tin địa danh lấy từ fact sheet mẫu, chờ giáo viên kiểm duyệt.', '<b>Demo Mode.</b> GPS and camera are real. Image matching and the AI tutor are <b>simulated</b>; landmark facts come from sample fact sheets awaiting teacher review.')}</p></div>
       <ol class="how reveal">
-        <li><span class="n">1</span><span><b>${V('Xác định vị trí', 'Find where you are')}</b><small>${V('GPS lọc ra địa danh được hỗ trợ ở gần bạn.', 'GPS narrows it down to supported landmarks near you.')}</small></span></li>
-        <li><span class="n">2</span><span><b>${V('Chụp một tấm ảnh', 'Take one photo')}</b><small>${V('Ảnh được so với ảnh tham chiếu của từng địa danh.', 'The photo is compared with each landmark’s reference images.')}</small></span></li>
-        <li><span class="n">3</span><span><b>${V('Khám phá, học từ, luyện nói', 'Discover, learn, practise')}</b><small>${V('Bài học tiếng Anh về đúng nơi bạn đang đứng.', 'An English lesson about the exact place you are standing.')}</small></span></li>
+        <li><span class="n">1</span><span><b>${V('Khớp GPS', 'GPS matching')}</b><small>${V('Lọc ra các địa danh hỗ trợ trong bán kính. GPS chỉ thu hẹp khu vực, không biết camera đang nhìn gì.', 'Lists supported places within range. GPS only narrows the area; it can’t tell what the camera sees.')}</small></span></li>
+        <li><span class="n">2</span><span><b>${V('Khớp ảnh', 'Image matching')}</b><small>${V('Ảnh bạn chụp được so độc lập với ảnh tham chiếu của mọi địa danh.', 'Your photo is compared, on its own, with every place’s reference images.')}</small></span></li>
+        <li><span class="n">3</span><span><b>${V('Đối chiếu chéo', 'Cross-check')}</b><small>${V('Chỉ khi hai kết quả trùng nhau, bài học mới được mở tự động. Lệch nhau thì bạn tự xác nhận.', 'A lesson opens automatically only when both agree. If they differ, you confirm.')}</small></span></li>
       </ol>
+      <div class="section-title reveal"><span>${V('Kịch bản demo', 'Demo scenario')}</span></div>
+      <div class="chips reveal" role="radiogroup" aria-label="${V('Kịch bản demo', 'Demo scenario')}">${Object.entries(SCENARIOS).map(([k, s]) => `<button class="chip ${CAM.scen === k ? 'active' : ''}" role="radio" aria-checked="${CAM.scen === k}" onclick="setScen('${k}')">${L(s)}</button>`).join('')}</div>
+      <div class="demo-note reveal" id="scen-note">${scenNote()}</div>
       <div class="section-title reveal"><span>${V('Địa danh được hỗ trợ', 'Supported places')}</span><span class="tiny muted">${LOCS.length}</span></div>
-      ${LOCS.length ? `<div class="reveal">${LOCS.map(l => locRow(l, null, false, progLabel(l))).join('')}</div>`
+      ${LOCS.length ? `<p class="tiny muted reveal" style="margin:-6px 0 12px">${V('Mở từ danh sách là học kiểu thư viện, không xác minh vị trí.', 'Opening from this list is library study, with no location check.')}</p><div class="reveal">${LOCS.map(l => locRow(l, null, 'library', progLabel(l))).join('')}</div>`
         : `<div class="card center reveal"><p class="muted">${V('Chưa có địa danh nào. Quản trị viên thêm địa danh trong assets/data/locations.js.', 'No places configured yet. Admins add them in assets/data/locations.js.')}</p></div>`}
       <section class="card soft reveal mt-24 priv">
         <div class="row" style="gap:10px">${icon('shield')}<b>${V('Quyền riêng tư', 'Your privacy')}</b></div>
@@ -771,28 +783,44 @@ const VIEWS = {
     },
   },
 
-  cam: {
+  // Screen 1: GPS matching (first, independent stage)
+  locate: {
     render: () => `
-      <div class="cam" id="cam">
+      <div class="topbar reveal">
+        <a class="icon-btn" href="#explore" aria-label="${V('Quay lại', 'Back')}">${icon('left')}</a>
+        <h1>${V('Xác định vị trí', 'Location check')}</h1>
+        <span class="tag ${isDemo() ? 'amber' : 'green'}">${isDemo() ? V('Demo', 'Demo') : V('Thật', 'Live')}</span>
+      </div>
+      <div id="loc-body" aria-live="polite"><section class="card reveal"><div class="row" style="gap:12px"><span class="gps-dot" data-s="locating">${icon('pin')}</span><b>${V('Đang tìm vị trí…', 'Finding your location…')}</b></div></section></div>`,
+    mount: () => locate().then(() => { const b = $('#loc-body'); if (b) { b.innerHTML = locateHtml(); observe(b); } }),
+  },
+
+  // Screens 2–4: camera capture → image matching → cross-validation
+  cam: {
+    render() {
+      if (!G.gps) { location.hash = '#locate'; return ''; }
+      return `
+      <div class="cam ${G.gps.candidates.length ? 'near' : ''}" id="cam">
         <video id="cam-v" playsinline muted autoplay aria-label="${V('Khung xem camera', 'Camera preview')}"></video>
         <img class="shot" id="cam-shot" alt="${V('Ảnh bạn vừa chụp', 'The photo you just took')}" hidden>
         <div class="scan" aria-hidden="true"></div>
         <div class="cam-top">
           <a class="cam-btn" href="#explore" aria-label="${V('Đóng camera', 'Close camera')}">${icon('x')}</a>
-          <div class="gps-chip" id="gps" role="status" aria-live="polite"></div>
+          <div class="gps-chip" role="status" data-s="${gpsTone(G.gps)}">${icon('pin', 'sm')}<span>${gpsShort(G.gps)}</span></div>
           <button class="cam-btn" id="torch" hidden aria-pressed="false" onclick="toggleTorch(this)" aria-label="${V('Đèn flash', 'Flash')}">${icon('bolt')}</button>
         </div>
-        <span class="cam-demo">${V('Chế độ Demo', 'Demo Mode')}</span>
+        ${isDemo() ? `<span class="cam-demo">${V('Demo', 'Demo')} · ${L(SCENARIOS[CAM.scen])}</span>` : ''}
         <div class="cam-guide" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
         <p class="cam-hint" id="cam-hint">${V('Hướng camera vào một địa danh được hỗ trợ để bắt đầu học.', 'Point your camera at a supported landmark to start learning.')}</p>
         <div class="cam-bottom">
           <label class="cam-side"><input type="file" accept="image/*" class="sr" onchange="usePhoto(this.files[0])"><span class="cam-btn">${icon('image')}</span>${V('Chọn ảnh', 'Photo')}</label>
           <button class="shutter" id="shutter" onclick="shoot()" disabled aria-label="${V('Chụp ảnh', 'Take photo')}"></button>
-          <button class="cam-side" onclick="choosePlace(false)"><span class="cam-btn">${icon('pin')}</span>${V('Chọn nơi', 'Choose')}</button>
+          <button class="cam-side" onclick="choosePlace('manual')"><span class="cam-btn">${icon('pin')}</span>${V('Chọn nơi', 'Choose')}</button>
         </div>
         <section class="rec" id="rec" hidden aria-live="polite"></section>
-      </div>`,
-    mount: () => startCam(),
+      </div>`;
+    },
+    mount: () => G.gps && startCam(),
   },
 
   learn: {
@@ -812,7 +840,7 @@ const VIEWS = {
       </figure>
       <h2 class="learn-title reveal">${esc(l.name.en)}</h2>
       <p class="muted reveal">${esc(l.name.vi)}</p>
-      <div class="row mt-8 reveal" style="gap:8px;flex-wrap:wrap">${l.demo ? `<span class="tag amber">${V('Dữ liệu mẫu', 'Demo data')}</span>` : ''}${l.verified ? `<span class="tag green">${V('Giáo viên đã kiểm duyệt', 'Teacher-verified')}</span>` : `<span class="tag">${V('Thông tin chờ kiểm duyệt', 'Facts pending review')}</span>`}</div>
+      <div class="row mt-8 reveal" style="gap:8px;flex-wrap:wrap">${verifyTag(l.id)}${l.demo ? `<span class="tag amber">${V('Dữ liệu mẫu', 'Demo data')}</span>` : ''}${l.verified ? `<span class="tag green">${V('Giáo viên đã kiểm duyệt', 'Teacher-verified')}</span>` : `<span class="tag">${V('Thông tin chờ kiểm duyệt', 'Facts pending review')}</span>`}</div>
       <div class="lprog reveal" id="lprog">${progHtml(l)}</div>
       <div class="seg three reveal" role="tablist" aria-label="${V('Phần bài học', 'Lesson part')}">${tabs.map(([k, vi, en]) => `<button role="tab" id="tab-${k}" aria-selected="${S.learnTab === k}" class="${S.learnTab === k ? 'on' : ''}" onclick="setLearnTab('${k}')">${V(vi, en)}</button>`).join('')}</div>
       <div class="lt-body" id="lt" role="tabpanel" aria-labelledby="tab-${S.learnTab}" data-id="${l.id}">${tabHtml(l)}</div>`;
@@ -1339,60 +1367,133 @@ const SAFE_ID = /^[a-z0-9-]+$/;
 // Records come from an admin-edited file, so validate them before they reach the UI
 const LOCS = (window.ECHOLAC_LOCATIONS || [])
   .filter(l => SAFE_ID.test(l.id) && Number.isFinite(l.lat) && Number.isFinite(l.lng) && l.radius > 0 && l.name?.en && l.name?.vi && l.description && Array.isArray(l.vocab) && Array.isArray(l.topics))
-  .map(l => ({ interestingFacts: [], bg: ['#F7F1E7', '#ECE6DB'], ...l, icon: SAFE_ID.test(l.icon) ? l.icon : 'pin', sources: (l.sources || []).map(s => ({ label: s.label, url: /^https:\/\//.test(s.url || '') ? s.url : '' })) }));
+  .map(l => ({ interestingFacts: [], bg: ['#F7F1E7', '#ECE6DB'], ...l, icon: SAFE_ID.test(l.icon) ? l.icon : 'pin', referenceImages: (l.referenceImages || []).filter(r => /^(assets\/[\w./-]+|https:\/\/\S+)$/.test(r.url || '')), sources: (l.sources || []).map(s => ({ label: s.label, url: /^https:\/\//.test(s.url || '') ? s.url : '' })) }));
 const loc = id => LOCS.find(l => l.id === id);
-const MATCH_MIN = 0.8; // combined score a real matcher must reach before we name a place without asking
 const distM = (a, b) => {
   const r = Math.PI / 180, dLat = (b.lat - a.lat) * r, dLng = (b.lng - a.lng) * r;
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLng / 2) ** 2;
   return 2 * 6371e3 * Math.asin(Math.sqrt(h));
 };
-const nearby = pos => LOCS.map(l => ({ l, d: distM(pos, l) })).filter(x => x.d <= x.l.radius).sort((a, b) => a.d - b.d);
-const combine = (img, d, radius) => 0.75 * img + 0.25 * (1 - d / radius); // image similarity weighs most; GPS only nudges
-// shortcut: no image-matching service is connected, so this never returns a score. Wire a similarity API here that compares the photo with loc.referenceImages and returns { id, score: 0–1 }.
-const matchImage = () => ({ simulated: true });
 const km = d => (d < 1000 ? `${Math.round(d / 10) * 10} m` : `${(d / 1000).toFixed(1)} km`);
-const G = { status: 'idle', pos: null, acc: 0, near: [], p: Promise.resolve() }; // memory only: precise location is never saved
-const CAM = { stream: null, tok: null, photo: '', photoFor: '', intro: false };
+const refUrl = l => l.referenceImages[0]?.url || `assets/3d/${l.icon}.png`;
+const G = { gps: null }; // memory only: precise location is never saved
+const CAM = { stream: null, tok: null, photo: '', photoFor: '', intro: false, scen: 'agree', verify: null };
+
+/* Double matching, spec §2: GPS → candidates, image → visual candidates, cross-validation decides. */
+const GPS_MAX_ACC = 500;  // metres; worse than this and GPS can't vouch for a place
+const IMG_MATCH = 0.75;   // similarity needed for "matched"
+const IMG_UNSURE = 0.5;   // between the two → "uncertain"
+
+// 1. GPS Location Matching Service: narrows the area only, never says what the camera sees
+function gpsMatch(fix) {
+  if (!fix) return { gpsStatus: 'unavailable', status: 'none', approx: null, candidates: [] };
+  const candidates = LOCS.map(l => ({ id: l.id, d: Math.round(distM(fix, l)), radius: l.radius, refs: l.referenceImages.length }))
+    .filter(c => c.d <= c.radius).sort((a, b) => a.d - b.d); // keep every candidate, never just the nearest
+  return {
+    gpsStatus: fix.acc > GPS_MAX_ACC ? 'inaccurate' : 'available',
+    status: candidates.length > 1 ? 'multiple' : candidates.length ? 'matched' : 'none',
+    approx: { lat: +fix.lat.toFixed(3), lng: +fix.lng.toFixed(3), acc: Math.round(fix.acc) }, // ~100 m, enough to show the learner
+    candidates,
+  };
+}
+
+// 2. Camera Image Matching Service: ranks EVERY location by similarity, so GPS can't decide the answer
+function imageMatch(scores, simulated) {
+  if (!scores) return { status: 'no_match', bestId: null, score: null, others: [], service: false, simulated: false };
+  const ranked = Object.entries(scores).filter(([id]) => loc(id)).sort((a, b) => b[1] - a[1]);
+  const [best, score = 0] = ranked[0] || [];
+  const status = score >= IMG_MATCH ? 'matched' : score >= IMG_UNSURE ? 'uncertain' : 'no_match';
+  return { status, bestId: status === 'no_match' ? null : best, score, others: ranked.slice(1).map(r => r[0]), service: true, simulated };
+}
+// shortcut: no image-similarity service is connected, so live mode returns no scores. Wire an embedding/similarity API here that compares the photo with each loc.referenceImages and returns { id: 0–1 }.
+const similarityService = () => null;
+
+// 3. Cross-validation Service: the only stage allowed to pick a lesson (spec §5, cases A–F)
+function crossValidate(g, im) {
+  const ids = g.candidates.map(c => c.id), ok = im.status === 'matched';
+  const out = (kase, status, agreement, finalId, options, reason) => ({ gps: g, image: im, case: kase, agreement, finalId, status, options, reason });
+  if (g.gpsStatus !== 'available') return out('D', 'needs_confirmation', 'image_only', ok ? im.bestId : null, ok ? [im.bestId] : ids.length ? ids : LOCS.map(l => l.id),
+    { vi: 'Không xác minh được vị trí, chỉ có kết quả từ ảnh. Bạn cần tự xác nhận.', en: 'Location can’t be verified; this is image-only. Please confirm yourself.' });
+  if (!ids.length) return out('F', 'rejected', 'none', null, [],
+    { vi: 'Không có địa danh EchoLạc hỗ trợ trong bán kính, nên không tạo bài học theo địa điểm chưa xác minh.', en: 'No EchoLạc-supported place is in range, so no unverified place lesson is created.' });
+  if (!ok) return out('E', 'needs_confirmation', 'image_failed', null, ids,
+    { vi: 'Ảnh không nhận diện được địa danh. GPS chỉ cho biết các nơi gần bạn, chưa xác nhận được bằng hình.', en: 'The photo wasn’t recognised. GPS only lists nearby places; nothing is visually confirmed.' });
+  if (ids.includes(im.bestId)) return out(ids.length > 1 ? 'B' : 'A', 'confirmed', 'agree', im.bestId, [im.bestId],
+    { vi: 'Ảnh nhận ra một địa danh nằm trong danh sách GPS: hai kết quả khớp nhau.', en: 'The photo matches a place on the GPS list: both results agree.' });
+  return out('C', 'needs_confirmation', 'conflict', null, [...ids, im.bestId],
+    { vi: 'GPS và ảnh chỉ ra hai nơi khác nhau. Không tự mở bài học nào, hãy chọn nơi đúng hoặc chụp lại.', en: 'GPS and the photo point to different places. No lesson opens on its own: pick the right one or retake.' });
+}
+
+/* Demo Mode, spec §10: sample GPS fixes + simulated similarity scores, labelled wherever they show */
+const SCENARIOS = {
+  live: { vi: 'Thật: GPS + camera', en: 'Live: GPS + camera' },
+  agree: { vi: '1 · Hai bên khớp', en: '1 · Both agree', at: 'dragon-bridge', sim: { 'dragon-bridge': 0.91, 'han-market': 0.31, 'marble-mountains': 0.18 } },
+  conflict: { vi: '2 · GPS và ảnh lệch', en: '2 · GPS vs image differ', at: 'dragon-bridge', sim: { 'marble-mountains': 0.88, 'dragon-bridge': 0.27 } },
+  multi: { vi: '3 · Nhiều nơi gần nhau', en: '3 · Several nearby', at: 'covered-bridge', sim: { 'covered-bridge': 0.86, 'hoi-an-ancient-town': 0.58 } },
+  imgfail: { vi: '4 · Ảnh không nhận ra', en: '4 · Image fails', at: 'han-market', sim: { 'han-market': 0.34, 'dragon-bridge': 0.21 } },
+  nogps: { vi: '5 · Không có GPS', en: '5 · No GPS', at: null, sim: { 'hoi-an-ancient-town': 0.84, 'covered-bridge': 0.49 } },
+};
+const isDemo = () => CAM.scen !== 'live';
+const topSim = s => Object.entries(s.sim).sort((a, b) => b[1] - a[1])[0][0];
+function scenNote() {
+  const s = SCENARIOS[CAM.scen];
+  if (!isDemo()) return `${icon('bulb')}<p>${V('<b>Chế độ thật.</b> Dùng GPS và camera của bạn. Chưa kết nối dịch vụ so khớp ảnh, nên ảnh luôn “không nhận diện được” và bạn sẽ tự xác nhận nơi đúng (trường hợp E).', '<b>Live mode.</b> Uses your real GPS and camera. No image-matching service is connected yet, so the photo is always “not recognised” and you confirm the place yourself (case E).')}</p>`;
+  const at = loc(s.at), top = loc(topSim(s));
+  return `${icon('bulb')}<p><b>${V('Chế độ Demo, kết quả mô phỏng.', 'Demo Mode, simulated results.')}</b> ${V('GPS mẫu', 'Sample GPS')}: ${at ? `${V('cạnh', 'next to')} ${esc(at.name.en)}` : V('bị tắt', 'off')} · ${V('Ảnh mô phỏng', 'Simulated image')}: ${esc(top?.name.en || '?')} ${s.sim[topSim(s)].toFixed(2)}. ${V('Camera vẫn là thật; không có camera thì nút chụp dùng ảnh mẫu.', 'The camera is still real; without one, the shutter uses a sample image.')}</p>`;
+}
+function setScen(k) { CAM.scen = k; G.gps = null; const y = scrollY; route(); scrollTo(0, y); document.querySelectorAll('.reveal').forEach(show); }
 
 function locate() {
-  if (!('geolocation' in navigator)) { G.status = 'off'; gpsChip(); return Promise.resolve(); }
-  G.status = 'locating'; gpsChip();
-  return new Promise(res => navigator.geolocation.getCurrentPosition(p => {
-    G.pos = { lat: p.coords.latitude, lng: p.coords.longitude }; G.acc = Math.round(p.coords.accuracy);
-    G.near = nearby(G.pos); G.status = G.acc > 500 ? 'weak' : G.near.length ? 'near' : 'far'; gpsChip(); res();
-  }, () => { G.status = 'off'; G.near = []; gpsChip(); res(); }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }));
+  const s = SCENARIOS[CAM.scen], at = loc(s.at);
+  if (isDemo()) return new Promise(r => setTimeout(r, 700)).then(() => (G.gps = gpsMatch(at && { lat: at.lat + 0.0003, lng: at.lng, acc: 20 }))); // ~30 m from the sample place
+  if (!('geolocation' in navigator)) return Promise.resolve(G.gps = gpsMatch(null));
+  return new Promise(res => navigator.geolocation.getCurrentPosition(
+    p => res(G.gps = gpsMatch({ lat: p.coords.latitude, lng: p.coords.longitude, acc: p.coords.accuracy })),
+    () => res(G.gps = gpsMatch(null)),
+    { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }));
 }
-const gpsText = () => ({
-  locating: V('Đang tìm vị trí…', 'Finding your location…'),
-  near: G.near.length === 1 ? `${V('Gần', 'Near')} ${esc(G.near[0].l.name.en)} · ${km(G.near[0].d)}` : V(`${G.near.length} địa danh ở gần`, `${G.near.length} landmarks nearby`),
-  far: V('Không có địa danh hỗ trợ ở gần', 'No supported landmark nearby'),
-  weak: V(`GPS chưa chính xác (±${km(G.acc)})`, `GPS is imprecise (±${km(G.acc)})`),
-  off: V('Không có GPS · chọn thủ công', 'No GPS · choose manually'),
-}[G.status] || '');
-function gpsChip() {
-  const c = $('#gps'); if (!c) return;
-  c.innerHTML = `${icon('pin', 'sm')}<span>${gpsText()}</span>`; c.dataset.s = G.status;
-  $('#cam').classList.toggle('near', G.status === 'near');
+const names = ids => ids.map(id => esc(loc(id).name.en)).join(', ');
+const gpsTone = g => (g.gpsStatus !== 'available' || g.status === 'none' ? 'warn' : 'ok');
+const gpsShort = g => (g.gpsStatus === 'unavailable' ? V('Không có GPS · chỉ xác minh bằng ảnh', 'No GPS · image-only check')
+  : g.gpsStatus === 'inaccurate' ? V(`GPS chưa chính xác (±${km(g.approx.acc)})`, `GPS imprecise (±${km(g.approx.acc)})`)
+  : g.status === 'none' ? V('Không có địa danh hỗ trợ ở gần', 'No supported place nearby')
+  : g.status === 'matched' ? `${V('Gần', 'Near')} ${names([g.candidates[0].id])} · ${km(g.candidates[0].d)}`
+  : V(`${g.candidates.length} địa danh ở gần`, `${g.candidates.length} places nearby`));
+const GPS_ST = { available: ['Khả dụng', 'Available'], unavailable: ['Không khả dụng', 'Unavailable'], inaccurate: ['Chưa chính xác', 'Inaccurate'] };
+const GPS_MT = { matched: ['Khớp 1 nơi', 'Matched'], multiple: ['Nhiều ứng viên', 'Multiple candidates'], none: ['Không có địa danh hỗ trợ', 'No supported location'] };
+function locateHtml() {
+  const g = G.gps, none = g.gpsStatus === 'available' && g.status === 'none';
+  return `
+    <section class="card reveal">
+      <div class="row" style="gap:12px"><span class="gps-dot" data-s="${gpsTone(g)}">${icon('pin')}</span><div class="grow"><b>${gpsShort(g)}</b>${isDemo() ? `<div class="tiny muted">${V('Vị trí mẫu, mô phỏng', 'Sample location, simulated')}</div>` : ''}</div></div>
+      <dl class="kv mt-16">
+        <div><dt>${V('Trạng thái GPS', 'GPS status')}</dt><dd>${V(...GPS_ST[g.gpsStatus])}</dd></div>
+        <div><dt>${V('Vị trí gần đúng', 'Approximate location')}</dt><dd>${g.approx ? `${g.approx.lat}, ${g.approx.lng} (±${km(g.approx.acc)})` : '—'}</dd></div>
+        <div><dt>${V('Kết quả khớp GPS', 'GPS matching')}</dt><dd>${V(...GPS_MT[g.status])}</dd></div>
+        <div><dt>${V('Số ứng viên', 'Candidates')}</dt><dd>${g.candidates.length}</dd></div>
+      </dl>
+    </section>
+    ${g.candidates.length ? `<div class="section-title reveal"><span>${V('Địa danh trong bán kính', 'Places within range')}</span></div>
+      ${g.candidates.map(c => `<div class="loc-row reveal">${tile(loc(c.id))}<span class="grow"><b>${esc(loc(c.id).name.en)}</b><small>${km(c.d)} · ${V('bán kính', 'radius')} ${km(c.radius)} · ${c.refs} ${V('ảnh tham chiếu', 'reference image(s)')}</small></span></div>`).join('')}` : ''}
+    <p class="tiny muted mt-16 reveal">${V('GPS chỉ thu hẹp khu vực tìm kiếm. Nó không xác nhận camera đang hướng vào đâu: bước khớp ảnh sẽ làm việc đó.', 'GPS only narrows the search area. It doesn’t confirm what the camera points at; image matching does that next.')}</p>
+    ${none
+      ? `<div class="verdict bad mt-16 reveal">${icon('x')}<div><b>${V('EchoLạc chưa hỗ trợ địa điểm này', 'EchoLạc doesn’t support this place yet')}</b><p>${V('Bạn có thể xem các địa danh được hỗ trợ hoặc luyện tiếng Anh chung.', 'See the supported places, or practise general English.')}</p></div></div>
+        <div class="sticky-cta"><a class="btn" href="#roleplay">${icon('chat')} ${V('Luyện tiếng Anh chung', 'Practise general English')}</a><a class="btn white mt-16" href="#explore">${V('Xem địa danh được hỗ trợ', 'See supported places')}</a></div>`
+      : `<div class="sticky-cta"><a class="btn" href="#cam">${icon('camera')} ${V('Tiếp: mở camera', 'Next: open camera')}</a></div>`}`;
 }
-const nearNote = () => ({
-  near: V(`${G.near.length} địa danh hỗ trợ trong bán kính`, `${G.near.length} supported ${G.near.length > 1 ? 'places' : 'place'} in range`),
-  far: V('Không có địa danh hỗ trợ trong bán kính', 'No supported place in range'),
-  weak: V(`GPS chưa đủ chính xác (±${km(G.acc)})`, `GPS not precise enough (±${km(G.acc)})`),
-}[G.status] || V('Không lấy được vị trí', 'Location unavailable'));
 
 function camIntro() {
-  if (CAM.intro) { location.hash = '#cam'; return; }
+  G.gps = null; // every run starts with a fresh GPS stage
+  if (CAM.intro) { location.hash = '#locate'; return; }
   openSheet(`
     <h2>${V('Trước khi mở camera', 'Before we open the camera')}</h2>
-    <p class="small muted mt-8">${V('Trình duyệt sẽ hỏi hai quyền. Bạn có thể từ chối và vẫn chọn địa điểm thủ công.', 'Your browser will ask for two permissions. You can say no and still choose a place by hand.')}</p>
-    <div class="perm mt-16"><span class="ic">${icon('pin')}</span><div><b>${V('Vị trí', 'Location')}</b><p>${V('Để biết bạn đang ở gần địa danh nào được hỗ trợ. Chỉ kiểm tra lúc này, không lưu và không chia sẻ.', 'To see which supported landmark you are near. Checked only now, never saved or shared.')}</p></div></div>
+    <p class="small muted mt-8">${V('Trình duyệt sẽ hỏi quyền. Bạn có thể từ chối và vẫn chọn địa điểm thủ công.', 'Your browser will ask for permission. You can say no and still choose a place by hand.')}</p>
+    <div class="perm mt-16"><span class="ic">${icon('pin')}</span><div><b>${V('Vị trí', 'Location')}</b><p>${isDemo() ? V('Chế độ Demo dùng vị trí mẫu, không hỏi quyền GPS.', 'Demo Mode uses a sample location and doesn’t ask for GPS.') : V('Để biết bạn đang ở gần địa danh nào được hỗ trợ. Chỉ kiểm tra lúc này, không lưu và không chia sẻ.', 'To see which supported landmark you are near. Checked only now, never saved or shared.')}</p></div></div>
     <div class="perm"><span class="ic">${icon('camera')}</span><div><b>Camera</b><p>${V('Để chụp một tấm ảnh địa danh. Ảnh ở lại trên máy này, không tải lên.', 'To take one photo of the landmark. It stays on this device and is never uploaded.')}</p></div></div>
-    <button class="btn mt-24" onclick="CAM.intro=true;closeSheet();location.hash='#cam'">${V('Tiếp tục', 'Continue')}</button>
-    <button class="btn white mt-16" onclick="choosePlace(false)">${V('Chọn địa điểm thủ công', 'Choose a place manually')}</button>`);
+    <button class="btn mt-24" onclick="CAM.intro=true;closeSheet();location.hash='#locate'">${V('Tiếp tục', 'Continue')}</button>
+    <button class="btn white mt-16" onclick="choosePlace('library')">${V('Chọn địa điểm thủ công', 'Choose a place manually')}</button>`);
 }
 async function startCam() {
-  G.p = locate();
   const tok = CAM.tok = {};
   if (!navigator.mediaDevices?.getUserMedia) return camFail('');
   try {
@@ -1409,14 +1510,18 @@ function camFail(name) {
   $('#cam-hint').textContent = name === 'NotAllowedError'
     ? V('Camera đang bị chặn. Bật quyền camera trong cài đặt trình duyệt, chọn một ảnh có sẵn, hoặc chọn nơi thủ công.', 'Camera access is blocked. Allow it in your browser settings, pick a photo, or choose the place by hand.')
     : V('Không mở được camera trên thiết bị này. Hãy chọn một ảnh có sẵn hoặc chọn nơi thủ công.', 'The camera can’t open on this device. Pick a photo or choose the place by hand.');
+  if (isDemo()) { $('#shutter').disabled = false; $('#cam-hint').textContent += ' ' + V('Demo: nút chụp sẽ dùng ảnh mẫu.', 'Demo: the shutter will use a sample image.'); }
 }
 function stopCam() { CAM.tok = null; CAM.stream?.getTracks().forEach(t => t.stop()); CAM.stream = null; }
 async function toggleTorch(b) {
   const tr = CAM.stream?.getVideoTracks()[0], on = b.getAttribute('aria-pressed') !== 'true';
   try { await tr.applyConstraints({ advanced: [{ torch: on }] }); b.setAttribute('aria-pressed', on); } catch { toast(V('Không bật được đèn flash', 'Couldn’t switch the flash')); }
 }
+const setPhoto = url => { if (CAM.photo.startsWith('blob:')) URL.revokeObjectURL(CAM.photo); CAM.photo = url; CAM.photoFor = ''; };
 function shoot() {
-  const v = $('#cam-v'); if (!CAM.stream || !v.videoWidth) return;
+  const v = $('#cam-v');
+  if (!CAM.stream && isDemo()) { stopCam(); setPhoto(refUrl(loc(topSim(SCENARIOS[CAM.scen])))); return recognise(); } // no camera: sample image, still simulated
+  if (!CAM.stream || !v.videoWidth) return;
   const c = document.createElement('canvas'); c.width = v.videoWidth; c.height = v.videoHeight;
   c.getContext('2d').drawImage(v, 0, 0);
   stopCam(); // one still, then the camera turns off: no footage keeps streaming
@@ -1424,64 +1529,95 @@ function shoot() {
 }
 function usePhoto(file) {
   if (!file?.type?.startsWith('image/')) return file && toast(V('Hãy chọn một tệp ảnh', 'Please pick an image file'));
-  stopCam();
-  if (CAM.photo) URL.revokeObjectURL(CAM.photo);
-  CAM.photo = URL.createObjectURL(file); CAM.photoFor = '';
+  stopCam(); setPhoto(URL.createObjectURL(file));
   recognise();
 }
 async function recognise() {
-  const cam = $('#cam'), rec = $('#rec'), shot = $('#cam-shot');
+  const cam = $('#cam'), rec = $('#rec'), shot = $('#cam-shot'), g = G.gps, s = SCENARIOS[CAM.scen];
   cam.classList.add('scanning'); shot.src = CAM.photo; shot.hidden = false; rec.hidden = false;
-  rec.innerHTML = `<h2>${V('Đang nhận diện…', 'Recognising…')}</h2><ol class="rec-steps">${[V('Kiểm tra địa danh gần bạn', 'Checking nearby locations'), V('So với ảnh tham chiếu', 'Comparing reference images'), V('Xác định địa danh', 'Identifying the landmark')].map(t => `<li><b>${t}</b><small></small></li>`).join('')}</ol><div id="rec-out"></div>`;
-  const li = [...rec.querySelectorAll('li')], step = (i, s, note = '') => { li[i].dataset.s = s; li[i].querySelector('small').innerHTML = note; };
+  rec.innerHTML = `<h2>${V('Đang xác minh…', 'Verifying…')}</h2><ol class="rec-steps">${[V('Kết quả khớp GPS', 'GPS matching result'), V('Khớp ảnh với ảnh tham chiếu', 'Image vs reference images'), V('Đối chiếu chéo', 'Cross-validation')].map(t => `<li><b>${t}</b><small></small></li>`).join('')}</ol><div id="rec-out"></div>`;
+  const li = [...rec.querySelectorAll('li')], step = (i, st, note = '') => { li[i].dataset.s = st; li[i].querySelector('small').innerHTML = note; };
   const wait = ms => new Promise(r => setTimeout(r, ms)), gone = () => !rec.isConnected;
-  step(0, 'run'); await Promise.all([G.p, wait(700)]); if (gone()) return;
-  step(0, 'done', nearNote());
-  step(1, 'run'); await wait(900); if (gone()) return;
-  const m = matchImage(CAM.photo, G.near);
-  step(1, m.simulated ? 'sim' : 'done', m.simulated ? `<span class="tag amber">${V('Mô phỏng', 'Simulated')}</span> ${V('Chưa kết nối dịch vụ so khớp ảnh', 'No image-matching service connected')}` : '');
-  step(2, 'run'); await wait(500); if (gone()) return;
-  cam.classList.add('done');
-  showResult(m, step);
+  step(0, gpsTone(g) === 'ok' ? 'done' : 'warn', `${V(...GPS_ST[g.gpsStatus])} · ${V(...GPS_MT[g.status])}`);
+  step(1, 'run'); await wait(1100); if (gone()) return;
+  const im = isDemo() ? imageMatch(s.sim, true) : imageMatch(similarityService(CAM.photo), false);
+  step(1, im.status === 'matched' ? 'done' : im.status === 'uncertain' ? 'warn' : 'fail', `${V(...IMG_ST[im.status])}${im.simulated ? ` <span class="tag amber">${V('mô phỏng', 'simulated')}</span>` : ''}`);
+  step(2, 'run'); await wait(600); if (gone()) return;
+  const v = crossValidate(g, im);
+  step(2, { confirmed: 'done', needs_confirmation: 'warn', rejected: 'fail' }[v.status], V(...XV_ST[v.status]));
+  cam.classList.add('done'); rec.querySelector('h2').textContent = V('Kết quả xác minh', 'Verification result');
+  $('#rec-out').innerHTML = imageHtml(im) + crossHtml(v) + actionsHtml(v)
+    + `<details class="raw"><summary>${V('Kết quả có cấu trúc (JSON)', 'Structured result (JSON)')}</summary><pre>${esc(JSON.stringify({ ...v, reason: v.reason.en }, null, 2))}</pre></details>`;
 }
-const matchCard = (l, d, score) => `<div class="match">${tile(l)}<div class="grow"><b>${esc(l.name.en)}</b><small>${esc(l.name.vi)}${d != null ? ' · ' + km(d) : ''}</small></div>${score != null ? `<span class="conf" title="${V('Độ tin cậy', 'Confidence')}">${Math.round(score * 100)}%</span>` : ''}</div>`;
+const IMG_ST = { matched: ['Khớp', 'Matched'], uncertain: ['Chưa chắc chắn', 'Uncertain'], no_match: ['Không khớp', 'No match'] };
+const XV_ST = { confirmed: ['Đã xác nhận', 'Confirmed'], needs_confirmation: ['Cần bạn xác nhận', 'Needs your confirmation'], rejected: ['Bị từ chối', 'Rejected'] };
+const AGREE = { agree: ['Đồng thuận', 'Agree'], conflict: ['Mâu thuẫn', 'Conflict'], image_only: ['Chỉ có ảnh (không GPS)', 'Image only (no GPS)'], image_failed: ['Ảnh thất bại, chỉ có GPS', 'Image failed, GPS only'], none: ['Không có địa danh hỗ trợ', 'No supported place'] };
+const toneOf = v => (v.status === 'confirmed' ? 'ok' : v.status === 'rejected' || v.agreement === 'conflict' ? 'bad' : 'warn');
+// Screen 3: what the image matcher saw, next to the reference it was compared with
+function imageHtml(im) {
+  const best = loc(im.bestId), sample = best && !best.referenceImages[0];
+  return `<section class="vsec"><h3>${V('Khớp ảnh', 'Image matching')}</h3>
+    <div class="cmp">
+      <figure><img src="${esc(CAM.photo)}" alt="${V('Ảnh của bạn', 'Your photo')}"><figcaption>${V('Ảnh của bạn', 'Your photo')}</figcaption></figure>
+      <figure>${best ? `<img src="${esc(refUrl(best))}" alt="${V('Ảnh tham chiếu', 'Reference image')} ${esc(best.name.en)}">` : `<div class="cmp-empty">${icon('image')}</div>`}<figcaption>${best ? `${V('Tham chiếu', 'Reference')}${best.referenceImages[0]?.sample || sample ? V(' · mẫu minh hoạ', ' · sample illustration') : ''}` : V('Không có ảnh khớp', 'No matching reference')}</figcaption></figure>
+    </div>
+    <dl class="kv">
+      <div><dt>${V('Trạng thái', 'Status')}</dt><dd><span class="st ${im.status === 'matched' ? 'ok' : im.status === 'uncertain' ? 'warn' : 'bad'}">${V(...IMG_ST[im.status])}</span></dd></div>
+      <div><dt>${V('Ứng viên tốt nhất', 'Best visual candidate')}</dt><dd>${best ? esc(best.name.en) : '—'}</dd></div>
+      <div><dt>${V('Độ tương đồng', 'Similarity')}</dt><dd>${im.service ? `${im.score.toFixed(2)}${im.simulated ? ` <span class="tag amber">${V('mô phỏng', 'simulated')}</span>` : ''}` : '—'}</dd></div>
+    </dl>
+    ${im.service ? '' : `<p class="tiny muted mt-8">${V('Chưa kết nối dịch vụ so khớp ảnh nên không có điểm số, và ảnh không được dùng để xác nhận nơi nào.', 'No image-matching service is connected, so there is no score and the photo confirms nothing.')}</p>`}
+  </section>`;
+}
+// Screen 4: both results side by side, then the verdict
+function crossHtml(v) {
+  const g = v.gps, im = v.image;
+  const gpsCell = g.gpsStatus === 'unavailable' ? V('Không khả dụng', 'Unavailable') : g.status === 'none' ? V('Không có địa danh hỗ trợ', 'No supported place') : `${names(g.candidates.map(c => c.id))}${g.gpsStatus === 'inaccurate' ? V(' (chưa chính xác)', ' (inaccurate)') : ''}`;
+  const imgCell = im.status === 'matched' ? names([im.bestId]) : im.status === 'uncertain' ? `${V('Chưa chắc', 'Unsure')}: ${names([im.bestId])}?` : im.service ? V('Không nhận diện được', 'Not recognised') : V('Chưa kết nối dịch vụ', 'No service connected');
+  return `<section class="vsec"><h3>${V('Đối chiếu chéo', 'Cross-validation')}</h3>
+    <table class="xv"><tbody>
+      <tr><th scope="row">${V('Khớp GPS', 'GPS matching')}</th><td>${gpsCell}</td></tr>
+      <tr><th scope="row">${V('Khớp ảnh', 'Image matching')}</th><td>${imgCell}</td></tr>
+      <tr><th scope="row">${V('Đồng thuận', 'Agreement')}</th><td>${V(...AGREE[v.agreement])}</td></tr>
+      <tr><th scope="row">${V('Kết quả cuối', 'Final result')}</th><td><b>${v.finalId ? names([v.finalId]) : '—'}</b></td></tr>
+    </tbody></table>
+    <div class="verdict ${toneOf(v)}">${icon(toneOf(v) === 'ok' ? 'check' : toneOf(v) === 'bad' ? 'x' : 'bulb')}<div><b>${V(...XV_ST[v.status])}${isDemo() ? ` · ${V('Demo, mô phỏng', 'Demo, simulated')}` : ''}</b><p>${esc(L(v.reason))}</p></div></div>
+  </section>`;
+}
 const retakeBtn = () => `<button class="btn white sm grow" onclick="route()">${icon('refresh', 'sm')} ${V('Chụp lại', 'Retake')}</button>`;
-function showResult(m, step) {
-  const out = $('#rec-out'), cands = G.status === 'near' ? G.near : [];
-  $('#rec h2').textContent = V('Kết quả', 'Result');
-  if (!m.simulated && loc(m.id)) { // a real matcher names a place only above the threshold
-    const c = cands.find(x => x.l.id === m.id), score = c ? combine(m.score, c.d, c.l.radius) : m.score;
-    if (score >= MATCH_MIN) {
-      step(2, 'done', V('Đã nhận diện', 'Identified'));
-      out.innerHTML = `${matchCard(loc(m.id), c?.d, score)}<button class="btn mt-16" onclick="openLesson('${m.id}',true)">${V('Bắt đầu học', 'Start learning')} ${icon('right')}</button><div class="row mt-16" style="gap:10px">${retakeBtn()}<button class="btn white sm grow" onclick="choosePlace(true)">${V('Không phải nơi này', 'Not this place')}</button></div>`;
-      return;
-    }
-  }
-  if (cands.length === 1) {
-    step(2, 'done', V('Cần bạn xác nhận', 'Needs your confirmation'));
-    out.innerHTML = `<p class="rec-q">${V('Có phải bạn đang chụp…', 'Is this…')}</p>${matchCard(cands[0].l, cands[0].d)}
-      <p class="tiny muted mt-8">${V('Kết quả mô phỏng: đây là địa danh hỗ trợ duy nhất gần bạn. GPS cho biết bạn ở đâu, không cho biết camera đang hướng vào gì, nên hãy xác nhận giúp mình.', 'Simulated result: this is the only supported place near you. GPS shows where you are, not what your camera sees, so please confirm.')}</p>
-      <button class="btn mt-16" onclick="openLesson('${cands[0].l.id}',true)">${V('Đúng rồi, bắt đầu học', 'Yes, start learning')} ${icon('right')}</button>
-      <div class="row mt-16" style="gap:10px">${retakeBtn()}<button class="btn white sm grow" onclick="choosePlace(true)">${V('Nơi khác', 'Somewhere else')}</button></div>`;
-    return;
-  }
-  const list = cands.length ? cands : LOCS.map(l => ({ l, d: G.pos ? distM(G.pos, l) : null })).sort((a, b) => (a.d ?? 0) - (b.d ?? 0));
-  step(2, 'done', cands.length ? V('Nhiều địa danh ở gần nhau', 'Several places are close together') : V('Không khớp được tự động', 'Couldn’t match automatically'));
-  out.innerHTML = `<p class="rec-q">${cands.length ? V('Bạn chụp địa danh nào?', 'Which place did you photograph?') : V('Ảnh chụp địa danh nào? (Chế độ Demo)', 'Which place is in your photo? (Demo Mode)')}</p>
-    ${list.map(x => locRow(x.l, x.d, true)).join('')}<div class="row mt-16">${retakeBtn()}</div>`;
+function actionsHtml(v) {
+  const dist = id => G.gps.candidates.find(c => c.id === id)?.d;
+  if (v.status === 'confirmed') return `<button class="btn mt-16" onclick="openLesson('${v.finalId}','auto')">${V('Bắt đầu học', 'Start learning')}: ${names([v.finalId])} ${icon('right')}</button>
+    <div class="row mt-16" style="gap:10px">${retakeBtn()}<button class="btn white sm grow" onclick="choosePlace('manual')">${V('Không phải nơi này', 'Not this place')}</button></div>`;
+  if (v.status === 'rejected') return `<a class="btn mt-16" href="#roleplay">${icon('chat')} ${V('Luyện tiếng Anh chung', 'Practise general English')}</a>
+    <div class="row mt-16" style="gap:10px">${retakeBtn()}<a class="btn white sm grow" href="#explore">${V('Địa danh được hỗ trợ', 'Supported places')}</a></div>`;
+  return `<p class="rec-q">${V('Chọn nơi đúng (bạn tự xác nhận, không phải xác minh tự động)', 'Pick the right place (your confirmation, not automatic verification)')}</p>
+    ${[...new Set(v.options)].map(id => locRow(loc(id), dist(id), 'manual')).join('')}
+    <div class="row mt-16" style="gap:10px">${retakeBtn()}<button class="btn white sm grow" onclick="choosePlace('manual')">${V('Nơi khác', 'Somewhere else')}</button></div>`;
 }
 const tile = l => `<span class="tile-3d sm" style="background:linear-gradient(145deg,${esc(l.bg[0])},${esc(l.bg[1])})">${img(l.icon)}</span>`;
-const locRow = (l, d, ph, right = '') => `<button class="loc-row" onclick="openLesson('${l.id}',${ph})">${tile(l)}<span class="grow"><b>${esc(l.name.en)}</b><small>${esc(l.name.vi)}${d != null ? ' · ' + km(d) : ''}</small></span>${right}${icon('chevR')}</button>`;
-function choosePlace(ph) {
-  const list = LOCS.map(l => ({ l, d: G.pos ? distM(G.pos, l) : null })).sort((a, b) => (a.d ?? 0) - (b.d ?? 0));
-  openSheet(`<h2>${V('Chọn địa điểm', 'Choose a place')}</h2><p class="small muted mt-8">${V('Chế độ Demo: các địa danh mẫu do EchoLạc cấu hình.', 'Demo Mode: sample places configured by EchoLạc.')}</p><div class="mt-16">${list.map(x => locRow(x.l, x.d, ph)).join('')}</div>`);
+const locRow = (l, d, how, right = '') => `<button class="loc-row" onclick="openLesson('${l.id}','${how}')">${tile(l)}<span class="grow"><b>${esc(l.name.en)}</b><small>${esc(l.name.vi)}${d != null ? ' · ' + km(d) : ''}</small></span>${right}${icon('chevR')}</button>`;
+function choosePlace(how) {
+  openSheet(`<h2>${V('Chọn địa điểm', 'Choose a place')}</h2><p class="small muted mt-8">${how === 'manual' ? V('Bạn tự xác nhận nơi này. Bài học sẽ ghi rõ là xác nhận thủ công.', 'You confirm this place yourself. The lesson will say it was confirmed by hand.') : V('Học kiểu thư viện, không xác minh vị trí.', 'Library study, no location check.')}</p><div class="mt-16">${LOCS.map(l => locRow(l, null, how)).join('')}</div>`);
 }
-function openLesson(id, withPhoto) { S.learnTab = 'discover'; CAM.photoFor = withPhoto && CAM.photo ? id : ''; location.hash = '#learn/' + id; }
+// how: 'auto' = both matchers agreed, 'manual' = learner confirmed, 'library' = opened from the list, no check
+function openLesson(id, how) {
+  S.learnTab = 'discover';
+  CAM.verify = { id, how, demo: isDemo() && how !== 'library' };
+  CAM.photoFor = how !== 'library' && CAM.photo ? id : '';
+  location.hash = '#learn/' + id;
+}
+function verifyTag(id) {
+  const v = CAM.verify?.id === id ? CAM.verify : { how: 'library' }, demo = v.demo ? ` · ${V('Demo', 'Demo')}` : '';
+  return v.how === 'auto' ? `<span class="tag green">${icon('check', 'sm')} ${V('Đã xác minh kép: GPS + ảnh', 'Double-verified: GPS + image')}${demo}</span>`
+    : v.how === 'manual' ? `<span class="tag amber">${V('Bạn tự xác nhận', 'Confirmed by you')}${demo}</span>`
+    : `<span class="tag">${V('Học từ thư viện · không xác minh vị trí', 'Library study · location not checked')}</span>`;
+}
 function clearCamSheet() {
   openSheet(`<h2>${V('Xoá lịch sử học?', 'Delete learning history?')}</h2><p class="muted mt-8">${V('Tiến độ học của mọi địa danh và ảnh đang mở sẽ bị xoá. Không thể hoàn tác.', 'Lesson progress for every place and any open photo will be deleted. This can’t be undone.')}</p>
     <button class="btn mt-24" onclick="clearCam()">${icon('trash')} ${V('Xoá', 'Delete')}</button><button class="btn white mt-16" onclick="closeSheet()">${V('Huỷ', 'Cancel')}</button>`);
 }
-function clearCam() { S.cam = {}; if (CAM.photo) URL.revokeObjectURL(CAM.photo); CAM.photo = CAM.photoFor = ''; save(); route(); toast(V('Đã xoá lịch sử học', 'Learning history deleted')); }
+function clearCam() { S.cam = {}; setPhoto(''); CAM.verify = null; save(); route(); toast(V('Đã xoá lịch sử học', 'Learning history deleted')); }
 
 // Lesson progress: d = Discover read, w = vocab indexes heard, p = practice finished
 const prog = id => S.cam[id] || { d: 0, w: [], p: 0 };
