@@ -452,6 +452,7 @@ function selfTest() {
     const want = { A: 'confirmed', B: 'confirmed', C: 'needs_confirmation', D: 'needs_confirmation', E: 'needs_confirmation', F: 'rejected' };
     Object.entries(cases).forEach(([k, v]) => console.assert(v.case === k && v.status === want[k], `crossValidate case ${k}`, v.case, v.status));
     console.assert(cases.A.finalId === db.id && cases.C.finalId === null && cases.F.finalId === null, 'only agreement yields a final id');
+    console.assert(labelLoc('Chùa Cầu') === cb && labelLoc('Chùa Cầu') === cb && labelLoc('Class 3') === undefined, 'model labels map to places (NFC-safe)');
   }
   console.assert(fix('It have more than four hundred years') === 'It is more than four hundred years old', fix('It have more than four hundred years'));
   console.assert(fix('The bridge have a small temple.') === 'The bridge has a small temple.', fix('The bridge have a small temple.'));
@@ -1405,8 +1406,28 @@ function imageMatch(scores, simulated) {
   const status = score >= IMG_MATCH ? 'matched' : score >= IMG_UNSURE ? 'uncertain' : 'no_match';
   return { status, bestId: status === 'no_match' ? null : best, score, others: ranked.slice(1).map(r => r[0]), service: true, simulated };
 }
-// shortcut: no image-similarity service is connected, so live mode returns no scores. Wire an embedding/similarity API here that compares the photo with each loc.referenceImages and returns { id: 0–1 }.
-const similarityService = () => null;
+// Real image matcher: the Teachable Machine model in model/, loaded only when a photo needs it
+const TM_LIBS = ['https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js', 'https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.5/dist/teachablemachine-image.min.js'];
+const loadScript = src => new Promise((ok, fail) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = () => fail(new Error('Could not load ' + src)); document.head.append(s); });
+let tmModel = null;
+function loadModel() {
+  tmModel ||= TM_LIBS.reduce((p, src) => p.then(() => window.tmImage || loadScript(src)), Promise.resolve())
+    .then(() => tmImage.load('model/model.json', 'model/metadata.json'))
+    .catch(e => { tmModel = null; throw e; }); // let the next photo retry
+  return tmModel;
+}
+const norm = s => String(s).normalize('NFC').trim().toLowerCase();
+// Model labels map to locations by id, Vietnamese or English name; other labels (e.g. "Class 3") mean "not a supported place"
+const labelLoc = label => LOCS.find(l => [l.id, l.name.vi, l.name.en].some(n => norm(n) === norm(label)));
+async function similarityService(url) {
+  try {
+    const model = await loadModel(), el = new Image();
+    el.src = url; await el.decode();
+    const scores = {};
+    (await model.predict(el)).forEach(p => { const l = labelLoc(p.className); if (l) scores[l.id] = p.probability; });
+    return scores;
+  } catch (e) { console.warn('[EchoLac] image model unavailable', e); return null; } // null → "no service", never a guess
+}
 
 // 3. Cross-validation Service: the only stage allowed to pick a lesson (spec §5, cases A–F)
 function crossValidate(g, im) {
@@ -1432,12 +1453,17 @@ const SCENARIOS = {
   multi: { vi: '3 · Nhiều nơi gần nhau', en: '3 · Several nearby', at: 'covered-bridge', sim: { 'covered-bridge': 0.86, 'hoi-an-ancient-town': 0.58 } },
   imgfail: { vi: '4 · Ảnh không nhận ra', en: '4 · Image fails', at: 'han-market', sim: { 'han-market': 0.34, 'dragon-bridge': 0.21 } },
   nogps: { vi: '5 · Không có GPS', en: '5 · No GPS', at: null, sim: { 'hoi-an-ancient-town': 0.84, 'covered-bridge': 0.49 } },
+  model: { vi: '6 · Model thật, GPS mẫu Hội An', en: '6 · Real model, sample GPS (Hoi An)', at: 'covered-bridge', real: true },
 };
 const isDemo = () => CAM.scen !== 'live';
+const realImage = () => !isDemo() || !!SCENARIOS[CAM.scen].real; // image result comes from the actual model
+const demoLabel = () => (realImage() ? V('Demo: GPS mẫu, ảnh nhận diện thật', 'Demo: sample GPS, real image model') : V('Demo, mô phỏng', 'Demo, simulated'));
 const topSim = s => Object.entries(s.sim).sort((a, b) => b[1] - a[1])[0][0];
+const MODEL_NOTE = () => V('Ảnh được nhận diện bằng model Teachable Machine thật trong thư mục model/. Model hiện chỉ học vài địa danh; nơi khác sẽ ra “không nhận diện được”.', 'Photos are recognised by the real Teachable Machine model in model/. It only knows a few places so far; others come out “not recognised”.');
 function scenNote() {
   const s = SCENARIOS[CAM.scen];
-  if (!isDemo()) return `${icon('bulb')}<p>${V('<b>Chế độ thật.</b> Dùng GPS và camera của bạn. Chưa kết nối dịch vụ so khớp ảnh, nên ảnh luôn “không nhận diện được” và bạn sẽ tự xác nhận nơi đúng (trường hợp E).', '<b>Live mode.</b> Uses your real GPS and camera. No image-matching service is connected yet, so the photo is always “not recognised” and you confirm the place yourself (case E).')}</p>`;
+  if (!isDemo()) return `${icon('bulb')}<p>${V('<b>Chế độ thật.</b> Dùng GPS và camera của bạn.', '<b>Live mode.</b> Uses your real GPS and camera.')} ${MODEL_NOTE()}</p>`;
+  if (s.real) return `${icon('bulb')}<p><b>${demoLabel()}.</b> ${V('GPS mẫu: cạnh Chùa Cầu (Chùa Cầu và Phố cổ Hội An đều trong bán kính).', 'Sample GPS: next to the Covered Bridge (it and Hoi An Ancient Town are both in range).')} ${MODEL_NOTE()} ${V('Thử chụp ảnh Chùa Cầu, Ngũ Hành Sơn, hoặc nơi khác.', 'Try a photo of the Covered Bridge, the Marble Mountains, or somewhere else.')}</p>`;
   const at = loc(s.at), top = loc(topSim(s));
   return `${icon('bulb')}<p><b>${V('Chế độ Demo, kết quả mô phỏng.', 'Demo Mode, simulated results.')}</b> ${V('GPS mẫu', 'Sample GPS')}: ${at ? `${V('cạnh', 'next to')} ${esc(at.name.en)}` : V('bị tắt', 'off')} · ${V('Ảnh mô phỏng', 'Simulated image')}: ${esc(top?.name.en || '?')} ${s.sim[topSim(s)].toFixed(2)}. ${V('Camera vẫn là thật; không có camera thì nút chụp dùng ảnh mẫu.', 'The camera is still real; without one, the shutter uses a sample image.')}</p>`;
 }
@@ -1510,7 +1536,7 @@ function camFail(name) {
   $('#cam-hint').textContent = name === 'NotAllowedError'
     ? V('Camera đang bị chặn. Bật quyền camera trong cài đặt trình duyệt, chọn một ảnh có sẵn, hoặc chọn nơi thủ công.', 'Camera access is blocked. Allow it in your browser settings, pick a photo, or choose the place by hand.')
     : V('Không mở được camera trên thiết bị này. Hãy chọn một ảnh có sẵn hoặc chọn nơi thủ công.', 'The camera can’t open on this device. Pick a photo or choose the place by hand.');
-  if (isDemo()) { $('#shutter').disabled = false; $('#cam-hint').textContent += ' ' + V('Demo: nút chụp sẽ dùng ảnh mẫu.', 'Demo: the shutter will use a sample image.'); }
+  if (!realImage()) { $('#shutter').disabled = false; $('#cam-hint').textContent += ' ' + V('Demo: nút chụp sẽ dùng ảnh mẫu.', 'Demo: the shutter will use a sample image.'); }
 }
 function stopCam() { CAM.tok = null; CAM.stream?.getTracks().forEach(t => t.stop()); CAM.stream = null; }
 async function toggleTorch(b) {
@@ -1520,7 +1546,7 @@ async function toggleTorch(b) {
 const setPhoto = url => { if (CAM.photo.startsWith('blob:')) URL.revokeObjectURL(CAM.photo); CAM.photo = url; CAM.photoFor = ''; };
 function shoot() {
   const v = $('#cam-v');
-  if (!CAM.stream && isDemo()) { stopCam(); setPhoto(refUrl(loc(topSim(SCENARIOS[CAM.scen])))); return recognise(); } // no camera: sample image, still simulated
+  if (!CAM.stream && !realImage()) { stopCam(); setPhoto(refUrl(loc(topSim(SCENARIOS[CAM.scen])))); return recognise(); } // no camera: sample image, still simulated
   if (!CAM.stream || !v.videoWidth) return;
   const c = document.createElement('canvas'); c.width = v.videoWidth; c.height = v.videoHeight;
   c.getContext('2d').drawImage(v, 0, 0);
@@ -1539,8 +1565,9 @@ async function recognise() {
   const li = [...rec.querySelectorAll('li')], step = (i, st, note = '') => { li[i].dataset.s = st; li[i].querySelector('small').innerHTML = note; };
   const wait = ms => new Promise(r => setTimeout(r, ms)), gone = () => !rec.isConnected;
   step(0, gpsTone(g) === 'ok' ? 'done' : 'warn', `${V(...GPS_ST[g.gpsStatus])} · ${V(...GPS_MT[g.status])}`);
-  step(1, 'run'); await wait(1100); if (gone()) return;
-  const im = isDemo() ? imageMatch(s.sim, true) : imageMatch(similarityService(CAM.photo), false);
+  step(1, 'run', realImage() ? V('Đang chạy model nhận diện ảnh…', 'Running the image model…') : '');
+  const [scores] = await Promise.all([realImage() ? similarityService(CAM.photo) : s.sim, wait(1100)]); if (gone()) return;
+  const im = imageMatch(scores, !realImage());
   step(1, im.status === 'matched' ? 'done' : im.status === 'uncertain' ? 'warn' : 'fail', `${V(...IMG_ST[im.status])}${im.simulated ? ` <span class="tag amber">${V('mô phỏng', 'simulated')}</span>` : ''}`);
   step(2, 'run'); await wait(600); if (gone()) return;
   const v = crossValidate(g, im);
@@ -1564,9 +1591,9 @@ function imageHtml(im) {
     <dl class="kv">
       <div><dt>${V('Trạng thái', 'Status')}</dt><dd><span class="st ${im.status === 'matched' ? 'ok' : im.status === 'uncertain' ? 'warn' : 'bad'}">${V(...IMG_ST[im.status])}</span></dd></div>
       <div><dt>${V('Ứng viên tốt nhất', 'Best visual candidate')}</dt><dd>${best ? esc(best.name.en) : '—'}</dd></div>
-      <div><dt>${V('Độ tương đồng', 'Similarity')}</dt><dd>${im.service ? `${im.score.toFixed(2)}${im.simulated ? ` <span class="tag amber">${V('mô phỏng', 'simulated')}</span>` : ''}` : '—'}</dd></div>
+      <div><dt>${im.simulated ? V('Độ tương đồng', 'Similarity') : V('Xác suất từ model', 'Model probability')}</dt><dd>${im.service ? `${im.score.toFixed(2)}${im.simulated ? ` <span class="tag amber">${V('mô phỏng', 'simulated')}</span>` : ''}` : '—'}</dd></div>
     </dl>
-    ${im.service ? '' : `<p class="tiny muted mt-8">${V('Chưa kết nối dịch vụ so khớp ảnh nên không có điểm số, và ảnh không được dùng để xác nhận nơi nào.', 'No image-matching service is connected, so there is no score and the photo confirms nothing.')}</p>`}
+    ${im.service ? '' : `<p class="tiny muted mt-8">${V('Không tải được model nhận diện ảnh (kiểm tra kết nối mạng), nên không có điểm số và ảnh không xác nhận nơi nào.', 'The image model couldn’t load (check your connection), so there is no score and the photo confirms nothing.')}</p>`}
   </section>`;
 }
 // Screen 4: both results side by side, then the verdict
@@ -1581,7 +1608,7 @@ function crossHtml(v) {
       <tr><th scope="row">${V('Đồng thuận', 'Agreement')}</th><td>${V(...AGREE[v.agreement])}</td></tr>
       <tr><th scope="row">${V('Kết quả cuối', 'Final result')}</th><td><b>${v.finalId ? names([v.finalId]) : '—'}</b></td></tr>
     </tbody></table>
-    <div class="verdict ${toneOf(v)}">${icon(toneOf(v) === 'ok' ? 'check' : toneOf(v) === 'bad' ? 'x' : 'bulb')}<div><b>${V(...XV_ST[v.status])}${isDemo() ? ` · ${V('Demo, mô phỏng', 'Demo, simulated')}` : ''}</b><p>${esc(L(v.reason))}</p></div></div>
+    <div class="verdict ${toneOf(v)}">${icon(toneOf(v) === 'ok' ? 'check' : toneOf(v) === 'bad' ? 'x' : 'bulb')}<div><b>${V(...XV_ST[v.status])}${isDemo() ? ` · ${demoLabel()}` : ''}</b><p>${esc(L(v.reason))}</p></div></div>
   </section>`;
 }
 const retakeBtn = () => `<button class="btn white sm grow" onclick="route()">${icon('refresh', 'sm')} ${V('Chụp lại', 'Retake')}</button>`;
