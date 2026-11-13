@@ -55,15 +55,15 @@ window.ECHOLAC_LOCATIONS = [
     visualKeywords: ['small covered bridge', 'tiled roof', 'old town'],
     built: { vi: 'Cộng đồng người Nhật xây cầu vào khoảng những năm 1590.', en: 'The Japanese community built it in the 1590s.' },
     historicalSignificance: null, culturalBackground: null,
-    architecture: { vi: 'Một bên cầu có một ngôi miếu nhỏ.', en: 'It has a small temple on one side.' },
+    architecture: { vi: 'Trên cầu có một ngôi miếu nhỏ thờ Bắc Đế Trấn Vũ, không thờ Phật.', en: 'A small shrine on the bridge honours Bac De Tran Vu, not the Buddha.' },
     interestingFacts: [
       { vi: 'Cây cầu đã hơn 400 năm tuổi.', en: 'The bridge is more than 400 years old.' },
       { vi: 'Cây cầu được in trên tờ tiền 20.000 đồng.', en: 'It is pictured on the 20,000-dong banknote.' },
-      { vi: 'Bên trong có một ngôi miếu nhỏ.', en: 'There is a small temple inside.' },
+      { vi: 'Hai đầu cầu có tượng khỉ và tượng chó bằng gỗ.', en: 'Wooden statues of a monkey and a dog stand at the two ends.' },
     ],
     vocab: [
       { word: 'covered', ipa: '/ˈkʌvəd/', en: 'having a roof or something over the top', vi: 'có mái che', example: 'It is a covered bridge.' },
-      { word: 'temple', ipa: '/ˈtempl/', en: 'a building where people pray', vi: 'ngôi miếu, đền', example: 'There is a small temple inside.' },
+      { word: 'shrine', ipa: '/ʃraɪn/', en: 'a small place where people honour a god or a saint', vi: 'miếu, điện thờ nhỏ', example: 'There is a small shrine on the bridge.', tip: { vi: 'Tròn môi cho âm /ʃ/ và giữ âm cuối /n/.', en: 'Round your lips for /ʃ/ and keep the final /n/.' } },
       { word: 'banknote', ipa: '/ˈbæŋknəʊt/', en: 'a piece of paper money', vi: 'tờ tiền', example: 'It is on the 20,000-dong banknote.' },
       { word: 'century', ipa: '/ˈsentʃəri/', en: 'a period of 100 years', vi: 'thế kỷ', example: 'It was built in the 16th century.' },
       { word: 'community', ipa: '/kəˈmjuːnəti/', en: 'a group of people who live in the same place', vi: 'cộng đồng', example: 'The Japanese community built the bridge.', tip: { vi: 'Nhấn âm thứ hai: com-MU-ni-ty.', en: 'Stress the second syllable: com-MU-ni-ty.' } },
