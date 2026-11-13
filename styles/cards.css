@@ -1,0 +1,14 @@
+/* ---------- Cards ---------- */
+.card {
+  background: var(--surface); border-radius: var(--r-card); padding: 20px;
+  box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.7);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.card.blue { background: var(--card-blue); box-shadow: 0 12px 30px color-mix(in srgb, var(--primary) 18%, transparent); }
+.card.soft { background: var(--card-blue); }
+.card.flat { box-shadow: none; }
+.card + .card { margin-top: 16px; }
+.tile-3d { width: 72px; height: 72px; border-radius: 20px; background: #fff; display: grid; place-items: center; box-shadow: 0 10px 26px color-mix(in srgb, var(--primary) 22%, transparent); flex: none; }
+.tile-3d img { width: 46px; height: 46px; }
+.logo-tile { width: 84px; height: 84px; margin-left: auto; margin-right: auto; border-radius: 22px; }
+.logo-tile img { width: 64px; height: 64px; }

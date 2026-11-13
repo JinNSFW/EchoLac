@@ -1,0 +1,63 @@
+/* ---------- Theme colours ----------
+   Registered so they animate when the place theme changes (data-theme on <html>). */
+@property --navy { syntax: '<color>'; inherits: true; initial-value: #726958; }
+@property --navy-2 { syntax: '<color>'; inherits: true; initial-value: #776D5B; }
+@property --primary { syntax: '<color>'; inherits: true; initial-value: #9C8466; }
+@property --primary-soft { syntax: '<color>'; inherits: true; initial-value: #F3E6D0; }
+@property --card-blue { syntax: '<color>'; inherits: true; initial-value: #FFF4E1; }
+@property --tint { syntax: '<color>'; inherits: true; initial-value: #F7F1E7; }
+@property --tint-2 { syntax: '<color>'; inherits: true; initial-value: #ECE6DB; }
+@property --line { syntax: '<color>'; inherits: true; initial-value: #EFE8DC; }
+@property --muted { syntax: '<color>'; inherits: true; initial-value: #6E6453; }
+@property --faint { syntax: '<color>'; inherits: true; initial-value: #776C5B; }
+@property --accent-line { syntax: '<color>'; inherits: true; initial-value: #D2C4AC; }
+@property --bg1 { syntax: '<color>'; inherits: true; initial-value: #FFF4E2; }
+@property --bg2 { syntax: '<color>'; inherits: true; initial-value: #FEF6E8; }
+@property --bg3 { syntax: '<color>'; inherits: true; initial-value: #FCF9F3; }
+@property --bg4 { syntax: '<color>'; inherits: true; initial-value: #F1EFEB; }
+@property --page { syntax: '<color>'; inherits: true; initial-value: #EEE9E1; }
+@property --accent { syntax: '<color>'; inherits: true; initial-value: #C98A1B; }
+/* Theme values come from THEMES in app.js (one block per place, written into <style id="themes">).
+   The initial-values above are the default "Nơi khác" theme, used before the script runs. */
+:root {
+  transition: --navy .4s ease, --navy-2 .4s ease, --primary .4s ease, --primary-soft .4s ease, --card-blue .4s ease, --accent .4s ease,
+    --tint .4s ease, --tint-2 .4s ease, --line .4s ease, --muted .4s ease, --faint .4s ease, --accent-line .4s ease,
+    --bg1 .4s ease, --bg2 .4s ease, --bg3 .4s ease, --bg4 .4s ease, --page .4s ease;
+}
+
+:root {
+  --surface: rgba(255, 255, 255, .88);
+  --text: var(--navy);
+  --success: #1FAF6E;
+  --success-tint: #E6F8EE;
+  --lantern-a: #F59E2B;
+  --lantern-b: #EF5B2A;
+  --lantern-tint: #FFF1E0;
+  --gold: #F5B400;
+  --danger: #E5484D;
+  --shadow: 0 8px 24px color-mix(in srgb, var(--navy) 8%, transparent);
+  --shadow-lg: 0 18px 40px color-mix(in srgb, var(--navy) 16%, transparent);
+  --r-card: 24px;
+  --r-field: 18px;
+  --col: 480px;
+}
+[hidden] { display: none !important; }
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  position: relative; /* .bg is absolute and spans the whole page height */
+  font-family: 'Lexend', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--page);
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; border: 0; background: none; padding: 0; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+h1, h2, h3, p { margin: 0; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; border-radius: 12px; }

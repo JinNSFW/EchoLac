@@ -1,0 +1,44 @@
+/* ---------- Home ---------- */
+.avatar { width: 58px; height: 58px; border-radius: 50%; background: linear-gradient(145deg, #FFE3C8, #F8B98E); border: 3px solid #fff; box-shadow: var(--shadow); position: relative; flex: none; display: grid; place-items: center; overflow: visible; }
+.avatar img { width: 80%; height: 80%; }
+.avatar .online { position: absolute; right: -2px; bottom: -2px; width: 18px; height: 18px; border-radius: 50%; background: var(--success); border: 3px solid #fff; }
+.hello { font-size: 24px; font-weight: 700; }
+.xp-line { font-size: 14px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+.xp-line img { width: 18px; height: 18px; }
+.hero { position: relative; padding: 24px 22px 22px; margin-top: 26px; }
+.hero .peek { position: absolute; right: 8px; top: -34px; width: 78px; height: 78px; transform: rotate(8deg); filter: drop-shadow(0 10px 14px color-mix(in srgb, var(--navy) 25%, transparent)); }
+.hero h2 { font-size: 19px; font-weight: 700; padding-right: 60px; }
+.hero p { color: var(--muted); margin-top: 10px; font-size: 15px; padding-right: 8px; }
+.track { height: 8px; border-radius: 8px; background: rgba(255,255,255,.6); position: relative; }
+.track > i { position: absolute; inset: 0 auto 0 0; border-radius: 8px; background: var(--navy); width: 0; transition: width 1.1s cubic-bezier(.2,.7,.2,1); }
+.track.blue > i { background: linear-gradient(90deg, var(--primary), var(--primary)); }
+.track.light { background: var(--tint); }
+.track .knob { position: absolute; top: 50%; width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 3px solid var(--navy); transform: translate(-50%, -50%); transition: left 1.1s cubic-bezier(.2,.7,.2,1); }
+.go-btn { width: 52px; height: 52px; border-radius: 50%; background: #fff; display: grid; place-items: center; color: var(--navy); box-shadow: var(--shadow); flex: none; }
+.go-btn .ico { width: 24px; height: 24px; }
+
+.week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; text-align: center; }
+.week .lbl { font-size: 12px; color: var(--faint); margin-bottom: 10px; }
+.flame { width: 100%; max-width: 40px; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; display: grid; place-items: center; background: var(--tint); }
+.flame i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-line); }
+.flame.on { background: linear-gradient(160deg, #F7A04A, #EE5A2B); box-shadow: 0 6px 14px rgba(239,91,42,.35); }
+.flame.on img { width: 20px; height: 20px; filter: brightness(0) invert(1); }
+.flame.today { box-shadow: 0 0 0 2px #F7A04A inset; }
+.cal-day { width: 100%; max-width: 40px; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; display: grid; place-items: center; font-size: 14px; color: var(--navy); position: relative; }
+.cal-day.today { background: var(--primary-soft); color: var(--navy); font-weight: 600; }
+.cal-day.done::after { content: ''; position: absolute; bottom: 3px; width: 5px; height: 5px; border-radius: 50%; background: var(--lantern-b); }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.skill-card { position: relative; background: var(--card-blue); border-radius: 28px; padding: 22px 12px 18px; text-align: center; box-shadow: 0 10px 26px color-mix(in srgb, var(--primary) 16%, transparent); margin-top: 18px; transition: transform .2s; }
+.skill-card:active { transform: scale(.97); }
+.skill-card .peek { position: absolute; right: -4px; top: -26px; width: 62px; height: 62px; filter: drop-shadow(0 8px 10px color-mix(in srgb, var(--navy) 25%, transparent)); }
+.skill-card h3 { font-size: 16px; font-weight: 600; margin-top: 10px; }
+.skill-card p { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.35; }
+.ring { position: relative; width: 84px; height: 84px; margin: 0 auto; }
+.ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring .bgc { stroke: rgba(255,255,255,.55); }
+.ring .fg { stroke: var(--navy); transition: stroke-dashoffset 1.2s cubic-bezier(.2,.7,.2,1); }
+.ring b { position: absolute; inset: 0; display: grid; place-items: center; font-size: 18px; font-weight: 600; }
+
+.continue { display: flex; align-items: center; gap: 14px; }
+.continue .play-sm { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.6); display: grid; place-items: center; color: var(--primary); }

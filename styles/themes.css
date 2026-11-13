@@ -1,0 +1,57 @@
+/* ---------- Theme background ----------
+   .bg: absolute, spans the WHOLE page height, sits under the content: gradient, pattern, frame, landmark.
+   .fx-layer: fixed to the screen, holds the light ambient animation. Both sit at z-index -1 (under every card). */
+.bg {
+  position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: min(100%, var(--col)); z-index: -1; overflow: hidden; pointer-events: none;
+  background: linear-gradient(180deg, var(--bg1) 0, var(--bg2) 380px, var(--bg3) 900px, var(--bg4) 100%);
+}
+.fx-layer { position: fixed; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: min(100%, var(--col)); z-index: -1; overflow: hidden; pointer-events: none; }
+.layer { position: absolute; inset: 0; animation: layer-in .4s ease both; }
+.layer.leave { opacity: 0; transition: opacity .4s ease; }
+@keyframes layer-in { from { opacity: 0; } }
+.pattern { position: absolute; inset: 0; }
+.frame { position: absolute; inset: 6px; border-radius: 30px; padding: 6px; opacity: .85;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+.land { position: absolute; left: 0; right: 0; bottom: 0; }
+.land svg, .fx-top svg { display: block; width: 100%; height: auto; }
+.scene .a { fill: color-mix(in srgb, var(--primary) 22%, transparent); }
+.scene .b { fill: color-mix(in srgb, var(--navy) 14%, transparent); }
+.scene .g { fill: color-mix(in srgb, var(--accent) 70%, transparent); }
+.scene .s { fill: none; stroke: color-mix(in srgb, var(--accent) 75%, transparent); stroke-width: 5; stroke-linecap: round; }
+.scene .thin { fill: none; stroke: color-mix(in srgb, var(--navy) 30%, transparent); stroke-width: 1.5; }
+.scene .w { fill: #FFC85C; animation: twinkle 2.4s ease-in-out infinite alternate; }
+.scene .lan { filter: drop-shadow(0 0 6px rgba(246, 162, 58, .8)); }
+
+/* Ambient effects (fixed layer) */
+.fx-top { position: absolute; top: 0; left: 0; right: 0; opacity: .45; } /* faint so headings on top stay readable */
+.sway { transform-box: fill-box; transform-origin: 50% 0; animation: swing 3.2s ease-in-out infinite alternate; }
+@keyframes swing { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
+.waves { position: absolute; left: 0; right: 0; height: var(--h, 70px); bottom: var(--b, 70px); overflow: hidden; }
+.waves svg { position: absolute; bottom: 0; left: 0; width: 200%; height: 100%; animation: wave-x var(--t, 10s) linear infinite; }
+.waves svg:nth-child(2) { animation-duration: calc(var(--t, 10s) * 1.6); animation-direction: reverse; opacity: .7; }
+.waves path { fill: color-mix(in srgb, var(--primary) var(--o, 26%), transparent); }
+@keyframes wave-x { to { transform: translateX(-50%); } }
+.lake { position: absolute; left: 0; right: 0; bottom: 0; height: 170px; background: linear-gradient(transparent, color-mix(in srgb, var(--primary) 16%, transparent) 40%); }
+.ripple-ring { position: absolute; width: 70px; height: 16px; margin-left: -35px; border: 1.5px solid color-mix(in srgb, var(--navy) 35%, transparent); border-radius: 50%; animation: ring-out 4.2s ease-out infinite; }
+@keyframes ring-out { from { transform: scale(.15); opacity: .9; } to { transform: scale(2.2); opacity: 0; } }
+.boat { position: absolute; left: 0; width: var(--w, 64px); animation: sail var(--t, 40s) linear var(--dl, 0s) infinite; }
+.boat svg { display: block; width: 100%; height: auto; animation: bob 3s ease-in-out infinite alternate; }
+@keyframes sail { from { transform: translateX(-90px); } to { transform: translateX(min(100vw, var(--col))); } }
+@keyframes bob { to { transform: translateY(-4px) rotate(-2deg); } }
+.fx { position: absolute; display: block; will-change: transform, opacity; }
+.fx.petal { width: var(--s); height: calc(var(--s) * .8); top: -20px; border-radius: 80% 0 80% 0; background: color-mix(in srgb, var(--primary) 55%, white); animation: fall var(--t) linear var(--dl) infinite; }
+.fx.mist { width: var(--s); height: calc(var(--s) * .35); border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 255, 255, .95), rgba(255, 255, 255, 0)); animation: drift var(--t) linear var(--dl) infinite; }
+.fx.star { width: var(--s); height: var(--s); border-radius: 50%; background: var(--primary); box-shadow: 0 0 8px 3px color-mix(in srgb, var(--primary) 55%, transparent); animation: twinkle var(--t) ease-in-out var(--dl) infinite alternate; }
+@keyframes fall { 0% { transform: translate(0, 0) rotate(0); opacity: 0; } 10% { opacity: .9; } 100% { transform: translate(var(--dx), 105vh) rotate(540deg); opacity: .15; } }
+@keyframes drift { from { transform: translateX(0); } to { transform: translateX(var(--dx)); } }
+@keyframes twinkle { from { opacity: .2; transform: scale(.7); } to { opacity: 1; transform: scale(1); } }
+.burst { position: fixed; z-index: 50; width: 24px; height: 24px; border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%) scale(0);
+  background: radial-gradient(circle, color-mix(in srgb, var(--primary) 40%, transparent), color-mix(in srgb, var(--primary-soft) 30%, transparent) 55%, transparent 70%);
+  animation: burst .7s ease-out forwards; }
+@keyframes burst { to { transform: translate(-50%, -50%) scale(80); opacity: 0; } }
+/* Reduced motion: no movement at all, colours still change */
+@media (prefers-reduced-motion: reduce) {
+  .fx-layer .fx, .ripple-ring, .burst { display: none; }
+  .sway, .waves svg, .boat, .boat svg, .scene .w { animation: none; }
+}

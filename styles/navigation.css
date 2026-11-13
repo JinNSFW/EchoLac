@@ -1,0 +1,12 @@
+/* ---------- Bottom nav ---------- */
+.nav {
+  position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom) + 14px); transform: translateX(-50%);
+  width: min(calc(100% - 40px), calc(var(--col) - 56px)); height: 76px; border-radius: 40px;
+  background: var(--navy); display: flex; align-items: center; justify-content: space-around; padding: 0 8px;
+  box-shadow: 0 16px 34px color-mix(in srgb, var(--navy) 38%, transparent); z-index: 20;
+  transition: transform .35s cubic-bezier(.2,.7,.2,1), opacity .3s;
+}
+.nav.hidden { transform: translate(-50%, 140%); opacity: 0; pointer-events: none; }
+.nav a { width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; color: #fff; transition: background .25s, color .25s, transform .25s; }
+.nav a .ico { width: 24px; height: 24px; stroke-width: 1.7; }
+.nav a.active { background: #fff; color: var(--navy); transform: scale(1.08); box-shadow: 0 6px 16px rgba(0,0,0,.18); }

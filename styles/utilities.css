@@ -1,0 +1,38 @@
+/* ---------- Generic ---------- */
+.stack > * + * { margin-top: 16px; }
+.row { display: flex; align-items: center; gap: 12px; }
+.between { justify-content: space-between; }
+.grow { flex: 1; min-width: 0; }
+.center { text-align: center; }
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.tiny { font-size: 12px; }
+.bold { font-weight: 700; }
+.mt-8 { margin-top: 8px; } .mt-16 { margin-top: 16px; } .mt-24 { margin-top: 24px; } .mt-32 { margin-top: 32px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+.topbar { display: flex; align-items: center; gap: 14px; min-height: 52px; margin-bottom: 18px; }
+.topbar h1 { font-size: 22px; font-weight: 700; flex: 1; min-width: 0; }
+.topbar.centered h1 { text-align: center; }
+.icon-btn {
+  width: 48px; height: 48px; flex: none; border-radius: 50%;
+  display: grid; place-items: center; background: rgba(255,255,255,.92);
+  box-shadow: var(--shadow); color: var(--navy); position: relative;
+  transition: transform .15s ease;
+}
+.icon-btn:active { transform: scale(.94); }
+.icon-btn.sq { border-radius: 16px; }
+.icon-btn.navy { background: var(--navy); color: #fff; }
+.icon-btn .badge-dot { position: absolute; top: 8px; right: 9px; width: 10px; height: 10px; border-radius: 50%; background: var(--danger); border: 2px solid #fff; }
+.ico { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.ico.sm { width: 18px; height: 18px; }
+.ico.lg { width: 28px; height: 28px; }
+.ico.fill { fill: currentColor; stroke: none; }
+
+.grad-title {
+  font-weight: 800; letter-spacing: -.01em;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--navy-2) 55%, var(--accent-line) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.section-title { font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; margin: 28px 0 14px; }
+.section-title a, .section-title button { font-size: 14px; color: var(--muted); font-weight: 500; }

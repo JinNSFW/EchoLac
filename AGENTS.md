@@ -1,8 +1,19 @@
-# AGENT.md — EchoLạc
+# AGENTS.md — EchoLạc
 
 EchoLạc is a mobile-first web app (installable PWA). Vietnamese high-school students and Da Nang / Hoi An tourism workers use it to practise speaking English with an AI character in local-culture scenarios. The app corrects their pronunciation and grammar and tracks progress on a radar chart with four criteria.
 
 **The PRD is the source of truth for features:** [EchoLac_PRD.md](EchoLac_PRD.md). Requirement IDs (R-01, T-04, E-05, X-03, …) come from it. Cite them in commit messages and in code comments where a rule would otherwise look arbitrary. The PRD decides *what* to build; this file decides *how*.
+
+## Code organization
+
+Keep the app organized so a beginner can read it:
+
+- **Screens go in `pages/`.**
+- **Shared pieces go in `components/`.**
+- **Saving and loading goes in `data/`.**
+- **One job per file.**
+- **No file over 300 lines.** Split it before it grows past that.
+- **Check before you write.** Before writing anything new, search for an existing file, component or helper that already does it, and reuse it.
 
 ## The loop
 
