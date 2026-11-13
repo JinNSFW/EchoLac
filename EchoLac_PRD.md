@@ -401,7 +401,7 @@ Repository inspection on **12 November 2026** establishes the following implemen
 
 | Area | Current status | What this does not establish |
 | --- | --- | --- |
-| Application source | Static HTML/CSS/JavaScript prototype with separate screen, component, data and logic files; static Netlify configuration | Completion of the Next.js/TypeScript target or an installable PWA |
+| Application source | Static HTML/CSS/JavaScript prototype with separate screen, component, data and logic files. The Netlify build copies only public app files to `dist/` (documents, tests and tooling are not published) and sets security headers: Content-Security-Policy, Permissions-Policy for camera/microphone/geolocation, nosniff, frame denial and referrer policy. The CSP still allows inline and eval scripts because of inline handlers and the Teachable Machine CDN bundle; CDN libraries are pinned with integrity hashes | Completion of the Next.js/TypeScript target or an installable PWA |
 | Learner journey | Clickable screens, two-step onboarding, place themes, sample conversations, Tutor and radar templates | Production authentication, measured speech scores or a connected LLM |
 | Persistence | Browser-local prototype state | Supabase tables, RLS, private audio storage or research retention automation |
 | Speech | Browser speech playback and simulated roleplay/Tutor scores | Azure ASR, phoneme assessment, neural TTS integration or validated accuracy |

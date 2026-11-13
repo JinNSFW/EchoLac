@@ -48,3 +48,16 @@ test('practice recommendations preserve the learning loop', () => {
   app.run("practiseThis('fluency')");
   assert.match(app.run('location.hash'), /^#talk\//);
 });
+
+test('the Netlify build publishes app files and security headers, never docs or tooling', () => {
+  const fs = require('node:fs'), os = require('node:os'), path = require('node:path'), { execFileSync } = require('node:child_process');
+  const out = fs.mkdtempSync(path.join(os.tmpdir(), 'echolac-dist-'));
+  try {
+    execFileSync(process.execPath, [path.join(__dirname, '..', 'scripts', 'build-site.cjs'), out]);
+    for (const f of ['index.html', 'styles.css', 'app.js', 'model/model.json', 'model/weights.bin', 'assets/data/locations.js']) assert.ok(fs.existsSync(path.join(out, f)), f);
+    for (const f of ['EchoLac_PRD.md', 'AGENTS.md', 'README.md', 'netlify.toml', 'package.json', 'tests', 'scripts', '.env.example', 'outputs']) assert.ok(!fs.existsSync(path.join(out, f)), f + ' must stay private');
+    const headers = fs.readFileSync(path.join(out, '_headers'), 'utf8');
+    assert.match(headers, /Content-Security-Policy: default-src 'self'/);
+    assert.match(headers, /Permissions-Policy: camera=\(self\)/);
+  } finally { fs.rmSync(out, { recursive: true, force: true }); }
+});

@@ -23,7 +23,16 @@ npm test
 ```
 
 `check` kiểm tra cú pháp JavaScript, đường dẫn tài nguyên và giới hạn 300 dòng của
-các tệp ứng dụng. Các kiểm thử kiểm tra render của 16 màn hình bằng hai ngôn ngữ,
+các tệp ứng dụng.
+
+## Triển khai
+
+Netlify chạy `node scripts/build-site.cjs`, chép đúng các tệp công khai của ứng dụng
+(trang, script, CSS, `assets/`, `model/`) vào `dist/` và ghi tệp `_headers`.
+Tài liệu (PRD, AGENTS, README, giáo án), `tests/`, `scripts/` và `outputs/` không được
+publish. Danh sách tệp và header bảo mật nằm ở một nơi, `scripts/site.cjs`, được dùng chung
+cho máy chủ phát triển và bản build. Vì vậy chạy `npm start` cũng áp dụng cùng CSP như site thật.
+Khi đổi phiên bản thư viện CDN trong `lib/camera/model.js`, cập nhật lại hash `integrity`. Các kiểm thử kiểm tra render của 16 màn hình bằng hai ngôn ngữ,
 biến thể thư viện/bài học, lưu trạng thái, chọn giao diện và các chẩn đoán sẵn có.
 Kiểm thử dùng DOM giả lập tối thiểu; không thay thế kiểm tra giao diện trên trình duyệt
 hoặc kiểm tra quyền camera trên thiết bị thật.
