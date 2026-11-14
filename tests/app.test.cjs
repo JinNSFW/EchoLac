@@ -61,3 +61,23 @@ test('the Netlify build publishes app files and security headers, never docs or 
     assert.match(headers, /Permissions-Policy: camera=\(self\)/);
   } finally { fs.rmSync(out, { recursive: true, force: true }); }
 });
+
+test('curriculum lessons are complete, sourced, unverified and render', () => {
+  const app = runtime();
+  const lessons = JSON.parse(app.run('JSON.stringify(SCEN.filter(s => s.lesson))'));
+  assert.deepEqual(lessons.map(s => s.lesson).sort(), ['A1-02', 'A1-03', 'A1-04', 'A2-03', 'A2-06', 'B1-01', 'B1-02', 'B1-05', 'B2-01', 'B2-02', 'B2-04', 'B2-06', 'C1-01', 'C1-03', 'C1-04']);
+  assert.equal(new Set(app.run('SCEN.map(s => s.id)')).size, app.run('SCEN.length'), 'unique ids');
+  for (const s of lessons) {
+    assert.ok(['A1', 'A2', 'B1', 'B2', 'C1'].includes(s.level), s.id);
+    assert.ok(s.cando.vi && s.cando.en && s.facts.vi && s.facts.en && s.sources.length, s.id + ' fields');
+    assert.equal(s.verified, false, s.id);
+    assert.ok(s.vocab.length >= 8 && s.vocab.length <= 12, s.id + ' has ' + s.vocab.length + ' words');
+    for (const v of s.vocab) assert.ok(v.length === 4 && v.every(Boolean) && /^\/.+\/$/.test(v[1]), s.id + ' ' + v[0]);
+    assert.ok(app.run(`!!WORDS[${JSON.stringify(s.pron.word)}] && !!ERR_CAT[${JSON.stringify(s.pron.cat)}]`), s.id + ' pron');
+    assert.ok(s.talk.some(t => t.me && t.me.toLowerCase().split(/[^a-z’'-]+/).includes(s.pron.word)), s.id + ' talk uses ' + s.pron.word);
+    for (const lang of ['vi', 'en']) {
+      const html = app.run(`S.lang = '${lang}'; VIEWS.scenario.render('${s.id}')`);
+      assert.ok(!html.includes('undefined') && html.includes(s.lesson ? s.vocab[0][0] : ''), s.id + ' ' + lang);
+    }
+  }
+});

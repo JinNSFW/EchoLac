@@ -1,0 +1,55 @@
+'use strict';
+// Curriculum B1 (lesson plan B1-01, B1-02, B1-05). Talk scores are demo values, not measurements.
+
+addLessons([
+  { id: 'b1-climate', lesson: 'B1-01', strand: 'weather', icon: 'mountain', cat: 'culture', level: 'B1', min: 8, xp: 60, bg: ['#E3F4E8', '#9ED5B0'],
+    name: { vi: 'Biển nóng, núi mát', en: 'Beach city, mountain air' },
+    cando: { vi: 'So sánh khí hậu vùng ven biển và đỉnh Bà Nà để giúp du khách chuẩn bị.', en: 'Compare the coast with the Ba Na mountain climate to help a visitor plan.' },
+    persona: { name: 'Olivia', vi: 'Du khách đến từ Auckland', en: 'Tourist from Auckland' },
+    hello: 'Hi, I’m Olivia. It’s so hot here! Is it cooler in the mountains?',
+    facts: { vi: 'Vùng đồng bằng ven biển nóng ẩm: độ ẩm trung bình khoảng 83–84%, mùa hè thường 28–30°C. Đỉnh Bà Nà cao khoảng 1.500 m, giữa hè chỉ khoảng 17–20°C, chênh lệch ngày – đêm 8–10°C. Lên núi nên mang áo khoác.', en: 'The coastal lowlands are hot and humid: average humidity is about 83–84% and summer is usually 28–30°C. The top of Ba Na Mountain, about 1,500 metres high, is only about 17–20°C in midsummer, and day and night differ by 8–10°C. Bring a jacket for the mountains.' },
+    sources: [{ label: LESSON_SRC + '12, 14, 32' }],
+    vocab: [['humidity', '/hjuːˈmɪdəti/', 'độ ẩm', 'The humidity is about 83 percent.'], ['altitude', '/ˈæltɪtjuːd/', 'độ cao', 'At a high altitude, it is cooler.'], ['temperature', '/ˈtemprətʃə/', 'nhiệt độ', 'The temperature on Ba Na is 17 to 20 degrees.'], ['lowland', '/ˈləʊlənd/', 'vùng đồng bằng', 'The lowlands are hot and humid.'], ['compared with', '/kəmˈpeəd wɪð/', 'so với', 'Compared with the beach, Ba Na is much cooler.'], ['whereas', '/weərˈæz/', 'trong khi', 'The coast is hot, whereas the mountain is cool.'], ['cool', '/kuːl/', 'mát', 'Evenings in the mountains are cool.'], ['jacket', '/ˈdʒækɪt/', 'áo khoác', 'Bring a jacket for the evening.'], ['degree', '/dɪˈɡriː/', 'độ', 'It is about 30 degrees today.'], ['mountain', '/ˈmaʊntən/', 'núi', 'Ba Na Mountain is about 1,500 metres high.']],
+    pron: { word: 'temperature', ipa: '/ˈtemprətʃə/', hl: 'ˈtem', cat: 'word_stress', mean: 'nhiệt độ', tip: { vi: 'Nhấn âm đầu: TEM-pruh-chuh, chỉ ba âm tiết, nói nhanh.', en: 'Stress the first syllable: TEM-pruh-chuh, three quick syllables.' } },
+    talk: [
+      { ai: 'Hi, I’m Olivia. It’s so hot here! Is it cooler in the mountains?' },
+      { me: 'Yes, much cooler. The temperature on Ba Na is about seventeen to twenty degrees, even in summer.', pron: [['temperature', 55]] },
+      { ai: 'Really? Why is that?' },
+      { me: 'Because of the altitude. Ba Na is about 1,500 metres high, whereas the beach is at sea level. Bring a jacket for the evening.' },
+      { ai: 'Good advice, thanks!' },
+    ] },
+
+  { id: 'b1-tastes', lesson: 'B1-02', strand: 'food', icon: 'bowl', cat: 'food', level: 'B1', min: 8, xp: 60, bg: ['#FFE8DC', '#F4A97F'],
+    name: { vi: 'Hương vị miền Trung', en: 'Tastes of the Central Coast' },
+    cando: { vi: 'Mô tả hương vị và thành phần của bún chả cá và bún mắm cho du khách.', en: 'Describe the flavours and ingredients of fish cake noodle soup and bún mắm to a visitor.' },
+    persona: { name: 'Ethan', vi: 'Blogger ẩm thực đến từ Chicago', en: 'Food blogger from Chicago' },
+    hello: 'Hey, I’m Ethan. What does bún chả cá taste like? And what is this strong sauce?',
+    facts: { vi: 'Nước dùng bún chả cá ninh từ cá và rau nên ngọt thanh tự nhiên, ăn kèm chả cá hấp hoặc chiên. Bún mắm dùng mắm nêm pha ớt, tỏi, đường, chanh và thơm (dứa) băm, tạo vị cay, mặn, chua và ngọt nhẹ.', en: 'The broth of fish cake noodle soup is simmered with fish and vegetables, so it is naturally light and sweet; it comes with steamed or fried fish cake. Bún mắm uses fermented anchovy sauce mixed with chilli, garlic, sugar, lime and chopped pineapple, which makes it spicy, savoury, sour and slightly sweet.' },
+    sources: [{ label: LESSON_SRC + '220, 228, 240' }],
+    vocab: [['fermented', '/fəˈmentɪd/', 'lên men', 'This is a fermented fish sauce.'], ['savoury', '/ˈseɪvəri/', 'đậm đà, mặn', 'The sauce is savoury.'], ['tangy', '/ˈtæŋi/', 'chua thanh', 'Lime makes it tangy.'], ['mild', '/maɪld/', 'dịu, nhẹ', 'The broth has a mild sweetness.'], ['aromatic', '/ˌærəˈmætɪk/', 'thơm', 'The herbs are aromatic.'], ['balanced', '/ˈbælənst/', 'hài hòa', 'The flavours are well balanced.'], ['dipping sauce', '/ˈdɪpɪŋ sɔːs/', 'nước chấm', 'Try it with the dipping sauce.'], ['anchovy', '/ˈæntʃəvi/', 'cá cơm', 'The sauce is made from anchovies.'], ['pineapple', '/ˈpaɪnæpl/', 'thơm, dứa', 'A little pineapple makes it sweet.'], ['simmer', '/ˈsɪmə/', 'ninh, hầm', 'The broth is simmered with fish.']],
+    pron: { word: 'fermented', ipa: '/fəˈmentɪd/', hl: 'ɪd', cat: 's_ed_ending', mean: 'lên men', tip: { vi: 'Đuôi -ed sau /t/ đọc /ɪd/: fer-MEN-tid. Đừng bỏ âm cuối.', en: 'After /t/, -ed is /ɪd/: fer-MEN-tid. Don’t drop the ending.' } },
+    talk: [
+      { ai: 'Hey, I’m Ethan. What does bún chả cá taste like? And what is this strong sauce?' },
+      { me: 'Bún chả cá has a light, sweet broth. It is simmered with fish and vegetables.' },
+      { ai: 'And the sauce?' },
+      { me: 'It is fermented anchovy sauce. It is savoury and tangy, and the pineapple makes it a little sweet.', pron: [['fermented', 55]] },
+      { ai: 'I have to try it. Thanks!' },
+    ] },
+
+  { id: 'b1-landmark-stories', lesson: 'B1-05', strand: 'landmarks', icon: 'city', cat: 'landmark', level: 'B1', min: 8, xp: 60, bg: ['#E4E6FF', '#A6ACF2'],
+    name: { vi: 'Những công trình có câu chuyện', en: 'Landmarks with a story' },
+    cando: { vi: 'Kể cho du khách ý nghĩa của cầu Quay sông Hàn, cầu Rồng và công viên APEC.', en: 'Tell a visitor what the Han River Swing Bridge, the Dragon Bridge and APEC Park stand for.' },
+    persona: { name: 'Grace', vi: 'Du khách đến từ Singapore', en: 'Tourist from Singapore' },
+    hello: 'Hi, I’m Grace. Da Nang has so many bridges! Do they have stories?',
+    facts: { vi: 'Cầu Quay sông Hàn khánh thành năm 2000, là cầu quay đầu tiên của Việt Nam; người dân Đà Nẵng đóng góp 30% kinh phí. Cầu Rồng mô phỏng con rồng thời Lý vươn ra biển. Công viên APEC khánh thành ngày 9/11/2017, trưng bày tượng do các nền kinh tế APEC tặng; mái vòm có hình "cánh diều bay cao".', en: 'The Han River Swing Bridge opened in 2000 as Vietnam’s first swing bridge; Da Nang residents paid 30% of its cost. The Dragon Bridge depicts a Ly-dynasty dragon reaching toward the sea. APEC Park opened on 9 November 2017 and displays sculptures donated by APEC member economies; its canopy is shaped like a kite soaring high.' },
+    sources: [{ label: LESSON_SRC + '281–288, 295' }, { label: 'Danang Fantasticity – Cầu quay sông Hàn', url: 'https://danangfantasticity.com/cac-cay-cau/cau-quay-song-han' }, { label: 'Danang Fantasticity – Công viên APEC', url: 'https://danangfantasticity.com/apec-viet-nam-2017-vn/cong-vien-apec' }],
+    vocab: [['symbol', '/ˈsɪmbl/', 'biểu tượng', 'The bridge is a symbol of the city.'], ['represent', '/ˌreprɪˈzent/', 'tượng trưng cho', 'The kite represents the city’s hopes.'], ['contribute', '/kənˈtrɪbjuːt/', 'đóng góp', 'Residents contributed 30% of the cost.'], ['donate', '/dəʊˈneɪt/', 'tặng', 'APEC economies donated the sculptures.'], ['aspiration', '/ˌæspəˈreɪʃn/', 'khát vọng', 'It shows the city’s aspirations.'], ['structure', '/ˈstrʌktʃə/', 'công trình, kết cấu', 'The Dragon Bridge is a huge structure.'], ['swing bridge', '/ˈswɪŋ brɪdʒ/', 'cầu quay', 'It was Vietnam’s first swing bridge.'], ['sculpture', '/ˈskʌlptʃə/', 'tác phẩm điêu khắc', 'The park displays sculptures.'], ['canopy', '/ˈkænəpi/', 'mái vòm', 'The canopy looks like a kite.'], ['kite', '/kaɪt/', 'cánh diều', 'A kite soaring high.']],
+    pron: { word: 'structure', ipa: '/ˈstrʌktʃə/', hl: 'str', cat: 'cluster', mean: 'công trình', tip: { vi: 'Nói /str/ liền một hơi, không chèn "ơ": STRUK-chuh.', en: 'Say /str/ together with no extra vowel: STRUK-chuh.' } },
+    talk: [
+      { ai: 'Hi, I’m Grace. Da Nang has so many bridges! Do they have stories?' },
+      { me: 'Yes! The Han River Swing Bridge was the first swing bridge in Vietnam. Local people paid thirty percent of its cost.' },
+      { ai: 'That’s lovely. What about the bridge with the dragon?' },
+      { me: 'The Dragon Bridge is a huge structure. It represents a Ly-dynasty dragon flying toward the sea.', pron: [['structure', 55]] },
+      { ai: 'I’ll take photos of both. Thank you!' },
+    ] },
+]);

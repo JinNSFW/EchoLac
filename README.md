@@ -47,6 +47,7 @@ hoặc kiểm tra quyền camera trên thiết bị thật.
 | `components/` | Markup và hành vi dùng chung: biểu đồ, lịch, Tutor, theme, bottom sheet |
 | `data/` | localStorage, trạng thái và tiến độ bài học; giữ nguyên khóa `lt:` |
 | `content/` | Tình huống, đoạn hội thoại mẫu và dữ liệu tiến độ mẫu |
+| `content/curriculum/` | Chương trình học Đà Nẵng A1–C1 (PRD R-13): kịch bản lấy từ giáo án, có nguồn, chưa được xác minh |
 | `lib/` | Điều hướng, giọng nói, luyện tập và xử lý nhận diện camera |
 | `lib/camera/` | Model, GPS, so khớp, chụp ảnh và quét liên tục |
 | `styles/` | CSS theo nhóm chức năng, được nhập theo đúng thứ tự trong `styles.css` |

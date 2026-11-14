@@ -25,7 +25,10 @@ VIEWS.scenario = {
       </section>
       <section class="card soft reveal mt-24">
         <div class="row" style="gap:10px">${icon('book')}<b>${V('Về địa điểm này', 'About this place')}</b></div>
+        ${s.cando ? `<p class="small mt-8"><b>${V('Mục tiêu', 'Goal')}:</b> ${L(s.cando)}</p>` : ''}
         <p class="muted mt-8">${L(s.facts)}</p>
+        ${s.asOf ? `<p class="tiny muted mt-8">${L(s.asOf)}</p>` : ''}
+        ${s.sources ? `<p class="tiny muted mt-8"><span class="tag amber">${V('Chưa được giáo viên xác minh', 'Not yet teacher-verified')}</span> ${V('Nguồn', 'Sources')}: ${s.sources.map(x => x.url ? `<a href="${x.url}" target="_blank" rel="noopener">${esc(x.label)}</a>` : esc(x.label)).join(' · ')}</p>` : ''}
         <div class="row mt-16" style="flex-wrap:wrap;gap:8px">${s.vocab.slice(0, 4).map(v => `<span class="tag">${v[0]}</span>`).join('')}</div>
       </section>
       <section class="card reveal mt-24">

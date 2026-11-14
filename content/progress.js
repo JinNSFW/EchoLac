@@ -14,7 +14,7 @@ const CRIT = [
 ];
 const HISTORY = { fluency: [44, 48, 51, 55, 58], vocab: [58, 61, 63, 66, 69], grammar: [40, 44, 47, 50, 54], pron: [32, 35, 38, 41, 45] };
 const PREV = { fluency: 55, vocab: 66, grammar: 50, pron: 41 };
-const CEFR = [[90, 'C1+', { vi: 'Vượt mục tiêu của ứng dụng', en: 'Above this product’s target range' }], [75, 'B2', { vi: 'Giao tiếp trôi chảy, tự nhiên về nhiều chủ đề', en: 'Interacts fluently on a range of topics' }], [60, 'B1', { vi: 'Mô tả trải nghiệm và địa điểm khá trôi chảy', en: 'Describes experiences and places with reasonable fluency' }], [40, 'A2', { vi: 'Trao đổi ngắn về chủ đề quen thuộc', en: 'Manages short exchanges on familiar topics' }], [0, 'A1', { vi: 'Trao đổi rất đơn giản, đã luyện trước', en: 'Handles very simple, rehearsed exchanges' }]];
+const CEFR = [[90, 'C1', { vi: 'Giải thích và diễn giải chủ đề văn hoá trôi chảy, chính xác', en: 'Explains and interprets cultural topics fluently and precisely' }], [75, 'B2', { vi: 'Giao tiếp trôi chảy, tự nhiên về nhiều chủ đề', en: 'Interacts fluently on a range of topics' }], [60, 'B1', { vi: 'Mô tả trải nghiệm và địa điểm khá trôi chảy', en: 'Describes experiences and places with reasonable fluency' }], [40, 'A2', { vi: 'Trao đổi ngắn về chủ đề quen thuộc', en: 'Manages short exchanges on familiar topics' }], [0, 'A1', { vi: 'Trao đổi rất đơn giản, đã luyện trước', en: 'Handles very simple, rehearsed exchanges' }]];
 const JOURNEY = ['dragon', 'hoian', 'bridge', 'han', 'food', 'mykhe', 'marble', 'homestay', 'directions', 'lantern'];
 const RATES = { slow: 0.75, medium: 0.95, fast: 1.15 };
 const ACCENTS = [['en-GB', 'Anh', 'UK'], ['en-US', 'Mỹ', 'US'], ['en-IN', 'Ấn', 'IN'], ['en-AU', 'Úc', 'AU']];

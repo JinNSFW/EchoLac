@@ -1,0 +1,55 @@
+'use strict';
+// Curriculum C1 (lesson plan C1-01, C1-03, C1-04). Talk scores are demo values, not measurements.
+
+addLessons([
+  { id: 'c1-gateway', lesson: 'C1-01', strand: 'location', icon: 'compass', cat: 'culture', level: 'C1', min: 10, xp: 80, bg: ['#E0EEF0', '#8CBFC6'],
+    name: { vi: 'Vị trí làm nên vai trò', en: 'Geography as destiny' },
+    cando: { vi: 'Lập luận vì sao vị trí địa lý khiến Đà Nẵng trở thành cửa ngõ.', en: 'Argue why its location has made Da Nang a gateway.' },
+    persona: { name: 'Martin', vi: 'Nhà nghiên cứu kinh tế đến từ Boston', en: 'Economics researcher from Boston' },
+    hello: 'Good afternoon, I’m Martin. I keep hearing that Da Nang is a “gateway”. What makes its location so important?',
+    facts: { vi: 'Đà Nẵng nằm ở trung độ đất nước, trên trục giao thông Bắc – Nam bằng đường bộ, đường sắt, đường biển và hàng không. Vịnh Đà Nẵng nước sâu và an toàn. Thành phố là điểm cuối của Hành lang Kinh tế Đông – Tây (kết thúc ở cảng Tiên Sa), là cửa ngõ trung chuyển của Lào và tuyến thay thế ra biển cho Thái Lan, Myanmar, đồng thời bổ trợ cho vai trò của Hà Nội và TP. Hồ Chí Minh.', en: 'Da Nang lies at the midpoint of Vietnam on the north–south road, rail, sea and air axis. Da Nang Bay has deep, safe waters. The city is the end point of the East–West Economic Corridor, which ends at Tien Sa Port; it is a transit gateway for landlocked Laos and an alternative route to the sea for Thailand and Myanmar, and it complements the roles of Hanoi and Ho Chi Minh City.' },
+    sources: [{ label: LESSON_SRC + '56, 62, 63, 164, 178' }],
+    vocab: [['strategic', '/strəˈtiːdʒɪk/', 'chiến lược', 'Da Nang has a strategic location.'], ['corridor', '/ˈkɒrɪdɔː/', 'hành lang', 'The East–West Economic Corridor ends here.'], ['transit', '/ˈtrænzɪt/', 'trung chuyển', 'It is a transit gateway for Laos.'], ['hub', '/hʌb/', 'đầu mối, trung tâm', 'The city is a regional trade hub.'], ['landlocked', '/ˈlændlɒkt/', 'không giáp biển', 'Laos is a landlocked country.'], ['connectivity', '/ˌkɒnekˈtɪvəti/', 'khả năng kết nối', 'Good connectivity attracts trade.'], ['gateway', '/ˈɡeɪtweɪ/', 'cửa ngõ', 'Da Nang is a gateway to the sea.'], ['complement', '/ˈkɒmplɪment/', 'bổ trợ', 'It complements Hanoi and Ho Chi Minh City.'], ['deep-water port', '/ˌdiːp ˈwɔːtə pɔːt/', 'cảng nước sâu', 'Tien Sa is a deep-water port.'], ['axis', '/ˈæksɪs/', 'trục', 'It sits on the north–south axis.']],
+    pron: { word: 'landlocked', ipa: '/ˈlændlɒkt/', hl: 'kt', cat: 's_ed_ending', mean: 'không giáp biển', tip: { vi: 'Đuôi -ed sau /k/ đọc là /t/: LAND-lokt, không phải "lốc-kệt".', en: '-ed after /k/ sounds /t/: LAND-lokt.' } },
+    talk: [
+      { ai: 'Good afternoon, I’m Martin. I keep hearing that Da Nang is a “gateway”. What makes its location so important?' },
+      { me: 'It sits right at the midpoint of the country, on the north–south road, rail, sea and air routes, and Da Nang Bay offers deep, safe water for large ships.' },
+      { ai: 'Is it only about Vietnam, though?' },
+      { me: 'Not at all. It is the end point of the East–West Economic Corridor, so it is a transit gateway for landlocked Laos and an alternative route to the sea for Thailand and Myanmar. That is why it complements Hanoi and Ho Chi Minh City.', pron: [['landlocked', 55]] },
+      { ai: 'A convincing case. Thank you!' },
+    ] },
+
+  { id: 'c1-conservation', lesson: 'C1-03', strand: 'weather', icon: 'pine', cat: 'culture', level: 'C1', min: 10, xp: 80, bg: ['#E2F1DF', '#93C98B'],
+    name: { vi: 'Khí hậu, địa hình và bảo tồn', en: 'Climate, land and conservation' },
+    cando: { vi: 'Thảo luận mối liên hệ giữa khí hậu, địa hình và bảo tồn khi thành phố phát triển.', en: 'Discuss how climate, landscape and conservation connect as the city grows.' },
+    persona: { name: 'Amara', vi: 'Nhà sinh thái học đến từ Nairobi', en: 'Ecologist from Nairobi' },
+    hello: 'Hello, I’m Amara. I’m curious how Da Nang protects its nature while it grows so fast.',
+    facts: { vi: 'Sau sáp nhập năm 2025, Đà Nẵng trải từ đồng bằng ven biển đến vùng núi phía Tây. Quy hoạch hướng tới phát triển bán đảo Sơn Trà thành điểm du lịch sinh thái gắn với bảo tồn thiên nhiên và đa dạng sinh học, đồng thời gìn giữ cảnh quan, môi trường sinh thái và di sản. Nguồn cũng nêu thách thức: hệ thống thu gom, xử lý nước thải ở khu vực ven biển chưa đủ.', en: 'Since the 2025 merger, Da Nang stretches from the coastal plains to the western mountains. Planning aims to develop the Son Tra Peninsula as an ecotourism destination tied to nature conservation and biodiversity, while preserving the landscape, the ecological environment and heritage. The source also notes a challenge: wastewater collection and treatment in coastal areas is insufficient.' },
+    sources: [{ label: LESSON_SRC + '10, 75, 99, 102' }],
+    vocab: [['ecosystem', '/ˈiːkəʊsɪstəm/', 'hệ sinh thái', 'Son Tra has a rich ecosystem.'], ['biodiversity', '/ˌbaɪəʊdaɪˈvɜːsəti/', 'đa dạng sinh học', 'The plan protects biodiversity.'], ['conservation', '/ˌkɒnsəˈveɪʃn/', 'bảo tồn', 'Ecotourism should support conservation.'], ['sustainable', '/səˈsteɪnəbl/', 'bền vững', 'Tourism must be sustainable.'], ['terrain', '/təˈreɪn/', 'địa hình', 'The terrain runs from coast to mountains.'], ['impact', '/ˈɪmpækt/', 'tác động', 'Fast growth has an impact on nature.'], ['peninsula', '/pəˈnɪnsjələ/', 'bán đảo', 'Son Tra is a green peninsula.'], ['wastewater', '/ˈweɪstwɔːtə/', 'nước thải', 'Wastewater treatment needs to improve.'], ['landscape', '/ˈlændskeɪp/', 'cảnh quan', 'The plan preserves the landscape.'], ['ecotourism', '/ˈiːkəʊˌtʊərɪzəm/', 'du lịch sinh thái', 'Son Tra is planned for ecotourism.']],
+    pron: { word: 'biodiversity', ipa: '/ˌbaɪəʊdaɪˈvɜːsəti/', hl: 'ˈvɜː', cat: 'word_stress', mean: 'đa dạng sinh học', tip: { vi: 'Nhấn âm "VER": bai-oh-dai-VER-suh-ti; các âm khác nói nhanh, nhẹ.', en: 'Stress "VER": bye-oh-dye-VER-suh-tee; keep the other syllables light.' } },
+    talk: [
+      { ai: 'Hello, I’m Amara. I’m curious how Da Nang protects its nature while it grows so fast.' },
+      { me: 'The key place is the Son Tra Peninsula. The plan is to develop it as ecotourism linked to conservation and biodiversity.', pron: [['biodiversity', 55]] },
+      { ai: 'Are there real challenges, though?' },
+      { me: 'Yes. Wastewater collection and treatment on the coast is still insufficient, so fast growth has an impact. Sustainable development means protecting the landscape while the city stretches from the coast to the western mountains.' },
+      { ai: 'A balanced view. Thank you!' },
+    ] },
+
+  { id: 'c1-cuisine-identity', lesson: 'C1-04', strand: 'food', icon: 'rice', cat: 'food', level: 'C1', min: 10, xp: 80, bg: ['#FBEBD0', '#E6B565'],
+    name: { vi: 'Ẩm thực và bản sắc', en: 'Cuisine and identity' },
+    cando: { vi: 'Phân tích ẩm thực như dấu ấn bản sắc vùng trong một bài nói ngắn.', en: 'Analyse food as a mark of regional identity in a short talk.' },
+    persona: { name: 'Sebastian', vi: 'Nhà văn ẩm thực đến từ Vienna', en: 'Food writer from Vienna' },
+    hello: 'Good evening, I’m Sebastian. I write about food and place. What does a dish like mì Quảng say about this region?',
+    facts: { vi: 'Mì Quảng là món truyền thống của người Quảng Nam và Đà Nẵng; hai địa phương từng là một tỉnh, tách ra từ năm 1997 và hợp nhất lại năm 2025. Nước dùng nấu từ hải sản, gia súc, gia cầm sẵn có ở địa phương. Mắm nêm là thành phần không thể thiếu của bún mắm và bánh tráng cuốn thịt heo. Các món kết hợp vị ngọt đậm của thịt, tôm, cá, vị bùi của đậu phộng, vị cay của gia vị và vị tươi của rau.', en: 'Mì Quảng is a traditional dish of the people of Quang Nam and Da Nang, which were one province until 1997 and merged again in 2025. Its broth uses locally available seafood, livestock and poultry. Fermented anchovy sauce is essential to bún mắm and to pork rolled in rice paper. The dishes combine the savoury richness of meat, shrimp and fish, the nuttiness of peanuts, the heat of spices and fresh herbs.' },
+    sources: [{ label: LESSON_SRC + '41, 179–182, 226, 236, 246, 250, 254' }],
+    vocab: [['terroir', '/terˈwɑː/', 'đặc trưng vùng đất', 'You can taste the terroir of the coast.'], ['provenance', '/ˈprɒvənəns/', 'nguồn gốc xuất xứ', 'The provenance of the fish matters.'], ['culinary heritage', '/ˈkʌlɪnəri ˈherɪtɪdʒ/', 'di sản ẩm thực', 'Mì Quảng is part of our culinary heritage.'], ['shared identity', '/ʃeəd aɪˈdentəti/', 'bản sắc chung', 'The dish shows a shared identity.'], ['adaptation', '/ˌædæpˈteɪʃn/', 'sự thích nghi', 'The broth is an adaptation to local ingredients.'], ['locally sourced', '/ˌləʊkəli ˈsɔːst/', 'có nguồn gốc địa phương', 'The ingredients are locally sourced.'], ['essential', '/ɪˈsenʃl/', 'thiết yếu', 'The sauce is essential to the dish.'], ['nuttiness', '/ˈnʌtinəs/', 'vị bùi', 'Peanuts add nuttiness.'], ['livestock', '/ˈlaɪvstɒk/', 'gia súc', 'The broth can use livestock or poultry.'], ['region', '/ˈriːdʒən/', 'vùng', 'Food tells the story of a region.']],
+    pron: { word: 'sourced', ipa: '/sɔːst/', hl: 'st', cat: 's_ed_ending', mean: 'có nguồn gốc', tip: { vi: '-ed sau /s/ đọc /t/: "sorst", chỉ một âm tiết.', en: '-ed after /s/ sounds /t/: "sorst", one syllable.' } },
+    talk: [
+      { ai: 'Good evening, I’m Sebastian. I write about food and place. What does a dish like mì Quảng say about this region?' },
+      { me: 'It tells you that Quang Nam and Da Nang share one food culture. They were one province until 1997, merged again in 2025, and the dish belongs to both.' },
+      { ai: 'And what about the ingredients?' },
+      { me: 'The broth is locally sourced from whatever seafood, meat or poultry is available, and fermented anchovy sauce runs through the local dishes. So the terroir of this coast is literally in the bowl.', pron: [['sourced', 55]] },
+      { ai: 'Beautifully put. Thank you!' },
+    ] },
+]);
