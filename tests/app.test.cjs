@@ -54,7 +54,7 @@ test('the Netlify build publishes app files and security headers, never docs or 
   const out = fs.mkdtempSync(path.join(os.tmpdir(), 'echolac-dist-'));
   try {
     execFileSync(process.execPath, [path.join(__dirname, '..', 'scripts', 'build-site.cjs'), out]);
-    for (const f of ['index.html', 'styles.css', 'app.js', 'model/model.json', 'model/weights.bin', 'assets/data/locations.js']) assert.ok(fs.existsSync(path.join(out, f)), f);
+    for (const f of ['index.html', 'styles.css', 'app.js', 'model/model.json', 'model/metadata.json', 'model/group1-shard1of2.bin', 'model/group1-shard2of2.bin', 'assets/data/locations.js']) assert.ok(fs.existsSync(path.join(out, f)), f);
     for (const f of ['EchoLac_PRD.md', 'AGENTS.md', 'README.md', 'netlify.toml', 'package.json', 'tests', 'scripts', '.env.example', 'outputs']) assert.ok(!fs.existsSync(path.join(out, f)), f + ' must stay private');
     const headers = fs.readFileSync(path.join(out, '_headers'), 'utf8');
     assert.match(headers, /Content-Security-Policy: default-src 'self'/);
@@ -79,5 +79,16 @@ test('curriculum lessons are complete, sourced, unverified and render', () => {
       const html = app.run(`S.lang = '${lang}'; VIEWS.scenario.render('${s.id}')`);
       assert.ok(!html.includes('undefined') && html.includes(s.lesson ? s.vocab[0][0] : ''), s.id + ' ' + lang);
     }
+  }
+});
+
+test('every camera model label maps to a place, and every mapped class to a real lesson', () => {
+  const app = runtime(), fs = require('node:fs'), path = require('node:path');
+  const labels = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'model', 'metadata.json'), 'utf8')).labels;
+  for (const l of labels) assert.ok(app.run(`!!labelLoc(${JSON.stringify(l)})`), `label "${l}" has no location record`);
+  const map = JSON.parse(app.run('JSON.stringify(CAM.map)'));
+  for (const [name, id] of Object.entries(map)) {
+    assert.ok(labels.some(l => l.normalize('NFC').toLowerCase() === name.normalize('NFC').toLowerCase()), `CAM.map class "${name}" is not a model label`);
+    assert.ok(app.run(`!!scen(${JSON.stringify(id)})`), `CAM.map → missing lesson ${id}`);
   }
 });

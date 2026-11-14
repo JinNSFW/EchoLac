@@ -1,1 +1,10 @@
-{"tfjsVersion":"1.7.4","tmVersion":"2.4.18","packageVersion":"0.8.4-alpha2","packageName":"@teachablemachine/image","timeStamp":"2026-11-08T02:50:18.264Z","userMetadata":{},"modelName":"tm-my-image-model","labels":["Chùa Cầu","Ngũ Hành Sơn","Class 3"],"imageSize":224}
+{
+ "labels": [
+  "Cầu Rồng",
+  "Cầu Sông Hàn",
+  "Công viên APEC",
+  "Tượng Quan Âm - Chùa linh ứng"
+ ],
+ "imageSize": 224,
+ "source": "model v3/landmarks.keras (Keras 3, MobileNetV3Large), exported by model v3/diagnosis/export_tfjs.py"
+}

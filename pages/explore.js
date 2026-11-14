@@ -19,9 +19,9 @@ VIEWS.explore = {
         <li><span class="n">2</span><span><b>${V('Khớp ảnh', 'Image matching')}</b><small>${V('Ảnh bạn chụp được so độc lập với ảnh tham chiếu của mọi địa danh.', 'Your photo is compared, on its own, with every place’s reference images.')}</small></span></li>
         <li><span class="n">3</span><span><b>${V('Đối chiếu chéo', 'Cross-check')}</b><small>${V('Chỉ khi hai kết quả trùng nhau, bài học mới được mở tự động. Lệch nhau thì bạn tự xác nhận.', 'A lesson opens automatically only when both agree. If they differ, you confirm.')}</small></span></li>
       </ol>
-      <div class="section-title reveal"><span>${V('Kịch bản demo', 'Demo scenario')}</span></div>
+      ${camDebug() ? `<div class="section-title reveal"><span>${V('Kịch bản demo', 'Demo scenario')}</span></div>
       <div class="chips reveal" role="radiogroup" aria-label="${V('Kịch bản demo', 'Demo scenario')}">${Object.entries(SCENARIOS).map(([k, s]) => `<button class="chip ${CL.scen === k ? 'active' : ''}" role="radio" aria-checked="${CL.scen === k}" onclick="setScen('${k}')">${L(s)}</button>`).join('')}</div>
-      <div class="demo-note reveal" id="scen-note">${scenNote()}</div>
+      <div class="demo-note reveal" id="scen-note">${scenNote()}</div>` : ''}
       <div class="section-title reveal"><span>${V('Địa danh được hỗ trợ', 'Supported places')}</span><span class="tiny muted">${LOCS.length}</span></div>
       ${LOCS.length ? `<p class="tiny muted reveal" style="margin:-6px 0 12px">${V('Mở từ danh sách là học kiểu thư viện, không xác minh vị trí.', 'Opening from this list is library study, with no location check.')}</p><div class="reveal">${LOCS.map(l => locRow(l, null, 'library', progLabel(l))).join('')}</div>`
         : `<div class="card center reveal"><p class="muted">${V('Chưa có địa danh nào. Quản trị viên thêm địa danh trong assets/data/locations.js.', 'No places configured yet. Admins add them in assets/data/locations.js.')}</p></div>`}

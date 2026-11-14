@@ -11,11 +11,9 @@ const MIME = {
 };
 
 // shortcut: 'unsafe-inline' is needed by the prototype's inline onclick handlers; drop it once handlers use addEventListener.
-// shortcut: 'unsafe-eval' is needed because @teachablemachine/image 0.8.5's CDN bundle wraps its modules in eval();
-// drop it when the camera moves to plain TensorFlow.js (PRD §8.5) or a self-hosted build without eval.
 const CSP = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net",
+  "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
   "img-src 'self' data: blob: https:",

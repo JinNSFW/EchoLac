@@ -32,7 +32,7 @@ Netlify chạy `node scripts/build-site.cjs`, chép đúng các tệp công khai
 Tài liệu (PRD, AGENTS, README, giáo án), `tests/`, `scripts/` và `outputs/` không được
 publish. Danh sách tệp và header bảo mật nằm ở một nơi, `scripts/site.cjs`, được dùng chung
 cho máy chủ phát triển và bản build. Vì vậy chạy `npm start` cũng áp dụng cùng CSP như site thật.
-Khi đổi phiên bản thư viện CDN trong `lib/camera/model.js`, cập nhật lại hash `integrity`. Các kiểm thử kiểm tra render của 16 màn hình bằng hai ngôn ngữ,
+Khi đổi phiên bản thư viện CDN trong `lib/camera/model.js`, cập nhật lại hash `integrity`. Khi train lại model, xuất sang `model/` bằng `model v3/diagnosis/export_tfjs.py model` (cách cài ghi ở đầu tệp) và chạy lại `eval.py` cạnh đó. Các kiểm thử kiểm tra render của 16 màn hình bằng hai ngôn ngữ,
 biến thể thư viện/bài học, lưu trạng thái, chọn giao diện và các chẩn đoán sẵn có.
 Kiểm thử dùng DOM giả lập tối thiểu; không thay thế kiểm tra giao diện trên trình duyệt
 hoặc kiểm tra quyền camera trên thiết bị thật.
@@ -52,7 +52,7 @@ hoặc kiểm tra quyền camera trên thiết bị thật.
 | `lib/camera/` | Model, GPS, so khớp, chụp ảnh và quét liên tục |
 | `styles/` | CSS theo nhóm chức năng, được nhập theo đúng thứ tự trong `styles.css` |
 | `assets/` | Logo, minh hoạ và dữ liệu địa danh gốc |
-| `model/` | Model Teachable Machine chạy trên thiết bị |
+| `model/` | Model nhận diện v3 (TF.js, 4 địa danh) chạy trên thiết bị; mã nguồn và chẩn đoán ở `model v3/` |
 | `scripts/`, `tests/` | Máy chủ phát triển và các bước kiểm tra |
 
 Các script dùng chung phạm vi toàn cục để giữ tương thích với sự kiện inline của
@@ -63,7 +63,7 @@ Giữ thứ tự import CSS để tránh thay đổi cascade. Mỗi tệp ứng 
 ## Giới hạn hiện tại
 
 Hội thoại, đăng nhập và điểm luyện nói vẫn là demo. Phát giọng nói dùng trình duyệt;
-nhận diện ảnh dùng model Teachable Machine thật, tải thư viện từ CDN khi cần.
+nhận diện ảnh dùng model v3 thật (TensorFlow.js), tải thư viện từ CDN khi cần.
 Thông tin địa danh vẫn cần giáo viên xác minh. Không xem số liệu mẫu là kết quả
 nghiên cứu hoặc điểm đo thực tế.
 
