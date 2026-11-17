@@ -47,7 +47,7 @@ function actionsHtml(v) {
     ${[...new Set(v.options)].map(id => locRow(loc(id), dist(id), 'manual')).join('')}
     <div class="row mt-16" style="gap:10px">${retakeBtn()}<button class="btn white sm grow" onclick="choosePlace('manual')">${V('Nơi khác', 'Somewhere else')}</button></div>`;
 }
-const tile = l => `<span class="tile-3d sm" style="background:linear-gradient(145deg,${esc(l.bg[0])},${esc(l.bg[1])})">${img(l.icon)}</span>`;
+const tile = l => `<span class="tile-3d sm" style="background:linear-gradient(145deg,${esc(l.bg[0])},${esc(l.bg[1])})">${landmarkArt(l.id) || img(l.icon)}</span>`;
 const locRow = (l, d, how, right = '') => `<button class="loc-row" onclick="openLesson('${l.id}','${how}')">${tile(l)}<span class="grow"><b>${esc(l.name.en)}</b><small>${esc(l.name.vi)}${d != null ? ' · ' + km(d) : ''}</small></span>${right}${icon('chevR')}</button>`;
 function choosePlace(how) {
   openSheet(`<h2>${V('Chọn địa điểm', 'Choose a place')}</h2><p class="small muted mt-8">${how === 'manual' ? V('Bạn tự xác nhận nơi này. Bài học sẽ ghi rõ là xác nhận thủ công.', 'You confirm this place yourself. The lesson will say it was confirmed by hand.') : V('Học kiểu thư viện, không xác minh vị trí.', 'Library study, no location check.')}</p><div class="mt-16">${LOCS.map(l => locRow(l, null, how)).join('')}</div>`);

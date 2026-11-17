@@ -1,10 +1,11 @@
 {
  "labels": [
-  "Cầu Rồng",
-  "Cầu Sông Hàn",
-  "Công viên APEC",
-  "Tượng Quan Âm - Chùa linh ứng"
+  "Cá chép rồng",
+  "Cầu Rồng",
+  "Cầu Sông Hàn",
+  "Công viên APEC",
+  "Tượng Quan Âm - Chùa linh ứng"
  ],
  "imageSize": 224,
- "source": "model v3/landmarks.keras (Keras 3, MobileNetV3Large), exported by model v3/diagnosis/export_tfjs.py"
+ "source": "model v4/landmarks.keras (Keras 3, MobileNetV3Large), exported by model v3/diagnosis/export_tfjs.py"
 }

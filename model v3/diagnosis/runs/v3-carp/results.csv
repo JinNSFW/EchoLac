@@ -1,0 +1,16 @@
+mode,file,truth,top1,p1,top2,p2,decision_margin20
+stretch,ca_chep_train_001.jpg,Cá chép rồng,Tượng Quan Âm - Chùa linh ứng,0.733,Cầu Rồng,0.145,Tượng Quan Âm - Chùa linh ứng
+stretch,ca_chep_train_002.jpg,Cá chép rồng,Tượng Quan Âm - Chùa linh ứng,0.841,Công viên APEC,0.138,Tượng Quan Âm - Chùa linh ứng
+stretch,ca_chep_train_003.jpg,Cá chép rồng,Tượng Quan Âm - Chùa linh ứng,0.904,Cầu Rồng,0.064,Tượng Quan Âm - Chùa linh ứng
+stretch,ca_chep_val_001.jpg,Cá chép rồng,Tượng Quan Âm - Chùa linh ứng,0.733,Cầu Rồng,0.208,Tượng Quan Âm - Chùa linh ứng
+stretch,ca_chep_val_002.jpg,Cá chép rồng,Tượng Quan Âm - Chùa linh ứng,0.676,Cầu Sông Hàn,0.147,Tượng Quan Âm - Chùa linh ứng
+crop,ca_chep_train_001.jpg,Cá chép rồng,Tượng Quan Âm - Chùa linh ứng,0.809,Công viên APEC,0.093,Tượng Quan Âm - Chùa linh ứng
+crop,ca_chep_train_002.jpg,Cá chép rồng,Tượng Quan Âm - Chùa linh ứng,0.58,Công viên APEC,0.369,Tượng Quan Âm - Chùa linh ứng
+crop,ca_chep_train_003.jpg,Cá chép rồng,Tượng Quan Âm - Chùa linh ứng,0.968,Cầu Rồng,0.015,Tượng Quan Âm - Chùa linh ứng
+crop,ca_chep_val_001.jpg,Cá chép rồng,Cầu Rồng,0.483,Tượng Quan Âm - Chùa linh ứng,0.368,Không chắc chắn
+crop,ca_chep_val_002.jpg,Cá chép rồng,Tượng Quan Âm - Chùa linh ứng,0.891,Công viên APEC,0.079,Tượng Quan Âm - Chùa linh ứng
+crop_flip,ca_chep_train_001.jpg,Cá chép rồng,Tượng Quan Âm - Chùa linh ứng,0.875,Công viên APEC,0.055,Tượng Quan Âm - Chùa linh ứng
+crop_flip,ca_chep_train_002.jpg,Cá chép rồng,Tượng Quan Âm - Chùa linh ứng,0.521,Công viên APEC,0.444,Không chắc chắn
+crop_flip,ca_chep_train_003.jpg,Cá chép rồng,Tượng Quan Âm - Chùa linh ứng,0.958,Công viên APEC,0.023,Tượng Quan Âm - Chùa linh ứng
+crop_flip,ca_chep_val_001.jpg,Cá chép rồng,Cầu Rồng,0.516,Tượng Quan Âm - Chùa linh ứng,0.39,Không chắc chắn
+crop_flip,ca_chep_val_002.jpg,Cá chép rồng,Tượng Quan Âm - Chùa linh ứng,0.954,Công viên APEC,0.027,Tượng Quan Âm - Chùa linh ứng

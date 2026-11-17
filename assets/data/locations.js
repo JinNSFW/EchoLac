@@ -21,7 +21,7 @@ window.ECHOLAC_LOCATIONS = [
     description: { vi: 'Cây cầu bắc qua sông Hàn ở Đà Nẵng.', en: 'A bridge across the Han River in Da Nang.' },
     lat: 16.0612, lng: 108.2272, radius: 300,
     icon: 'dragon', bg: ['#DCE7FF', '#9DB7F4'],
-    referenceImages: [{ url: 'assets/3d/dragon.png', credit: 'EchoLạc 3D icon set (illustration, not a photo)', license: 'assets/3d/LICENSE.txt', sample: true }], streetView: null,
+    referenceImages: [{ url: 'assets/reference/dragon-bridge.webp', credit: 'Ảnh trong bộ val của nhóm (model v4), chọn làm tham chiếu', license: 'Nguồn ảnh chưa ghi: kiểm tra quyền dùng trước khi phát hành' }], streetView: null,
     visualKeywords: ['dragon head', 'bridge over a river', 'arches'],
     built: { vi: 'Cầu khánh thành năm 2013.', en: 'It opened in 2013.' },
     historicalSignificance: null, culturalBackground: null, architecture: null,

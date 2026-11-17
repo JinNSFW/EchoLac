@@ -1,0 +1,83 @@
+'use strict';
+// Camera landmark lessons (PRD R-11, R-13): one A1–A2 scenario per class of the camera model v4, so a recognised place opens its own lesson.
+// Cầu Rồng keeps the original 'dragon' scenario. Facts come only from the sources listed (lesson plan B1-05, docs/research-quan-am-ca-chep.md);
+// all stay unverified until a teacher checks them (R-04). Talk scores are demo values, not measurements.
+
+const RESEARCH_SRC = 'docs/research-quan-am-ca-chep.md, ';
+addLessons([
+  { id: 'han-bridge', strand: 'landmarks', icon: 'bridge', cat: 'landmark', level: 'A1', min: 6, xp: 40, bg: ['#E4E6FF', '#A6ACF2'],
+    name: { vi: 'Cầu Sông Hàn', en: 'Han River Swing Bridge' },
+    cando: { vi: 'Giới thiệu cầu Sông Hàn bằng câu ngắn: năm khánh thành và điều đặc biệt của cầu.', en: 'Introduce the Han River Swing Bridge in short sentences: when it opened and what is special about it.' },
+    persona: { name: 'Mia', vi: 'Du khách đến từ Melbourne', en: 'Tourist from Melbourne' },
+    hello: 'Hi! I’m Mia. This bridge has so many lights. Is it new?',
+    facts: { vi: 'Cầu quay Sông Hàn khánh thành năm 2000, là cầu quay đầu tiên của Việt Nam. Người dân Đà Nẵng đóng góp 30% kinh phí xây cầu.', en: 'The Han River Swing Bridge opened in 2000. It was Vietnam’s first swing bridge. Da Nang residents paid 30% of its cost.' },
+    sources: [{ label: LESSON_SRC + '281–288 (bài B1-05)' }, { label: 'Danang Fantasticity – Cầu quay sông Hàn', url: 'https://danangfantasticity.com/cac-cay-cau/cau-quay-song-han' }],
+    vocab: [['bridge', '/brɪdʒ/', 'cây cầu', 'This bridge is over the Han River.'], ['river', '/ˈrɪvə/', 'dòng sông', 'The Han River is wide.'], ['swing', '/swɪŋ/', 'quay, xoay', 'It is a swing bridge.'], ['turn', '/tɜːn/', 'xoay', 'The bridge can turn.'], ['first', '/fɜːst/', 'đầu tiên', 'It was the first swing bridge in Vietnam.'], ['open', '/ˈəʊpən/', 'khánh thành, mở', 'It opened in 2000.'], ['people', '/ˈpiːpl/', 'người dân', 'Local people paid for it.'], ['pay', '/peɪ/', 'trả tiền', 'They paid 30 percent.'], ['light', '/laɪt/', 'đèn, ánh sáng', 'The lights are beautiful at night.']],
+    pron: { word: 'first', ipa: '/fɜːst/', hl: 'st', cat: 'cluster', mean: 'đầu tiên', tip: { vi: 'Giữ cụm /st/ ở cuối: rít nhẹ /s/ rồi chạm /t/, đừng đọc thành "phơ".', en: 'Keep the final /st/: a soft hiss for /s/, then touch /t/ — don’t drop it.' } },
+    talk: [
+      { ai: 'Hi! I’m Mia. This bridge has so many lights. Is it new?' },
+      { me: 'Not very new. It opened in 2000.' },
+      { ai: 'Oh! Is it special?' },
+      { me: 'Yes. It was the first swing bridge in Vietnam.', pron: [['first', 55]] },
+      { ai: 'Who paid for it?' },
+      { me: 'Local people paid thirty percent of the cost.' },
+      { ai: 'That’s a great story. Thank you!' },
+    ] },
+
+  { id: 'apec', strand: 'landmarks', icon: 'city', cat: 'landmark', level: 'A1', min: 6, xp: 40, bg: ['#E3F4E9', '#A6DBBB'],
+    name: { vi: 'Công viên APEC', en: 'APEC Park' },
+    cando: { vi: 'Tả công viên APEC: mái vòm giống cánh diều và các bức tượng.', en: 'Describe APEC Park: a canopy like a kite and the sculptures.' },
+    persona: { name: 'Ken', vi: 'Du khách đến từ Osaka', en: 'Tourist from Osaka' },
+    hello: 'Hello! I’m Ken. What is this big white roof?',
+    facts: { vi: 'Công viên APEC khánh thành ngày 9/11/2017. Mái vòm có hình “cánh diều bay cao”. Công viên trưng bày tượng do các nền kinh tế APEC tặng.', en: 'APEC Park opened on 9 November 2017. Its canopy is shaped like a kite soaring high. The park displays sculptures donated by APEC member economies.' },
+    sources: [{ label: LESSON_SRC + '295 (bài B1-05)' }, { label: 'Danang Fantasticity – Công viên APEC', url: 'https://danangfantasticity.com/apec-viet-nam-2017-vn/cong-vien-apec' }],
+    vocab: [['park', '/pɑːk/', 'công viên', 'APEC Park is by the river.'], ['roof', '/ruːf/', 'mái', 'The roof is white.'], ['kite', '/kaɪt/', 'cánh diều', 'It looks like a kite.'], ['white', '/waɪt/', 'màu trắng', 'The big roof is white.'], ['sculpture', '/ˈskʌlptʃə/', 'tác phẩm điêu khắc', 'There are many sculptures.'], ['gift', '/ɡɪft/', 'món quà', 'The sculptures are gifts.'], ['country', '/ˈkʌntri/', 'đất nước', 'They come from many countries.'], ['walk', '/wɔːk/', 'đi dạo', 'Let’s walk in the park.'], ['photo', '/ˈfəʊtəʊ/', 'bức ảnh', 'Take a photo here.']],
+    pron: { word: 'kite', ipa: '/kaɪt/', hl: 't', cat: 'final_consonant', mean: 'cánh diều', tip: { vi: 'Đọc rõ âm /t/ ở cuối, đừng nuốt thành "kai".', en: 'Say the final /t/ clearly — not "kai".' } },
+    talk: [
+      { ai: 'Hello! I’m Ken. What is this big white roof?' },
+      { me: 'This is APEC Park. The roof looks like a kite.', pron: [['kite', 55]] },
+      { ai: 'A kite! Nice. And what are these statues?' },
+      { me: 'They are sculptures. They are gifts from APEC countries.' },
+      { ai: 'When did the park open?' },
+      { me: 'It opened in November 2017.' },
+      { ai: 'Great. Let’s take a photo!' },
+    ] },
+
+  { id: 'lady-buddha', strand: 'landmarks', icon: 'mountain', cat: 'landmark', level: 'A2', min: 7, xp: 50, bg: ['#F7F1E7', '#E6D7BD'],
+    name: { vi: 'Tượng Quan Âm chùa Linh Ứng', en: 'Lady Buddha at Linh Ung Pagoda' },
+    cando: { vi: 'Giới thiệu tượng Quan Âm: chiều cao, vị trí, và điều người dân tin.', en: 'Introduce the Lady Buddha statue: its height, where it is, and what people believe.' },
+    persona: { name: 'Emma', vi: 'Du khách đến từ London', en: 'Tourist from London' },
+    hello: 'Hello! I’m Emma. Wow, this statue is huge! How tall is it?',
+    facts: { vi: 'Tượng Quan Âm cao 67 mét, bằng một toà nhà khoảng 30 tầng, đứng trên bán đảo Sơn Trà và nhìn ra biển. Chùa Linh Ứng khánh thành năm 2010. Bên trong tượng có 17 tầng. Người dân tin bà che chở ngư dân trên biển.', en: 'The statue is 67 metres tall, as tall as a 30-floor building. It stands on the Son Tra Peninsula and looks at the sea. Linh Ung Pagoda opened in 2010. There are 17 floors inside the statue. People believe she keeps fishermen safe at sea.' },
+    sources: [{ label: RESEARCH_SRC + 'Q1, Q2, Q3, Q6, Q9, Q12, Q14' }, { label: 'Danang Fantasticity – Linh Ung Pagoda', url: 'https://danangfantasticity.com/en/linh-ung-pagoda' }, { label: 'VietnamPlus (30/05/2023)', url: 'https://www.vietnamplus.vn/chiem-nguong-ngoi-chua-linh-ung-tuyet-dep-nam-tren-ban-dao-son-tra/865251.vnp' }],
+    vocab: [['statue', '/ˈstætʃuː/', 'bức tượng', 'The statue is 67 metres tall.'], ['pagoda', '/pəˈɡəʊdə/', 'chùa', 'Linh Ung Pagoda is on the Son Tra Peninsula.'], ['peninsula', '/pəˈnɪnsjələ/', 'bán đảo', 'Son Tra is a peninsula in Da Nang.'], ['tall', '/tɔːl/', 'cao', 'The statue is very tall.'], ['sea', '/siː/', 'biển', 'The statue looks at the sea.'], ['fisherman', '/ˈfɪʃəmən/', 'ngư dân', 'People believe she keeps every fisherman safe.'], ['floor', '/flɔː/', 'tầng', 'There are 17 floors inside the statue.'], ['vase', '/vɑːz/', 'cái bình', 'She holds a vase in her hand.'], ['kind', '/kaɪnd/', 'hiền, tốt bụng', 'She is kind to everyone.'], ['believe', '/bɪˈliːv/', 'tin', 'People believe she keeps them safe.']],
+    pron: { word: 'statue', ipa: '/ˈstætʃuː/', hl: 'st', cat: 'cluster', mean: 'bức tượng', tip: { vi: 'Bắt đầu bằng cụm /st/, không chèn "x-ơ" trước /t/; nhấn âm đầu: STA-tue.', en: 'Start with /st/ — no vowel before /t/; stress the first syllable: STA-tue.' } },
+    talk: [
+      { ai: 'Hello! I’m Emma. Wow, this statue is huge! How tall is it?' },
+      { me: 'The statue is sixty-seven metres tall.', pron: [['statue', 55]] },
+      { ai: 'Amazing! Why does she look at the sea?' },
+      { me: 'People believe she keeps fishermen safe at sea.' },
+      { ai: 'That’s lovely. Can we go inside?' },
+      { me: 'I think so. There are seventeen floors inside.' },
+      { ai: 'Wonderful. Thank you for telling me!' },
+    ] },
+
+  { id: 'dragon-carp', strand: 'landmarks', icon: 'dragon', cat: 'landmark', level: 'A2', min: 7, xp: 50, bg: ['#E8F1FB', '#B8CFEA'],
+    name: { vi: 'Tượng Cá chép hoá Rồng', en: 'The Dragon Carp statue' },
+    cando: { vi: 'Kể ngắn truyện cá chép hoá rồng và tả bức tượng bên sông Hàn.', en: 'Retell the carp-becomes-dragon story in short sentences and describe the statue by the Han River.' },
+    persona: { name: 'Noah', vi: 'Du khách đến từ Toronto', en: 'Tourist from Toronto' },
+    hello: 'Hi, I’m Noah. Is that a fish or a dragon?',
+    facts: { vi: 'Tượng ở bờ Đông sông Hàn, gần Cầu Rồng, được lắp đặt tháng 4/2015. Tượng cao 7,5 mét, làm bằng đá cẩm thạch trắng, nặng gần 200 tấn; khoảng 30 nghệ nhân làng đá Non Nước làm trong ba tháng. Truyện kể cá chép vượt qua những con sóng lớn thì hoá thành rồng. Đầu rồng có thể phun nước.', en: 'The statue is on the east bank of the Han River, near the Dragon Bridge. It was installed in April 2015. It is 7.5 metres tall, made of white marble and weighs almost 200 tonnes; about 30 artisans from Non Nuoc stone village made it in three months. In the story, a carp jumps over big waves and becomes a dragon. The dragon head can spray water.' },
+    sources: [{ label: RESEARCH_SRC + 'K1, K3–K7, K9, K13' }, { label: 'VietnamPlus (14/04/2015)', url: 'https://www.vietnamplus.vn/da-nang-lap-dat-thanh-cong-tuong-ca-chep-hoa-rong-nang-200-tan-post317561.vnp' }, { label: 'Tuoi Tre News (15/04/2015)', url: 'https://news.tuoitre.vn/vietnams-da-nang-builds-200-ton-carp-statue-near-iconic-bridge-10322935.htm' }],
+    vocab: [['carp', '/kɑːp/', 'cá chép', 'The carp jumps over big waves.'], ['dragon', '/ˈdræɡən/', 'con rồng', 'The carp becomes a dragon.'], ['river', '/ˈrɪvə/', 'dòng sông', 'The statue is by the Han River.'], ['bridge', '/brɪdʒ/', 'cây cầu', 'It is near the Dragon Bridge.'], ['marble', '/ˈmɑːbl/', 'đá cẩm thạch', 'The statue is made of white marble.'], ['heavy', '/ˈhevi/', 'nặng', 'It is very heavy: almost 200 tonnes.'], ['wave', '/weɪv/', 'con sóng', 'The carp jumps over three big waves.'], ['spray', '/spreɪ/', 'phun (nước)', 'The dragon head can spray water.'], ['tail', '/teɪl/', 'cái đuôi', 'The tail looks like two hands.'], ['luck', '/lʌk/', 'may mắn', 'The carp and dragon mean good luck.']],
+    pron: { word: 'carp', ipa: '/kɑːp/', hl: 'ɑːp', cat: 'vowel_length', mean: 'cá chép', tip: { vi: 'Kéo dài nguyên âm /ɑː/ và khép môi bật nhẹ /p/ ở cuối: "caaap".', en: 'Hold the long /ɑː/ and close with a soft /p/: "caaap".' } },
+    talk: [
+      { ai: 'Hi, I’m Noah. Is that a fish or a dragon?' },
+      { me: 'Both! It is a carp. In the story, the carp becomes a dragon.', pron: [['carp', 55]] },
+      { ai: 'How does a fish become a dragon?' },
+      { me: 'It jumps over big waves. Then it becomes a dragon.' },
+      { ai: 'Cool! What is the statue made of?' },
+      { me: 'It is made of white marble. It is very heavy.' },
+      { ai: 'Thanks! I will come back at night to see the bridge too.' },
+    ] },
+]);

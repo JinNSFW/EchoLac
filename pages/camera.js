@@ -6,7 +6,7 @@ VIEWS.camera = {
         <video id="tm-v" playsinline muted autoplay aria-hidden="true"></video>
         <div class="tm-frame" aria-hidden="true"></div>
         <div class="tm-top">
-          <a class="tm-btn" href="#roleplay" onclick="history.length>1&&(event.preventDefault(),history.back())" aria-label="${V('Quay lại / Back', 'Back / Quay lại')}">${icon('left')}</a>
+          <a class="tm-btn" href="#explore" onclick="history.length>1&&(event.preventDefault(),history.back())" aria-label="${V('Quay lại / Back', 'Back / Quay lại')}">${icon('left')}</a>
           <p class="tm-label" id="tm-label" role="status" aria-live="polite"></p>
         </div>
         <section class="tm-panel" id="tm-panel"></section>

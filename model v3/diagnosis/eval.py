@@ -1,7 +1,9 @@
-"""Đánh giá và chẩn đoán model v3 trên bộ ảnh test có nhãn.
+"""Đánh giá và chẩn đoán model nhận diện địa danh (v3, v4, ...) trên bộ ảnh test có nhãn.
 
     python eval.py                      # dùng ../landmarks.keras, ../labels.txt, labels.csv, test/
-    python eval.py --gradcam            # thêm ảnh Grad-CAM cho ảnh cầu và ảnh sai vào gradcam/
+    python eval.py --gradcam            # thêm ảnh Grad-CAM cho ảnh cầu, ảnh Cá chép và ảnh sai vào gradcam/
+    python eval.py --model "../../model v4/landmarks.keras" --labels "../../model v4/labels.txt" --out v4
+    Nhãn đúng không có trong model (ảnh "ngoài phân phối") được tính là sai nếu model nhận, đúng nếu "không chắc chắn".
 
 Cần: pip install tensorflow pillow   (Pillow >= 11.2 đọc được .avif)
 Đầu ra: results.csv (top-3 từng ảnh, từng cách tiền xử lý) và báo cáo in ra màn hình.
@@ -71,6 +73,7 @@ def main():
     ap.add_argument('--truth', default=here / 'labels.csv')
     ap.add_argument('--images', default=here / 'test')
     ap.add_argument('--gradcam', action='store_true')
+    ap.add_argument('--out', default='.', help='thư mục ghi results.csv và gradcam/, tương đối với thư mục script')
     a = ap.parse_args()
 
     model = keras.models.load_model(a.model)
@@ -78,7 +81,8 @@ def main():
     names = [nfc(n) for n in Path(a.labels).read_text(encoding='utf-8').splitlines()]
     assert len(names) == model.output_shape[-1], 'labels.txt không khớp số ngõ ra của model'
     truth = {r['file']: nfc(r['label']) for r in csv.DictReader(open(a.truth, encoding='utf-8'))}
-    imgs = {f: Image.open(Path(a.images) / f).convert('RGB') for f in truth}
+    imgs = {f: ImageOps.exif_transpose(Image.open(Path(a.images) / f)).convert('RGB') for f in truth}  # xoay theo EXIF như trình duyệt (CAM-13)
+    outdir = here / a.out; outdir.mkdir(parents=True, exist_ok=True)
 
     rows, probs = [], {}
     for mode, fn in MODES.items():
@@ -89,8 +93,8 @@ def main():
     for mode in MODES:
         P = probs[mode]; k = 0; cm = np.zeros((len(names),) * 2, int); acc = rej = wrong = 0
         for i, f in enumerate(truth):
-            t = names.index(truth[f]); p = P[i]; top = int(p.argmax())
-            cm[t, top] += 1; k += top == t
+            t = names.index(truth[f]) if truth[f] in names else None; p = P[i]; top = int(p.argmax())
+            if t is not None: cm[t, top] += 1; k += top == t
             d = decide(p, names)
             if d == 'Không chắc chắn': rej += 1
             elif d == truth[f]: acc += 1
@@ -103,16 +107,20 @@ def main():
         print('   ma trận nhầm lẫn (hàng = nhãn đúng, cột = dự đoán):')
         print('   ' + ''.join(f'{s[:12]:>14}' for s in short))
         for r, s in zip(cm, short): print(f'   {s[:12]:<12}' + ''.join(f'{v:>14}' for v in r))
+        for T in (0.5, 0.75, 0.85):
+            ok = sum(P[i].max() >= T and decide(P[i], names) == truth[f] for i, f in enumerate(truth))
+            bad = sum(P[i].max() >= T and decide(P[i], names) not in ('Không chắc chắn', truth[f]) for i, f in enumerate(truth))
+            print(f'   ngưỡng {T} + chênh lệch: nhận đúng {ok}, nhận sai {bad}, bỏ qua {n - ok - bad}')
         for i, f in enumerate(truth):
-            if P[i].argmax() != names.index(truth[f]):
+            if names[P[i].argmax()] != truth[f]:
                 print(f'   SAI {f[:50]:<50} đúng={truth[f][:14]:<14} đoán={names[P[i].argmax()][:14]:<14} p={P[i].max():.2f}')
 
-    with open(Path(__file__).parent / 'results.csv', 'w', newline='', encoding='utf-8') as fh:
+    with open(outdir / 'results.csv', 'w', newline='', encoding='utf-8') as fh:
         w = csv.writer(fh); w.writerow(['mode', 'file', 'truth', 'top1', 'p1', 'top2', 'p2', 'decision_margin20']); w.writerows(rows)
 
     if a.gradcam:
-        out = Path(__file__).parent / 'gradcam'; out.mkdir(exist_ok=True)
-        bridges = {'Cầu Rồng', 'Cầu Sông Hàn'}
+        out = outdir / 'gradcam'; out.mkdir(exist_ok=True)
+        bridges = {'Cầu Rồng', 'Cầu Sông Hàn', 'Cá chép rồng'}
         for i, f in enumerate(truth):
             pred = int(probs['crop'][i].argmax())
             if truth[f] in bridges or names[pred] != truth[f]:

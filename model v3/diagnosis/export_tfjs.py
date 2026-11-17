@@ -2,7 +2,8 @@
 
     pip install tensorflow pillow
     pip install tensorflowjs --no-deps && pip install tensorflow_hub   # bản đầy đủ kéo theo gói không có cho Windows
-    python export_tfjs.py ../../model
+    python export_tfjs.py ../../model                  # model v3 (thư mục cha)
+    python export_tfjs.py ../../model "../../model v4"  # model khác: thư mục chứa landmarks.keras + labels.txt
 
 - Bỏ lớp augment (chỉ dùng khi train) và Dropout; giữ MobileNetV3Large (đã tự rescale 0–255) + Dense softmax.
 - Lượng tử hoá trọng số float16 để tải nhanh hơn; kiểm tra lại độ lệch so với model gốc trước khi ghi.
@@ -22,10 +23,13 @@ for name in ('tensorflow_decision_forests', 'jax', 'jax.experimental', 'jax.expe
 sys.modules['jax.experimental'].jax2tf = sys.modules['jax.experimental.jax2tf']
 from tensorflowjs.converters import tf_saved_model_conversion_v2 as conv
 
+import unicodedata
 here = Path(__file__).parent
 out = Path(sys.argv[1] if len(sys.argv) > 1 else here / 'tfjs')
-src = keras.models.load_model(here.parent / 'landmarks.keras')
-labels = (here.parent / 'labels.txt').read_text(encoding='utf-8').splitlines()
+src_dir = Path(sys.argv[2]) if len(sys.argv) > 2 else here.parent  # thư mục chứa landmarks.keras + labels.txt, vd "../../model v4"
+src = keras.models.load_model(src_dir / 'landmarks.keras')
+labels = [unicodedata.normalize('NFC', l).strip() for l in (src_dir / 'labels.txt').read_text(encoding='utf-8').splitlines() if l.strip()]
+assert len(labels) == src.output_shape[-1], 'labels.txt không khớp số ngõ ra của model'
 
 inp = keras.Input((224, 224, 3), name='image')
 infer = keras.Model(inp, src.get_layer('dense')(src.get_layer('MobileNetV3Large')(inp, training=False)))
@@ -40,6 +44,6 @@ with tempfile.TemporaryDirectory() as d:
 
 (out / 'metadata.json').write_text(json.dumps({
     'labels': labels, 'imageSize': 224,
-    'source': 'model v3/landmarks.keras (Keras 3, MobileNetV3Large), exported by model v3/diagnosis/export_tfjs.py',
+    'source': f'{src_dir.name}/landmarks.keras (Keras 3, MobileNetV3Large), exported by model v3/diagnosis/export_tfjs.py',
 }, ensure_ascii=False, indent=1), encoding='utf-8')
 print('OK ->', out, sorted(p.name for p in out.iterdir()))
