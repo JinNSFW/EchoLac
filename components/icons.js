@@ -6,7 +6,8 @@ const I = {
   chat: '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/>',
   mic: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>',
   micAi: '<rect x="8" y="5" width="6" height="10" rx="3"/><path d="M4.5 12a6.5 6.5 0 0 0 13 0M11 18.5V21"/><path d="M19 2v4M17 4h4"/>',
-  radar: '<path d="M12 3 21 12 12 21 3 12z"/><path d="M12 8l3 4-3 5-4-5z"/>',
+  radar: '<path d="M12 3l8.6 6.2-3.3 10.1H6.7L3.4 9.2z"/><path d="M12 8.2l4.3 3.1-1.6 5H9.3l-1.6-5z"/>',
+  cap: '<path d="M2.5 9.5 12 5l9.5 4.5L12 14z"/><path d="M6.5 11.6V16c0 1.4 2.5 3 5.5 3s5.5-1.6 5.5-3v-4.4M21.5 9.5v5"/>',
   user: '<circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="10" r="3"/><path d="M6.8 18.6a6 6 0 0 1 10.4 0"/>',
   person: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
   left: '<path d="M19 12H5M12 19l-7-7 7-7"/>',
@@ -48,7 +49,26 @@ const I = {
   shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
   scan: '<path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3"/>',
 };
-const icon = (n, cls = '') => `<svg class="ico ${cls}" viewBox="0 0 24 24" aria-hidden="true">${I[n]}</svg>`;
-const img = (n, cls = '', alt = '') => `<img src="assets/3d/${n}.png" class="${cls}" alt="${alt}" loading="lazy">`;
+/* Owner-drawn line icons (assets/icons/{ui,lesson,place}/<name>.png), tinted with currentColor through a CSS mask.
+   Names not drawn yet keep the SVG (I) or 3D picture. The mask URLs live in one generated <style> (installIconArt),
+   so callers keep their markup: icon() stays an .ico element, img() stays an <img>. */
+const UI_ART = 'home chat cap radar user camera scan lock check bell search sliders play pause volume send left chevR x refresh bookmark clock bulb globe'.split(' ');
+const LESSON_ART = 'speech books brain mic fire medal lantern calendar target bolt book chart dragon houses bridge bags bowl beach mountain hotel compass lock check'.split(' ');
+const PLACE_ART = 'danang hoian hue hanoi halong sapa dalat hcm nhatrang other'.split(' ');
+const icon = (n, cls = '') => (UI_ART.includes(n) ? `<span class="ico mk ${cls}" data-mk="ui-${n}" aria-hidden="true"></span>`
+  : `<svg class="ico ${cls}" viewBox="0 0 24 24" aria-hidden="true">${I[n]}</svg>`);
+const img = (n, cls = '', alt = '') => (LESSON_ART.includes(n) ? `<img src="assets/icons/lesson/${n}.png" class="${cls}" data-art="${n}" alt="${alt}" loading="lazy">`
+  : `<img src="assets/3d/${n}.png" class="${cls}" alt="${alt}" loading="lazy">`);
+const placeArt = id => `<span class="mk place-art" data-mk="place-${PLACE_ART.includes(id) ? id : 'other'}" aria-hidden="true"></span>`;
+function installIconArt() {
+  const rule = (sel, url) => `${sel}{-webkit-mask-image:url(${url});mask-image:url(${url})}`;
+  const css = [...UI_ART.map(n => rule(`[data-mk="ui-${n}"]`, `assets/icons/ui/${n}.png`)), ...PLACE_ART.map(n => rule(`[data-mk="place-${n}"]`, `assets/icons/place/${n}.png`)),
+    ...LESSON_ART.map(n => rule(`img[data-art="${n}"]`, `assets/icons/lesson/${n}.png`))].join('');
+  document.head.insertAdjacentHTML('beforeend', `<style id="icon-art">${css}</style>`);
+}
 const LOGO = (alt = 'EchoLạc') => `<img src="assets/logo.svg" alt="${alt}">`; // exported from echolac-logo.html
 const GOOGLE = '<svg width="26" height="26" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>';
+// Owner-drawn line art for the camera's landmarks (assets/landmarks/<location id>.png); a CSS mask tints it with currentColor.
+// The mask URL sits inline: inside a stylesheet it would resolve against styles/, not the page.
+const LANDMARK_ART = ['dragon-carp', 'dragon-bridge', 'han-river-bridge', 'apec-park', 'linh-ung-lady-buddha'];
+const landmarkArt = id => (LANDMARK_ART.includes(id) ? `<span class="lm-art" style="-webkit-mask-image:url(assets/landmarks/${id}.png);mask-image:url(assets/landmarks/${id}.png)" aria-hidden="true"></span>` : '');

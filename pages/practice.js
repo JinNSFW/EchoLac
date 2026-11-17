@@ -16,7 +16,7 @@ VIEWS.practice = {
         ${e.wrong ? `<div class="compare bad mt-16" style="text-align:left"><small>${V('Bạn đã nói', 'You said')}</small>${esc(e.wrong)}</div>` : ''}
         <div class="big ${sentence ? 'sentence' : ''}">${esc(e.word)}</div>
         ${e.ipa ? `<div class="ipa-big">${ipaHl(e)}</div>` : ''}
-        <div class="small muted mt-8">${e.mean ? esc(e.mean) + ' · ' : ''}${V('từ', 'from')} ${L(s.name)}</div>
+        <div class="small muted mt-8">${e.mean ? esc(e.mean) + ' · ' : ''}${V('từ', 'from')} <a href="#scenario/${s.id}">${L(s.name)}</a></div>
         <div class="row mt-24" style="justify-content:center;gap:10px;flex-wrap:wrap">
           <button class="btn soft sm" onclick="speak(${esc(JSON.stringify(e.word))})">${icon('volume', 'sm')} ${V('Nghe mẫu', 'Listen')}</button>
           <button class="btn white sm" onclick="speak(${esc(JSON.stringify(e.word))},{rate:.6})">🐢 ${V('Chậm', 'Slow')}</button>

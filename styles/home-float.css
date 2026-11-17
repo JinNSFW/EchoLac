@@ -1,0 +1,45 @@
+/* ---------- Home: floating cards over the place scene (Figma "Home", PRD C.6) ---------- */
+.float-card {
+  display: block; background: rgba(255, 255, 255, .92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-radius: 28px; color: var(--navy);
+  box-shadow: 0 2px 6px color-mix(in srgb, var(--navy) 4%, transparent), 0 12px 32px color-mix(in srgb, var(--navy) 7%, transparent);
+  transition: transform .2s;
+}
+a.float-card:active { transform: scale(.985); }
+.float-card .lbl { display: block; font-size: 13px; color: var(--muted); }
+.float-card b { display: block; font-weight: 600; }
+
+.home-top { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; }
+.avatar-chip, .round-btn { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.92); color: var(--navy); box-shadow: 0 6px 16px color-mix(in srgb, var(--navy) 10%, transparent); }
+.avatar-chip { font-size: 15px; font-weight: 700; letter-spacing: .02em; }
+.round-btn .ico { width: 22px; height: 22px; }
+
+.streak-card { width: 200px; margin: 16px 0 0 auto; padding: 16px 18px; }
+.streak-card { position: relative; }
+.streak-card b { font-size: 18px; margin-top: 6px; }
+.streak-card .lv { position: absolute; top: 14px; right: 14px; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px; background: var(--navy); color: #fff; }
+
+/* The scene is as tall as 1.78× the column and its landmark stands on a line ~45% down (≈0.8× the width).
+   The pill starts there, so the cards sit on the plain lower part and the landmark stays visible at any width.
+   176px = what sits above the pill (top padding, header, streak card). */
+.home-place { display: inline-flex; align-items: center; gap: 6px; max-width: 75%; margin-top: max(48px, calc(min(100vw, var(--col)) * .8 - 176px)); padding: 8px 14px 8px 12px; border-radius: 999px;
+  background: rgba(255,255,255,.88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: var(--navy); font-size: 14px; }
+.home-place.no-scene { margin-top: 24px; } /* no painted scene to leave room for */
+.home-place b { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.quick { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 18px 8px 16px; margin-top: 20px; }
+.quick a { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; color: var(--navy); text-align: center; }
+.q-ic { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--card-blue); color: var(--navy); transition: transform .2s; }
+.quick a:active .q-ic { transform: scale(.92); }
+.q-ic .ico { width: 22px; height: 22px; }
+
+.resume { display: flex; align-items: center; gap: 14px; padding: 18px 18px 20px 20px; margin-top: 16px; }
+.resume b { font-size: 18px; margin-top: 6px; }
+.resume .bar { display: block; height: 8px; border-radius: 8px; background: var(--card-blue); margin-top: 24px; overflow: hidden; }
+.resume .bar i { display: block; height: 100%; width: 0; border-radius: inherit; background: var(--primary); transition: width 1.1s cubic-bezier(.2,.7,.2,1); }
+.play-btn { width: 52px; height: 52px; border-radius: 50%; flex: none; display: grid; place-items: center; background: var(--navy); color: #fff; box-shadow: 0 8px 18px color-mix(in srgb, var(--navy) 30%, transparent); }
+.play-btn .ico { width: 22px; height: 22px; margin-left: 2px; }
+
+.mission { padding: 18px 20px 20px; margin-top: 16px; }
+.mission b { font-size: 16px; line-height: 1.4; margin-top: 6px; }
+@media (prefers-reduced-motion: reduce) { .float-card, .q-ic, .resume .bar i { transition: none; } }

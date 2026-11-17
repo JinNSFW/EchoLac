@@ -32,7 +32,7 @@ function runtime(files = scripts(), seed = {}) {
       constructor(...args) { super(...(args.length ? args : ['2026-11-12T05:00:00Z'])); }
       static now() { return Date.parse('2026-11-12T05:00:00Z'); }
     },
-    setTimeout: () => 1, clearTimeout() {}, requestAnimationFrame: () => 1, cancelAnimationFrame() {},
+    setTimeout: () => 1, clearTimeout() {}, setInterval: () => 1, clearInterval() {}, Image: class {}, requestAnimationFrame: () => 1, cancelAnimationFrame() {},
     matchMedia: () => ({ matches: true }), addEventListener() {}, scrollTo() {}, scrollY: 0,
   };
   sandbox.window = sandbox;

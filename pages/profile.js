@@ -30,7 +30,7 @@ VIEWS.profile = {
       ${ach.map(([ic, t, d, on], i) => `<div class="ach reveal ${on ? 'on' : ''}" style="--d:${i * 50}ms"><span class="ic">${img(ic)}</span><div class="grow"><div class="t">${t} ${on ? '🏅' : ''}</div><div class="d">${d}</div></div></div>`).join('')}
       <div class="section-title reveal" id="settings"><span>${V('Cài đặt', 'Settings')}</span></div>
       <section class="card reveal">
-        <div class="set-row" style="display:block"><div class="row"><span class="ic">${img(theme(S.place).icon).replace('class=""', 'style="width:24px;height:24px"')}</span><span>${V('Địa điểm & giao diện', 'Place & theme')}</span></div>
+        <div class="set-row" style="display:block"><div class="row"><span class="ic">${placeArt(S.place)}</span><span>${V('Địa điểm & giao diện', 'Place & theme')}</span></div>
           <div class="place-grid mt-16">${placeCards(S.place, 'pickPlace')}</div></div>
         <div class="set-row"><span class="ic">${icon('globe')}</span><span class="grow">${V('Ngôn ngữ giao diện', 'Interface language')}</span>${langToggle()}</div>
         <div class="set-row" style="display:block"><div class="row"><span class="ic">${icon('volume')}</span><span>${V('Giọng AI', 'AI accent')}</span></div><div class="seg four mt-16">${ACCENTS.map(([k, vi, en]) => `<button class="${S.settings.accent === k ? 'on' : ''}" onclick="setSetting('accent','${k}')">${V(vi, en)}</button>`).join('')}</div></div>

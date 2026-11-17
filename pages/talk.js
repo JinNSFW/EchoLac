@@ -21,7 +21,7 @@ VIEWS.talk = {
             <button class="side" onclick="toggleSubs()"><span class="icon-btn" id="cc-btn" style="${S.settings.subs ? 'background:var(--navy);color:#fff' : ''}">${icon('cc')}</span>${V('Phụ đề', 'Subtitles')}</button>
           </div>
           <div class="hint" id="mic-hint">${V('Đợi nhân vật nói xong…', 'Wait for your partner…')}</div>
-          <div class="disclaimer">${V('Thông tin địa danh lấy từ fact sheet do giáo viên kiểm duyệt.', 'Landmark facts come from a teacher-verified fact sheet.')}</div>
+          <div class="disclaimer">${V('Thông tin địa danh lấy từ fact sheet có nguồn, đang chờ giáo viên xác minh.', 'Landmark facts come from a sourced fact sheet awaiting teacher verification.')}</div>
         </div>
       </div>`;
     },

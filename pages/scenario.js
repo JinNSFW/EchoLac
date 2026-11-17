@@ -42,7 +42,7 @@ VIEWS.scenario = {
       </section>
       <section class="card reveal">
         <div class="unit-head"><span class="unit-num">2</span><div class="grow"><div class="small muted">${V('Bước 2', 'Step 2')}</div><b>${V(`Trò chuyện với ${s.persona.name}`, `Talk with ${s.persona.name}`)}</b></div>${icon('chat')}</div>
-        <p class="small muted mt-8">${V('Khoảng 4–8 lượt nói. AI tự ghi lại lỗi phát âm và ngữ pháp.', 'About 4–8 turns. The AI notes your pronunciation and grammar slips automatically.')}</p>
+        <p class="small muted mt-8">${V('Khoảng 6–10 lượt nói. AI tự ghi lại lỗi phát âm và ngữ pháp.', 'About 6–10 turns. The AI notes your pronunciation and grammar slips automatically.')}</p>
       </section>
       <section class="card reveal">
         <div class="unit-head"><span class="unit-num">3</span><div class="grow"><div class="small muted">${V('Bước 3', 'Step 3')}</div><b>${V('Sửa lỗi trong Gia sư', 'Fix them in Tutor')}</b></div>${icon('micAi')}</div>

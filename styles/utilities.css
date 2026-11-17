@@ -25,6 +25,10 @@
 .icon-btn.navy { background: var(--navy); color: #fff; }
 .icon-btn .badge-dot { position: absolute; top: 8px; right: 9px; width: 10px; height: 10px; border-radius: 50%; background: var(--danger); border: 2px solid #fff; }
 .ico { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+/* Owner-drawn icons: the generated #icon-art style sets each mask-image (components/icons.js) */
+.mk { display: inline-block; background: currentColor; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+img[data-art] { object-position: -9999px 0; background: var(--navy); -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+.place-art { width: 42px; height: 42px; color: var(--pc, var(--navy)); }
 .ico.sm { width: 18px; height: 18px; }
 .ico.lg { width: 28px; height: 28px; }
 .ico.fill { fill: currentColor; stroke: none; }

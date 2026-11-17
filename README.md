@@ -47,12 +47,12 @@ hoặc kiểm tra quyền camera trên thiết bị thật.
 | `components/` | Markup và hành vi dùng chung: biểu đồ, lịch, Tutor, theme, bottom sheet |
 | `data/` | localStorage, trạng thái và tiến độ bài học; giữ nguyên khóa `lt:` |
 | `content/` | Tình huống, đoạn hội thoại mẫu và dữ liệu tiến độ mẫu |
-| `content/curriculum/` | Chương trình học Đà Nẵng A1–C1 (PRD R-13): kịch bản lấy từ giáo án, có nguồn, chưa được xác minh |
+| `content/curriculum/` | Chương trình học Đà Nẵng A1–C1 (PRD R-13): kịch bản lấy từ giáo án, và `landmarks.js` gồm bài riêng cho từng lớp của model camera; có nguồn, chưa được xác minh |
 | `lib/` | Điều hướng, giọng nói, luyện tập và xử lý nhận diện camera |
 | `lib/camera/` | Model, GPS, so khớp, chụp ảnh và quét liên tục |
 | `styles/` | CSS theo nhóm chức năng, được nhập theo đúng thứ tự trong `styles.css` |
-| `assets/` | Logo, minh hoạ và dữ liệu địa danh gốc |
-| `model/` | Model nhận diện v3 (TF.js, 4 địa danh) chạy trên thiết bị; mã nguồn và chẩn đoán ở `model v3/` |
+| `assets/` | Logo, minh hoạ, dữ liệu địa danh gốc. `assets/icons/{ui,lesson,place}/` và `assets/landmarks/` là icon nét do nhóm vẽ, tô màu theo theme bằng CSS mask (`components/icons.js`); `assets/scenes/<theme>/` là 26 ảnh cảnh 2.5D làm nền khi chọn địa điểm |
+| `model/` | Model nhận diện v4 (TF.js, 5 địa danh) chạy trên thiết bị; script đánh giá và xuất model ở `model v3/diagnosis/` |
 | `scripts/`, `tests/` | Máy chủ phát triển và các bước kiểm tra |
 
 Các script dùng chung phạm vi toàn cục để giữ tương thích với sự kiện inline của
@@ -63,7 +63,7 @@ Giữ thứ tự import CSS để tránh thay đổi cascade. Mỗi tệp ứng 
 ## Giới hạn hiện tại
 
 Hội thoại, đăng nhập và điểm luyện nói vẫn là demo. Phát giọng nói dùng trình duyệt;
-nhận diện ảnh dùng model v3 thật (TensorFlow.js), tải thư viện từ CDN khi cần.
+nhận diện ảnh dùng model v4 thật (TensorFlow.js), tải thư viện từ CDN khi cần.
 Thông tin địa danh vẫn cần giáo viên xác minh. Không xem số liệu mẫu là kết quả
 nghiên cứu hoặc điểm đo thực tế.
 

@@ -3,7 +3,7 @@
 VIEWS.signup = {
     render: () => `
       ${steps(1)}
-      ${authHead(V('Tạo tài khoản', 'Create Account'), V('Cùng kể chuyện quê hương bằng tiếng Anh', 'Tell your hometown’s story in English'), 'event.preventDefault();location.reload()')}
+      ${authHead(V('Tạo tài khoản', 'Create Account'), V('Kể chuyện quê hương bằng ngoại ngữ', 'Tell your hometown’s story in another language'), 'event.preventDefault();location.reload()')}
       <form id="f" class="mt-32" novalidate>
         ${field('name', V('Họ và tên', 'Full name'), 'person', 'text', V('Nhập họ và tên', 'Enter your full name'), 0, { ac: 'name' })}
         ${field('email', 'Gmail', 'mail', 'email', 'tenban@gmail.com', 60, { ac: 'email', after: `<p class="field-hint" id="email-hint" hidden>${V('Vui lòng dùng địa chỉ Gmail (…@gmail.com).', 'Please use a Gmail address (…@gmail.com).')}</p>` })}

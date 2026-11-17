@@ -6,32 +6,31 @@ VIEWS.home = {
       const rec = w.k === 'pron'
         ? { href: '#tutor', text: V(`Âm cuối đang là điểm yếu nhất. Luyện ${S.errors.filter(e => e.status === 'open').length} từ trong Gia sư để giữ chuỗi ngày học nhé!`, `Final sounds are your weakest point. Practise ${S.errors.filter(e => e.status === 'open').length} words in Tutor to keep your streak!`) }
         : { href: '#scenario/' + s.id, text: V(`${L(w.name)} là điểm yếu nhất. Hãy trò chuyện ở "${L(s.name)}" hôm nay.`, `${L(w.name)} is your weakest area. Try "${L(s.name)}" today.`) };
+      const initials = S.user.name.trim().split(/\s+/).filter(Boolean).slice(-2).map(w => w[0]).join('').toUpperCase();
+      const quick = [['#roleplay', 'chat', V('Nhập vai', 'Roleplay')], ['#tutor', 'cap', V('Gia sư AI', 'AI Tutor')], ['#explore', 'camera', 'Camera'], ['#radar', 'radar', V('Bản đồ lỗi', 'Error map')]];
+      // Layout follows Figma "Home" (390×844): floating cards over the place scene (PRD C.6)
       return `
-      <header class="row between reveal">
-        <div class="row">
-          <div class="avatar">${img('student', '', '')}<span class="online"></span></div>
-          <div><div class="row" style="gap:8px"><span class="hello">${V('Chào', 'Hi')} ${esc(S.user.name.split(' ').pop())}!</span><span class="pill navy">Lv. ${level()}</span></div>
-          <div class="xp-line">${img('bolt')} ${fmt(S.xp)} XP${S.place !== 'other' ? ` · <span class="place-chip">${img(theme(S.place).icon)} ${L(theme(S.place).name)}</span>` : ''}</div></div>
-        </div>
-        <div class="row" style="gap:10px">
-          <a class="icon-btn" href="#camera" aria-label="${V('Quét địa danh bằng camera', 'Scan a landmark with the camera')}">${icon('scan')}</a>
-          <button class="icon-btn" onclick="toast(V('Chưa có thông báo mới','No new notifications'))" aria-label="${V('Thông báo', 'Notifications')}">${icon('bell')}<span class="badge-dot"></span></button>
-        </div>
+      <header class="home-top reveal">
+        <a class="avatar-chip" href="#profile" aria-label="${V('Hồ sơ của', 'Profile of')} ${esc(S.user.name)}">${esc(initials)}</a>
+        <button class="round-btn" onclick="toast(V('Chưa có thông báo mới','No new notifications'))" aria-label="${V('Thông báo', 'Notifications')}">${icon('bell')}</button>
       </header>
-      <a class="card blue hero reveal" href="${rec.href}" style="--d:80ms;display:block">
-        ${img('target', 'peek')}
-        <h2>${V('Luyện tập hôm nay!', 'Today’s practice!')}</h2>
-        <p>${rec.text}</p>
-        <div class="row mt-16">
-          <div class="grow"><div class="track"><i data-w="${goal}%"></i><span class="knob" data-left="${goal}%" style="left:0"></span></div>
-          <div class="tiny muted mt-8">${S.today.min}/15 ${V('phút hôm nay', 'min today')}</div></div>
-          <span class="go-btn">${icon('right')}</span>
-        </div>
+      <a class="float-card streak-card reveal" href="#profile">
+        <span class="lbl">${V('Chuỗi học', 'Streak')}</span>
+        <b>${streakNow()} ${V('ngày', 'days')} · ${fmt(S.xp)} XP</b>
+        <span class="lv">Lv. ${level()}</span>
       </a>
-      <a class="card cam-entry reveal" href="#explore" style="--d:120ms">
-        <span class="ic">${icon('camera')}</span>
-        <span class="grow"><b>${V('Học qua ống kính', 'Learn with your camera')}</b><small>${V('Chụp một địa danh, học tiếng Anh về chính nơi đó', 'Snap a landmark, learn English about it')}</small></span>
-        ${icon('chevR')}
+      <div class="home-place reveal ${theme(S.place).scenes?.length ? '' : 'no-scene'}">${icon('pin', 'sm')}<b id="home-place">${esc(sceneName())}</b></div>
+      <nav class="float-card quick reveal" aria-label="${V('Lối tắt', 'Shortcuts')}">
+        ${quick.map(([h, ic, t]) => `<a href="${h}"><span class="q-ic">${icon(ic)}</span>${t}</a>`).join('')}
+      </nav>
+      <a class="float-card resume reveal" href="#scenario/${s.id}">
+        <span class="grow"><span class="lbl">${V('Tiếp tục bài học', 'Continue lesson')}</span><b>${L(s.name)}</b>
+          <span class="bar" role="img" aria-label="${S.today.min}/15 ${V('phút hôm nay', 'min today')}"><i data-w="${goal}%"></i></span></span>
+        <span class="play-btn">${icon('play')}</span>
+      </a>
+      <a class="float-card mission reveal" href="${rec.href}">
+        <span class="lbl">${V('Nhiệm vụ hôm nay', 'Today’s mission')}</span>
+        <b>${rec.text}</b>
       </a>
       <section class="card reveal mt-24">
         <div class="row between">
@@ -50,13 +49,6 @@ VIEWS.home = {
             <h3>${L(c.name)}</h3><p>${L(c.d)}</p>
           </a>`).join('')}
       </div>
-      <div class="section-title reveal"><span>${V('Tiếp tục hành trình', 'Continue your journey')}</span><a href="#roleplay">${V('Bản đồ', 'Map')}</a></div>
-      <a class="card soft reveal continue" href="#scenario/${s.id}">
-        <div class="grow">
-          <div class="row" style="gap:10px"><span class="play-sm">${icon('play', 'sm')}</span><b>${L(s.name)}</b></div>
-          <p class="small muted mt-8">${V('Trò chuyện với', 'Talk with')} ${s.persona.name} · ${s.min} ${V('phút', 'min')} · ${s.level}</p>
-        </div>
-        <span class="go-btn" style="width:60px;height:60px">${icon('play')}</span>
-      </a>`;
+      `;
     },
   };

@@ -1,12 +1,18 @@
-/* ---------- Bottom nav ---------- */
+/* ---------- Bottom nav: full-width bar, icon + label, a short bar marks the current tab (PRD C.6) ---------- */
 .nav {
-  position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom) + 14px); transform: translateX(-50%);
-  width: min(calc(100% - 40px), calc(var(--col) - 56px)); height: 76px; border-radius: 40px;
-  background: var(--navy); display: flex; align-items: center; justify-content: space-around; padding: 0 8px;
-  box-shadow: 0 16px 34px color-mix(in srgb, var(--navy) 38%, transparent); z-index: 20;
+  position: fixed; left: 50%; bottom: 0; transform: translateX(-50%);
+  width: min(100%, var(--col)); padding: 10px 6px calc(env(safe-area-inset-bottom) + 10px);
+  display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+  background: rgba(255, 255, 255, .94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid color-mix(in srgb, var(--navy) 8%, transparent);
+  box-shadow: 0 -8px 24px color-mix(in srgb, var(--navy) 6%, transparent); z-index: 20;
   transition: transform .35s cubic-bezier(.2,.7,.2,1), opacity .3s;
 }
-.nav.hidden { transform: translate(-50%, 140%); opacity: 0; pointer-events: none; }
-.nav a { width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; color: #fff; transition: background .25s, color .25s, transform .25s; }
+.nav.hidden { transform: translate(-50%, 110%); opacity: 0; pointer-events: none; }
+.nav a { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 4px; color: var(--faint); font-size: 11px; font-weight: 500; transition: color .25s; }
 .nav a .ico { width: 24px; height: 24px; stroke-width: 1.7; }
-.nav a.active { background: #fff; color: var(--navy); transform: scale(1.08); box-shadow: 0 6px 16px rgba(0,0,0,.18); }
+.nav a::before { content: ''; position: absolute; top: -10px; width: 28px; height: 3px; border-radius: 0 0 3px 3px; background: var(--navy); transform: scaleX(0); transition: transform .3s cubic-bezier(.2,.7,.2,1); }
+.nav a.active { color: var(--navy); font-weight: 600; }
+.nav a.active::before { transform: scaleX(1); }
+.nav a:focus-visible { outline-offset: 2px; border-radius: 12px; }
+@media (prefers-reduced-motion: reduce) { .nav, .nav a, .nav a::before { transition: none; } }

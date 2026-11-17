@@ -9,7 +9,8 @@ test('all screens render in Vietnamese and English in script loading order', () 
     assert.ok(html.length > 100, name);
     assert.ok(!html.includes('undefined'), name + ' contains undefined');
   }
-  assert.match(output['vi/home'], /Trang chủ|Chào|Lan/);
+  assert.match(output['vi/home'], /Chuỗi học/);
+  assert.match(output['en/home'], /Continue lesson/);
   assert.match(output['en/tutor'], /Tutor/);
   assert.notEqual(output['vi/profile'], output['en/profile']);
 });
@@ -90,5 +91,66 @@ test('every camera model label maps to a place, and every mapped class to a real
   for (const [name, id] of Object.entries(map)) {
     assert.ok(labels.some(l => l.normalize('NFC').toLowerCase() === name.normalize('NFC').toLowerCase()), `CAM.map class "${name}" is not a model label`);
     assert.ok(app.run(`!!scen(${JSON.stringify(id)})`), `CAM.map → missing lesson ${id}`);
+  }
+  // Every class opens its own lesson (no two classes share one), and each label maps to a distinct place
+  assert.deepEqual(labels.map(l => Object.keys(map).find(k => k.normalize('NFC').toLowerCase() === l.normalize('NFC').toLowerCase())).filter(Boolean).length, labels.length, 'every model label is in CAM.map');
+  assert.equal(new Set(Object.values(map)).size, Object.keys(map).length, 'one lesson per class');
+  assert.equal(new Set(labels.map(l => app.run(`labelLoc(${JSON.stringify(l)}).id`))).size, labels.length, 'one place per class');
+});
+
+test('camera landmark lessons are complete, sourced, unverified and render in both languages', () => {
+  const app = runtime();
+  for (const id of ['han-bridge', 'apec', 'lady-buddha', 'dragon-carp']) {
+    const s = JSON.parse(app.run(`JSON.stringify(scen(${JSON.stringify(id)}))`));
+    assert.ok(s.cando.vi && s.cando.en && s.facts.vi && s.facts.en && s.sources.length && s.verified === false, id + ' fields');
+    assert.ok(s.vocab.length >= 8 && s.vocab.length <= 12 && s.vocab.every(v => /^\/.+\/$/.test(v[1])), id + ' vocab');
+    assert.ok(s.talk.some(t => t.me && t.me.toLowerCase().split(/[^a-z’'-]+/).includes(s.pron.word)), id + ' talk uses ' + s.pron.word);
+    for (const lang of ['vi', 'en']) assert.ok(!app.run(`S.lang = '${lang}'; VIEWS.scenario.render('${id}')`).includes('undefined'), id + ' ' + lang);
+  }
+});
+
+test('landmark line art exists for every camera landmark and is used for place cards', () => {
+  const app = runtime(), fs = require('node:fs'), path = require('node:path');
+  const ids = JSON.parse(app.run('JSON.stringify(LANDMARK_ART)'));
+  assert.equal(ids.length, 5);
+  for (const id of ids) {
+    assert.ok(fs.existsSync(path.join(__dirname, '..', 'assets', 'landmarks', id + '.png')), id + '.png');
+    assert.ok(app.run(`!!loc(${JSON.stringify(id)})`), id + ' is a location');
+  }
+  const cards = app.run("S.lang = 'vi'; placeCards('danang', 'pickPlace')");
+  assert.match(cards, /5 địa danh/);
+  assert.ok(!cards.includes('undefined'));
+});
+
+test('every declared place scene has its image, and no scene image is left unused', () => {
+  const app = runtime(), fs = require('node:fs'), path = require('node:path');
+  const themes = JSON.parse(app.run('JSON.stringify(Object.fromEntries(Object.entries(THEMES).map(([id, t]) => [id, (t.scenes || []).map(s => s[0])])))'));
+  const declared = new Set();
+  for (const [id, files] of Object.entries(themes)) for (const f of files) {
+    const p = path.join('assets', 'scenes', id, f + '.webp'); declared.add(p);
+    assert.ok(fs.existsSync(path.join(__dirname, '..', p)), p);
+  }
+  const root = path.join(__dirname, '..', 'assets', 'scenes');
+  const onDisk = fs.readdirSync(root).flatMap(d => fs.readdirSync(path.join(root, d)).map(f => path.join('assets', 'scenes', d, f)));
+  assert.deepEqual(onDisk.filter(p => !declared.has(p)), [], 'unused scene files');
+});
+
+test('every owner-drawn icon name has its PNG and renders as a mask, not an empty svg', () => {
+  const app = runtime(), fs = require('node:fs'), path = require('node:path');
+  for (const [set, list] of [['ui', 'UI_ART'], ['lesson', 'LESSON_ART'], ['place', 'PLACE_ART']]) {
+    for (const n of JSON.parse(app.run(`JSON.stringify(${list})`))) assert.ok(fs.existsSync(path.join(__dirname, '..', 'assets', 'icons', set, n + '.png')), `${set}/${n}.png`);
+  }
+  assert.match(app.run("icon('home')"), /data-mk="ui-home"/);
+  assert.match(app.run("icon('eye')"), /<svg/);
+  assert.match(app.run("img('fire')"), /data-art="fire"/);
+  assert.match(app.run("placeArt('hue')"), /place-hue/);
+});
+
+test('every camera landmark shows a real reference photo, not the sample illustration', () => {
+  const app = runtime(), fs = require('node:fs'), path = require('node:path');
+  for (const id of JSON.parse(app.run('JSON.stringify(LANDMARK_ART)'))) {
+    const url = app.run(`refUrl(loc(${JSON.stringify(id)}))`);
+    assert.match(url, /^assets\/reference\/.+\.webp$/, id);
+    assert.ok(fs.existsSync(path.join(__dirname, '..', url)), url);
   }
 });

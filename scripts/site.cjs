@@ -6,7 +6,7 @@ const { root, read, scripts } = require('./project.cjs');
 const MIME = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8',
-  '.svg': 'image/svg+xml', '.png': 'image/png', '.bin': 'application/octet-stream',
+  '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.bin': 'application/octet-stream',
   '.txt': 'text/plain; charset=utf-8',
 };
 

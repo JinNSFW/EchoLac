@@ -91,11 +91,11 @@ Quy tắc do chủ dự án lập ngày **11/11/2026**. Đây là chính sách p
 ### Theme và tài nguyên giao diện
 
 - Màu sắc, theme, onboarding và splash là yêu cầu sản phẩm trong [PRD Phụ lục C](EchoLac_PRD.md#product-ui). Không chép bảng màu sang AGENTS.
-- Trong prototype, `THEMES` tại `app.js` là nguồn cấu hình theme duy nhất: `icon`, `name`, `scene`, `c`, `frame`, `pattern` tùy chọn, `land()`, `fx()`.
+- Trong prototype, `THEMES` tại `app.js` là nguồn cấu hình theme duy nhất: `icon`, `name`, `scene`, `c`, `scenes` (danh sách cảnh `[tệp, vi, en]`; ảnh ở `assets/scenes/<id>/<tệp>.webp`, 780×1387, minh họa 2.5D pastel, 45% dưới để trống cho thẻ nổi).
 - `installThemes()` sinh các khối `:root[data-theme]`; `applyTheme()` đặt `data-theme` trên `<html>`. Không tạo bảng màu riêng cho từng theme trong CSS.
 - Dùng token `var(--navy)`, `var(--primary)`, `var(--accent)` và `color-mix()`; chỉ cố định màu semantic và logo theo ngoại lệ của PRD.
 - Chữ/icon trắng dùng nền `--navy` hoặc `--navy-2`; không dùng `--primary` làm nền chữ trắng.
-- `.bg` phủ toàn chiều cao trang; `.fx-layer` cố định theo màn hình; cả hai nằm dưới nội dung với `z-index: -1`. Hiệu ứng chỉ animate `transform` và `opacity` và tôn trọng reduced motion.
+- `.bg` phủ toàn chiều cao trang và nằm dưới nội dung với `z-index: -1`; cảnh danh lam (`.hero-scene`) ở đầu trang, tự đổi lần lượt 7 giây/cảnh (crossfade 1,2 giây), đứng yên khi reduced motion hoặc tab ẩn. Hiệu ứng chỉ animate `transform` và `opacity`.
 - Thêm theme bằng một mục trong `THEMES`, rồi chạy chẩn đoán `?test` và kiểm tra tương phản theo PRD.
 - Bảo toàn khóa lưu `lt:` khi refactor; chỉ lưu lựa chọn preview theo thời điểm PRD quy định.
 - Sau khi sửa logo, xuất lại SVG bằng `logoSVG('x', C.bronze, C.gold)` trong `echolac-logo.html` và cập nhật các ảnh xuất liên quan.
