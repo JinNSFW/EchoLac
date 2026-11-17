@@ -22,7 +22,7 @@
 .how li { display: grid; grid-template-columns: 32px 1fr; gap: 12px; padding: 9px 0; }
 .how .n { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--primary-soft); color: var(--navy); font-weight: 700; font-size: 14px; }
 .how b { display: block; font-weight: 600; }
-.how small { display: block; color: var(--muted); font-size: 14px; margin-top: 2px; }
+.how small { display: block; color: var(--on-bg-muted); font-size: 14px; margin-top: 2px; }
 .loc-row { width: 100%; min-height: 68px; display: flex; align-items: center; gap: 14px; padding: 10px 14px 10px 10px; text-align: left; color: var(--navy); background: #fff; border-radius: 20px; box-shadow: 0 6px 16px color-mix(in srgb, var(--navy) 7%, transparent); transition: transform .15s ease-out; }
 .loc-row:active { transform: scale(.98); }
 .loc-row + .loc-row { margin-top: 10px; }

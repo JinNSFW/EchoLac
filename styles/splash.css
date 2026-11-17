@@ -1,4 +1,5 @@
-/* ---------- Splash (cold start only; #splash in index.html, splash() in app.js). Logo colours only. ---------- */
+/* ---------- Splash (cold start only; #splash in index.html, splash() in app.js). Logo colours only:
+   cream ground, bronze wordmark, a faint bronze emblem behind (PRD C.5). ---------- */
 .splash {
   --echo-cream: #FFF4E1; --echo-bronze: #6B3F1D; --echo-gold: #C98A1B;
   --sp-ease: cubic-bezier(.22, 1, .36, 1);
@@ -12,7 +13,7 @@
 .sp-sparks i.st { border-radius: 0; box-shadow: none; clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); }
 .sp-center { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px; margin-top: -4vh; }
 .sp-logo { position: relative; width: 120px; height: 120px; }
-.sp-drum { position: absolute; left: 50%; top: 50%; width: 360px; height: 360px; margin: -180px 0 0 -180px; opacity: .05; color: var(--echo-bronze); animation: sp-spin 60s linear infinite; will-change: transform; }
+.sp-drum { position: absolute; left: 50%; top: 50%; width: 360px; height: 360px; margin: -180px 0 0 -180px; opacity: .08; color: var(--echo-bronze); animation: sp-spin 60s linear infinite; will-change: transform; }
 .sp-tile { position: relative; animation: sp-pop .7s var(--sp-ease) .2s both; will-change: transform, opacity; }
 .sp-face { width: 120px; height: 120px; border-radius: 28px; overflow: hidden; position: relative; display: grid; place-items: center;
   background: linear-gradient(160deg, rgba(201,138,27,.06), rgba(107,63,29,.04)), var(--echo-cream);

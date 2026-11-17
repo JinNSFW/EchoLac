@@ -19,7 +19,7 @@ VIEWS.home = {
         <b>${streakNow()} ${V('ngày', 'days')} · ${fmt(S.xp)} XP</b>
         <span class="lv">Lv. ${level()}</span>
       </a>
-      <div class="home-place reveal ${theme(S.place).scenes?.length ? '' : 'no-scene'}">${icon('pin', 'sm')}<b id="home-place">${esc(sceneName())}</b></div>
+      <div class="home-place reveal ${theme(S.place).scenes?.length || theme(S.place).hero ? '' : 'no-scene'}">${icon('pin', 'sm')}<b id="home-place">${esc(sceneName())}</b></div>
       <nav class="float-card quick reveal" aria-label="${V('Lối tắt', 'Shortcuts')}">
         ${quick.map(([h, ic, t]) => `<a href="${h}"><span class="q-ic">${icon(ic)}</span>${t}</a>`).join('')}
       </nav>

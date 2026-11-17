@@ -35,7 +35,7 @@ img[data-art] { object-position: -9999px 0; background: var(--navy); -webkit-mas
 
 .grad-title {
   font-weight: 800; letter-spacing: -.01em;
-  background: linear-gradient(90deg, var(--navy) 0%, var(--navy-2) 55%, var(--accent-line) 100%);
+  background: linear-gradient(90deg, var(--on-bg) 0%, var(--on-bg-2) 55%, var(--accent-line) 100%); /* page-level title: on-bg tokens */
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .section-title { font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; margin: 28px 0 14px; }

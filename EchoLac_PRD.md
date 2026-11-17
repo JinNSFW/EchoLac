@@ -743,7 +743,7 @@ Colour, scenery, frame and ambient effect transition together over **400 ms**. I
 | `sapa` | Sa Pa | Rice terraces | `#3B5320` | rice green `#7FA637` + cloud white | green / white terrace bands | Clouds drifting sideways |
 | `dalat` | Đà Lạt | Pine hills | `#2F4A40` | cherry pink `#D46A93` + pine `#2F6B4F` | pink dots on pine | Falling petals + light mist |
 | `hcm` | TP. Hồ Chí Minh | Skyline, Bitexco, blinking windows | `#2B1F4A` | neon orange `#FF7A2F` + neon purple `#B05CFF` | neon dashes | Blinking city lights |
-| `other` | Nơi khác | none | `#726958` | taupe `#9C8466` + logo gold `#C98A1B` | none | none |
+| `other` | Nơi khác | EchoLạc emblem (bird + globe, `assets/logo.svg`) in logo bronze `#6B3F1D` at ~10% opacity on the cream ground, where other places show their scene | `#726958` | taupe `#9C8466` + logo gold `#C98A1B` | none | none |
 
 Theme acceptance:
 - Text contrast is at least 4.5:1 for navy/muted/faint text on the theme background, muted text on cards, faint text on white, and white text on the darker primary action surface.
@@ -765,7 +765,7 @@ Theme acceptance:
 
 ## C.5 Cold-Start Splash
 
-- **Colours:** logo colours only: `--echo-cream #FFF4E1`, `--echo-bronze #6B3F1D`, `--echo-gold #C98A1B`, plus their `rgba()` tints. Theme colours never apply here.
+- **Colours:** logo colours only: `--echo-cream #FFF4E1`, `--echo-bronze #6B3F1D`, `--echo-gold #C98A1B`, plus their `rgba()` tints. Theme colours never apply here. Ground: cream; wordmark "Echo" in bronze, "Lạc" in gold; the slowly turning drum pattern behind the logo tile is bronze at low opacity.
 - **Timing:** it stays at least 2.4s (1.8s with reduced motion), waits for fonts, and never stays past 4s.
 - **Exit:** the first screen renders underneath, then the splash fades out (400ms), so that screen's own entrance plays in view.
 - **Reduced motion:** logo and text fade only. No particles, rotation, sheen or pulse.
@@ -802,5 +802,6 @@ The references have no screens for **Tutor** or **Radar**. Build them in the sam
 - Recording is always visible as one of four states: idle → listening (pulsing ring) → processing → scored.
 - Loading uses skeleton cards. Each empty state names the next step, e.g. empty Tutor queue: "Nothing to fix yet — go have a conversation!"
 - Motion is gentle (150–250 ms, ease-out). Milestones get a short lantern-glow celebration. Honour `prefers-reduced-motion`.
+- Completed journey stops have a static, theme-coloured halo and soft shadow around the icon. The completion check and text remain visible, and open and locked stops do not receive this halo.
 - Touch targets are at least 44px. Text contrast meets WCAG AA. Every icon-only button has an `aria-label` in both languages.
 - Illustrations: glossy 3D-style icons like those in the references, showing local subjects (lantern, Dragon Bridge, bowl of mì Quảng, Japanese Covered Bridge). Landmark photos must be licensed, with attribution stored in the scenario's content file.

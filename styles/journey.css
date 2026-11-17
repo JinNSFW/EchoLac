@@ -13,9 +13,16 @@
 .stop .label { background: rgba(255,255,255,.75); border-radius: 18px; padding: 10px 14px; text-align: center; font-size: 13px; font-weight: 500; color: var(--faint); box-shadow: 0 8px 20px color-mix(in srgb, var(--navy) 6%, transparent); line-height: 1.3; }
 .stop .label small { display: block; margin-top: 4px; font-size: 12px; }
 .stop.open .node, .stop.done .node { background: linear-gradient(145deg, var(--navy), var(--primary)); box-shadow: 0 14px 28px color-mix(in srgb, var(--navy) 40%, transparent); }
-.stop.open .node img, .stop.done .node img { filter: none; }
+.stop.done .node {
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--accent) 45%, white),
+    0 0 0 4px color-mix(in srgb, var(--accent) 30%, transparent),
+    0 0 26px 8px color-mix(in srgb, var(--accent) 50%, transparent),
+    0 16px 26px -2px color-mix(in srgb, var(--accent) 55%, transparent); /* static glow under a finished lesson */
+}
+/* Unlocked and finished: owner icon in a cream drawn from the theme, so it changes with the place */
+.stop.open .node img, .stop.done .node img { filter: none; background: color-mix(in srgb, var(--primary-soft) 70%, white); }
 .stop.open .num, .stop.done .num { background: var(--navy); color: #fff; }
-.stop.done .num { background: var(--success); }
+.stop.done .num { background: var(--success); width: 28px; height: 28px; border-width: 3px; border-color: #fff; box-shadow: 0 3px 8px color-mix(in srgb, var(--navy) 25%, transparent); }
 .stop.open .label, .stop.done .label { background: #fff; color: var(--navy); font-weight: 600; }
 .stop.open .label small, .stop.done .label small { color: var(--muted); font-weight: 400; }
 .stop.open .node { animation: bob 2.6s ease-in-out infinite; }

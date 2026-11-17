@@ -28,6 +28,9 @@
 :root {
   --surface: rgba(255, 255, 255, .92);
   --text: var(--navy);
+  --on-bg: var(--navy);        /* text placed directly on the page background (THEMES c['on-bg'] overrides) */
+  --on-bg-muted: var(--muted);
+  --on-bg-2: var(--navy-2);
   --success: #1FAF6E;
   --success-tint: #E6F8EE;
   --lantern-a: #F59E2B;

@@ -28,7 +28,7 @@ function showScene(key, i, slow) {
 function playScenes(key) {
   clearInterval(SCENE.timer);
   const n = THEMES[key].scenes?.length || 0;
-  if (!n) { Object.assign(SCENE, { key, i: 0 }); return swapLayer($('.bg'), ''); }
+  if (!n) { Object.assign(SCENE, { key, i: 0 }); return swapLayer($('.bg'), THEMES[key].hero === 'logo' ? '<span class="hero-logo"></span>' : ''); }
   showScene(key, 0, false);
   if (n > 1 && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     SCENE.timer = setInterval(() => !document.hidden && showScene(key, (SCENE.i + 1) % n, true), SCENE_MS);

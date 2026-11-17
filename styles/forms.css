@@ -1,6 +1,6 @@
 /* ---------- Forms ---------- */
 .field + .field { margin-top: 18px; }
-.field label { display: block; font-size: 14px; color: var(--navy); margin: 0 0 8px 2px; }
+.field label { display: block; font-size: 14px; color: var(--on-bg); margin: 0 0 8px 2px; }
 .input-wrap {
   display: flex; align-items: center; gap: 12px; height: 60px; padding: 0 18px;
   background: rgba(255,255,255,.95); border-radius: var(--r-field); box-shadow: 0 8px 22px color-mix(in srgb, var(--navy) 7%, transparent);

@@ -1,0 +1,17 @@
+/* ---------- Text on the page background (PRD C.3) ----------
+   Text that sits straight on the page uses --on-bg / --on-bg-muted; anything inside a surface keeps the theme's
+   normal text colours. For every place except "Nơi khác" these tokens equal navy / muted, so nothing changes.
+   The surface reset has one class of specificity (:where(.app) :is(…)): enough to beat `a`/`button { color: inherit }`
+   on link and button surfaces; chips, buttons and tags are not in the list, so their own colours still apply. */
+.app { color: var(--on-bg); }
+.app :is(.muted, .faint, .section-title a, .section-title button) { color: var(--on-bg-muted); }
+:where(.app) :is(.card, .float-card, .skill-card, .scen-card, .wcard, .place, .loc-row, .vocab, .persona, .tabs, .input-wrap, .home-place, .avatar-chip, .round-btn, .node, .err-item, .tutor-say .bubble, .stat-tile, .profile-head) { color: var(--text); }
+.app :is(.card, .float-card, .skill-card, .scen-card, .wcard, .place, .loc-row, .vocab, .persona, .tabs, .node, .err-item, .tutor-say .bubble, .stat-tile, .profile-head) :is(.muted, .section-title a) { color: var(--muted); }
+.app :is(.card, .float-card, .skill-card, .scen-card, .wcard, .place, .loc-row, .vocab, .persona, .tabs, .node, .err-item, .tutor-say .bubble, .stat-tile, .profile-head) .faint { color: var(--faint); }
+
+/* The EchoLạc emblem, faint logo bronze on the cream ground, as the hero of a place without painted scenes (THEMES hero: 'logo') */
+.hero-logo {
+  position: absolute; left: 12.5%; width: 75%; aspect-ratio: 1; top: calc(min(100vw, var(--col)) * .16);
+  background: #6B3F1D; opacity: .1; /* logo bronze (PRD C.1 logo-colour exception) */
+  -webkit-mask: url(../assets/logo.svg) center / contain no-repeat; mask: url(../assets/logo.svg) center / contain no-repeat;
+}

@@ -7,6 +7,8 @@
 /* ---------- Place themes: the ONE source for every theme (X-06) ----------
    c       colour tokens → written as :root[data-theme="<id>"] { --<token>: … } by installThemes()
    scenes  [file, vi, en] painted 2.5D landmark scenes, shown in turn at the top of every screen.
+   hero    'logo' when the place has no scenes and shows the EchoLạc emblem there instead.
+   c['on-bg'], c['on-bg-muted']  text placed directly on the page background (default: navy / muted).
            Image: assets/scenes/<id>/<file>.webp (780×1387, bottom ~45% kept plain for floating cards).
    To add a place: add an entry here plus its images; selfTest() (open with ?test) checks its text contrast. */
 const THEMES = {
@@ -58,7 +60,7 @@ const THEMES = {
   other: {
     icon: 'pin', name: { vi: 'Nơi khác', en: 'Somewhere else' }, scene: { vi: 'Giao diện EchoLạc', en: 'Classic EchoLạc' },
     c: { navy: '#726958', 'navy-2': '#776D5B', primary: '#9C8466', accent: '#C98A1B', 'primary-soft': '#F3E6D0', 'card-blue': '#FFF4E1', tint: '#F7F1E7', 'tint-2': '#ECE6DB', line: '#EFE8DC', muted: '#6E6453', faint: '#776C5B', 'accent-line': '#D2C4AC', bg1: '#FFF4E2', bg2: '#FEF6E8', bg3: '#FCF9F3', bg4: '#F1EFEB', page: '#EEE9E1' },
-    scenes: [], // no painted scene yet: the soft theme gradient shows instead
+    scenes: [], hero: 'logo', // a faint brown EchoLạc emblem stands where other places show their painted scene
   },
 };
 const theme = id => THEMES[id] || THEMES.other;
