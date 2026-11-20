@@ -55,12 +55,58 @@ test('the Netlify build publishes app files and security headers, never docs or 
   const out = fs.mkdtempSync(path.join(os.tmpdir(), 'echolac-dist-'));
   try {
     execFileSync(process.execPath, [path.join(__dirname, '..', 'scripts', 'build-site.cjs'), out]);
-    for (const f of ['index.html', 'styles.css', 'app.js', 'model/model.json', 'model/metadata.json', 'model/group1-shard1of2.bin', 'model/group1-shard2of2.bin', 'assets/data/locations.js']) assert.ok(fs.existsSync(path.join(out, f)), f);
+    for (const f of ['index.html', 'styles.css', 'app.js', 'da-nang-question-bank.json', 'model/model.json', 'model/metadata.json', 'model/group1-shard1of2.bin', 'model/group1-shard2of2.bin', 'assets/data/locations.js']) assert.ok(fs.existsSync(path.join(out, f)), f);
     for (const f of ['EchoLac_PRD.md', 'AGENTS.md', 'README.md', 'netlify.toml', 'package.json', 'tests', 'scripts', '.env.example', 'outputs']) assert.ok(!fs.existsSync(path.join(out, f)), f + ' must stay private');
     const headers = fs.readFileSync(path.join(out, '_headers'), 'utf8');
     assert.match(headers, /Content-Security-Policy: default-src 'self'/);
     assert.match(headers, /Permissions-Policy: camera=\(self\)/);
   } finally { fs.rmSync(out, { recursive: true, force: true }); }
+});
+
+test('Da Nang bank validates and grades all six question types while holding back flagged questions', () => {
+  const app = runtime();
+  app.run(`const rawBank = ${JSON.stringify(require('../da-nang-question-bank.json'))};
+    const bank = readDanangBank(rawBank);
+    const allQuestions = rawBank.nodes.flatMap(n => n.questions);
+    const playableQuestions = [...bank.nodes.values()].flatMap(n => n.questions);`);
+  assert.equal(app.run('allQuestions.filter(q => !validDanangQuestion(q)).length'), 0);
+  assert.equal(app.run('new Set(allQuestions.map(q => q.id)).size'), 120);
+  assert.equal(app.run('playableQuestions.length'), 118);
+  assert.equal(app.run('new Set(playableQuestions.map(q => q.type)).size'), 6);
+  assert.equal(app.run('playableQuestions.every(q => !q.needsVerification)'), true);
+  assert.equal(app.run(`playableQuestions.every(q => {
+    const answer = danangSolution(q);
+    const response = q.type === 'fill_blank' ? ['  ' + answer[0].toUpperCase() + '  '] : answer;
+    return validDanangResponse(q, response) && gradeDanangResponse(q, response);
+  })`), true);
+  assert.equal(app.run(`(() => {
+    const q = playableQuestions.find(q => q.type === 'ordering');
+    const answer = danangSolution(q);
+    return !validDanangResponse(q, answer.map(() => answer[0])) && !gradeDanangResponse(q, [...answer].reverse());
+  })()`), true);
+});
+
+test('Da Nang progress restores drafts and submitted responses without grading twice', () => {
+  const bankData = JSON.stringify(require('../da-nang-question-bank.json'));
+  const prepare = `const bank = readDanangBank(${bankData}), node = bank.nodes.get('A1-01');`;
+  const app = runtime();
+  app.run(prepare + `const run = danangRun(node); run.draft = ['0'];
+    saveDanangProgress({version: bank.version, active: node.id, runs: {[node.id]: run}});`);
+  const reopen = previous => runtime(undefined, {
+    'practice:da-nang': JSON.parse(previous.storage.get('lt:practice:da-nang'))
+  });
+  const draft = reopen(app);
+  draft.run(prepare + `const progress = restoreDanangProgress(bank), run = progress.runs[progress.active];`);
+  assert.equal(draft.run('run.draft[0]'), '0');
+  assert.equal(draft.run('submitDanangResponse(node, run, run.draft)'), true);
+  draft.run('saveDanangProgress(progress)');
+  const reviewed = reopen(draft);
+  reviewed.run(prepare + 'const run = restoreDanangProgress(bank).runs[node.id];');
+  assert.equal(reviewed.run('run.index'), 0);
+  assert.equal(reviewed.run('gradeDanangResponse(node.questions[0], run.answers[0])'), true);
+  assert.equal(reviewed.run("submitDanangResponse(node, run, ['1'])"), false);
+  assert.equal(reviewed.run('run.answers.length'), 1);
+  assert.equal(reviewed.run("Object.keys(restoreDanangProgress({...bank, version: 'next'}).runs).length"), 0);
 });
 
 test('curriculum lessons are complete, sourced, unverified and render', () => {

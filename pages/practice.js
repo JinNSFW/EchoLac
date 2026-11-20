@@ -2,6 +2,7 @@
 // practice screen. Shared pieces live in components/.
 VIEWS.practice = {
     render(id) {
+      if (id === 'danang') return danangPracticeHtml();
       const list = sortedErrors(), e = S.errors.find(x => x.id === id) || list[0];
       if (!e) { location.hash = '#tutor'; return ''; }
       const idx = list.indexOf(e), next = list[(idx + 1) % list.length], s = scen(e.scen), sentence = e.word.includes(' ');
@@ -40,5 +41,8 @@ VIEWS.practice = {
         </div>
         <div class="hint" id="pm-hint">${V('Nhấn để ghi âm', 'Tap to record')}</div>
       </div>`;
+    },
+    mount(id) {
+      if (id === 'danang') mountDanangQuiz();
     },
   };

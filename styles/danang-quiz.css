@@ -1,0 +1,32 @@
+.danang-quiz {
+  color: var(--navy);
+  overflow-wrap: anywhere;
+}
+.danang-quiz h2 { font-size: 20px; line-height: 1.3; }
+.danang-quiz h3 { font-size: 15px; }
+.dq-heading { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 8px 12px; justify-content: space-between; }
+.dq-groups { display: grid; gap: 8px; list-style: none; padding: 0; margin: 8px 0 0; }
+.dq-choice {
+  display: flex; align-items: center; gap: 10px; width: 100%; text-align: left;
+  min-height: 46px; padding: 10px 12px; margin: 0;
+  color: var(--navy); background: var(--tint); border: 1px solid var(--line); border-radius: 12px;
+}
+button.dq-choice { justify-content: space-between; }
+.dq-choice input { accent-color: var(--navy); flex: none; }
+.dq-choice:has(input:checked) { border-color: var(--navy); background: var(--primary-soft); }
+.dq-choice .small { flex: none; }
+.dq-form { display: grid; gap: 16px; margin-top: 16px; }
+.dq-form fieldset { display: grid; gap: 8px; min-width: 0; padding: 0; margin: 0; border: 0; }
+.dq-form legend { font-size: 17px; line-height: 1.4; font-weight: 700; padding: 0; margin-bottom: 12px; }
+.dq-field { display: grid; gap: 5px; font-size: 14px; }
+.dq-field input, .dq-field select {
+  min-height: 44px; width: 100%; min-width: 0; padding: 8px 10px;
+  font: inherit; font-size: 16px; color: var(--navy); background: white;
+  border: 1px solid var(--line); border-radius: 10px;
+}
+.dq-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.dq-chips .chip { min-height: 44px; height: auto; white-space: normal; padding-block: 6px; }
+.dq-feedback { padding: 12px 14px; background: var(--tint); border-radius: 12px; }
+.dq-feedback p { margin-top: 6px; }
+.dq-feedback ul, .dq-feedback ol { margin: 4px 0 0; padding-inline-start: 22px; }
+.danang-quiz :focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }

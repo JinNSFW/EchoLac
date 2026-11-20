@@ -38,7 +38,7 @@ const walk = dir => fs.readdirSync(path.join(root, dir), { withFileTypes: true }
 
 // Pages, scripts, stylesheets, plus assets/ and model/ files of a served type. Docs, tests and tooling stay private.
 function siteFiles() {
-  const files = new Set(['index.html', 'styles.css', ...scripts()]);
+  const files = new Set(['index.html', 'styles.css', 'da-nang-question-bank.json', ...scripts()]);
   for (const m of read('styles.css').matchAll(/@import url\("([^"]+)"\)/g)) files.add(m[1]);
   for (const dir of ['assets', 'model']) walk(dir).filter(f => Object.hasOwn(MIME, path.extname(f))).forEach(f => files.add(f));
   return files;

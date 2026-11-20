@@ -32,6 +32,7 @@ VIEWS.home = {
         <span class="lbl">${V('Nhiệm vụ hôm nay', 'Today’s mission')}</span>
         <b>${rec.text}</b>
       </a>
+      <a class="btn soft mt-24" href="#practice/danang">${icon('book')} ${V('Luyện tập: Đà Nẵng', 'Practice: Da Nang')}</a>
       <section class="card reveal mt-24">
         <div class="row between">
           <div class="row" style="gap:10px">${img('fire', '', '').replace('class=""', 'style="width:26px;height:26px"')}<h2 style="font-size:17px;font-weight:600">${V('Chuỗi ngày học', 'Daily Streak')}</h2></div>

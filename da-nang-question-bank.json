@@ -1,0 +1,3032 @@
+{
+  "schemaVersion": 1,
+  "pack": {
+    "id": "da-nang",
+    "name": "Đà Nẵng",
+    "language": "en",
+    "version": "0.1.0",
+    "asOf": "2026-11",
+    "passMark": 0.8,
+    "testOutPassMark": 0.85,
+    "notes": "A1 is fully written (6 lessons + Level Check). A2–C1 lessons are stubs (contentStatus=pending); their Level Checks are complete and cumulative."
+  },
+  "questionTypes": {
+    "mcq": "options[], answerIndex",
+    "true_false": "answer: boolean",
+    "fill_blank": "prompt with ___ ; answers[] (case-insensitive); wordBank[] shown as chips",
+    "matching": "pairs[[left,right]]; app shuffles the right column",
+    "ordering": "itemsInCorrectOrder[]; app shuffles",
+    "listening_mcq": "ttsText spoken by browser TTS; options[], answerIndex"
+  },
+  "flags": {
+    "timeSensitive": "show the 'as of' date in the UI",
+    "needsVerification": "content owner should verify against official sources before release"
+  },
+  "nodes": [
+    {
+      "id": "A1-01",
+      "order": 1,
+      "type": "lesson",
+      "level": "A1",
+      "strand": "history",
+      "title": "Welcome to Da Nang",
+      "canDo": "I can say where Da Nang is and what its name means.",
+      "contentStatus": "ready",
+      "reading": "Da Nang is a city in Central Vietnam. It is on the sea. It has a big river, the Han River. The name “Da Nang” comes from the Cham language. It means “big river”. Da Nang is near Hue and Hoi An.",
+      "vocabulary": [
+        {
+          "term": "city",
+          "pos": "noun",
+          "definition": "a big town where many people live and work",
+          "example": "Da Nang is a city.",
+          "viGloss": "thành phố"
+        },
+        {
+          "term": "river",
+          "pos": "noun",
+          "definition": "water that flows to the sea",
+          "example": "The Han River is in Da Nang.",
+          "viGloss": "sông"
+        },
+        {
+          "term": "sea",
+          "pos": "noun",
+          "definition": "a very large area of salt water",
+          "example": "The city is on the sea.",
+          "viGloss": "biển"
+        },
+        {
+          "term": "big",
+          "pos": "adj",
+          "definition": "large in size",
+          "example": "It is a big river.",
+          "viGloss": "lớn"
+        },
+        {
+          "term": "name",
+          "pos": "noun",
+          "definition": "the word we call a person or place",
+          "example": "What is the name of the city?",
+          "viGloss": "tên"
+        },
+        {
+          "term": "mean",
+          "pos": "verb",
+          "definition": "to have a certain meaning",
+          "example": "It means “big river”.",
+          "viGloss": "có nghĩa là"
+        },
+        {
+          "term": "Central Vietnam",
+          "pos": "noun",
+          "definition": "the middle part of Vietnam",
+          "example": "Da Nang is in Central Vietnam.",
+          "viGloss": "miền Trung Việt Nam"
+        },
+        {
+          "term": "near",
+          "pos": "adj",
+          "definition": "not far from",
+          "example": "Hoi An is near Da Nang.",
+          "viGloss": "gần"
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Where is Da Nang?",
+          "options": [
+            "In Central Vietnam",
+            "In the north of Vietnam",
+            "In the south of Vietnam",
+            "In Cambodia"
+          ],
+          "answerIndex": 0,
+          "explanation": "Da Nang is a city in Central Vietnam.",
+          "tags": [
+            "location"
+          ],
+          "id": "A1-01-q01",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "Da Nang is on the sea.",
+          "answer": true,
+          "explanation": "The city is on the sea.",
+          "tags": [
+            "location"
+          ],
+          "id": "A1-01-q02",
+          "difficulty": "A1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "Da Nang is a ___ in Central Vietnam.",
+          "answers": [
+            "city"
+          ],
+          "wordBank": [
+            "city",
+            "mountain",
+            "island"
+          ],
+          "explanation": "Da Nang is a city.",
+          "tags": [
+            "vocab"
+          ],
+          "id": "A1-01-q03",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "What does “Da Nang” mean?",
+          "options": [
+            "big river",
+            "hot sun",
+            "old bridge",
+            "green mountain"
+          ],
+          "answerIndex": 0,
+          "explanation": "The name comes from the Cham language and means “big river”.",
+          "tags": [
+            "name"
+          ],
+          "id": "A1-01-q04",
+          "difficulty": "A1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Match the word with its meaning.",
+          "pairs": [
+            [
+              "city",
+              "a big town"
+            ],
+            [
+              "river",
+              "water that flows to the sea"
+            ],
+            [
+              "sea",
+              "a very large area of salt water"
+            ],
+            [
+              "near",
+              "not far from"
+            ]
+          ],
+          "explanation": "These are the key words of the lesson.",
+          "tags": [
+            "vocab"
+          ],
+          "id": "A1-01-q05",
+          "difficulty": "A1"
+        },
+        {
+          "type": "listening_mcq",
+          "ttsText": "Da Nang is near Hoi An.",
+          "prompt": "Listen. What do you hear?",
+          "options": [
+            "Da Nang is near Hoi An.",
+            "Da Nang is a big city.",
+            "Da Nang is in the north.",
+            "Da Nang is hot."
+          ],
+          "answerIndex": 0,
+          "explanation": "The speaker says Da Nang is near Hoi An.",
+          "tags": [
+            "listening"
+          ],
+          "id": "A1-01-q06",
+          "difficulty": "A1"
+        },
+        {
+          "type": "ordering",
+          "prompt": "Put the words in order.",
+          "itemsInCorrectOrder": [
+            "Da Nang",
+            "is",
+            "a",
+            "city",
+            "in Central Vietnam"
+          ],
+          "explanation": "Subject + is + a + noun + place.",
+          "tags": [
+            "grammar"
+          ],
+          "id": "A1-01-q07",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "The name “Da Nang” comes from the Cham language.",
+          "answer": true,
+          "explanation": "The Cham language is the origin of the name.",
+          "tags": [
+            "name"
+          ],
+          "id": "A1-01-q08",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which word means “water that flows to the sea”?",
+          "options": [
+            "river",
+            "bridge",
+            "noodle",
+            "rain"
+          ],
+          "answerIndex": 0,
+          "explanation": "A river flows to the sea.",
+          "tags": [
+            "vocab"
+          ],
+          "id": "A1-01-q09",
+          "difficulty": "A1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "The Han ___ is in Da Nang.",
+          "answers": [
+            "river"
+          ],
+          "wordBank": [
+            "river",
+            "bridge",
+            "mountain"
+          ],
+          "explanation": "The Han River is the big river of the city.",
+          "tags": [
+            "places"
+          ],
+          "id": "A1-01-q10",
+          "difficulty": "A1"
+        }
+      ],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "A1-02",
+      "order": 2,
+      "type": "lesson",
+      "level": "A1",
+      "strand": "weather",
+      "title": "Hot and rainy",
+      "canDo": "I can say simple things about the weather in Da Nang.",
+      "contentStatus": "ready",
+      "reading": "Da Nang is hot and humid. The weather is warm all year, about 25 or 26 degrees. There are two seasons. The dry season is from January to August. The rainy season is from September to December. In summer it can be 33 to 36 degrees.",
+      "vocabulary": [
+        {
+          "term": "hot",
+          "pos": "adj",
+          "definition": "very warm",
+          "example": "It is hot in summer.",
+          "viGloss": "nóng"
+        },
+        {
+          "term": "warm",
+          "pos": "adj",
+          "definition": "a little hot",
+          "example": "The weather is warm.",
+          "viGloss": "ấm"
+        },
+        {
+          "term": "humid",
+          "pos": "adj",
+          "definition": "with a lot of water in the air",
+          "example": "Da Nang is humid.",
+          "viGloss": "ẩm ướt"
+        },
+        {
+          "term": "rain",
+          "pos": "noun/verb",
+          "definition": "water from clouds",
+          "example": "It rains in the rainy season.",
+          "viGloss": "mưa"
+        },
+        {
+          "term": "dry",
+          "pos": "adj",
+          "definition": "without water or rain",
+          "example": "The dry season is long.",
+          "viGloss": "khô"
+        },
+        {
+          "term": "wet",
+          "pos": "adj",
+          "definition": "covered with water",
+          "example": "The road is wet.",
+          "viGloss": "ướt"
+        },
+        {
+          "term": "season",
+          "pos": "noun",
+          "definition": "a part of the year",
+          "example": "There are two seasons.",
+          "viGloss": "mùa"
+        },
+        {
+          "term": "month",
+          "pos": "noun",
+          "definition": "one of the 12 parts of a year",
+          "example": "January is a month.",
+          "viGloss": "tháng"
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "What is the weather in Da Nang like?",
+          "options": [
+            "Hot and humid",
+            "Cold and snowy",
+            "Always dry",
+            "Very cold"
+          ],
+          "answerIndex": 0,
+          "explanation": "Da Nang is hot and humid, about 25–26°C all year.",
+          "tags": [
+            "weather"
+          ],
+          "id": "A1-02-q01",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "Da Nang has two seasons.",
+          "answer": true,
+          "explanation": "There is a dry season and a rainy season.",
+          "tags": [
+            "weather"
+          ],
+          "id": "A1-02-q02",
+          "difficulty": "A1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "The ___ season is from September to December.",
+          "answers": [
+            "rainy"
+          ],
+          "wordBank": [
+            "rainy",
+            "dry",
+            "cold"
+          ],
+          "explanation": "Rainy season: September–December.",
+          "tags": [
+            "seasons"
+          ],
+          "id": "A1-02-q03",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which month is in the dry season?",
+          "options": [
+            "March",
+            "October",
+            "November",
+            "December"
+          ],
+          "answerIndex": 0,
+          "explanation": "The dry season is January–August in the source.",
+          "tags": [
+            "seasons"
+          ],
+          "needsVerification": false,
+          "id": "A1-02-q04",
+          "difficulty": "A1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Match the word with its meaning.",
+          "pairs": [
+            [
+              "hot",
+              "very warm"
+            ],
+            [
+              "rain",
+              "water from clouds"
+            ],
+            [
+              "wet",
+              "covered with water"
+            ],
+            [
+              "season",
+              "a part of the year"
+            ]
+          ],
+          "explanation": "Key weather words.",
+          "tags": [
+            "vocab"
+          ],
+          "id": "A1-02-q05",
+          "difficulty": "A1"
+        },
+        {
+          "type": "listening_mcq",
+          "ttsText": "It is hot in summer.",
+          "prompt": "Listen. What do you hear?",
+          "options": [
+            "It is hot in summer.",
+            "It is cold in winter.",
+            "It rains in summer.",
+            "It is dry in autumn."
+          ],
+          "answerIndex": 0,
+          "explanation": "The speaker says it is hot in summer.",
+          "tags": [
+            "listening"
+          ],
+          "id": "A1-02-q06",
+          "difficulty": "A1"
+        },
+        {
+          "type": "ordering",
+          "prompt": "Put the months in order.",
+          "itemsInCorrectOrder": [
+            "January",
+            "May",
+            "September",
+            "December"
+          ],
+          "explanation": "Months follow the calendar.",
+          "tags": [
+            "months"
+          ],
+          "id": "A1-02-q07",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "In Da Nang it snows in December.",
+          "answer": false,
+          "explanation": "Da Nang is a warm, tropical city.",
+          "tags": [
+            "weather"
+          ],
+          "id": "A1-02-q08",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "In summer in Da Nang it is ___.",
+          "options": [
+            "hot",
+            "cold",
+            "snowy",
+            "frozen"
+          ],
+          "answerIndex": 0,
+          "explanation": "Summer can reach 33–36°C.",
+          "tags": [
+            "weather"
+          ],
+          "id": "A1-02-q09",
+          "difficulty": "A1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "It rains more in the ___ season.",
+          "answers": [
+            "rainy"
+          ],
+          "wordBank": [
+            "rainy",
+            "dry",
+            "hot"
+          ],
+          "explanation": "The rainy season has more rain.",
+          "tags": [
+            "seasons"
+          ],
+          "id": "A1-02-q10",
+          "difficulty": "A1"
+        }
+      ],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "A1-03",
+      "order": 3,
+      "type": "lesson",
+      "level": "A1",
+      "strand": "food",
+      "title": "Noodles of Da Nang",
+      "canDo": "I can name some Da Nang dishes and say what I like.",
+      "contentStatus": "ready",
+      "reading": "Da Nang has many tasty noodle dishes. Mi Quang has rice noodles, pork, shrimp, peanuts and fresh herbs. Bun cha ca is noodles with fish. Bun mam nem is noodles with a strong fermented sauce. Banh trang cuon thit heo is pork rolled in rice paper with herbs. These are famous local dishes.",
+      "vocabulary": [
+        {
+          "term": "noodles",
+          "pos": "noun",
+          "definition": "long food made from rice or wheat",
+          "example": "I like noodles.",
+          "viGloss": "mì, bún"
+        },
+        {
+          "term": "pork",
+          "pos": "noun",
+          "definition": "meat from a pig",
+          "example": "Mi Quang has pork.",
+          "viGloss": "thịt heo"
+        },
+        {
+          "term": "fish",
+          "pos": "noun",
+          "definition": "an animal that lives in water; also food",
+          "example": "Bun cha ca has fish.",
+          "viGloss": "cá"
+        },
+        {
+          "term": "shrimp",
+          "pos": "noun",
+          "definition": "a small sea animal we eat",
+          "example": "The noodles have shrimp.",
+          "viGloss": "tôm"
+        },
+        {
+          "term": "peanuts",
+          "pos": "noun",
+          "definition": "small brown nuts",
+          "example": "Mi Quang has peanuts.",
+          "viGloss": "đậu phộng"
+        },
+        {
+          "term": "herbs",
+          "pos": "noun",
+          "definition": "fresh green leaves for food",
+          "example": "Add fresh herbs.",
+          "viGloss": "rau thơm"
+        },
+        {
+          "term": "tasty",
+          "pos": "adj",
+          "definition": "with a good flavour",
+          "example": "The soup is tasty.",
+          "viGloss": "ngon"
+        },
+        {
+          "term": "rice paper",
+          "pos": "noun",
+          "definition": "a thin, round sheet made from rice",
+          "example": "Pork is rolled in rice paper.",
+          "viGloss": "bánh tráng"
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Which dish has fish?",
+          "options": [
+            "Bun cha ca",
+            "Mi Quang",
+            "Banh trang cuon thit heo",
+            "Bun mam nem"
+          ],
+          "answerIndex": 0,
+          "explanation": "Bun cha ca is noodles with fish.",
+          "tags": [
+            "food"
+          ],
+          "id": "A1-03-q01",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "Mi Quang has peanuts.",
+          "answer": true,
+          "explanation": "Mi Quang has rice noodles, pork, shrimp, peanuts and herbs.",
+          "tags": [
+            "food"
+          ],
+          "id": "A1-03-q02",
+          "difficulty": "A1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "Mi Quang has rice ___, pork and shrimp.",
+          "answers": [
+            "noodles"
+          ],
+          "wordBank": [
+            "noodles",
+            "bread",
+            "cake"
+          ],
+          "explanation": "Mi Quang is a rice-noodle dish.",
+          "tags": [
+            "food"
+          ],
+          "id": "A1-03-q03",
+          "difficulty": "A1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Match the dish with the description.",
+          "pairs": [
+            [
+              "Mi Quang",
+              "noodles with pork, shrimp and peanuts"
+            ],
+            [
+              "Bun cha ca",
+              "noodles with fish"
+            ],
+            [
+              "Banh trang cuon thit heo",
+              "pork rolled in rice paper"
+            ],
+            [
+              "Bun mam nem",
+              "noodles with a strong fermented sauce"
+            ]
+          ],
+          "explanation": "Four famous local dishes.",
+          "tags": [
+            "food"
+          ],
+          "id": "A1-03-q04",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which dish is pork rolled in rice paper?",
+          "options": [
+            "Banh trang cuon thit heo",
+            "Mi Quang",
+            "Bun cha ca",
+            "Bun mam nem"
+          ],
+          "answerIndex": 0,
+          "explanation": "Banh trang cuon thit heo means pork rolled in rice paper.",
+          "tags": [
+            "food"
+          ],
+          "id": "A1-03-q05",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "Banh trang cuon thit heo has herbs.",
+          "answer": true,
+          "explanation": "The pork is rolled with herbs.",
+          "tags": [
+            "food"
+          ],
+          "id": "A1-03-q06",
+          "difficulty": "A1"
+        },
+        {
+          "type": "listening_mcq",
+          "ttsText": "I like noodles with shrimp.",
+          "prompt": "Listen. What do you hear?",
+          "options": [
+            "I like noodles with shrimp.",
+            "I like noodles with fish.",
+            "I like rice with pork.",
+            "I like soup with herbs."
+          ],
+          "answerIndex": 0,
+          "explanation": "The speaker likes noodles with shrimp.",
+          "tags": [
+            "listening"
+          ],
+          "id": "A1-03-q07",
+          "difficulty": "A1"
+        },
+        {
+          "type": "ordering",
+          "prompt": "Put the words in order.",
+          "itemsInCorrectOrder": [
+            "I",
+            "like",
+            "spicy",
+            "noodles"
+          ],
+          "explanation": "Subject + verb + adjective + noun.",
+          "tags": [
+            "grammar"
+          ],
+          "id": "A1-03-q08",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which food is in Mi Quang?",
+          "options": [
+            "Fresh herbs",
+            "Ice cream",
+            "Chocolate",
+            "Cheese"
+          ],
+          "answerIndex": 0,
+          "explanation": "Mi Quang is served with fresh herbs.",
+          "tags": [
+            "food"
+          ],
+          "id": "A1-03-q09",
+          "difficulty": "A1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "Bun cha ca is noodles with ___.",
+          "answers": [
+            "fish"
+          ],
+          "wordBank": [
+            "fish",
+            "beef",
+            "egg"
+          ],
+          "explanation": "Cha ca means fish cake.",
+          "tags": [
+            "food"
+          ],
+          "id": "A1-03-q10",
+          "difficulty": "A1"
+        }
+      ],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "A1-04",
+      "order": 4,
+      "type": "lesson",
+      "level": "A1",
+      "strand": "places",
+      "title": "The Dragon Bridge",
+      "canDo": "I can describe a famous bridge with simple sentences.",
+      "contentStatus": "ready",
+      "reading": "The Dragon Bridge is in Da Nang. It crosses the Han River. The bridge looks like a dragon. It is long and bright at night. At night the dragon can breathe fire and water. People come to watch the show.",
+      "vocabulary": [
+        {
+          "term": "bridge",
+          "pos": "noun",
+          "definition": "a structure that crosses a river",
+          "example": "The bridge is long.",
+          "viGloss": "cây cầu"
+        },
+        {
+          "term": "dragon",
+          "pos": "noun",
+          "definition": "a big animal in old stories",
+          "example": "The bridge looks like a dragon.",
+          "viGloss": "con rồng"
+        },
+        {
+          "term": "fire",
+          "pos": "noun",
+          "definition": "hot, bright flames",
+          "example": "The dragon breathes fire.",
+          "viGloss": "lửa"
+        },
+        {
+          "term": "water",
+          "pos": "noun",
+          "definition": "clear liquid we drink",
+          "example": "The dragon breathes water, too.",
+          "viGloss": "nước"
+        },
+        {
+          "term": "night",
+          "pos": "noun",
+          "definition": "the dark part of the day",
+          "example": "It is bright at night.",
+          "viGloss": "ban đêm"
+        },
+        {
+          "term": "long",
+          "pos": "adj",
+          "definition": "not short",
+          "example": "The bridge is long.",
+          "viGloss": "dài"
+        },
+        {
+          "term": "cross",
+          "pos": "verb",
+          "definition": "to go over",
+          "example": "It crosses the river.",
+          "viGloss": "bắc qua"
+        },
+        {
+          "term": "show",
+          "pos": "noun",
+          "definition": "something people watch",
+          "example": "The fire show is fun.",
+          "viGloss": "buổi trình diễn"
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "What does the Dragon Bridge look like?",
+          "options": [
+            "A dragon",
+            "A boat",
+            "A tower",
+            "A fish"
+          ],
+          "answerIndex": 0,
+          "explanation": "The bridge looks like a dragon.",
+          "tags": [
+            "places"
+          ],
+          "id": "A1-04-q01",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "The Dragon Bridge crosses the Han River.",
+          "answer": true,
+          "explanation": "It is over the Han River.",
+          "tags": [
+            "places"
+          ],
+          "id": "A1-04-q02",
+          "difficulty": "A1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "The dragon breathes fire and ___.",
+          "answers": [
+            "water"
+          ],
+          "wordBank": [
+            "water",
+            "smoke",
+            "rain"
+          ],
+          "explanation": "The dragon can breathe fire and water.",
+          "tags": [
+            "places"
+          ],
+          "id": "A1-04-q03",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "When can people watch the dragon show?",
+          "options": [
+            "At night",
+            "In the morning",
+            "At noon",
+            "In the rainy season only"
+          ],
+          "answerIndex": 0,
+          "explanation": "The show is at night.",
+          "tags": [
+            "places"
+          ],
+          "id": "A1-04-q04",
+          "difficulty": "A1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Match the word with its meaning.",
+          "pairs": [
+            [
+              "bridge",
+              "goes over a river"
+            ],
+            [
+              "fire",
+              "hot, bright flames"
+            ],
+            [
+              "dragon",
+              "a big animal in old stories"
+            ],
+            [
+              "show",
+              "something people watch"
+            ]
+          ],
+          "explanation": "Key words.",
+          "tags": [
+            "vocab"
+          ],
+          "id": "A1-04-q05",
+          "difficulty": "A1"
+        },
+        {
+          "type": "listening_mcq",
+          "ttsText": "The bridge is long.",
+          "prompt": "Listen. What do you hear?",
+          "options": [
+            "The bridge is long.",
+            "The bridge is old.",
+            "The bridge is small.",
+            "The bridge is wet."
+          ],
+          "answerIndex": 0,
+          "explanation": "The speaker says the bridge is long.",
+          "tags": [
+            "listening"
+          ],
+          "id": "A1-04-q06",
+          "difficulty": "A1"
+        },
+        {
+          "type": "ordering",
+          "prompt": "Put the words in order.",
+          "itemsInCorrectOrder": [
+            "The",
+            "bridge",
+            "looks",
+            "like",
+            "a",
+            "dragon"
+          ],
+          "explanation": "The + noun + looks like + a + noun.",
+          "tags": [
+            "grammar"
+          ],
+          "id": "A1-04-q07",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "The Dragon Bridge is short.",
+          "answer": false,
+          "explanation": "The bridge is long.",
+          "tags": [
+            "places"
+          ],
+          "id": "A1-04-q08",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Where is the Dragon Bridge?",
+          "options": [
+            "In Da Nang",
+            "In Hue",
+            "In Hanoi",
+            "In Da Lat"
+          ],
+          "answerIndex": 0,
+          "explanation": "The Dragon Bridge is in Da Nang.",
+          "tags": [
+            "places"
+          ],
+          "id": "A1-04-q09",
+          "difficulty": "A1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "People come to ___ the show.",
+          "answers": [
+            "watch"
+          ],
+          "wordBank": [
+            "watch",
+            "cook",
+            "sell"
+          ],
+          "explanation": "We watch a show.",
+          "tags": [
+            "vocab"
+          ],
+          "id": "A1-04-q10",
+          "difficulty": "A1"
+        }
+      ],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "A1-05",
+      "order": 5,
+      "type": "lesson",
+      "level": "A1",
+      "strand": "places",
+      "title": "An old bridge in Hoi An",
+      "canDo": "I can describe an old place with simple words.",
+      "contentStatus": "ready",
+      "reading": "Hoi An is an old town near Da Nang. It has a famous bridge. People call it the Japanese Covered Bridge. It is old and made of wood. It has a roof. There is a small temple inside. The bridge is on the 20,000 dong banknote.",
+      "vocabulary": [
+        {
+          "term": "old",
+          "pos": "adj",
+          "definition": "made or built long ago",
+          "example": "The bridge is old.",
+          "viGloss": "cũ, cổ"
+        },
+        {
+          "term": "wood",
+          "pos": "noun",
+          "definition": "the hard material from trees",
+          "example": "The bridge is made of wood.",
+          "viGloss": "gỗ"
+        },
+        {
+          "term": "roof",
+          "pos": "noun",
+          "definition": "the top of a building",
+          "example": "The bridge has a roof.",
+          "viGloss": "mái nhà"
+        },
+        {
+          "term": "banknote",
+          "pos": "noun",
+          "definition": "paper money",
+          "example": "The bridge is on a banknote.",
+          "viGloss": "tờ tiền"
+        },
+        {
+          "term": "temple",
+          "pos": "noun",
+          "definition": "a place to pray",
+          "example": "There is a small temple.",
+          "viGloss": "chùa, đền"
+        },
+        {
+          "term": "town",
+          "pos": "noun",
+          "definition": "a place smaller than a city",
+          "example": "Hoi An is a town.",
+          "viGloss": "thị trấn, phố"
+        },
+        {
+          "term": "famous",
+          "pos": "adj",
+          "definition": "known by many people",
+          "example": "It is a famous bridge.",
+          "viGloss": "nổi tiếng"
+        },
+        {
+          "term": "inside",
+          "pos": "adv",
+          "definition": "in the middle of a place",
+          "example": "The temple is inside.",
+          "viGloss": "bên trong"
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "What is the Japanese Covered Bridge made of?",
+          "options": [
+            "Wood",
+            "Plastic",
+            "Glass",
+            "Gold"
+          ],
+          "answerIndex": 0,
+          "explanation": "It is made of wood.",
+          "tags": [
+            "places"
+          ],
+          "id": "A1-05-q01",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "The Japanese Covered Bridge is in Hoi An.",
+          "answer": true,
+          "explanation": "The bridge is in the old town of Hoi An.",
+          "tags": [
+            "places"
+          ],
+          "id": "A1-05-q02",
+          "difficulty": "A1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "The bridge has a ___.",
+          "answers": [
+            "roof"
+          ],
+          "wordBank": [
+            "roof",
+            "tower",
+            "boat"
+          ],
+          "explanation": "“Covered” means the bridge has a roof.",
+          "tags": [
+            "places"
+          ],
+          "id": "A1-05-q03",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which banknote shows the bridge?",
+          "options": [
+            "20,000 dong",
+            "10,000 dong",
+            "50,000 dong",
+            "100,000 dong"
+          ],
+          "answerIndex": 0,
+          "explanation": "The bridge is on the 20,000 dong note.",
+          "tags": [
+            "places"
+          ],
+          "id": "A1-05-q04",
+          "difficulty": "A1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Match the word with its meaning.",
+          "pairs": [
+            [
+              "temple",
+              "a place to pray"
+            ],
+            [
+              "roof",
+              "the top of a building"
+            ],
+            [
+              "wood",
+              "material from trees"
+            ],
+            [
+              "banknote",
+              "paper money"
+            ]
+          ],
+          "explanation": "Key words.",
+          "tags": [
+            "vocab"
+          ],
+          "id": "A1-05-q05",
+          "difficulty": "A1"
+        },
+        {
+          "type": "listening_mcq",
+          "ttsText": "The bridge is very old.",
+          "prompt": "Listen. What do you hear?",
+          "options": [
+            "The bridge is very old.",
+            "The bridge is very long.",
+            "The bridge is very hot.",
+            "The bridge is very new."
+          ],
+          "answerIndex": 0,
+          "explanation": "The speaker says the bridge is very old.",
+          "tags": [
+            "listening"
+          ],
+          "id": "A1-05-q06",
+          "difficulty": "A1"
+        },
+        {
+          "type": "ordering",
+          "prompt": "Put the words in order.",
+          "itemsInCorrectOrder": [
+            "The",
+            "bridge",
+            "is",
+            "made",
+            "of",
+            "wood"
+          ],
+          "explanation": "Be made of + material.",
+          "tags": [
+            "grammar"
+          ],
+          "id": "A1-05-q07",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "There is a temple inside the bridge.",
+          "answer": true,
+          "explanation": "A small temple is inside.",
+          "tags": [
+            "places"
+          ],
+          "id": "A1-05-q08",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "What is Hoi An?",
+          "options": [
+            "An old town",
+            "A new airport",
+            "A mountain",
+            "A beach hotel"
+          ],
+          "answerIndex": 0,
+          "explanation": "Hoi An is an old town near Da Nang.",
+          "tags": [
+            "places"
+          ],
+          "id": "A1-05-q09",
+          "difficulty": "A1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "Hoi An is near Da Nang. It is an ___ town.",
+          "answers": [
+            "old"
+          ],
+          "wordBank": [
+            "old",
+            "new",
+            "cold"
+          ],
+          "explanation": "Hoi An is an old town.",
+          "tags": [
+            "vocab"
+          ],
+          "id": "A1-05-q10",
+          "difficulty": "A1"
+        }
+      ],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "A1-06",
+      "order": 6,
+      "type": "lesson",
+      "level": "A1",
+      "strand": "review",
+      "title": "Review: My Da Nang card",
+      "canDo": "I can write a short “Da Nang card” about a place or a dish.",
+      "contentStatus": "ready",
+      "reading": "My Da Nang card. Name: Mi Quang. Type: food. It has rice noodles, pork, shrimp and peanuts. I like it. Another card. Name: Dragon Bridge. Type: place. It crosses the Han River. It looks like a dragon. At night it can breathe fire and water.",
+      "vocabulary": [
+        {
+          "term": "card",
+          "pos": "noun",
+          "definition": "a small piece of paper with information",
+          "example": "I made a Da Nang card.",
+          "viGloss": "thẻ"
+        },
+        {
+          "term": "type",
+          "pos": "noun",
+          "definition": "a kind of something",
+          "example": "The type is food.",
+          "viGloss": "loại"
+        },
+        {
+          "term": "place",
+          "pos": "noun",
+          "definition": "a location",
+          "example": "The Dragon Bridge is a place.",
+          "viGloss": "địa điểm"
+        },
+        {
+          "term": "dish",
+          "pos": "noun",
+          "definition": "a kind of cooked food",
+          "example": "Mi Quang is a dish.",
+          "viGloss": "món ăn"
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Which one is a place?",
+          "options": [
+            "Dragon Bridge",
+            "Mi Quang",
+            "Rain",
+            "Peanuts"
+          ],
+          "answerIndex": 0,
+          "explanation": "The Dragon Bridge is a place.",
+          "tags": [
+            "review"
+          ],
+          "id": "A1-06-q01",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which season has more rain?",
+          "options": [
+            "The rainy season",
+            "The dry season",
+            "Summer only",
+            "Winter only"
+          ],
+          "answerIndex": 0,
+          "explanation": "More rain falls from September to December.",
+          "tags": [
+            "review"
+          ],
+          "id": "A1-06-q02",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "Mi Quang is a bridge.",
+          "answer": false,
+          "explanation": "Mi Quang is a noodle dish.",
+          "tags": [
+            "review"
+          ],
+          "id": "A1-06-q03",
+          "difficulty": "A1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "The Japanese Covered Bridge is made of ___.",
+          "answers": [
+            "wood"
+          ],
+          "wordBank": [
+            "wood",
+            "metal",
+            "stone"
+          ],
+          "explanation": "It is a wooden bridge.",
+          "tags": [
+            "review"
+          ],
+          "id": "A1-06-q04",
+          "difficulty": "A1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Match the name with the description.",
+          "pairs": [
+            [
+              "Han River",
+              "a big river in Da Nang"
+            ],
+            [
+              "Dragon Bridge",
+              "a bridge with a fire show"
+            ],
+            [
+              "Mi Quang",
+              "a noodle dish"
+            ],
+            [
+              "Japanese Covered Bridge",
+              "an old wooden bridge in Hoi An"
+            ]
+          ],
+          "explanation": "Review of lessons 1–5.",
+          "tags": [
+            "review"
+          ],
+          "id": "A1-06-q05",
+          "difficulty": "A1"
+        },
+        {
+          "type": "listening_mcq",
+          "ttsText": "Da Nang is hot and humid.",
+          "prompt": "Listen. What do you hear?",
+          "options": [
+            "Da Nang is hot and humid.",
+            "Da Nang is cold and dry.",
+            "Da Nang is small and old.",
+            "Da Nang is new and quiet."
+          ],
+          "answerIndex": 0,
+          "explanation": "The speaker describes the weather.",
+          "tags": [
+            "listening"
+          ],
+          "id": "A1-06-q06",
+          "difficulty": "A1"
+        },
+        {
+          "type": "ordering",
+          "prompt": "Put the words in order.",
+          "itemsInCorrectOrder": [
+            "Da Nang",
+            "is",
+            "a",
+            "city",
+            "on",
+            "the",
+            "sea"
+          ],
+          "explanation": "A simple description sentence.",
+          "tags": [
+            "grammar"
+          ],
+          "id": "A1-06-q07",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "What does “Da Nang” mean?",
+          "options": [
+            "Big river",
+            "Hot sun",
+            "Old bridge",
+            "Fresh herbs"
+          ],
+          "answerIndex": 0,
+          "explanation": "The Cham-origin name means “big river”.",
+          "tags": [
+            "review"
+          ],
+          "id": "A1-06-q08",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "The Dragon Bridge crosses the Han River.",
+          "answer": true,
+          "explanation": "It is over the Han River.",
+          "tags": [
+            "review"
+          ],
+          "id": "A1-06-q09",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Complete the card. Name: Bun cha ca. Type: food. It has ___.",
+          "options": [
+            "noodles and fish",
+            "bread and cheese",
+            "rice and chocolate",
+            "fruit and ice"
+          ],
+          "answerIndex": 0,
+          "explanation": "Bun cha ca is noodles with fish.",
+          "tags": [
+            "review"
+          ],
+          "id": "A1-06-q10",
+          "difficulty": "A1"
+        }
+      ],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "CHECK-A1",
+      "order": 7,
+      "type": "levelCheck",
+      "level": "A1",
+      "strand": "mixed",
+      "title": "Level Check A1",
+      "canDo": "I can understand and use basic words about Da Nang.",
+      "contentStatus": "ready",
+      "covers": [
+        "A1-01",
+        "A1-02",
+        "A1-03",
+        "A1-04",
+        "A1-05",
+        "A1-06"
+      ],
+      "cumulative": false,
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Da Nang is a city in ___ Vietnam.",
+          "options": [
+            "North",
+            "Central",
+            "South",
+            "West"
+          ],
+          "answerIndex": 1,
+          "explanation": "Da Nang is in Central Vietnam.",
+          "tags": [
+            "location"
+          ],
+          "lessonRef": "A1-01",
+          "id": "CHECK-A1-q01",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "Da Nang is cold and snowy.",
+          "answer": false,
+          "explanation": "Da Nang is warm and tropical.",
+          "tags": [
+            "weather"
+          ],
+          "lessonRef": "A1-02",
+          "id": "CHECK-A1-q02",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "The rainy season is from ___.",
+          "options": [
+            "September to December",
+            "January to April",
+            "May to June",
+            "July only"
+          ],
+          "answerIndex": 0,
+          "explanation": "The rainy season runs September–December.",
+          "tags": [
+            "weather"
+          ],
+          "lessonRef": "A1-02",
+          "id": "CHECK-A1-q03",
+          "difficulty": "A1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "Bun cha ca has noodles and ___.",
+          "answers": [
+            "fish"
+          ],
+          "wordBank": [
+            "fish",
+            "beef",
+            "egg"
+          ],
+          "explanation": "Cha ca means fish cake.",
+          "tags": [
+            "food"
+          ],
+          "lessonRef": "A1-03",
+          "id": "CHECK-A1-q04",
+          "difficulty": "A1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Match the name with the description.",
+          "pairs": [
+            [
+              "Dragon Bridge",
+              "crosses the Han River"
+            ],
+            [
+              "Japanese Covered Bridge",
+              "is in Hoi An"
+            ],
+            [
+              "Mi Quang",
+              "has peanuts and shrimp"
+            ],
+            [
+              "Rainy season",
+              "September to December"
+            ]
+          ],
+          "explanation": "Mixed review.",
+          "tags": [
+            "review"
+          ],
+          "id": "CHECK-A1-q05",
+          "difficulty": "A1"
+        },
+        {
+          "type": "listening_mcq",
+          "ttsText": "The bridge is made of wood.",
+          "prompt": "Listen. What do you hear?",
+          "options": [
+            "The bridge is made of wood.",
+            "The bridge is made of glass.",
+            "The bridge is long.",
+            "The bridge is on the river."
+          ],
+          "answerIndex": 0,
+          "explanation": "The speaker says the bridge is made of wood.",
+          "tags": [
+            "listening"
+          ],
+          "lessonRef": "A1-05",
+          "id": "CHECK-A1-q06",
+          "difficulty": "A1"
+        },
+        {
+          "type": "ordering",
+          "prompt": "Put the words in order.",
+          "itemsInCorrectOrder": [
+            "The",
+            "dragon",
+            "breathes",
+            "fire"
+          ],
+          "explanation": "Subject + verb + object.",
+          "tags": [
+            "grammar"
+          ],
+          "lessonRef": "A1-04",
+          "id": "CHECK-A1-q07",
+          "difficulty": "A1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "Hoi An is an old town near Da Nang.",
+          "answer": true,
+          "explanation": "Hoi An is near Da Nang.",
+          "tags": [
+            "places"
+          ],
+          "lessonRef": "A1-05",
+          "id": "CHECK-A1-q08",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "What can the Dragon Bridge breathe?",
+          "options": [
+            "Fire and water",
+            "Snow",
+            "Music",
+            "Smoke only"
+          ],
+          "answerIndex": 0,
+          "explanation": "It can breathe fire and water.",
+          "tags": [
+            "places"
+          ],
+          "lessonRef": "A1-04",
+          "id": "CHECK-A1-q09",
+          "difficulty": "A1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "Banh trang cuon thit heo is pork in rice ___.",
+          "answers": [
+            "paper"
+          ],
+          "wordBank": [
+            "paper",
+            "bowl",
+            "soup"
+          ],
+          "explanation": "Banh trang is rice paper.",
+          "tags": [
+            "food"
+          ],
+          "lessonRef": "A1-03",
+          "id": "CHECK-A1-q10",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "The weather in Da Nang is ___ all year.",
+          "options": [
+            "warm",
+            "freezing",
+            "snowy",
+            "icy"
+          ],
+          "answerIndex": 0,
+          "explanation": "It is warm, about 25–26°C.",
+          "tags": [
+            "weather"
+          ],
+          "lessonRef": "A1-02",
+          "id": "CHECK-A1-q11",
+          "difficulty": "A1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which food has peanuts?",
+          "options": [
+            "Mi Quang",
+            "Ice cream",
+            "Bread",
+            "Cake"
+          ],
+          "answerIndex": 0,
+          "explanation": "Mi Quang has peanuts.",
+          "tags": [
+            "food"
+          ],
+          "lessonRef": "A1-03",
+          "id": "CHECK-A1-q12",
+          "difficulty": "A1"
+        }
+      ],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "A2-01",
+      "order": 8,
+      "type": "lesson",
+      "level": "A2",
+      "strand": "location",
+      "title": "Where is Da Nang?",
+      "canDo": "I can say where Da Nang is and how far it is from other cities.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "A2-02",
+      "order": 9,
+      "type": "lesson",
+      "level": "A2",
+      "strand": "weather",
+      "title": "Two seasons, what to wear",
+      "canDo": "I can talk about the seasons and suitable clothes.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "A2-03",
+      "order": 10,
+      "type": "lesson",
+      "level": "A2",
+      "strand": "food",
+      "title": "How to eat Mi Quang",
+      "canDo": "I can describe the steps of eating a dish (first, then, finally).",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "A2-04",
+      "order": 11,
+      "type": "lesson",
+      "level": "A2",
+      "strand": "places",
+      "title": "A visit to Da Nang Museum",
+      "canDo": "I can ask about opening hours, tickets and directions.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "A2-05",
+      "order": 12,
+      "type": "lesson",
+      "level": "A2",
+      "strand": "places",
+      "title": "Bridges at night",
+      "canDo": "I can talk about show times during the week.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "A2-06",
+      "order": 13,
+      "type": "lesson",
+      "level": "A2",
+      "strand": "culture",
+      "title": "Hoi An rules",
+      "canDo": "I can understand and say visiting rules.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "CHECK-A2",
+      "order": 14,
+      "type": "levelCheck",
+      "level": "A2",
+      "strand": "mixed",
+      "title": "Level Check A2",
+      "canDo": "I can handle everyday information about Da Nang.",
+      "contentStatus": "ready",
+      "covers": [
+        "A2-01",
+        "A2-02",
+        "A2-03",
+        "A2-04",
+        "A2-05",
+        "A2-06"
+      ],
+      "cumulative": true,
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "How far is Hue from Da Nang?",
+          "options": [
+            "About 108 km",
+            "About 764 km",
+            "About 964 km",
+            "About 10 km"
+          ],
+          "answerIndex": 0,
+          "explanation": "Hue is about 108 km from Da Nang.",
+          "tags": [
+            "location"
+          ],
+          "id": "CHECK-A2-q01",
+          "difficulty": "A2"
+        },
+        {
+          "type": "mcq",
+          "prompt": "How far is Hanoi from Da Nang?",
+          "options": [
+            "About 764 km",
+            "About 108 km",
+            "About 964 km",
+            "About 50 km"
+          ],
+          "answerIndex": 0,
+          "explanation": "Hanoi is about 764 km away.",
+          "tags": [
+            "location"
+          ],
+          "id": "CHECK-A2-q02",
+          "difficulty": "A2"
+        },
+        {
+          "type": "true_false",
+          "prompt": "Da Nang is closer to Hanoi than to Ho Chi Minh City.",
+          "answer": true,
+          "explanation": "764 km is less than 964 km.",
+          "tags": [
+            "location"
+          ],
+          "id": "CHECK-A2-q03",
+          "difficulty": "A2"
+        },
+        {
+          "type": "mcq",
+          "prompt": "What should you bring in the rainy season?",
+          "options": [
+            "An umbrella or raincoat",
+            "Skis",
+            "A heavy winter coat",
+            "Nothing"
+          ],
+          "answerIndex": 0,
+          "explanation": "Rain is common from September to December.",
+          "tags": [
+            "weather"
+          ],
+          "id": "CHECK-A2-q04",
+          "difficulty": "A2"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "The dry season is from January to ___.",
+          "answers": [
+            "August",
+            "august"
+          ],
+          "wordBank": [
+            "August",
+            "March",
+            "December"
+          ],
+          "explanation": "The source gives January–August as the dry season.",
+          "tags": [
+            "weather"
+          ],
+          "id": "CHECK-A2-q05",
+          "difficulty": "A2"
+        },
+        {
+          "type": "ordering",
+          "prompt": "Put the steps in order: how to enjoy Mi Quang.",
+          "itemsInCorrectOrder": [
+            "Put the noodles in the bowl",
+            "Add a little broth",
+            "Add fresh herbs and peanuts",
+            "Eat with a grilled rice cracker"
+          ],
+          "explanation": "A sample sequence; the dish has little broth and is eaten with a grilled rice cracker.",
+          "tags": [
+            "food",
+            "sequence"
+          ],
+          "needsVerification": true,
+          "id": "CHECK-A2-q06",
+          "difficulty": "A2"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Da Nang Museum opens at ___ on normal days.",
+          "options": [
+            "8:00",
+            "6:00",
+            "10:00",
+            "12:00"
+          ],
+          "answerIndex": 0,
+          "explanation": "Opening hours were 8:00–17:00 on normal days.",
+          "tags": [
+            "places"
+          ],
+          "timeSensitive": true,
+          "id": "CHECK-A2-q07",
+          "difficulty": "A2"
+        },
+        {
+          "type": "mcq",
+          "prompt": "When is the Dragon Bridge fire show?",
+          "options": [
+            "21:00 on Friday, Saturday and Sunday",
+            "18:00 every day",
+            "12:00 on Monday",
+            "23:00 on Tuesday"
+          ],
+          "answerIndex": 0,
+          "explanation": "Show times can change; check before you go.",
+          "tags": [
+            "places"
+          ],
+          "timeSensitive": true,
+          "id": "CHECK-A2-q08",
+          "difficulty": "A2"
+        },
+        {
+          "type": "true_false",
+          "prompt": "The Han River Swing Bridge turns 180 degrees.",
+          "answer": false,
+          "explanation": "It rotates 90 degrees.",
+          "tags": [
+            "places"
+          ],
+          "id": "CHECK-A2-q09",
+          "difficulty": "A2"
+        },
+        {
+          "type": "mcq",
+          "prompt": "How many people can stand on the Japanese Covered Bridge at one time?",
+          "options": [
+            "20",
+            "200",
+            "2",
+            "No limit"
+          ],
+          "answerIndex": 0,
+          "explanation": "Visitors are limited to 20 at a time.",
+          "tags": [
+            "culture"
+          ],
+          "id": "CHECK-A2-q10",
+          "difficulty": "A2"
+        },
+        {
+          "type": "true_false",
+          "prompt": "The name “Da Nang” means “big river”.",
+          "answer": true,
+          "explanation": "A1 review: Cham-origin name.",
+          "tags": [
+            "review"
+          ],
+          "id": "CHECK-A2-q11",
+          "difficulty": "A2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Match the rule with its meaning.",
+          "pairs": [
+            [
+              "Dress properly",
+              "wear suitable clothes"
+            ],
+            [
+              "Don't litter",
+              "don't leave rubbish"
+            ],
+            [
+              "Wait your turn",
+              "stay until it is your time"
+            ],
+            [
+              "Shrine",
+              "a holy place"
+            ]
+          ],
+          "explanation": "Visiting rules.",
+          "tags": [
+            "culture"
+          ],
+          "id": "CHECK-A2-q12",
+          "difficulty": "A2"
+        }
+      ],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "B1-01",
+      "order": 15,
+      "type": "lesson",
+      "level": "B1",
+      "strand": "weather",
+      "title": "Beach city, mountain air",
+      "canDo": "I can compare lowland and mountain climate.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "B1-02",
+      "order": 16,
+      "type": "lesson",
+      "level": "B1",
+      "strand": "food",
+      "title": "Tastes of the Central Coast",
+      "canDo": "I can describe flavours and ingredients.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "B1-03",
+      "order": 17,
+      "type": "lesson",
+      "level": "B1",
+      "strand": "history",
+      "title": "Three names, one city",
+      "canDo": "I can explain where the city's names come from.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "B1-04",
+      "order": 18,
+      "type": "lesson",
+      "level": "B1",
+      "strand": "culture",
+      "title": "Heritage you can touch and hear",
+      "canDo": "I can introduce intangible heritage.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "B1-05",
+      "order": 19,
+      "type": "lesson",
+      "level": "B1",
+      "strand": "places",
+      "title": "Landmarks with a story",
+      "canDo": "I can explain the meaning of a landmark.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "B1-06",
+      "order": 20,
+      "type": "lesson",
+      "level": "B1",
+      "strand": "culture",
+      "title": "Festival city",
+      "canDo": "I can talk about festivals and events.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "CHECK-B1",
+      "order": 21,
+      "type": "levelCheck",
+      "level": "B1",
+      "strand": "mixed",
+      "title": "Level Check B1",
+      "canDo": "I can describe, compare and explain simple cultural facts.",
+      "contentStatus": "ready",
+      "covers": [
+        "B1-01",
+        "B1-02",
+        "B1-03",
+        "B1-04",
+        "B1-05",
+        "B1-06",
+        "A2 review"
+      ],
+      "cumulative": true,
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Why do many visitors go to Ba Na Hills in summer?",
+          "options": [
+            "It is cooler than the coast",
+            "It is hotter than the coast",
+            "It never rains",
+            "It is below sea level"
+          ],
+          "answerIndex": 0,
+          "explanation": "Ba Na is about 1,500 m high and about 17–20°C in summer.",
+          "tags": [
+            "weather"
+          ],
+          "id": "CHECK-B1-q01",
+          "difficulty": "B1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "About how big is the day–night temperature difference at Ba Na?",
+          "options": [
+            "8–10°C",
+            "1–2°C",
+            "20–25°C",
+            "0°C"
+          ],
+          "answerIndex": 0,
+          "explanation": "The difference is about 8–10°C.",
+          "tags": [
+            "weather"
+          ],
+          "id": "CHECK-B1-q02",
+          "difficulty": "B1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "Humidity in lowland Da Nang is around 83–84%.",
+          "answer": true,
+          "explanation": "Da Nang is humid.",
+          "tags": [
+            "weather"
+          ],
+          "id": "CHECK-B1-q03",
+          "difficulty": "B1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Who used the name “Tourane” for the city?",
+          "options": [
+            "The French",
+            "The Cham",
+            "The Japanese",
+            "The Americans"
+          ],
+          "answerIndex": 0,
+          "explanation": "Tourane was the French name.",
+          "tags": [
+            "history"
+          ],
+          "id": "CHECK-B1-q04",
+          "difficulty": "B1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which name of the city comes from the Cham language?",
+          "options": [
+            "Da Nang",
+            "Tourane",
+            "Hoi An",
+            "Han River"
+          ],
+          "answerIndex": 0,
+          "explanation": "Da Nang is of Cham origin.",
+          "tags": [
+            "history"
+          ],
+          "id": "CHECK-B1-q05",
+          "difficulty": "B1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Match the heritage item with its description.",
+          "pairs": [
+            [
+              "Non Nuoc",
+              "marble stone-carving craft"
+            ],
+            [
+              "Tuong",
+              "classical Vietnamese theatre (Quang style)"
+            ],
+            [
+              "Whale Worship Festival",
+              "a festival of fishing communities"
+            ],
+            [
+              "Cham Museum",
+              "Cham sculpture collection"
+            ]
+          ],
+          "explanation": "Intangible and cultural heritage.",
+          "tags": [
+            "culture"
+          ],
+          "id": "CHECK-B1-q06",
+          "difficulty": "B1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "About how much of the Swing Bridge cost came from community contributions?",
+          "options": [
+            "30%",
+            "3%",
+            "90%",
+            "0%"
+          ],
+          "answerIndex": 0,
+          "explanation": "Residents contributed about 30%.",
+          "tags": [
+            "places"
+          ],
+          "id": "CHECK-B1-q07",
+          "difficulty": "B1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "The Dragon Bridge's dragon design comes from the ___ dynasty.",
+          "options": [
+            "Ly",
+            "Tang",
+            "Nguyen",
+            "Ming"
+          ],
+          "answerIndex": 0,
+          "explanation": "The dragon follows the Ly dynasty style.",
+          "tags": [
+            "places"
+          ],
+          "id": "CHECK-B1-q08",
+          "difficulty": "B1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "Da Nang won “Asia's Leading Festival & Event Destination” in 2016 and 2022.",
+          "answer": true,
+          "explanation": "It was honoured twice by the World Travel Awards.",
+          "tags": [
+            "culture"
+          ],
+          "id": "CHECK-B1-q09",
+          "difficulty": "B1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which phrase best describes Bun mam nem?",
+          "options": [
+            "Strong, salty and spicy with a fermented sauce",
+            "Sweet and cold",
+            "Plain and mild",
+            "Sour and creamy"
+          ],
+          "answerIndex": 0,
+          "explanation": "The dish uses a strong fermented sauce.",
+          "tags": [
+            "food"
+          ],
+          "needsVerification": true,
+          "id": "CHECK-B1-q10",
+          "difficulty": "B1"
+        },
+        {
+          "type": "fill_blank",
+          "prompt": "The roof of APEC Park looks like a ___.",
+          "answers": [
+            "kite"
+          ],
+          "wordBank": [
+            "kite",
+            "boat",
+            "dragon"
+          ],
+          "explanation": "The design is inspired by a kite.",
+          "tags": [
+            "places"
+          ],
+          "id": "CHECK-B1-q11",
+          "difficulty": "B1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "The Han River Swing Bridge rotates by ___ degrees.",
+          "options": [
+            "90",
+            "45",
+            "180",
+            "360"
+          ],
+          "answerIndex": 0,
+          "explanation": "A2 review.",
+          "tags": [
+            "review"
+          ],
+          "id": "CHECK-B1-q12",
+          "difficulty": "B1"
+        }
+      ],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "B2-01",
+      "order": 22,
+      "type": "lesson",
+      "level": "B2",
+      "strand": "weather",
+      "title": "Monsoon rhythms and daily life",
+      "canDo": "I can explain how climate affects daily life.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "B2-02",
+      "order": 23,
+      "type": "lesson",
+      "level": "B2",
+      "strand": "food",
+      "title": "Food as culture",
+      "canDo": "I can analyse a dish and its social role.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "B2-03",
+      "order": 24,
+      "type": "lesson",
+      "level": "B2",
+      "strand": "history",
+      "title": "A gateway through time",
+      "canDo": "I can summarise a short timeline.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "B2-04",
+      "order": 25,
+      "type": "lesson",
+      "level": "B2",
+      "strand": "places",
+      "title": "Architecture and layered influences",
+      "canDo": "I can describe architectural styles.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "B2-05",
+      "order": 26,
+      "type": "lesson",
+      "level": "B2",
+      "strand": "culture",
+      "title": "Mountains, caves and spirituality",
+      "canDo": "I can discuss spiritual places linked to nature.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "B2-06",
+      "order": 27,
+      "type": "lesson",
+      "level": "B2",
+      "strand": "culture",
+      "title": "Stage, library and city culture",
+      "canDo": "I can present the city's cultural institutions.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "CHECK-B2",
+      "order": 28,
+      "type": "levelCheck",
+      "level": "B2",
+      "strand": "mixed",
+      "title": "Level Check B2",
+      "canDo": "I can explain causes, effects and cultural layers.",
+      "contentStatus": "ready",
+      "covers": [
+        "B2-01",
+        "B2-02",
+        "B2-03",
+        "B2-04",
+        "B2-05",
+        "B2-06",
+        "B1 review"
+      ],
+      "cumulative": true,
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Da Nang's climate is best described as…",
+          "options": [
+            "Tropical monsoon, a transition between North and South",
+            "Polar",
+            "Desert",
+            "Mediterranean"
+          ],
+          "answerIndex": 0,
+          "explanation": "It is a tropical monsoon climate between the northern and southern types.",
+          "tags": [
+            "weather"
+          ],
+          "id": "CHECK-B2-q01",
+          "difficulty": "B2"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Why is the old town quieter in the rainy season?",
+          "options": [
+            "Rain and storms reduce the number of visitors",
+            "The town closes for the season",
+            "The river dries up",
+            "It is too hot"
+          ],
+          "answerIndex": 0,
+          "explanation": "Cause and effect: rain and storms mean fewer visitors.",
+          "tags": [
+            "weather"
+          ],
+          "id": "CHECK-B2-q02",
+          "difficulty": "B2"
+        },
+        {
+          "type": "true_false",
+          "prompt": "Early rain showers in the rainy season usually last only 1–2 hours.",
+          "answer": true,
+          "explanation": "They are short showers.",
+          "tags": [
+            "weather"
+          ],
+          "id": "CHECK-B2-q03",
+          "difficulty": "B2"
+        },
+        {
+          "type": "ordering",
+          "prompt": "Put the events in order.",
+          "itemsInCorrectOrder": [
+            "1835: Western ships may only dock at Da Nang",
+            "1858: The French attack Da Nang",
+            "1965: US forces land at Da Nang",
+            "1986: Doi Moi reforms begin",
+            "1997: Da Nang separates from Quang Nam",
+            "2025: Da Nang merges with Quang Nam"
+          ],
+          "explanation": "A very short timeline of turning points.",
+          "tags": [
+            "history"
+          ],
+          "id": "CHECK-B2-q04",
+          "difficulty": "B2"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Da Nang Museum's building (1898–1900) is in which style?",
+          "options": [
+            "Neoclassical",
+            "Gothic",
+            "Modern glass",
+            "Traditional wooden"
+          ],
+          "answerIndex": 0,
+          "explanation": "It is a neoclassical French-period building, formerly the mayor's office.",
+          "tags": [
+            "places"
+          ],
+          "id": "CHECK-B2-q05",
+          "difficulty": "B2"
+        },
+        {
+          "type": "mcq",
+          "prompt": "A “covered bridge” design is described as…",
+          "options": [
+            "A house above and a bridge below",
+            "A bridge without a roof",
+            "A floating bridge",
+            "A bridge of stone only"
+          ],
+          "answerIndex": 0,
+          "explanation": "The Japanese Covered Bridge combines a bridge with a covered structure.",
+          "tags": [
+            "places"
+          ],
+          "id": "CHECK-B2-q06",
+          "difficulty": "B2"
+        },
+        {
+          "type": "true_false",
+          "prompt": "The Marble Mountains are made only of marble.",
+          "answer": false,
+          "explanation": "They include marble, limestone and caves.",
+          "tags": [
+            "places"
+          ],
+          "id": "CHECK-B2-q07",
+          "difficulty": "B2"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Linh Ung Pagoda is on the ___ Peninsula.",
+          "options": [
+            "Son Tra",
+            "Hai Van",
+            "Ly Son",
+            "Cu Lao Cham"
+          ],
+          "answerIndex": 0,
+          "explanation": "Linh Ung Pagoda is on Son Tra.",
+          "tags": [
+            "culture"
+          ],
+          "id": "CHECK-B2-q08",
+          "difficulty": "B2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Match the place with the description.",
+          "pairs": [
+            [
+              "Dien Hai Citadel",
+              "a historic fortress"
+            ],
+            [
+              "Marble Mountains",
+              "caves and a stone-craft village"
+            ],
+            [
+              "Son Tra",
+              "a peninsula with a pagoda"
+            ],
+            [
+              "Namazu",
+              "a legendary creature in the bridge's story"
+            ]
+          ],
+          "explanation": "Heritage vocabulary.",
+          "tags": [
+            "culture"
+          ],
+          "id": "CHECK-B2-q09",
+          "difficulty": "B2"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which best explains why Da Nang is called a “gateway”?",
+          "options": [
+            "Its port connected Central Vietnam with the outside world",
+            "It is the capital",
+            "It has no river",
+            "It is far from the sea"
+          ],
+          "answerIndex": 0,
+          "explanation": "Port and location made it an entry point.",
+          "tags": [
+            "history"
+          ],
+          "id": "CHECK-B2-q10",
+          "difficulty": "B2"
+        },
+        {
+          "type": "true_false",
+          "prompt": "The Dragon Bridge crosses the Han River.",
+          "answer": true,
+          "explanation": "A1 review.",
+          "tags": [
+            "review"
+          ],
+          "id": "CHECK-B2-q11",
+          "difficulty": "B2"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Mi Quang is eaten for family meals and also for…",
+          "options": [
+            "Festive occasions",
+            "Only breakfast",
+            "Only in winter",
+            "Nothing special"
+          ],
+          "answerIndex": 0,
+          "explanation": "It is both an everyday and a festive dish.",
+          "tags": [
+            "food"
+          ],
+          "id": "CHECK-B2-q12",
+          "difficulty": "B2"
+        }
+      ],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "C1-01",
+      "order": 29,
+      "type": "lesson",
+      "level": "C1",
+      "strand": "location",
+      "title": "Geography as destiny",
+      "canDo": "I can argue how location shaped the city's role.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "C1-02",
+      "order": 30,
+      "type": "lesson",
+      "level": "C1",
+      "strand": "culture",
+      "title": "Reading a museum critically",
+      "canDo": "I can interpret how a museum tells a story.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "C1-03",
+      "order": 31,
+      "type": "lesson",
+      "level": "C1",
+      "strand": "weather",
+      "title": "Climate, land and conservation",
+      "canDo": "I can discuss climate, terrain and conservation.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "C1-04",
+      "order": 32,
+      "type": "lesson",
+      "level": "C1",
+      "strand": "food",
+      "title": "Cuisine and identity",
+      "canDo": "I can analyse cuisine as regional identity.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "C1-05",
+      "order": 33,
+      "type": "lesson",
+      "level": "C1",
+      "strand": "location",
+      "title": "One city, two administrations",
+      "canDo": "I can present and evaluate the 2025 merger.",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "C1-06",
+      "order": 34,
+      "type": "lesson",
+      "level": "C1",
+      "strand": "history",
+      "title": "Layers of exchange",
+      "canDo": "I can synthesise cultural layers (capstone).",
+      "contentStatus": "pending",
+      "reading": "",
+      "vocabulary": [],
+      "questions": [],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    },
+    {
+      "id": "CHECK-C1",
+      "order": 35,
+      "type": "levelCheck",
+      "level": "C1",
+      "strand": "mixed",
+      "title": "Final Capstone Check C1",
+      "canDo": "I can analyse, evaluate and synthesise ideas about Da Nang's culture.",
+      "contentStatus": "ready",
+      "covers": [
+        "C1-01",
+        "C1-02",
+        "C1-03",
+        "C1-04",
+        "C1-05",
+        "C1-06",
+        "B2 review"
+      ],
+      "cumulative": true,
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Which factor best explains Da Nang's historical role as a port?",
+          "options": [
+            "A deep, sheltered bay on the central coast",
+            "A location far from the sea",
+            "A desert climate",
+            "A lack of rivers"
+          ],
+          "answerIndex": 0,
+          "explanation": "Geography made the bay a natural harbour.",
+          "tags": [
+            "location"
+          ],
+          "id": "CHECK-C1-q01",
+          "difficulty": "C1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Da Nang is the end point of which regional route?",
+          "options": [
+            "The East–West Economic Corridor",
+            "The Silk Road",
+            "The Mekong Delta Route",
+            "The Ho Chi Minh Trail only"
+          ],
+          "answerIndex": 0,
+          "explanation": "It links Da Nang with Laos, Thailand and Myanmar.",
+          "tags": [
+            "location"
+          ],
+          "id": "CHECK-C1-q02",
+          "difficulty": "C1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "A museum displays about 3,000 of 27,000 objects. What does this show?",
+          "options": [
+            "Curation shapes the story a museum tells",
+            "The collection is small",
+            "The objects are worthless",
+            "Nothing"
+          ],
+          "answerIndex": 0,
+          "explanation": "Selection is an interpretive act.",
+          "tags": [
+            "heritage"
+          ],
+          "id": "CHECK-C1-q03",
+          "difficulty": "C1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which statement is best supported by Da Nang's names (Cham, Chinese, French)?",
+          "options": [
+            "The city has layers of cultural exchange",
+            "It never traded with others",
+            "It has one single origin",
+            "Names do not matter"
+          ],
+          "answerIndex": 0,
+          "explanation": "Each name reflects a different historical contact.",
+          "tags": [
+            "history"
+          ],
+          "id": "CHECK-C1-q04",
+          "difficulty": "C1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "After the 2025 merger, Da Nang covers about 11,859.59 km².",
+          "answer": true,
+          "explanation": "Post-merger figure from the source.",
+          "tags": [
+            "location"
+          ],
+          "id": "CHECK-C1-q05",
+          "difficulty": "C1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "After the merger, the population is about…",
+          "options": [
+            "3.07 million",
+            "1.1 million",
+            "300,000",
+            "10 million"
+          ],
+          "answerIndex": 0,
+          "explanation": "The post-merger figure is 3,065,628.",
+          "tags": [
+            "location"
+          ],
+          "id": "CHECK-C1-q06",
+          "difficulty": "C1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Mi Quang is shared by Quang Nam and Da Nang. This suggests…",
+          "options": [
+            "A shared history and regional identity",
+            "The dish is foreign",
+            "The dish is new",
+            "The dish has no link to place"
+          ],
+          "answerIndex": 0,
+          "explanation": "Food is a marker of shared identity.",
+          "tags": [
+            "food"
+          ],
+          "id": "CHECK-C1-q07",
+          "difficulty": "C1"
+        },
+        {
+          "type": "true_false",
+          "prompt": "After the merger, Da Nang has only coastal areas.",
+          "answer": false,
+          "explanation": "It now includes mountainous areas to the west.",
+          "tags": [
+            "weather"
+          ],
+          "id": "CHECK-C1-q08",
+          "difficulty": "C1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which is an example of intangible heritage?",
+          "options": [
+            "Non Nuoc stone-carving craft knowledge",
+            "The Marble Mountains",
+            "The Dragon Bridge",
+            "A banknote"
+          ],
+          "answerIndex": 0,
+          "explanation": "Intangible heritage is practices and skills.",
+          "tags": [
+            "heritage"
+          ],
+          "id": "CHECK-C1-q09",
+          "difficulty": "C1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which statement is accurate?",
+          "options": [
+            "Da Nang separated from Quang Nam in 1997 and merged again in 2025",
+            "Da Nang has always been part of Quang Nam",
+            "Da Nang separated in 2025",
+            "Da Nang merged in 1997"
+          ],
+          "answerIndex": 0,
+          "explanation": "1997 separation; 2025 merger.",
+          "tags": [
+            "history"
+          ],
+          "id": "CHECK-C1-q10",
+          "difficulty": "C1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "How many commune-level administrative units are in the new Da Nang?",
+          "options": [
+            "94",
+            "12",
+            "300",
+            "5"
+          ],
+          "answerIndex": 0,
+          "explanation": "The source lists 94 units.",
+          "tags": [
+            "location"
+          ],
+          "id": "CHECK-C1-q11",
+          "difficulty": "C1"
+        },
+        {
+          "type": "mcq",
+          "prompt": "Which sentence is the strongest thesis for an essay on Da Nang's identity?",
+          "options": [
+            "Da Nang's identity is a layered product of trade, migration and cultural exchange.",
+            "Da Nang is nice.",
+            "Da Nang has food.",
+            "Da Nang is far."
+          ],
+          "answerIndex": 0,
+          "explanation": "A thesis makes an arguable claim.",
+          "tags": [
+            "writing"
+          ],
+          "id": "CHECK-C1-q12",
+          "difficulty": "C1"
+        }
+      ],
+      "sources": [
+        "phôi_giáo_án.txt"
+      ],
+      "asOf": "2026-11"
+    }
+  ]
+}

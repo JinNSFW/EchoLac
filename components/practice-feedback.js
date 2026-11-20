@@ -15,5 +15,6 @@ function practiceHtml() {
       <textarea id="ans" rows="1" disabled placeholder="${V('Trả lời bằng tiếng Anh…', 'Answer in English…')}" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendAnswer()}"></textarea>
       <button class="send" id="send" disabled aria-label="${V('Gửi', 'Send')}">${icon('send', 'sm')}</button>
     </form>
-    <div class="chips mt-8"><button class="chip" type="button" onclick="helpStart()">${icon('bulb', 'sm')} ${V('Gợi ý mở đầu', 'Help me start')}</button></div>`;
+    <div class="chips mt-8"><button class="chip" type="button" onclick="helpStart()">${icon('bulb', 'sm')} ${V('Gợi ý mở đầu', 'Help me start')}</button></div>
+    <a class="btn soft mt-16" href="#practice/danang">${icon('book')} ${V('Luyện tập: Đà Nẵng', 'Practice: Da Nang')}</a>`;
 }

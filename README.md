@@ -15,6 +15,9 @@ npm start
 Mở `http://127.0.0.1:4173`. Thêm `?demo` để vào tài khoản mẫu, hoặc `?demo&test`
 để chạy chẩn đoán độ tương phản và nhận diện trong console. Không cần `npm install`.
 Máy chủ phát triển chỉ phục vụ tệp ứng dụng, tài nguyên và model.
+Trong **Trang chủ → Luyện tập: Đà Nẵng**, bộ câu hỏi tải khi mở mục này và lưu lượt
+đang làm trong trình duyệt. Khi đổi nội dung ngân hàng, tăng `pack.version` trong JSON
+để tiến trình cũ không bị áp vào đáp án mới.
 Nếu PowerShell chặn `npm.ps1`, thay `npm` bằng `npm.cmd` trong các lệnh dưới đây và lệnh khởi động.
 
 ```sh
@@ -28,7 +31,7 @@ các tệp ứng dụng.
 ## Triển khai
 
 Netlify chạy `node scripts/build-site.cjs`, chép đúng các tệp công khai của ứng dụng
-(trang, script, CSS, `assets/`, `model/`) vào `dist/` và ghi tệp `_headers`.
+(trang, script, CSS, ngân hàng câu hỏi Đà Nẵng, `assets/`, `model/`) vào `dist/` và ghi tệp `_headers`.
 Tài liệu (PRD, AGENTS, README, giáo án), `tests/`, `scripts/` và `outputs/` không được
 publish. Danh sách tệp và header bảo mật nằm ở một nơi, `scripts/site.cjs`, được dùng chung
 cho máy chủ phát triển và bản build. Vì vậy chạy `npm start` cũng áp dụng cùng CSP như site thật.
