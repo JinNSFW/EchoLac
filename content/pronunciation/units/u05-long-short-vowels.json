@@ -1,0 +1,1332 @@
+{
+  "id": "U05",
+  "level": "A2",
+  "band": "A1-A2",
+  "category": "vowel_length",
+  "kind": "segmental",
+  "prereq": [],
+  "title": {
+    "vi": "Nguyên âm /iː–ɪ/, /uː–ʊ/",
+    "en": "Long and short vowels"
+  },
+  "cando": {
+    "vi": "Em nói khác nhau ship–sheep và full–fool.",
+    "en": "I can make ship–sheep and full–fool sound different."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt không dùng độ dài nguyên âm để phân biệt nghĩa, nên ship và sheep dễ nghe giống nhau, và full gần với fool.",
+      "en": "Vietnamese does not use vowel length to tell words apart, so ship and sheep easily sound alike and full sounds like fool.",
+      "refs": [
+        "[10]",
+        "[11]"
+      ]
+    },
+    {
+      "vi": "Một luận văn đo âm thanh (20 người) cho biết sự khác nhau giữa các cặp này chủ yếu nằm ở chất lượng nguyên âm (độ căng, vị trí lưỡi), không chỉ ở độ dài.",
+      "en": "A thesis with acoustic measurements (20 speakers) reports that these pairs differ mainly in vowel quality (tenseness, tongue position), not only in length.",
+      "refs": [
+        "[11]"
+      ]
+    },
+    {
+      "vi": "Độ dài và chất lượng nguyên âm được xem là một phần cốt lõi của việc hiểu nhau trong tiếng Anh quốc tế, nên bài này có mức ưu tiên cao (P1).",
+      "en": "Vowel length and quality are treated as part of the core for mutual intelligibility in international English, so this unit has high priority (P1).",
+      "refs": [
+        "[B16]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "/iː/ (sheep): kéo môi sang hai bên như cười nhẹ, lưỡi nâng cao ở phía trước, giữ âm lâu hơn một chút.",
+      "en": "/iː/ (sheep): spread the lips as in a gentle smile, raise the front of the tongue high, and hold the sound a bit longer."
+    },
+    {
+      "vi": "/ɪ/ (ship): thả lỏng môi, lưỡi thấp hơn một chút, nói ngắn và nhanh. Đừng cười.",
+      "en": "/ɪ/ (ship): relax the lips, let the tongue sit a little lower, and say it short and quick. Do not smile."
+    },
+    {
+      "vi": "/uː/ (fool): chu môi tròn nhỏ, nâng cuối lưỡi lên cao, giữ âm lâu hơn một chút.",
+      "en": "/uː/ (fool): push the lips into a small round shape, raise the back of the tongue high, and hold the sound a bit longer."
+    },
+    {
+      "vi": "/ʊ/ (full): môi tròn nhưng lỏng hơn, hàm thả lỏng, nói ngắn.",
+      "en": "/ʊ/ (full): lips round but looser, jaw relaxed, say it short."
+    },
+    {
+      "vi": "Luyện theo cặp trước gương: ship – sheep, full – fool. Môi phải thay đổi hình dạng giữa hai từ.",
+      "en": "Practise in pairs in front of a mirror: ship – sheep, full – fool. Your lips should change shape between the two words."
+    }
+  ],
+  "perception": {
+    "type": "2afc",
+    "pairIds": [
+      "U05-p01",
+      "U05-p02",
+      "U05-p03",
+      "U05-p04",
+      "U05-p05",
+      "U05-p06"
+    ],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8
+  },
+  "words": [
+    {
+      "id": "U05-w01",
+      "text": "sheep",
+      "lemma": "sheep",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ʃ",
+        "iː",
+        "p"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_length",
+          "variantIpa": [
+            "ʃ",
+            "ɪ",
+            "p"
+          ],
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U05-w02",
+      "text": "leave",
+      "lemma": "leave",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "l",
+        "iː",
+        "v"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_length",
+          "variantIpa": [
+            "l",
+            "ɪ",
+            "v"
+          ],
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U05-w03",
+      "text": "feel",
+      "lemma": "feel",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "f",
+        "iː",
+        "l"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_length",
+          "variantIpa": [
+            "f",
+            "ɪ",
+            "l"
+          ],
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U05-w04",
+      "text": "seat",
+      "lemma": "seat",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "s",
+        "iː",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_length",
+          "variantIpa": [
+            "s",
+            "ɪ",
+            "t"
+          ],
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U05-w05",
+      "text": "green",
+      "lemma": "green",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɡ",
+        "ɹ",
+        "iː",
+        "n"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_length",
+          "variantIpa": [
+            "ɡ",
+            "ɹ",
+            "ɪ",
+            "n"
+          ],
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U05-w06",
+      "text": "pool",
+      "lemma": "pool",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "p",
+        "uː",
+        "l"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_length",
+          "variantIpa": [
+            "p",
+            "ʊ",
+            "l"
+          ],
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U05-w07",
+      "text": "food",
+      "lemma": "food",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "f",
+        "uː",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_length",
+          "variantIpa": [
+            "f",
+            "ʊ",
+            "d"
+          ],
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U05-w08",
+      "text": "school",
+      "lemma": "school",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "s",
+        "k",
+        "uː",
+        "l"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_length",
+          "variantIpa": [
+            "s",
+            "k",
+            "ʊ",
+            "l"
+          ],
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U05-w09",
+      "text": "full",
+      "lemma": "full",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "f",
+        "ʊ",
+        "l"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_length",
+          "variantIpa": [
+            "f",
+            "uː",
+            "l"
+          ],
+          "note": {
+            "vi": "Nguyên âm bị kéo dài và căng như /iː/ hoặc /uː/.",
+            "en": "The vowel is stretched and tense like /iː/ or /uː/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U05-w10",
+      "text": "good",
+      "lemma": "good",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɡ",
+        "ʊ",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_length",
+          "variantIpa": [
+            "ɡ",
+            "uː",
+            "d"
+          ],
+          "note": {
+            "vi": "Nguyên âm bị kéo dài và căng như /iː/ hoặc /uː/.",
+            "en": "The vowel is stretched and tense like /iː/ or /uː/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U05-w11",
+      "text": "look",
+      "lemma": "look",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "l",
+        "ʊ",
+        "k"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_length",
+          "variantIpa": [
+            "l",
+            "uː",
+            "k"
+          ],
+          "note": {
+            "vi": "Nguyên âm bị kéo dài và căng như /iː/ hoặc /uː/.",
+            "en": "The vowel is stretched and tense like /iː/ or /uː/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U05-w12",
+      "text": "cook",
+      "lemma": "cook",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "k",
+        "ʊ",
+        "k"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_length",
+          "variantIpa": [
+            "k",
+            "uː",
+            "k"
+          ],
+          "note": {
+            "vi": "Nguyên âm bị kéo dài và căng như /iː/ hoặc /uː/.",
+            "en": "The vowel is stretched and tense like /iː/ or /uː/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "U05-p01",
+      "type": "substitution",
+      "category": "vowel_length",
+      "a": {
+        "text": "ship",
+        "ipa": [
+          "ʃ",
+          "ɪ",
+          "p"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "sheep",
+        "ipa": [
+          "ʃ",
+          "iː",
+          "p"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 1,
+      "contrast": [
+        "ɪ",
+        "iː"
+      ]
+    },
+    {
+      "id": "U05-p02",
+      "type": "substitution",
+      "category": "vowel_length",
+      "a": {
+        "text": "sit",
+        "ipa": [
+          "s",
+          "ɪ",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "seat",
+        "ipa": [
+          "s",
+          "iː",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 1,
+      "contrast": [
+        "ɪ",
+        "iː"
+      ]
+    },
+    {
+      "id": "U05-p03",
+      "type": "substitution",
+      "category": "vowel_length",
+      "a": {
+        "text": "live",
+        "ipa": [
+          "l",
+          "ɪ",
+          "v"
+        ],
+        "cefr": "A1",
+        "variant": 1
+      },
+      "b": {
+        "text": "leave",
+        "ipa": [
+          "l",
+          "iː",
+          "v"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 1,
+      "contrast": [
+        "ɪ",
+        "iː"
+      ]
+    },
+    {
+      "id": "U05-p04",
+      "type": "substitution",
+      "category": "vowel_length",
+      "a": {
+        "text": "fill",
+        "ipa": [
+          "f",
+          "ɪ",
+          "l"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "feel",
+        "ipa": [
+          "f",
+          "iː",
+          "l"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 1,
+      "contrast": [
+        "ɪ",
+        "iː"
+      ]
+    },
+    {
+      "id": "U05-p05",
+      "type": "substitution",
+      "category": "vowel_length",
+      "a": {
+        "text": "full",
+        "ipa": [
+          "f",
+          "ʊ",
+          "l"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "fool",
+        "ipa": [
+          "f",
+          "uː",
+          "l"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "diffIndex": 1,
+      "contrast": [
+        "ʊ",
+        "uː"
+      ]
+    },
+    {
+      "id": "U05-p06",
+      "type": "substitution",
+      "category": "vowel_length",
+      "a": {
+        "text": "pull",
+        "ipa": [
+          "p",
+          "ʊ",
+          "l"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "b": {
+        "text": "pool",
+        "ipa": [
+          "p",
+          "uː",
+          "l"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 1,
+      "contrast": [
+        "ʊ",
+        "uː"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U05-s01",
+      "text": "We feel good at the beach.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "feel",
+          "ipa": [
+            "f",
+            "iː",
+            "l"
+          ]
+        },
+        {
+          "w": "good",
+          "ipa": [
+            "ɡ",
+            "ʊ",
+            "d"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            2
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U05-s02",
+      "text": "The food at the market is good.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "food",
+          "ipa": [
+            "f",
+            "uː",
+            "d"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "good",
+          "ipa": [
+            "ɡ",
+            "ʊ",
+            "d"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        },
+        {
+          "word": 6,
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U05-s03",
+      "text": "I like to cook and read a book.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "like",
+          "ipa": [
+            "l",
+            "aɪ",
+            "k"
+          ]
+        },
+        {
+          "w": "to",
+          "ipa": [
+            "t",
+            "ɪ"
+          ]
+        },
+        {
+          "w": "cook",
+          "ipa": [
+            "k",
+            "ʊ",
+            "k"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "read",
+          "ipa": [
+            "ɹ",
+            "ɛ",
+            "d"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "book",
+          "ipa": [
+            "b",
+            "ʊ",
+            "k"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        },
+        {
+          "word": 7,
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U05-s04",
+      "text": "The green pool is full of fish.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "green",
+          "ipa": [
+            "ɡ",
+            "ɹ",
+            "iː",
+            "n"
+          ]
+        },
+        {
+          "w": "pool",
+          "ipa": [
+            "p",
+            "uː",
+            "l"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "full",
+          "ipa": [
+            "f",
+            "ʊ",
+            "l"
+          ]
+        },
+        {
+          "w": "of",
+          "ipa": [
+            "ə",
+            "v"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "fish",
+          "ipa": [
+            "f",
+            "ɪ",
+            "ʃ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            2
+          ],
+          "category": "vowel_length",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U05-s05",
+      "text": "Sit on the seat and look at the sea.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Sit",
+          "ipa": [
+            "s",
+            "ɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "on",
+          "ipa": [
+            "ɑː",
+            "n"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "seat",
+          "ipa": [
+            "s",
+            "iː",
+            "t"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "look",
+          "ipa": [
+            "l",
+            "ʊ",
+            "k"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "sea",
+          "ipa": [
+            "s",
+            "iː"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        },
+        {
+          "word": 8,
+          "index": [
+            1
+          ],
+          "category": "vowel_length",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U05-c01",
+      "wrongIpa": [
+        "ʃ",
+        "ɪ",
+        "p"
+      ],
+      "rightIpa": [
+        "ʃ",
+        "iː",
+        "p"
+      ],
+      "note": {
+        "vi": "Sheep nghe như ship. Kéo môi sang hai bên, nâng lưỡi cao và giữ lâu hơn.",
+        "en": "Sheep sounds like ship. Spread the lips, raise the tongue and hold the vowel longer."
+      }
+    },
+    {
+      "id": "U05-c02",
+      "wrongIpa": [
+        "ʃ",
+        "iː",
+        "p"
+      ],
+      "rightIpa": [
+        "ʃ",
+        "ɪ",
+        "p"
+      ],
+      "note": {
+        "vi": "Ship nghe như sheep. Thả lỏng môi, nói ngắn và nhanh.",
+        "en": "Ship sounds like sheep. Relax the lips and say it short and quick."
+      }
+    },
+    {
+      "id": "U05-c03",
+      "wrongIpa": [
+        "f",
+        "uː",
+        "l"
+      ],
+      "rightIpa": [
+        "f",
+        "ʊ",
+        "l"
+      ],
+      "note": {
+        "vi": "Full đọc như fool. Môi tròn lỏng hơn và nói ngắn.",
+        "en": "Full said like fool. Looser rounded lips and a short vowel."
+      }
+    },
+    {
+      "id": "U05-c04",
+      "wrongIpa": [
+        "l",
+        "ɪ",
+        "v"
+      ],
+      "rightIpa": [
+        "l",
+        "iː",
+        "v"
+      ],
+      "note": {
+        "vi": "Leave đọc như live. Kéo dài nguyên âm và căng môi sang hai bên.",
+        "en": "Leave said like live. Lengthen the vowel and spread the lips."
+      }
+    }
+  ],
+  "chain": [],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "score",
+    "vi": "Ghi âm cặp ship–sheep rồi nghe lại. Hai từ có khác nhau rõ không? Bạn có nhìn thấy môi đổi hình dạng trong gương không?",
+    "en": "Record the ship–sheep pair and listen back. Do the two words sound clearly different? Can you see your lips change shape in the mirror?"
+  },
+  "teacherNotes": {
+    "vi": "Phần mềm chỉ nghe được chất lượng nguyên âm (iː hay ɪ, uː hay ʊ), không đo độ dài, nên độ tin cậy phát hiện là trung bình; phản hồi nên dùng giọng \"có thể\". Một số người nói không phân biệt được hai âm khi nghe, nên cần cho nghe nhiều giọng. Cẩn thận với live (động từ /lɪv/, tính từ /laɪv/) khi dùng làm cặp tối thiểu.",
+    "en": "The app can only hear vowel quality (iː or ɪ, uː or ʊ), not length, so detection confidence is medium and feedback should be hedged (\"may\"). Some speakers cannot hear the difference yet, so use many voices. Be careful with live (verb /lɪv/, adjective /laɪv/) as a minimal-pair word."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

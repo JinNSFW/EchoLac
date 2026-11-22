@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "generated": "2026-11-22",
+  "generator": "tools/pronunciation/build_pron.py",
+  "units": [
+    {
+      "id": "U01",
+      "file": "units/u01-final-stops.json",
+      "level": "A1",
+      "band": "A1-A2",
+      "category": "final_consonant"
+    },
+    {
+      "id": "U02",
+      "file": "units/u02-s-endings.json",
+      "level": "A1",
+      "band": "A1-A2",
+      "category": "s_ed_ending"
+    },
+    {
+      "id": "U03",
+      "file": "units/u03-th-sounds.json",
+      "level": "A1",
+      "band": "A1-A2",
+      "category": "th"
+    },
+    {
+      "id": "U04",
+      "file": "units/u04-sh-ch-j.json",
+      "level": "A1",
+      "band": "A1-A2",
+      "category": "sibilant"
+    },
+    {
+      "id": "U05",
+      "file": "units/u05-long-short-vowels.json",
+      "level": "A2",
+      "band": "A1-A2",
+      "category": "vowel_length"
+    },
+    {
+      "id": "U06",
+      "file": "units/u06-word-stress.json",
+      "level": "A2",
+      "band": "A1-A2",
+      "category": "word_stress"
+    },
+    {
+      "id": "U07",
+      "file": "units/u07-rise-fall.json",
+      "level": "A2",
+      "band": "A1-A2",
+      "category": "intonation"
+    },
+    {
+      "id": "U08",
+      "file": "units/u08-onset-clusters.json",
+      "level": "B1",
+      "band": "B1",
+      "category": "cluster"
+    },
+    {
+      "id": "U09",
+      "file": "units/u09-ed-endings.json",
+      "level": "B1",
+      "band": "B1",
+      "category": "s_ed_ending"
+    },
+    {
+      "id": "U10",
+      "file": "units/u10-voiced-finals.json",
+      "level": "B1",
+      "band": "B1",
+      "category": "final_voicing"
+    },
+    {
+      "id": "U11",
+      "file": "units/u11-vowels-diphthongs.json",
+      "level": "B1",
+      "band": "B1",
+      "category": "vowel_quality"
+    },
+    {
+      "id": "U12",
+      "file": "units/u12-confusable-consonants.json",
+      "level": "B1",
+      "band": "B1",
+      "category": "consonant_sub"
+    },
+    {
+      "id": "U13",
+      "file": "units/u13-linking.json",
+      "level": "B1",
+      "band": "B1",
+      "category": "linking"
+    },
+    {
+      "id": "U14",
+      "file": "units/u14-compound-stress.json",
+      "level": "B1",
+      "band": "B1",
+      "category": "word_stress"
+    },
+    {
+      "id": "U15",
+      "file": "units/u15-final-clusters.json",
+      "level": "B2",
+      "band": "B2-C1",
+      "category": "cluster"
+    },
+    {
+      "id": "U16",
+      "file": "units/u16-weak-forms.json",
+      "level": "B2",
+      "band": "B2-C1",
+      "category": "weak_form"
+    },
+    {
+      "id": "U17",
+      "file": "units/u17-rhythm.json",
+      "level": "B2",
+      "band": "B2-C1",
+      "category": "rhythm"
+    },
+    {
+      "id": "U18",
+      "file": "units/u18-stress-shifts.json",
+      "level": "B2",
+      "band": "B2-C1",
+      "category": "word_stress"
+    },
+    {
+      "id": "U19",
+      "file": "units/u19-focus-tunes.json",
+      "level": "C1",
+      "band": "B2-C1",
+      "category": "intonation"
+    },
+    {
+      "id": "U20",
+      "file": "units/u20-connected-speech.json",
+      "level": "C1",
+      "band": "B2-C1",
+      "category": "linking"
+    }
+  ]
+}

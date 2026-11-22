@@ -1,0 +1,489 @@
+{
+  "cando": {
+    "vi": "Em phân biệt được ship và sip, và nói rõ /ʃ tʃ dʒ/.",
+    "en": "I can tell ship from sip and say /ʃ tʃ dʒ/."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt không có /ʃ ʒ tʃ dʒ/. Chữ \"ch\" của tiếng Việt là âm tắc, không phải /tʃ/; vì vậy cheese dễ thành \"tiz\" hoặc \"shiz\", và /ʃ/ thường được đọc thành /s/ (ship → \"sip\").",
+      "en": "Vietnamese has no /ʃ ʒ tʃ dʒ/. The Vietnamese \"ch\" is a stop, not /tʃ/, so cheese easily becomes \"tiz\" or \"shiz\", and /ʃ/ is often said as /s/ (ship → \"sip\").",
+      "refs": [
+        "[5]",
+        "[6]"
+      ]
+    },
+    {
+      "vi": "Một luận văn dùng 58 cặp tối thiểu (/tʃ–dʒ/, /s–ʃ/) để đo và cho thấy các cặp này thường bị lẫn ở người học Việt.",
+      "en": "A thesis used 58 minimal pairs (/tʃ–dʒ/, /s–ʃ/) and found these pairs are often confused by Vietnamese learners.",
+      "refs": [
+        "[7]"
+      ]
+    },
+    {
+      "vi": "Phân biệt /ʃ tʃ dʒ/ với /s z/ làm đổi nghĩa (ship/sip, chip/ship, job), nên bài này có mức ưu tiên cao (P1).",
+      "en": "Telling /ʃ tʃ dʒ/ from /s z/ changes meaning (ship/sip, chip/ship, job), so this unit has high priority (P1).",
+      "refs": [
+        "[B16]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "/ʃ/: môi hơi chu tròn, lưỡi lùi lại so với /s/, thổi \"shhh\" như khi bảo ai đó giữ im lặng.",
+      "en": "/ʃ/: round the lips slightly, pull the tongue back from where /s/ is, and blow \"shhh\" like asking for quiet."
+    },
+    {
+      "vi": "/s/: môi bẹt, lưỡi sát răng, thổi \"sss\" mảnh và sắc. So sánh với /ʃ/: lưỡi tiến ra trước hơn.",
+      "en": "/s/: spread lips, tongue close to the teeth, thin sharp \"sss\". Compare /ʃ/: the tongue is further forward."
+    },
+    {
+      "vi": "/tʃ/: bắt đầu như /t/ (lưỡi chạm nướu), rồi thả ra thành /ʃ/ trong một nhịp: \"t-sh\". Tiếng Việt \"ch\" không có luồng hơi xì này.",
+      "en": "/tʃ/: start like /t/ (tongue on the ridge), then release into /ʃ/ in one beat: \"t-sh\". Vietnamese \"ch\" has no hissing release."
+    },
+    {
+      "vi": "/dʒ/: làm giống /tʃ/ nhưng rung cổ, như chữ \"j\" ở đầu job. Đừng đọc thành \"z\" hoặc \"gi\".",
+      "en": "/dʒ/: do the same as /tʃ/ but with voice, like the \"j\" at the start of job. Do not say \"z\" or \"gi\"."
+    }
+  ],
+  "words": [
+    {
+      "text": "ship",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s ɪ p",
+          "note": {
+            "vi": "/ʃ/ bị đọc thành /s/.",
+            "en": "/ʃ/ said as /s/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "she",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s iː",
+          "note": {
+            "vi": "/ʃ/ bị đọc thành /s/.",
+            "en": "/ʃ/ said as /s/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "shoe",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s uː",
+          "note": {
+            "vi": "/ʃ/ bị đọc thành /s/.",
+            "en": "/ʃ/ said as /s/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "fish",
+      "targets": [
+        {
+          "index": [
+            2
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "f ɪ s",
+          "note": {
+            "vi": "/ʃ/ cuối bị đọc thành /s/.",
+            "en": "Final /ʃ/ said as /s/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "fresh",
+      "targets": [
+        {
+          "index": [
+            3
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "f ɹ ɛ s",
+          "note": {
+            "vi": "/ʃ/ cuối bị đọc thành /s/.",
+            "en": "Final /ʃ/ said as /s/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "sugar",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s ʊ ɡ ɚ",
+          "note": {
+            "vi": "/ʃ/ bị đọc thành /s/.",
+            "en": "/ʃ/ said as /s/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "shell",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s ɛ l",
+          "note": {
+            "vi": "/ʃ/ bị đọc thành /s/.",
+            "en": "/ʃ/ said as /s/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "cheese",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "t iː z",
+          "note": {
+            "vi": "/tʃ/ bị đọc thành /t/.",
+            "en": "/tʃ/ said as /t/."
+          }
+        },
+        {
+          "variantIpa": "ʃ iː z",
+          "note": {
+            "vi": "/tʃ/ bị đọc thành /ʃ/.",
+            "en": "/tʃ/ said as /ʃ/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "chair",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "t ɛ ɹ",
+          "note": {
+            "vi": "/tʃ/ bị đọc thành /t/.",
+            "en": "/tʃ/ said as /t/."
+          }
+        },
+        {
+          "variantIpa": "ʃ ɛ ɹ",
+          "note": {
+            "vi": "/tʃ/ bị đọc thành /ʃ/.",
+            "en": "/tʃ/ said as /ʃ/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "beach",
+      "targets": [
+        {
+          "index": [
+            2
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b iː t",
+          "note": {
+            "vi": "/tʃ/ cuối bị đọc thành /t/.",
+            "en": "Final /tʃ/ said as /t/."
+          }
+        },
+        {
+          "variantIpa": "b iː ʃ",
+          "note": {
+            "vi": "/tʃ/ cuối bị đọc thành /ʃ/.",
+            "en": "Final /tʃ/ said as /ʃ/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "juice",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "z uː s",
+          "note": {
+            "vi": "/dʒ/ bị đọc thành /z/.",
+            "en": "/dʒ/ said as /z/."
+          }
+        },
+        {
+          "variantIpa": "j uː s",
+          "note": {
+            "vi": "/dʒ/ bị đọc thành /j/.",
+            "en": "/dʒ/ said as /j/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "job",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "z ɑː b",
+          "note": {
+            "vi": "/dʒ/ bị đọc thành /z/.",
+            "en": "/dʒ/ said as /z/."
+          }
+        },
+        {
+          "variantIpa": "j ɑː b",
+          "note": {
+            "vi": "/dʒ/ bị đọc thành /j/.",
+            "en": "/dʒ/ said as /j/."
+          }
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "a": "ship",
+      "b": "sip",
+      "type": "substitution"
+    },
+    {
+      "a": "she",
+      "b": "see",
+      "type": "substitution"
+    },
+    {
+      "a": "shoe",
+      "b": "sue",
+      "type": "substitution"
+    },
+    {
+      "a": "sheet",
+      "b": "seat",
+      "type": "substitution"
+    },
+    {
+      "a": "chip",
+      "b": "ship",
+      "type": "substitution"
+    },
+    {
+      "a": "chin",
+      "b": "shin",
+      "type": "substitution"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "She sells fresh fish at the market.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            3
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            2
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "We choose fresh juice at the market.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            3
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            0
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "She shops for shoes near the beach.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 1,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 6,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "The ship is near the bridge.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": false
+    }
+  ],
+  "contrasts": [
+    {
+      "wrong": "s ɪ p",
+      "right": "ʃ ɪ p",
+      "note": {
+        "vi": "Ship nghe như \"sip\". Lùi lưỡi lại và chu môi nhẹ để có /ʃ/.",
+        "en": "Ship sounds like \"sip\". Pull the tongue back and round the lips slightly for /ʃ/."
+      }
+    },
+    {
+      "wrong": "s iː",
+      "right": "ʃ iː",
+      "note": {
+        "vi": "She nghe như \"see\". Bắt đầu bằng \"shhh\" rồi mới sang /iː/.",
+        "en": "She sounds like \"see\". Start with \"shhh\" before /iː/."
+      }
+    },
+    {
+      "wrong": "t iː z",
+      "right": "tʃ iː z",
+      "note": {
+        "vi": "Cheese bắt đầu bằng /t/ thôi. Thả /t/ ra thành luồng hơi xì /ʃ/.",
+        "en": "Cheese starts with plain /t/. Release the /t/ into a hissing /ʃ/."
+      }
+    },
+    {
+      "wrong": "z ɑː b",
+      "right": "dʒ ɑː b",
+      "note": {
+        "vi": "Job nghe như \"zop\". Bắt đầu bằng lưỡi chạm nướu rồi thả thành /ʒ/ có rung cổ.",
+        "en": "Job sounds like \"zop\". Start with the tongue on the ridge, then release into a voiced /ʒ/ sound."
+      }
+    }
+  ],
+  "chain": [],
+  "selfCheck": {
+    "vi": "Đọc ship–sip, she–see, chip–ship cho bạn nghe. Bạn có phân biệt được từng cặp không?",
+    "en": "Read ship–sip, she–see, chip–ship to a friend. Can they tell each pair apart?"
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói tiếng Việt ở miền Bắc được báo cáo đọc \"s\" và \"x\" giống nhau; ở miền Trung (Huế, Đà Nẵng, Quảng Nam) các âm này được báo cáo là phân biệt rõ hơn. Các nhận định này đến từ nguồn giảng dạy, chưa kiểm chứng; hãy quan sát học sinh thật. Độ tin cậy phát hiện: cao (thay thế trong nhóm s z ʃ ʒ tʃ dʒ).",
+    "en": "Some Northern Vietnamese speakers are reported to say \"s\" and \"x\" alike; in Central Vietnam (Huế, Đà Nẵng, Quảng Nam) the distinction is reported to be kept more clearly. These claims come from teaching sources and are unverified; observe real students. Detection confidence: high (substitution among s z ʃ ʒ tʃ dʒ)."
+  },
+  "id": "U04",
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

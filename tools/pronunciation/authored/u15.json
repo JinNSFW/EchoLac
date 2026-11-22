@@ -1,0 +1,758 @@
+{
+  "cando": {
+    "vi": "Em giữ đủ mọi phụ âm ở cuối từ như texts, months, landmarks.",
+    "en": "I can keep every consonant at the end of words like texts, months, landmarks."
+  },
+  "why": [
+    {
+      "vi": "Âm tiết tiếng Việt chuẩn chỉ kết thúc bằng một phụ âm, nên cụm cuối như /ksts/ trong texts thường bị rút gọn thành text hoặc tek. Việc bỏ một phần của cụm được báo cáo là lỗi thường gặp ở học sinh Việt.",
+      "en": "Standard Vietnamese syllables end in only one consonant, so final clusters like /ksts/ in texts are often shortened to text or tek. Dropping part of a cluster is reported as a common error among Vietnamese learners.",
+      "refs": [
+        "[4]",
+        "[14]"
+      ]
+    },
+    {
+      "vi": "Đuôi -s và -ed thường nằm ngay sau cụm (lamps, helped, months), nên khi bỏ chúng người nghe mất thông tin về số nhiều hoặc thì quá khứ. Các nghiên cứu được báo cáo thấy việc bỏ đuôi nhiều hơn sau phụ âm.",
+      "en": "The -s and -ed endings often sit right after a cluster (lamps, helped, months), so dropping them loses plural or past-tense information. Studies report more ending omission after consonants.",
+      "refs": [
+        "[13]",
+        "[2]"
+      ]
+    },
+    {
+      "vi": "Cặp như pass–past, bell–belt, ten–tent chỉ khác nhau ở một phụ âm cuối; thiếu âm đó làm hai từ trùng nhau. Phụ âm là nhóm âm cốt lõi để hiểu nhau trong tiếng Anh quốc tế, nên bài có ưu tiên cao (P1).",
+      "en": "Pairs like pass–past, bell–belt, ten–tent differ only in one final consonant; leaving it out makes the two words collide. Consonants are core sounds for mutual intelligibility in international English, so this unit is high priority (P1).",
+      "refs": [
+        "[B16]",
+        "[B15]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Luyện từ cuối ra đầu: nói âm cuối, thêm một âm mỗi lần, như s, ts, kts, ɛkts, tɛkts. Dùng dãy luyện bên dưới.",
+      "en": "Practise from the end: say the last sound, then add one sound each time, like s, ts, kts, ɛkts, tɛkts. Use the chain below."
+    },
+    {
+      "vi": "Giữ đầu lưỡi gần nướu sau răng trên: /s/ thổi mảnh, rồi chạm lưỡi thành /t/ ngắn mà không buông thành nguyên âm.",
+      "en": "Keep the tongue tip near the ridge behind the top teeth: blow a thin /s/, then touch a short /t/. No vowel after it."
+    },
+    {
+      "vi": "Đừng chèn \"ờ\" giữa các phụ âm: lamps không phải \"lam-pờ-sờ\". Đặt tay trước miệng, /p/ và /s/ phải đến liền nhau.",
+      "en": "Do not insert \"uh\" between consonants: lamps is not \"lam-puh-suh\". Join /p/ and /s/ with no gap."
+    },
+    {
+      "vi": "Với pass–past: nói pass, giữ lưỡi gần nướu, rồi chạm lên nướu thêm /t/ ngắn, không rung cổ.",
+      "en": "For pass–past: say pass, keep the tongue near the ridge, then touch up for a short /t/ with no voice."
+    }
+  ],
+  "words": [
+    {
+      "text": "texts",
+      "targets": [
+        {
+          "index": [
+            -4,
+            -3,
+            -2
+          ]
+        },
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "t ɛ k s",
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "variantIpa": "t ɛ k",
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "lemma": "text"
+    },
+    {
+      "text": "months",
+      "targets": [
+        {
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "m ʌ n s",
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "variantIpa": "m ʌ n",
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "lemma": "month"
+    },
+    {
+      "text": "landmarks",
+      "targets": [
+        {
+          "index": [
+            2,
+            3
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "l æ n m ɑː ɹ k s",
+          "note": {
+            "vi": "Bỏ mất /d/ ở giữa cụm.",
+            "en": "The /d/ in the middle cluster is dropped."
+          }
+        },
+        {
+          "variantIpa": "l æ n d m ɑː ɹ k",
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        }
+      ],
+      "lemma": "landmark"
+    },
+    {
+      "text": "crafts",
+      "targets": [
+        {
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "k ɹ æ f s",
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "variantIpa": "k ɹ æ f",
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "lemma": "craft"
+    },
+    {
+      "text": "helped",
+      "targets": [
+        {
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "h ɛ l p",
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "variantIpa": "h ɛ l ə p t",
+          "note": {
+            "vi": "Chèn nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "A vowel \"uh\" is inserted inside the cluster."
+          }
+        }
+      ],
+      "lemma": "help"
+    },
+    {
+      "text": "jumped",
+      "targets": [
+        {
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "dʒ ʌ m p",
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "variantIpa": "dʒ ʌ m",
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "lemma": "jump"
+    },
+    {
+      "text": "guests",
+      "targets": [
+        {
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "ɡ ɛ s t",
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "variantIpa": "ɡ ɛ s",
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "lemma": "guest"
+    },
+    {
+      "text": "tasks",
+      "targets": [
+        {
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "t æ s k",
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "variantIpa": "t æ s",
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "lemma": "task"
+    },
+    {
+      "text": "desks",
+      "targets": [
+        {
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "d ɛ s k",
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "variantIpa": "d ɛ s",
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "lemma": "desk"
+    },
+    {
+      "text": "lamps",
+      "targets": [
+        {
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "l æ m p",
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "variantIpa": "l æ m ə p s",
+          "note": {
+            "vi": "Chèn nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "A vowel \"uh\" is inserted inside the cluster."
+          }
+        }
+      ],
+      "lemma": "lamp"
+    },
+    {
+      "text": "hands",
+      "targets": [
+        {
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "h æ n d",
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "variantIpa": "h æ n",
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "lemma": "hand"
+    },
+    {
+      "text": "next",
+      "targets": [
+        {
+          "index": [
+            -3,
+            -2,
+            -1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "n ɛ k s",
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "variantIpa": "n ɛ k",
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "a": "pass",
+      "b": "past",
+      "type": "deletion"
+    },
+    {
+      "a": "bell",
+      "b": "belt",
+      "type": "deletion"
+    },
+    {
+      "a": "ten",
+      "b": "tent",
+      "type": "deletion"
+    },
+    {
+      "a": "fell",
+      "b": "felt",
+      "type": "deletion",
+      "aLemma": "fall",
+      "bLemma": "feel"
+    },
+    {
+      "a": "miss",
+      "b": "mist",
+      "type": "deletion"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Hội An is full of lamps and crafts by the river.",
+      "targets": [
+        {
+          "word": 5,
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 7,
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": true,
+      "unscored": [
+        "Hội",
+        "An"
+      ]
+    },
+    {
+      "text": "The guests helped carry the boats down to the river.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 2,
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "Next month the weather in Huế may be wet and cold.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            -3,
+            -2,
+            -1
+          ]
+        },
+        {
+          "word": 1,
+          "index": [
+            -2,
+            -1
+          ]
+        }
+      ],
+      "culture": true,
+      "unscored": [
+        "Huế"
+      ]
+    },
+    {
+      "text": "Please put the desks next to the lamps.",
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 4,
+          "index": [
+            -3,
+            -2,
+            -1
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": false
+    },
+    {
+      "text": "She jumped off the step and I helped her stand.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 7,
+          "index": [
+            -3,
+            -2
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": false
+    }
+  ],
+  "contrasts": [
+    {
+      "wrong": "t ɛ k s",
+      "right": "t ɛ k s t s",
+      "note": {
+        "vi": "Texts nghe như text. Sau /k/, giữ lưỡi ở nướu cho /s/, chạm /t/ rồi lại /s/ liền nhau.",
+        "en": "Texts sounds like text. After /k/, keep the tongue at the ridge for /s/, touch /t/, then /s/ again, all joined."
+      }
+    },
+    {
+      "wrong": "h ɛ l p",
+      "right": "h ɛ l p t",
+      "note": {
+        "vi": "Helped nghe như help. Sau /p/ chỉ cần chạm lưỡi thêm /t/ ngắn, không rung cổ.",
+        "en": "Helped sounds like help. After /p/ just touch the tongue for a short /t/ with no voice."
+      }
+    },
+    {
+      "wrong": "l æ m ə p s",
+      "right": "l æ m p s",
+      "note": {
+        "vi": "Đừng chèn \"ờ\" giữa các phụ âm. Mím môi cho /p/ rồi thổi /s/ ngay.",
+        "en": "Do not put \"uh\" between consonants. Close the lips for /p/ and blow /s/ right away."
+      }
+    },
+    {
+      "wrong": "p æ s",
+      "right": "p æ s t",
+      "note": {
+        "vi": "Pass và past khác nhau ở /t/ cuối. Giữ /s/, rồi chạm đầu lưỡi lên nướu thêm /t/.",
+        "en": "Pass and past differ in the final /t/. Hold /s/, then touch the tongue tip to the ridge for /t/."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "s → ts → sts → ksts → ɛksts → texts",
+      "steps": [
+        "s",
+        "t s",
+        "s t s",
+        "k s t s",
+        "ɛ k s t s",
+        "t ɛ k s t s"
+      ],
+      "note": {
+        "vi": "Nói từ cuối ra đầu, mỗi bước thêm một âm, không chèn nguyên âm. Giữ /s/ và /t/ sát nhau.",
+        "en": "Say it from the end, adding one sound per step with no vowel in between. Keep /s/ and /t/ close together."
+      }
+    },
+    {
+      "text": "t → pt → lpt → ɛlpt → helped",
+      "steps": [
+        "t",
+        "p t",
+        "l p t",
+        "ɛ l p t",
+        "h ɛ l p t"
+      ],
+      "note": {
+        "vi": "Mím môi cho /p/, rồi chạm lưỡi cho /t/ ngay, không thả thành nguyên âm.",
+        "en": "Close the lips for /p/, then touch the tongue for /t/ at once, with no vowel release."
+      }
+    },
+    {
+      "text": "s → θs → nθs → ʌnθs → months",
+      "steps": [
+        "s",
+        "θ s",
+        "n θ s",
+        "ʌ n θ s",
+        "m ʌ n θ s"
+      ],
+      "note": {
+        "vi": "Đặt đầu lưỡi giữa răng cho /θ/ rồi lùi về /s/; mỗi bước nối liền với bước trước.",
+        "en": "Put the tongue tip between the teeth for /θ/, then pull back to /s/; join each step to the one before."
+      }
+    },
+    {
+      "text": "ks → ɹks → ɑːɹks → mɑːɹks → dmɑːɹks → landmarks",
+      "steps": [
+        "k s",
+        "ɹ k s",
+        "ɑː ɹ k s",
+        "m ɑː ɹ k s",
+        "d m ɑː ɹ k s",
+        "n d m ɑː ɹ k s",
+        "l æ n d m ɑː ɹ k s"
+      ],
+      "note": {
+        "vi": "Chia landmarks làm hai cụm: nd và rks. Luyện từng cụm trước rồi ghép lại.",
+        "en": "Split landmarks into two clusters: nd and rks. Practise each first, then join them."
+      }
+    }
+  ],
+  "selfCheck": {
+    "vi": "Ghi âm: nói texts, helped, lamps và cặp pass–past. Em có nghe đủ mọi phụ âm cuối, không có \"ờ\" chen giữa không?",
+    "en": "Record texts, helped, lamps and the pair pass–past. Can you hear every final consonant, with no \"uh\" between them?"
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói tiếng Việt có thể rút gọn cụm cuối nhiều hơn, nhất là cụm ba phụ âm; không coi đó là khuyết điểm của người học. Trong lời nói tự nhiên, người bản ngữ cũng có thể nuốt /t/ giữa cụm (next day, texts); bài này luyện đọc rõ từng âm, và phần mềm chỉ đếm các phụ âm đã được nói ra khi văn bản mục tiêu đã biết. Phần mềm không đo độ ngắn của /t/ hay độ bật hơi. Độ tin cậy phát hiện: cao, chưa được đo trên học sinh thật.",
+    "en": "Some Vietnamese speakers may reduce final clusters more, especially three-consonant clusters; do not treat this as a learner flaw. In natural speech native speakers can also drop the middle /t/ (next day, texts); this unit trains clear, full sounds, and the app only counts the consonants spoken when the target text is known. It does not judge the shortness of /t/ or aspiration. Detection confidence: high, not yet measured on real students."
+  },
+  "id": "U15",
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

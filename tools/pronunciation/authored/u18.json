@@ -1,0 +1,277 @@
+{
+  "cando": {
+    "vi": "Em chuyển trọng âm đúng khi từ đổi đuôi (photograph → photography) và ở cặp danh từ/động từ (REcord → reCORD).",
+    "en": "I can move the stress when a word changes its ending (photograph → photography) and in noun/verb pairs (REcord → reCORD)."
+  },
+  "why": [
+    {
+      "vi": "Trong tiếng Anh, thêm hậu tố có thể làm trọng âm nhảy sang âm tiết khác: PHOtograph nhưng phoTOgraphy. Tiếng Việt có thanh điệu chứ không có trọng âm từ, nên học sinh hay giữ nguyên chỗ nhấn của từ gốc. Đặt sai trọng âm được báo cáo là lỗi thường gặp ở người học Việt.",
+      "en": "In English, adding a suffix can move the stress to another syllable: PHOtograph but phoTOgraphy. Vietnamese has tones, not word stress, so learners often keep the stress of the base word. Misplaced stress is reported as a common error for Vietnamese learners.",
+      "refs": [
+        "[B3]",
+        "[B4]"
+      ]
+    },
+    {
+      "vi": "Trọng âm đúng giúp người nghe nhận ra từ: một nghiên cứu cho thấy trọng âm chính đặt đúng làm điểm đánh giá và khả năng nhớ từ tốt hơn. Cặp như REcord (danh từ) và reCORD (động từ) khác nhau chủ yếu ở chỗ nhấn.",
+      "en": "Correct stress helps listeners recognise words: a study reports better ratings and recall when the main stress is in the right place. Pairs like REcord (noun) and reCORD (verb) differ mainly in where the stress falls.",
+      "refs": [
+        "[B13]"
+      ]
+    },
+    {
+      "vi": "Học sinh Việt thường giữ nguyên nguyên âm đầy đủ ở âm tiết không nhấn, kể cả người học nâng cao, nên khi trọng âm dời đi, âm tiết cũ vẫn bị đọc to và dài. Bài này thuộc mức ưu tiên P2.",
+      "en": "Vietnamese learners are often reported to keep full vowels in unstressed syllables, even at advanced level, so after the stress moves the old syllable is still said loud and long. This unit has priority P2.",
+      "refs": [
+        "[9]",
+        "[B7]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Đuôi -tion, -ic, -ity, -ical kéo trọng âm về âm tiết ngay trước nó: celeBRAtion, ecoNOMic, hisTORical.",
+      "en": "The endings -tion, -ic, -ity and -ical pull the stress onto the syllable right before them: celeBRAtion, ecoNOMic, hisTORical."
+    },
+    {
+      "vi": "Với -graphy và -grapher, nhấn âm tiết ngay trước gra: phoTOgraphy, phoTOgrapher. Còn từ gốc là PHOtograph, nhấn âm đầu.",
+      "en": "With -graphy and -grapher, stress the syllable before gra: phoTOgraphy, phoTOgrapher. The base word is PHOtograph, stressed first."
+    },
+    {
+      "vi": "Khi trọng âm dời đi, âm tiết cũ phải ngắn và yếu, thường là /ə/: ở photography, \"pho\" chỉ còn là \"fờ\" ngắn.",
+      "en": "When the stress moves, the old syllable becomes short and weak, often /ə/: in photography, \"pho\" is only a quick \"fuh\"."
+    },
+    {
+      "vi": "Cặp danh từ/động từ: danh từ thường nhấn âm đầu (REcord), động từ nhấn âm sau (reCORD). Nhấn bằng độ dài và độ to, không bằng cao độ.",
+      "en": "Noun/verb pairs: the noun is usually stressed first (REcord), the verb second (reCORD). Stress with length and loudness, not pitch."
+    },
+    {
+      "vi": "Vỗ nhịp theo từ: mạnh ở âm nhấn, nhẹ ở âm còn lại. Đây là quy tắc thường gặp, không phải mọi từ; khi không chắc, tra từ điển.",
+      "en": "Clap the rhythm: hard on the stressed syllable, light on the rest. These rules are common, not universal; if unsure, check a dictionary."
+    }
+  ],
+  "words": [
+    {
+      "text": "photograph",
+      "targets": "stress",
+      "errors": []
+    },
+    {
+      "text": "photography",
+      "targets": "stress",
+      "errors": []
+    },
+    {
+      "text": "photographer",
+      "targets": "stress",
+      "errors": []
+    },
+    {
+      "text": "history",
+      "targets": "stress",
+      "errors": []
+    },
+    {
+      "text": "historical",
+      "targets": "stress",
+      "errors": []
+    },
+    {
+      "text": "economy",
+      "targets": "stress",
+      "errors": []
+    },
+    {
+      "text": "economic",
+      "targets": "stress",
+      "errors": []
+    },
+    {
+      "text": "celebrate",
+      "targets": "stress",
+      "errors": []
+    },
+    {
+      "text": "celebration",
+      "targets": "stress",
+      "errors": []
+    },
+    {
+      "text": "communication",
+      "targets": "stress",
+      "errors": []
+    },
+    {
+      "text": "tradition",
+      "targets": "stress",
+      "errors": []
+    },
+    {
+      "text": "traditional",
+      "targets": "stress",
+      "errors": []
+    }
+  ],
+  "pairs": [
+    {
+      "a": "record",
+      "b": "record",
+      "type": "stress",
+      "aVariant": 1,
+      "bVariant": 0
+    },
+    {
+      "a": "present",
+      "b": "present",
+      "type": "stress",
+      "aVariant": 0,
+      "bVariant": 1
+    },
+    {
+      "a": "increase",
+      "b": "increase",
+      "type": "stress",
+      "aVariant": 1,
+      "bVariant": 0
+    },
+    {
+      "a": "import",
+      "b": "import",
+      "type": "stress",
+      "aVariant": 1,
+      "bVariant": 0
+    }
+  ],
+  "sentences": [
+    {
+      "text": "The traditional celebration by the river is lovely.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            4
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            6
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "The photographer likes to photograph the bridge at night.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            3
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "The history lesson was interesting, but the economic news was boring.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            4
+          ]
+        }
+      ],
+      "culture": false
+    },
+    {
+      "text": "Please record the traditional music at the market.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            3
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            4
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "Good communication helps me present my ideas clearly.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            8
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            4
+          ]
+        }
+      ],
+      "culture": false,
+      "variants": {
+        "4": 1
+      }
+    }
+  ],
+  "contrasts": [
+    {
+      "wrongText": "PHOtography (stress stays on the first syllable)",
+      "rightText": "phoTOgraphy (stress moves to TO)",
+      "note": {
+        "vi": "Từ gốc photograph nhấn âm đầu, nhưng photography nhấn âm thứ hai. Làm \"pho\" ngắn và yếu, kéo dài và nhấn \"TO\".",
+        "en": "The base word photograph is stressed first, but photography is stressed on the second syllable. Make \"pho\" short and weak, and lengthen and stress \"TO\"."
+      }
+    },
+    {
+      "wrongText": "CELebration (stress copied from celebrate)",
+      "rightText": "celeBRAtion (stress before -tion)",
+      "note": {
+        "vi": "Celebrate nhấn âm đầu, nhưng với -tion trọng âm dời sang âm tiết ngay trước: ce-le-BRA-tion.",
+        "en": "Celebrate is stressed first, but with -tion the stress moves to the syllable right before it: ce-le-BRA-tion."
+      }
+    },
+    {
+      "wrongText": "reCORD for the thing you play (verb stress on a noun)",
+      "rightText": "REcord for the thing you play (noun: first syllable)",
+      "note": {
+        "vi": "Danh từ nhấn âm đầu: REcord. Động từ nhấn âm sau: reCORD. Chỉ đổi chỗ nhấn, giọng vẫn tự nhiên.",
+        "en": "The noun is stressed first: REcord. The verb is stressed second: reCORD. Only the stress place changes; keep your voice natural."
+      }
+    }
+  ],
+  "selfCheck": {
+    "vi": "Ghi âm photograph, photography, photographer rồi nghe lại: chỗ nhấn có dời đúng chưa, và âm tiết cũ có trở nên ngắn, yếu không? Vỗ tay theo nhịp để kiểm tra.",
+    "en": "Record photograph, photography and photographer and listen back: did the stress move, and did the old syllable become short and weak? Clap along to check."
+  },
+  "teacherNotes": {
+    "vi": "Phần mềm so sánh độ dài, độ to và cao độ của từng âm tiết với âm tiết được nhấn mong đợi; nó không phân biệt được người nói nhấn bằng cách nào và không biết người nói định dùng danh từ hay động từ. Một số người nói tiếng Anh, nhất là giọng Anh-Anh, nhấn khác ở vài từ (ví dụ economy, history có hai cách đọc), hãy chấp nhận khi người nghe vẫn hiểu. Học sinh quen thanh điệu có thể dùng cao độ thay cho độ dài; không quy cho cả một vùng. Độ tin cậy phát hiện: trung bình, chưa được đo trên học sinh thật; điểm số chỉ là gợi ý và không đánh giá độ tự nhiên của giọng.",
+    "en": "The app compares each syllable's length, loudness and pitch with the expected stressed syllable; it cannot tell how a speaker produces the stress, nor whether the speaker meant the noun or the verb. Some English speakers, especially with British accents, stress a few words differently (economy and history have more than one pronunciation); accept it if listeners understand. Students used to tones may use pitch instead of length; do not attribute this to a whole region. Detection confidence: medium, not yet measured on real students; the score is only a hint and does not judge how natural the voice is."
+  },
+  "id": "U18",
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

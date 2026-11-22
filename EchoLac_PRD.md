@@ -210,7 +210,7 @@ The AI Tutor is a single persistent assistant that appears across the interface,
 | ID | Requirement | Priority | Acceptance criteria |
 | :---- | :---- | :---- | :---- |
 | T-01 | Error queue from Roleplay. | Must | Tutor lists all open error items, newest and most frequent first, each linked to its source scenario. |
-| T-02 | Phonetic error breakdown. | Should | For each word, the specific problem is identified using the categories in Section 6 (e.g., missing final /t/, cluster /str/ broken into syllables) and the faulty sound is highlighted. |
+| T-02 | Phonetic error breakdown. | Should | For each word or sentence, the specific problem is identified using the categories in Section 6 (e.g., missing final /t/, cluster /str/ broken into syllables, /eɪ/ reduced to [e]) and the faulty sound is highlighted. Categories with low detection confidence appear as practice tips, not errors. Explanations and drills come from the pronunciation lesson plan (`docs/giao-an-phat-am.md`; data in `content/pronunciation/`). |
 | T-03 | AI-guided correction. | Must | AI explains how to produce the correct sound in simple language, gives an example (“You should say…”), and prompts the learner to repeat. |
 | T-04 | Native sample and instant scoring. | Must | Learner plays native audio, records an attempt and receives a 0–100 score with feedback within about 3 seconds. |
 | T-05 | Mastery rule. | Should | An item is marked mastered after scoring 80 or more on two distinct calendar days in Asia/Ho_Chi_Minh time; until then it stays in the queue. Mastered items return through scheduled review (T-06). |
@@ -223,7 +223,7 @@ The AI Tutor is a single persistent assistant that appears across the interface,
 | :---- | :---- | :---- | :---- |
 | E-01 | Four-criteria assessment. | Must | Fluency, Vocabulary, Grammar and Pronunciation are each scored 0–100% using the method in Section 7\. |
 | E-02 | Radar chart. | Must | Four-axis radar chart showing current scores, with the previous period overlaid for comparison. |
-| E-03 | Sub-criteria drill-down. | Should | Tapping an axis shows its sub-criteria (e.g., Pronunciation: final sounds, word stress, consonant clusters) without cluttering the main chart. |
+| E-03 | Sub-criteria drill-down. | Should | Tapping an axis shows its sub-criteria without cluttering the main chart. Pronunciation shows the six groups of Section 6 (Endings, Clusters, Consonants, Vowels, Word stress, Speech flow). Only categories with high or medium detection confidence contribute to a group score; a group without such data shows practice suggestions instead of a number. |
 | E-04 | Estimated CEFR band. | Should | An indicative CEFR band from A1 to C1 (Section 7.3) is shown with a clear note that it is an estimate, not an official certification. |
 | E-05 | Practise from the radar. | Must | Each weak criterion has a “Practise this” button that opens a Tutor set or scenario targeting it. |
 | E-06 | Progress history. | Should | Line chart of each criterion over time, plus totals for sessions and minutes practised. |
@@ -232,11 +232,11 @@ The AI Tutor is a single persistent assistant that appears across the interface,
 
 | ID | Requirement | Priority | Acceptance criteria |
 | :---- | :---- | :---- | :---- |
-| X-01 | Learner accounts. | Must | Two-step onboarding. **Step 1** collects name, Gmail, date of birth and gender. A date of birth under 18 adds a required guardian-consent checkbox (Section 9). **Step 2** collects the learner's place (X-06). Sign-in with email or Google, or a class code issued by the school for students. Detailed validation and navigation are in Appendix C.4. |
+| X-01 | Learner accounts. | Must | Two-step onboarding. **Step 1** collects name, date of birth and optional gender; no email is required. A date of birth under 18 adds a required guardian-consent checkbox (Section 9). **Step 2** collects the learner's place (X-06). **Testing stage (decision 22 November 2026):** each device gets an anonymous Supabase account created in the background; progress is saved on the device first and synced when online. Changing device or clearing browser data loses the link to that progress, and the app says so. Email, Google sign-in and class codes are not offered in this stage; upgrading an anonymous account to email is a later option. Detailed validation and navigation are in Appendix C.4. |
 | X-02 | Onboarding and placement. | Should | A 2–3 minute speaking task estimates the starting CEFR level (A1–C1), sets AI language difficulty and selects the default curriculum level; learners may still browse other levels. |
 | X-03 | Bilingual interface. | Must | Vietnamese is the default. Instructions, feedback explanations and Tutor explanations follow the Vietnamese/English interface toggle. What learners hear and say during English practice remains English. |
 | X-04 | Persistent AI Tutor. | Should | AI Tutor panel available on all tabs with context of the learner’s recent errors. |
-| X-05 | Teacher dashboard. | Could | Teacher sees class-level radar averages and the most common error categories. |
+| X-05 | Teacher dashboard. | Won't (this version) | Out of scope: EchoLạc is used by individual learners, with no classes. "Teacher" means the reviewer who verifies content (R-13, Section 6 lesson plan). |
 | X-06 | Place-themed interface. | Should | Onboarding step 2, "Nơi gắn bó với bạn", has a Hometown / Destination toggle and 9 place cards: Đà Nẵng, Hội An, Huế, Hà Nội, Hạ Long, Sa Pa, Đà Lạt, TP. Hồ Chí Minh, or "somewhere else". Picking one instantly repaints the whole interface with that place's scenery (~400 ms crossfade): main colours, a patterned frame, a background illustration covering the full page height, and a light ambient animation. Back keeps step-1 data; Skip uses the default theme; "Bắt đầu hành trình" saves `{placeType, placeId, themeId}` and the theme persists after reload. The learner can change it later in Profile. Text contrast is ≥ 4.5:1 in every theme, and motion stops under reduced-motion settings. Theme designs and detailed interaction rules are in Appendix C.3. |
 
 ## **5.5 Camera-Based Cultural Learning**
@@ -295,29 +295,49 @@ The camera flow visibly distinguishes explanation/permission, model loading, rea
 The first curriculum module is Đà Nẵng. Its draft lesson plan is `Giáo án văn hoá Đà Nẵng - Học văn hoá Việt Nam bằng tiếng Anh (A1-C1).pdf` (30 lessons, six per level), derived from the source notes `phôi giáo án.txt`. Both files are drafts, not verified fact sheets. The lesson list lives in those files, not in this PRD.
 
 - **Strands.** Lessons follow six topic strands that recur at higher levels with more depth: landmarks; food; weather and climate; culture and heritage; history and place names (context for culture, with key dates only at B2–C1); location, people and present-day life.
-- **Intake rule.** A lesson becomes a scenario only after: (1) each fact has been matched to its source and copied into the fact sheet with that source; (2) time-sensitive facts carry an “as of” date (R-04); (3) the lesson has been reframed as a conversation in which the learner explains, recommends or interprets for a visitor (Objective O3); (4) it has R-02 vocabulary and a pronunciation focus from Section 6; and (5) a teacher has set its verified flag.
+- **Intake rule.** A lesson becomes a scenario only after: (1) each fact has been matched to its source and copied into the fact sheet with that source; (2) time-sensitive facts carry an “as of” date (R-04); (3) the lesson has been reframed as a conversation in which the learner explains, recommends or interprets for a visitor (Objective O3); (4) it has R-02 vocabulary and a pronunciation focus whose category is a Section 6 id, linked where possible to the matching unit of the pronunciation lesson plan; and (5) a teacher has set its verified flag.
 - **App activities.** Classroom activities that the app cannot deliver, such as tasting food, are replaced with an app interaction: describing a photo, roleplay with an AI character or a Tutor drill.
 - **Sensitive topics.** War, colonial history and administrative or political decisions are presented factually and neutrally as background to culture. Activities ask learners to describe and explain, not to judge political decisions.
 - **Level selection.** Placement (X-02) and the estimated band (E-04) choose the default level; learners can open other levels.
 
 # **6\. Vietnamese-Learner Pronunciation Error Taxonomy**
 
-Because Vietnamese is a tonal language whose syllables rarely end in clusters or released consonants, Vietnamese speakers of English show predictable error patterns. The Tutor module classifies errors using the categories below, which makes feedback more specific and gives the project a clear research focus.
+Vietnamese is a tonal, syllable-timed language. A syllable has at most one final consonant, final /p t k/ are unreleased, there are no consonant clusters and there is no native /θ ð ʃ ʒ tʃ dʒ/. Vietnamese speakers of English therefore show predictable error patterns. The Tutor classifies each pronunciation error into exactly one of the closed categories below. The stored ids are in code font; the app's Vietnamese and English labels live in `ERR_CAT`. Priority follows intelligibility: P1 errors most often cause misunderstanding, while P3 errors mainly affect naturalness or listening. Evidence, examples and practice items for every category are in the pronunciation lesson plan `docs/giao-an-phat-am.md`; its data is in `content/pronunciation/`.
 
-| Category | Typical example | Detection signal |
-| :---- | :---- | :---- |
-| `final_consonant` — Dropped or unreleased final consonants | “nice” → /naɪ/; “bike” → /baɪ/ | Low accuracy or omission of the final phoneme |
-| `s_ed_ending` — Missing \-s / \-ed endings | “three ticket”; “I visit yesterday” | Phoneme omission plus grammar check on the transcript |
-| `cluster` — Consonant clusters | “street” → /səˈtriːt/; “clean” → /kəˈliːn/ | Inserted vowel or dropped consonant inside the cluster |
-| `th` — “th” sounds /θ/ and /ð/ | “think” → /tɪŋk/; “this” → /zɪs/ or /dɪs/ | Substitution of /θ/, /ð/ with /t/, /d/, /z/ |
-| `sibilant` — /ʃ/, /ʒ/, /dʒ/ and /z/ | “ship” → /sɪp/; “job” → /zɒb/ | Substitution between sibilants |
-| `vowel_length` — Vowel length | “sheep” vs “ship”; “full” vs “fool” | Confusion of /iː/–/ɪ/, /uː/–/ʊ/ |
-| `word_stress` — Word stress | “hotel” stressed on the first syllable | Prosody / stress score on multi-syllable words |
-| `rhythm` — Flat or syllable-by-syllable rhythm | Every syllable given equal weight | Prosody score, speech rate and pause pattern |
+| Category | Group (E-03) | Typical Vietnamese realisation | Detection signal | Detection confidence | Priority |
+| :---- | :---- | :---- | :---- | :---- | :---- |
+| `final_consonant` — Dropped, unreleased or glottalised final consonant (including final /l/) | Endings | “cat” → [kæ] or [kæʔ]; “nice” → [naɪ]; “ball” → [bɔː] | Expected final consonant missing, or heard as a glottal stop | High | P1 |
+| `s_ed_ending` — Missing or wrong -s/-es/-’s and -ed endings | Endings | “books” → [bʊk]; “played” → [pleɪ]; “liked” → [laɪkɪd] | Expected suffix sounds missing when the target text is known (overlap rule below) | High | P1 |
+| `final_voicing` — Final voiced consonant devoiced | Endings | “bed” → [bɛt]; “bag” → [bæk]; “eyes” → [aɪs] | Final /b d ɡ v z ʒ dʒ/ heard as its voiceless pair | Medium | P2 |
+| `cluster` — Consonant cluster broken by an extra vowel or simplified | Clusters | “street” → [sə.tɹiːt] or [tɹiːt]; “first” → [fɜːs] | Inserted vowel inside or before the cluster, or one cluster consonant missing | High | P1 |
+| `th` — “th” sounds /θ/ and /ð/ | Consonants | “think” → [tɪŋk]; “this” → [zɪs] or [dɪs] | /θ/ heard as /t s f/; /ð/ heard as /d z/ | High | P3 |
+| `sibilant` — /ʃ ʒ tʃ dʒ/ versus /s z/ | Consonants | “ship” → [sɪp]; “she” → [siː]; “job” → [zɑːp] | Substitution among /s z ʃ ʒ tʃ dʒ/ | High | P1 |
+| `consonant_sub` — Other substitutions: /v w j b/, /z j dʒ/, /l n ɹ/, initial /p/ | Consonants | “very” → [jɛɹi]; “yes” → [zɛs]; “light” → [naɪt]; “pig” → [bɪk] | Substitution within these sets (a trilled r is accepted) | Medium | P2 |
+| `vowel_length` — Tense/lax pairs /iː–ɪ/ and /uː–ʊ/ | Vowels | “ship” and “sheep” both [ʃiːp]; “full” → [fuːl] | Vowel heard as the other member of the pair (by quality; duration is not judged) | Medium | P1 |
+| `vowel_quality` — /æ ɛ ʌ/ and diphthongs /eɪ oʊ aɪ aʊ/ | Vowels | “cat” → [kɛt]; “cut” → [kɑːt]; “day” → [de]; “go” → [ɡo] | Vowel substitution, or a diphthong heard as a single vowel | Medium | P2 |
+| `word_stress` — Wrong stressed syllable, including compounds, suffix shifts and noun/verb pairs | Word stress | “hotel” stressed on the first syllable; “photography” stressed like “photograph” | Relative length, loudness and pitch of each syllable versus the expected stress | Medium | P2 |
+| `rhythm` — Syllable-by-syllable rhythm | Speech flow | Every syllable given equal length; a pause after each word | Variation of vowel lengths and pauses between words | Low | P3 |
+| `weak_form` — Unstressed syllables and function words not reduced | Speech flow | “to” → [tuː]; “and” → [æn]; “a cup of tea” with full vowels | Strong vowel heard where a schwa or weak form is expected | Low | P3 |
+| `linking` — Words not linked; glottal stop or pause before a vowel-initial word | Speech flow | “pick it up” → [pɪk ʔɪt ʔʌp] | Glottal stop, pause or inserted vowel at an expected linking point | Low | P3 |
+| `intonation` — Tone-like pitch, wrong final rise or fall, or nucleus on the wrong word | Speech flow | A yes/no question ending in a fall; a high rise on every stressed word | Pitch direction at the end of the phrase; position of the main pitch movement | Medium (final rise/fall); Low (nucleus) | P2 |
 
-*Validation of this taxonomy: the team can collect a small sample of student recordings at the pilot school and have an English teacher label the errors, then report how often each category occurs and how accurately the system detects it.*
+**Detection confidence.** These ratings are design estimates and must be measured (Section 7.4).
+- *High* and *Medium* categories may label error items (R-10) and lower the pronunciation score; Medium feedback is worded as a likely, not a certain, error.
+- *Low* categories show a clearly labelled **reference score** and practice tips. They never become the category of an automatic error item, never count towards the radar or a unit pass, and their score is stored separately as a reference score.
+- A category is moved to a lower confidence level if its agreement with teacher labels is below the pilot target (Section 14).
 
-Grammar issues use a separate closed set: `tense`, `agreement`, `article`, `word_order`, `other`. These are distinct from the eight pronunciation categories; a generic grammar label is not a ninth pronunciation category.
+**Overlap rules.**
+- Each mismatched sound gets one category. Precedence: `s_ed_ending` > `cluster` > `final_consonant` > `final_voicing` > the other categories.
+- When the target text is known (Tutor, read-aloud), a missing ending is `s_ed_ending`. In free Roleplay speech, a transcript without the inflection (“three ticket”, “I visit yesterday”) is a grammar error, and no pronunciation error is logged for that word. A word never receives both.
+
+**Accent and dialect.**
+- Reference IPA is American (CMUdict). Non-rhotic, British, Australian and other accepted variants listed with each practice item are not errors. The aim is intelligibility, not a native accent.
+- Vietnamese dialects differ. Northern speakers may say d/gi/r as [z]; Southern speakers may say v/d/gi as [j]. Central speakers, including Đà Nẵng, are reported to keep more of these distinctions; this report is unverified.
+- The app does not detect or label dialect; it reports only the categories above.
+
+*Validation of this taxonomy: collect a sample of student recordings at the pilot school and have an English teacher label the errors. Then report, per category, how often it occurs and how well the system detects it (precision and recall against the teacher's labels).*
+
+Grammar issues use a separate closed set: `tense`, `agreement`, `article`, `word_order`, `other`. These are distinct from the pronunciation categories; a generic grammar label is not a pronunciation category.
 
 <a id="assessment"></a>
 
@@ -332,7 +352,7 @@ The four criteria follow the qualitative aspects of spoken language described in
 | Fluency | Speech rate (words per minute); number and length of long pauses; hesitations and self-corrections; ability to keep the conversation going | Audio timing from speech recognition; pronunciation-assessment fluency score |
 | Vocabulary | Range of words used; use of the scenario’s target words; appropriateness of word choice | LLM analysis of the transcript against the target word list |
 | Grammar | Errors per 100 words; tense and agreement accuracy; sentence complexity | LLM grammar analysis of the transcript |
-| Pronunciation | Phoneme accuracy; final sounds; consonant clusters; word stress; intonation | Pronunciation assessment at phoneme and word level |
+| Pronunciation | Phoneme accuracy grouped as in Section 6: endings, clusters, consonants, vowels, word stress and speech flow (intonation). Low-confidence categories (rhythm, weak forms, linking) give a reference score and feedback only | Pronunciation assessment at phoneme and word level against the expected text; syllable length, loudness and pitch for stress and intonation |
 
 ## **7.2 Score Calculation**
 
@@ -386,7 +406,7 @@ The following target choices consolidate the specific stack previously recorded 
 | :-- | :-- |
 | App | Next.js (App Router) + TypeScript (strict) + Tailwind CSS, PWA manifest + service worker |
 | Charts | Recharts (radar E-02, progress lines E-06) |
-| Auth + DB + storage | Supabase: Postgres with row-level security, email + Google sign-in, class codes (X-01), private audio bucket |
+| Auth + DB + storage | Supabase: Postgres with row-level security; anonymous sign-in in the testing stage (X-01); no audio storage |
 | LLM | Claude API: `claude-haiku-5-5` for live character turns (latency), `claude-sonnet-5-5` for grammar feedback, error classification, tutor explanations and session summaries |
 | Speech | Azure AI Speech for ASR with word timings, pronunciation assessment at phoneme and word level, and neural TTS (en-GB, en-US, en-IN, en-AU) |
 | Recording | Browser MediaRecorder API, push-to-talk |
@@ -395,18 +415,30 @@ The following target choices consolidate the specific stack previously recorded 
 | Validation | `zod` at every trust boundary: request bodies, LLM JSON output, speech-service responses |
 | Tests | Vitest for `lib/`; Playwright smoke test of the loop |
 
+**Testing-stage build path (decision 22 November 2026).** Until a budget and a larger pilot exist, the build follows these choices instead of the matching target rows above. They are free, need no payment card and are sized for a few testers:
+
+| Layer | Testing-stage choice |
+| :-- | :-- |
+| App | Existing static HTML/CSS/JavaScript prototype plus a PWA manifest and service worker; Next.js migration is postponed |
+| Auth + DB | Supabase anonymous sign-in, Postgres tables with row-level security, local-first sync from `lt:` storage; publishable key only in the browser |
+| Pronunciation scoring | Phoneme recogniser `wav2vec2-lv-60-espeak-cv-ft` (ONNX, Apache-2.0) run in the browser when the device can load it; otherwise, with the learner's consent, a free Hugging Face ZeroGPU Space; otherwise no automatic score (self-check). One scoring interface keeps the engine swappable (paid CPU Space or a school machine later) |
+| Model audio (T-04) | Kokoro-82M (Apache-2.0) audio pre-rendered for every lesson-plan item in several en-US and en-GB voices and served as static files |
+| ASR (Roleplay) | `whisper-tiny.en` in the browser for learner turns; character replies stay scripted until an LLM is added |
+| Spaced repetition | `ts-fsrs` |
+| LLM | Deferred to a later stage |
+
 The camera target uses **MobileNetV3Large image classification with TensorFlow.js inference in the browser**, specified in Section 8.5. Browser MediaDevices supplies camera frames; Geolocation is optional supplementary context, not a prerequisite for recognition. Map or Street View references, if used, must respect licensing, attribution and caching terms. An open phoneme-recognition model remains a research alternative for speech, separate from the landmark classifier.
 
 ## **8.3 Current Prototype Status**
 
-Repository inspection on **12 November 2026** establishes the following implementation boundaries:
+The original repository inspection was on **12 November 2026**; the table includes the testing-stage source updates of **22 November 2026**. Source checks and local tests do not establish a deployed release or device acceptance.
 
 | Area | Current status | What this does not establish |
 | --- | --- | --- |
-| Application source | Static HTML/CSS/JavaScript prototype with separate screen, component, data and logic files. The Netlify build copies only public app files to `dist/` (documents, tests and tooling are not published) and sets security headers: Content-Security-Policy, Permissions-Policy for camera/microphone/geolocation, nosniff, frame denial and referrer policy. The CSP still allows inline scripts because of inline handlers; it no longer allows eval, since the camera now loads plain TensorFlow.js. CDN libraries are pinned with integrity hashes | Completion of the Next.js/TypeScript target or an installable PWA |
+| Application source | Static HTML/CSS/JavaScript prototype with separate screen, component, data and logic files. The Netlify build copies public app files to `dist/` and generates public configuration and security headers. PWA manifest and service worker are implemented; installation precaches HTML/scripts/styles/icons through the generated shell manifest, while other public resources are cached on demand. Runtime config and API traffic are excluded. CSP permits inline event attributes, blocks inline script elements/eval, and pins allowed CDN script paths; libraries also use integrity hashes | Completion of the Next.js/TypeScript target, deployed PWA installation, offline coverage for unvisited large resources, or phone acceptance |
 | Learner journey | Clickable screens, two-step onboarding, place themes, sample conversations, Tutor and radar templates | Production authentication, measured speech scores or a connected LLM |
 | Curriculum content (R-13) | As of 14 November 2026, the library holds the 10 original scenarios plus 15 lesson-derived scenarios (A1–C1) from the Đà Nẵng lesson plan. Each has a can-do goal, 9–10 words with IPA, a pronunciation focus word, scripted model turns and source line references, and every one is unverified. Since 16 November 2026, four A1–A2 camera landmark scenarios (Cầu Sông Hàn, Công viên APEC, Tượng Quan Âm, Tượng Cá chép hoá Rồng) give each camera class its own lesson; their facts cite lesson B1-05 or `docs/research-quan-am-ca-chep.md` and are unverified | Teacher verification, the other 15 lessons, journey placement (the journey still shows the original 10 stops) or a level filter in the library |
-| Persistence | Browser-local prototype state | Supabase tables, RLS, private audio storage or research retention automation |
+| Persistence | Local-first anonymous Supabase client, profile synchronization, error-row helpers and five RLS-controlled table definitions. Migration 0002 restricts table privileges to RLS-controlled CRUD. Two-identity SQL checks pass locally on embedded PostgreSQL; the hosted 0001 setup is reported in Claude's handoff, while 0002 has not been applied there in this turn | Hosted revalidation after 0002, complete pronunciation-progress integration, cross-device recovery, or research retention automation. No audio storage is implemented |
 | Speech | Browser speech playback and simulated roleplay/Tutor scores | Azure ASR, phoneme assessment, neural TTS integration or validated accuracy |
 | Camera — repository integration | Since 16 November 2026: model v4 (MobileNetV3Large, 5 classes: Cá chép rồng, Cầu Rồng, Cầu Sông Hàn, Công viên APEC, Tượng Quan Âm – Chùa Linh Ứng) exported to a TensorFlow.js graph model in `model/` (float16, about 6 MB), run with TensorFlow.js 4.22. Live scan and photo matching both apply a 0.85 threshold and the 20-point top-1/top-2 margin (C-04); classes are mapped by name only, and each opens its own lesson. Four matching location records were added (unverified). Separate labelled simulation modes remain | A trained khac class, 25-landmark coverage, a field test on phones, measured latency or teacher-verified facts for the new places |
 | Verification | Automated checks cover templates, existing diagnostics, saved state and navigation recommendations | Device permissions, measured latency, a completed pilot or visual approval at every supported size |
@@ -434,7 +466,7 @@ No full 26-class training, independent field-test result, phone latency/memory m
 | Area | Requirement |
 | :---- | :---- |
 | Response time | AI voice reply starts within about 3 seconds of the learner finishing a turn; pronunciation score within about 3 seconds. |
-| Connectivity | Internet connection required in this version; a lightweight offline mode (vocabulary review only) is on the long-term roadmap. |
+| Connectivity | First installation, anonymous account enrollment and cloud synchronization require internet. After successful service-worker installation, the static shell is available offline and changes stay local until reconnection. Large images/models and lesson resources are not all precached; remote scoring always needs internet. Full offline learning remains deferred. |
 | Devices | Works on recent Android and iOS phone browsers and on desktop Chrome/Edge; usable on a 360px-wide screen. |
 | Cost control | Enforce per-learner daily AI-minute limits on the server. Set monthly provider spend limits to keep API costs predictable. Numerical daily caps and budgets remain to be set by the team. |
 | Accessibility | Subtitles, adjustable speech rate, touch targets ≥44px, text contrast ≥4.5:1, readable font sizes and reduced-motion support. Detailed visual and interaction requirements are in Appendix C. |
@@ -516,7 +548,7 @@ Most primary users are under 18, and the product records their voices, so privac
 
 * **Consent:** obtain approval from the school and consent from parents or guardians before students take part in the pilot, in line with Vietnam’s personal data protection regulations.
 
-* **Data minimisation:** store transcripts and scores. Raw audio is private and deleted after **30 days**, unless the learner’s `keep_audio_for_research` consent flag is set with the required guardian consent. Research retention requires explicit consent, not an implicit default.
+* **Data minimisation:** store transcripts, scores and error categories. **In the testing stage no raw audio is stored anywhere.** Pronunciation scoring runs in the browser where possible. Sending a recording to the remote scoring server (Section 8.2) requires the learner's explicit consent, shown before the first upload and revocable in Profile; the recording is used only to compute the score and is not stored or logged by EchoLạc. The server is a Hugging Face Space hosted outside Vietnam. A later `keep_audio_for_research` flow needs separate guardian consent and is not part of this stage.
 
 * **No advertising or data sale:** learner data is used only to provide the service and, with consent, for anonymised research analysis. Do not include advertising or analytics SDKs.
 
@@ -526,11 +558,11 @@ Most primary users are under 18, and the product records their voices, so privac
 
 * **Anonymised reporting:** results presented at the competition use aggregated or anonymised data only.
 
-* **Access control:** row-level security applies to every learner-data table. Learners read and write only their own rows; teacher access is limited to their own class (X-05). Raw audio uses a private storage bucket.
+* **Access control:** row-level security applies to every learner-data table. Learners, including anonymous accounts, read and write only their own rows. There is no teacher or class access in this version (X-05).
 
 * **Microphone explanation:** before the browser permission prompt, show a short Vietnamese/English explanation of why audio access is needed.
 
-* **Service access and cost:** private service credentials stay on the server. The browser receives short-lived speech tokens; only the Supabase anon key may be public, with RLS enabled. Daily AI-minute limits are enforced on the server; monthly spend limits follow Section 8.4.
+* **Service access and cost:** private service credentials stay on the server. In the testing stage the browser receives only the Supabase publishable key (or legacy anon key), with RLS enabled; it never receives a service-role key. In the target speech architecture it receives short-lived speech tokens. Server-side AI-minute and monthly-spend limits follow Section 8.4 when those services are implemented; they are not evidence of controls already deployed.
 
 # **10\. Success Metrics and Pilot Evaluation Plan**
 
@@ -577,6 +609,9 @@ Phase 2 funding options are future directions requiring a later scope decision. 
 | Risk | Impact | Mitigation |
 | :---- | :---- | :---- |
 | Speech recognition misreads accented speech and blames the learner for its own error | Unfair scores; learner frustration | Use pronunciation assessment against the expected text where possible; flag low-confidence results instead of scoring them; validate with teacher ratings |
+| Automatic detection mislabels stress, rhythm or connected-speech errors, or flags acceptable accent and dialect variants as errors | Wrong feedback; learners practise the wrong thing or lose trust | Give every Section 6 category a detection confidence; low-confidence categories give a labelled reference score and tips only, never error items or radar points; accept listed accent variants; measure per-category agreement with teacher labels (Section 7.4) before raising a category's confidence |
+| Pronunciation lesson content contains wrong IPA, false minimal pairs or unsuitable explanations | Learners practise wrong models | Generate IPA from CMUdict, check minimal pairs automatically, and keep every unit unverified until an English teacher reviews it with the checklist in `docs/giao-an-phat-am.md` |
+| Free remote scoring (Hugging Face ZeroGPU) runs out of daily quota, sleeps or changes terms; its endpoint is public in the testing stage | Learners on weak phones get no score; strangers could use the quota | Try on-device scoring first; fall back to self-check without a score and say why; keep the scoring interface swappable; add authentication and rate limits, or a paid CPU Space, before a wider pilot |
 | AI gives wrong facts about landmarks or history | Learners repeat misinformation to tourists | Ground every scenario in a teacher-verified fact sheet; instruct the AI to stay within it |
 | Curriculum source material mixes outdated and current facts or contains errors (for example, wrong compass directions, or pre- and post-2025 administrative data) | Learners study wrong or outdated facts | Match each fact to its source, add “as of” dates and require teacher verification before release (R-04, R-13) |
 | Scores for advanced learners (B2–C1) are less reliable than for lower bands | Misleading level estimates for advanced learners | Present bands as estimates; include advanced learners in the validity study (Section 7.4) |
@@ -649,6 +684,14 @@ This track elaborates the existing optional camera feature; it does not displace
 14. Which Đà Nẵng curriculum lessons enter the first release, and who verifies facts that the source notes cannot confirm (Section 5.7).
 
 15. How B2–C1 learners will be recruited for the scoring validity study (Section 7.4).
+
+16. Which English teacher reviews the pronunciation lesson plan (`docs/giao-an-phat-am.md`) and sets each unit's verified flag, and which reference accent the review uses (the data is American CMUdict; R-06 also offers British, Indian and Australian voices).
+
+17. The per-category detection accuracy required before a Section 6 category may label error items or count towards scores, and the size of the teacher-labelled sample used to measure it (Section 7.4).
+
+18. Which dialect features (Section 6) Đà Nẵng pilot students actually show, so pronunciation units can be prioritised for that group.
+
+19. Budget for reliable remote scoring before a wider pilot (for example Hugging Face PRO at about 9 USD per month, or a school machine), and who holds the account.
 
 # **Appendix A. Pitch Slide Outline (30 October 2026\)**
 
@@ -753,7 +796,7 @@ Theme acceptance:
 
 ## C.4 Onboarding (X-01, X-06)
 
-1. **Step 1 · `#signup` "Tạo tài khoản".** Fields: name, Gmail (must end in `@gmail.com`), date of birth, gender (radio group), terms. Under 18, a second, required "parent or guardian agrees" checkbox appears. A valid submit saves the account and goes to step 2.
+1. **Step 1 · `#signup` "Tạo tài khoản".** Testing-stage fields: name (2–60 characters), date of birth (age 6–100), optional gender (radio group), and required agreement to the described local saving and anonymous synchronization. No email, password, Google sign-in or class code is collected (X-01). Determine age by calendar birthday; under 18 requires a second "parent or guardian agrees" checkbox. Save locally and go to step 2 without waiting for the network; full date of birth and gender stay on the device, while only birth year goes into the cloud profile. Voice upload requires separate, revocable consent.
 2. **Step 2 · `#place` "Nơi gắn bó với bạn".**
    - **Toggle:** Quê hương / Điểm đến (`role="radiogroup"`, arrow keys). The subtitle changes with it.
    - **Place grid:** 10 cards (`<button aria-pressed>`; same grid in Settings), each with the place's first scene as its thumbnail (theme icon until scene images exist), its name and "N địa danh · names" for the supported landmarks, at most 2 lines. A ring and a tick mark the choice; tapping previews the theme, with a "Giao diện: …" line below.
@@ -775,7 +818,7 @@ Theme acceptance:
 | Reference pattern | EchoLạc screen |
 | :-- | :-- |
 | Full-width bottom bar (Figma "Home", 390×844): icon + label per tab, a short navy bar marks the current tab, white 94% with blur | 5 tabs: **Trang chủ/Home, Nhập vai/Roleplay, Gia sư/Tutor, Bản đồ lỗi/Radar, Hồ sơ/Profile** |
-| Auth form: label above the field, icon at the start, inline green check, terms checkbox, gradient CTA enabled once the form is valid | Onboarding step 1 (see **Onboarding** above). **Sign-in:** email + password or class code. Social sign-in is Google only, and a new Google user goes to step 2 |
+| Auth form: label above the field, icon at the start, inline green check, terms checkbox, gradient CTA enabled once the form is valid | Onboarding step 1 (see **Onboarding** above). **Testing stage:** no email or social sign-in; returning on the same device continues the anonymous account (X-01) |
 | "Welcome!" success screen with a check badge and 3 feature rows | Not used. Onboarding goes straight from step 2 to Home |
 | Home (Figma file 4gfregjNxYiakVtWeSTKiD, "Screens & Motion"): floating cards over the place scene: initials avatar + bell; "Chuỗi học" card (streak days · XP); location pill naming the scene on screen; 4 round shortcuts (Roleplay, AI Tutor, Camera, Error map); "Tiếp tục bài học" card with progress bar and round play button; "Nhiệm vụ hôm nay" card | Mission card = today's "Practise this" recommendation. The streak row, calendar and 2×2 ring cards follow below. Cards: radius 28, white 92% + blur 10, soft navy shadow |
 | Journey path: winding line, numbered nodes, padlocked locked nodes, "Your Progress" summary card | **Landmark journey**: scenarios as stops across Da Nang and Hoi An; streaks unlock new stops (T-07) |

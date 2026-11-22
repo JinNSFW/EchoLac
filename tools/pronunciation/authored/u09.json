@@ -1,0 +1,555 @@
+{
+  "cando": {
+    "vi": "Em chọn và nói đúng đuôi -ed: /t/, /d/ hoặc /ɪd/.",
+    "en": "I can choose and say the right -ed ending: /t/, /d/ or /ɪd/."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt không chia động từ theo thì, nên đuôi -ed thường bị bỏ khi nói tiếng Anh: walked nghe như walk. Các nghiên cứu về đuôi -ed của học sinh Việt được báo cáo là thường gặp lỗi bỏ đuôi, nhất là sau phụ âm.",
+      "en": "Vietnamese does not mark tense on verbs, so -ed is often dropped in English: walked sounds like walk. Studies of Vietnamese learners' -ed are reported to commonly find ending omission, especially after consonants.",
+      "refs": [
+        "[13]",
+        "[14]"
+      ]
+    },
+    {
+      "vi": "Đuôi -ed có ba cách đọc và cách chọn theo quy tắc đơn giản: /ɪd/ sau t, d; /t/ sau các âm vô thanh khác; /d/ sau nguyên âm và âm hữu thanh.",
+      "en": "The -ed ending has three sounds and the choice follows a simple rule: /ɪd/ after t, d; /t/ after other voiceless sounds; /d/ after vowels and voiced sounds.",
+      "refs": [
+        "[B16]"
+      ]
+    },
+    {
+      "vi": "Thiếu đuôi -ed làm người nghe không biết việc xảy ra khi nào; đây là điểm ưu tiên cao (P1) để người nghe hiểu mình.",
+      "en": "A missing -ed leaves the listener unsure when something happened; this is a high-priority (P1) point for being understood.",
+      "refs": [
+        "[B15]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Quy tắc 1: sau t hoặc d, -ed là một âm tiết mới /ɪd/ (wanted, needed). Đếm nhịp: want-ed có hai nhịp.",
+      "en": "Rule 1: after t or d, -ed is a new syllable /ɪd/ (wanted, needed). Count beats: want-ed has two."
+    },
+    {
+      "vi": "Quy tắc 2: sau âm vô thanh (k, p, ch, s, f) chỉ thêm /t/ ngắn, không rung cổ (walked, stopped, watched).",
+      "en": "Rule 2: after a voiceless sound (k, p, ch, s, f) add only a short /t/ with no voice (walked, stopped, watched)."
+    },
+    {
+      "vi": "Quy tắc 3: sau nguyên âm hoặc âm hữu thanh thêm /d/; đặt tay lên cổ phải thấy rung (played, cleaned, rained).",
+      "en": "Rule 3: after a vowel or voiced sound add /d/; a hand on your throat should feel a buzz (played, cleaned, rained)."
+    },
+    {
+      "vi": "Chạm đầu lưỡi lên nướu sau răng trên để đóng /t/ hoặc /d/ rồi thả nhẹ. Đừng dừng ở cổ họng.",
+      "en": "Touch the tongue tip to the ridge behind the top teeth for /t/ or /d/, then release lightly. Do not stop in the throat."
+    }
+  ],
+  "words": [
+    {
+      "text": "walked",
+      "lemma": "walk",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "w ɔː k",
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "variantIpa": "w ɔː k ɪ d",
+          "note": {
+            "vi": "Thêm âm tiết thừa /ɪd/; chỉ cần /t/ ngắn.",
+            "en": "An extra syllable /ɪd/; only a short /t/ is needed."
+          }
+        }
+      ]
+    },
+    {
+      "text": "cooked",
+      "lemma": "cook",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "k ʊ k",
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "variantIpa": "k ʊ k ɪ d",
+          "note": {
+            "vi": "Thêm âm tiết thừa /ɪd/; chỉ cần /t/ ngắn.",
+            "en": "An extra syllable /ɪd/; only a short /t/ is needed."
+          }
+        }
+      ]
+    },
+    {
+      "text": "stopped",
+      "lemma": "stop",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s t ɑː p",
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "variantIpa": "s t ɑː p ɪ d",
+          "note": {
+            "vi": "Thêm âm tiết thừa /ɪd/; chỉ cần /t/ ngắn.",
+            "en": "An extra syllable /ɪd/; only a short /t/ is needed."
+          }
+        }
+      ]
+    },
+    {
+      "text": "watched",
+      "lemma": "watch",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "w ɑː tʃ",
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "variantIpa": "w ɑː tʃ ɪ d",
+          "note": {
+            "vi": "Thêm âm tiết thừa /ɪd/; chỉ cần /t/ ngắn.",
+            "en": "An extra syllable /ɪd/; only a short /t/ is needed."
+          }
+        }
+      ]
+    },
+    {
+      "text": "played",
+      "lemma": "play",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "p l eɪ",
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "variantIpa": "p l eɪ t",
+          "note": {
+            "vi": "Dùng /t/ vô thanh thay cho /d/.",
+            "en": "Voiceless /t/ used instead of /d/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "cleaned",
+      "lemma": "clean",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "k l iː n",
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "variantIpa": "k l iː n t",
+          "note": {
+            "vi": "Dùng /t/ vô thanh thay cho /d/.",
+            "en": "Voiceless /t/ used instead of /d/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "rained",
+      "lemma": "rain",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "ɹ eɪ n",
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "variantIpa": "ɹ eɪ n t",
+          "note": {
+            "vi": "Dùng /t/ vô thanh thay cho /d/.",
+            "en": "Voiceless /t/ used instead of /d/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "visited",
+      "lemma": "visit",
+      "targets": [
+        {
+          "index": [
+            -2,
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "v ɪ z ɪ t",
+          "note": {
+            "vi": "Bỏ mất âm tiết -ed /ɪd/.",
+            "en": "The whole -ed syllable /ɪd/ is dropped."
+          }
+        },
+        {
+          "variantIpa": "v ɪ z ɪ t ɪ",
+          "note": {
+            "vi": "Thiếu /d/ ở cuối.",
+            "en": "Missing final /d/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "wanted",
+      "lemma": "want",
+      "targets": [
+        {
+          "index": [
+            -2,
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "w ɔː n t",
+          "note": {
+            "vi": "Bỏ mất âm tiết -ed /ɪd/.",
+            "en": "The whole -ed syllable /ɪd/ is dropped."
+          }
+        },
+        {
+          "variantIpa": "w ɔː n t ɪ",
+          "note": {
+            "vi": "Thiếu /d/ ở cuối.",
+            "en": "Missing final /d/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "painted",
+      "lemma": "paint",
+      "targets": [
+        {
+          "index": [
+            -2,
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "p eɪ n t",
+          "note": {
+            "vi": "Bỏ mất âm tiết -ed /ɪd/.",
+            "en": "The whole -ed syllable /ɪd/ is dropped."
+          }
+        },
+        {
+          "variantIpa": "p eɪ n t ɪ",
+          "note": {
+            "vi": "Thiếu /d/ ở cuối.",
+            "en": "Missing final /d/."
+          }
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "a": "play",
+      "b": "played",
+      "type": "deletion"
+    },
+    {
+      "a": "rain",
+      "b": "rained",
+      "type": "deletion"
+    },
+    {
+      "a": "clean",
+      "b": "cleaned",
+      "type": "deletion"
+    },
+    {
+      "a": "walk",
+      "b": "walked",
+      "type": "deletion"
+    },
+    {
+      "a": "cook",
+      "b": "cooked",
+      "type": "deletion"
+    },
+    {
+      "a": "stop",
+      "b": "stopped",
+      "type": "deletion"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "We walked along the beach and watched the boats.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 6,
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "It rained in Huế, but we played games and watched the river.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 6,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 9,
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": true,
+      "unscored": [
+        "Huế"
+      ]
+    },
+    {
+      "text": "We walked across the bridge and visited a market in Hội An.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 6,
+          "index": [
+            -2,
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": true,
+      "unscored": [
+        "Hội",
+        "An"
+      ]
+    },
+    {
+      "text": "My mother cooked fish and cleaned the table.",
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 5,
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": false
+    },
+    {
+      "text": "He started the lesson and wanted to listen.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -2,
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 5,
+          "index": [
+            -2,
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": false
+    }
+  ],
+  "contrasts": [
+    {
+      "wrong": "w ɔː k",
+      "right": "w ɔː k t",
+      "note": {
+        "vi": "Walked nghe như walk. Sau /k/, chạm đầu lưỡi lên nướu và thả /t/ nhẹ, không thêm nguyên âm.",
+        "en": "Walked sounds like walk. After /k/ touch the tongue tip to the ridge and release a light /t/, with no vowel."
+      }
+    },
+    {
+      "wrong": "w ɔː k ɪ d",
+      "right": "w ɔː k t",
+      "note": {
+        "vi": "Đừng đọc walked thành hai âm tiết. Sau âm vô thanh (/k p tʃ/) chỉ có /t/ ngắn.",
+        "en": "Do not say walked as two syllables. After a voiceless sound (/k p tʃ/) there is only a short /t/."
+      }
+    },
+    {
+      "wrong": "p l eɪ",
+      "right": "p l eɪ d",
+      "note": {
+        "vi": "Played nghe như play. Sau nguyên âm, thêm /d/ có rung cổ ở cuối.",
+        "en": "Played sounds like play. After a vowel, add a voiced /d/ at the end."
+      }
+    },
+    {
+      "wrong": "w ɔː n t",
+      "right": "w ɔː n t ɪ d",
+      "note": {
+        "vi": "Sau /t/ hoặc /d/, -ed là một âm tiết riêng /ɪd/: wanted có hai âm tiết.",
+        "en": "After /t/ or /d/, -ed is its own syllable /ɪd/: wanted has two syllables."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "kt → ɔːkt → walked",
+      "steps": [
+        "k t",
+        "ɔː k t",
+        "w ɔː k t"
+      ],
+      "note": {
+        "vi": "Nói phần cuối trước. Giữ /k/ rồi /t/ liền nhau, không chen nguyên âm.",
+        "en": "Say the end first. Keep /k/ then /t/ together with no vowel between."
+      }
+    },
+    {
+      "text": "pt → ɑːpt → stopped",
+      "steps": [
+        "p t",
+        "ɑː p t",
+        "s t ɑː p t"
+      ],
+      "note": {
+        "vi": "Mím môi cho /p/, rồi chạm lưỡi cho /t/.",
+        "en": "Close the lips for /p/, then touch the tongue for /t/."
+      }
+    }
+  ],
+  "selfCheck": {
+    "vi": "Ghi âm: nói walked, played, wanted. Em có nghe rõ /t/, /d/ và một âm tiết /ɪd/ không? Thử cặp play–played để chắc người nghe nhận ra đuôi.",
+    "en": "Record walked, played and wanted. Can you hear a /t/, a /d/ and a clear extra syllable /ɪd/? Try play–played to be sure a listener hears the ending."
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói tiếng Việt vùng miền Trung hoặc vùng khác có thể nuốt âm cuối nhiều hơn; không coi đó là khuyết điểm của người học. Phần mềm chỉ chấm khi văn bản mục tiêu đã biết (đọc theo mẫu) và chỉ phát hiện mất đuôi hay sai dạng; không đo độ ngắn của /t/ hay độ rung của /d/. Một số giọng Anh nuốt /t/ cuối khi nói nhanh: chấp nhận nếu vẫn hiểu. Độ tin cậy phát hiện: cao, chưa được đo trên học sinh thật.",
+    "en": "Some speakers from Central Vietnam and other regions may reduce final sounds more; do not treat it as a learner flaw. The app scores only when the target text is known (read-aloud) and only detects a missing or wrong ending; it does not judge the shortness of /t/ or the voicing of /d/. Some English accents drop a final /t/ in fast speech: accept it if the listener understands. Detection confidence: high, not yet measured on real students."
+  },
+  "id": "U09",
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

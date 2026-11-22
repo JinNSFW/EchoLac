@@ -1,0 +1,362 @@
+{
+  "cando": {
+    "vi": "Em kết thúc câu kể và câu hỏi Wh bằng giọng xuống, câu hỏi Yes/No bằng giọng lên.",
+    "en": "I can end statements and wh-questions falling, and yes/no questions rising."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt là ngôn ngữ có thanh điệu: cao độ của mỗi âm tiết đổi nghĩa từ. Các nghiên cứu nhỏ ghi nhận người mới học thường để ngữ điệu tiếng Anh đi theo thanh điệu tiếng Việt, và người học giỏi hơn thì tiến gần người bản ngữ hơn.",
+      "en": "Vietnamese is a tone language: pitch on each syllable changes the word. Small studies report that beginners often let English tunes follow Vietnamese tones, while more advanced learners come closer to native speakers.",
+      "refs": [
+        "[B1]",
+        "[B4]"
+      ]
+    },
+    {
+      "vi": "Một nghiên cứu (27 người) báo cáo rằng luyện tập có hướng dẫn cải thiện cả từ mang trọng âm câu lẫn giọng lên/xuống. Câu kể và câu hỏi Wh thường kết thúc bằng giọng xuống; câu hỏi Yes/No thường kết thúc bằng giọng lên.",
+      "en": "One study (27 learners) reported that guided practice improved both which word carries the main stress and the rise or fall. Statements and wh-questions usually end falling; yes/no questions usually end rising.",
+      "refs": [
+        "[B8]"
+      ]
+    },
+    {
+      "vi": "Nhìn đường cao độ trên màn hình và bắt chước hình dạng của nó giúp người học nhận ra giọng lên/xuống nhanh hơn, được báo cáo trong các nghiên cứu về phản hồi trực quan.",
+      "en": "Looking at a pitch line on screen and copying its shape is reported to help learners notice rises and falls faster in studies of visual feedback.",
+      "refs": [
+        "[B11]",
+        "[B12]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Nói \"It's hot.\" như đang báo một tin chắc chắn: giọng đi xuống ở cuối, như bậc thang đi xuống.",
+      "en": "Say \"It's hot.\" as if announcing a sure fact: let your voice step down at the end."
+    },
+    {
+      "vi": "Nói \"It's hot?\" như đang hỏi thật: giọng đi lên ở cuối, như dấu hỏi kéo lên. Chỉ từ cuối cùng đổi, đừng đổi cả câu.",
+      "en": "Say \"It's hot?\" as a real question: let your voice go up at the end. Only the last word changes, not the whole sentence."
+    },
+    {
+      "vi": "Câu hỏi Wh (Where, What, How) đi xuống như câu kể: \"Where is the market?\" kết thúc giọng xuống.",
+      "en": "Wh-questions (Where, What, How) fall like statements: \"Where is the market?\" ends falling."
+    },
+    {
+      "vi": "Giữ giọng êm: chỉ dùng một đường cong lên hoặc xuống ở từ cuối, đừng nhấn từng từ như một thanh sắc.",
+      "en": "Keep the voice smooth: use one rise or fall on the last stressed word. Do not jab every word like a rising tone."
+    }
+  ],
+  "pairs": [
+    {
+      "type": "tune",
+      "text": "It's hot.",
+      "a": {
+        "final": "fall"
+      },
+      "b": {
+        "final": "rise"
+      }
+    },
+    {
+      "type": "tune",
+      "text": "You like it.",
+      "a": {
+        "final": "fall"
+      },
+      "b": {
+        "final": "rise"
+      }
+    },
+    {
+      "type": "tune",
+      "text": "It's far.",
+      "a": {
+        "final": "fall"
+      },
+      "b": {
+        "final": "rise"
+      }
+    },
+    {
+      "type": "tune",
+      "text": "Here.",
+      "a": {
+        "final": "fall"
+      },
+      "b": {
+        "final": "rise"
+      }
+    },
+    {
+      "type": "tune",
+      "text": "It's cold.",
+      "a": {
+        "final": "fall"
+      },
+      "b": {
+        "final": "rise"
+      }
+    }
+  ],
+  "sentences": [
+    {
+      "text": "It's hot.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": false,
+      "prosody": {
+        "final": "fall",
+        "nucleus": 1,
+        "type": "statement"
+      }
+    },
+    {
+      "text": "It's hot?",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": false,
+      "prosody": {
+        "final": "rise",
+        "nucleus": 1,
+        "type": "yesno"
+      }
+    },
+    {
+      "text": "You like it.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": false,
+      "prosody": {
+        "final": "fall",
+        "nucleus": 1,
+        "type": "statement"
+      }
+    },
+    {
+      "text": "You like it?",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": false,
+      "prosody": {
+        "final": "rise",
+        "nucleus": 1,
+        "type": "yesno"
+      }
+    },
+    {
+      "text": "Where is the market?",
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": false,
+      "prosody": {
+        "final": "fall",
+        "nucleus": 3,
+        "type": "wh"
+      }
+    },
+    {
+      "text": "What do you like?",
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": false,
+      "prosody": {
+        "final": "fall",
+        "nucleus": 3,
+        "type": "wh"
+      }
+    },
+    {
+      "text": "Is the beach clean?",
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": true,
+      "prosody": {
+        "final": "rise",
+        "nucleus": 3,
+        "type": "yesno"
+      }
+    },
+    {
+      "text": "The bridge is nice at night.",
+      "targets": [
+        {
+          "word": 5,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": true,
+      "prosody": {
+        "final": "fall",
+        "nucleus": 5,
+        "type": "statement"
+      }
+    },
+    {
+      "text": "Do you like the river?",
+      "targets": [
+        {
+          "word": 4,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": true,
+      "prosody": {
+        "final": "rise",
+        "nucleus": 4,
+        "type": "yesno"
+      }
+    },
+    {
+      "text": "How is the weather in Hội An?",
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": true,
+      "prosody": {
+        "final": "fall",
+        "nucleus": 3,
+        "type": "wh"
+      },
+      "unscored": [
+        "Hội",
+        "An"
+      ]
+    },
+    {
+      "text": "The food is cheap.",
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": true,
+      "prosody": {
+        "final": "fall",
+        "nucleus": 3,
+        "type": "statement"
+      }
+    }
+  ],
+  "contrasts": [
+    {
+      "wrongText": "It's hot? ↘ (giọng đi xuống)",
+      "rightText": "It's hot? ↗ (giọng đi lên)",
+      "note": {
+        "vi": "Câu hỏi có/không mà xuống giọng nghe như câu khẳng định. Kéo giọng lên ở từ cuối: hot↗.",
+        "en": "A yes/no question that falls sounds like a statement. Lift your voice on the last word: hot↗."
+      }
+    },
+    {
+      "wrongText": "Where is the bridge? ↗",
+      "rightText": "Where is the bridge? ↘",
+      "note": {
+        "vi": "Câu hỏi có từ để hỏi (where, what, how) thường xuống giọng ở cuối. Đừng lên giọng như câu hỏi có/không.",
+        "en": "Wh-questions (where, what, how) usually fall at the end. Do not rise as in a yes/no question."
+      }
+    },
+    {
+      "wrongText": "I LIKE THE NIGHT MAR-KET (mỗi tiếng một thanh)",
+      "rightText": "I like the night MARket ↘",
+      "note": {
+        "vi": "Đừng đặt dấu thanh tiếng Việt lên từng tiếng. Giữ giọng đều, chỉ có một chỗ xuống giọng rõ ở từ chính cuối câu.",
+        "en": "Do not put a Vietnamese tone on every syllable. Keep the voice smooth with one clear fall on the main word at the end."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "It's hot. / It's hot?",
+      "shadow": [
+        {
+          "vi": "Nghe câu mẫu hai lần, chỉ chú ý giọng đi lên hay đi xuống ở cuối.",
+          "en": "Listen to the model twice and notice only whether the voice goes up or down at the end."
+        },
+        {
+          "vi": "Ngân nga (hum) đúng hình dạng đường giọng, không nói chữ.",
+          "en": "Hum the shape of the tune without words."
+        },
+        {
+          "vi": "Thì thầm cùng lúc với âm thanh mẫu, bắt chước hình dạng, không bắt chước giọng.",
+          "en": "Whisper along with the audio, copying the shape, not the voice."
+        },
+        {
+          "vi": "Nói thành tiếng cùng với âm thanh mẫu; nhìn đường cao độ và khớp hình dạng.",
+          "en": "Speak aloud with the audio; watch the pitch line and match its shape."
+        },
+        {
+          "vi": "Nói một mình, không có âm thanh; so sánh với đường cao độ của mẫu.",
+          "en": "Speak alone with no audio; compare with the model pitch line."
+        }
+      ],
+      "note": {
+        "vi": "Bắt chước hình dạng đường cao độ, không bắt chước giọng của người nói mẫu.",
+        "en": "Copy the shape of the pitch line, not the model speaker's voice."
+      }
+    }
+  ],
+  "selfCheck": {
+    "vi": "Ghi âm \"It's hot.\" và \"It's hot?\", rồi nghe lại: câu kể đi xuống và câu hỏi đi lên chưa? Với câu hỏi Wh (Where is the market?) giọng có đi xuống không?",
+    "en": "Record \"It's hot.\" and \"It's hot?\" and listen back: does the statement fall and the question rise? Does a wh-question (Where is the market?) fall?"
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói phương ngữ có thanh điệu khác nhau nên đường cao độ ở cuối câu có thể khác; đừng cho đó là lỗi nếu người nghe vẫn nhận ra câu kể hay câu hỏi. Người bản ngữ cũng lên giọng ở câu Wh trong một số ngữ cảnh. Phần mềm chỉ ước lượng hướng lên/xuống ở cuối câu (độ tin cậy trung bình, chưa đo trên học sinh thật) và vị trí từ chính (độ tin cậy thấp); không đánh giá cảm xúc hay ý nghĩa. Các mục \"đối chiếu\" chỉ minh hoạ âm cuối, vì giọng lên/xuống không biểu diễn được bằng IPA.",
+    "en": "Speakers of some dialects have different tones, so the end-of-sentence pitch can differ; do not count it as an error if the listener still hears a statement or a question. Native speakers also rise on wh-questions in some contexts. The app only estimates final rise or fall (medium confidence, not yet measured on real students) and the nucleus word (low confidence); it cannot judge attitude or meaning. The contrast items only illustrate final sounds, because rises and falls cannot be written in IPA."
+  },
+  "id": "U07",
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

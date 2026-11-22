@@ -1,0 +1,492 @@
+{
+  "cando": {
+    "vi": "Em phân biệt cat–cut–bed và nói trọn nguyên âm đôi /eɪ oʊ/ trong day, go.",
+    "en": "I can tell cat, cut and bed apart and say the full diphthongs /eɪ oʊ/ in day and go."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt không có đúng ba âm /æ ɛ ʌ/ của tiếng Anh, nên cat dễ nghe như \"ket\" (giống bed) và cut dễ nghe như \"cot\". Các tài liệu giảng dạy cho biết đây là cặp nguyên âm thường gặp ở học sinh Việt; nghiên cứu độc lập đo trên học sinh thật còn ít (độ tin cậy trung bình).",
+      "en": "Vietnamese has no sounds exactly like English /æ ɛ ʌ/, so cat easily sounds like \"ket\" (close to bed) and cut like \"cot\". Teaching sources report these vowels as common trouble spots for Vietnamese students; independent measurements on real students are still few (medium confidence).",
+      "refs": [
+        "[10]",
+        "[11]"
+      ]
+    },
+    {
+      "vi": "Nguyên âm đôi /eɪ/ và /oʊ/ thường được báo cáo là bị rút thành một nguyên âm đơn: day thành \"de\", go thành \"gô\". Em hãy trượt nhẹ lưỡi và môi ở nửa sau của âm.",
+      "en": "The diphthongs /eɪ/ and /oʊ/ are often reported as shortened to a single vowel: day becomes \"de\", go becomes \"go\" with no glide. Slide the tongue and lips gently in the second half of the sound.",
+      "refs": [
+        "[10]"
+      ]
+    },
+    {
+      "vi": "Chất lượng nguyên âm làm hai từ trùng nhau (bad/bed, cat/cut), nên bài này có mức ưu tiên P2. Phần mềm chỉ ước lượng chất lượng nguyên âm, nên phản hồi mang tính gợi ý.",
+      "en": "Vowel quality makes two words collide (bad/bed, cat/cut), so this unit has priority P2. The software only estimates vowel quality, so feedback is a hint.",
+      "refs": [
+        "[B14]",
+        "[B15]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "/æ/ (cat): mở miệng rộng, hạ hàm xuống, lưỡi nằm thấp và dẹt. Rung cổ. Đừng khép miệng thành \"e\".",
+      "en": "/æ/ (cat): open wide, drop the jaw, keep the tongue low and flat. Use your voice. Do not close to \"e\"."
+    },
+    {
+      "vi": "/ɛ/ (bed): miệng mở vừa, lưỡi cao hơn /æ/ một chút. Nói bed rồi bad: hàm phải hạ thấp hơn ở bad.",
+      "en": "/ɛ/ (bed): mouth half open, tongue a little higher than /æ/. Say bed then bad: the jaw drops lower for bad."
+    },
+    {
+      "vi": "/ʌ/ (cup, run): miệng mở nhỏ, môi thả lỏng, không tròn môi. Âm ngắn như \"â\" tiếng Việt, không thành \"ô\".",
+      "en": "/ʌ/ (cup, run): mouth slightly open, lips relaxed, not rounded. A short sound like Vietnamese \"â\", not \"o\"."
+    },
+    {
+      "vi": "/eɪ/ (day): bắt đầu ở /e/ rồi trượt lưỡi lên về phía /ɪ/ trong một nhịp. Âm dài hơn /ɛ/ và có chuyển động.",
+      "en": "/eɪ/ (day): start at /e/ and glide the tongue up toward /ɪ/ in one beat. Longer than /ɛ/, and it moves."
+    },
+    {
+      "vi": "/oʊ/ (go): bắt đầu ở /o/ rồi tròn môi dần về /ʊ/. Nhìn gương: môi chụm lại ở cuối âm.",
+      "en": "/oʊ/ (go): start at /o/ then round the lips toward /ʊ/. Use a mirror: lips close in at the end."
+    }
+  ],
+  "words": [
+    {
+      "text": "cat",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "k ɛ t",
+          "note": {
+            "vi": "Nghe như ket, gần với bed.",
+            "en": "Sounds like ket, close to bed."
+          }
+        }
+      ]
+    },
+    {
+      "text": "bag",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b ɛ ɡ",
+          "note": {
+            "vi": "Nguyên âm quá cao, gần /ɛ/.",
+            "en": "Vowel too high, close to /ɛ/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "bed",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b æ d",
+          "note": {
+            "vi": "Hàm hạ quá thấp, thành bad.",
+            "en": "Jaw too low, sounds like bad."
+          }
+        }
+      ]
+    },
+    {
+      "text": "pen",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "p æ n",
+          "note": {
+            "vi": "Hàm hạ quá thấp, thành pan.",
+            "en": "Jaw too low, sounds like pan."
+          }
+        }
+      ]
+    },
+    {
+      "text": "cup",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "k ɔ p",
+          "note": {
+            "vi": "Tròn môi, nghe như cop.",
+            "en": "Lips rounded, sounds like cop."
+          }
+        }
+      ]
+    },
+    {
+      "text": "run",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "ɹ ɔ n",
+          "note": {
+            "vi": "Tròn môi, nghe như ron.",
+            "en": "Lips rounded, sounds like ron."
+          }
+        }
+      ]
+    },
+    {
+      "text": "fun",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "f ɔ n",
+          "note": {
+            "vi": "Tròn môi, nghe như fon.",
+            "en": "Lips rounded, sounds like fon."
+          }
+        }
+      ]
+    },
+    {
+      "text": "day",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "d e",
+          "note": {
+            "vi": "Rút thành một nguyên âm, mất phần trượt.",
+            "en": "Shortened to one vowel, no glide."
+          }
+        }
+      ]
+    },
+    {
+      "text": "late",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "l e t",
+          "note": {
+            "vi": "Rút thành một nguyên âm, mất phần trượt.",
+            "en": "Shortened to one vowel, no glide."
+          }
+        }
+      ]
+    },
+    {
+      "text": "rain",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "ɹ e n",
+          "note": {
+            "vi": "Rút thành một nguyên âm, mất phần trượt.",
+            "en": "Shortened to one vowel, no glide."
+          }
+        }
+      ]
+    },
+    {
+      "text": "go",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "ɡ o",
+          "note": {
+            "vi": "Rút thành /o/, không tròn môi ở cuối.",
+            "en": "Shortened to /o/, no lip rounding at the end."
+          }
+        }
+      ]
+    },
+    {
+      "text": "home",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "h o m",
+          "note": {
+            "vi": "Rút thành /o/, không tròn môi ở cuối.",
+            "en": "Shortened to /o/, no lip rounding at the end."
+          }
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "a": "bad",
+      "b": "bed",
+      "type": "substitution"
+    },
+    {
+      "a": "pan",
+      "b": "pen",
+      "type": "substitution"
+    },
+    {
+      "a": "cat",
+      "b": "cut",
+      "type": "substitution"
+    },
+    {
+      "a": "cap",
+      "b": "cup",
+      "type": "substitution"
+    },
+    {
+      "a": "fan",
+      "b": "fun",
+      "type": "substitution"
+    },
+    {
+      "a": "late",
+      "b": "let",
+      "type": "substitution"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "We go home by boat on the Hàn River.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": true,
+      "unscored": [
+        "Hàn"
+      ]
+    },
+    {
+      "text": "The man at the Hội An market has a bag and a hat.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 9,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 12,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": true,
+      "unscored": [
+        "Hội",
+        "An"
+      ]
+    },
+    {
+      "text": "On a rainy day in Huế, I stay at home and drink hot tea.",
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 6,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 10,
+          "index": [
+            0
+          ]
+        }
+      ],
+      "culture": true,
+      "unscored": [
+        "Huế"
+      ]
+    },
+    {
+      "text": "I like to run on the beach in the rain.",
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 9,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "I can get a pen and a cup at the shop.",
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": false
+    }
+  ],
+  "contrasts": [
+    {
+      "wrong": "k ɛ t",
+      "right": "k æ t",
+      "note": {
+        "vi": "Cat nghe như ket. Hạ hàm xuống, mở miệng rộng hơn.",
+        "en": "Cat sounds like ket. Drop the jaw and open wider."
+      }
+    },
+    {
+      "wrong": "d e",
+      "right": "d eɪ",
+      "note": {
+        "vi": "Day mất phần trượt. Nói \"đê\" rồi đưa lưỡi lên nhẹ về phía \"i\".",
+        "en": "Day lost its glide. Say \"de\", then lift the tongue gently toward \"i\"."
+      }
+    },
+    {
+      "wrong": "ɡ o",
+      "right": "ɡ oʊ",
+      "note": {
+        "vi": "Go cần tròn môi dần ở cuối. Kết thúc như thổi nhẹ \"u\".",
+        "en": "Go needs lips closing in at the end. Finish like a soft \"oo\"."
+      }
+    },
+    {
+      "wrong": "k ɔ p",
+      "right": "k ʌ p",
+      "note": {
+        "vi": "Cup không tròn môi. Thả lỏng môi, miệng mở nhỏ.",
+        "en": "Cup has no lip rounding. Relax the lips, mouth slightly open."
+      }
+    }
+  ],
+  "selfCheck": {
+    "vi": "Ghi âm bad–bed, cat–cut, day, go. Nghe lại: hai từ trong mỗi cặp có khác nhau không? Em có nghe phần trượt ở cuối day và go không?",
+    "en": "Record bad–bed, cat–cut, day and go. Listen back: do the two words in each pair sound different? Can you hear the glide at the end of day and go?"
+  },
+  "teacherNotes": {
+    "vi": "Chất lượng nguyên âm khác nhau tùy giọng: một số người nói tiếng Anh ở Anh, Úc hay Scotland phát âm /æ/ và /ʌ/ khác chuẩn Mỹ dùng ở đây; hãy chấp nhận khi người nghe vẫn hiểu. Học sinh một số vùng cũng thường nói nguyên âm đôi ngắn hơn; không coi là sai nếu vẫn nghe ra hai phần. Độ tin cậy phát hiện: trung bình, chưa được đo trên học sinh thật; điểm số chỉ là gợi ý.",
+    "en": "Vowel quality varies by accent: some British, Australian or Scottish speakers say /æ/ and /ʌ/ differently from the General American model used here; accept it if listeners understand. Some students also say diphthongs shorter; do not count that as wrong if two parts are still heard. Detection confidence: medium, not yet measured on real students; the score is only a hint."
+  },
+  "id": "U11",
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

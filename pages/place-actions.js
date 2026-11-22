@@ -28,6 +28,7 @@ function finishOnboarding(placeId) {
   Object.assign(S.user, { placeType: F.placeType, placeId, themeId: placeId });
   S.place = placeId; F.ready = false;
   save(); location.hash = '#home';
+  if (typeof syncProfileChange === 'function') syncProfileChange();
 }
 const startJourney = () => F.placeId && finishOnboarding(F.placeId);
 function skipPlace() { applyTheme('other'); finishOnboarding('other'); }
@@ -35,6 +36,7 @@ function skipPlace() { applyTheme('other'); finishOnboarding('other'); }
 function pickPlace(id, ev) {
   Object.assign(S.user, { placeId: id, themeId: id, placeType: S.user.placeType || 'hometown' });
   S.place = id; save();
+  if (typeof syncProfileChange === 'function') syncProfileChange();
   applyTheme(id, burstFrom(ev));
   const y = scrollY; route(); scrollTo(0, y); document.querySelectorAll('.reveal').forEach(show);
 }

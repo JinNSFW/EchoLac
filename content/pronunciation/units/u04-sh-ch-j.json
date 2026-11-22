@@ -1,0 +1,1279 @@
+{
+  "id": "U04",
+  "level": "A1",
+  "band": "A1-A2",
+  "category": "sibilant",
+  "kind": "segmental",
+  "prereq": [],
+  "title": {
+    "vi": "Âm /ʃ tʃ dʒ/ khác /s z/",
+    "en": "Sh, ch and j sounds"
+  },
+  "cando": {
+    "vi": "Em phân biệt được ship và sip, và nói rõ /ʃ tʃ dʒ/.",
+    "en": "I can tell ship from sip and say /ʃ tʃ dʒ/."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt không có /ʃ ʒ tʃ dʒ/. Chữ \"ch\" của tiếng Việt là âm tắc, không phải /tʃ/; vì vậy cheese dễ thành \"tiz\" hoặc \"shiz\", và /ʃ/ thường được đọc thành /s/ (ship → \"sip\").",
+      "en": "Vietnamese has no /ʃ ʒ tʃ dʒ/. The Vietnamese \"ch\" is a stop, not /tʃ/, so cheese easily becomes \"tiz\" or \"shiz\", and /ʃ/ is often said as /s/ (ship → \"sip\").",
+      "refs": [
+        "[5]",
+        "[6]"
+      ]
+    },
+    {
+      "vi": "Một luận văn dùng 58 cặp tối thiểu (/tʃ–dʒ/, /s–ʃ/) để đo và cho thấy các cặp này thường bị lẫn ở người học Việt.",
+      "en": "A thesis used 58 minimal pairs (/tʃ–dʒ/, /s–ʃ/) and found these pairs are often confused by Vietnamese learners.",
+      "refs": [
+        "[7]"
+      ]
+    },
+    {
+      "vi": "Phân biệt /ʃ tʃ dʒ/ với /s z/ làm đổi nghĩa (ship/sip, chip/ship, job), nên bài này có mức ưu tiên cao (P1).",
+      "en": "Telling /ʃ tʃ dʒ/ from /s z/ changes meaning (ship/sip, chip/ship, job), so this unit has high priority (P1).",
+      "refs": [
+        "[B16]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "/ʃ/: môi hơi chu tròn, lưỡi lùi lại so với /s/, thổi \"shhh\" như khi bảo ai đó giữ im lặng.",
+      "en": "/ʃ/: round the lips slightly, pull the tongue back from where /s/ is, and blow \"shhh\" like asking for quiet."
+    },
+    {
+      "vi": "/s/: môi bẹt, lưỡi sát răng, thổi \"sss\" mảnh và sắc. So sánh với /ʃ/: lưỡi tiến ra trước hơn.",
+      "en": "/s/: spread lips, tongue close to the teeth, thin sharp \"sss\". Compare /ʃ/: the tongue is further forward."
+    },
+    {
+      "vi": "/tʃ/: bắt đầu như /t/ (lưỡi chạm nướu), rồi thả ra thành /ʃ/ trong một nhịp: \"t-sh\". Tiếng Việt \"ch\" không có luồng hơi xì này.",
+      "en": "/tʃ/: start like /t/ (tongue on the ridge), then release into /ʃ/ in one beat: \"t-sh\". Vietnamese \"ch\" has no hissing release."
+    },
+    {
+      "vi": "/dʒ/: làm giống /tʃ/ nhưng rung cổ, như chữ \"j\" ở đầu job. Đừng đọc thành \"z\" hoặc \"gi\".",
+      "en": "/dʒ/: do the same as /tʃ/ but with voice, like the \"j\" at the start of job. Do not say \"z\" or \"gi\"."
+    }
+  ],
+  "perception": {
+    "type": "2afc",
+    "pairIds": [
+      "U04-p01",
+      "U04-p02",
+      "U04-p03",
+      "U04-p04",
+      "U04-p05",
+      "U04-p06"
+    ],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8
+  },
+  "words": [
+    {
+      "id": "U04-w01",
+      "text": "ship",
+      "lemma": "ship",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ʃ",
+        "ɪ",
+        "p"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "s",
+            "ɪ",
+            "p"
+          ],
+          "note": {
+            "vi": "/ʃ/ bị đọc thành /s/.",
+            "en": "/ʃ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U04-w02",
+      "text": "she",
+      "lemma": "she",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ʃ",
+        "iː"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "s",
+            "iː"
+          ],
+          "note": {
+            "vi": "/ʃ/ bị đọc thành /s/.",
+            "en": "/ʃ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U04-w03",
+      "text": "shoe",
+      "lemma": "shoe",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ʃ",
+        "uː"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "s",
+            "uː"
+          ],
+          "note": {
+            "vi": "/ʃ/ bị đọc thành /s/.",
+            "en": "/ʃ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U04-w04",
+      "text": "fish",
+      "lemma": "fish",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "f",
+        "ɪ",
+        "ʃ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "f",
+            "ɪ",
+            "s"
+          ],
+          "note": {
+            "vi": "/ʃ/ cuối bị đọc thành /s/.",
+            "en": "Final /ʃ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U04-w05",
+      "text": "fresh",
+      "lemma": "fresh",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "f",
+        "ɹ",
+        "ɛ",
+        "ʃ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "f",
+            "ɹ",
+            "ɛ",
+            "s"
+          ],
+          "note": {
+            "vi": "/ʃ/ cuối bị đọc thành /s/.",
+            "en": "Final /ʃ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U04-w06",
+      "text": "sugar",
+      "lemma": "sugar",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ʃ",
+        "ʊ",
+        "ɡ",
+        "ɚ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "s",
+            "ʊ",
+            "ɡ",
+            "ɚ"
+          ],
+          "note": {
+            "vi": "/ʃ/ bị đọc thành /s/.",
+            "en": "/ʃ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U04-w07",
+      "text": "shell",
+      "lemma": "shell",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "ʃ",
+        "ɛ",
+        "l"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "s",
+            "ɛ",
+            "l"
+          ],
+          "note": {
+            "vi": "/ʃ/ bị đọc thành /s/.",
+            "en": "/ʃ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U04-w08",
+      "text": "cheese",
+      "lemma": "cheese",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "tʃ",
+        "iː",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "t",
+            "iː",
+            "z"
+          ],
+          "note": {
+            "vi": "/tʃ/ bị đọc thành /t/.",
+            "en": "/tʃ/ said as /t/."
+          }
+        },
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "ʃ",
+            "iː",
+            "z"
+          ],
+          "note": {
+            "vi": "/tʃ/ bị đọc thành /ʃ/.",
+            "en": "/tʃ/ said as /ʃ/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U04-w09",
+      "text": "chair",
+      "lemma": "chair",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "tʃ",
+        "ɛ",
+        "ɹ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "t",
+            "ɛ",
+            "ɹ"
+          ],
+          "note": {
+            "vi": "/tʃ/ bị đọc thành /t/.",
+            "en": "/tʃ/ said as /t/."
+          }
+        },
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "ʃ",
+            "ɛ",
+            "ɹ"
+          ],
+          "note": {
+            "vi": "/tʃ/ bị đọc thành /ʃ/.",
+            "en": "/tʃ/ said as /ʃ/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U04-w10",
+      "text": "beach",
+      "lemma": "beach",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "iː",
+        "tʃ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "b",
+            "iː",
+            "t"
+          ],
+          "note": {
+            "vi": "/tʃ/ cuối bị đọc thành /t/.",
+            "en": "Final /tʃ/ said as /t/."
+          }
+        },
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "b",
+            "iː",
+            "ʃ"
+          ],
+          "note": {
+            "vi": "/tʃ/ cuối bị đọc thành /ʃ/.",
+            "en": "Final /tʃ/ said as /ʃ/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U04-w11",
+      "text": "juice",
+      "lemma": "juice",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "dʒ",
+        "uː",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "z",
+            "uː",
+            "s"
+          ],
+          "note": {
+            "vi": "/dʒ/ bị đọc thành /z/.",
+            "en": "/dʒ/ said as /z/."
+          }
+        },
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "j",
+            "uː",
+            "s"
+          ],
+          "note": {
+            "vi": "/dʒ/ bị đọc thành /j/.",
+            "en": "/dʒ/ said as /j/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U04-w12",
+      "text": "job",
+      "lemma": "job",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "dʒ",
+        "ɑː",
+        "b"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "z",
+            "ɑː",
+            "b"
+          ],
+          "note": {
+            "vi": "/dʒ/ bị đọc thành /z/.",
+            "en": "/dʒ/ said as /z/."
+          }
+        },
+        {
+          "category": "sibilant",
+          "variantIpa": [
+            "j",
+            "ɑː",
+            "b"
+          ],
+          "note": {
+            "vi": "/dʒ/ bị đọc thành /j/.",
+            "en": "/dʒ/ said as /j/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "U04-p01",
+      "type": "substitution",
+      "category": "sibilant",
+      "a": {
+        "text": "ship",
+        "ipa": [
+          "ʃ",
+          "ɪ",
+          "p"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "sip",
+        "ipa": [
+          "s",
+          "ɪ",
+          "p"
+        ],
+        "cefr": null,
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "ʃ",
+        "s"
+      ]
+    },
+    {
+      "id": "U04-p02",
+      "type": "substitution",
+      "category": "sibilant",
+      "a": {
+        "text": "she",
+        "ipa": [
+          "ʃ",
+          "iː"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "see",
+        "ipa": [
+          "s",
+          "iː"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "ʃ",
+        "s"
+      ]
+    },
+    {
+      "id": "U04-p03",
+      "type": "substitution",
+      "category": "sibilant",
+      "a": {
+        "text": "shoe",
+        "ipa": [
+          "ʃ",
+          "uː"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "sue",
+        "ipa": [
+          "s",
+          "uː"
+        ],
+        "cefr": "B2",
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "ʃ",
+        "s"
+      ]
+    },
+    {
+      "id": "U04-p04",
+      "type": "substitution",
+      "category": "sibilant",
+      "a": {
+        "text": "sheet",
+        "ipa": [
+          "ʃ",
+          "iː",
+          "t"
+        ],
+        "cefr": "B1",
+        "variant": 0
+      },
+      "b": {
+        "text": "seat",
+        "ipa": [
+          "s",
+          "iː",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "ʃ",
+        "s"
+      ]
+    },
+    {
+      "id": "U04-p05",
+      "type": "substitution",
+      "category": "sibilant",
+      "a": {
+        "text": "chip",
+        "ipa": [
+          "tʃ",
+          "ɪ",
+          "p"
+        ],
+        "cefr": "B2",
+        "variant": 0
+      },
+      "b": {
+        "text": "ship",
+        "ipa": [
+          "ʃ",
+          "ɪ",
+          "p"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "tʃ",
+        "ʃ"
+      ]
+    },
+    {
+      "id": "U04-p06",
+      "type": "substitution",
+      "category": "sibilant",
+      "a": {
+        "text": "chin",
+        "ipa": [
+          "tʃ",
+          "ɪ",
+          "n"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "b": {
+        "text": "shin",
+        "ipa": [
+          "ʃ",
+          "ɪ",
+          "n"
+        ],
+        "cefr": null,
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "tʃ",
+        "ʃ"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U04-s01",
+      "text": "She sells fresh fish at the market.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "She",
+          "ipa": [
+            "ʃ",
+            "iː"
+          ]
+        },
+        {
+          "w": "sells",
+          "ipa": [
+            "s",
+            "ɛ",
+            "l",
+            "z"
+          ]
+        },
+        {
+          "w": "fresh",
+          "ipa": [
+            "f",
+            "ɹ",
+            "ɛ",
+            "ʃ"
+          ]
+        },
+        {
+          "w": "fish",
+          "ipa": [
+            "f",
+            "ɪ",
+            "ʃ"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            3
+          ],
+          "category": "sibilant",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            2
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U04-s02",
+      "text": "We choose fresh juice at the market.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "choose",
+          "ipa": [
+            "tʃ",
+            "uː",
+            "z"
+          ]
+        },
+        {
+          "w": "fresh",
+          "ipa": [
+            "f",
+            "ɹ",
+            "ɛ",
+            "ʃ"
+          ]
+        },
+        {
+          "w": "juice",
+          "ipa": [
+            "dʒ",
+            "uː",
+            "s"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            3
+          ],
+          "category": "sibilant",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U04-s03",
+      "text": "She shops for shoes near the beach.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "She",
+          "ipa": [
+            "ʃ",
+            "iː"
+          ]
+        },
+        {
+          "w": "shops",
+          "ipa": [
+            "ʃ",
+            "ɑː",
+            "p",
+            "s"
+          ]
+        },
+        {
+          "w": "for",
+          "ipa": [
+            "f",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "shoes",
+          "ipa": [
+            "ʃ",
+            "uː",
+            "z"
+          ]
+        },
+        {
+          "w": "near",
+          "ipa": [
+            "n",
+            "ɪ",
+            "ɹ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        },
+        {
+          "word": 1,
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        },
+        {
+          "word": 6,
+          "index": [
+            2
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U04-s04",
+      "text": "The ship is near the bridge.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "ship",
+          "ipa": [
+            "ʃ",
+            "ɪ",
+            "p"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "near",
+          "ipa": [
+            "n",
+            "ɪ",
+            "ɹ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "bridge",
+          "ipa": [
+            "b",
+            "ɹ",
+            "ɪ",
+            "dʒ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            0
+          ],
+          "category": "sibilant",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            3
+          ],
+          "category": "sibilant",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U04-c01",
+      "wrongIpa": [
+        "s",
+        "ɪ",
+        "p"
+      ],
+      "rightIpa": [
+        "ʃ",
+        "ɪ",
+        "p"
+      ],
+      "note": {
+        "vi": "Ship nghe như \"sip\". Lùi lưỡi lại và chu môi nhẹ để có /ʃ/.",
+        "en": "Ship sounds like \"sip\". Pull the tongue back and round the lips slightly for /ʃ/."
+      }
+    },
+    {
+      "id": "U04-c02",
+      "wrongIpa": [
+        "s",
+        "iː"
+      ],
+      "rightIpa": [
+        "ʃ",
+        "iː"
+      ],
+      "note": {
+        "vi": "She nghe như \"see\". Bắt đầu bằng \"shhh\" rồi mới sang /iː/.",
+        "en": "She sounds like \"see\". Start with \"shhh\" before /iː/."
+      }
+    },
+    {
+      "id": "U04-c03",
+      "wrongIpa": [
+        "t",
+        "iː",
+        "z"
+      ],
+      "rightIpa": [
+        "tʃ",
+        "iː",
+        "z"
+      ],
+      "note": {
+        "vi": "Cheese bắt đầu bằng /t/ thôi. Thả /t/ ra thành luồng hơi xì /ʃ/.",
+        "en": "Cheese starts with plain /t/. Release the /t/ into a hissing /ʃ/."
+      }
+    },
+    {
+      "id": "U04-c04",
+      "wrongIpa": [
+        "z",
+        "ɑː",
+        "b"
+      ],
+      "rightIpa": [
+        "dʒ",
+        "ɑː",
+        "b"
+      ],
+      "note": {
+        "vi": "Job nghe như \"zop\". Bắt đầu bằng lưỡi chạm nướu rồi thả thành /ʒ/ có rung cổ.",
+        "en": "Job sounds like \"zop\". Start with the tongue on the ridge, then release into a voiced /ʒ/ sound."
+      }
+    }
+  ],
+  "chain": [],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "score",
+    "vi": "Đọc ship–sip, she–see, chip–ship cho bạn nghe. Bạn có phân biệt được từng cặp không?",
+    "en": "Read ship–sip, she–see, chip–ship to a friend. Can they tell each pair apart?"
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói tiếng Việt ở miền Bắc được báo cáo đọc \"s\" và \"x\" giống nhau; ở miền Trung (Huế, Đà Nẵng, Quảng Nam) các âm này được báo cáo là phân biệt rõ hơn. Các nhận định này đến từ nguồn giảng dạy, chưa kiểm chứng; hãy quan sát học sinh thật. Độ tin cậy phát hiện: cao (thay thế trong nhóm s z ʃ ʒ tʃ dʒ).",
+    "en": "Some Northern Vietnamese speakers are reported to say \"s\" and \"x\" alike; in Central Vietnam (Huế, Đà Nẵng, Quảng Nam) the distinction is reported to be kept more clearly. These claims come from teaching sources and are unverified; observe real students. Detection confidence: high (substitution among s z ʃ ʒ tʃ dʒ)."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

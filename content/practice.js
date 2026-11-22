@@ -6,7 +6,11 @@ const ERR_CAT = {
   final_consonant: { vi: 'Âm cuối', en: 'Final sounds' }, s_ed_ending: { vi: 'Đuôi -s/-ed', en: '-s/-ed endings' },
   cluster: { vi: 'Cụm phụ âm', en: 'Clusters' }, th: { vi: 'Âm "th"', en: '"th" sounds' },
   sibilant: { vi: 'Âm /ʃ/ /s/', en: '/ʃ/ /s/ sounds' }, vowel_length: { vi: 'Nguyên âm dài', en: 'Vowel length' },
-  word_stress: { vi: 'Trọng âm', en: 'Word stress' }, rhythm: { vi: 'Nhịp điệu', en: 'Rhythm' }, grammar: { vi: 'Ngữ pháp', en: 'Grammar' },
+  word_stress: { vi: 'Trọng âm', en: 'Word stress' }, rhythm: { vi: 'Nhịp điệu', en: 'Rhythm' },
+  final_voicing: { vi: 'Âm cuối hữu thanh', en: 'Voiced endings' }, vowel_quality: { vi: 'Nguyên âm & nguyên âm đôi', en: 'Vowels & diphthongs' },
+  weak_form: { vi: 'Dạng yếu', en: 'Weak forms' }, consonant_sub: { vi: 'Phụ âm dễ lẫn', en: 'Confusable consonants' },
+  linking: { vi: 'Nối âm', en: 'Linking' }, intonation: { vi: 'Ngữ điệu', en: 'Intonation' },
+  grammar: { vi: 'Ngữ pháp', en: 'Grammar' },
 };
 const WORDS = {
   nice: { ipa: '/naɪs/', hl: 's', cat: 'final_consonant', mean: 'đẹp, dễ chịu', tip: { vi: 'Đừng bỏ âm /s/ cuối. Nói "nai" rồi đặt lưỡi sau răng trên và thổi nhẹ "sss".', en: 'Keep the final /s/. Say "nai", then put your tongue behind your top teeth and hiss a soft "sss".' } },

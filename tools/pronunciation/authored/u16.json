@@ -1,0 +1,449 @@
+{
+  "cando": {
+    "vi": "Em đọc to, of, and, can, for... thành âm yếu /ə/ khi nói nhanh, và vẫn nhấn rõ từ chính.",
+    "en": "I can reduce to, of, and, can, for in fluent sentences while keeping the content words clear."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt không có hiện tượng rút gọn nguyên âm: mỗi âm tiết thường giữ nguyên chất giọng. Vì vậy người học thường đọc to thành [tuː] và and thành [æn] ở giữa câu, nghe nặng và đều từng chữ. Điều này được báo cáo trong các nghiên cứu nhỏ.",
+      "en": "Vietnamese has no vowel reduction: each syllable usually keeps its full vowel. Learners often say to as [tuː] and and as [æn] mid-sentence, so speech sounds heavy and even. This is reported in small studies.",
+      "refs": [
+        "[B7]",
+        "[B17]"
+      ]
+    },
+    {
+      "vi": "Trong tiếng Anh nói nhanh, các từ chức năng (to, of, and, can, for, a, the) thường được đọc yếu /ə/ hoặc ngắn. Được báo cáo rằng dạy dạng yếu giúp người học vừa nghe hiểu vừa nói tự nhiên hơn.",
+      "en": "In fluent English, function words (to, of, and, can, for, a, the) are usually weak: a short /ə/ or reduced sound. Teaching weak forms is reported to help learners both understand and sound natural.",
+      "refs": [
+        "[B17]",
+        "[B10]"
+      ]
+    },
+    {
+      "vi": "Dạng yếu không bắt buộc để hiểu nhau trong mọi tình huống, nên bài này là mức ưu tiên thấp hơn các âm cuối (P3). Nhưng nghe được dạng yếu giúp em hiểu người bản ngữ nói nhanh.",
+      "en": "Weak forms are not always required for mutual understanding, so this unit is lower priority than final sounds (P3). But hearing them helps you understand fast native speech.",
+      "refs": [
+        "[B16]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Nghe câu mẫu \"I want to go.\" Chữ to rất nhẹ và ngắn, gần như \"tờ\". Nói chữ to với miệng thả lỏng, không tròn môi như \"tu\".",
+      "en": "In \"I want to go\", to is light and short, like \"tuh\". Keep your mouth relaxed; do not round the lips as in \"too\"."
+    },
+    {
+      "vi": "Từ chính (động từ, danh từ, tính từ) nói to, rõ, hơi dài. Từ chức năng (to, of, and, a, the) nói nhỏ và ngắn.",
+      "en": "Content words (verbs, nouns, adjectives) are louder, clearer and a bit longer. Function words (to, of, and, a, the) are quieter and shorter."
+    },
+    {
+      "vi": "Đọc \"cup of tea\" như \"cup-uv-tea\": of thành \"ờv\" rất nhẹ, nối liền với cup. Đọc \"fish and rice\" như \"fish-'n'-rice\".",
+      "en": "Say \"cup of tea\" as \"cup-uv-tea\": of becomes a light \"uv\" joined to cup. Say \"fish and rice\" as \"fish-n-rice\"."
+    },
+    {
+      "vi": "Khi can đứng trước động từ, đọc yếu \"kờn\". Trong can't, vẫn giữ nguyên âm đầy đủ và nhấn rõ: \"I can swim\" và \"I can't swim\" khác nhau ở độ mạnh của can.",
+      "en": "Before a verb, can is weak \"kn\". In can't, keep the full vowel and stress it; that is the difference between the two."
+    }
+  ],
+  "pairs": [
+    {
+      "type": "weak",
+      "a": "I can swim.",
+      "b": "I can't swim."
+    },
+    {
+      "type": "weak",
+      "a": "We can go.",
+      "b": "We can't go."
+    },
+    {
+      "type": "weak",
+      "a": "She can come.",
+      "b": "She can't come."
+    }
+  ],
+  "sentences": [
+    {
+      "text": "I like to walk to the beach.",
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "The bridge is lovely at night.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "A cup of tea and some fruit.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": false
+    },
+    {
+      "text": "We can eat fish and rice from the market.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 6,
+          "index": [
+            2
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "She was happy to see them.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": false
+    },
+    {
+      "text": "The lights in Hội An are lovely at night.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            0
+          ]
+        }
+      ],
+      "culture": true,
+      "unscored": [
+        "Hội",
+        "An"
+      ]
+    },
+    {
+      "text": "Some friends can swim to the island.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": false
+    },
+    {
+      "text": "Let's go to the river and look at the boats.",
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 8,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "Can you wait for a minute?",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ]
+        }
+      ],
+      "culture": false
+    },
+    {
+      "text": "The weather was hot and sunny at the beach.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 6,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "I bought a gift for them from the market.",
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 6,
+          "index": [
+            2
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": true,
+      "lemmas": {
+        "bought": "buy"
+      }
+    }
+  ],
+  "contrasts": [
+    {
+      "wrongText": "I WANT TOO GO TOO THE BEACH. (every word strong, to = [tuː])",
+      "rightText": "I WANT tuh GO tuh the BEACH. (to = weak [tə])",
+      "note": {
+        "vi": "Chữ to đọc đầy đủ \"tu\" làm câu nặng và đều. Thả lỏng môi, nói ngắn \"tờ\".",
+        "en": "Saying to as a full \"too\" makes the sentence heavy and even. Relax the lips and say a short \"tuh\"."
+      }
+    },
+    {
+      "wrongText": "A cup OFF tea AND some fish. (of = [ɔf], and = [æn])",
+      "rightText": "A CUP-uv-TEA-n-some FISH. (of = [əv], and = [ən] joined)",
+      "note": {
+        "vi": "Of nói như \"off\" và and nói như \"ản\" tách rời. Nối of vào từ trước (\"cup-uv\") và rút and thành \"-n\".",
+        "en": "Of said like \"off\" and and said as a separate \"an\". Join of to the word before (\"cup-uv\") and shrink and to \"-n\"."
+      }
+    },
+    {
+      "wrongText": "I can swim. = I CAN swim. (can strong, sounds like can't)",
+      "rightText": "I kn SWIM. (can weak) / I CAN'T swim. (can't strong)",
+      "note": {
+        "vi": "Nếu can nhấn mạnh, người nghe dễ hiểu thành can't. Câu khẳng định: can yếu, từ chính swim mạnh.",
+        "en": "If can is stressed, listeners may hear can't. In a positive sentence keep can weak and make the content word swim strong."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "I want to go to the beach.",
+      "shadow": [
+        {
+          "vi": "Nghe câu mẫu hai lần, chỉ chú ý từ nào to rõ (want, go, beach) và từ nào rất nhẹ (to, the).",
+          "en": "Listen to the model twice and notice only which words are loud (want, go, beach) and which are very light (to, the)."
+        },
+        {
+          "vi": "Ngân nga (hum) nhịp mạnh-nhẹ của câu, không nói chữ.",
+          "en": "Hum the strong-light beat of the sentence without words."
+        },
+        {
+          "vi": "Thì thầm cùng lúc với âm thanh mẫu, bắt chước hình dạng, không bắt chước giọng.",
+          "en": "Whisper along with the audio, copying the shape, not the voice."
+        },
+        {
+          "vi": "Nói thành tiếng cùng với âm thanh mẫu; nhìn đường cao độ và khớp hình dạng.",
+          "en": "Speak aloud with the audio; watch the pitch line and match its shape."
+        },
+        {
+          "vi": "Nói một mình, không có âm thanh; so sánh với đường cao độ của mẫu.",
+          "en": "Speak alone with no audio; compare with the model pitch line."
+        }
+      ],
+      "note": {
+        "vi": "Bắt chước hình dạng đường cao độ, không bắt chước giọng của người nói mẫu.",
+        "en": "Copy the shape of the pitch line, not the model speaker's voice."
+      }
+    }
+  ],
+  "selfCheck": {
+    "vi": "Ghi âm 3 câu, nghe lại: các từ to, of, and, a, the có nhẹ và ngắn hơn từ chính không? Có nghe \"tu\" hay \"off\" nặng không? Thử cặp \"I can swim / I can't swim\" xem người nghe có phân biệt được không.",
+    "en": "Record three sentences and listen back: are to, of, and, a, the lighter and shorter than the content words? Do you hear a heavy \"too\" or \"off\"? Try the pair \"I can swim / I can't swim\" to see whether a listener can tell them apart."
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói chưa quen rút gọn nguyên âm nên đọc đủ từng chữ; đừng xem đó là sai nếu người nghe vẫn hiểu, vì dạng đầy đủ cũng được dùng khi nhấn mạnh hoặc đứng cuối câu (\"Yes, I can.\"). Phần mềm chỉ ước lượng nguyên âm mạnh ở vị trí yếu (độ tin cậy thấp, chưa đo trên học sinh thật), không đo độ dài hay độ lớn; nên chỉ dùng điểm để tham khảo, cùng với phần tự kiểm tra. Cặp can/can't chỉ kiểm tra qua nghe, không chấm bằng quy tắc âm vị.",
+    "en": "Some speakers are not used to vowel reduction and give every word its full vowel; do not count that as wrong if the listener understands, since full forms are also used for emphasis or at the end of a sentence (\"Yes, I can.\"). The app only estimates a strong vowel in a weak slot (low confidence, not yet measured on real students); it does not measure duration or loudness, so treat the score as a guide alongside the self-check. The can/can't pair is a listening check only, not scored by a phone rule."
+  },
+  "id": "U16",
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

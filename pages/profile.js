@@ -37,7 +37,9 @@ VIEWS.profile = {
         <div class="set-row" style="display:block"><div class="row"><span class="ic">${icon('gauge')}</span><span>${V('Tốc độ nói của AI', 'AI speech rate')}</span></div><div class="seg three mt-16">${[['slow', 'Chậm', 'Slow'], ['medium', 'Vừa', 'Medium'], ['fast', 'Nhanh', 'Fast']].map(([k, vi, en]) => `<button class="${S.settings.rate === k ? 'on' : ''}" onclick="setSetting('rate','${k}')">${V(vi, en)}</button>`).join('')}</div></div>
         <div class="set-row"><span class="ic">${icon('cc')}</span><span class="grow">${V('Phụ đề', 'Subtitles')}</span><button class="toggle ${S.settings.subs ? 'on' : ''}" onclick="setSetting('subs',${!S.settings.subs})" aria-label="${V('Phụ đề', 'Subtitles')}" aria-pressed="${S.settings.subs}"></button></div>
         <div class="set-row"><span class="ic">${icon('refresh')}</span><span class="grow">${V('Đặt lại dữ liệu demo', 'Reset demo data')}</span><button class="btn white sm" onclick="resetDemo()">${V('Đặt lại', 'Reset')}</button></div>
-        <div class="set-row"><span class="ic" style="color:var(--danger)">${icon('logout')}</span><button class="grow" style="text-align:left;color:var(--danger);font-weight:600" onclick="signOut()">${V('Đăng xuất', 'Sign out')}</button></div>
-      </section>`;
+      </section>
+      <div class="section-title reveal"><span>${V('Tài khoản', 'Account')}</span></div>
+      ${accountCard()}`;
     },
+    mount: () => refreshAccount(),
   };

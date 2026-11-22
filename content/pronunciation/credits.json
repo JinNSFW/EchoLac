@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "id": "cmudict",
+      "name": "The CMU Pronouncing Dictionary",
+      "url": "https://github.com/cmusphinx/cmudict",
+      "license": "BSD-2-Clause",
+      "copyright": "Copyright (C) 1993-2015 Carnegie Mellon University. All rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n   The contents of this file are deemed to be source code.\n\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in\n   the documentation and/or other materials provided with the\n   distribution.\n\nThis work was supported in part by funding from the Defense Advanced\nResearch Projects Agency, the Office of Naval Research and the National\nScience Foundation of the United States of America, and by member\ncompanies of the Carnegie Mellon Sphinx Speech Consortium. We acknowledge\nthe contributions of many volunteers to the expansion and improvement of\nthis dictionary.\n\nTHIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY ``AS IS'' AND\nANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\nTHE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\nPURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY\nNOR ITS EMPLOYEES BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\nTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
+      "use": "IPA for every item (converted to espeak tokens)"
+    },
+    {
+      "id": "cefrj",
+      "name": "CEFR-J Wordlist Version 1.5",
+      "compiler": "Yukio Tono, Tokyo University of Foreign Studies",
+      "url": "http://www.cefr-j.org/download.html",
+      "distribution": "https://github.com/openlanguageprofiles/olp-en-cefrj",
+      "license": "Free for research and commercial purposes with proper citation; copyright Tono Laboratory, TUFS",
+      "citation": "The CEFR-J Wordlist Version 1.5. Compiled by Yukio Tono, Tokyo University of Foreign Studies. Retrieved from http://www.cefr-j.org/download.html",
+      "use": "CEFR level of each word"
+    }
+  ],
+  "research": "See docs/giao-an-phat-am.md, Tài liệu tham khảo (ids from the research notes).",
+  "inspiration": "Unit structure loosely inspired by Cadence (MIT); no Cadence content copied."
+}

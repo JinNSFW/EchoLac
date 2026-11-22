@@ -1,0 +1,958 @@
+{
+  "id": "U14",
+  "level": "B1",
+  "band": "B1",
+  "category": "word_stress",
+  "kind": "stress",
+  "prereq": [
+    "U06"
+  ],
+  "title": {
+    "vi": "Trọng âm từ ghép",
+    "en": "Compound vs phrase stress"
+  },
+  "cando": {
+    "vi": "Em nhấn đúng từ ghép như SEAfood, NIGHT market, BUS stop và phân biệt với cụm từ như old TOWN, green HOUSE.",
+    "en": "I can say compounds like SEAfood, NIGHT market and BUS stop, and tell them from phrases like old TOWN and green HOUSE."
+  },
+  "why": [
+    {
+      "vi": "Trong tiếng Anh, từ ghép thường nhấn từ đầu (GREENhouse = nhà kính), còn cụm tính từ + danh từ thường nhấn từ sau (green HOUSE = ngôi nhà màu xanh). Chỉ khác chỗ nhấn là nghĩa đã khác.",
+      "en": "In English, compounds usually stress the first part (GREENhouse = a place for plants), while adjective + noun phrases usually stress the last word (green HOUSE = a house that is green). Only the stress place changes the meaning.",
+      "refs": [
+        "[B6]"
+      ]
+    },
+    {
+      "vi": "Một nghiên cứu nhỏ ghi nhận người học nâng cao tiếng Anh gốc Việt có thể khớp được cao độ và độ to, nhưng chưa khớp được độ dài (nhịp) của âm tiết, nên bài này luyện cả ba.",
+      "en": "A small study reports that advanced Vietnamese-background learners can match pitch and loudness but not syllable timing, so this unit practises all three.",
+      "refs": [
+        "[B6]"
+      ]
+    },
+    {
+      "vi": "Tiếng Việt có thanh điệu chứ không có trọng âm từ, nên học sinh thường nói các từ trong một cụm với độ nặng gần như nhau; đặt sai trọng âm là lỗi thường gặp ở người học Việt, và mức ưu tiên của bài này là P2.",
+      "en": "Vietnamese uses tones, not word stress, so learners often give every word in a phrase similar weight; misplaced stress is a common error for Vietnamese learners, and this unit has priority P2.",
+      "refs": [
+        "[B3]",
+        "[B13]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Với từ ghép, vỗ mạnh ở từ đầu và nhẹ ở từ sau: SEA-food, SUN-set, BOOK-shop. Từ thứ hai ngắn và nhẹ.",
+      "en": "For a compound, hit hard on the first part and lightly on the second: SEA-food, SUN-set, BOOK-shop. Keep the second part short and light."
+    },
+    {
+      "vi": "Với cụm tính từ + danh từ, nhấn từ cuối: old TOWN, green HOUSE. Từ đầu nhẹ hơn và nhanh hơn.",
+      "en": "For adjective + noun phrases, stress the last word: old TOWN, green HOUSE. Make the first word lighter and faster."
+    },
+    {
+      "vi": "Nhấn bằng độ dài và độ to: kéo dài một chút và mở miệng rộng hơn ở âm tiết nhấn. Không đổi cao độ như dấu sắc.",
+      "en": "Stress with length and loudness: hold the stressed syllable a little longer and open your mouth wider. Do not use pitch like a tone mark."
+    },
+    {
+      "vi": "So sánh hai cách nói của cùng một chữ: GREENhouse (nhà kính) và green HOUSE (ngôi nhà màu xanh). Nghe và nói lại cả hai.",
+      "en": "Compare two ways of saying the same letters: GREENhouse (for plants) and green HOUSE (a house that is green). Listen and say both."
+    }
+  ],
+  "perception": {
+    "type": "stress-tap",
+    "pairIds": [],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8,
+    "wordIds": [
+      "U14-w01",
+      "U14-w02",
+      "U14-w03",
+      "U14-w04",
+      "U14-w05",
+      "U14-w06",
+      "U14-w07",
+      "U14-w08"
+    ]
+  },
+  "words": [
+    {
+      "id": "U14-w01",
+      "text": "seafood",
+      "lemma": "seafood",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "s",
+        "iː",
+        "f",
+        "uː",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U14-w02",
+      "text": "sunset",
+      "lemma": "sunset",
+      "cefr": "B1",
+      "scenarioVocab": null,
+      "ipa": [
+        "s",
+        "ʌ",
+        "n",
+        "s",
+        "ɛ",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U14-w03",
+      "text": "sunrise",
+      "lemma": "sunrise",
+      "cefr": "B1",
+      "scenarioVocab": null,
+      "ipa": [
+        "s",
+        "ʌ",
+        "n",
+        "ɹ",
+        "aɪ",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U14-w04",
+      "text": "bookshop",
+      "lemma": "bookshop",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "ʊ",
+        "k",
+        "ʃ",
+        "ɑː",
+        "p"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U14-w05",
+      "text": "greenhouse",
+      "lemma": "greenhouse",
+      "cefr": "B1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɡ",
+        "ɹ",
+        "iː",
+        "n",
+        "h",
+        "aʊ",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U14-w06",
+      "text": "blackboard",
+      "lemma": "blackboard",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "l",
+        "æ",
+        "k",
+        "b",
+        "ɔː",
+        "ɹ",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U14-w07",
+      "text": "weekend",
+      "lemma": "weekend",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "w",
+        "iː",
+        "k",
+        "ɛ",
+        "n",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U14-w08",
+      "text": "airport",
+      "lemma": "airport",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɛ",
+        "ɹ",
+        "p",
+        "ɔː",
+        "ɹ",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "U14-p01",
+      "type": "stress_phrase",
+      "category": "word_stress",
+      "a": {
+        "text": "greenhouse",
+        "ipa": [
+          "ɡ",
+          "ɹ",
+          "iː",
+          "n",
+          "h",
+          "aʊ",
+          "s"
+        ],
+        "cefr": "B1",
+        "stressWord": 0,
+        "stressSyllable": 1
+      },
+      "b": {
+        "text": "green house",
+        "ipa": [
+          "ɡ",
+          "ɹ",
+          "iː",
+          "n",
+          "h",
+          "aʊ",
+          "s"
+        ],
+        "cefr": "A1",
+        "stressWord": 1,
+        "stressSyllable": 1
+      }
+    },
+    {
+      "id": "U14-p02",
+      "type": "stress_phrase",
+      "category": "word_stress",
+      "a": {
+        "text": "blackboard",
+        "ipa": [
+          "b",
+          "l",
+          "æ",
+          "k",
+          "b",
+          "ɔː",
+          "ɹ",
+          "d"
+        ],
+        "cefr": "A2",
+        "stressWord": 0,
+        "stressSyllable": 1
+      },
+      "b": {
+        "text": "black board",
+        "ipa": [
+          "b",
+          "l",
+          "æ",
+          "k",
+          "b",
+          "ɔː",
+          "ɹ",
+          "d"
+        ],
+        "cefr": "A1",
+        "stressWord": 1,
+        "stressSyllable": 1
+      }
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U14-s01",
+      "text": "I like the night market by the river.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "like",
+          "ipa": [
+            "l",
+            "aɪ",
+            "k"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "night",
+          "ipa": [
+            "n",
+            "aɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        },
+        {
+          "w": "by",
+          "ipa": [
+            "b",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "river",
+          "ipa": [
+            "ɹ",
+            "ɪ",
+            "v",
+            "ɚ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        },
+        {
+          "word": 7,
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "stressWord": 3,
+        "stressSyllable": 1
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U14-s02",
+      "text": "We eat fresh seafood on the beach.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "eat",
+          "ipa": [
+            "iː",
+            "t"
+          ]
+        },
+        {
+          "w": "fresh",
+          "ipa": [
+            "f",
+            "ɹ",
+            "ɛ",
+            "ʃ"
+          ]
+        },
+        {
+          "w": "seafood",
+          "ipa": [
+            "s",
+            "iː",
+            "f",
+            "uː",
+            "d"
+          ]
+        },
+        {
+          "w": "on",
+          "ipa": [
+            "ɑː",
+            "n"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            2
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "stressWord": 3,
+        "stressSyllable": 1
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U14-s03",
+      "text": "Hội An is an old town by a quiet river.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Hội",
+          "ipa": null
+        },
+        {
+          "w": "An",
+          "ipa": null
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "an",
+          "ipa": [
+            "ə",
+            "n"
+          ]
+        },
+        {
+          "w": "old",
+          "ipa": [
+            "oʊ",
+            "l",
+            "d"
+          ]
+        },
+        {
+          "w": "town",
+          "ipa": [
+            "t",
+            "aʊ",
+            "n"
+          ]
+        },
+        {
+          "w": "by",
+          "ipa": [
+            "b",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "quiet",
+          "ipa": [
+            "k",
+            "w",
+            "aɪ",
+            "ə",
+            "t"
+          ]
+        },
+        {
+          "w": "river",
+          "ipa": [
+            "ɹ",
+            "ɪ",
+            "v",
+            "ɚ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 5,
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        },
+        {
+          "word": 9,
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "stressWord": 5,
+        "stressSyllable": 1
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U14-s04",
+      "text": "We wait at the bus stop for the weekend bus.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "wait",
+          "ipa": [
+            "w",
+            "eɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "bus",
+          "ipa": [
+            "b",
+            "ʌ",
+            "s"
+          ]
+        },
+        {
+          "w": "stop",
+          "ipa": [
+            "s",
+            "t",
+            "ɑː",
+            "p"
+          ]
+        },
+        {
+          "w": "for",
+          "ipa": [
+            "f",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "weekend",
+          "ipa": [
+            "w",
+            "iː",
+            "k",
+            "ɛ",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "bus",
+          "ipa": [
+            "b",
+            "ʌ",
+            "s"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "stressWord": 3,
+        "stressSyllable": 1
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U14-s05",
+      "text": "The green house is near the market.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "green",
+          "ipa": [
+            "ɡ",
+            "ɹ",
+            "iː",
+            "n"
+          ]
+        },
+        {
+          "w": "house",
+          "ipa": [
+            "h",
+            "aʊ",
+            "s"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "near",
+          "ipa": [
+            "n",
+            "ɪ",
+            "ɹ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            2
+          ],
+          "category": "word_stress",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "stressWord": 2,
+        "stressSyllable": 1
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U14-c01",
+      "wrongText": "sea-FOOD",
+      "rightText": "SEA-food",
+      "note": {
+        "vi": "Từ ghép bị nhấn ở từ sau. Nhấn từ đầu: SEA-food, và nói \"food\" nhẹ và ngắn.",
+        "en": "The compound stressed on the second part. Stress the first: SEA-food, and say \"food\" light and short."
+      }
+    },
+    {
+      "id": "U14-c02",
+      "wrongText": "GREEN-house (a house that is green)",
+      "rightText": "green HOUSE",
+      "note": {
+        "vi": "Cụm tính từ + danh từ bị nhấn ở từ đầu. Nhấn từ cuối: green HOUSE, và nói \"green\" nhẹ.",
+        "en": "An adjective + noun phrase stressed on the first word. Stress the last word: green HOUSE, and say \"green\" lightly."
+      }
+    },
+    {
+      "id": "U14-c03",
+      "wrongText": "night MAR-ket (both equal)",
+      "rightText": "NIGHT mar-ket",
+      "note": {
+        "vi": "Hai từ nặng như nhau. Nhấn rõ \"night\", để \"market\" yếu và ngắn hơn.",
+        "en": "Both words with equal weight. Stress \"night\" clearly and let \"market\" be weaker and shorter."
+      }
+    }
+  ],
+  "chain": [],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "score",
+    "vi": "Ghi âm từng từ ghép và cụm từ, rồi nghe lại: từ ghép có nhấn từ đầu, cụm từ có nhấn từ cuối không? Vỗ tay theo nhịp để kiểm tra.",
+    "en": "Record each compound and phrase, then listen back: is the first part stressed in compounds and the last word in phrases? Clap along to check."
+  },
+  "teacherNotes": {
+    "vi": "Phần mềm so sánh độ dài, độ to và cao độ của từng âm tiết với vị trí nhấn mong đợi; nó không phân biệt được người nói nhấn bằng cách nào. Quy tắc từ ghép nhấn từ đầu là quy tắc thường gặp, có ngoại lệ (ví dụ một số từ ghép như apple pie nhấn ở từ sau), và giọng Anh-Anh và Anh-Mỹ có thể khác nhau ở một số từ; hãy chấp nhận khi người nghe vẫn hiểu. Một số người dùng cao độ thay cho độ dài vì quen thanh điệu; không quy cho cả một vùng. Độ tin cậy phát hiện: trung bình, chưa được đo trên học sinh thật; điểm số chỉ là gợi ý và không đánh giá độ tự nhiên của giọng.",
+    "en": "The app compares each syllable's length, loudness and pitch with the expected stress position; it cannot tell how a speaker produces the stress. First-part stress in compounds is a common pattern with exceptions (some compounds such as apple pie stress the second part), and British and American speakers may differ on some words; accept it if listeners understand. Some speakers use pitch instead of length because they are used to tones; do not attribute this to a whole region. Detection confidence: medium, not yet measured on real students; the score is only a hint and does not judge how natural the voice is."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

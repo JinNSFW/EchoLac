@@ -1,0 +1,1946 @@
+{
+  "id": "U15",
+  "level": "B2",
+  "band": "B2-C1",
+  "category": "cluster",
+  "kind": "segmental",
+  "prereq": [
+    "U08",
+    "U09"
+  ],
+  "title": {
+    "vi": "Cụm phụ âm cuối",
+    "en": "Final clusters"
+  },
+  "cando": {
+    "vi": "Em giữ đủ mọi phụ âm ở cuối từ như texts, months, landmarks.",
+    "en": "I can keep every consonant at the end of words like texts, months, landmarks."
+  },
+  "why": [
+    {
+      "vi": "Âm tiết tiếng Việt chuẩn chỉ kết thúc bằng một phụ âm, nên cụm cuối như /ksts/ trong texts thường bị rút gọn thành text hoặc tek. Việc bỏ một phần của cụm được báo cáo là lỗi thường gặp ở học sinh Việt.",
+      "en": "Standard Vietnamese syllables end in only one consonant, so final clusters like /ksts/ in texts are often shortened to text or tek. Dropping part of a cluster is reported as a common error among Vietnamese learners.",
+      "refs": [
+        "[4]",
+        "[14]"
+      ]
+    },
+    {
+      "vi": "Đuôi -s và -ed thường nằm ngay sau cụm (lamps, helped, months), nên khi bỏ chúng người nghe mất thông tin về số nhiều hoặc thì quá khứ. Các nghiên cứu được báo cáo thấy việc bỏ đuôi nhiều hơn sau phụ âm.",
+      "en": "The -s and -ed endings often sit right after a cluster (lamps, helped, months), so dropping them loses plural or past-tense information. Studies report more ending omission after consonants.",
+      "refs": [
+        "[13]",
+        "[2]"
+      ]
+    },
+    {
+      "vi": "Cặp như pass–past, bell–belt, ten–tent chỉ khác nhau ở một phụ âm cuối; thiếu âm đó làm hai từ trùng nhau. Phụ âm là nhóm âm cốt lõi để hiểu nhau trong tiếng Anh quốc tế, nên bài có ưu tiên cao (P1).",
+      "en": "Pairs like pass–past, bell–belt, ten–tent differ only in one final consonant; leaving it out makes the two words collide. Consonants are core sounds for mutual intelligibility in international English, so this unit is high priority (P1).",
+      "refs": [
+        "[B16]",
+        "[B15]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Luyện từ cuối ra đầu: nói âm cuối, thêm một âm mỗi lần, như s, ts, kts, ɛkts, tɛkts. Dùng dãy luyện bên dưới.",
+      "en": "Practise from the end: say the last sound, then add one sound each time, like s, ts, kts, ɛkts, tɛkts. Use the chain below."
+    },
+    {
+      "vi": "Giữ đầu lưỡi gần nướu sau răng trên: /s/ thổi mảnh, rồi chạm lưỡi thành /t/ ngắn mà không buông thành nguyên âm.",
+      "en": "Keep the tongue tip near the ridge behind the top teeth: blow a thin /s/, then touch a short /t/. No vowel after it."
+    },
+    {
+      "vi": "Đừng chèn \"ờ\" giữa các phụ âm: lamps không phải \"lam-pờ-sờ\". Đặt tay trước miệng, /p/ và /s/ phải đến liền nhau.",
+      "en": "Do not insert \"uh\" between consonants: lamps is not \"lam-puh-suh\". Join /p/ and /s/ with no gap."
+    },
+    {
+      "vi": "Với pass–past: nói pass, giữ lưỡi gần nướu, rồi chạm lên nướu thêm /t/ ngắn, không rung cổ.",
+      "en": "For pass–past: say pass, keep the tongue near the ridge, then touch up for a short /t/ with no voice."
+    }
+  ],
+  "perception": {
+    "type": "2afc",
+    "pairIds": [
+      "U15-p01",
+      "U15-p02",
+      "U15-p03",
+      "U15-p04",
+      "U15-p05"
+    ],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8
+  },
+  "words": [
+    {
+      "id": "U15-w01",
+      "text": "texts",
+      "lemma": "text",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "t",
+        "ɛ",
+        "k",
+        "s",
+        "t",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2,
+            3,
+            4
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "index": [
+            5
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "t",
+            "ɛ",
+            "k",
+            "s"
+          ],
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "t",
+            "ɛ",
+            "k"
+          ],
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U15-w02",
+      "text": "months",
+      "lemma": "month",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "m",
+        "ʌ",
+        "n",
+        "θ",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "m",
+            "ʌ",
+            "n",
+            "s"
+          ],
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "m",
+            "ʌ",
+            "n"
+          ],
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U15-w03",
+      "text": "landmarks",
+      "lemma": "landmark",
+      "cefr": null,
+      "scenarioVocab": null,
+      "ipa": [
+        "l",
+        "æ",
+        "n",
+        "d",
+        "m",
+        "ɑː",
+        "ɹ",
+        "k",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "l",
+            "æ",
+            "n",
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "s"
+          ],
+          "note": {
+            "vi": "Bỏ mất /d/ ở giữa cụm.",
+            "en": "The /d/ in the middle cluster is dropped."
+          }
+        },
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "l",
+            "æ",
+            "n",
+            "d",
+            "m",
+            "ɑː",
+            "ɹ",
+            "k"
+          ],
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U15-w04",
+      "text": "crafts",
+      "lemma": "craft",
+      "cefr": "B1",
+      "scenarioVocab": null,
+      "ipa": [
+        "k",
+        "ɹ",
+        "æ",
+        "f",
+        "t",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3,
+            4
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "index": [
+            5
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "k",
+            "ɹ",
+            "æ",
+            "f",
+            "s"
+          ],
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "k",
+            "ɹ",
+            "æ",
+            "f"
+          ],
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U15-w05",
+      "text": "helped",
+      "lemma": "help",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "h",
+        "ɛ",
+        "l",
+        "p",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "h",
+            "ɛ",
+            "l",
+            "p"
+          ],
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "h",
+            "ɛ",
+            "l",
+            "ə",
+            "p",
+            "t"
+          ],
+          "note": {
+            "vi": "Chèn nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "A vowel \"uh\" is inserted inside the cluster."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U15-w06",
+      "text": "jumped",
+      "lemma": "jump",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "dʒ",
+        "ʌ",
+        "m",
+        "p",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "dʒ",
+            "ʌ",
+            "m",
+            "p"
+          ],
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "dʒ",
+            "ʌ",
+            "m"
+          ],
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U15-w07",
+      "text": "guests",
+      "lemma": "guest",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɡ",
+        "ɛ",
+        "s",
+        "t",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "ɡ",
+            "ɛ",
+            "s",
+            "t"
+          ],
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "ɡ",
+            "ɛ",
+            "s"
+          ],
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U15-w08",
+      "text": "tasks",
+      "lemma": "task",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "t",
+        "æ",
+        "s",
+        "k",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "t",
+            "æ",
+            "s",
+            "k"
+          ],
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "t",
+            "æ",
+            "s"
+          ],
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U15-w09",
+      "text": "desks",
+      "lemma": "desk",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "d",
+        "ɛ",
+        "s",
+        "k",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "d",
+            "ɛ",
+            "s",
+            "k"
+          ],
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "d",
+            "ɛ",
+            "s"
+          ],
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U15-w10",
+      "text": "lamps",
+      "lemma": "lamp",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "l",
+        "æ",
+        "m",
+        "p",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "l",
+            "æ",
+            "m",
+            "p"
+          ],
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "l",
+            "æ",
+            "m",
+            "ə",
+            "p",
+            "s"
+          ],
+          "note": {
+            "vi": "Chèn nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "A vowel \"uh\" is inserted inside the cluster."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U15-w11",
+      "text": "hands",
+      "lemma": "hand",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "h",
+        "æ",
+        "n",
+        "d",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "h",
+            "æ",
+            "n",
+            "d"
+          ],
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "h",
+            "æ",
+            "n"
+          ],
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U15-w12",
+      "text": "next",
+      "lemma": "next",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "n",
+        "ɛ",
+        "k",
+        "s",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2,
+            3,
+            4
+          ],
+          "category": "cluster",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "n",
+            "ɛ",
+            "k",
+            "s"
+          ],
+          "note": {
+            "vi": "Bỏ mất phụ âm cuối cùng của cụm.",
+            "en": "The last consonant of the cluster is dropped."
+          }
+        },
+        {
+          "category": "cluster",
+          "variantIpa": [
+            "n",
+            "ɛ",
+            "k"
+          ],
+          "note": {
+            "vi": "Bỏ mất hai phụ âm cuối; chỉ còn nguyên âm và một phụ âm.",
+            "en": "Two final consonants dropped; only the vowel and one consonant remain."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "U15-p01",
+      "type": "deletion",
+      "category": "cluster",
+      "a": {
+        "text": "pass",
+        "ipa": [
+          "p",
+          "æ",
+          "s"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "b": {
+        "text": "past",
+        "ipa": [
+          "p",
+          "æ",
+          "s",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "∅",
+        "t"
+      ]
+    },
+    {
+      "id": "U15-p02",
+      "type": "deletion",
+      "category": "cluster",
+      "a": {
+        "text": "bell",
+        "ipa": [
+          "b",
+          "ɛ",
+          "l"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "belt",
+        "ipa": [
+          "b",
+          "ɛ",
+          "l",
+          "t"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "∅",
+        "t"
+      ]
+    },
+    {
+      "id": "U15-p03",
+      "type": "deletion",
+      "category": "cluster",
+      "a": {
+        "text": "ten",
+        "ipa": [
+          "t",
+          "ɛ",
+          "n"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "tent",
+        "ipa": [
+          "t",
+          "ɛ",
+          "n",
+          "t"
+        ],
+        "cefr": "B1",
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "∅",
+        "t"
+      ]
+    },
+    {
+      "id": "U15-p04",
+      "type": "deletion",
+      "category": "cluster",
+      "a": {
+        "text": "fell",
+        "ipa": [
+          "f",
+          "ɛ",
+          "l"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "b": {
+        "text": "felt",
+        "ipa": [
+          "f",
+          "ɛ",
+          "l",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "∅",
+        "t"
+      ]
+    },
+    {
+      "id": "U15-p05",
+      "type": "deletion",
+      "category": "cluster",
+      "a": {
+        "text": "miss",
+        "ipa": [
+          "m",
+          "ɪ",
+          "s"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "mist",
+        "ipa": [
+          "m",
+          "ɪ",
+          "s",
+          "t"
+        ],
+        "cefr": "B2",
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "∅",
+        "t"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U15-s01",
+      "text": "Hội An is full of lamps and crafts by the river.",
+      "cefr": "B1",
+      "words": [
+        {
+          "w": "Hội",
+          "ipa": null
+        },
+        {
+          "w": "An",
+          "ipa": null
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "full",
+          "ipa": [
+            "f",
+            "ʊ",
+            "l"
+          ]
+        },
+        {
+          "w": "of",
+          "ipa": [
+            "ə",
+            "v"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "lamps",
+          "ipa": [
+            "l",
+            "æ",
+            "m",
+            "p",
+            "s"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "crafts",
+          "ipa": [
+            "k",
+            "ɹ",
+            "æ",
+            "f",
+            "t",
+            "s"
+          ]
+        },
+        {
+          "w": "by",
+          "ipa": [
+            "b",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "river",
+          "ipa": [
+            "ɹ",
+            "ɪ",
+            "v",
+            "ɚ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 5,
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        },
+        {
+          "word": 7,
+          "index": [
+            3,
+            4
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "word": 7,
+          "index": [
+            5
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U15-s02",
+      "text": "The guests helped carry the boats down to the river.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "guests",
+          "ipa": [
+            "ɡ",
+            "ɛ",
+            "s",
+            "t",
+            "s"
+          ]
+        },
+        {
+          "w": "helped",
+          "ipa": [
+            "h",
+            "ɛ",
+            "l",
+            "p",
+            "t"
+          ]
+        },
+        {
+          "w": "carry",
+          "ipa": [
+            "k",
+            "æ",
+            "ɹ",
+            "i"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "boats",
+          "ipa": [
+            "b",
+            "oʊ",
+            "t",
+            "s"
+          ]
+        },
+        {
+          "w": "down",
+          "ipa": [
+            "d",
+            "aʊ",
+            "n"
+          ]
+        },
+        {
+          "w": "to",
+          "ipa": [
+            "t",
+            "ɪ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "river",
+          "ipa": [
+            "ɹ",
+            "ɪ",
+            "v",
+            "ɚ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "word": 1,
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        },
+        {
+          "word": 2,
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U15-s03",
+      "text": "Next month the weather in Huế may be wet and cold.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "Next",
+          "ipa": [
+            "n",
+            "ɛ",
+            "k",
+            "s",
+            "t"
+          ]
+        },
+        {
+          "w": "month",
+          "ipa": [
+            "m",
+            "ʌ",
+            "n",
+            "θ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "weather",
+          "ipa": [
+            "w",
+            "ɛ",
+            "ð",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "Huế",
+          "ipa": null
+        },
+        {
+          "w": "may",
+          "ipa": [
+            "m",
+            "eɪ"
+          ]
+        },
+        {
+          "w": "be",
+          "ipa": [
+            "b",
+            "iː"
+          ]
+        },
+        {
+          "w": "wet",
+          "ipa": [
+            "w",
+            "ɛ",
+            "t"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "cold",
+          "ipa": [
+            "k",
+            "oʊ",
+            "l",
+            "d"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            2,
+            3,
+            4
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "word": 1,
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U15-s04",
+      "text": "Please put the desks next to the lamps.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "Please",
+          "ipa": [
+            "p",
+            "l",
+            "iː",
+            "z"
+          ]
+        },
+        {
+          "w": "put",
+          "ipa": [
+            "p",
+            "ʊ",
+            "t"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "desks",
+          "ipa": [
+            "d",
+            "ɛ",
+            "s",
+            "k",
+            "s"
+          ]
+        },
+        {
+          "w": "next",
+          "ipa": [
+            "n",
+            "ɛ",
+            "k",
+            "s",
+            "t"
+          ]
+        },
+        {
+          "w": "to",
+          "ipa": [
+            "t",
+            "ɪ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "lamps",
+          "ipa": [
+            "l",
+            "æ",
+            "m",
+            "p",
+            "s"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        },
+        {
+          "word": 4,
+          "index": [
+            2,
+            3,
+            4
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "word": 7,
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "word": 7,
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U15-s05",
+      "text": "She jumped off the step and I helped her stand.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "She",
+          "ipa": [
+            "ʃ",
+            "iː"
+          ]
+        },
+        {
+          "w": "jumped",
+          "ipa": [
+            "dʒ",
+            "ʌ",
+            "m",
+            "p",
+            "t"
+          ]
+        },
+        {
+          "w": "off",
+          "ipa": [
+            "ɔː",
+            "f"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "step",
+          "ipa": [
+            "s",
+            "t",
+            "ɛ",
+            "p"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "helped",
+          "ipa": [
+            "h",
+            "ɛ",
+            "l",
+            "p",
+            "t"
+          ]
+        },
+        {
+          "w": "her",
+          "ipa": [
+            "h",
+            "ɜː"
+          ]
+        },
+        {
+          "w": "stand",
+          "ipa": [
+            "s",
+            "t",
+            "æ",
+            "n",
+            "d"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "word": 1,
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        },
+        {
+          "word": 7,
+          "index": [
+            2,
+            3
+          ],
+          "category": "cluster",
+          "morph": false
+        },
+        {
+          "word": 7,
+          "index": [
+            4
+          ],
+          "category": "cluster",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U15-c01",
+      "wrongIpa": [
+        "t",
+        "ɛ",
+        "k",
+        "s"
+      ],
+      "rightIpa": [
+        "t",
+        "ɛ",
+        "k",
+        "s",
+        "t",
+        "s"
+      ],
+      "note": {
+        "vi": "Texts nghe như text. Sau /k/, giữ lưỡi ở nướu cho /s/, chạm /t/ rồi lại /s/ liền nhau.",
+        "en": "Texts sounds like text. After /k/, keep the tongue at the ridge for /s/, touch /t/, then /s/ again, all joined."
+      }
+    },
+    {
+      "id": "U15-c02",
+      "wrongIpa": [
+        "h",
+        "ɛ",
+        "l",
+        "p"
+      ],
+      "rightIpa": [
+        "h",
+        "ɛ",
+        "l",
+        "p",
+        "t"
+      ],
+      "note": {
+        "vi": "Helped nghe như help. Sau /p/ chỉ cần chạm lưỡi thêm /t/ ngắn, không rung cổ.",
+        "en": "Helped sounds like help. After /p/ just touch the tongue for a short /t/ with no voice."
+      }
+    },
+    {
+      "id": "U15-c03",
+      "wrongIpa": [
+        "l",
+        "æ",
+        "m",
+        "ə",
+        "p",
+        "s"
+      ],
+      "rightIpa": [
+        "l",
+        "æ",
+        "m",
+        "p",
+        "s"
+      ],
+      "note": {
+        "vi": "Đừng chèn \"ờ\" giữa các phụ âm. Mím môi cho /p/ rồi thổi /s/ ngay.",
+        "en": "Do not put \"uh\" between consonants. Close the lips for /p/ and blow /s/ right away."
+      }
+    },
+    {
+      "id": "U15-c04",
+      "wrongIpa": [
+        "p",
+        "æ",
+        "s"
+      ],
+      "rightIpa": [
+        "p",
+        "æ",
+        "s",
+        "t"
+      ],
+      "note": {
+        "vi": "Pass và past khác nhau ở /t/ cuối. Giữ /s/, rồi chạm đầu lưỡi lên nướu thêm /t/.",
+        "en": "Pass and past differ in the final /t/. Hold /s/, then touch the tongue tip to the ridge for /t/."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "s → ts → sts → ksts → ɛksts → texts",
+      "steps": [
+        [
+          "s"
+        ],
+        [
+          "t",
+          "s"
+        ],
+        [
+          "s",
+          "t",
+          "s"
+        ],
+        [
+          "k",
+          "s",
+          "t",
+          "s"
+        ],
+        [
+          "ɛ",
+          "k",
+          "s",
+          "t",
+          "s"
+        ],
+        [
+          "t",
+          "ɛ",
+          "k",
+          "s",
+          "t",
+          "s"
+        ]
+      ],
+      "ipaSource": "author",
+      "note": {
+        "vi": "Nói từ cuối ra đầu, mỗi bước thêm một âm, không chèn nguyên âm. Giữ /s/ và /t/ sát nhau.",
+        "en": "Say it from the end, adding one sound per step with no vowel in between. Keep /s/ and /t/ close together."
+      }
+    },
+    {
+      "text": "t → pt → lpt → ɛlpt → helped",
+      "steps": [
+        [
+          "t"
+        ],
+        [
+          "p",
+          "t"
+        ],
+        [
+          "l",
+          "p",
+          "t"
+        ],
+        [
+          "ɛ",
+          "l",
+          "p",
+          "t"
+        ],
+        [
+          "h",
+          "ɛ",
+          "l",
+          "p",
+          "t"
+        ]
+      ],
+      "ipaSource": "author",
+      "note": {
+        "vi": "Mím môi cho /p/, rồi chạm lưỡi cho /t/ ngay, không thả thành nguyên âm.",
+        "en": "Close the lips for /p/, then touch the tongue for /t/ at once, with no vowel release."
+      }
+    },
+    {
+      "text": "s → θs → nθs → ʌnθs → months",
+      "steps": [
+        [
+          "s"
+        ],
+        [
+          "θ",
+          "s"
+        ],
+        [
+          "n",
+          "θ",
+          "s"
+        ],
+        [
+          "ʌ",
+          "n",
+          "θ",
+          "s"
+        ],
+        [
+          "m",
+          "ʌ",
+          "n",
+          "θ",
+          "s"
+        ]
+      ],
+      "ipaSource": "author",
+      "note": {
+        "vi": "Đặt đầu lưỡi giữa răng cho /θ/ rồi lùi về /s/; mỗi bước nối liền với bước trước.",
+        "en": "Put the tongue tip between the teeth for /θ/, then pull back to /s/; join each step to the one before."
+      }
+    },
+    {
+      "text": "ks → ɹks → ɑːɹks → mɑːɹks → dmɑːɹks → landmarks",
+      "steps": [
+        [
+          "k",
+          "s"
+        ],
+        [
+          "ɹ",
+          "k",
+          "s"
+        ],
+        [
+          "ɑː",
+          "ɹ",
+          "k",
+          "s"
+        ],
+        [
+          "m",
+          "ɑː",
+          "ɹ",
+          "k",
+          "s"
+        ],
+        [
+          "d",
+          "m",
+          "ɑː",
+          "ɹ",
+          "k",
+          "s"
+        ],
+        [
+          "n",
+          "d",
+          "m",
+          "ɑː",
+          "ɹ",
+          "k",
+          "s"
+        ],
+        [
+          "l",
+          "æ",
+          "n",
+          "d",
+          "m",
+          "ɑː",
+          "ɹ",
+          "k",
+          "s"
+        ]
+      ],
+      "ipaSource": "author",
+      "note": {
+        "vi": "Chia landmarks làm hai cụm: nd và rks. Luyện từng cụm trước rồi ghép lại.",
+        "en": "Split landmarks into two clusters: nd and rks. Practise each first, then join them."
+      }
+    }
+  ],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "score",
+    "vi": "Ghi âm: nói texts, helped, lamps và cặp pass–past. Em có nghe đủ mọi phụ âm cuối, không có \"ờ\" chen giữa không?",
+    "en": "Record texts, helped, lamps and the pair pass–past. Can you hear every final consonant, with no \"uh\" between them?"
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói tiếng Việt có thể rút gọn cụm cuối nhiều hơn, nhất là cụm ba phụ âm; không coi đó là khuyết điểm của người học. Trong lời nói tự nhiên, người bản ngữ cũng có thể nuốt /t/ giữa cụm (next day, texts); bài này luyện đọc rõ từng âm, và phần mềm chỉ đếm các phụ âm đã được nói ra khi văn bản mục tiêu đã biết. Phần mềm không đo độ ngắn của /t/ hay độ bật hơi. Độ tin cậy phát hiện: cao, chưa được đo trên học sinh thật.",
+    "en": "Some Vietnamese speakers may reduce final clusters more, especially three-consonant clusters; do not treat this as a learner flaw. In natural speech native speakers can also drop the middle /t/ (next day, texts); this unit trains clear, full sounds, and the app only counts the consonants spoken when the target text is known. It does not judge the shortness of /t/ or aspiration. Detection confidence: high, not yet measured on real students."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}
