@@ -1,0 +1,1576 @@
+{
+  "id": "U09",
+  "level": "B1",
+  "band": "B1",
+  "category": "s_ed_ending",
+  "kind": "segmental",
+  "prereq": [
+    "U02"
+  ],
+  "title": {
+    "vi": "Đuôi -ed: /t d ɪd/",
+    "en": "Past -ed endings"
+  },
+  "cando": {
+    "vi": "Em chọn và nói đúng đuôi -ed: /t/, /d/ hoặc /ɪd/.",
+    "en": "I can choose and say the right -ed ending: /t/, /d/ or /ɪd/."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt không chia động từ theo thì, nên đuôi -ed thường bị bỏ khi nói tiếng Anh: walked nghe như walk. Các nghiên cứu về đuôi -ed của học sinh Việt được báo cáo là thường gặp lỗi bỏ đuôi, nhất là sau phụ âm.",
+      "en": "Vietnamese does not mark tense on verbs, so -ed is often dropped in English: walked sounds like walk. Studies of Vietnamese learners' -ed are reported to commonly find ending omission, especially after consonants.",
+      "refs": [
+        "[13]",
+        "[14]"
+      ]
+    },
+    {
+      "vi": "Đuôi -ed có ba cách đọc và cách chọn theo quy tắc đơn giản: /ɪd/ sau t, d; /t/ sau các âm vô thanh khác; /d/ sau nguyên âm và âm hữu thanh.",
+      "en": "The -ed ending has three sounds and the choice follows a simple rule: /ɪd/ after t, d; /t/ after other voiceless sounds; /d/ after vowels and voiced sounds.",
+      "refs": [
+        "[B16]"
+      ]
+    },
+    {
+      "vi": "Thiếu đuôi -ed làm người nghe không biết việc xảy ra khi nào; đây là điểm ưu tiên cao (P1) để người nghe hiểu mình.",
+      "en": "A missing -ed leaves the listener unsure when something happened; this is a high-priority (P1) point for being understood.",
+      "refs": [
+        "[B15]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Quy tắc 1: sau t hoặc d, -ed là một âm tiết mới /ɪd/ (wanted, needed). Đếm nhịp: want-ed có hai nhịp.",
+      "en": "Rule 1: after t or d, -ed is a new syllable /ɪd/ (wanted, needed). Count beats: want-ed has two."
+    },
+    {
+      "vi": "Quy tắc 2: sau âm vô thanh (k, p, ch, s, f) chỉ thêm /t/ ngắn, không rung cổ (walked, stopped, watched).",
+      "en": "Rule 2: after a voiceless sound (k, p, ch, s, f) add only a short /t/ with no voice (walked, stopped, watched)."
+    },
+    {
+      "vi": "Quy tắc 3: sau nguyên âm hoặc âm hữu thanh thêm /d/; đặt tay lên cổ phải thấy rung (played, cleaned, rained).",
+      "en": "Rule 3: after a vowel or voiced sound add /d/; a hand on your throat should feel a buzz (played, cleaned, rained)."
+    },
+    {
+      "vi": "Chạm đầu lưỡi lên nướu sau răng trên để đóng /t/ hoặc /d/ rồi thả nhẹ. Đừng dừng ở cổ họng.",
+      "en": "Touch the tongue tip to the ridge behind the top teeth for /t/ or /d/, then release lightly. Do not stop in the throat."
+    }
+  ],
+  "perception": {
+    "type": "2afc",
+    "pairIds": [
+      "U09-p01",
+      "U09-p02",
+      "U09-p03",
+      "U09-p04",
+      "U09-p05",
+      "U09-p06"
+    ],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8
+  },
+  "words": [
+    {
+      "id": "U09-w01",
+      "text": "walked",
+      "lemma": "walk",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "w",
+        "ɔː",
+        "k",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "w",
+            "ɔː",
+            "k"
+          ],
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "w",
+            "ɔː",
+            "k",
+            "ɪ",
+            "d"
+          ],
+          "note": {
+            "vi": "Thêm âm tiết thừa /ɪd/; chỉ cần /t/ ngắn.",
+            "en": "An extra syllable /ɪd/; only a short /t/ is needed."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U09-w02",
+      "text": "cooked",
+      "lemma": "cook",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "k",
+        "ʊ",
+        "k",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "k",
+            "ʊ",
+            "k"
+          ],
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "k",
+            "ʊ",
+            "k",
+            "ɪ",
+            "d"
+          ],
+          "note": {
+            "vi": "Thêm âm tiết thừa /ɪd/; chỉ cần /t/ ngắn.",
+            "en": "An extra syllable /ɪd/; only a short /t/ is needed."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U09-w03",
+      "text": "stopped",
+      "lemma": "stop",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "s",
+        "t",
+        "ɑː",
+        "p",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            4
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "s",
+            "t",
+            "ɑː",
+            "p"
+          ],
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "s",
+            "t",
+            "ɑː",
+            "p",
+            "ɪ",
+            "d"
+          ],
+          "note": {
+            "vi": "Thêm âm tiết thừa /ɪd/; chỉ cần /t/ ngắn.",
+            "en": "An extra syllable /ɪd/; only a short /t/ is needed."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U09-w04",
+      "text": "watched",
+      "lemma": "watch",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "w",
+        "ɑː",
+        "tʃ",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "w",
+            "ɑː",
+            "tʃ"
+          ],
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "w",
+            "ɑː",
+            "tʃ",
+            "ɪ",
+            "d"
+          ],
+          "note": {
+            "vi": "Thêm âm tiết thừa /ɪd/; chỉ cần /t/ ngắn.",
+            "en": "An extra syllable /ɪd/; only a short /t/ is needed."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U09-w05",
+      "text": "played",
+      "lemma": "play",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "p",
+        "l",
+        "eɪ",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "p",
+            "l",
+            "eɪ"
+          ],
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "p",
+            "l",
+            "eɪ",
+            "t"
+          ],
+          "note": {
+            "vi": "Dùng /t/ vô thanh thay cho /d/.",
+            "en": "Voiceless /t/ used instead of /d/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U09-w06",
+      "text": "cleaned",
+      "lemma": "clean",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "k",
+        "l",
+        "iː",
+        "n",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            4
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "k",
+            "l",
+            "iː",
+            "n"
+          ],
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "k",
+            "l",
+            "iː",
+            "n",
+            "t"
+          ],
+          "note": {
+            "vi": "Dùng /t/ vô thanh thay cho /d/.",
+            "en": "Voiceless /t/ used instead of /d/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U09-w07",
+      "text": "rained",
+      "lemma": "rain",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɹ",
+        "eɪ",
+        "n",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "ɹ",
+            "eɪ",
+            "n"
+          ],
+          "note": {
+            "vi": "Bỏ mất đuôi -ed.",
+            "en": "The -ed ending is dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "ɹ",
+            "eɪ",
+            "n",
+            "t"
+          ],
+          "note": {
+            "vi": "Dùng /t/ vô thanh thay cho /d/.",
+            "en": "Voiceless /t/ used instead of /d/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U09-w08",
+      "text": "visited",
+      "lemma": "visit",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "v",
+        "ɪ",
+        "z",
+        "ɪ",
+        "t",
+        "ɪ",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 3,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            5,
+            6
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "v",
+            "ɪ",
+            "z",
+            "ɪ",
+            "t"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm tiết -ed /ɪd/.",
+            "en": "The whole -ed syllable /ɪd/ is dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "v",
+            "ɪ",
+            "z",
+            "ɪ",
+            "t",
+            "ɪ"
+          ],
+          "note": {
+            "vi": "Thiếu /d/ ở cuối.",
+            "en": "Missing final /d/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U09-w09",
+      "text": "wanted",
+      "lemma": "want",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "w",
+        "ɔː",
+        "n",
+        "t",
+        "ɪ",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            4,
+            5
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "w",
+            "ɔː",
+            "n",
+            "t"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm tiết -ed /ɪd/.",
+            "en": "The whole -ed syllable /ɪd/ is dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "w",
+            "ɔː",
+            "n",
+            "t",
+            "ɪ"
+          ],
+          "note": {
+            "vi": "Thiếu /d/ ở cuối.",
+            "en": "Missing final /d/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U09-w10",
+      "text": "painted",
+      "lemma": "paint",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "p",
+        "eɪ",
+        "n",
+        "t",
+        "ɪ",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            4,
+            5
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "p",
+            "eɪ",
+            "n",
+            "t"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm tiết -ed /ɪd/.",
+            "en": "The whole -ed syllable /ɪd/ is dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "p",
+            "eɪ",
+            "n",
+            "t",
+            "ɪ"
+          ],
+          "note": {
+            "vi": "Thiếu /d/ ở cuối.",
+            "en": "Missing final /d/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "U09-p01",
+      "type": "deletion",
+      "category": "s_ed_ending",
+      "a": {
+        "text": "play",
+        "ipa": [
+          "p",
+          "l",
+          "eɪ"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "played",
+        "ipa": [
+          "p",
+          "l",
+          "eɪ",
+          "d"
+        ],
+        "cefr": null,
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "∅",
+        "d"
+      ]
+    },
+    {
+      "id": "U09-p02",
+      "type": "deletion",
+      "category": "s_ed_ending",
+      "a": {
+        "text": "rain",
+        "ipa": [
+          "ɹ",
+          "eɪ",
+          "n"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "rained",
+        "ipa": [
+          "ɹ",
+          "eɪ",
+          "n",
+          "d"
+        ],
+        "cefr": null,
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "∅",
+        "d"
+      ]
+    },
+    {
+      "id": "U09-p03",
+      "type": "deletion",
+      "category": "s_ed_ending",
+      "a": {
+        "text": "clean",
+        "ipa": [
+          "k",
+          "l",
+          "iː",
+          "n"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "cleaned",
+        "ipa": [
+          "k",
+          "l",
+          "iː",
+          "n",
+          "d"
+        ],
+        "cefr": null,
+        "variant": 0
+      },
+      "diffIndex": 4,
+      "contrast": [
+        "∅",
+        "d"
+      ]
+    },
+    {
+      "id": "U09-p04",
+      "type": "deletion",
+      "category": "s_ed_ending",
+      "a": {
+        "text": "walk",
+        "ipa": [
+          "w",
+          "ɔː",
+          "k"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "walked",
+        "ipa": [
+          "w",
+          "ɔː",
+          "k",
+          "t"
+        ],
+        "cefr": null,
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "∅",
+        "t"
+      ]
+    },
+    {
+      "id": "U09-p05",
+      "type": "deletion",
+      "category": "s_ed_ending",
+      "a": {
+        "text": "cook",
+        "ipa": [
+          "k",
+          "ʊ",
+          "k"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "cooked",
+        "ipa": [
+          "k",
+          "ʊ",
+          "k",
+          "t"
+        ],
+        "cefr": null,
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "∅",
+        "t"
+      ]
+    },
+    {
+      "id": "U09-p06",
+      "type": "deletion",
+      "category": "s_ed_ending",
+      "a": {
+        "text": "stop",
+        "ipa": [
+          "s",
+          "t",
+          "ɑː",
+          "p"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "stopped",
+        "ipa": [
+          "s",
+          "t",
+          "ɑː",
+          "p",
+          "t"
+        ],
+        "cefr": null,
+        "variant": 0
+      },
+      "diffIndex": 4,
+      "contrast": [
+        "∅",
+        "t"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U09-s01",
+      "text": "We walked along the beach and watched the boats.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "walked",
+          "ipa": [
+            "w",
+            "ɔː",
+            "k",
+            "t"
+          ]
+        },
+        {
+          "w": "along",
+          "ipa": [
+            "ə",
+            "l",
+            "ɔː",
+            "ŋ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "watched",
+          "ipa": [
+            "w",
+            "ɑː",
+            "tʃ",
+            "t"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "boats",
+          "ipa": [
+            "b",
+            "oʊ",
+            "t",
+            "s"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        },
+        {
+          "word": 6,
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U09-s02",
+      "text": "It rained in Huế, but we played games and watched the river.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "It",
+          "ipa": [
+            "ɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "rained",
+          "ipa": [
+            "ɹ",
+            "eɪ",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "Huế",
+          "ipa": null
+        },
+        {
+          "w": "but",
+          "ipa": [
+            "b",
+            "ʌ",
+            "t"
+          ]
+        },
+        {
+          "w": "we",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "played",
+          "ipa": [
+            "p",
+            "l",
+            "eɪ",
+            "d"
+          ]
+        },
+        {
+          "w": "games",
+          "ipa": [
+            "ɡ",
+            "eɪ",
+            "m",
+            "z"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "watched",
+          "ipa": [
+            "w",
+            "ɑː",
+            "tʃ",
+            "t"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "river",
+          "ipa": [
+            "ɹ",
+            "ɪ",
+            "v",
+            "ɚ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        },
+        {
+          "word": 6,
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        },
+        {
+          "word": 9,
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U09-s03",
+      "text": "We walked across the bridge and visited a market in Hội An.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "walked",
+          "ipa": [
+            "w",
+            "ɔː",
+            "k",
+            "t"
+          ]
+        },
+        {
+          "w": "across",
+          "ipa": [
+            "ə",
+            "k",
+            "ɹ",
+            "ɔː",
+            "s"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "bridge",
+          "ipa": [
+            "b",
+            "ɹ",
+            "ɪ",
+            "dʒ"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "visited",
+          "ipa": [
+            "v",
+            "ɪ",
+            "z",
+            "ɪ",
+            "t",
+            "ɪ",
+            "d"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "Hội",
+          "ipa": null
+        },
+        {
+          "w": "An",
+          "ipa": null
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        },
+        {
+          "word": 6,
+          "index": [
+            5,
+            6
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U09-s04",
+      "text": "My mother cooked fish and cleaned the table.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "My",
+          "ipa": [
+            "m",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "mother",
+          "ipa": [
+            "m",
+            "ʌ",
+            "ð",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "cooked",
+          "ipa": [
+            "k",
+            "ʊ",
+            "k",
+            "t"
+          ]
+        },
+        {
+          "w": "fish",
+          "ipa": [
+            "f",
+            "ɪ",
+            "ʃ"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "cleaned",
+          "ipa": [
+            "k",
+            "l",
+            "iː",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "table",
+          "ipa": [
+            "t",
+            "eɪ",
+            "b",
+            "ə",
+            "l"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        },
+        {
+          "word": 5,
+          "index": [
+            4
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U09-s05",
+      "text": "He started the lesson and wanted to listen.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "He",
+          "ipa": [
+            "h",
+            "iː"
+          ]
+        },
+        {
+          "w": "started",
+          "ipa": [
+            "s",
+            "t",
+            "ɑː",
+            "ɹ",
+            "t",
+            "ɪ",
+            "d"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "lesson",
+          "ipa": [
+            "l",
+            "ɛ",
+            "s",
+            "ə",
+            "n"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "wanted",
+          "ipa": [
+            "w",
+            "ɔː",
+            "n",
+            "t",
+            "ɪ",
+            "d"
+          ]
+        },
+        {
+          "w": "to",
+          "ipa": [
+            "t",
+            "ɪ"
+          ]
+        },
+        {
+          "w": "listen",
+          "ipa": [
+            "l",
+            "ɪ",
+            "s",
+            "ə",
+            "n"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            5,
+            6
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        },
+        {
+          "word": 5,
+          "index": [
+            4,
+            5
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U09-c01",
+      "wrongIpa": [
+        "w",
+        "ɔː",
+        "k"
+      ],
+      "rightIpa": [
+        "w",
+        "ɔː",
+        "k",
+        "t"
+      ],
+      "note": {
+        "vi": "Walked nghe như walk. Sau /k/, chạm đầu lưỡi lên nướu và thả /t/ nhẹ, không thêm nguyên âm.",
+        "en": "Walked sounds like walk. After /k/ touch the tongue tip to the ridge and release a light /t/, with no vowel."
+      }
+    },
+    {
+      "id": "U09-c02",
+      "wrongIpa": [
+        "w",
+        "ɔː",
+        "k",
+        "ɪ",
+        "d"
+      ],
+      "rightIpa": [
+        "w",
+        "ɔː",
+        "k",
+        "t"
+      ],
+      "note": {
+        "vi": "Đừng đọc walked thành hai âm tiết. Sau âm vô thanh (/k p tʃ/) chỉ có /t/ ngắn.",
+        "en": "Do not say walked as two syllables. After a voiceless sound (/k p tʃ/) there is only a short /t/."
+      }
+    },
+    {
+      "id": "U09-c03",
+      "wrongIpa": [
+        "p",
+        "l",
+        "eɪ"
+      ],
+      "rightIpa": [
+        "p",
+        "l",
+        "eɪ",
+        "d"
+      ],
+      "note": {
+        "vi": "Played nghe như play. Sau nguyên âm, thêm /d/ có rung cổ ở cuối.",
+        "en": "Played sounds like play. After a vowel, add a voiced /d/ at the end."
+      }
+    },
+    {
+      "id": "U09-c04",
+      "wrongIpa": [
+        "w",
+        "ɔː",
+        "n",
+        "t"
+      ],
+      "rightIpa": [
+        "w",
+        "ɔː",
+        "n",
+        "t",
+        "ɪ",
+        "d"
+      ],
+      "note": {
+        "vi": "Sau /t/ hoặc /d/, -ed là một âm tiết riêng /ɪd/: wanted có hai âm tiết.",
+        "en": "After /t/ or /d/, -ed is its own syllable /ɪd/: wanted has two syllables."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "kt → ɔːkt → walked",
+      "steps": [
+        [
+          "k",
+          "t"
+        ],
+        [
+          "ɔː",
+          "k",
+          "t"
+        ],
+        [
+          "w",
+          "ɔː",
+          "k",
+          "t"
+        ]
+      ],
+      "ipaSource": "author",
+      "note": {
+        "vi": "Nói phần cuối trước. Giữ /k/ rồi /t/ liền nhau, không chen nguyên âm.",
+        "en": "Say the end first. Keep /k/ then /t/ together with no vowel between."
+      }
+    },
+    {
+      "text": "pt → ɑːpt → stopped",
+      "steps": [
+        [
+          "p",
+          "t"
+        ],
+        [
+          "ɑː",
+          "p",
+          "t"
+        ],
+        [
+          "s",
+          "t",
+          "ɑː",
+          "p",
+          "t"
+        ]
+      ],
+      "ipaSource": "author",
+      "note": {
+        "vi": "Mím môi cho /p/, rồi chạm lưỡi cho /t/.",
+        "en": "Close the lips for /p/, then touch the tongue for /t/."
+      }
+    }
+  ],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "score",
+    "vi": "Ghi âm: nói walked, played, wanted. Em có nghe rõ /t/, /d/ và một âm tiết /ɪd/ không? Thử cặp play–played để chắc người nghe nhận ra đuôi.",
+    "en": "Record walked, played and wanted. Can you hear a /t/, a /d/ and a clear extra syllable /ɪd/? Try play–played to be sure a listener hears the ending."
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói tiếng Việt vùng miền Trung hoặc vùng khác có thể nuốt âm cuối nhiều hơn; không coi đó là khuyết điểm của người học. Phần mềm chỉ chấm khi văn bản mục tiêu đã biết (đọc theo mẫu) và chỉ phát hiện mất đuôi hay sai dạng; không đo độ ngắn của /t/ hay độ rung của /d/. Một số giọng Anh nuốt /t/ cuối khi nói nhanh: chấp nhận nếu vẫn hiểu. Độ tin cậy phát hiện: cao, chưa được đo trên học sinh thật.",
+    "en": "Some speakers from Central Vietnam and other regions may reduce final sounds more; do not treat it as a learner flaw. The app scores only when the target text is known (read-aloud) and only detects a missing or wrong ending; it does not judge the shortness of /t/ or the voicing of /d/. Some English accents drop a final /t/ in fast speech: accept it if the listener understands. Detection confidence: high, not yet measured on real students."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

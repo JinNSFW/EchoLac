@@ -1,0 +1,1281 @@
+{
+  "id": "U20",
+  "level": "C1",
+  "band": "B2-C1",
+  "category": "linking",
+  "kind": "prosody",
+  "prereq": [
+    "U13",
+    "U15"
+  ],
+  "title": {
+    "vi": "Nối, nuốt và đồng hoá âm",
+    "en": "Fluent connected speech"
+  },
+  "cando": {
+    "vi": "Em nối các từ qua phụ âm (next day, ten people) không thêm nguyên âm, không ngắt và không đóng họng; được phép nuốt hoặc đồng hoá âm tự nhiên.",
+    "en": "I can join words across consonants (next day, ten people) with no added vowel, pause or glottal stop; natural elision and assimilation are fine."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt ít có cụm phụ âm cuối, nên khi hai phụ âm gặp nhau (next day, last time) người học Việt thường được báo cáo là chèn thêm một nguyên âm (\"nếch-xờ đây\") hoặc ngắt giữa hai từ.",
+      "en": "Vietnamese has few final consonant clusters, so when two consonants meet (next day, last time) Vietnamese learners are often reported to insert a vowel (\"next-uh day\") or pause between the words.",
+      "refs": [
+        "[1]",
+        "[8]"
+      ]
+    },
+    {
+      "vi": "Người bản ngữ không đọc từng âm: trong lời nói tự nhiên /t/ hoặc /d/ giữa hai phụ âm hay bị nuốt (nex(t) day, ol(d) town) và /n/ có thể đổi theo âm sau (ten people nghe gần như tem people). Đây là dạng đúng, không phải lỗi.",
+      "en": "Native speakers do not say every sound: in natural speech a /t/ or /d/ between two consonants is often dropped (nex(t) day, ol(d) town) and /n/ may shift to match the next sound (ten people sounds close to tem people). These are correct forms, not mistakes.",
+      "refs": [
+        "[B17]"
+      ]
+    },
+    {
+      "vi": "Bài này có độ tin cậy phát hiện thấp: phần mềm không phân biệt chắc chắn nuốt âm với bỏ sót âm. Em tự kiểm tra bằng cách nghe lại, bắt chước theo mẫu (shadowing) và so với cả hai dạng nối.",
+      "en": "Detection confidence is low: the app cannot reliably tell a natural dropped sound from a missed one. Check yourself by listening back, shadowing the model and comparing with both linked forms.",
+      "refs": [
+        "[B17]",
+        "[B10]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Khi hai phụ âm gặp nhau, không thêm nguyên âm: next day nói \"nếks-đây\", không phải \"nếks-ờ đây\". Môi và lưỡi chuyển thẳng sang âm sau.",
+      "en": "When two consonants meet, add no vowel: next day is \"nexs-day\", not \"next-uh day\". Lips and tongue move straight to the next sound."
+    },
+    {
+      "vi": "Cho phép /t/ hoặc /d/ giữa bị nuốt: nex(t) day, las(t) time, ol(d) town. Lưỡi vẫn chạm vị trí nhưng không bật hơi.",
+      "en": "Let the middle /t/ or /d/ drop: nex(t) day, las(t) time, ol(d) town. The tongue still moves to the spot but gives no burst."
+    },
+    {
+      "vi": "Cho phép đồng hoá: ten people ≈ tem people, good boy ≈ goob boy, green park ≈ greem park (môi khép sớm để chuẩn bị /p/, /b/).",
+      "en": "Allow assimilation: ten people sounds like tem people, good boy like goob boy. Lips close early for /p/ and /b/."
+    },
+    {
+      "vi": "Giữ hơi liền, không ngắt hay đóng họng: hot dog, fish sauce nói một hơi như một từ dài.",
+      "en": "Keep the air flowing with no pause or throat closing: say hot dog and fish sauce in one breath, like one long word."
+    }
+  ],
+  "perception": {
+    "type": "2afc-juncture",
+    "pairIds": [
+      "U20-p01",
+      "U20-p02"
+    ],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8
+  },
+  "words": [],
+  "pairs": [
+    {
+      "id": "U20-p01",
+      "type": "juncture",
+      "category": "linking",
+      "a": {
+        "text": "gray tape",
+        "ipa": [
+          "ɡ",
+          "ɹ",
+          "eɪ",
+          "t",
+          "eɪ",
+          "p"
+        ]
+      },
+      "b": {
+        "text": "great ape",
+        "ipa": [
+          "ɡ",
+          "ɹ",
+          "eɪ",
+          "t",
+          "eɪ",
+          "p"
+        ]
+      }
+    },
+    {
+      "id": "U20-p02",
+      "type": "juncture",
+      "category": "linking",
+      "a": {
+        "text": "a notion",
+        "ipa": [
+          "ə",
+          "n",
+          "oʊ",
+          "ʃ",
+          "ə",
+          "n"
+        ]
+      },
+      "b": {
+        "text": "an ocean",
+        "ipa": [
+          "ə",
+          "n",
+          "oʊ",
+          "ʃ",
+          "ə",
+          "n"
+        ]
+      }
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U20-s01",
+      "text": "I will see you next day.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "will",
+          "ipa": [
+            "w",
+            "ɪ",
+            "l"
+          ]
+        },
+        {
+          "w": "see",
+          "ipa": [
+            "s",
+            "iː"
+          ]
+        },
+        {
+          "w": "you",
+          "ipa": [
+            "j",
+            "uː"
+          ]
+        },
+        {
+          "w": "next",
+          "ipa": [
+            "n",
+            "ɛ",
+            "k",
+            "s",
+            "t"
+          ],
+          "ipaAlt": [
+            [
+              "n",
+              "ɛ",
+              "k",
+              "s"
+            ]
+          ],
+          "allowElision": true
+        },
+        {
+          "w": "day",
+          "ipa": [
+            "d",
+            "eɪ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 4,
+          "index": [
+            4
+          ],
+          "category": "linking",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "links": [
+          {
+            "after": 4,
+            "type": "elision",
+            "note": {
+              "vi": "Âm cuối giữa hai phụ âm có thể bị nuốt (nex(t) day).",
+              "en": "A final sound between two consonants may drop (nex(t) day)."
+            }
+          }
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U20-s02",
+      "text": "It was the last time.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "It",
+          "ipa": [
+            "ɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "was",
+          "ipa": [
+            "w",
+            "ə",
+            "z"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "last",
+          "ipa": [
+            "l",
+            "æ",
+            "s",
+            "t"
+          ],
+          "ipaAlt": [
+            [
+              "l",
+              "æ",
+              "s"
+            ]
+          ],
+          "allowElision": true
+        },
+        {
+          "w": "time",
+          "ipa": [
+            "t",
+            "aɪ",
+            "m"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            3
+          ],
+          "category": "linking",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "links": [
+          {
+            "after": 3,
+            "type": "elision",
+            "note": {
+              "vi": "Âm cuối giữa hai phụ âm có thể bị nuốt (las(t) time).",
+              "en": "A final sound between two consonants may drop (las(t) time)."
+            }
+          }
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U20-s03",
+      "text": "We walked through the old town in Hội An.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "walked",
+          "ipa": [
+            "w",
+            "ɔː",
+            "k",
+            "t"
+          ]
+        },
+        {
+          "w": "through",
+          "ipa": [
+            "θ",
+            "ɹ",
+            "uː"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "old",
+          "ipa": [
+            "oʊ",
+            "l",
+            "d"
+          ],
+          "ipaAlt": [
+            [
+              "oʊ",
+              "l"
+            ]
+          ],
+          "allowElision": true
+        },
+        {
+          "w": "town",
+          "ipa": [
+            "t",
+            "aʊ",
+            "n"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "Hội",
+          "ipa": null
+        },
+        {
+          "w": "An",
+          "ipa": null
+        }
+      ],
+      "targets": [
+        {
+          "word": 4,
+          "index": [
+            2
+          ],
+          "category": "linking",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            2
+          ],
+          "category": "linking",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "links": [
+          {
+            "after": 4,
+            "type": "elision",
+            "note": {
+              "vi": "Âm cuối giữa hai phụ âm có thể bị nuốt (ol(d) town).",
+              "en": "A final sound between two consonants may drop (ol(d) town)."
+            }
+          },
+          {
+            "after": 5,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          }
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U20-s04",
+      "text": "This lantern is handmade in Hội An.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "This",
+          "ipa": [
+            "ð",
+            "ɪ",
+            "s"
+          ]
+        },
+        {
+          "w": "lantern",
+          "ipa": [
+            "l",
+            "æ",
+            "n",
+            "t",
+            "ɚ",
+            "n"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "handmade",
+          "ipa": [
+            "h",
+            "æ",
+            "n",
+            "d",
+            "m",
+            "eɪ",
+            "d"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "Hội",
+          "ipa": null
+        },
+        {
+          "w": "An",
+          "ipa": null
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            5
+          ],
+          "category": "linking",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            6
+          ],
+          "category": "linking",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "links": [
+          {
+            "after": 1,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          },
+          {
+            "after": 3,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          }
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U20-s05",
+      "text": "He is a good boy.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "He",
+          "ipa": [
+            "h",
+            "iː"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "good",
+          "ipa": [
+            "ɡ",
+            "ʊ",
+            "d"
+          ],
+          "ipaAlt": [
+            [
+              "ɡ",
+              "ʊ",
+              "b"
+            ]
+          ],
+          "allowElision": true
+        },
+        {
+          "w": "boy",
+          "ipa": [
+            "b",
+            "ɔɪ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ],
+          "category": "linking",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            2
+          ],
+          "category": "linking",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "links": [
+          {
+            "after": 1,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          },
+          {
+            "after": 3,
+            "type": "assimilation",
+            "note": {
+              "vi": "Âm cuối đổi theo phụ âm sau (goob boy). Dạng này đúng.",
+              "en": "The final sound shifts to match the next consonant (goob boy). This is correct."
+            }
+          }
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U20-s06",
+      "text": "Ten people waited by the river.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Ten",
+          "ipa": [
+            "t",
+            "ɛ",
+            "n"
+          ],
+          "ipaAlt": [
+            [
+              "t",
+              "ɛ",
+              "m"
+            ]
+          ],
+          "allowElision": true
+        },
+        {
+          "w": "people",
+          "ipa": [
+            "p",
+            "iː",
+            "p",
+            "ə",
+            "l"
+          ]
+        },
+        {
+          "w": "waited",
+          "ipa": [
+            "w",
+            "eɪ",
+            "t",
+            "ɪ",
+            "d"
+          ]
+        },
+        {
+          "w": "by",
+          "ipa": [
+            "b",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "river",
+          "ipa": [
+            "ɹ",
+            "ɪ",
+            "v",
+            "ɚ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            2
+          ],
+          "category": "linking",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "links": [
+          {
+            "after": 0,
+            "type": "assimilation",
+            "note": {
+              "vi": "Âm cuối đổi theo phụ âm sau (tem people). Dạng này đúng.",
+              "en": "The final sound shifts to match the next consonant (tem people). This is correct."
+            }
+          }
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U20-s07",
+      "text": "We walked in the green park.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "walked",
+          "ipa": [
+            "w",
+            "ɔː",
+            "k",
+            "t"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "green",
+          "ipa": [
+            "ɡ",
+            "ɹ",
+            "iː",
+            "n"
+          ],
+          "ipaAlt": [
+            [
+              "ɡ",
+              "ɹ",
+              "iː",
+              "m"
+            ]
+          ],
+          "allowElision": true
+        },
+        {
+          "w": "park",
+          "ipa": [
+            "p",
+            "ɑː",
+            "ɹ",
+            "k"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            3
+          ],
+          "category": "linking",
+          "morph": false
+        },
+        {
+          "word": 4,
+          "index": [
+            3
+          ],
+          "category": "linking",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "links": [
+          {
+            "after": 1,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          },
+          {
+            "after": 4,
+            "type": "assimilation",
+            "note": {
+              "vi": "Âm cuối đổi theo phụ âm sau (greem park). Dạng này đúng.",
+              "en": "The final sound shifts to match the next consonant (greem park). This is correct."
+            }
+          }
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U20-s08",
+      "text": "I want a hot dog.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "want",
+          "ipa": [
+            "w",
+            "ɑː",
+            "n",
+            "t"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "hot",
+          "ipa": [
+            "h",
+            "ɑː",
+            "t"
+          ],
+          "ipaAlt": [
+            [
+              "h",
+              "ɑː"
+            ]
+          ],
+          "allowElision": true
+        },
+        {
+          "w": "dog",
+          "ipa": [
+            "d",
+            "ɔː",
+            "ɡ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            3
+          ],
+          "category": "linking",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            2
+          ],
+          "category": "linking",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "links": [
+          {
+            "after": 1,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          },
+          {
+            "after": 3,
+            "type": "elision",
+            "note": {
+              "vi": "Âm cuối giữa hai phụ âm có thể bị nuốt (ho(t) dog).",
+              "en": "A final sound between two consonants may drop (ho(t) dog)."
+            }
+          }
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U20-s09",
+      "text": "Fish sauce is great with noodles in Đà Nẵng.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "Fish",
+          "ipa": [
+            "f",
+            "ɪ",
+            "ʃ"
+          ],
+          "ipaAlt": [
+            [
+              "f",
+              "ɪ",
+              "s"
+            ]
+          ],
+          "allowElision": true
+        },
+        {
+          "w": "sauce",
+          "ipa": [
+            "s",
+            "ɔː",
+            "s"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "great",
+          "ipa": [
+            "ɡ",
+            "ɹ",
+            "eɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "with",
+          "ipa": [
+            "w",
+            "ɪ",
+            "ð"
+          ]
+        },
+        {
+          "w": "noodles",
+          "ipa": [
+            "n",
+            "uː",
+            "d",
+            "ə",
+            "l",
+            "z"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "Đà",
+          "ipa": null
+        },
+        {
+          "w": "Nẵng",
+          "ipa": null
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            2
+          ],
+          "category": "linking",
+          "morph": false
+        },
+        {
+          "word": 1,
+          "index": [
+            2
+          ],
+          "category": "linking",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            5
+          ],
+          "category": "linking",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "links": [
+          {
+            "after": 0,
+            "type": "assimilation",
+            "note": {
+              "vi": "Âm cuối đổi theo phụ âm sau (fi-ssauce). Dạng này đúng.",
+              "en": "The final sound shifts to match the next consonant (fi-ssauce). This is correct."
+            }
+          },
+          {
+            "after": 1,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          },
+          {
+            "after": 5,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          }
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U20-s10",
+      "text": "Next day, the beach near Đà Nẵng was quiet.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "Next",
+          "ipa": [
+            "n",
+            "ɛ",
+            "k",
+            "s",
+            "t"
+          ],
+          "ipaAlt": [
+            [
+              "n",
+              "ɛ",
+              "k",
+              "s"
+            ]
+          ],
+          "allowElision": true
+        },
+        {
+          "w": "day",
+          "ipa": [
+            "d",
+            "eɪ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        },
+        {
+          "w": "near",
+          "ipa": [
+            "n",
+            "ɪ",
+            "ɹ"
+          ]
+        },
+        {
+          "w": "Đà",
+          "ipa": null
+        },
+        {
+          "w": "Nẵng",
+          "ipa": null
+        },
+        {
+          "w": "was",
+          "ipa": [
+            "w",
+            "ə",
+            "z"
+          ]
+        },
+        {
+          "w": "quiet",
+          "ipa": [
+            "k",
+            "w",
+            "aɪ",
+            "ə",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            4
+          ],
+          "category": "linking",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "links": [
+          {
+            "after": 0,
+            "type": "elision",
+            "note": {
+              "vi": "Âm cuối giữa hai phụ âm có thể bị nuốt (nex(t) day).",
+              "en": "A final sound between two consonants may drop (nex(t) day)."
+            }
+          }
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U20-c01",
+      "wrongText": "next-ơ day (thêm nguyên âm)",
+      "rightText": "nex(t)‿day",
+      "note": {
+        "vi": "Em chèn thêm \"ơ\" sau next. Bỏ nguyên âm, cho /t/ nhẹ hoặc bị nuốt rồi nối sang day.",
+        "en": "You add an \"uh\" after next. Drop the vowel and let the /t/ be light or dropped, then join to day."
+      }
+    },
+    {
+      "id": "U20-c02",
+      "wrongText": "last (pause) time",
+      "rightText": "las(t)‿time",
+      "note": {
+        "vi": "Em ngắt giữa last và time. Nói liền một hơi, /t/ giữa bị nuốt cũng được.",
+        "en": "You pause between last and time. Say it in one breath; a dropped middle /t/ is fine."
+      }
+    },
+    {
+      "id": "U20-c03",
+      "wrongText": "good [ʔ] boy",
+      "rightText": "goo(b)‿boy",
+      "note": {
+        "vi": "Có cú đóng họng giữa good và boy. Khép môi sớm cho /b/: nghe gần như goob boy là đúng.",
+        "en": "There is a glottal stop between good and boy. Close the lips early for /b/: it may sound like goob boy and that is correct."
+      }
+    },
+    {
+      "id": "U20-c04",
+      "wrongText": "ten (pause) people",
+      "rightText": "te(m)‿people",
+      "note": {
+        "vi": "Em ngắt sau ten. Cho /n/ chuyển thành /m/ khi môi chuẩn bị /p/, không dừng lại.",
+        "en": "You pause after ten. Let /n/ shift to /m/ as the lips get ready for /p/, with no stop."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "I will see you next day. / It was the last time.",
+      "shadow": [
+        {
+          "vi": "Nghe câu mẫu hai lần, chú ý chỗ các từ dính vào nhau và âm nào bị nuốt.",
+          "en": "Listen to the model twice and notice where words stick together and which sound drops."
+        },
+        {
+          "vi": "Ngân nga (hum) hình dạng nhịp và giọng của cả câu, không nói chữ.",
+          "en": "Hum the rhythm and tune of the whole sentence without words."
+        },
+        {
+          "vi": "Thì thầm cùng lúc với âm thanh mẫu, giữ hơi liền mạch.",
+          "en": "Whisper along with the audio, keeping the air flowing."
+        },
+        {
+          "vi": "Nói thành tiếng cùng với âm thanh mẫu; xem đường cao độ và bắt chước hình dạng, không bắt chước giọng.",
+          "en": "Speak aloud with the audio; watch the pitch line and copy its shape, not the voice."
+        },
+        {
+          "vi": "Nói một mình, không có âm thanh, rồi ghi âm và nghe lại xem có nguyên âm thừa hoặc chỗ ngắt nào không.",
+          "en": "Speak alone with no audio, then record and check for any extra vowel or break."
+        }
+      ],
+      "note": {
+        "vi": "Bắt chước hình dạng đường cao độ, không bắt chước giọng của người mẫu.",
+        "en": "Copy the shape of the pitch line, not the model's voice."
+      }
+    },
+    {
+      "text": "Ten people waited by the river. / I want a hot dog.",
+      "shadow": [
+        {
+          "vi": "Nghe câu mẫu hai lần, chú ý chỗ các từ dính vào nhau và âm nào bị nuốt.",
+          "en": "Listen to the model twice and notice where words stick together and which sound drops."
+        },
+        {
+          "vi": "Ngân nga (hum) hình dạng nhịp và giọng của cả câu, không nói chữ.",
+          "en": "Hum the rhythm and tune of the whole sentence without words."
+        },
+        {
+          "vi": "Thì thầm cùng lúc với âm thanh mẫu, giữ hơi liền mạch.",
+          "en": "Whisper along with the audio, keeping the air flowing."
+        },
+        {
+          "vi": "Nói thành tiếng cùng với âm thanh mẫu; xem đường cao độ và bắt chước hình dạng, không bắt chước giọng.",
+          "en": "Speak aloud with the audio; watch the pitch line and copy its shape, not the voice."
+        },
+        {
+          "vi": "Nói một mình, không có âm thanh, rồi ghi âm và nghe lại xem có nguyên âm thừa hoặc chỗ ngắt nào không.",
+          "en": "Speak alone with no audio, then record and check for any extra vowel or break."
+        }
+      ],
+      "note": {
+        "vi": "Nghe /m/ thay /n/ trong ten people và chỗ nối trong hot dog.",
+        "en": "Listen for /m/ replacing /n/ in ten people and the join in hot dog."
+      }
+    }
+  ],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "selfcheck",
+    "vi": "Ghi âm next day, last time, ten people, hot dog, fish sauce. Nghe lại: có nguyên âm thừa (\"ơ\"), khoảng lặng hoặc cú đóng họng giữa các từ không? Nếu không, em đạt; nuốt hay đồng hoá âm đều chấp nhận được.",
+    "en": "Record next day, last time, ten people, hot dog and fish sauce. Listen back: is there an extra vowel (\"uh\"), a gap or a glottal stop between the words? If not, you pass; dropped or assimilated sounds are both fine."
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói tiếng Anh, kể cả người Việt ở nhiều vùng, nuốt hoặc đồng hoá âm tự nhiên khi nói nhanh; không quy cho một vùng nào, và cả dạng đầy đủ lẫn dạng rút gọn đều được chấp nhận. Phần mềm không phân biệt chắc chắn âm bị nuốt với âm bị bỏ sót, cũng không đo khoảng lặng hay cú đóng họng; kết quả chỉ là gợi ý, bài được qua nhờ nghe cặp đối lập, tự kiểm tra và (tùy chọn) giáo viên nghe. Tên Hội An, Đà Nẵng không chấm điểm. Độ tin cậy phát hiện: thấp, chưa được đo trên học sinh thật. Handmade chỉ luyện như một từ ghép, không có dạng rút gọn riêng.",
+    "en": "Many English speakers, including Vietnamese speakers from many regions, drop or assimilate sounds naturally in fast speech; do not attribute it to one region, and both full and reduced forms are accepted. The app cannot reliably tell a dropped sound from a missed one, and cannot measure pauses or glottal stops; results are hints, and the unit passes by the contrast listening, the self-check and (optionally) a teacher listening. The names Hội An and Đà Nẵng are not scored. Detection confidence: low, not yet measured on real students. Handmade is practised as a compound with no separate reduced form."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

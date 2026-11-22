@@ -1,0 +1,636 @@
+{
+  "cando": {
+    "vi": "Em nối âm cuối phụ âm với nguyên âm của từ sau (pick it up, an apple), không ngắt giọng hay đóng họng.",
+    "en": "I can link a final consonant to the next vowel (pick it up, an apple) with no pause or glottal stop."
+  },
+  "why": [
+    {
+      "vi": "Trong tiếng Việt, mỗi âm tiết thường tách rời rõ ràng, nên khi nói tiếng Anh học sinh hay ngắt hoặc đóng họng (ʔ) giữa hai từ: pick it up nghe như \"pick | it | up\". Điều này được báo cáo là thường gặp ở người học Việt.",
+      "en": "In Vietnamese each syllable is usually kept separate, so learners often pause or insert a glottal stop (ʔ) between words: pick it up sounds like \"pick | it | up\". This is reported as common for Vietnamese learners.",
+      "refs": [
+        "[1]",
+        "[8]"
+      ]
+    },
+    {
+      "vi": "Người bản ngữ nối phụ âm cuối với nguyên âm đầu của từ sau thành một chuỗi liền mạch (pick it up ≈ pi-ki-tup). Các tổng quan về dạy lời nói liền mạch cho rằng việc này giúp nghe và nói trôi chảy hơn.",
+      "en": "Native speakers join a final consonant to the next word's vowel into one smooth chain (pick it up is like pi-ki-tup). Reviews of teaching connected speech suggest this helps both listening and fluent speaking.",
+      "refs": [
+        "[B17]"
+      ]
+    },
+    {
+      "vi": "Bài này có độ tin cậy phát hiện thấp: nối âm là chuyện của cả cụm từ, không phải một âm riêng, nên phần mềm chỉ gợi ý. Em tự kiểm tra bằng cách nghe lại và so với mẫu.",
+      "en": "Detection confidence is low for this unit: linking belongs to the whole phrase rather than one sound, so the app only gives hints. Check yourself by listening back and comparing with the model.",
+      "refs": [
+        "[B17]",
+        "[B10]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Nối phụ âm với nguyên âm: pick it up nói như \"pi-ki-tắp\". Âm /k/ cuối pick trượt sang đầu it, không dừng lại.",
+      "en": "Join consonant to vowel: say pick it up like \"pi-ki-tup\". The final /k/ of pick slides onto the start of it with no stop."
+    },
+    {
+      "vi": "Giữ hơi thở chảy liên tục qua cả cụm, không có khoảng lặng hay cú đóng ở cổ họng giữa các từ.",
+      "en": "Keep air flowing through the whole phrase, with no gap and no throat closing between words."
+    },
+    {
+      "vi": "Nguyên âm gặp nguyên âm: go out thêm /w/ nhẹ (môi tròn), the end thêm /j/ nhẹ (lưỡi lên như \"i\").",
+      "en": "Vowel meets vowel: go out gets a light /w/ (rounded lips), the end a light /j/ (tongue up like \"ee\")."
+    },
+    {
+      "vi": "Nói chậm từng từ trước, rồi gộp lại thành một nhịp. Với an apple, nói liền một hơi, đừng nói \"an\" rồi nghỉ.",
+      "en": "Say each word slowly first, then squeeze them into one beat. With an apple, say it in one run, not \"an\" then a rest."
+    }
+  ],
+  "pairs": [
+    {
+      "type": "juncture",
+      "a": "an aim",
+      "b": "a name"
+    },
+    {
+      "type": "juncture",
+      "a": "an ice",
+      "b": "a nice"
+    },
+    {
+      "type": "juncture",
+      "a": "ice cream",
+      "b": "I scream"
+    },
+    {
+      "type": "juncture",
+      "a": "that's tough",
+      "b": "that stuff"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Pick it up.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        },
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        }
+      ],
+      "culture": false,
+      "prosody": {
+        "links": [
+          {
+            "after": 0,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          },
+          {
+            "after": 1,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "text": "I want an apple.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        },
+        {
+          "word": 2,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        }
+      ],
+      "culture": false,
+      "prosody": {
+        "links": [
+          {
+            "after": 1,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          },
+          {
+            "after": 2,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "text": "Look at the old bridge over the river.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        },
+        {
+          "word": 2,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        },
+        {
+          "word": 4,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        }
+      ],
+      "culture": true,
+      "prosody": {
+        "links": [
+          {
+            "after": 0,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          },
+          {
+            "after": 2,
+            "type": "VV_j",
+            "note": {
+              "vi": "Nguyên âm gặp nguyên âm: thêm /j/ nhẹ (the old).",
+              "en": "Vowel meets vowel: add a light /j/ (the old)."
+            }
+          },
+          {
+            "after": 4,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          }
+        ]
+      },
+      "variants": {
+        "2": 2
+      }
+    },
+    {
+      "text": "Turn off the light.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        }
+      ],
+      "culture": false,
+      "prosody": {
+        "links": [
+          {
+            "after": 0,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "text": "Come in, please.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        }
+      ],
+      "culture": false,
+      "prosody": {
+        "links": [
+          {
+            "after": 0,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "text": "Hold on a moment.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        },
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        }
+      ],
+      "culture": false,
+      "prosody": {
+        "links": [
+          {
+            "after": 0,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          },
+          {
+            "after": 1,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "text": "Let's go out tonight.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        }
+      ],
+      "culture": false,
+      "prosody": {
+        "links": [
+          {
+            "after": 1,
+            "type": "VV_w",
+            "note": {
+              "vi": "Nguyên âm gặp nguyên âm: thêm /w/ nhẹ.",
+              "en": "Vowel meets vowel: add a light /w/."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "text": "This is the end of the day.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        },
+        {
+          "word": 2,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        },
+        {
+          "word": 3,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        }
+      ],
+      "culture": false,
+      "prosody": {
+        "links": [
+          {
+            "after": 0,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          },
+          {
+            "after": 2,
+            "type": "VV_j",
+            "note": {
+              "vi": "Nguyên âm gặp nguyên âm: thêm /j/ nhẹ (the end).",
+              "en": "Vowel meets vowel: add a light /j/ (the end)."
+            }
+          },
+          {
+            "after": 3,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          }
+        ]
+      },
+      "variants": {
+        "2": 2
+      }
+    },
+    {
+      "text": "Hội An is old and quiet.",
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        },
+        {
+          "word": 3,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        }
+      ],
+      "culture": true,
+      "prosody": {
+        "links": [
+          {
+            "after": 2,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          },
+          {
+            "after": 3,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          }
+        ]
+      },
+      "unscored": [
+        "Hội",
+        "An"
+      ]
+    },
+    {
+      "text": "We eat an ice cream on the beach in Đà Nẵng.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        },
+        {
+          "word": 2,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        },
+        {
+          "word": 7,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        }
+      ],
+      "culture": true,
+      "prosody": {
+        "links": [
+          {
+            "after": 1,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          },
+          {
+            "after": 2,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          },
+          {
+            "after": 7,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          }
+        ]
+      },
+      "unscored": [
+        "Đà",
+        "Nẵng"
+      ]
+    },
+    {
+      "text": "Try a bowl of mì Quảng at the market.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        },
+        {
+          "word": 2,
+          "index": [
+            -1
+          ],
+          "category": "linking"
+        }
+      ],
+      "culture": true,
+      "prosody": {
+        "links": [
+          {
+            "after": 0,
+            "type": "VV_j",
+            "note": {
+              "vi": "Nguyên âm gặp nguyên âm: thêm /j/ nhẹ (try a).",
+              "en": "Vowel meets vowel: add a light /j/ (try a)."
+            }
+          },
+          {
+            "after": 2,
+            "type": "CV",
+            "note": {
+              "vi": "Phụ âm cuối nối sang nguyên âm sau.",
+              "en": "Final consonant joins the next vowel."
+            }
+          }
+        ]
+      },
+      "unscored": [
+        "mì",
+        "Quảng"
+      ]
+    }
+  ],
+  "contrasts": [
+    {
+      "wrong": "p ɪ k ʔ ɪ t ʌ p",
+      "right": "p ɪ k ɪ t ʌ p",
+      "note": {
+        "vi": "Em đóng họng hoặc ngắt giữa pick và it. Để /k/ trượt thẳng sang \"it\": pi-ki-tắp.",
+        "en": "You close the throat or pause between pick and it. Let the /k/ slide straight into \"it\": pi-ki-tup."
+      }
+    },
+    {
+      "wrong": "ɡ oʊ ʔ aʊ t",
+      "right": "ɡ oʊ w aʊ t",
+      "note": {
+        "vi": "Giữa go và out có cú đóng họng. Tròn môi nhẹ thành /w/ rồi mở sang \"out\".",
+        "en": "There is a throat stop between go and out. Round the lips into a light /w/ and open into \"out\"."
+      }
+    },
+    {
+      "wrong": "ð ə ʔ ɛ n d",
+      "right": "ð i j ɛ n d",
+      "note": {
+        "vi": "The end bị ngắt và vẫn đọc \"thờ\". Đổi thành \"thi\" rồi trượt /j/ sang \"end\".",
+        "en": "The end is broken up and said \"thuh\". Change it to \"thee\" and glide /j/ into \"end\"."
+      }
+    },
+    {
+      "wrong": "ə n ʔ æ p ə l",
+      "right": "ə n æ p ə l",
+      "note": {
+        "vi": "An và apple bị tách. Nói thành một chuỗi, /n/ làm âm đầu của \"apple\".",
+        "en": "An and apple are split. Say one chain, with the /n/ starting \"apple\"."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "Pick it up. / Turn off the light.",
+      "shadow": [
+        {
+          "vi": "Nghe câu mẫu hai lần, chú ý chỗ các từ dính vào nhau, không có khoảng lặng.",
+          "en": "Listen to the model twice and notice where words stick together with no gap."
+        },
+        {
+          "vi": "Ngân nga (hum) hình dạng nhịp và giọng của cả cụm, không nói chữ.",
+          "en": "Hum the rhythm and tune of the whole phrase without words."
+        },
+        {
+          "vi": "Thì thầm cùng lúc với âm thanh mẫu, giữ hơi liền mạch.",
+          "en": "Whisper along with the audio, keeping the air flowing."
+        },
+        {
+          "vi": "Nói thành tiếng cùng với âm thanh mẫu; xem đường cao độ và bắt chước hình dạng, không bắt chước giọng.",
+          "en": "Speak aloud with the audio; watch the pitch line and copy its shape, not the voice."
+        },
+        {
+          "vi": "Nói một mình, không có âm thanh, rồi ghi âm và nghe lại xem có chỗ nào bị ngắt không.",
+          "en": "Speak alone with no audio, then record and check for any break."
+        }
+      ],
+      "note": {
+        "vi": "Bắt chước hình dạng đường cao độ, không bắt chước giọng của người mẫu.",
+        "en": "Copy the shape of the pitch line, not the model's voice."
+      }
+    },
+    {
+      "text": "Let's go out tonight. / This is the end of the day.",
+      "shadow": [
+        {
+          "vi": "Nghe câu mẫu hai lần, chú ý chỗ các từ dính vào nhau, không có khoảng lặng.",
+          "en": "Listen to the model twice and notice where words stick together with no gap."
+        },
+        {
+          "vi": "Ngân nga (hum) hình dạng nhịp và giọng của cả cụm, không nói chữ.",
+          "en": "Hum the rhythm and tune of the whole phrase without words."
+        },
+        {
+          "vi": "Thì thầm cùng lúc với âm thanh mẫu, giữ hơi liền mạch.",
+          "en": "Whisper along with the audio, keeping the air flowing."
+        },
+        {
+          "vi": "Nói thành tiếng cùng với âm thanh mẫu; xem đường cao độ và bắt chước hình dạng, không bắt chước giọng.",
+          "en": "Speak aloud with the audio; watch the pitch line and copy its shape, not the voice."
+        },
+        {
+          "vi": "Nói một mình, không có âm thanh, rồi ghi âm và nghe lại xem có chỗ nào bị ngắt không.",
+          "en": "Speak alone with no audio, then record and check for any break."
+        }
+      ],
+      "note": {
+        "vi": "Chú ý /w/ trong go out và /j/ trong the end.",
+        "en": "Listen for the /w/ in go out and the /j/ in the end."
+      }
+    }
+  ],
+  "selfCheck": {
+    "vi": "Ghi âm các cụm pick it up, an apple, go out, the end. Nghe lại: có khoảng lặng hoặc cú đóng họng nào giữa các từ không? Nếu không, em đạt.",
+    "en": "Record pick it up, an apple, go out and the end. Listen back: is there any gap or throat stop between the words? If not, you pass."
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói tiếng Anh, kể cả người Việt ở nhiều vùng, nối âm tự nhiên trong lời nói nhanh; không quy cho một vùng nào. Phần mềm không đo khoảng lặng hay cú đóng họng một cách chắc chắn: nó chỉ so âm nhận được với dạng nối, nên kết quả chỉ là gợi ý; bài được qua nhờ nghe cặp đối lập, tự kiểm tra và (tùy chọn) giáo viên nghe. Tên Hội An, Đà Nẵng, mì Quảng không chấm điểm. Độ tin cậy phát hiện: thấp, chưa được đo trên học sinh thật. Các cặp juncture (an ice / a nice) có cùng chuỗi âm nên chỉ phân biệt được nhờ ngữ cảnh và nhịp.",
+    "en": "Many English speakers, including Vietnamese speakers from many regions, link naturally in fast speech; do not attribute it to one region. The app cannot measure pauses or glottal stops reliably: it only compares recognised sounds with the linked form, so results are hints, and the unit passes by the contrast listening, the self-check and (optionally) a teacher listening. The names Hội An, Đà Nẵng and mì Quảng are not scored. Detection confidence: low, not yet measured on real students. Juncture pairs (an ice / a nice) have identical sounds, so only context and rhythm tell them apart."
+  },
+  "id": "U13",
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

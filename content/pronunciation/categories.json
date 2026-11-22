@@ -1,0 +1,87 @@
+{
+  "final_consonant": {
+    "group": "endings",
+    "priority": "P1",
+    "confidence": "high",
+    "signal": "final consonant deleted or glottal stop"
+  },
+  "s_ed_ending": {
+    "group": "endings",
+    "priority": "P1",
+    "confidence": "high",
+    "signal": "suffix phones missing when target text is known"
+  },
+  "final_voicing": {
+    "group": "endings",
+    "priority": "P2",
+    "confidence": "medium",
+    "signal": "final voiced obstruent heard as voiceless pair"
+  },
+  "cluster": {
+    "group": "clusters",
+    "priority": "P1",
+    "confidence": "high",
+    "signal": "vowel inserted in cluster or member deleted"
+  },
+  "th": {
+    "group": "consonants",
+    "priority": "P3",
+    "confidence": "high",
+    "signal": "θ→t s f; ð→d z"
+  },
+  "sibilant": {
+    "group": "consonants",
+    "priority": "P1",
+    "confidence": "high",
+    "signal": "substitution among s z ʃ ʒ tʃ dʒ"
+  },
+  "consonant_sub": {
+    "group": "consonants",
+    "priority": "P2",
+    "confidence": "medium",
+    "signal": "substitution inside v/w/j, z/j/dʒ, l/n/ɹ, p/b"
+  },
+  "vowel_length": {
+    "group": "vowels",
+    "priority": "P1",
+    "confidence": "medium",
+    "signal": "vowel heard as other member of the tense/lax pair"
+  },
+  "vowel_quality": {
+    "group": "vowels",
+    "priority": "P2",
+    "confidence": "medium",
+    "signal": "substitution among æ ɛ ʌ ɑː; diphthong heard as one vowel"
+  },
+  "word_stress": {
+    "group": "stress",
+    "priority": "P2",
+    "confidence": "medium",
+    "signal": "duration + loudness + pitch per syllable vs expected stress"
+  },
+  "rhythm": {
+    "group": "flow",
+    "priority": "P3",
+    "confidence": "low",
+    "signal": "vowel-duration variability and pauses"
+  },
+  "weak_form": {
+    "group": "flow",
+    "priority": "P3",
+    "confidence": "low",
+    "signal": "strong vowel in a weak-form slot"
+  },
+  "linking": {
+    "group": "flow",
+    "priority": "P3",
+    "confidence": "low",
+    "signal": "glottal stop, pause or inserted vowel at a link"
+  },
+  "intonation": {
+    "group": "flow",
+    "priority": "P2",
+    "confidence": "medium",
+    "signal": "final F0 slope; nucleus position",
+    "confidenceNucleus": "low"
+  }
+}

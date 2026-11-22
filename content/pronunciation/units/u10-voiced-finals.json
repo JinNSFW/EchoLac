@@ -1,0 +1,1518 @@
+{
+  "id": "U10",
+  "level": "B1",
+  "band": "B1",
+  "category": "final_voicing",
+  "kind": "segmental",
+  "prereq": [
+    "U01"
+  ],
+  "title": {
+    "vi": "Âm cuối hữu thanh",
+    "en": "Voiced final sounds"
+  },
+  "cando": {
+    "vi": "Em nói bed khác bet, rise khác rice: giữ rung cổ ở âm cuối và kéo dài nguyên âm trước đó.",
+    "en": "I can make bed and bet, rise and rice sound different: keep the voice on the final sound and lengthen the vowel before it."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt chỉ có âm cuối /p t k/ (không bật hơi), không có /b d ɡ v z/ ở cuối, nên bed dễ nghe như \"bét\" và dog như \"dốc\". Các nghiên cứu nhỏ báo cáo lỗi bỏ hoặc vô thanh hóa âm cuối hữu thanh là thường gặp (độ tin cậy trung bình).",
+      "en": "Vietnamese has only unreleased final /p t k/ and no final /b d ɡ v z/, so bed easily sounds like \"bet\" and dog like \"dock\". Small studies report devoicing or dropping voiced finals as common (medium confidence).",
+      "refs": [
+        "[1]",
+        "[12]",
+        "[14]"
+      ]
+    },
+    {
+      "vi": "Khi âm cuối mất rung, hai từ trùng nhau: bed/bet, rise/rice, leave/leaf. Theo ngữ âm học tiếng Anh nói chung, nguyên âm đứng trước âm cuối hữu thanh dài hơn, và người nghe dựa vào đó để phân biệt hai từ.",
+      "en": "When the final loses its voice, two words collide: bed/bet, rise/rice, leave/leaf. In general English phonetics, the vowel before a voiced ending is longer, and listeners use this to tell the words apart.",
+      "refs": [
+        "[B15]"
+      ]
+    },
+    {
+      "vi": "Phần mềm chủ yếu nhận ra âm cuối bị đổi thành âm vô thanh; độ dài nguyên âm khó đo hơn, nên bài này có mức ưu tiên P2 và điểm số chỉ là gợi ý.",
+      "en": "The software mainly detects a final changed to its voiceless pair; vowel length is harder to measure, so this unit is priority P2 and the score is only a hint.",
+      "refs": [
+        "[1]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Đặt tay lên cổ. Nói \"sss\" rồi \"zzz\": zzz có rung. Giữ cảm giác rung đó đến hết từ rise, không để tắt trước khi từ kết thúc.",
+      "en": "Put a hand on your throat. Say \"sss\" then \"zzz\": zzz buzzes. Keep that buzz to the very end of rise, not fading early."
+    },
+    {
+      "vi": "Kéo dài nguyên âm trước âm cuối hữu thanh: bed, bag dài hơn một chút so với bet, back. Hãy nói \"bee-d\" chậm rồi rút lại cho gọn.",
+      "en": "Lengthen the vowel before a voiced ending: bed and bag are a little longer than bet and back."
+    },
+    {
+      "vi": "Với /d b ɡ/: lưỡi hoặc môi chạm nhẹ rồi thả, vẫn rung cổ, không bật hơi mạnh. Với /t p k/ thì dừng dứt khoát, không rung.",
+      "en": "For /d b ɡ/: touch tongue or lips lightly, keep the voice on, no strong puff. For /t p k/ stop sharply, no voice."
+    },
+    {
+      "vi": "Với /v/ và /z/: răng trên chạm môi dưới (v) hoặc lưỡi gần nướu răng (z), vừa thổi vừa rung cổ. Đừng đổi thành /f/ hay /s/ ở cuối.",
+      "en": "/v/: upper teeth touch the lower lip. /z/: tongue near the ridge. Blow and buzz together; do not turn them into /f/ or /s/."
+    },
+    {
+      "vi": "Kết thúc từ ngay khi hết rung. Đừng thêm nguyên âm \"ờ\" (bed không phải \"bét-ờ\"). Luyện từng cặp rise–rice, leave–leaf bằng tay trên cổ.",
+      "en": "End the word as the buzz ends. Add no vowel \"uh\" (bed is not \"bed-uh\"). Practise rise–rice and leave–leaf with a hand on your throat."
+    }
+  ],
+  "perception": {
+    "type": "2afc",
+    "pairIds": [
+      "U10-p01",
+      "U10-p02",
+      "U10-p03",
+      "U10-p04",
+      "U10-p05",
+      "U10-p06"
+    ],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8
+  },
+  "words": [
+    {
+      "id": "U10-w01",
+      "text": "bed",
+      "lemma": "bed",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "ɛ",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "b",
+            "ɛ",
+            "t"
+          ],
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "b",
+            "ɛ"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U10-w02",
+      "text": "bag",
+      "lemma": "bag",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "æ",
+        "ɡ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "b",
+            "æ",
+            "k"
+          ],
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "b",
+            "æ"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U10-w03",
+      "text": "dog",
+      "lemma": "dog",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "d",
+        "ɔː",
+        "ɡ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "d",
+            "ɔː",
+            "k"
+          ],
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "d",
+            "ɔː"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U10-w04",
+      "text": "food",
+      "lemma": "food",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "f",
+        "uː",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "f",
+            "uː",
+            "t"
+          ],
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "f",
+            "uː"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U10-w05",
+      "text": "card",
+      "lemma": "card",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "k",
+        "ɑː",
+        "ɹ",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "k",
+            "ɑː",
+            "ɹ",
+            "t"
+          ],
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "k",
+            "ɑː",
+            "ɹ"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U10-w06",
+      "text": "prize",
+      "lemma": "prize",
+      "cefr": "B1",
+      "scenarioVocab": null,
+      "ipa": [
+        "p",
+        "ɹ",
+        "aɪ",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "p",
+            "ɹ",
+            "aɪ",
+            "s"
+          ],
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "p",
+            "ɹ",
+            "aɪ"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U10-w07",
+      "text": "leave",
+      "lemma": "leave",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "l",
+        "iː",
+        "v"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "l",
+            "iː",
+            "f"
+          ],
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "l",
+            "iː"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U10-w08",
+      "text": "save",
+      "lemma": "save",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "s",
+        "eɪ",
+        "v"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "s",
+            "eɪ",
+            "f"
+          ],
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "s",
+            "eɪ"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U10-w09",
+      "text": "five",
+      "lemma": "five",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "f",
+        "aɪ",
+        "v"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "f",
+            "aɪ",
+            "f"
+          ],
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "f",
+            "aɪ"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U10-w10",
+      "text": "eyes",
+      "lemma": "eye",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "aɪ",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "aɪ",
+            "s"
+          ],
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "aɪ"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U10-w11",
+      "text": "cheese",
+      "lemma": "cheese",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "tʃ",
+        "iː",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "tʃ",
+            "iː",
+            "s"
+          ],
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "tʃ",
+            "iː"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U10-w12",
+      "text": "noise",
+      "lemma": "noise",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "n",
+        "ɔɪ",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "n",
+            "ɔɪ",
+            "s"
+          ],
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "category": "final_voicing",
+          "variantIpa": [
+            "n",
+            "ɔɪ"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "U10-p01",
+      "type": "substitution",
+      "category": "final_voicing",
+      "a": {
+        "text": "bed",
+        "ipa": [
+          "b",
+          "ɛ",
+          "d"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "bet",
+        "ipa": [
+          "b",
+          "ɛ",
+          "t"
+        ],
+        "cefr": "B1",
+        "variant": 0
+      },
+      "diffIndex": 2,
+      "contrast": [
+        "d",
+        "t"
+      ]
+    },
+    {
+      "id": "U10-p02",
+      "type": "substitution",
+      "category": "final_voicing",
+      "a": {
+        "text": "bag",
+        "ipa": [
+          "b",
+          "æ",
+          "ɡ"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "back",
+        "ipa": [
+          "b",
+          "æ",
+          "k"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 2,
+      "contrast": [
+        "ɡ",
+        "k"
+      ]
+    },
+    {
+      "id": "U10-p03",
+      "type": "substitution",
+      "category": "final_voicing",
+      "a": {
+        "text": "cab",
+        "ipa": [
+          "k",
+          "æ",
+          "b"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "b": {
+        "text": "cap",
+        "ipa": [
+          "k",
+          "æ",
+          "p"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 2,
+      "contrast": [
+        "b",
+        "p"
+      ]
+    },
+    {
+      "id": "U10-p04",
+      "type": "substitution",
+      "category": "final_voicing",
+      "a": {
+        "text": "prize",
+        "ipa": [
+          "p",
+          "ɹ",
+          "aɪ",
+          "z"
+        ],
+        "cefr": "B1",
+        "variant": 0
+      },
+      "b": {
+        "text": "price",
+        "ipa": [
+          "p",
+          "ɹ",
+          "aɪ",
+          "s"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "z",
+        "s"
+      ]
+    },
+    {
+      "id": "U10-p05",
+      "type": "substitution",
+      "category": "final_voicing",
+      "a": {
+        "text": "rise",
+        "ipa": [
+          "ɹ",
+          "aɪ",
+          "z"
+        ],
+        "cefr": "B1",
+        "variant": 0
+      },
+      "b": {
+        "text": "rice",
+        "ipa": [
+          "ɹ",
+          "aɪ",
+          "s"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 2,
+      "contrast": [
+        "z",
+        "s"
+      ]
+    },
+    {
+      "id": "U10-p06",
+      "type": "substitution",
+      "category": "final_voicing",
+      "a": {
+        "text": "leave",
+        "ipa": [
+          "l",
+          "iː",
+          "v"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "leaf",
+        "ipa": [
+          "l",
+          "iː",
+          "f"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 2,
+      "contrast": [
+        "v",
+        "f"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U10-s01",
+      "text": "The night market is big and I love the cheese.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "night",
+          "ipa": [
+            "n",
+            "aɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "big",
+          "ipa": [
+            "b",
+            "ɪ",
+            "ɡ"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "love",
+          "ipa": [
+            "l",
+            "ʌ",
+            "v"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "cheese",
+          "ipa": [
+            "tʃ",
+            "iː",
+            "z"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 4,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        },
+        {
+          "word": 7,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        },
+        {
+          "word": 9,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U10-s02",
+      "text": "We leave the beach and have rice.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "leave",
+          "ipa": [
+            "l",
+            "iː",
+            "v"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "have",
+          "ipa": [
+            "h",
+            "æ",
+            "v"
+          ]
+        },
+        {
+          "w": "rice",
+          "ipa": [
+            "ɹ",
+            "aɪ",
+            "s"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U10-s03",
+      "text": "My dog sleeps on a red bed.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "My",
+          "ipa": [
+            "m",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "dog",
+          "ipa": [
+            "d",
+            "ɔː",
+            "ɡ"
+          ]
+        },
+        {
+          "w": "sleeps",
+          "ipa": [
+            "s",
+            "l",
+            "iː",
+            "p",
+            "s"
+          ]
+        },
+        {
+          "w": "on",
+          "ipa": [
+            "ɑː",
+            "n"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "red",
+          "ipa": [
+            "ɹ",
+            "ɛ",
+            "d"
+          ]
+        },
+        {
+          "w": "bed",
+          "ipa": [
+            "b",
+            "ɛ",
+            "d"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        },
+        {
+          "word": 6,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U10-s04",
+      "text": "The food in Huế is good, and the noise is fun.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "food",
+          "ipa": [
+            "f",
+            "uː",
+            "d"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "Huế",
+          "ipa": null
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "good",
+          "ipa": [
+            "ɡ",
+            "ʊ",
+            "d"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "noise",
+          "ipa": [
+            "n",
+            "ɔɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "fun",
+          "ipa": [
+            "f",
+            "ʌ",
+            "n"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        },
+        {
+          "word": 8,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U10-s05",
+      "text": "He gave his dog a bag of food.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "He",
+          "ipa": [
+            "h",
+            "iː"
+          ]
+        },
+        {
+          "w": "gave",
+          "ipa": [
+            "ɡ",
+            "eɪ",
+            "v"
+          ]
+        },
+        {
+          "w": "his",
+          "ipa": [
+            "h",
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "dog",
+          "ipa": [
+            "d",
+            "ɔː",
+            "ɡ"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "bag",
+          "ipa": [
+            "b",
+            "æ",
+            "ɡ"
+          ]
+        },
+        {
+          "w": "of",
+          "ipa": [
+            "ə",
+            "v"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "food",
+          "ipa": [
+            "f",
+            "uː",
+            "d"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        },
+        {
+          "word": 7,
+          "index": [
+            2
+          ],
+          "category": "final_voicing",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U10-c01",
+      "wrongIpa": [
+        "b",
+        "ɛ",
+        "t"
+      ],
+      "rightIpa": [
+        "b",
+        "ɛ",
+        "d"
+      ],
+      "note": {
+        "vi": "Bed nghe như bet. Giữ rung cổ và kéo dài /ɛ/ hơn một chút, rồi chạm lưỡi nhẹ cho /d/.",
+        "en": "Bed sounds like bet. Keep the voice on and make /ɛ/ a little longer, then touch the tongue lightly for /d/."
+      }
+    },
+    {
+      "id": "U10-c02",
+      "wrongIpa": [
+        "ɹ",
+        "aɪ",
+        "s"
+      ],
+      "rightIpa": [
+        "ɹ",
+        "aɪ",
+        "z"
+      ],
+      "note": {
+        "vi": "Rise nghe như rice. Thổi hơi và rung cổ cùng lúc ở cuối, tay trên cổ phải thấy rung.",
+        "en": "Rise sounds like rice. Blow and buzz together at the end; your hand on the throat should feel it."
+      }
+    },
+    {
+      "id": "U10-c03",
+      "wrongIpa": [
+        "l",
+        "iː",
+        "f"
+      ],
+      "rightIpa": [
+        "l",
+        "iː",
+        "v"
+      ],
+      "note": {
+        "vi": "Leave nghe như leaf. Răng trên chạm môi dưới và giữ rung cổ đến hết từ.",
+        "en": "Leave sounds like leaf. Touch upper teeth to the lower lip and keep the voice on to the end."
+      }
+    },
+    {
+      "id": "U10-c04",
+      "wrongIpa": [
+        "b",
+        "æ",
+        "k"
+      ],
+      "rightIpa": [
+        "b",
+        "æ",
+        "ɡ"
+      ],
+      "note": {
+        "vi": "Bag nghe như back. Nâng cuối lưỡi nhưng vẫn rung cổ, thả nhẹ, không bật hơi mạnh.",
+        "en": "Bag sounds like back. Raise the back of the tongue but keep the voice on and release softly with no strong puff."
+      }
+    }
+  ],
+  "chain": [],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "score",
+    "vi": "Ghi âm bed–bet, rise–rice, leave–leaf. Nghe lại: nguyên âm trong từ hữu thanh có dài hơn không, và cổ có rung đến cuối từ không? Nhờ bạn đoán từ em nói.",
+    "en": "Record bed–bet, rise–rice, leave–leaf. Listen back: is the vowel longer in the voiced word, and does the voice last to the end? Ask a friend to guess which word you said."
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói tiếng Anh cũng vô thanh hóa nhẹ âm cuối hữu thanh khi nói nhanh hoặc ở cuối câu, và nhiều giọng chỉ thể hiện sự khác biệt bằng độ dài nguyên âm; hãy chấp nhận khi người nghe vẫn hiểu. Một số học sinh nói âm cuối không bật hơi, điều này bình thường. Phần mềm chủ yếu thấy âm cuối bị đổi sang âm vô thanh hoặc bị mất; không đo độ dài nguyên âm hay mức rung cổ. Độ tin cậy phát hiện: trung bình, chưa được đo trên học sinh thật.",
+    "en": "Some English speakers also partly devoice a final voiced sound in fast speech or at the end of a phrase, and many accents show the difference mainly through vowel length; accept it if the listener understands. Some students release finals very lightly, which is normal. The app mainly sees a final changed to a voiceless sound or dropped; it does not measure vowel length or voicing strength. Detection confidence: medium, not yet measured on real students."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

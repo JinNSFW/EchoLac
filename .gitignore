@@ -12,3 +12,7 @@ app/
 .claude/
 node_modules/
 .impeccable/
+
+# Pronunciation generator
+tools/pronunciation/.cache/
+__pycache__/

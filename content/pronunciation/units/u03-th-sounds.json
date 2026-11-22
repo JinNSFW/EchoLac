@@ -1,0 +1,1421 @@
+{
+  "id": "U03",
+  "level": "A1",
+  "band": "A1-A2",
+  "category": "th",
+  "kind": "segmental",
+  "prereq": [],
+  "title": {
+    "vi": "Âm /θ/ và /ð/",
+    "en": "The \"th\" sounds"
+  },
+  "cando": {
+    "vi": "Em nói được /θ/ và /ð/ trong những từ quen thuộc.",
+    "en": "I can say /θ/ and /ð/ in common words."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt không có /θ/ và /ð/. Người học thường đọc /θ/ thành /t/ (think → \"tink\") hoặc /s/, và /ð/ thành /d/ hoặc /z/ (this → \"dis\", \"zis\"). Dữ liệu từ 10 bản ghi và 115 phiếu khảo sát người lớn.",
+      "en": "Vietnamese has no /θ/ or /ð/. Learners often say /θ/ as /t/ (think → \"tink\") or /s/, and /ð/ as /d/ or /z/ (this → \"dis\", \"zis\"). Data came from 10 recordings and 115 questionnaires of adult learners.",
+      "refs": [
+        "[3]"
+      ]
+    },
+    {
+      "vi": "Chữ \"th\" trong tiếng Việt (như \"thở\") là âm /t/ bật hơi, không phải âm đặt lưỡi giữa hai hàm răng, nên chữ viết dễ đánh lừa.",
+      "en": "The Vietnamese letters \"th\" (as in \"thở\") stand for an aspirated /t/, not a tongue-between-teeth sound, so the spelling can mislead.",
+      "refs": [
+        "[3]"
+      ]
+    },
+    {
+      "vi": "Theo Lingua Franca Core, /θ ð/ không thuộc nhóm âm cốt lõi cho việc hiểu nhau trong tiếng Anh quốc tế, nên bài này có mức ưu tiên thấp (P3) nhưng vẫn được dạy vì thường được kỳ vọng ở bài kiểm tra.",
+      "en": "In the Lingua Franca Core, /θ ð/ are not core sounds for mutual intelligibility in international English, so this unit has low priority (P3), but it is still taught because tests and teachers often expect it.",
+      "refs": [
+        "[B16]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Đặt đầu lưỡi nhẹ nhàng giữa hai hàm răng, đủ để nhìn thấy một chút đầu lưỡi trong gương.",
+      "en": "Place the tongue tip lightly between your teeth, so you can see a little of it in a mirror."
+    },
+    {
+      "vi": "/θ/: thổi hơi nhẹ qua khe giữa lưỡi và răng, không rung cổ. Đừng đọc như \"th\" của \"thở\".",
+      "en": "/θ/: blow a gentle stream of air over the tongue and teeth with no voice. Do not say it like the Vietnamese \"th\" in \"thở\"."
+    },
+    {
+      "vi": "/ð/: giữ nguyên vị trí lưỡi nhưng rung cổ. Đặt tay lên cổ khi nói this, that: phải thấy rung.",
+      "en": "/ð/: keep the same tongue position but add voice. With a hand on your throat, you should feel buzzing in this and that."
+    },
+    {
+      "vi": "Rút lưỡi về nhanh sau khi nói; không cắn hay ép lưỡi mạnh.",
+      "en": "Pull the tongue back quickly afterwards; do not bite or press hard."
+    }
+  ],
+  "perception": {
+    "type": "2afc",
+    "pairIds": [
+      "U03-p01",
+      "U03-p02",
+      "U03-p03",
+      "U03-p04",
+      "U03-p05",
+      "U03-p06"
+    ],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8
+  },
+  "words": [
+    {
+      "id": "U03-w01",
+      "text": "think",
+      "lemma": "think",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "θ",
+        "ɪ",
+        "ŋ",
+        "k"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "th",
+          "variantIpa": [
+            "t",
+            "ɪ",
+            "ŋ",
+            "k"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /t/ (\"th\" tiếng Việt).",
+            "en": "/θ/ said as /t/ (like Vietnamese \"th\")."
+          }
+        },
+        {
+          "category": "th",
+          "variantIpa": [
+            "s",
+            "ɪ",
+            "ŋ",
+            "k"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /s/.",
+            "en": "/θ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U03-w02",
+      "text": "thank",
+      "lemma": "thank",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "θ",
+        "æ",
+        "ŋ",
+        "k"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "th",
+          "variantIpa": [
+            "t",
+            "æ",
+            "ŋ",
+            "k"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /t/ (\"th\" tiếng Việt).",
+            "en": "/θ/ said as /t/ (like Vietnamese \"th\")."
+          }
+        },
+        {
+          "category": "th",
+          "variantIpa": [
+            "s",
+            "æ",
+            "ŋ",
+            "k"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /s/.",
+            "en": "/θ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U03-w03",
+      "text": "three",
+      "lemma": "three",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "θ",
+        "ɹ",
+        "iː"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "th",
+          "variantIpa": [
+            "t",
+            "ɹ",
+            "iː"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /t/ (\"th\" tiếng Việt).",
+            "en": "/θ/ said as /t/ (like Vietnamese \"th\")."
+          }
+        },
+        {
+          "category": "th",
+          "variantIpa": [
+            "s",
+            "ɹ",
+            "iː"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /s/.",
+            "en": "/θ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U03-w04",
+      "text": "thing",
+      "lemma": "thing",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "θ",
+        "ɪ",
+        "ŋ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "th",
+          "variantIpa": [
+            "t",
+            "ɪ",
+            "ŋ"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /t/ (\"th\" tiếng Việt).",
+            "en": "/θ/ said as /t/ (like Vietnamese \"th\")."
+          }
+        },
+        {
+          "category": "th",
+          "variantIpa": [
+            "s",
+            "ɪ",
+            "ŋ"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /s/.",
+            "en": "/θ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U03-w05",
+      "text": "mouth",
+      "lemma": "mouth",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "m",
+        "aʊ",
+        "θ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "th",
+          "variantIpa": [
+            "m",
+            "aʊ",
+            "t"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /t/ (\"th\" tiếng Việt).",
+            "en": "/θ/ said as /t/ (like Vietnamese \"th\")."
+          }
+        },
+        {
+          "category": "th",
+          "variantIpa": [
+            "m",
+            "aʊ",
+            "s"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /s/.",
+            "en": "/θ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U03-w06",
+      "text": "month",
+      "lemma": "month",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "m",
+        "ʌ",
+        "n",
+        "θ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "th",
+          "variantIpa": [
+            "m",
+            "ʌ",
+            "n",
+            "t"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /t/ (\"th\" tiếng Việt).",
+            "en": "/θ/ said as /t/ (like Vietnamese \"th\")."
+          }
+        },
+        {
+          "category": "th",
+          "variantIpa": [
+            "m",
+            "ʌ",
+            "n",
+            "s"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /s/.",
+            "en": "/θ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U03-w07",
+      "text": "bath",
+      "lemma": "bath",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "æ",
+        "θ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "th",
+          "variantIpa": [
+            "b",
+            "æ",
+            "t"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /t/ (\"th\" tiếng Việt).",
+            "en": "/θ/ said as /t/ (like Vietnamese \"th\")."
+          }
+        },
+        {
+          "category": "th",
+          "variantIpa": [
+            "b",
+            "æ",
+            "s"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /s/.",
+            "en": "/θ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U03-w08",
+      "text": "birthday",
+      "lemma": "birthday",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "ɜː",
+        "θ",
+        "d",
+        "eɪ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "th",
+          "variantIpa": [
+            "b",
+            "ɜː",
+            "t",
+            "d",
+            "eɪ"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /t/ (\"th\" tiếng Việt).",
+            "en": "/θ/ said as /t/ (like Vietnamese \"th\")."
+          }
+        },
+        {
+          "category": "th",
+          "variantIpa": [
+            "b",
+            "ɜː",
+            "s",
+            "d",
+            "eɪ"
+          ],
+          "note": {
+            "vi": "/θ/ bị đọc thành /s/.",
+            "en": "/θ/ said as /s/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U03-w09",
+      "text": "this",
+      "lemma": "this",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ð",
+        "ɪ",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "th",
+          "variantIpa": [
+            "d",
+            "ɪ",
+            "s"
+          ],
+          "note": {
+            "vi": "/ð/ bị đọc thành /d/.",
+            "en": "/ð/ said as /d/."
+          }
+        },
+        {
+          "category": "th",
+          "variantIpa": [
+            "z",
+            "ɪ",
+            "s"
+          ],
+          "note": {
+            "vi": "/ð/ bị đọc thành /z/.",
+            "en": "/ð/ said as /z/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U03-w10",
+      "text": "that",
+      "lemma": "that",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ð",
+        "æ",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "th",
+          "variantIpa": [
+            "d",
+            "æ",
+            "t"
+          ],
+          "note": {
+            "vi": "/ð/ bị đọc thành /d/.",
+            "en": "/ð/ said as /d/."
+          }
+        },
+        {
+          "category": "th",
+          "variantIpa": [
+            "z",
+            "æ",
+            "t"
+          ],
+          "note": {
+            "vi": "/ð/ bị đọc thành /z/.",
+            "en": "/ð/ said as /z/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U03-w11",
+      "text": "they",
+      "lemma": "they",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ð",
+        "eɪ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "th",
+          "variantIpa": [
+            "d",
+            "eɪ"
+          ],
+          "note": {
+            "vi": "/ð/ bị đọc thành /d/.",
+            "en": "/ð/ said as /d/."
+          }
+        },
+        {
+          "category": "th",
+          "variantIpa": [
+            "z",
+            "eɪ"
+          ],
+          "note": {
+            "vi": "/ð/ bị đọc thành /z/.",
+            "en": "/ð/ said as /z/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U03-w12",
+      "text": "mother",
+      "lemma": "mother",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "m",
+        "ʌ",
+        "ð",
+        "ɚ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "th",
+          "variantIpa": [
+            "m",
+            "ʌ",
+            "d",
+            "ɚ"
+          ],
+          "note": {
+            "vi": "/ð/ bị đọc thành /d/.",
+            "en": "/ð/ said as /d/."
+          }
+        },
+        {
+          "category": "th",
+          "variantIpa": [
+            "m",
+            "ʌ",
+            "z",
+            "ɚ"
+          ],
+          "note": {
+            "vi": "/ð/ bị đọc thành /z/.",
+            "en": "/ð/ said as /z/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "U03-p01",
+      "type": "substitution",
+      "category": "th",
+      "a": {
+        "text": "thin",
+        "ipa": [
+          "θ",
+          "ɪ",
+          "n"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "tin",
+        "ipa": [
+          "t",
+          "ɪ",
+          "n"
+        ],
+        "cefr": "B1",
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "θ",
+        "t"
+      ]
+    },
+    {
+      "id": "U03-p02",
+      "type": "substitution",
+      "category": "th",
+      "a": {
+        "text": "three",
+        "ipa": [
+          "θ",
+          "ɹ",
+          "iː"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "tree",
+        "ipa": [
+          "t",
+          "ɹ",
+          "iː"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "θ",
+        "t"
+      ]
+    },
+    {
+      "id": "U03-p03",
+      "type": "substitution",
+      "category": "th",
+      "a": {
+        "text": "bath",
+        "ipa": [
+          "b",
+          "æ",
+          "θ"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "bat",
+        "ipa": [
+          "b",
+          "æ",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 2,
+      "contrast": [
+        "θ",
+        "t"
+      ]
+    },
+    {
+      "id": "U03-p04",
+      "type": "substitution",
+      "category": "th",
+      "a": {
+        "text": "path",
+        "ipa": [
+          "p",
+          "æ",
+          "θ"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "b": {
+        "text": "pass",
+        "ipa": [
+          "p",
+          "æ",
+          "s"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "diffIndex": 2,
+      "contrast": [
+        "θ",
+        "s"
+      ]
+    },
+    {
+      "id": "U03-p05",
+      "type": "substitution",
+      "category": "th",
+      "a": {
+        "text": "they",
+        "ipa": [
+          "ð",
+          "eɪ"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "day",
+        "ipa": [
+          "d",
+          "eɪ"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "ð",
+        "d"
+      ]
+    },
+    {
+      "id": "U03-p06",
+      "type": "substitution",
+      "category": "th",
+      "a": {
+        "text": "then",
+        "ipa": [
+          "ð",
+          "ɛ",
+          "n"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "den",
+        "ipa": [
+          "d",
+          "ɛ",
+          "n"
+        ],
+        "cefr": null,
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "ð",
+        "d"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U03-s01",
+      "text": "I think the weather is nice at the beach.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "think",
+          "ipa": [
+            "θ",
+            "ɪ",
+            "ŋ",
+            "k"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "weather",
+          "ipa": [
+            "w",
+            "ɛ",
+            "ð",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "nice",
+          "ipa": [
+            "n",
+            "aɪ",
+            "s"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            2
+          ],
+          "category": "th",
+          "morph": false
+        },
+        {
+          "word": 7,
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U03-s02",
+      "text": "They think this bridge is nice.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "They",
+          "ipa": [
+            "ð",
+            "eɪ"
+          ]
+        },
+        {
+          "w": "think",
+          "ipa": [
+            "θ",
+            "ɪ",
+            "ŋ",
+            "k"
+          ]
+        },
+        {
+          "w": "this",
+          "ipa": [
+            "ð",
+            "ɪ",
+            "s"
+          ]
+        },
+        {
+          "w": "bridge",
+          "ipa": [
+            "b",
+            "ɹ",
+            "ɪ",
+            "dʒ"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "nice",
+          "ipa": [
+            "n",
+            "aɪ",
+            "s"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        },
+        {
+          "word": 1,
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U03-s03",
+      "text": "Thank you, my mother likes the market.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "Thank",
+          "ipa": [
+            "θ",
+            "æ",
+            "ŋ",
+            "k"
+          ]
+        },
+        {
+          "w": "you",
+          "ipa": [
+            "j",
+            "uː"
+          ]
+        },
+        {
+          "w": "my",
+          "ipa": [
+            "m",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "mother",
+          "ipa": [
+            "m",
+            "ʌ",
+            "ð",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "likes",
+          "ipa": [
+            "l",
+            "aɪ",
+            "k",
+            "s"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            2
+          ],
+          "category": "th",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U03-s04",
+      "text": "Thank them for the three cups of tea.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Thank",
+          "ipa": [
+            "θ",
+            "æ",
+            "ŋ",
+            "k"
+          ]
+        },
+        {
+          "w": "them",
+          "ipa": [
+            "ð",
+            "ə",
+            "m"
+          ]
+        },
+        {
+          "w": "for",
+          "ipa": [
+            "f",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "three",
+          "ipa": [
+            "θ",
+            "ɹ",
+            "iː"
+          ]
+        },
+        {
+          "w": "cups",
+          "ipa": [
+            "k",
+            "ʌ",
+            "p",
+            "s"
+          ]
+        },
+        {
+          "w": "of",
+          "ipa": [
+            "ə",
+            "v"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "tea",
+          "ipa": [
+            "t",
+            "iː"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        },
+        {
+          "word": 1,
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ],
+          "category": "th",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U03-c01",
+      "wrongIpa": [
+        "t",
+        "ɪ",
+        "ŋ",
+        "k"
+      ],
+      "rightIpa": [
+        "θ",
+        "ɪ",
+        "ŋ",
+        "k"
+      ],
+      "note": {
+        "vi": "Think nghe như \"tink\". Đưa lưỡi ra giữa răng và thổi hơi.",
+        "en": "Think sounds like \"tink\". Move the tongue between the teeth and blow air."
+      }
+    },
+    {
+      "id": "U03-c02",
+      "wrongIpa": [
+        "f",
+        "ɹ",
+        "iː"
+      ],
+      "rightIpa": [
+        "θ",
+        "ɹ",
+        "iː"
+      ],
+      "note": {
+        "vi": "Three đọc thành \"free\" hoặc \"tree\". Lưỡi chạm răng chứ không phải môi dưới hay nướu.",
+        "en": "Three is said as \"free\" or \"tree\". The tongue touches the teeth, not the lower lip or ridge."
+      }
+    },
+    {
+      "id": "U03-c03",
+      "wrongIpa": [
+        "d",
+        "ɪ",
+        "s"
+      ],
+      "rightIpa": [
+        "ð",
+        "ɪ",
+        "s"
+      ],
+      "note": {
+        "vi": "This đọc thành \"dis\". Giữ lưỡi giữa răng và rung cổ.",
+        "en": "This said as \"dis\". Keep the tongue between the teeth and add voice."
+      }
+    },
+    {
+      "id": "U03-c04",
+      "wrongIpa": [
+        "z",
+        "ɪ",
+        "s"
+      ],
+      "rightIpa": [
+        "ð",
+        "ɪ",
+        "s"
+      ],
+      "note": {
+        "vi": "This đọc thành \"zis\". Đưa lưỡi ra trước, đừng để sau răng.",
+        "en": "This said as \"zis\". Bring the tongue forward, not behind the teeth."
+      }
+    }
+  ],
+  "chain": [],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "score",
+    "vi": "Nhìn gương: khi nói think, this, có thấy đầu lưỡi giữa hai hàm răng không? Thử cặp three–tree để kiểm tra.",
+    "en": "Look in a mirror: when you say think and this, can you see the tongue tip between your teeth? Try the three–tree pair to check."
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói tiếng Việt có thể đọc /θ/ gần /t/ hoặc /s/ và /ð/ gần /d/ hoặc /z/; mẫu thay thế /ð/ → /z/ hay /d/ khác nhau tùy người, không nên gắn với một vùng cụ thể. Cũng cần lưu ý Lingua Franca Core xem các âm này là không cốt lõi. Độ tin cậy phát hiện: cao (thay thế /θ/ → t s f và /ð/ → d z).",
+    "en": "Some Vietnamese speakers may say /θ/ close to /t/ or /s/ and /ð/ close to /d/ or /z/; the /ð/ pattern (z or d) varies by person and should not be tied to a region. Note that the Lingua Franca Core treats these sounds as non-core. Detection confidence: high (/θ/ heard as t s f, /ð/ as d z)."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

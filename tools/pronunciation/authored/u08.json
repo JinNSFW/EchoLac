@@ -1,0 +1,618 @@
+{
+  "cando": {
+    "vi": "Em nói được các từ như street, play, spring mà không thêm nguyên âm và không bỏ phụ âm.",
+    "en": "I can say words like street, play and spring with no extra vowel and no missing consonant."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt chuẩn có âm tiết dạng C(w)V(C), không có cụm phụ âm đầu, nên học sinh thường chèn thêm một nguyên âm vào cụm hoặc bỏ bớt một phụ âm: street thành \"sơ-trít\" hoặc \"trít\". Lỗi này được báo cáo là thường gặp ở người Việt học tiếng Anh.",
+      "en": "Standard Vietnamese syllables are C(w)V(C) with no onset clusters, so learners often insert a vowel into the cluster or drop a consonant: street becomes \"suh-treet\" or \"treet\". This is reported as a common error for Vietnamese learners of English.",
+      "refs": [
+        "[4]",
+        "[1]"
+      ]
+    },
+    {
+      "vi": "Một khảo sát nhỏ ở Cần Thơ (39 người) báo cáo rằng với cụm đầu từ, việc bỏ phụ âm gặp nhiều hơn việc chèn nguyên âm. Vì vậy bài này luyện cả hai hướng.",
+      "en": "A small survey in Can Tho (39 learners) reported that for word-initial clusters, dropping a consonant was more common than inserting a vowel, so this unit trains both.",
+      "refs": [
+        "[4]",
+        "[13]"
+      ]
+    },
+    {
+      "vi": "Phụ âm là nhóm âm cốt lõi để hai người hiểu nhau trong tiếng Anh quốc tế, và bỏ phụ âm đầu cụm làm hai từ trùng nhau (steam nghe như team), nên bài này có mức ưu tiên cao (P1). Giáo viên thường dùng kỹ thuật nói ngược từ cuối ra đầu (back-chaining).",
+      "en": "Consonants are core sounds for mutual intelligibility in international English, and dropping the first consonant makes words collide (steam sounds like team), so this unit has high priority (P1). Teachers commonly use back-chaining, from the end of the word to the start.",
+      "refs": [
+        "[B16]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Nghe và nói cặp pay–play. Ở play, môi mở cho /p/ thì đầu lưỡi đã chạm nướu cho /l/, nên giữa hai âm không có \"ờ\".",
+      "en": "Say the pair pay–play. In play, the tongue tip is already on the ridge for /l/ as your lips open for /p/, so no \"uh\"."
+    },
+    {
+      "vi": "Với /s/ đầu từ, thổi \"sss\" ngắn rồi chuyển thẳng sang âm sau. Chỉ có hơi, không rung cổ, không thêm nguyên âm.",
+      "en": "For a starting /s/, blow a short \"sss\" and go straight to the next sound. Only air, no voice, no added vowel."
+    },
+    {
+      "vi": "Tập nói ngược (back-chaining): eet, reet, treet, street. Mỗi bước thêm một âm ở đầu, không dừng giữa các âm.",
+      "en": "Practise back-chaining: eet, reet, treet, street. Each step adds one sound at the front, with no pause between sounds."
+    },
+    {
+      "vi": "Nói chậm cả từ street trong một hơi liền. Sau đó nói nhanh dần mà vẫn đủ ba phụ âm /s t ɹ/.",
+      "en": "Say street slowly in one smooth breath, then speed up while keeping all three consonants /s t ɹ/."
+    },
+    {
+      "vi": "Ghi âm và nghe lại: giữa các phụ âm đầu từ có nghe \"ờ\" không, và có đủ phụ âm không?",
+      "en": "Record yourself and listen back: do you hear an \"uh\" between the starting consonants, and are all of them there?"
+    }
+  ],
+  "words": [
+    {
+      "text": "street",
+      "targets": [
+        {
+          "index": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s ə t ɹ iː t",
+          "note": {
+            "vi": "Chèn thêm nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "Extra vowel inserted inside the cluster."
+          }
+        },
+        {
+          "variantIpa": "t ɹ iː t",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        },
+        {
+          "variantIpa": "s iː t",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        }
+      ]
+    },
+    {
+      "text": "spring",
+      "targets": [
+        {
+          "index": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s ə p ɹ ɪ ŋ",
+          "note": {
+            "vi": "Chèn thêm nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "Extra vowel inserted inside the cluster."
+          }
+        },
+        {
+          "variantIpa": "s ɹ ɪ ŋ",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        },
+        {
+          "variantIpa": "p ɹ ɪ ŋ",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        }
+      ]
+    },
+    {
+      "text": "strong",
+      "targets": [
+        {
+          "index": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s ə t ɹ ɔː ŋ",
+          "note": {
+            "vi": "Chèn thêm nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "Extra vowel inserted inside the cluster."
+          }
+        },
+        {
+          "variantIpa": "s ɔː ŋ",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        }
+      ]
+    },
+    {
+      "text": "stop",
+      "targets": [
+        {
+          "index": [
+            0,
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s ə t ɑː p",
+          "note": {
+            "vi": "Chèn thêm nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "Extra vowel inserted inside the cluster."
+          }
+        },
+        {
+          "variantIpa": "t ɑː p",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        }
+      ]
+    },
+    {
+      "text": "spoon",
+      "targets": [
+        {
+          "index": [
+            0,
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s ə p uː n",
+          "note": {
+            "vi": "Chèn thêm nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "Extra vowel inserted inside the cluster."
+          }
+        },
+        {
+          "variantIpa": "p uː n",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        }
+      ]
+    },
+    {
+      "text": "sky",
+      "targets": [
+        {
+          "index": [
+            0,
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s ə k aɪ",
+          "note": {
+            "vi": "Chèn thêm nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "Extra vowel inserted inside the cluster."
+          }
+        },
+        {
+          "variantIpa": "k aɪ",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        }
+      ]
+    },
+    {
+      "text": "small",
+      "targets": [
+        {
+          "index": [
+            0,
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s ə m ɔː l",
+          "note": {
+            "vi": "Chèn thêm nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "Extra vowel inserted inside the cluster."
+          }
+        },
+        {
+          "variantIpa": "m ɔː l",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        }
+      ]
+    },
+    {
+      "text": "play",
+      "targets": [
+        {
+          "index": [
+            0,
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "p ə l eɪ",
+          "note": {
+            "vi": "Chèn thêm nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "Extra vowel inserted inside the cluster."
+          }
+        },
+        {
+          "variantIpa": "p eɪ",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        }
+      ]
+    },
+    {
+      "text": "black",
+      "targets": [
+        {
+          "index": [
+            0,
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b ə l æ k",
+          "note": {
+            "vi": "Chèn thêm nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "Extra vowel inserted inside the cluster."
+          }
+        },
+        {
+          "variantIpa": "b æ k",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        }
+      ]
+    },
+    {
+      "text": "clean",
+      "targets": [
+        {
+          "index": [
+            0,
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "k ə l iː n",
+          "note": {
+            "vi": "Chèn thêm nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "Extra vowel inserted inside the cluster."
+          }
+        },
+        {
+          "variantIpa": "k iː n",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        }
+      ]
+    },
+    {
+      "text": "train",
+      "targets": [
+        {
+          "index": [
+            0,
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "t ə ɹ eɪ n",
+          "note": {
+            "vi": "Chèn thêm nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "Extra vowel inserted inside the cluster."
+          }
+        },
+        {
+          "variantIpa": "t eɪ n",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        }
+      ]
+    },
+    {
+      "text": "friend",
+      "targets": [
+        {
+          "index": [
+            0,
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "f ə ɹ ɛ n d",
+          "note": {
+            "vi": "Chèn thêm nguyên âm \"ờ\" vào giữa cụm.",
+            "en": "Extra vowel inserted inside the cluster."
+          }
+        },
+        {
+          "variantIpa": "f ɛ n d",
+          "note": {
+            "vi": "Mất một phụ âm đầu của cụm.",
+            "en": "One consonant of the cluster is missing."
+          }
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "a": "sport",
+      "b": "support",
+      "type": "insertion"
+    },
+    {
+      "a": "pay",
+      "b": "play",
+      "type": "deletion"
+    },
+    {
+      "a": "pot",
+      "b": "spot",
+      "type": "deletion"
+    },
+    {
+      "a": "team",
+      "b": "steam",
+      "type": "deletion"
+    },
+    {
+      "a": "sack",
+      "b": "snack",
+      "type": "deletion"
+    },
+    {
+      "a": "pay",
+      "b": "pray",
+      "type": "deletion"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "We stop for fresh street food near the bridge.",
+      "targets": [
+        {
+          "word": "stop",
+          "index": [
+            0,
+            1
+          ]
+        },
+        {
+          "word": "fresh",
+          "index": [
+            0,
+            1
+          ]
+        },
+        {
+          "word": "street",
+          "index": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "word": "bridge",
+          "index": [
+            0,
+            1
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "Black clouds hide the sky over the beach.",
+      "targets": [
+        {
+          "word": "Black",
+          "index": [
+            0,
+            1
+          ]
+        },
+        {
+          "word": "clouds",
+          "index": [
+            0,
+            1
+          ]
+        },
+        {
+          "word": "sky",
+          "index": [
+            0,
+            1
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "I play with my friend on the clean beach.",
+      "targets": [
+        {
+          "word": "play",
+          "index": [
+            0,
+            1
+          ]
+        },
+        {
+          "word": "friend",
+          "index": [
+            0,
+            1
+          ]
+        },
+        {
+          "word": "clean",
+          "index": [
+            0,
+            1
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "The spring wind is strong near the river.",
+      "targets": [
+        {
+          "word": "spring",
+          "index": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "word": "strong",
+          "index": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "culture": true
+    }
+  ],
+  "contrasts": [
+    {
+      "wrong": "s ə t ɹ iː t",
+      "right": "s t ɹ iː t",
+      "note": {
+        "vi": "Street nghe như \"sơ-trít\". Giữ lưỡi ở vị trí /s/ rồi trượt thẳng sang /t/, không thả thêm nguyên âm.",
+        "en": "Street sounds like \"suh-treet\". Keep the tongue at /s/, then go straight to /t/ with no vowel between."
+      }
+    },
+    {
+      "wrong": "t ɹ iː t",
+      "right": "s t ɹ iː t",
+      "note": {
+        "vi": "Mất /s/ đầu từ. Bắt đầu bằng \"sss\" ngắn rồi mới đóng lưỡi cho /t/.",
+        "en": "The first /s/ is lost. Start with a short \"sss\", then close the tongue for /t/."
+      }
+    },
+    {
+      "wrong": "p ə l eɪ",
+      "right": "p l eɪ",
+      "note": {
+        "vi": "Play nghe như \"pờ-lay\". Khi môi mở cho /p/ thì lưỡi đã sẵn sàng chạm nướu cho /l/.",
+        "en": "Play sounds like \"puh-lay\". While the lips open for /p/, the tongue is already ready for /l/."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "eet → reet → treet → street",
+      "steps": [
+        "iː t",
+        "ɹ iː t",
+        "t ɹ iː t",
+        "s t ɹ iː t"
+      ],
+      "note": {
+        "vi": "Nói từ cuối ra đầu, mỗi bước thêm một âm và không chèn nguyên âm. Đến street thì nối liền ba âm đầu.",
+        "en": "Say the word from the end, adding one sound per step with no vowel inserted. At street, join the three starting sounds."
+      }
+    },
+    {
+      "text": "ing → ring → pring → spring",
+      "steps": [
+        "ɪ ŋ",
+        "ɹ ɪ ŋ",
+        "p ɹ ɪ ŋ",
+        "s p ɹ ɪ ŋ"
+      ],
+      "note": {
+        "vi": "Cùng cách làm với spring: thêm /ɹ/, rồi /p/, rồi /s/ trong một hơi.",
+        "en": "Same method for spring: add /ɹ/, then /p/, then /s/ in one breath."
+      }
+    },
+    {
+      "text": "ay → lay → play",
+      "steps": [
+        "eɪ",
+        "l eɪ",
+        "p l eɪ"
+      ],
+      "note": {
+        "vi": "Với play, /l/ đến ngay sau /p/, không có \"ờ\" ở giữa.",
+        "en": "In play, /l/ follows /p/ at once, with no \"uh\" between."
+      }
+    }
+  ],
+  "selfCheck": {
+    "vi": "Ghi âm street, spring, play, clean. Nghe lại: có \"ờ\" chen vào giữa không, và có đủ phụ âm đầu không? Thử cặp sport–support và steam–team để chắc người nghe phân biệt được.",
+    "en": "Record street, spring, play and clean. Listen back: is there an \"uh\" inside the cluster, and are all the starting consonants there? Try sport–support and steam–team to check a listener can tell them apart."
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói có thể chèn nguyên âm hoặc bỏ phụ âm ở đầu từ; đây là ảnh hưởng của cấu trúc âm tiết tiếng Việt, không phải dấu hiệu năng lực thấp. Phần mềm phát hiện nguyên âm chèn và phụ âm bị mất; không đo độ dài từng âm và có thể nhầm khi nói nhanh hoặc ghi âm ồn. Nguyên âm chèn rất ngắn có thể không bị phát hiện. Độ tin cậy phát hiện: cao, chưa được đo trên học sinh thật. Cụm cuối từ (texts, months) thuộc bài U15.",
+    "en": "Some speakers may insert a vowel or drop a consonant at the start of a word; this follows from Vietnamese syllable structure, not from low ability. The app detects an inserted vowel or a lost consonant; it does not measure the duration of each sound and may err in fast speech or noisy recordings. A very short inserted vowel may go undetected. Detection confidence: high, not yet measured on real students. Final clusters (texts, months) belong to unit U15."
+  },
+  "id": "U08",
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

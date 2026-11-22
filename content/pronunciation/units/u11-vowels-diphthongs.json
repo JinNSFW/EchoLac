@@ -1,0 +1,1461 @@
+{
+  "id": "U11",
+  "level": "B1",
+  "band": "B1",
+  "category": "vowel_quality",
+  "kind": "segmental",
+  "prereq": [
+    "U05"
+  ],
+  "title": {
+    "vi": "/æ ɛ ʌ/ và nguyên âm đôi",
+    "en": "Vowels and diphthongs"
+  },
+  "cando": {
+    "vi": "Em phân biệt cat–cut–bed và nói trọn nguyên âm đôi /eɪ oʊ/ trong day, go.",
+    "en": "I can tell cat, cut and bed apart and say the full diphthongs /eɪ oʊ/ in day and go."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt không có đúng ba âm /æ ɛ ʌ/ của tiếng Anh, nên cat dễ nghe như \"ket\" (giống bed) và cut dễ nghe như \"cot\". Các tài liệu giảng dạy cho biết đây là cặp nguyên âm thường gặp ở học sinh Việt; nghiên cứu độc lập đo trên học sinh thật còn ít (độ tin cậy trung bình).",
+      "en": "Vietnamese has no sounds exactly like English /æ ɛ ʌ/, so cat easily sounds like \"ket\" (close to bed) and cut like \"cot\". Teaching sources report these vowels as common trouble spots for Vietnamese students; independent measurements on real students are still few (medium confidence).",
+      "refs": [
+        "[10]",
+        "[11]"
+      ]
+    },
+    {
+      "vi": "Nguyên âm đôi /eɪ/ và /oʊ/ thường được báo cáo là bị rút thành một nguyên âm đơn: day thành \"de\", go thành \"gô\". Em hãy trượt nhẹ lưỡi và môi ở nửa sau của âm.",
+      "en": "The diphthongs /eɪ/ and /oʊ/ are often reported as shortened to a single vowel: day becomes \"de\", go becomes \"go\" with no glide. Slide the tongue and lips gently in the second half of the sound.",
+      "refs": [
+        "[10]"
+      ]
+    },
+    {
+      "vi": "Chất lượng nguyên âm làm hai từ trùng nhau (bad/bed, cat/cut), nên bài này có mức ưu tiên P2. Phần mềm chỉ ước lượng chất lượng nguyên âm, nên phản hồi mang tính gợi ý.",
+      "en": "Vowel quality makes two words collide (bad/bed, cat/cut), so this unit has priority P2. The software only estimates vowel quality, so feedback is a hint.",
+      "refs": [
+        "[B14]",
+        "[B15]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "/æ/ (cat): mở miệng rộng, hạ hàm xuống, lưỡi nằm thấp và dẹt. Rung cổ. Đừng khép miệng thành \"e\".",
+      "en": "/æ/ (cat): open wide, drop the jaw, keep the tongue low and flat. Use your voice. Do not close to \"e\"."
+    },
+    {
+      "vi": "/ɛ/ (bed): miệng mở vừa, lưỡi cao hơn /æ/ một chút. Nói bed rồi bad: hàm phải hạ thấp hơn ở bad.",
+      "en": "/ɛ/ (bed): mouth half open, tongue a little higher than /æ/. Say bed then bad: the jaw drops lower for bad."
+    },
+    {
+      "vi": "/ʌ/ (cup, run): miệng mở nhỏ, môi thả lỏng, không tròn môi. Âm ngắn như \"â\" tiếng Việt, không thành \"ô\".",
+      "en": "/ʌ/ (cup, run): mouth slightly open, lips relaxed, not rounded. A short sound like Vietnamese \"â\", not \"o\"."
+    },
+    {
+      "vi": "/eɪ/ (day): bắt đầu ở /e/ rồi trượt lưỡi lên về phía /ɪ/ trong một nhịp. Âm dài hơn /ɛ/ và có chuyển động.",
+      "en": "/eɪ/ (day): start at /e/ and glide the tongue up toward /ɪ/ in one beat. Longer than /ɛ/, and it moves."
+    },
+    {
+      "vi": "/oʊ/ (go): bắt đầu ở /o/ rồi tròn môi dần về /ʊ/. Nhìn gương: môi chụm lại ở cuối âm.",
+      "en": "/oʊ/ (go): start at /o/ then round the lips toward /ʊ/. Use a mirror: lips close in at the end."
+    }
+  ],
+  "perception": {
+    "type": "2afc",
+    "pairIds": [
+      "U11-p01",
+      "U11-p02",
+      "U11-p03",
+      "U11-p04",
+      "U11-p05",
+      "U11-p06"
+    ],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8
+  },
+  "words": [
+    {
+      "id": "U11-w01",
+      "text": "cat",
+      "lemma": "cat",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "k",
+        "æ",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_quality",
+          "variantIpa": [
+            "k",
+            "ɛ",
+            "t"
+          ],
+          "note": {
+            "vi": "Nghe như ket, gần với bed.",
+            "en": "Sounds like ket, close to bed."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U11-w02",
+      "text": "bag",
+      "lemma": "bag",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "æ",
+        "ɡ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_quality",
+          "variantIpa": [
+            "b",
+            "ɛ",
+            "ɡ"
+          ],
+          "note": {
+            "vi": "Nguyên âm quá cao, gần /ɛ/.",
+            "en": "Vowel too high, close to /ɛ/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U11-w03",
+      "text": "bed",
+      "lemma": "bed",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "ɛ",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_quality",
+          "variantIpa": [
+            "b",
+            "æ",
+            "d"
+          ],
+          "note": {
+            "vi": "Hàm hạ quá thấp, thành bad.",
+            "en": "Jaw too low, sounds like bad."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U11-w04",
+      "text": "pen",
+      "lemma": "pen",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "p",
+        "ɛ",
+        "n"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_quality",
+          "variantIpa": [
+            "p",
+            "æ",
+            "n"
+          ],
+          "note": {
+            "vi": "Hàm hạ quá thấp, thành pan.",
+            "en": "Jaw too low, sounds like pan."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U11-w05",
+      "text": "cup",
+      "lemma": "cup",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "k",
+        "ʌ",
+        "p"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_quality",
+          "variantIpa": [
+            "k",
+            "ɔ",
+            "p"
+          ],
+          "note": {
+            "vi": "Tròn môi, nghe như cop.",
+            "en": "Lips rounded, sounds like cop."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U11-w06",
+      "text": "run",
+      "lemma": "run",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɹ",
+        "ʌ",
+        "n"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_quality",
+          "variantIpa": [
+            "ɹ",
+            "ɔ",
+            "n"
+          ],
+          "note": {
+            "vi": "Tròn môi, nghe như ron.",
+            "en": "Lips rounded, sounds like ron."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U11-w07",
+      "text": "fun",
+      "lemma": "fun",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "f",
+        "ʌ",
+        "n"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_quality",
+          "variantIpa": [
+            "f",
+            "ɔ",
+            "n"
+          ],
+          "note": {
+            "vi": "Tròn môi, nghe như fon.",
+            "en": "Lips rounded, sounds like fon."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U11-w08",
+      "text": "day",
+      "lemma": "day",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "d",
+        "eɪ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_quality",
+          "variantIpa": [
+            "d",
+            "e"
+          ],
+          "note": {
+            "vi": "Rút thành một nguyên âm, mất phần trượt.",
+            "en": "Shortened to one vowel, no glide."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U11-w09",
+      "text": "late",
+      "lemma": "late",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "l",
+        "eɪ",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_quality",
+          "variantIpa": [
+            "l",
+            "e",
+            "t"
+          ],
+          "note": {
+            "vi": "Rút thành một nguyên âm, mất phần trượt.",
+            "en": "Shortened to one vowel, no glide."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U11-w10",
+      "text": "rain",
+      "lemma": "rain",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɹ",
+        "eɪ",
+        "n"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_quality",
+          "variantIpa": [
+            "ɹ",
+            "e",
+            "n"
+          ],
+          "note": {
+            "vi": "Rút thành một nguyên âm, mất phần trượt.",
+            "en": "Shortened to one vowel, no glide."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U11-w11",
+      "text": "go",
+      "lemma": "go",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɡ",
+        "oʊ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_quality",
+          "variantIpa": [
+            "ɡ",
+            "o"
+          ],
+          "note": {
+            "vi": "Rút thành /o/, không tròn môi ở cuối.",
+            "en": "Shortened to /o/, no lip rounding at the end."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U11-w12",
+      "text": "home",
+      "lemma": "home",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "h",
+        "oʊ",
+        "m"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "vowel_quality",
+          "variantIpa": [
+            "h",
+            "o",
+            "m"
+          ],
+          "note": {
+            "vi": "Rút thành /o/, không tròn môi ở cuối.",
+            "en": "Shortened to /o/, no lip rounding at the end."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "U11-p01",
+      "type": "substitution",
+      "category": "vowel_quality",
+      "a": {
+        "text": "bad",
+        "ipa": [
+          "b",
+          "æ",
+          "d"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "bed",
+        "ipa": [
+          "b",
+          "ɛ",
+          "d"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 1,
+      "contrast": [
+        "æ",
+        "ɛ"
+      ]
+    },
+    {
+      "id": "U11-p02",
+      "type": "substitution",
+      "category": "vowel_quality",
+      "a": {
+        "text": "pan",
+        "ipa": [
+          "p",
+          "æ",
+          "n"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "b": {
+        "text": "pen",
+        "ipa": [
+          "p",
+          "ɛ",
+          "n"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 1,
+      "contrast": [
+        "æ",
+        "ɛ"
+      ]
+    },
+    {
+      "id": "U11-p03",
+      "type": "substitution",
+      "category": "vowel_quality",
+      "a": {
+        "text": "cat",
+        "ipa": [
+          "k",
+          "æ",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "cut",
+        "ipa": [
+          "k",
+          "ʌ",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 1,
+      "contrast": [
+        "æ",
+        "ʌ"
+      ]
+    },
+    {
+      "id": "U11-p04",
+      "type": "substitution",
+      "category": "vowel_quality",
+      "a": {
+        "text": "cap",
+        "ipa": [
+          "k",
+          "æ",
+          "p"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "cup",
+        "ipa": [
+          "k",
+          "ʌ",
+          "p"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 1,
+      "contrast": [
+        "æ",
+        "ʌ"
+      ]
+    },
+    {
+      "id": "U11-p05",
+      "type": "substitution",
+      "category": "vowel_quality",
+      "a": {
+        "text": "fan",
+        "ipa": [
+          "f",
+          "æ",
+          "n"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "fun",
+        "ipa": [
+          "f",
+          "ʌ",
+          "n"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 1,
+      "contrast": [
+        "æ",
+        "ʌ"
+      ]
+    },
+    {
+      "id": "U11-p06",
+      "type": "substitution",
+      "category": "vowel_quality",
+      "a": {
+        "text": "late",
+        "ipa": [
+          "l",
+          "eɪ",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "let",
+        "ipa": [
+          "l",
+          "ɛ",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 1,
+      "contrast": [
+        "eɪ",
+        "ɛ"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U11-s01",
+      "text": "We go home by boat on the Hàn River.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "go",
+          "ipa": [
+            "ɡ",
+            "oʊ"
+          ]
+        },
+        {
+          "w": "home",
+          "ipa": [
+            "h",
+            "oʊ",
+            "m"
+          ]
+        },
+        {
+          "w": "by",
+          "ipa": [
+            "b",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "boat",
+          "ipa": [
+            "b",
+            "oʊ",
+            "t"
+          ]
+        },
+        {
+          "w": "on",
+          "ipa": [
+            "ɑː",
+            "n"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "Hàn",
+          "ipa": null
+        },
+        {
+          "w": "River",
+          "ipa": [
+            "ɹ",
+            "ɪ",
+            "v",
+            "ɚ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U11-s02",
+      "text": "The man at the Hội An market has a bag and a hat.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "man",
+          "ipa": [
+            "m",
+            "æ",
+            "n"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "Hội",
+          "ipa": null
+        },
+        {
+          "w": "An",
+          "ipa": null
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        },
+        {
+          "w": "has",
+          "ipa": [
+            "h",
+            "æ",
+            "z"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "bag",
+          "ipa": [
+            "b",
+            "æ",
+            "ɡ"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "hat",
+          "ipa": [
+            "h",
+            "æ",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        },
+        {
+          "word": 9,
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        },
+        {
+          "word": 12,
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U11-s03",
+      "text": "On a rainy day in Huế, I stay at home and drink hot tea.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "On",
+          "ipa": [
+            "ɑː",
+            "n"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "rainy",
+          "ipa": [
+            "ɹ",
+            "eɪ",
+            "n",
+            "i"
+          ]
+        },
+        {
+          "w": "day",
+          "ipa": [
+            "d",
+            "eɪ"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "Huế",
+          "ipa": null
+        },
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "stay",
+          "ipa": [
+            "s",
+            "t",
+            "eɪ"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "home",
+          "ipa": [
+            "h",
+            "oʊ",
+            "m"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "drink",
+          "ipa": [
+            "d",
+            "ɹ",
+            "ɪ",
+            "ŋ",
+            "k"
+          ]
+        },
+        {
+          "w": "hot",
+          "ipa": [
+            "h",
+            "ɑː",
+            "t"
+          ]
+        },
+        {
+          "w": "tea",
+          "ipa": [
+            "t",
+            "iː"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        },
+        {
+          "word": 6,
+          "index": [
+            0
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        },
+        {
+          "word": 10,
+          "index": [
+            0
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U11-s04",
+      "text": "I like to run on the beach in the rain.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "like",
+          "ipa": [
+            "l",
+            "aɪ",
+            "k"
+          ]
+        },
+        {
+          "w": "to",
+          "ipa": [
+            "t",
+            "ɪ"
+          ]
+        },
+        {
+          "w": "run",
+          "ipa": [
+            "ɹ",
+            "ʌ",
+            "n"
+          ]
+        },
+        {
+          "w": "on",
+          "ipa": [
+            "ɑː",
+            "n"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "rain",
+          "ipa": [
+            "ɹ",
+            "eɪ",
+            "n"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        },
+        {
+          "word": 9,
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U11-s05",
+      "text": "I can get a pen and a cup at the shop.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "can",
+          "ipa": [
+            "k",
+            "ə",
+            "n"
+          ]
+        },
+        {
+          "w": "get",
+          "ipa": [
+            "ɡ",
+            "ɛ",
+            "t"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "pen",
+          "ipa": [
+            "p",
+            "ɛ",
+            "n"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "cup",
+          "ipa": [
+            "k",
+            "ʌ",
+            "p"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "shop",
+          "ipa": [
+            "ʃ",
+            "ɑː",
+            "p"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        },
+        {
+          "word": 7,
+          "index": [
+            1
+          ],
+          "category": "vowel_quality",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U11-c01",
+      "wrongIpa": [
+        "k",
+        "ɛ",
+        "t"
+      ],
+      "rightIpa": [
+        "k",
+        "æ",
+        "t"
+      ],
+      "note": {
+        "vi": "Cat nghe như ket. Hạ hàm xuống, mở miệng rộng hơn.",
+        "en": "Cat sounds like ket. Drop the jaw and open wider."
+      }
+    },
+    {
+      "id": "U11-c02",
+      "wrongIpa": [
+        "d",
+        "e"
+      ],
+      "rightIpa": [
+        "d",
+        "eɪ"
+      ],
+      "note": {
+        "vi": "Day mất phần trượt. Nói \"đê\" rồi đưa lưỡi lên nhẹ về phía \"i\".",
+        "en": "Day lost its glide. Say \"de\", then lift the tongue gently toward \"i\"."
+      }
+    },
+    {
+      "id": "U11-c03",
+      "wrongIpa": [
+        "ɡ",
+        "o"
+      ],
+      "rightIpa": [
+        "ɡ",
+        "oʊ"
+      ],
+      "note": {
+        "vi": "Go cần tròn môi dần ở cuối. Kết thúc như thổi nhẹ \"u\".",
+        "en": "Go needs lips closing in at the end. Finish like a soft \"oo\"."
+      }
+    },
+    {
+      "id": "U11-c04",
+      "wrongIpa": [
+        "k",
+        "ɔ",
+        "p"
+      ],
+      "rightIpa": [
+        "k",
+        "ʌ",
+        "p"
+      ],
+      "note": {
+        "vi": "Cup không tròn môi. Thả lỏng môi, miệng mở nhỏ.",
+        "en": "Cup has no lip rounding. Relax the lips, mouth slightly open."
+      }
+    }
+  ],
+  "chain": [],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "score",
+    "vi": "Ghi âm bad–bed, cat–cut, day, go. Nghe lại: hai từ trong mỗi cặp có khác nhau không? Em có nghe phần trượt ở cuối day và go không?",
+    "en": "Record bad–bed, cat–cut, day and go. Listen back: do the two words in each pair sound different? Can you hear the glide at the end of day and go?"
+  },
+  "teacherNotes": {
+    "vi": "Chất lượng nguyên âm khác nhau tùy giọng: một số người nói tiếng Anh ở Anh, Úc hay Scotland phát âm /æ/ và /ʌ/ khác chuẩn Mỹ dùng ở đây; hãy chấp nhận khi người nghe vẫn hiểu. Học sinh một số vùng cũng thường nói nguyên âm đôi ngắn hơn; không coi là sai nếu vẫn nghe ra hai phần. Độ tin cậy phát hiện: trung bình, chưa được đo trên học sinh thật; điểm số chỉ là gợi ý.",
+    "en": "Vowel quality varies by accent: some British, Australian or Scottish speakers say /æ/ and /ʌ/ differently from the General American model used here; accept it if listeners understand. Some students also say diphthongs shorter; do not count that as wrong if two parts are still heard. Detection confidence: medium, not yet measured on real students; the score is only a hint."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

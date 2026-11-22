@@ -1,0 +1,1271 @@
+{
+  "id": "U18",
+  "level": "B2",
+  "band": "B2-C1",
+  "category": "word_stress",
+  "kind": "stress",
+  "prereq": [
+    "U14"
+  ],
+  "title": {
+    "vi": "Trọng âm đổi theo hậu tố",
+    "en": "Stress shifts"
+  },
+  "cando": {
+    "vi": "Em chuyển trọng âm đúng khi từ đổi đuôi (photograph → photography) và ở cặp danh từ/động từ (REcord → reCORD).",
+    "en": "I can move the stress when a word changes its ending (photograph → photography) and in noun/verb pairs (REcord → reCORD)."
+  },
+  "why": [
+    {
+      "vi": "Trong tiếng Anh, thêm hậu tố có thể làm trọng âm nhảy sang âm tiết khác: PHOtograph nhưng phoTOgraphy. Tiếng Việt có thanh điệu chứ không có trọng âm từ, nên học sinh hay giữ nguyên chỗ nhấn của từ gốc. Đặt sai trọng âm được báo cáo là lỗi thường gặp ở người học Việt.",
+      "en": "In English, adding a suffix can move the stress to another syllable: PHOtograph but phoTOgraphy. Vietnamese has tones, not word stress, so learners often keep the stress of the base word. Misplaced stress is reported as a common error for Vietnamese learners.",
+      "refs": [
+        "[B3]",
+        "[B4]"
+      ]
+    },
+    {
+      "vi": "Trọng âm đúng giúp người nghe nhận ra từ: một nghiên cứu cho thấy trọng âm chính đặt đúng làm điểm đánh giá và khả năng nhớ từ tốt hơn. Cặp như REcord (danh từ) và reCORD (động từ) khác nhau chủ yếu ở chỗ nhấn.",
+      "en": "Correct stress helps listeners recognise words: a study reports better ratings and recall when the main stress is in the right place. Pairs like REcord (noun) and reCORD (verb) differ mainly in where the stress falls.",
+      "refs": [
+        "[B13]"
+      ]
+    },
+    {
+      "vi": "Học sinh Việt thường giữ nguyên nguyên âm đầy đủ ở âm tiết không nhấn, kể cả người học nâng cao, nên khi trọng âm dời đi, âm tiết cũ vẫn bị đọc to và dài. Bài này thuộc mức ưu tiên P2.",
+      "en": "Vietnamese learners are often reported to keep full vowels in unstressed syllables, even at advanced level, so after the stress moves the old syllable is still said loud and long. This unit has priority P2.",
+      "refs": [
+        "[9]",
+        "[B7]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Đuôi -tion, -ic, -ity, -ical kéo trọng âm về âm tiết ngay trước nó: celeBRAtion, ecoNOMic, hisTORical.",
+      "en": "The endings -tion, -ic, -ity and -ical pull the stress onto the syllable right before them: celeBRAtion, ecoNOMic, hisTORical."
+    },
+    {
+      "vi": "Với -graphy và -grapher, nhấn âm tiết ngay trước gra: phoTOgraphy, phoTOgrapher. Còn từ gốc là PHOtograph, nhấn âm đầu.",
+      "en": "With -graphy and -grapher, stress the syllable before gra: phoTOgraphy, phoTOgrapher. The base word is PHOtograph, stressed first."
+    },
+    {
+      "vi": "Khi trọng âm dời đi, âm tiết cũ phải ngắn và yếu, thường là /ə/: ở photography, \"pho\" chỉ còn là \"fờ\" ngắn.",
+      "en": "When the stress moves, the old syllable becomes short and weak, often /ə/: in photography, \"pho\" is only a quick \"fuh\"."
+    },
+    {
+      "vi": "Cặp danh từ/động từ: danh từ thường nhấn âm đầu (REcord), động từ nhấn âm sau (reCORD). Nhấn bằng độ dài và độ to, không bằng cao độ.",
+      "en": "Noun/verb pairs: the noun is usually stressed first (REcord), the verb second (reCORD). Stress with length and loudness, not pitch."
+    },
+    {
+      "vi": "Vỗ nhịp theo từ: mạnh ở âm nhấn, nhẹ ở âm còn lại. Đây là quy tắc thường gặp, không phải mọi từ; khi không chắc, tra từ điển.",
+      "en": "Clap the rhythm: hard on the stressed syllable, light on the rest. These rules are common, not universal; if unsure, check a dictionary."
+    }
+  ],
+  "perception": {
+    "type": "stress-tap",
+    "pairIds": [],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8,
+    "wordIds": [
+      "U18-w01",
+      "U18-w02",
+      "U18-w03",
+      "U18-w04",
+      "U18-w05",
+      "U18-w06",
+      "U18-w07",
+      "U18-w08",
+      "U18-w09",
+      "U18-w10",
+      "U18-w11",
+      "U18-w12"
+    ]
+  },
+  "words": [
+    {
+      "id": "U18-w01",
+      "text": "photograph",
+      "lemma": "photograph",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "f",
+        "oʊ",
+        "t",
+        "ə",
+        "ɡ",
+        "ɹ",
+        "æ",
+        "f"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 3,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U18-w02",
+      "text": "photography",
+      "lemma": "photography",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "f",
+        "ə",
+        "t",
+        "ɑː",
+        "ɡ",
+        "ɹ",
+        "ə",
+        "f",
+        "i"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 4,
+      "stress": 2,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U18-w03",
+      "text": "photographer",
+      "lemma": "photographer",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "f",
+        "ə",
+        "t",
+        "ɑː",
+        "ɡ",
+        "ɹ",
+        "ə",
+        "f",
+        "ɚ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 4,
+      "stress": 2,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U18-w04",
+      "text": "history",
+      "lemma": "history",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "h",
+        "ɪ",
+        "s",
+        "t",
+        "ɚ",
+        "i"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 3,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U18-w05",
+      "text": "historical",
+      "lemma": "historical",
+      "cefr": "B1",
+      "scenarioVocab": null,
+      "ipa": [
+        "h",
+        "ɪ",
+        "s",
+        "t",
+        "ɔː",
+        "ɹ",
+        "ɪ",
+        "k",
+        "ə",
+        "l"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 4,
+      "stress": 2,
+      "targets": [
+        {
+          "index": [
+            4
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U18-w06",
+      "text": "economy",
+      "lemma": "economy",
+      "cefr": "B1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɪ",
+        "k",
+        "ɑː",
+        "n",
+        "ə",
+        "m",
+        "i"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 4,
+      "stress": 2,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U18-w07",
+      "text": "economic",
+      "lemma": "economic",
+      "cefr": "B1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɛ",
+        "k",
+        "ə",
+        "n",
+        "ɑː",
+        "m",
+        "ɪ",
+        "k"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 4,
+      "stress": 3,
+      "targets": [
+        {
+          "index": [
+            4
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U18-w08",
+      "text": "celebrate",
+      "lemma": "celebrate",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "s",
+        "ɛ",
+        "l",
+        "ə",
+        "b",
+        "ɹ",
+        "eɪ",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 3,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U18-w09",
+      "text": "celebration",
+      "lemma": "celebration",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "s",
+        "ɛ",
+        "l",
+        "ə",
+        "b",
+        "ɹ",
+        "eɪ",
+        "ʃ",
+        "ə",
+        "n"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 4,
+      "stress": 3,
+      "targets": [
+        {
+          "index": [
+            6
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U18-w10",
+      "text": "communication",
+      "lemma": "communication",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "k",
+        "ə",
+        "m",
+        "j",
+        "uː",
+        "n",
+        "ə",
+        "k",
+        "eɪ",
+        "ʃ",
+        "ə",
+        "n"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 5,
+      "stress": 4,
+      "targets": [
+        {
+          "index": [
+            8
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U18-w11",
+      "text": "tradition",
+      "lemma": "tradition",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "t",
+        "ɹ",
+        "ə",
+        "d",
+        "ɪ",
+        "ʃ",
+        "ə",
+        "n"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 3,
+      "stress": 2,
+      "targets": [
+        {
+          "index": [
+            4
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U18-w12",
+      "text": "traditional",
+      "lemma": "traditional",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "t",
+        "ɹ",
+        "ə",
+        "d",
+        "ɪ",
+        "ʃ",
+        "ə",
+        "n",
+        "ə",
+        "l"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 4,
+      "stress": 2,
+      "targets": [
+        {
+          "index": [
+            4
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [],
+      "detectConfidence": "medium"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "U18-p01",
+      "type": "stress",
+      "category": "word_stress",
+      "a": {
+        "text": "record",
+        "ipa": [
+          "ɹ",
+          "ɛ",
+          "k",
+          "ɚ",
+          "d"
+        ],
+        "cefr": "A2",
+        "variant": 1,
+        "stress": 1
+      },
+      "b": {
+        "text": "record",
+        "ipa": [
+          "ɹ",
+          "ə",
+          "k",
+          "ɔː",
+          "ɹ",
+          "d"
+        ],
+        "cefr": "A2",
+        "variant": 0,
+        "stress": 2
+      }
+    },
+    {
+      "id": "U18-p02",
+      "type": "stress",
+      "category": "word_stress",
+      "a": {
+        "text": "present",
+        "ipa": [
+          "p",
+          "ɹ",
+          "ɛ",
+          "z",
+          "ə",
+          "n",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0,
+        "stress": 1
+      },
+      "b": {
+        "text": "present",
+        "ipa": [
+          "p",
+          "ɹ",
+          "i",
+          "z",
+          "ɛ",
+          "n",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 1,
+        "stress": 2
+      }
+    },
+    {
+      "id": "U18-p03",
+      "type": "stress",
+      "category": "word_stress",
+      "a": {
+        "text": "increase",
+        "ipa": [
+          "ɪ",
+          "n",
+          "k",
+          "ɹ",
+          "iː",
+          "s"
+        ],
+        "cefr": "A2",
+        "variant": 1,
+        "stress": 1
+      },
+      "b": {
+        "text": "increase",
+        "ipa": [
+          "ɪ",
+          "n",
+          "k",
+          "ɹ",
+          "iː",
+          "s"
+        ],
+        "cefr": "A2",
+        "variant": 0,
+        "stress": 2
+      }
+    },
+    {
+      "id": "U18-p04",
+      "type": "stress",
+      "category": "word_stress",
+      "a": {
+        "text": "import",
+        "ipa": [
+          "ɪ",
+          "m",
+          "p",
+          "ɔː",
+          "ɹ",
+          "t"
+        ],
+        "cefr": "B2",
+        "variant": 1,
+        "stress": 1
+      },
+      "b": {
+        "text": "import",
+        "ipa": [
+          "ɪ",
+          "m",
+          "p",
+          "ɔː",
+          "ɹ",
+          "t"
+        ],
+        "cefr": "B2",
+        "variant": 0,
+        "stress": 2
+      }
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U18-s01",
+      "text": "The traditional celebration by the river is lovely.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "traditional",
+          "ipa": [
+            "t",
+            "ɹ",
+            "ə",
+            "d",
+            "ɪ",
+            "ʃ",
+            "ə",
+            "n",
+            "ə",
+            "l"
+          ]
+        },
+        {
+          "w": "celebration",
+          "ipa": [
+            "s",
+            "ɛ",
+            "l",
+            "ə",
+            "b",
+            "ɹ",
+            "eɪ",
+            "ʃ",
+            "ə",
+            "n"
+          ]
+        },
+        {
+          "w": "by",
+          "ipa": [
+            "b",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "river",
+          "ipa": [
+            "ɹ",
+            "ɪ",
+            "v",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "lovely",
+          "ipa": [
+            "l",
+            "ʌ",
+            "v",
+            "l",
+            "i"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            4
+          ],
+          "category": "word_stress",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            6
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U18-s02",
+      "text": "The photographer likes to photograph the bridge at night.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "photographer",
+          "ipa": [
+            "f",
+            "ə",
+            "t",
+            "ɑː",
+            "ɡ",
+            "ɹ",
+            "ə",
+            "f",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "likes",
+          "ipa": [
+            "l",
+            "aɪ",
+            "k",
+            "s"
+          ]
+        },
+        {
+          "w": "to",
+          "ipa": [
+            "t",
+            "ɪ"
+          ]
+        },
+        {
+          "w": "photograph",
+          "ipa": [
+            "f",
+            "oʊ",
+            "t",
+            "ə",
+            "ɡ",
+            "ɹ",
+            "æ",
+            "f"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "bridge",
+          "ipa": [
+            "b",
+            "ɹ",
+            "ɪ",
+            "dʒ"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "night",
+          "ipa": [
+            "n",
+            "aɪ",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            3
+          ],
+          "category": "word_stress",
+          "morph": false
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U18-s03",
+      "text": "The history lesson was interesting, but the economic news was boring.",
+      "cefr": "B1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "history",
+          "ipa": [
+            "h",
+            "ɪ",
+            "s",
+            "t",
+            "ɚ",
+            "i"
+          ]
+        },
+        {
+          "w": "lesson",
+          "ipa": [
+            "l",
+            "ɛ",
+            "s",
+            "ə",
+            "n"
+          ]
+        },
+        {
+          "w": "was",
+          "ipa": [
+            "w",
+            "ə",
+            "z"
+          ]
+        },
+        {
+          "w": "interesting",
+          "ipa": [
+            "ɪ",
+            "n",
+            "t",
+            "ɹ",
+            "ə",
+            "s",
+            "t",
+            "ɪ",
+            "ŋ"
+          ]
+        },
+        {
+          "w": "but",
+          "ipa": [
+            "b",
+            "ʌ",
+            "t"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "economic",
+          "ipa": [
+            "ɛ",
+            "k",
+            "ə",
+            "n",
+            "ɑː",
+            "m",
+            "ɪ",
+            "k"
+          ]
+        },
+        {
+          "w": "news",
+          "ipa": [
+            "n",
+            "uː",
+            "z"
+          ]
+        },
+        {
+          "w": "was",
+          "ipa": [
+            "w",
+            "ə",
+            "z"
+          ]
+        },
+        {
+          "w": "boring",
+          "ipa": [
+            "b",
+            "ɔː",
+            "ɹ",
+            "ɪ",
+            "ŋ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ],
+          "category": "word_stress",
+          "morph": false
+        },
+        {
+          "word": 7,
+          "index": [
+            4
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U18-s04",
+      "text": "Please record the traditional music at the market.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "Please",
+          "ipa": [
+            "p",
+            "l",
+            "iː",
+            "z"
+          ]
+        },
+        {
+          "w": "record",
+          "ipa": [
+            "ɹ",
+            "ə",
+            "k",
+            "ɔː",
+            "ɹ",
+            "d"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "traditional",
+          "ipa": [
+            "t",
+            "ɹ",
+            "ə",
+            "d",
+            "ɪ",
+            "ʃ",
+            "ə",
+            "n",
+            "ə",
+            "l"
+          ]
+        },
+        {
+          "w": "music",
+          "ipa": [
+            "m",
+            "j",
+            "uː",
+            "z",
+            "ɪ",
+            "k"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            3
+          ],
+          "category": "word_stress",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            4
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U18-s05",
+      "text": "Good communication helps me present my ideas clearly.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "Good",
+          "ipa": [
+            "ɡ",
+            "ʊ",
+            "d"
+          ]
+        },
+        {
+          "w": "communication",
+          "ipa": [
+            "k",
+            "ə",
+            "m",
+            "j",
+            "uː",
+            "n",
+            "ə",
+            "k",
+            "eɪ",
+            "ʃ",
+            "ə",
+            "n"
+          ]
+        },
+        {
+          "w": "helps",
+          "ipa": [
+            "h",
+            "ɛ",
+            "l",
+            "p",
+            "s"
+          ]
+        },
+        {
+          "w": "me",
+          "ipa": [
+            "m",
+            "iː"
+          ]
+        },
+        {
+          "w": "present",
+          "ipa": [
+            "p",
+            "ɹ",
+            "i",
+            "z",
+            "ɛ",
+            "n",
+            "t"
+          ]
+        },
+        {
+          "w": "my",
+          "ipa": [
+            "m",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "ideas",
+          "ipa": [
+            "aɪ",
+            "d",
+            "iː",
+            "ə",
+            "z"
+          ]
+        },
+        {
+          "w": "clearly",
+          "ipa": [
+            "k",
+            "l",
+            "ɪ",
+            "ɹ",
+            "l",
+            "i"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            8
+          ],
+          "category": "word_stress",
+          "morph": false
+        },
+        {
+          "word": 4,
+          "index": [
+            4
+          ],
+          "category": "word_stress",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U18-c01",
+      "wrongText": "PHOtography (stress stays on the first syllable)",
+      "rightText": "phoTOgraphy (stress moves to TO)",
+      "note": {
+        "vi": "Từ gốc photograph nhấn âm đầu, nhưng photography nhấn âm thứ hai. Làm \"pho\" ngắn và yếu, kéo dài và nhấn \"TO\".",
+        "en": "The base word photograph is stressed first, but photography is stressed on the second syllable. Make \"pho\" short and weak, and lengthen and stress \"TO\"."
+      }
+    },
+    {
+      "id": "U18-c02",
+      "wrongText": "CELebration (stress copied from celebrate)",
+      "rightText": "celeBRAtion (stress before -tion)",
+      "note": {
+        "vi": "Celebrate nhấn âm đầu, nhưng với -tion trọng âm dời sang âm tiết ngay trước: ce-le-BRA-tion.",
+        "en": "Celebrate is stressed first, but with -tion the stress moves to the syllable right before it: ce-le-BRA-tion."
+      }
+    },
+    {
+      "id": "U18-c03",
+      "wrongText": "reCORD for the thing you play (verb stress on a noun)",
+      "rightText": "REcord for the thing you play (noun: first syllable)",
+      "note": {
+        "vi": "Danh từ nhấn âm đầu: REcord. Động từ nhấn âm sau: reCORD. Chỉ đổi chỗ nhấn, giọng vẫn tự nhiên.",
+        "en": "The noun is stressed first: REcord. The verb is stressed second: reCORD. Only the stress place changes; keep your voice natural."
+      }
+    }
+  ],
+  "chain": [],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "score",
+    "vi": "Ghi âm photograph, photography, photographer rồi nghe lại: chỗ nhấn có dời đúng chưa, và âm tiết cũ có trở nên ngắn, yếu không? Vỗ tay theo nhịp để kiểm tra.",
+    "en": "Record photograph, photography and photographer and listen back: did the stress move, and did the old syllable become short and weak? Clap along to check."
+  },
+  "teacherNotes": {
+    "vi": "Phần mềm so sánh độ dài, độ to và cao độ của từng âm tiết với âm tiết được nhấn mong đợi; nó không phân biệt được người nói nhấn bằng cách nào và không biết người nói định dùng danh từ hay động từ. Một số người nói tiếng Anh, nhất là giọng Anh-Anh, nhấn khác ở vài từ (ví dụ economy, history có hai cách đọc), hãy chấp nhận khi người nghe vẫn hiểu. Học sinh quen thanh điệu có thể dùng cao độ thay cho độ dài; không quy cho cả một vùng. Độ tin cậy phát hiện: trung bình, chưa được đo trên học sinh thật; điểm số chỉ là gợi ý và không đánh giá độ tự nhiên của giọng.",
+    "en": "The app compares each syllable's length, loudness and pitch with the expected stressed syllable; it cannot tell how a speaker produces the stress, nor whether the speaker meant the noun or the verb. Some English speakers, especially with British accents, stress a few words differently (economy and history have more than one pronunciation); accept it if listeners understand. Students used to tones may use pitch instead of length; do not attribute this to a whole region. Detection confidence: medium, not yet measured on real students; the score is only a hint and does not judge how natural the voice is."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

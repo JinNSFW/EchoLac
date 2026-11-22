@@ -1,0 +1,1410 @@
+{
+  "id": "U02",
+  "level": "A1",
+  "band": "A1-A2",
+  "category": "s_ed_ending",
+  "kind": "segmental",
+  "prereq": [
+    "U01"
+  ],
+  "title": {
+    "vi": "Đuôi -s: /s z ɪz/",
+    "en": "Plural and -s endings"
+  },
+  "cando": {
+    "vi": "Em nói được đuôi -s của danh từ số nhiều và động từ ngôi thứ ba số ít.",
+    "en": "I can say plural and he/she -s endings."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt không chia từ (không có số nhiều hay -s ngôi thứ ba), nên đuôi -s dễ bị bỏ. Một nghiên cứu (16 bài nói độc thoại) thấy khoảng 28,4% /s z/ cuối bị bỏ, và hơn một nửa (50,7%) khi đứng sau một phụ âm khác.",
+      "en": "Vietnamese does not inflect words (no plural or third-person -s), so the -s ending is easily dropped. One study (16 monologues) found about 28.4% of final /s z/ omitted, and over half (50.7%) when it followed another consonant.",
+      "refs": [
+        "[2]"
+      ]
+    },
+    {
+      "vi": "-s ngữ pháp (books, goes) bị bỏ nhiều hơn /s/ nằm trong từ (như bus). Vì vậy cần luyện riêng đuôi -s, nhưng ở đây ta xem nó là lỗi phát âm của một từ đã biết, không phải lỗi ngữ pháp.",
+      "en": "A grammatical -s (books, goes) is omitted more often than an /s/ inside a word (like bus). So the ending needs its own practice, but here we treat it as a pronunciation error on a known word, not a grammar error.",
+      "refs": [
+        "[2]"
+      ]
+    },
+    {
+      "vi": "Âm tiết tiếng Việt chuẩn không có /s z/ ở cuối; /z/ của bags hay bees còn hay bị đọc thành /s/. Hai điều này được báo cáo ở người nói tiếng Việt miền Bắc.",
+      "en": "Standard Vietnamese syllables have no final /s z/, and the /z/ of bags or bees is often said as /s/. Both are reported for Northern Vietnamese speakers.",
+      "refs": [
+        "[14]",
+        "[12]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Sau âm vô thanh (p, t, k, f, θ) đuôi là /s/ không rung: books, maps, cats, bikes.",
+      "en": "After a voiceless sound (p, t, k, f, θ) the ending is a voiceless /s/: books, maps, cats, bikes."
+    },
+    {
+      "vi": "Sau nguyên âm hoặc âm hữu thanh (b, ɡ, m, n, l) đuôi là /z/: đặt tay lên cổ, phải thấy rung: bags, rooms, trees, goes.",
+      "en": "After a vowel or voiced sound the ending is /z/. Feel the buzz with a hand on your throat: bags, rooms, goes."
+    },
+    {
+      "vi": "Sau âm xì hoặc /tʃ dʒ/ (s, z, ʃ, tʃ, dʒ) thêm một âm tiết ngắn /ɪz/: bridges, beaches, dishes.",
+      "en": "After a hissing sound or /tʃ dʒ/ (s, z, ʃ, tʃ, dʒ) add a short extra syllable /ɪz/: bridges, beaches, dishes."
+    },
+    {
+      "vi": "Nói từ gốc rồi kéo thẳng sang \"sss\" hoặc \"zzz\", không ngắt và không thêm \"ờ\".",
+      "en": "Say the base word, then slide straight into \"sss\" or \"zzz\" with no break and no extra \"uh\"."
+    }
+  ],
+  "perception": {
+    "type": "2afc",
+    "pairIds": [
+      "U02-p01",
+      "U02-p02",
+      "U02-p03",
+      "U02-p04",
+      "U02-p05",
+      "U02-p06"
+    ],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8
+  },
+  "words": [
+    {
+      "id": "U02-w01",
+      "text": "books",
+      "lemma": "book",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "ʊ",
+        "k",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "b",
+            "ʊ",
+            "k"
+          ],
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U02-w02",
+      "text": "maps",
+      "lemma": "map",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "m",
+        "æ",
+        "p",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "m",
+            "æ",
+            "p"
+          ],
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U02-w03",
+      "text": "cats",
+      "lemma": "cat",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "k",
+        "æ",
+        "t",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "k",
+            "æ",
+            "t"
+          ],
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U02-w04",
+      "text": "bikes",
+      "lemma": "bike",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "aɪ",
+        "k",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "b",
+            "aɪ",
+            "k"
+          ],
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U02-w05",
+      "text": "bags",
+      "lemma": "bag",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "æ",
+        "ɡ",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "b",
+            "æ",
+            "ɡ"
+          ],
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "b",
+            "æ",
+            "ɡ",
+            "s"
+          ],
+          "note": {
+            "vi": "Âm /z/ bị đọc thành /s/ (không rung cổ).",
+            "en": "The /z/ is said as /s/ (no voice)."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U02-w06",
+      "text": "rooms",
+      "lemma": "room",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɹ",
+        "uː",
+        "m",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "ɹ",
+            "uː",
+            "m"
+          ],
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "ɹ",
+            "uː",
+            "m",
+            "s"
+          ],
+          "note": {
+            "vi": "Âm /z/ bị đọc thành /s/ (không rung cổ).",
+            "en": "The /z/ is said as /s/ (no voice)."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U02-w07",
+      "text": "trees",
+      "lemma": "tree",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "t",
+        "ɹ",
+        "iː",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "t",
+            "ɹ",
+            "iː"
+          ],
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "t",
+            "ɹ",
+            "iː",
+            "s"
+          ],
+          "note": {
+            "vi": "Âm /z/ bị đọc thành /s/ (không rung cổ).",
+            "en": "The /z/ is said as /s/ (no voice)."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U02-w08",
+      "text": "goes",
+      "lemma": "go",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɡ",
+        "oʊ",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "ɡ",
+            "oʊ"
+          ],
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        },
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "ɡ",
+            "oʊ",
+            "s"
+          ],
+          "note": {
+            "vi": "Âm /z/ bị đọc thành /s/ (không rung cổ).",
+            "en": "The /z/ is said as /s/ (no voice)."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U02-w09",
+      "text": "likes",
+      "lemma": "like",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "l",
+        "aɪ",
+        "k",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "l",
+            "aɪ",
+            "k"
+          ],
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U02-w10",
+      "text": "bridges",
+      "lemma": "bridge",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "ɹ",
+        "ɪ",
+        "dʒ",
+        "ɪ",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 1,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            4,
+            5
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "b",
+            "ɹ",
+            "ɪ",
+            "dʒ"
+          ],
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U02-w11",
+      "text": "beaches",
+      "lemma": "beach",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "iː",
+        "tʃ",
+        "ɪ",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 1,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3,
+            4
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "b",
+            "iː",
+            "tʃ"
+          ],
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U02-w12",
+      "text": "dishes",
+      "lemma": "dish",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "d",
+        "ɪ",
+        "ʃ",
+        "ɪ",
+        "z"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 1,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3,
+            4
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "s_ed_ending",
+          "variantIpa": [
+            "d",
+            "ɪ",
+            "ʃ"
+          ],
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "U02-p01",
+      "type": "deletion",
+      "category": "s_ed_ending",
+      "a": {
+        "text": "bag",
+        "ipa": [
+          "b",
+          "æ",
+          "ɡ"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "bags",
+        "ipa": [
+          "b",
+          "æ",
+          "ɡ",
+          "z"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "∅",
+        "z"
+      ]
+    },
+    {
+      "id": "U02-p02",
+      "type": "deletion",
+      "category": "s_ed_ending",
+      "a": {
+        "text": "bee",
+        "ipa": [
+          "b",
+          "iː"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "bees",
+        "ipa": [
+          "b",
+          "iː",
+          "z"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 2,
+      "contrast": [
+        "∅",
+        "z"
+      ]
+    },
+    {
+      "id": "U02-p03",
+      "type": "deletion",
+      "category": "s_ed_ending",
+      "a": {
+        "text": "tie",
+        "ipa": [
+          "t",
+          "aɪ"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "b": {
+        "text": "ties",
+        "ipa": [
+          "t",
+          "aɪ",
+          "z"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "diffIndex": 2,
+      "contrast": [
+        "∅",
+        "z"
+      ]
+    },
+    {
+      "id": "U02-p04",
+      "type": "deletion",
+      "category": "s_ed_ending",
+      "a": {
+        "text": "book",
+        "ipa": [
+          "b",
+          "ʊ",
+          "k"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "books",
+        "ipa": [
+          "b",
+          "ʊ",
+          "k",
+          "s"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "∅",
+        "s"
+      ]
+    },
+    {
+      "id": "U02-p05",
+      "type": "deletion",
+      "category": "s_ed_ending",
+      "a": {
+        "text": "cat",
+        "ipa": [
+          "k",
+          "æ",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "cats",
+        "ipa": [
+          "k",
+          "æ",
+          "t",
+          "s"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "∅",
+        "s"
+      ]
+    },
+    {
+      "id": "U02-p06",
+      "type": "deletion",
+      "category": "s_ed_ending",
+      "a": {
+        "text": "map",
+        "ipa": [
+          "m",
+          "æ",
+          "p"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "maps",
+        "ipa": [
+          "m",
+          "æ",
+          "p",
+          "s"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 3,
+      "contrast": [
+        "∅",
+        "s"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U02-s01",
+      "text": "I like the bridges and the beaches.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "like",
+          "ipa": [
+            "l",
+            "aɪ",
+            "k"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "bridges",
+          "ipa": [
+            "b",
+            "ɹ",
+            "ɪ",
+            "dʒ",
+            "ə",
+            "z"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beaches",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ",
+            "ə",
+            "z"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            4,
+            5
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        },
+        {
+          "word": 6,
+          "index": [
+            3,
+            4
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U02-s02",
+      "text": "The market sells fresh fruits and eggs.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        },
+        {
+          "w": "sells",
+          "ipa": [
+            "s",
+            "ɛ",
+            "l",
+            "z"
+          ]
+        },
+        {
+          "w": "fresh",
+          "ipa": [
+            "f",
+            "ɹ",
+            "ɛ",
+            "ʃ"
+          ]
+        },
+        {
+          "w": "fruits",
+          "ipa": [
+            "f",
+            "ɹ",
+            "uː",
+            "t",
+            "s"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "eggs",
+          "ipa": [
+            "ɛ",
+            "ɡ",
+            "z"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        },
+        {
+          "word": 4,
+          "index": [
+            4
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        },
+        {
+          "word": 6,
+          "index": [
+            2
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U02-s03",
+      "text": "My friends play games on the beach.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "My",
+          "ipa": [
+            "m",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "friends",
+          "ipa": [
+            "f",
+            "ɹ",
+            "ɛ",
+            "n",
+            "d",
+            "z"
+          ]
+        },
+        {
+          "w": "play",
+          "ipa": [
+            "p",
+            "l",
+            "eɪ"
+          ]
+        },
+        {
+          "w": "games",
+          "ipa": [
+            "ɡ",
+            "eɪ",
+            "m",
+            "z"
+          ]
+        },
+        {
+          "w": "on",
+          "ipa": [
+            "ɑː",
+            "n"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            5
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        },
+        {
+          "word": 3,
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U02-s04",
+      "text": "She goes to the bridge with her friends.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "She",
+          "ipa": [
+            "ʃ",
+            "iː"
+          ]
+        },
+        {
+          "w": "goes",
+          "ipa": [
+            "ɡ",
+            "oʊ",
+            "z"
+          ]
+        },
+        {
+          "w": "to",
+          "ipa": [
+            "t",
+            "ɪ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "bridge",
+          "ipa": [
+            "b",
+            "ɹ",
+            "ɪ",
+            "dʒ"
+          ]
+        },
+        {
+          "w": "with",
+          "ipa": [
+            "w",
+            "ɪ",
+            "ð"
+          ]
+        },
+        {
+          "w": "her",
+          "ipa": [
+            "h",
+            "ɜː"
+          ]
+        },
+        {
+          "w": "friends",
+          "ipa": [
+            "f",
+            "ɹ",
+            "ɛ",
+            "n",
+            "d",
+            "z"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            2
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        },
+        {
+          "word": 7,
+          "index": [
+            5
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U02-s05",
+      "text": "The bikes and books are on the table.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "bikes",
+          "ipa": [
+            "b",
+            "aɪ",
+            "k",
+            "s"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "books",
+          "ipa": [
+            "b",
+            "ʊ",
+            "k",
+            "s"
+          ]
+        },
+        {
+          "w": "are",
+          "ipa": [
+            "ɚ"
+          ]
+        },
+        {
+          "w": "on",
+          "ipa": [
+            "ɑː",
+            "n"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "table",
+          "ipa": [
+            "t",
+            "eɪ",
+            "b",
+            "ə",
+            "l"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        },
+        {
+          "word": 3,
+          "index": [
+            3
+          ],
+          "category": "s_ed_ending",
+          "morph": true
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "high",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U02-c01",
+      "wrongIpa": [
+        "b",
+        "ʊ",
+        "k"
+      ],
+      "rightIpa": [
+        "b",
+        "ʊ",
+        "k",
+        "s"
+      ],
+      "note": {
+        "vi": "Books mất /s/. Nói \"book\" rồi thổi \"sss\" ngay, không dừng.",
+        "en": "Books lost its /s/. Say \"book\", then blow \"sss\" straight away without a pause."
+      }
+    },
+    {
+      "id": "U02-c02",
+      "wrongIpa": [
+        "b",
+        "æ",
+        "ɡ",
+        "s"
+      ],
+      "rightIpa": [
+        "b",
+        "æ",
+        "ɡ",
+        "z"
+      ],
+      "note": {
+        "vi": "Đuôi của bags có rung cổ: /z/, không phải /s/. Đặt tay lên cổ để kiểm tra.",
+        "en": "The ending of bags is voiced: /z/, not /s/. Check with a hand on your throat."
+      }
+    },
+    {
+      "id": "U02-c03",
+      "wrongIpa": [
+        "b",
+        "ɹ",
+        "ɪ",
+        "dʒ"
+      ],
+      "rightIpa": [
+        "b",
+        "ɹ",
+        "ɪ",
+        "dʒ",
+        "ɪ",
+        "z"
+      ],
+      "note": {
+        "vi": "Bridges có hai âm tiết: thêm /ɪz/ sau /dʒ/.",
+        "en": "Bridges has two syllables: add /ɪz/ after /dʒ/."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "ks → ʊks → books",
+      "steps": [
+        [
+          "k",
+          "s"
+        ],
+        [
+          "ʊ",
+          "k",
+          "s"
+        ],
+        [
+          "b",
+          "ʊ",
+          "k",
+          "s"
+        ]
+      ],
+      "ipaSource": "author",
+      "note": {
+        "vi": "Luyện từ cuối về đầu để giữ /s/ cuối.",
+        "en": "Practise from the end back to the start to keep the final /s/."
+      }
+    }
+  ],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "score",
+    "vi": "Ghi âm 12 từ rồi nghe lại: đuôi -s có rõ, và có rung cổ ở bags, rooms, trees, goes không?",
+    "en": "Record the 12 words and listen back: is each -s clear, and is it voiced in bags, rooms, trees, goes?"
+  },
+  "teacherNotes": {
+    "vi": "Đây là lỗi phát âm trên từ đã biết (đọc to, Tutor). Khi nói tự do, nếu bản ghi chữ thiếu -s thì phần mềm xem là lỗi ngữ pháp, không phải lỗi phát âm; mô hình ngôn ngữ nhận diện đôi khi tự thêm -s nên lỗi này có thể bị bỏ sót. Một số người nói tiếng Việt miền Bắc được báo cáo hay đọc /z/ cuối thành /s/. Độ tin cậy phát hiện: cao khi đọc to, thấp hơn khi nói tự do.",
+    "en": "This is a pronunciation error on a known word (read-aloud, Tutor). In free speech, a transcript without -s is treated as a grammar error, not a pronunciation error; the recogniser sometimes adds the -s itself, so the error may be missed. Some Northern Vietnamese speakers are reported to say final /z/ as /s/. Detection confidence: high for read-aloud, lower for free speech."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

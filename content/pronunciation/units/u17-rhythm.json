@@ -1,0 +1,899 @@
+{
+  "id": "U17",
+  "level": "B2",
+  "band": "B2-C1",
+  "category": "rhythm",
+  "kind": "prosody",
+  "prereq": [
+    "U16"
+  ],
+  "title": {
+    "vi": "Nhịp tiếng Anh",
+    "en": "Stress-timed rhythm"
+  },
+  "cando": {
+    "vi": "Em giữ nhịp đều trên các từ chính (danh từ, động từ, tính từ) và nói nhanh, nhẹ các từ chức năng ở giữa.",
+    "en": "I can keep a steady beat on content words and squeeze the function words in between."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt là ngôn ngữ nhịp theo âm tiết: mỗi âm tiết có độ dài gần bằng nhau. Tiếng Anh thiên về nhịp theo trọng âm: các từ chính đến đều đặn, còn từ chức năng bị ép ngắn. Người học Việt thường được báo cáo nói đều từng âm tiết, nghe cứng và ngắt từng chữ.",
+      "en": "Vietnamese is syllable-timed: syllables are about equally long. English leans stress-timed: content words arrive at a steady beat while function words are squeezed. Vietnamese learners are often reported to give every syllable equal length, which sounds choppy.",
+      "refs": [
+        "[B5]",
+        "[B4]"
+      ]
+    },
+    {
+      "vi": "Một nghiên cứu nhỏ về người học Việt ghi nhận độ dài âm tiết ít biến đổi hơn người bản ngữ. Vì vậy bài này luyện nhịp mạnh-nhẹ, không chỉ luyện từng âm.",
+      "en": "A small study of Vietnamese learners reports less variation in syllable durations than native speakers show. So this unit trains the strong-weak beat, not only single sounds.",
+      "refs": [
+        "[B5]"
+      ]
+    },
+    {
+      "vi": "Nhịp là mức ưu tiên thấp hơn âm cuối và cụm phụ âm (P3), và phần mềm chỉ ước lượng nhịp với độ tin cậy thấp. Dù vậy, nghe được nhịp giúp em hiểu người bản ngữ nói nhanh. Bắt chước theo (shadowing) được báo cáo là giúp cải thiện độ dễ hiểu.",
+      "en": "Rhythm is lower priority than final sounds and clusters (P3), and the app estimates it with low confidence. Still, hearing the beat helps you follow fast native speech. Shadowing is reported to improve intelligibility.",
+      "refs": [
+        "[B16]",
+        "[B10]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Đếm các từ chính (danh từ, động từ, tính từ, trạng từ) trong câu. Mỗi từ chính là một nhịp. \"Cats eat fish\" có 3 nhịp.",
+      "en": "Count the content words (nouns, verbs, adjectives, adverbs). Each is one beat. \"Cats eat fish\" has three beats."
+    },
+    {
+      "vi": "Vỗ tay hoặc gõ bàn đều đặn, mỗi nhịp một lần. Nói sao cho từ chính rơi đúng vào tiếng vỗ.",
+      "en": "Clap or tap the desk steadily, once per beat. Time your speech so each content word lands on a clap."
+    },
+    {
+      "vi": "Thêm từ chức năng (the, will, for, them). Giữ nguyên nhịp vỗ, nói các từ này nhỏ, nhanh, dồn vào giữa hai tiếng vỗ.",
+      "en": "Add function words (the, will, for, them). Keep the clapping steady and squeeze these quiet words between two claps."
+    },
+    {
+      "vi": "Câu dài hơn không làm các nhịp xa nhau hơn nhiều. \"The cats will eat the fish\" vẫn gần như 3 nhịp như \"Cats eat fish\".",
+      "en": "A longer sentence keeps the same beats. \"The cats will eat the fish\" still has three beats, like \"Cats eat fish\"."
+    },
+    {
+      "vi": "Đừng đọc to từng chữ rõ như nhau. Chữ yếu nhẹ và ngắn, chữ chính dài hơn và rõ hơn.",
+      "en": "Do not say every word loud and equal. Weak words are light and short; content words are longer and clearer."
+    }
+  ],
+  "perception": {
+    "type": "beats",
+    "pairIds": [],
+    "trials": 4,
+    "voices": 3,
+    "criterion": 0.8,
+    "sentenceIds": [
+      "U17-s01",
+      "U17-s02",
+      "U17-s03",
+      "U17-s04",
+      "U17-s05",
+      "U17-s06",
+      "U17-s07",
+      "U17-s08",
+      "U17-s09",
+      "U17-s10"
+    ]
+  },
+  "words": [],
+  "pairs": [],
+  "sentences": [
+    {
+      "id": "U17-s01",
+      "text": "Cats eat fish.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Cats",
+          "ipa": [
+            "k",
+            "æ",
+            "t",
+            "s"
+          ]
+        },
+        {
+          "w": "eat",
+          "ipa": [
+            "iː",
+            "t"
+          ]
+        },
+        {
+          "w": "fish",
+          "ipa": [
+            "f",
+            "ɪ",
+            "ʃ"
+          ]
+        }
+      ],
+      "targets": [],
+      "prosody": {
+        "beats": [
+          0,
+          1,
+          2
+        ],
+        "weak": []
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U17-s02",
+      "text": "The cats eat fish.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "cats",
+          "ipa": [
+            "k",
+            "æ",
+            "t",
+            "s"
+          ]
+        },
+        {
+          "w": "eat",
+          "ipa": [
+            "iː",
+            "t"
+          ]
+        },
+        {
+          "w": "fish",
+          "ipa": [
+            "f",
+            "ɪ",
+            "ʃ"
+          ]
+        }
+      ],
+      "targets": [],
+      "prosody": {
+        "beats": [
+          1,
+          2,
+          3
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U17-s03",
+      "text": "The cats will eat the fish.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "cats",
+          "ipa": [
+            "k",
+            "æ",
+            "t",
+            "s"
+          ]
+        },
+        {
+          "w": "will",
+          "ipa": [
+            "w",
+            "ɪ",
+            "l"
+          ]
+        },
+        {
+          "w": "eat",
+          "ipa": [
+            "iː",
+            "t"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "fish",
+          "ipa": [
+            "f",
+            "ɪ",
+            "ʃ"
+          ]
+        }
+      ],
+      "targets": [],
+      "prosody": {
+        "beats": [
+          1,
+          3,
+          5
+        ],
+        "weak": [
+          0,
+          2,
+          4
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U17-s04",
+      "text": "Lanterns light streets.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Lanterns",
+          "ipa": [
+            "l",
+            "æ",
+            "n",
+            "t",
+            "ɚ",
+            "n",
+            "z"
+          ]
+        },
+        {
+          "w": "light",
+          "ipa": [
+            "l",
+            "aɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "streets",
+          "ipa": [
+            "s",
+            "t",
+            "ɹ",
+            "iː",
+            "t",
+            "s"
+          ]
+        }
+      ],
+      "targets": [],
+      "prosody": {
+        "beats": [
+          0,
+          1,
+          2
+        ],
+        "weak": []
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U17-s05",
+      "text": "The lanterns light the streets.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "lanterns",
+          "ipa": [
+            "l",
+            "æ",
+            "n",
+            "t",
+            "ɚ",
+            "n",
+            "z"
+          ]
+        },
+        {
+          "w": "light",
+          "ipa": [
+            "l",
+            "aɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "streets",
+          "ipa": [
+            "s",
+            "t",
+            "ɹ",
+            "iː",
+            "t",
+            "s"
+          ]
+        }
+      ],
+      "targets": [],
+      "prosody": {
+        "beats": [
+          1,
+          2,
+          4
+        ],
+        "weak": [
+          0,
+          3
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U17-s06",
+      "text": "The lanterns will light the streets at night.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "lanterns",
+          "ipa": [
+            "l",
+            "æ",
+            "n",
+            "t",
+            "ɚ",
+            "n",
+            "z"
+          ]
+        },
+        {
+          "w": "will",
+          "ipa": [
+            "w",
+            "ɪ",
+            "l"
+          ]
+        },
+        {
+          "w": "light",
+          "ipa": [
+            "l",
+            "aɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "streets",
+          "ipa": [
+            "s",
+            "t",
+            "ɹ",
+            "iː",
+            "t",
+            "s"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "night",
+          "ipa": [
+            "n",
+            "aɪ",
+            "t"
+          ]
+        }
+      ],
+      "targets": [],
+      "prosody": {
+        "beats": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "weak": [
+          0,
+          2,
+          4,
+          6
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U17-s07",
+      "text": "Cooks make noodles.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Cooks",
+          "ipa": [
+            "k",
+            "ʊ",
+            "k",
+            "s"
+          ]
+        },
+        {
+          "w": "make",
+          "ipa": [
+            "m",
+            "eɪ",
+            "k"
+          ]
+        },
+        {
+          "w": "noodles",
+          "ipa": [
+            "n",
+            "uː",
+            "d",
+            "ə",
+            "l",
+            "z"
+          ]
+        }
+      ],
+      "targets": [],
+      "prosody": {
+        "beats": [
+          0,
+          1,
+          2
+        ],
+        "weak": []
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U17-s08",
+      "text": "The cooks will make the noodles for them.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "cooks",
+          "ipa": [
+            "k",
+            "ʊ",
+            "k",
+            "s"
+          ]
+        },
+        {
+          "w": "will",
+          "ipa": [
+            "w",
+            "ɪ",
+            "l"
+          ]
+        },
+        {
+          "w": "make",
+          "ipa": [
+            "m",
+            "eɪ",
+            "k"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "noodles",
+          "ipa": [
+            "n",
+            "uː",
+            "d",
+            "ə",
+            "l",
+            "z"
+          ]
+        },
+        {
+          "w": "for",
+          "ipa": [
+            "f",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "them",
+          "ipa": [
+            "ð",
+            "ə",
+            "m"
+          ]
+        }
+      ],
+      "targets": [],
+      "prosody": {
+        "beats": [
+          1,
+          3,
+          5
+        ],
+        "weak": [
+          0,
+          2,
+          4,
+          6,
+          7
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U17-s09",
+      "text": "The market sells fresh fruit and fish.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        },
+        {
+          "w": "sells",
+          "ipa": [
+            "s",
+            "ɛ",
+            "l",
+            "z"
+          ]
+        },
+        {
+          "w": "fresh",
+          "ipa": [
+            "f",
+            "ɹ",
+            "ɛ",
+            "ʃ"
+          ]
+        },
+        {
+          "w": "fruit",
+          "ipa": [
+            "f",
+            "ɹ",
+            "uː",
+            "t"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "fish",
+          "ipa": [
+            "f",
+            "ɪ",
+            "ʃ"
+          ]
+        }
+      ],
+      "targets": [],
+      "prosody": {
+        "beats": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "weak": [
+          0,
+          5
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U17-s10",
+      "text": "Walk by the river and watch the boats at sunset.",
+      "cefr": "B1",
+      "words": [
+        {
+          "w": "Walk",
+          "ipa": [
+            "w",
+            "ɔː",
+            "k"
+          ]
+        },
+        {
+          "w": "by",
+          "ipa": [
+            "b",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "river",
+          "ipa": [
+            "ɹ",
+            "ɪ",
+            "v",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "watch",
+          "ipa": [
+            "w",
+            "ɑː",
+            "tʃ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "boats",
+          "ipa": [
+            "b",
+            "oʊ",
+            "t",
+            "s"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "sunset",
+          "ipa": [
+            "s",
+            "ʌ",
+            "n",
+            "s",
+            "ɛ",
+            "t"
+          ]
+        }
+      ],
+      "targets": [],
+      "prosody": {
+        "beats": [
+          0,
+          3,
+          5,
+          7,
+          9
+        ],
+        "weak": [
+          1,
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U17-c01",
+      "wrongText": "THE-CATS-WILL-EAT-THE-FISH (every word equal)",
+      "rightText": "the CATS will EAT the FISH (three beats, weak words squeezed)",
+      "note": {
+        "vi": "Nói đều từng chữ làm câu dài ra và nghe như đọc từng âm tiết. Chỉ nhấn cats, eat, fish; the và will nhẹ và nhanh.",
+        "en": "Saying each word equally stretches the sentence and sounds syllable by syllable. Beat only cats, eat and fish; keep the and will light and quick."
+      }
+    },
+    {
+      "id": "U17-c02",
+      "wrongText": "The (pause) cats (pause) will (pause) eat (pause) the (pause) fish.",
+      "rightText": "the CATS‿will EAT‿the FISH (words run on between beats)",
+      "note": {
+        "vi": "Dừng sau mỗi chữ làm nhịp bị vỡ. Để từ chức năng dính vào từ chính, chỉ nghỉ ở cuối câu.",
+        "en": "Pausing after each word breaks the beat. Let function words lean on the content words and pause only at the end."
+      }
+    },
+    {
+      "id": "U17-c03",
+      "wrongText": "The LANterns WILL light THE streets. (beat on function words)",
+      "rightText": "the LANterns will LIGHT the STREETS (beat on content words)",
+      "note": {
+        "vi": "Đặt nhịp nhầm lên will hoặc the làm người nghe mất từ chính. Vỗ tay chỉ ở lanterns, light, streets.",
+        "en": "Putting the beat on will or the hides the content words. Clap only on lanterns, light and streets."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "The cats will eat the fish.",
+      "shadow": [
+        {
+          "vi": "Nghe câu mẫu hai lần và đếm 3 nhịp (cats, eat, fish) bằng cách vỗ tay theo.",
+          "en": "Listen to the model twice and clap along to the three beats (cats, eat, fish)."
+        },
+        {
+          "vi": "Ngân nga (hum) nhịp mạnh-nhẹ của câu và tiếp tục vỗ tay, không nói chữ.",
+          "en": "Hum the strong-weak beat of the sentence while clapping, without words."
+        },
+        {
+          "vi": "Thì thầm cùng lúc với âm thanh mẫu và gõ nhịp, bắt chước hình dạng, không bắt chước giọng.",
+          "en": "Whisper along with the audio while tapping the beat, copying the shape, not the voice."
+        },
+        {
+          "vi": "Nói thành tiếng cùng với âm thanh mẫu và vỗ tay; nhìn đường cao độ và khớp hình dạng.",
+          "en": "Speak aloud with the audio and clap; watch the pitch line and match its shape."
+        },
+        {
+          "vi": "Nói một mình, không âm thanh, vẫn vỗ tay đều; so sánh với đường cao độ của mẫu.",
+          "en": "Speak alone with no audio, still clapping steadily; compare with the model pitch line."
+        }
+      ],
+      "note": {
+        "vi": "Bắt chước hình dạng đường cao độ và nhịp vỗ, không bắt chước giọng của người nói mẫu.",
+        "en": "Copy the shape of the pitch line and the clap rhythm, not the voice of the model speaker."
+      }
+    }
+  ],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "selfcheck",
+    "vi": "Ghi âm 3 câu trong cùng một bậc thang (ví dụ Cats eat fish / The cats eat fish / The cats will eat the fish). Nghe lại và vỗ tay: số nhịp có giữ nguyên 3 và khoảng cách giữa các nhịp có gần đều không? Từ chức năng có nhẹ và ngắn không?",
+    "en": "Record three sentences from one ladder (e.g. Cats eat fish / The cats eat fish / The cats will eat the fish). Listen back and clap: does the count stay at three beats with roughly even gaps? Are the function words light and short?"
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói quen nhịp theo âm tiết nên giữ độ dài đều; đó là ảnh hưởng của tiếng mẹ đẻ chứ không phải lỗi nghiêm trọng, và nhiều giọng tiếng Anh quốc tế cũng nhịp gần theo âm tiết. Phần mềm chỉ ước lượng độ biến thiên độ dài nguyên âm và khoảng nghỉ giữa các từ (độ tin cậy thấp, chưa đo trên học sinh thật); nó không đếm được nhịp vỗ tay của em và không phán đoán được nhịp tự nhiên. Chỉ dùng điểm để tham khảo cùng phần tự kiểm tra; giáo viên có thể nghe trực tiếp.",
+    "en": "Some speakers are used to syllable timing and keep syllables even; this is first-language influence, not a serious error, and many international English accents are also closer to syllable-timed. The app only estimates vowel-duration variability and pauses between words (low confidence, not yet measured on real students); it cannot count your claps or judge naturalness. Treat the score as a guide alongside the self-check; a teacher can listen directly."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

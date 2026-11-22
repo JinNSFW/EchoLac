@@ -1,0 +1,1621 @@
+{
+  "id": "U12",
+  "level": "B1",
+  "band": "B1",
+  "category": "consonant_sub",
+  "kind": "segmental",
+  "prereq": [],
+  "title": {
+    "vi": "Phụ âm dễ lẫn",
+    "en": "Confusable consonants"
+  },
+  "cando": {
+    "vi": "Em nói phân biệt được v/w/j, l/n/r và p/b, và nói trọn âm /l/ ở cuối từ.",
+    "en": "I can keep v/w/j, l/n/r and p/b apart, and finish a final /l/."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt có các chữ v, d, gi, r, l, n, nhưng cách đọc của chúng khác nhau tùy giọng, nên một số người nói đọc very thành \"yery\", yes thành \"zes\" hoặc red nghe gần như \"zed\" khi nói tiếng Anh. Các tài liệu giảng dạy cho thấy việc lẫn /v w j z/ khá thường gặp (độ tin cậy trung bình); đây là thói quen ánh xạ âm, không phải đặc điểm của một vùng nào.",
+      "en": "Vietnamese has the letters v, d, gi, r, l and n, but how they sound varies between accents, so some speakers say very as \"yery\", yes as \"zes\", or red close to \"zed\" in English. Teaching sources describe /v w j z/ mix-ups as fairly common (medium confidence); it is a habit of sound mapping, not a trait of any one region.",
+      "refs": [
+        "[17]"
+      ]
+    },
+    {
+      "vi": "Tiếng Việt không có âm /l/ ở cuối từ và không có /p/ ở đầu từ bản ngữ, nên ball, school, well hay mất âm cuối hoặc nghe như \"bon\", còn pig dễ nghe như big. Một số người nói cũng lẫn /l/ với /n/, nên light nghe như night (được báo cáo, chưa có số liệu rõ).",
+      "en": "Vietnamese has no final /l/ and no native initial /p/, so ball, school and well often lose the ending or sound like \"bon\", and pig can sound like big. Some speakers also mix /l/ with /n/, so light sounds like night (reported, no clear figures).",
+      "refs": [
+        "[12]",
+        "[14]"
+      ]
+    },
+    {
+      "vi": "Các cặp này làm hai từ trùng nhau (wine/vine, light/right, pig/big) nên ảnh hưởng đến việc hiểu nhau; đây là phụ âm cốt lõi (P2). Phần mềm chỉ tin ở mức trung bình.",
+      "en": "These pairs make two words collide (wine/vine, light/right, pig/big), so they affect understanding; they are core consonants (priority P2). The app's detection confidence is only medium.",
+      "refs": [
+        "[B16]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "/v/: răng trên chạm nhẹ môi dưới, thổi hơi và rung cổ (tay trên cổ thấy rung). /w/: tròn môi như nói \"u\" rồi mở nhanh sang nguyên âm. Hai âm này không giống nhau.",
+      "en": "/v/: upper teeth touch the lower lip, blow and buzz. /w/: round the lips as for \"oo\", then open into the vowel."
+    },
+    {
+      "vi": "/j/ (trong yes): lưỡi nâng gần vòm miệng như bắt đầu nói \"i\", rồi trượt sang nguyên âm. /z/ (trong zoo) rung giữa lưỡi và nướu; /dʒ/ bắt đầu bằng một cú bật nhẹ.",
+      "en": "/j/ (yes): raise the tongue toward the palate as for \"ee\", then glide into the vowel. /z/ (zoo) buzzes; /dʒ/ starts with a small stop."
+    },
+    {
+      "vi": "/l/ đầu từ: đầu lưỡi chạm nướu răng trên, hơi thoát hai bên lưỡi. /n/: cũng chạm nướu nhưng hơi đi ra mũi. /ɹ/: cuộn lưỡi lên, không chạm vào đâu.",
+      "en": "/l/: tongue tip on the ridge, air out the sides. /n/: same touch, air through the nose. /ɹ/: curl the tongue up, touch nothing."
+    },
+    {
+      "vi": "/l/ cuối từ (ball, well): để đầu lưỡi chạm nướu và giữ một chút, đừng dừng ở nguyên âm hay chuyển thành \"n\" hoặc \"u\".",
+      "en": "Final /l/ (ball, well): tongue tip on the ridge, hold it a moment. Do not stop on the vowel or change it to \"n\"."
+    },
+    {
+      "vi": "/p/ đầu từ: mím môi, thả ra kèm một luồng hơi nhỏ (tay trước miệng thấy hơi). /b/ thì rung cổ, ít hơi. Luyện cặp pig–big.",
+      "en": "/p/ at the start: close the lips, release with a small puff on your hand. /b/ buzzes, less air. Try pig–big."
+    }
+  ],
+  "perception": {
+    "type": "2afc",
+    "pairIds": [
+      "U12-p01",
+      "U12-p02",
+      "U12-p03",
+      "U12-p04",
+      "U12-p05",
+      "U12-p06"
+    ],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8
+  },
+  "words": [
+    {
+      "id": "U12-w01",
+      "text": "very",
+      "lemma": "very",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "v",
+        "ɛ",
+        "ɹ",
+        "i"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 2,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "j",
+            "ɛ",
+            "ɹ",
+            "i"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /j/ (như \"yery\").",
+            "en": "Initial sound became /j/ (\"yery\")."
+          }
+        },
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "w",
+            "ɛ",
+            "ɹ",
+            "i"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /w/.",
+            "en": "Initial sound became /w/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U12-w02",
+      "text": "vote",
+      "lemma": "vote",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "v",
+        "oʊ",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "w",
+            "oʊ",
+            "t"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /w/.",
+            "en": "Initial sound became /w/."
+          }
+        },
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "b",
+            "oʊ",
+            "t"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /b/.",
+            "en": "Initial sound became /b/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U12-w03",
+      "text": "wine",
+      "lemma": "wine",
+      "cefr": "A2",
+      "scenarioVocab": null,
+      "ipa": [
+        "w",
+        "aɪ",
+        "n"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "v",
+            "aɪ",
+            "n"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /v/ (nghe như vine).",
+            "en": "Initial sound became /v/ (like vine)."
+          }
+        },
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "j",
+            "aɪ",
+            "n"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /j/.",
+            "en": "Initial sound became /j/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U12-w04",
+      "text": "yes",
+      "lemma": "yes",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "j",
+        "ɛ",
+        "s"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "z",
+            "ɛ",
+            "s"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /z/ (nghe như \"zes\").",
+            "en": "Initial sound became /z/ (\"zes\")."
+          }
+        },
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "dʒ",
+            "ɛ",
+            "s"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /dʒ/ (nghe như jess).",
+            "en": "Initial sound became /dʒ/ (like jess)."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U12-w05",
+      "text": "zoo",
+      "lemma": "zoo",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "z",
+        "uː"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "dʒ",
+            "uː"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /dʒ/.",
+            "en": "Initial sound became /dʒ/."
+          }
+        },
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "j",
+            "uː"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /j/.",
+            "en": "Initial sound became /j/."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U12-w06",
+      "text": "red",
+      "lemma": "red",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "ɹ",
+        "ɛ",
+        "d"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "z",
+            "ɛ",
+            "d"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /z/ (nghe như zed).",
+            "en": "Initial sound became /z/ (like zed)."
+          }
+        },
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "l",
+            "ɛ",
+            "d"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /l/ (nghe như led).",
+            "en": "Initial sound became /l/ (like led)."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U12-w07",
+      "text": "light",
+      "lemma": "light",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "l",
+        "aɪ",
+        "t"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "n",
+            "aɪ",
+            "t"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /n/ (nghe như night).",
+            "en": "Initial sound became /n/ (like night)."
+          }
+        },
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "ɹ",
+            "aɪ",
+            "t"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /ɹ/ (nghe như right).",
+            "en": "Initial sound became /ɹ/ (like right)."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U12-w08",
+      "text": "pig",
+      "lemma": "pig",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "p",
+        "ɪ",
+        "ɡ"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "b",
+            "ɪ",
+            "ɡ"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /b/ (nghe như big).",
+            "en": "Initial sound became /b/ (like big)."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U12-w09",
+      "text": "park",
+      "lemma": "park",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "p",
+        "ɑː",
+        "ɹ",
+        "k"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "consonant_sub",
+          "variantIpa": [
+            "b",
+            "ɑː",
+            "ɹ",
+            "k"
+          ],
+          "note": {
+            "vi": "Âm đầu thành /b/ (nghe như bark).",
+            "en": "Initial sound became /b/ (like bark)."
+          }
+        }
+      ],
+      "detectConfidence": "medium"
+    },
+    {
+      "id": "U12-w10",
+      "text": "ball",
+      "lemma": "ball",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "b",
+        "ɔː",
+        "l"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "final_consonant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_consonant",
+          "variantIpa": [
+            "b",
+            "ɔː"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối /l/.",
+            "en": "Final /l/ dropped."
+          }
+        },
+        {
+          "category": "final_consonant",
+          "variantIpa": [
+            "b",
+            "ɔː",
+            "n"
+          ],
+          "note": {
+            "vi": "Âm /l/ cuối nghe như /n/.",
+            "en": "Final /l/ sounds like /n/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U12-w11",
+      "text": "school",
+      "lemma": "school",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "s",
+        "k",
+        "uː",
+        "l"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            3
+          ],
+          "category": "final_consonant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_consonant",
+          "variantIpa": [
+            "s",
+            "k",
+            "uː"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối /l/.",
+            "en": "Final /l/ dropped."
+          }
+        },
+        {
+          "category": "final_consonant",
+          "variantIpa": [
+            "s",
+            "k",
+            "uː",
+            "n"
+          ],
+          "note": {
+            "vi": "Âm /l/ cuối nghe như /n/.",
+            "en": "Final /l/ sounds like /n/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    },
+    {
+      "id": "U12-w12",
+      "text": "well",
+      "lemma": "well",
+      "cefr": "A1",
+      "scenarioVocab": null,
+      "ipa": [
+        "w",
+        "ɛ",
+        "l"
+      ],
+      "ipaSource": "cmudict",
+      "variant": 0,
+      "ipaAlt": [],
+      "allowElision": false,
+      "syllables": 1,
+      "stress": 1,
+      "targets": [
+        {
+          "index": [
+            2
+          ],
+          "category": "final_consonant",
+          "morph": false
+        }
+      ],
+      "expectedErrors": [
+        {
+          "category": "final_consonant",
+          "variantIpa": [
+            "w",
+            "ɛ"
+          ],
+          "note": {
+            "vi": "Bỏ mất âm cuối /l/.",
+            "en": "Final /l/ dropped."
+          }
+        },
+        {
+          "category": "final_consonant",
+          "variantIpa": [
+            "w",
+            "ɛ",
+            "n"
+          ],
+          "note": {
+            "vi": "Âm /l/ cuối nghe như /n/.",
+            "en": "Final /l/ sounds like /n/."
+          }
+        }
+      ],
+      "detectConfidence": "high"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "U12-p01",
+      "type": "substitution",
+      "category": "consonant_sub",
+      "a": {
+        "text": "wine",
+        "ipa": [
+          "w",
+          "aɪ",
+          "n"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "b": {
+        "text": "vine",
+        "ipa": [
+          "v",
+          "aɪ",
+          "n"
+        ],
+        "cefr": null,
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "w",
+        "v"
+      ]
+    },
+    {
+      "id": "U12-p02",
+      "type": "substitution",
+      "category": "consonant_sub",
+      "a": {
+        "text": "wet",
+        "ipa": [
+          "w",
+          "ɛ",
+          "t"
+        ],
+        "cefr": "A2",
+        "variant": 0
+      },
+      "b": {
+        "text": "vet",
+        "ipa": [
+          "v",
+          "ɛ",
+          "t"
+        ],
+        "cefr": "B1",
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "w",
+        "v"
+      ]
+    },
+    {
+      "id": "U12-p03",
+      "type": "substitution",
+      "category": "consonant_sub",
+      "a": {
+        "text": "yet",
+        "ipa": [
+          "j",
+          "ɛ",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "jet",
+        "ipa": [
+          "dʒ",
+          "ɛ",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "j",
+        "dʒ"
+      ]
+    },
+    {
+      "id": "U12-p04",
+      "type": "substitution",
+      "category": "consonant_sub",
+      "a": {
+        "text": "light",
+        "ipa": [
+          "l",
+          "aɪ",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "right",
+        "ipa": [
+          "ɹ",
+          "aɪ",
+          "t"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "l",
+        "ɹ"
+      ]
+    },
+    {
+      "id": "U12-p05",
+      "type": "substitution",
+      "category": "consonant_sub",
+      "a": {
+        "text": "line",
+        "ipa": [
+          "l",
+          "aɪ",
+          "n"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "nine",
+        "ipa": [
+          "n",
+          "aɪ",
+          "n"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "l",
+        "n"
+      ]
+    },
+    {
+      "id": "U12-p06",
+      "type": "substitution",
+      "category": "consonant_sub",
+      "a": {
+        "text": "pig",
+        "ipa": [
+          "p",
+          "ɪ",
+          "ɡ"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "b": {
+        "text": "big",
+        "ipa": [
+          "b",
+          "ɪ",
+          "ɡ"
+        ],
+        "cefr": "A1",
+        "variant": 0
+      },
+      "diffIndex": 0,
+      "contrast": [
+        "p",
+        "b"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U12-s01",
+      "text": "The yellow lights look very pretty in Hội An.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "yellow",
+          "ipa": [
+            "j",
+            "ɛ",
+            "l",
+            "oʊ"
+          ]
+        },
+        {
+          "w": "lights",
+          "ipa": [
+            "l",
+            "aɪ",
+            "t",
+            "s"
+          ]
+        },
+        {
+          "w": "look",
+          "ipa": [
+            "l",
+            "ʊ",
+            "k"
+          ]
+        },
+        {
+          "w": "very",
+          "ipa": [
+            "v",
+            "ɛ",
+            "ɹ",
+            "i"
+          ]
+        },
+        {
+          "w": "pretty",
+          "ipa": [
+            "p",
+            "ɹ",
+            "ɪ",
+            "t",
+            "i"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "Hội",
+          "ipa": null
+        },
+        {
+          "w": "An",
+          "ipa": null
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U12-s02",
+      "text": "I like the red bridge and the park by the river.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "like",
+          "ipa": [
+            "l",
+            "aɪ",
+            "k"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "red",
+          "ipa": [
+            "ɹ",
+            "ɛ",
+            "d"
+          ]
+        },
+        {
+          "w": "bridge",
+          "ipa": [
+            "b",
+            "ɹ",
+            "ɪ",
+            "dʒ"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "park",
+          "ipa": [
+            "p",
+            "ɑː",
+            "ɹ",
+            "k"
+          ]
+        },
+        {
+          "w": "by",
+          "ipa": [
+            "b",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "river",
+          "ipa": [
+            "ɹ",
+            "ɪ",
+            "v",
+            "ɚ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        },
+        {
+          "word": 7,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        },
+        {
+          "word": 10,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U12-s03",
+      "text": "Yes, the zoo near our school has a big pig.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Yes",
+          "ipa": [
+            "j",
+            "ɛ",
+            "s"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "zoo",
+          "ipa": [
+            "z",
+            "uː"
+          ]
+        },
+        {
+          "w": "near",
+          "ipa": [
+            "n",
+            "ɪ",
+            "ɹ"
+          ]
+        },
+        {
+          "w": "our",
+          "ipa": [
+            "aʊ",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "school",
+          "ipa": [
+            "s",
+            "k",
+            "uː",
+            "l"
+          ]
+        },
+        {
+          "w": "has",
+          "ipa": [
+            "h",
+            "æ",
+            "z"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "big",
+          "ipa": [
+            "b",
+            "ɪ",
+            "ɡ"
+          ]
+        },
+        {
+          "w": "pig",
+          "ipa": [
+            "p",
+            "ɪ",
+            "ɡ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            3
+          ],
+          "category": "final_consonant",
+          "morph": false
+        },
+        {
+          "word": 9,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U12-s04",
+      "text": "I feel well when I walk on the beach at night.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "feel",
+          "ipa": [
+            "f",
+            "iː",
+            "l"
+          ]
+        },
+        {
+          "w": "well",
+          "ipa": [
+            "w",
+            "ɛ",
+            "l"
+          ]
+        },
+        {
+          "w": "when",
+          "ipa": [
+            "w",
+            "ɛ",
+            "n"
+          ]
+        },
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "walk",
+          "ipa": [
+            "w",
+            "ɔː",
+            "k"
+          ]
+        },
+        {
+          "w": "on",
+          "ipa": [
+            "ɑː",
+            "n"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "night",
+          "ipa": [
+            "n",
+            "aɪ",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            2
+          ],
+          "category": "final_consonant",
+          "morph": false
+        },
+        {
+          "word": 2,
+          "index": [
+            2
+          ],
+          "category": "final_consonant",
+          "morph": false
+        },
+        {
+          "word": 3,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        },
+        {
+          "word": 5,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U12-s05",
+      "text": "We eat rice and light soup in Huế, and the food is very good.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "eat",
+          "ipa": [
+            "iː",
+            "t"
+          ]
+        },
+        {
+          "w": "rice",
+          "ipa": [
+            "ɹ",
+            "aɪ",
+            "s"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "light",
+          "ipa": [
+            "l",
+            "aɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "soup",
+          "ipa": [
+            "s",
+            "uː",
+            "p"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "Huế",
+          "ipa": null
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "food",
+          "ipa": [
+            "f",
+            "uː",
+            "d"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "very",
+          "ipa": [
+            "v",
+            "ɛ",
+            "ɹ",
+            "i"
+          ]
+        },
+        {
+          "w": "good",
+          "ipa": [
+            "ɡ",
+            "ʊ",
+            "d"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        },
+        {
+          "word": 12,
+          "index": [
+            0
+          ],
+          "category": "consonant_sub",
+          "morph": false
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U12-c01",
+      "wrongIpa": [
+        "j",
+        "ɛ",
+        "ɹ",
+        "i"
+      ],
+      "rightIpa": [
+        "v",
+        "ɛ",
+        "ɹ",
+        "i"
+      ],
+      "note": {
+        "vi": "Very nghe như \"yery\". Đặt răng trên chạm môi dưới và rung cổ, đừng bắt đầu bằng âm \"y\".",
+        "en": "Very sounds like \"yery\". Touch the upper teeth to the lower lip and buzz; do not start with \"y\"."
+      }
+    },
+    {
+      "id": "U12-c02",
+      "wrongIpa": [
+        "n",
+        "aɪ",
+        "t"
+      ],
+      "rightIpa": [
+        "l",
+        "aɪ",
+        "t"
+      ],
+      "note": {
+        "vi": "Light nghe như night. Hơi phải thoát hai bên lưỡi, không đi qua mũi (bịt mũi vẫn nói được).",
+        "en": "Light sounds like night. The air goes round the sides of the tongue, not through the nose (it works with a pinched nose)."
+      }
+    },
+    {
+      "id": "U12-c03",
+      "wrongIpa": [
+        "b",
+        "ɪ",
+        "ɡ"
+      ],
+      "rightIpa": [
+        "p",
+        "ɪ",
+        "ɡ"
+      ],
+      "note": {
+        "vi": "Pig nghe như big. Mím môi rồi thả kèm luồng hơi nhỏ, không rung cổ.",
+        "en": "Pig sounds like big. Close the lips and release with a small puff, no voice."
+      }
+    },
+    {
+      "id": "U12-c04",
+      "wrongIpa": [
+        "b",
+        "ɔː"
+      ],
+      "rightIpa": [
+        "b",
+        "ɔː",
+        "l"
+      ],
+      "note": {
+        "vi": "Ball mất /l/ cuối. Sau nguyên âm, đưa đầu lưỡi chạm nướu và giữ lại.",
+        "en": "Ball lost its final /l/. After the vowel, put the tongue tip on the ridge and hold it."
+      }
+    }
+  ],
+  "chain": [],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "score",
+    "vi": "Ghi âm wine–vine, light–right, pig–big và ball, well. Nghe lại: /v/ có chạm răng–môi không, /l/ cuối có nghe rõ không? Nhờ bạn đoán từ em nói.",
+    "en": "Record wine–vine, light–right, pig–big, then ball and well. Listen back: do you hear the teeth-on-lip /v/, and a clear final /l/? Ask a friend to guess which word you said."
+  },
+  "teacherNotes": {
+    "vi": "Cách đọc các chữ v, d, gi, r, l, n khác nhau giữa các giọng tiếng Việt, và một số người nói có thể lẫn /v w j z/ hoặc /l n/; đây là ảnh hưởng của hệ thống âm quen thuộc, không phải lỗi của một vùng. Một số giọng Anh cũng đọc /l/ cuối rất nhẹ hoặc gần như \"w\"; hãy chấp nhận khi người nghe vẫn hiểu. Phần mềm chủ yếu thấy khi âm bị đổi sang âm khác; không đo độ bật hơi của /p/ hay độ cong lưỡi của /ɹ/. Độ tin cậy phát hiện: trung bình, chưa được đo trên học sinh thật.",
+    "en": "How the letters v, d, gi, r, l and n are pronounced differs between Vietnamese accents, and some speakers may mix /v w j z/ or /l n/; this is an effect of familiar sound habits, not a trait of one region. Some English accents also say a final /l/ very lightly or close to \"w\"; accept it if the listener understands. The app mainly sees a sound replaced by another; it does not measure the puff of /p/ or tongue curl of /ɹ/. Detection confidence: medium, not yet measured on real students."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

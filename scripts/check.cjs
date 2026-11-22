@@ -18,6 +18,7 @@ for (const file of css) {
   assert.ok(read(file).trimEnd().split(/\r?\n/).length <= 300, file + ' exceeds 300 lines');
 }
 for (const match of read('index.html').matchAll(/(?:src|href)="([^"#]+)"/g)) {
+  if (match[1] === 'config.js') continue; // generated from env by build-site.cjs / serve.cjs, never stored in the repo
   if (!/^https?:/.test(match[1])) assert.ok(fs.existsSync(path.join(root, match[1])), 'Missing asset ' + match[1]);
 }
 console.log(`Checked syntax, file limits and asset paths: ${files.length} scripts, ${css.length} stylesheets.`);

@@ -1,0 +1,536 @@
+{
+  "cando": {
+    "vi": "Em nói được đuôi -s của danh từ số nhiều và động từ ngôi thứ ba số ít.",
+    "en": "I can say plural and he/she -s endings."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt không chia từ (không có số nhiều hay -s ngôi thứ ba), nên đuôi -s dễ bị bỏ. Một nghiên cứu (16 bài nói độc thoại) thấy khoảng 28,4% /s z/ cuối bị bỏ, và hơn một nửa (50,7%) khi đứng sau một phụ âm khác.",
+      "en": "Vietnamese does not inflect words (no plural or third-person -s), so the -s ending is easily dropped. One study (16 monologues) found about 28.4% of final /s z/ omitted, and over half (50.7%) when it followed another consonant.",
+      "refs": [
+        "[2]"
+      ]
+    },
+    {
+      "vi": "-s ngữ pháp (books, goes) bị bỏ nhiều hơn /s/ nằm trong từ (như bus). Vì vậy cần luyện riêng đuôi -s, nhưng ở đây ta xem nó là lỗi phát âm của một từ đã biết, không phải lỗi ngữ pháp.",
+      "en": "A grammatical -s (books, goes) is omitted more often than an /s/ inside a word (like bus). So the ending needs its own practice, but here we treat it as a pronunciation error on a known word, not a grammar error.",
+      "refs": [
+        "[2]"
+      ]
+    },
+    {
+      "vi": "Âm tiết tiếng Việt chuẩn không có /s z/ ở cuối; /z/ của bags hay bees còn hay bị đọc thành /s/. Hai điều này được báo cáo ở người nói tiếng Việt miền Bắc.",
+      "en": "Standard Vietnamese syllables have no final /s z/, and the /z/ of bags or bees is often said as /s/. Both are reported for Northern Vietnamese speakers.",
+      "refs": [
+        "[14]",
+        "[12]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Sau âm vô thanh (p, t, k, f, θ) đuôi là /s/ không rung: books, maps, cats, bikes.",
+      "en": "After a voiceless sound (p, t, k, f, θ) the ending is a voiceless /s/: books, maps, cats, bikes."
+    },
+    {
+      "vi": "Sau nguyên âm hoặc âm hữu thanh (b, ɡ, m, n, l) đuôi là /z/: đặt tay lên cổ, phải thấy rung: bags, rooms, trees, goes.",
+      "en": "After a vowel or voiced sound the ending is /z/. Feel the buzz with a hand on your throat: bags, rooms, goes."
+    },
+    {
+      "vi": "Sau âm xì hoặc /tʃ dʒ/ (s, z, ʃ, tʃ, dʒ) thêm một âm tiết ngắn /ɪz/: bridges, beaches, dishes.",
+      "en": "After a hissing sound or /tʃ dʒ/ (s, z, ʃ, tʃ, dʒ) add a short extra syllable /ɪz/: bridges, beaches, dishes."
+    },
+    {
+      "vi": "Nói từ gốc rồi kéo thẳng sang \"sss\" hoặc \"zzz\", không ngắt và không thêm \"ờ\".",
+      "en": "Say the base word, then slide straight into \"sss\" or \"zzz\" with no break and no extra \"uh\"."
+    }
+  ],
+  "words": [
+    {
+      "text": "books",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b ʊ k",
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "lemma": "book"
+    },
+    {
+      "text": "maps",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "m æ p",
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "lemma": "map"
+    },
+    {
+      "text": "cats",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "k æ t",
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "lemma": "cat"
+    },
+    {
+      "text": "bikes",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b aɪ k",
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "lemma": "bike"
+    },
+    {
+      "text": "bags",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b æ ɡ",
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        },
+        {
+          "variantIpa": "b æ ɡ s",
+          "note": {
+            "vi": "Âm /z/ bị đọc thành /s/ (không rung cổ).",
+            "en": "The /z/ is said as /s/ (no voice)."
+          }
+        }
+      ],
+      "lemma": "bag"
+    },
+    {
+      "text": "rooms",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "ɹ uː m",
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        },
+        {
+          "variantIpa": "ɹ uː m s",
+          "note": {
+            "vi": "Âm /z/ bị đọc thành /s/ (không rung cổ).",
+            "en": "The /z/ is said as /s/ (no voice)."
+          }
+        }
+      ],
+      "lemma": "room"
+    },
+    {
+      "text": "trees",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "t ɹ iː",
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        },
+        {
+          "variantIpa": "t ɹ iː s",
+          "note": {
+            "vi": "Âm /z/ bị đọc thành /s/ (không rung cổ).",
+            "en": "The /z/ is said as /s/ (no voice)."
+          }
+        }
+      ],
+      "lemma": "tree"
+    },
+    {
+      "text": "goes",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "ɡ oʊ",
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        },
+        {
+          "variantIpa": "ɡ oʊ s",
+          "note": {
+            "vi": "Âm /z/ bị đọc thành /s/ (không rung cổ).",
+            "en": "The /z/ is said as /s/ (no voice)."
+          }
+        }
+      ],
+      "lemma": "go"
+    },
+    {
+      "text": "likes",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "l aɪ k",
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "lemma": "like"
+    },
+    {
+      "text": "bridges",
+      "targets": [
+        {
+          "index": [
+            -2,
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b ɹ ɪ dʒ",
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "lemma": "bridge",
+      "variant": 1
+    },
+    {
+      "text": "beaches",
+      "targets": [
+        {
+          "index": [
+            -2,
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b iː tʃ",
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "lemma": "beach",
+      "variant": 1
+    },
+    {
+      "text": "dishes",
+      "targets": [
+        {
+          "index": [
+            -2,
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "d ɪ ʃ",
+          "note": {
+            "vi": "Mất âm /s/ hoặc /z/ cuối.",
+            "en": "Final /s/ or /z/ dropped."
+          }
+        }
+      ],
+      "lemma": "dish",
+      "variant": 1
+    }
+  ],
+  "pairs": [
+    {
+      "a": "bag",
+      "b": "bags",
+      "type": "deletion",
+      "bLemma": "bag"
+    },
+    {
+      "a": "bee",
+      "b": "bees",
+      "type": "deletion",
+      "bLemma": "bee"
+    },
+    {
+      "a": "tie",
+      "b": "ties",
+      "type": "deletion",
+      "bLemma": "tie"
+    },
+    {
+      "a": "book",
+      "b": "books",
+      "type": "deletion",
+      "bLemma": "book"
+    },
+    {
+      "a": "cat",
+      "b": "cats",
+      "type": "deletion",
+      "bLemma": "cat"
+    },
+    {
+      "a": "map",
+      "b": "maps",
+      "type": "deletion",
+      "bLemma": "map"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "I like the bridges and the beaches.",
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            -2,
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 6,
+          "index": [
+            -2,
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "The market sells fresh fruits and eggs.",
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 4,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 6,
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "My friends play games on the beach.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 3,
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "She goes to the bridge with her friends.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 7,
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "The bikes and books are on the table.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "morph": true
+        },
+        {
+          "word": 3,
+          "index": [
+            -1
+          ],
+          "morph": true
+        }
+      ],
+      "culture": false
+    }
+  ],
+  "contrasts": [
+    {
+      "wrong": "b ʊ k",
+      "right": "b ʊ k s",
+      "note": {
+        "vi": "Books mất /s/. Nói \"book\" rồi thổi \"sss\" ngay, không dừng.",
+        "en": "Books lost its /s/. Say \"book\", then blow \"sss\" straight away without a pause."
+      }
+    },
+    {
+      "wrong": "b æ ɡ s",
+      "right": "b æ ɡ z",
+      "note": {
+        "vi": "Đuôi của bags có rung cổ: /z/, không phải /s/. Đặt tay lên cổ để kiểm tra.",
+        "en": "The ending of bags is voiced: /z/, not /s/. Check with a hand on your throat."
+      }
+    },
+    {
+      "wrong": "b ɹ ɪ dʒ",
+      "right": "b ɹ ɪ dʒ ɪ z",
+      "note": {
+        "vi": "Bridges có hai âm tiết: thêm /ɪz/ sau /dʒ/.",
+        "en": "Bridges has two syllables: add /ɪz/ after /dʒ/."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "ks → ʊks → books",
+      "steps": [
+        "k s",
+        "ʊ k s",
+        "b ʊ k s"
+      ],
+      "note": {
+        "vi": "Luyện từ cuối về đầu để giữ /s/ cuối.",
+        "en": "Practise from the end back to the start to keep the final /s/."
+      }
+    }
+  ],
+  "selfCheck": {
+    "vi": "Ghi âm 12 từ rồi nghe lại: đuôi -s có rõ, và có rung cổ ở bags, rooms, trees, goes không?",
+    "en": "Record the 12 words and listen back: is each -s clear, and is it voiced in bags, rooms, trees, goes?"
+  },
+  "teacherNotes": {
+    "vi": "Đây là lỗi phát âm trên từ đã biết (đọc to, Tutor). Khi nói tự do, nếu bản ghi chữ thiếu -s thì phần mềm xem là lỗi ngữ pháp, không phải lỗi phát âm; mô hình ngôn ngữ nhận diện đôi khi tự thêm -s nên lỗi này có thể bị bỏ sót. Một số người nói tiếng Việt miền Bắc được báo cáo hay đọc /z/ cuối thành /s/. Độ tin cậy phát hiện: cao khi đọc to, thấp hơn khi nói tự do.",
+    "en": "This is a pronunciation error on a known word (read-aloud, Tutor). In free speech, a transcript without -s is treated as a grammar error, not a pronunciation error; the recogniser sometimes adds the -s itself, so the error may be missed. Some Northern Vietnamese speakers are reported to say final /z/ as /s/. Detection confidence: high for read-aloud, lower for free speech."
+  },
+  "id": "U02",
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

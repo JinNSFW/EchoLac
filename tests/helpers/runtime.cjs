@@ -6,9 +6,13 @@ function runtime(files = scripts(), seed = {}) {
   const elements = new Map();
   const element = () => ({
     innerHTML: '', textContent: '', value: '', dataset: {}, style: {}, hidden: false,
+    checked: false, disabled: false, listeners: {},
     classList: { add() {}, remove() {}, toggle() {} },
     querySelector() { return null; }, querySelectorAll() { return []; },
-    insertAdjacentHTML() {}, addEventListener() {}, setAttribute() {},
+    insertAdjacentHTML() {},
+    addEventListener(type, fn) { (this.listeners[type] ||= []).push(fn); },
+    dispatchEvent(event) { for (const fn of this.listeners[event.type] || []) fn({ preventDefault() {}, ...event }); },
+    setAttribute() {},
     append() {}, remove() {}, focus() {},
   });
   const storage = new Map(Object.entries(seed).map(([k, v]) => ['lt:' + k, JSON.stringify(v)]));

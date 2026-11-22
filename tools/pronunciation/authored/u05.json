@@ -1,0 +1,477 @@
+{
+  "cando": {
+    "vi": "Em nói khác nhau ship–sheep và full–fool.",
+    "en": "I can make ship–sheep and full–fool sound different."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt không dùng độ dài nguyên âm để phân biệt nghĩa, nên ship và sheep dễ nghe giống nhau, và full gần với fool.",
+      "en": "Vietnamese does not use vowel length to tell words apart, so ship and sheep easily sound alike and full sounds like fool.",
+      "refs": [
+        "[10]",
+        "[11]"
+      ]
+    },
+    {
+      "vi": "Một luận văn đo âm thanh (20 người) cho biết sự khác nhau giữa các cặp này chủ yếu nằm ở chất lượng nguyên âm (độ căng, vị trí lưỡi), không chỉ ở độ dài.",
+      "en": "A thesis with acoustic measurements (20 speakers) reports that these pairs differ mainly in vowel quality (tenseness, tongue position), not only in length.",
+      "refs": [
+        "[11]"
+      ]
+    },
+    {
+      "vi": "Độ dài và chất lượng nguyên âm được xem là một phần cốt lõi của việc hiểu nhau trong tiếng Anh quốc tế, nên bài này có mức ưu tiên cao (P1).",
+      "en": "Vowel length and quality are treated as part of the core for mutual intelligibility in international English, so this unit has high priority (P1).",
+      "refs": [
+        "[B16]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "/iː/ (sheep): kéo môi sang hai bên như cười nhẹ, lưỡi nâng cao ở phía trước, giữ âm lâu hơn một chút.",
+      "en": "/iː/ (sheep): spread the lips as in a gentle smile, raise the front of the tongue high, and hold the sound a bit longer."
+    },
+    {
+      "vi": "/ɪ/ (ship): thả lỏng môi, lưỡi thấp hơn một chút, nói ngắn và nhanh. Đừng cười.",
+      "en": "/ɪ/ (ship): relax the lips, let the tongue sit a little lower, and say it short and quick. Do not smile."
+    },
+    {
+      "vi": "/uː/ (fool): chu môi tròn nhỏ, nâng cuối lưỡi lên cao, giữ âm lâu hơn một chút.",
+      "en": "/uː/ (fool): push the lips into a small round shape, raise the back of the tongue high, and hold the sound a bit longer."
+    },
+    {
+      "vi": "/ʊ/ (full): môi tròn nhưng lỏng hơn, hàm thả lỏng, nói ngắn.",
+      "en": "/ʊ/ (full): lips round but looser, jaw relaxed, say it short."
+    },
+    {
+      "vi": "Luyện theo cặp trước gương: ship – sheep, full – fool. Môi phải thay đổi hình dạng giữa hai từ.",
+      "en": "Practise in pairs in front of a mirror: ship – sheep, full – fool. Your lips should change shape between the two words."
+    }
+  ],
+  "words": [
+    {
+      "text": "sheep",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "ʃ ɪ p",
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "leave",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "l ɪ v",
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "feel",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "f ɪ l",
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "seat",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s ɪ t",
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "green",
+      "targets": [
+        {
+          "index": [
+            2
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "ɡ ɹ ɪ n",
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "pool",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "p ʊ l",
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "food",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "f ʊ d",
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "school",
+      "targets": [
+        {
+          "index": [
+            2
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s k ʊ l",
+          "note": {
+            "vi": "Nguyên âm bị nói ngắn và lơi như /ɪ/.",
+            "en": "The vowel is said short and lax like /ɪ/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "full",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "f uː l",
+          "note": {
+            "vi": "Nguyên âm bị kéo dài và căng như /iː/ hoặc /uː/.",
+            "en": "The vowel is stretched and tense like /iː/ or /uː/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "good",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "ɡ uː d",
+          "note": {
+            "vi": "Nguyên âm bị kéo dài và căng như /iː/ hoặc /uː/.",
+            "en": "The vowel is stretched and tense like /iː/ or /uː/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "look",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "l uː k",
+          "note": {
+            "vi": "Nguyên âm bị kéo dài và căng như /iː/ hoặc /uː/.",
+            "en": "The vowel is stretched and tense like /iː/ or /uː/."
+          }
+        }
+      ]
+    },
+    {
+      "text": "cook",
+      "targets": [
+        {
+          "index": [
+            1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "k uː k",
+          "note": {
+            "vi": "Nguyên âm bị kéo dài và căng như /iː/ hoặc /uː/.",
+            "en": "The vowel is stretched and tense like /iː/ or /uː/."
+          }
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "a": "ship",
+      "b": "sheep",
+      "type": "substitution"
+    },
+    {
+      "a": "sit",
+      "b": "seat",
+      "type": "substitution"
+    },
+    {
+      "a": "live",
+      "aVariant": 1,
+      "b": "leave",
+      "type": "substitution"
+    },
+    {
+      "a": "fill",
+      "b": "feel",
+      "type": "substitution"
+    },
+    {
+      "a": "full",
+      "b": "fool",
+      "type": "substitution"
+    },
+    {
+      "a": "pull",
+      "b": "pool",
+      "type": "substitution"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "We feel good at the beach.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            2
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "The food at the market is good.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 6,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "I like to cook and read a book.",
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": false
+    },
+    {
+      "text": "The green pool is full of fish.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            2
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": false
+    },
+    {
+      "text": "Sit on the seat and look at the sea.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            1
+          ]
+        },
+        {
+          "word": 8,
+          "index": [
+            1
+          ]
+        }
+      ],
+      "culture": false
+    }
+  ],
+  "contrasts": [
+    {
+      "wrong": "ʃ ɪ p",
+      "right": "ʃ iː p",
+      "note": {
+        "vi": "Sheep nghe như ship. Kéo môi sang hai bên, nâng lưỡi cao và giữ lâu hơn.",
+        "en": "Sheep sounds like ship. Spread the lips, raise the tongue and hold the vowel longer."
+      }
+    },
+    {
+      "wrong": "ʃ iː p",
+      "right": "ʃ ɪ p",
+      "note": {
+        "vi": "Ship nghe như sheep. Thả lỏng môi, nói ngắn và nhanh.",
+        "en": "Ship sounds like sheep. Relax the lips and say it short and quick."
+      }
+    },
+    {
+      "wrong": "f uː l",
+      "right": "f ʊ l",
+      "note": {
+        "vi": "Full đọc như fool. Môi tròn lỏng hơn và nói ngắn.",
+        "en": "Full said like fool. Looser rounded lips and a short vowel."
+      }
+    },
+    {
+      "wrong": "l ɪ v",
+      "right": "l iː v",
+      "note": {
+        "vi": "Leave đọc như live. Kéo dài nguyên âm và căng môi sang hai bên.",
+        "en": "Leave said like live. Lengthen the vowel and spread the lips."
+      }
+    }
+  ],
+  "chain": [],
+  "selfCheck": {
+    "vi": "Ghi âm cặp ship–sheep rồi nghe lại. Hai từ có khác nhau rõ không? Bạn có nhìn thấy môi đổi hình dạng trong gương không?",
+    "en": "Record the ship–sheep pair and listen back. Do the two words sound clearly different? Can you see your lips change shape in the mirror?"
+  },
+  "teacherNotes": {
+    "vi": "Phần mềm chỉ nghe được chất lượng nguyên âm (iː hay ɪ, uː hay ʊ), không đo độ dài, nên độ tin cậy phát hiện là trung bình; phản hồi nên dùng giọng \"có thể\". Một số người nói không phân biệt được hai âm khi nghe, nên cần cho nghe nhiều giọng. Cẩn thận với live (động từ /lɪv/, tính từ /laɪv/) khi dùng làm cặp tối thiểu.",
+    "en": "The app can only hear vowel quality (iː or ɪ, uː or ʊ), not length, so detection confidence is medium and feedback should be hedged (\"may\"). Some speakers cannot hear the difference yet, so use many voices. Be careful with live (verb /lɪv/, adjective /laɪv/) as a minimal-pair word."
+  },
+  "id": "U05",
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

@@ -1,0 +1,1894 @@
+{
+  "id": "U16",
+  "level": "B2",
+  "band": "B2-C1",
+  "category": "weak_form",
+  "kind": "prosody",
+  "prereq": [
+    "U14"
+  ],
+  "title": {
+    "vi": "Dạng yếu",
+    "en": "Weak forms"
+  },
+  "cando": {
+    "vi": "Em đọc to, of, and, can, for... thành âm yếu /ə/ khi nói nhanh, và vẫn nhấn rõ từ chính.",
+    "en": "I can reduce to, of, and, can, for in fluent sentences while keeping the content words clear."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt không có hiện tượng rút gọn nguyên âm: mỗi âm tiết thường giữ nguyên chất giọng. Vì vậy người học thường đọc to thành [tuː] và and thành [æn] ở giữa câu, nghe nặng và đều từng chữ. Điều này được báo cáo trong các nghiên cứu nhỏ.",
+      "en": "Vietnamese has no vowel reduction: each syllable usually keeps its full vowel. Learners often say to as [tuː] and and as [æn] mid-sentence, so speech sounds heavy and even. This is reported in small studies.",
+      "refs": [
+        "[B7]",
+        "[B17]"
+      ]
+    },
+    {
+      "vi": "Trong tiếng Anh nói nhanh, các từ chức năng (to, of, and, can, for, a, the) thường được đọc yếu /ə/ hoặc ngắn. Được báo cáo rằng dạy dạng yếu giúp người học vừa nghe hiểu vừa nói tự nhiên hơn.",
+      "en": "In fluent English, function words (to, of, and, can, for, a, the) are usually weak: a short /ə/ or reduced sound. Teaching weak forms is reported to help learners both understand and sound natural.",
+      "refs": [
+        "[B17]",
+        "[B10]"
+      ]
+    },
+    {
+      "vi": "Dạng yếu không bắt buộc để hiểu nhau trong mọi tình huống, nên bài này là mức ưu tiên thấp hơn các âm cuối (P3). Nhưng nghe được dạng yếu giúp em hiểu người bản ngữ nói nhanh.",
+      "en": "Weak forms are not always required for mutual understanding, so this unit is lower priority than final sounds (P3). But hearing them helps you understand fast native speech.",
+      "refs": [
+        "[B16]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Nghe câu mẫu \"I want to go.\" Chữ to rất nhẹ và ngắn, gần như \"tờ\". Nói chữ to với miệng thả lỏng, không tròn môi như \"tu\".",
+      "en": "In \"I want to go\", to is light and short, like \"tuh\". Keep your mouth relaxed; do not round the lips as in \"too\"."
+    },
+    {
+      "vi": "Từ chính (động từ, danh từ, tính từ) nói to, rõ, hơi dài. Từ chức năng (to, of, and, a, the) nói nhỏ và ngắn.",
+      "en": "Content words (verbs, nouns, adjectives) are louder, clearer and a bit longer. Function words (to, of, and, a, the) are quieter and shorter."
+    },
+    {
+      "vi": "Đọc \"cup of tea\" như \"cup-uv-tea\": of thành \"ờv\" rất nhẹ, nối liền với cup. Đọc \"fish and rice\" như \"fish-'n'-rice\".",
+      "en": "Say \"cup of tea\" as \"cup-uv-tea\": of becomes a light \"uv\" joined to cup. Say \"fish and rice\" as \"fish-n-rice\"."
+    },
+    {
+      "vi": "Khi can đứng trước động từ, đọc yếu \"kờn\". Trong can't, vẫn giữ nguyên âm đầy đủ và nhấn rõ: \"I can swim\" và \"I can't swim\" khác nhau ở độ mạnh của can.",
+      "en": "Before a verb, can is weak \"kn\". In can't, keep the full vowel and stress it; that is the difference between the two."
+    }
+  ],
+  "perception": {
+    "type": "dictation",
+    "pairIds": [],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8,
+    "sentenceIds": [
+      "U16-s01",
+      "U16-s02",
+      "U16-s03",
+      "U16-s04",
+      "U16-s05",
+      "U16-s06",
+      "U16-s07",
+      "U16-s08",
+      "U16-s09",
+      "U16-s10",
+      "U16-s11"
+    ]
+  },
+  "words": [],
+  "pairs": [
+    {
+      "id": "U16-p01",
+      "type": "weak",
+      "category": "weak_form",
+      "a": {
+        "text": "I can swim."
+      },
+      "b": {
+        "text": "I can't swim."
+      }
+    },
+    {
+      "id": "U16-p02",
+      "type": "weak",
+      "category": "weak_form",
+      "a": {
+        "text": "We can go."
+      },
+      "b": {
+        "text": "We can't go."
+      }
+    },
+    {
+      "id": "U16-p03",
+      "type": "weak",
+      "category": "weak_form",
+      "a": {
+        "text": "She can come."
+      },
+      "b": {
+        "text": "She can't come."
+      }
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U16-s01",
+      "text": "I like to walk to the beach.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "like",
+          "ipa": [
+            "l",
+            "aɪ",
+            "k"
+          ]
+        },
+        {
+          "w": "to",
+          "ipa": [
+            "t",
+            "ɪ"
+          ]
+        },
+        {
+          "w": "walk",
+          "ipa": [
+            "w",
+            "ɔː",
+            "k"
+          ]
+        },
+        {
+          "w": "to",
+          "ipa": [
+            "t",
+            "ɪ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "t",
+                "uː"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "t",
+                "uː"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "ð",
+                "ʌ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U16-s02",
+      "text": "The bridge is lovely at night.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "bridge",
+          "ipa": [
+            "b",
+            "ɹ",
+            "ɪ",
+            "dʒ"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "lovely",
+          "ipa": [
+            "l",
+            "ʌ",
+            "v",
+            "l",
+            "i"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "night",
+          "ipa": [
+            "n",
+            "aɪ",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "ð",
+                "ʌ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "æ",
+                "t"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U16-s03",
+      "text": "A cup of tea and some fruit.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "A",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "cup",
+          "ipa": [
+            "k",
+            "ʌ",
+            "p"
+          ]
+        },
+        {
+          "w": "of",
+          "ipa": [
+            "ə",
+            "v"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "tea",
+          "ipa": [
+            "t",
+            "iː"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "some",
+          "ipa": [
+            "s",
+            "ə",
+            "m"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "fruit",
+          "ipa": [
+            "f",
+            "ɹ",
+            "uː",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            0
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "eɪ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            0
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "ʌ",
+                "v"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "æ",
+                "n",
+                "d"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "s",
+                "ʌ",
+                "m"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U16-s04",
+      "text": "We can eat fish and rice from the market.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "can",
+          "ipa": [
+            "k",
+            "ə",
+            "n"
+          ]
+        },
+        {
+          "w": "eat",
+          "ipa": [
+            "iː",
+            "t"
+          ]
+        },
+        {
+          "w": "fish",
+          "ipa": [
+            "f",
+            "ɪ",
+            "ʃ"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "rice",
+          "ipa": [
+            "ɹ",
+            "aɪ",
+            "s"
+          ]
+        },
+        {
+          "w": "from",
+          "ipa": [
+            "f",
+            "ɹ",
+            "ə",
+            "m"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "k",
+                "æ",
+                "n"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "æ",
+                "n",
+                "d"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 6,
+          "index": [
+            2
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "f",
+                "ɹ",
+                "ʌ",
+                "m"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "ð",
+                "ʌ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U16-s05",
+      "text": "She was happy to see them.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "She",
+          "ipa": [
+            "ʃ",
+            "iː"
+          ]
+        },
+        {
+          "w": "was",
+          "ipa": [
+            "w",
+            "ə",
+            "z"
+          ]
+        },
+        {
+          "w": "happy",
+          "ipa": [
+            "h",
+            "æ",
+            "p",
+            "i"
+          ]
+        },
+        {
+          "w": "to",
+          "ipa": [
+            "t",
+            "ɪ"
+          ]
+        },
+        {
+          "w": "see",
+          "ipa": [
+            "s",
+            "iː"
+          ]
+        },
+        {
+          "w": "them",
+          "ipa": [
+            "ð",
+            "ə",
+            "m"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "w",
+                "ɑː",
+                "z"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "t",
+                "uː"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "ð",
+                "ɛ",
+                "m"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U16-s06",
+      "text": "The lights in Hội An are lovely at night.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "lights",
+          "ipa": [
+            "l",
+            "aɪ",
+            "t",
+            "s"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "Hội",
+          "ipa": null
+        },
+        {
+          "w": "An",
+          "ipa": null
+        },
+        {
+          "w": "are",
+          "ipa": [
+            "ɚ"
+          ]
+        },
+        {
+          "w": "lovely",
+          "ipa": [
+            "l",
+            "ʌ",
+            "v",
+            "l",
+            "i"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "night",
+          "ipa": [
+            "n",
+            "aɪ",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "ð",
+                "ʌ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            0
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "æ",
+                "t"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U16-s07",
+      "text": "Some friends can swim to the island.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Some",
+          "ipa": [
+            "s",
+            "ə",
+            "m"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "friends",
+          "ipa": [
+            "f",
+            "ɹ",
+            "ɛ",
+            "n",
+            "d",
+            "z"
+          ]
+        },
+        {
+          "w": "can",
+          "ipa": [
+            "k",
+            "ə",
+            "n"
+          ]
+        },
+        {
+          "w": "swim",
+          "ipa": [
+            "s",
+            "w",
+            "ɪ",
+            "m"
+          ]
+        },
+        {
+          "w": "to",
+          "ipa": [
+            "t",
+            "ɪ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "island",
+          "ipa": [
+            "aɪ",
+            "l",
+            "ə",
+            "n",
+            "d"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "s",
+                "ʌ",
+                "m"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "k",
+                "æ",
+                "n"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "t",
+                "uː"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "ð",
+                "ʌ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U16-s08",
+      "text": "Let's go to the river and look at the boats.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Let's",
+          "ipa": [
+            "l",
+            "ɛ",
+            "t",
+            "s"
+          ]
+        },
+        {
+          "w": "go",
+          "ipa": [
+            "ɡ",
+            "oʊ"
+          ]
+        },
+        {
+          "w": "to",
+          "ipa": [
+            "t",
+            "ɪ"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "river",
+          "ipa": [
+            "ɹ",
+            "ɪ",
+            "v",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "look",
+          "ipa": [
+            "l",
+            "ʊ",
+            "k"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "boats",
+          "ipa": [
+            "b",
+            "oʊ",
+            "t",
+            "s"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "t",
+                "uː"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "ð",
+                "ʌ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            0
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "æ",
+                "n",
+                "d"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            0
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "æ",
+                "t"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 8,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "ð",
+                "ʌ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U16-s09",
+      "text": "Can you wait for a minute?",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Can",
+          "ipa": [
+            "k",
+            "ə",
+            "n"
+          ]
+        },
+        {
+          "w": "you",
+          "ipa": [
+            "j",
+            "uː"
+          ]
+        },
+        {
+          "w": "wait",
+          "ipa": [
+            "w",
+            "eɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "for",
+          "ipa": [
+            "f",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "minute",
+          "ipa": [
+            "m",
+            "ɪ",
+            "n",
+            "ə",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "k",
+                "æ",
+                "n"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "f",
+                "ɔː",
+                "ɹ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "eɪ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U16-s10",
+      "text": "The weather was hot and sunny at the beach.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "weather",
+          "ipa": [
+            "w",
+            "ɛ",
+            "ð",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "was",
+          "ipa": [
+            "w",
+            "ə",
+            "z"
+          ]
+        },
+        {
+          "w": "hot",
+          "ipa": [
+            "h",
+            "ɑː",
+            "t"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "sunny",
+          "ipa": [
+            "s",
+            "ʌ",
+            "n",
+            "i"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "ð",
+                "ʌ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "w",
+                "ɑː",
+                "z"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "æ",
+                "n",
+                "d"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 6,
+          "index": [
+            0
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "æ",
+                "t"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "ð",
+                "ʌ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U16-s11",
+      "text": "I bought a gift for them from the market.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "bought",
+          "ipa": [
+            "b",
+            "ɑː",
+            "t"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "gift",
+          "ipa": [
+            "ɡ",
+            "ɪ",
+            "f",
+            "t"
+          ]
+        },
+        {
+          "w": "for",
+          "ipa": [
+            "f",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "them",
+          "ipa": [
+            "ð",
+            "ə",
+            "m"
+          ]
+        },
+        {
+          "w": "from",
+          "ipa": [
+            "f",
+            "ɹ",
+            "ə",
+            "m"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            0
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "eɪ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "f",
+                "ɔː",
+                "ɹ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "ð",
+                "ɛ",
+                "m"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 6,
+          "index": [
+            2
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "f",
+                "ɹ",
+                "ʌ",
+                "m"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            1
+          ],
+          "category": "weak_form",
+          "morph": false,
+          "expectedErrors": [
+            {
+              "category": "weak_form",
+              "variantIpa": [
+                "ð",
+                "ʌ"
+              ],
+              "note": {
+                "vi": "Đọc dạng mạnh, nguyên âm đầy đủ.",
+                "en": "Full (strong) form instead of the weak form."
+              }
+            }
+          ]
+        }
+      ],
+      "prosody": null,
+      "detectConfidence": "low",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U16-c01",
+      "wrongText": "I WANT TOO GO TOO THE BEACH. (every word strong, to = [tuː])",
+      "rightText": "I WANT tuh GO tuh the BEACH. (to = weak [tə])",
+      "note": {
+        "vi": "Chữ to đọc đầy đủ \"tu\" làm câu nặng và đều. Thả lỏng môi, nói ngắn \"tờ\".",
+        "en": "Saying to as a full \"too\" makes the sentence heavy and even. Relax the lips and say a short \"tuh\"."
+      }
+    },
+    {
+      "id": "U16-c02",
+      "wrongText": "A cup OFF tea AND some fish. (of = [ɔf], and = [æn])",
+      "rightText": "A CUP-uv-TEA-n-some FISH. (of = [əv], and = [ən] joined)",
+      "note": {
+        "vi": "Of nói như \"off\" và and nói như \"ản\" tách rời. Nối of vào từ trước (\"cup-uv\") và rút and thành \"-n\".",
+        "en": "Of said like \"off\" and and said as a separate \"an\". Join of to the word before (\"cup-uv\") and shrink and to \"-n\"."
+      }
+    },
+    {
+      "id": "U16-c03",
+      "wrongText": "I can swim. = I CAN swim. (can strong, sounds like can't)",
+      "rightText": "I kn SWIM. (can weak) / I CAN'T swim. (can't strong)",
+      "note": {
+        "vi": "Nếu can nhấn mạnh, người nghe dễ hiểu thành can't. Câu khẳng định: can yếu, từ chính swim mạnh.",
+        "en": "If can is stressed, listeners may hear can't. In a positive sentence keep can weak and make the content word swim strong."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "I want to go to the beach.",
+      "shadow": [
+        {
+          "vi": "Nghe câu mẫu hai lần, chỉ chú ý từ nào to rõ (want, go, beach) và từ nào rất nhẹ (to, the).",
+          "en": "Listen to the model twice and notice only which words are loud (want, go, beach) and which are very light (to, the)."
+        },
+        {
+          "vi": "Ngân nga (hum) nhịp mạnh-nhẹ của câu, không nói chữ.",
+          "en": "Hum the strong-light beat of the sentence without words."
+        },
+        {
+          "vi": "Thì thầm cùng lúc với âm thanh mẫu, bắt chước hình dạng, không bắt chước giọng.",
+          "en": "Whisper along with the audio, copying the shape, not the voice."
+        },
+        {
+          "vi": "Nói thành tiếng cùng với âm thanh mẫu; nhìn đường cao độ và khớp hình dạng.",
+          "en": "Speak aloud with the audio; watch the pitch line and match its shape."
+        },
+        {
+          "vi": "Nói một mình, không có âm thanh; so sánh với đường cao độ của mẫu.",
+          "en": "Speak alone with no audio; compare with the model pitch line."
+        }
+      ],
+      "note": {
+        "vi": "Bắt chước hình dạng đường cao độ, không bắt chước giọng của người nói mẫu.",
+        "en": "Copy the shape of the pitch line, not the model speaker's voice."
+      }
+    }
+  ],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "selfcheck",
+    "vi": "Ghi âm 3 câu, nghe lại: các từ to, of, and, a, the có nhẹ và ngắn hơn từ chính không? Có nghe \"tu\" hay \"off\" nặng không? Thử cặp \"I can swim / I can't swim\" xem người nghe có phân biệt được không.",
+    "en": "Record three sentences and listen back: are to, of, and, a, the lighter and shorter than the content words? Do you hear a heavy \"too\" or \"off\"? Try the pair \"I can swim / I can't swim\" to see whether a listener can tell them apart."
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói chưa quen rút gọn nguyên âm nên đọc đủ từng chữ; đừng xem đó là sai nếu người nghe vẫn hiểu, vì dạng đầy đủ cũng được dùng khi nhấn mạnh hoặc đứng cuối câu (\"Yes, I can.\"). Phần mềm chỉ ước lượng nguyên âm mạnh ở vị trí yếu (độ tin cậy thấp, chưa đo trên học sinh thật), không đo độ dài hay độ lớn; nên chỉ dùng điểm để tham khảo, cùng với phần tự kiểm tra. Cặp can/can't chỉ kiểm tra qua nghe, không chấm bằng quy tắc âm vị.",
+    "en": "Some speakers are not used to vowel reduction and give every word its full vowel; do not count that as wrong if the listener understands, since full forms are also used for emphasis or at the end of a sentence (\"Yes, I can.\"). The app only estimates a strong vowel in a weak slot (low confidence, not yet measured on real students); it does not measure duration or loudness, so treat the score as a guide alongside the self-check. The can/can't pair is a listening check only, not scored by a phone rule."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

@@ -1,0 +1,600 @@
+{
+  "cando": {
+    "vi": "Em nói phân biệt được v/w/j, l/n/r và p/b, và nói trọn âm /l/ ở cuối từ.",
+    "en": "I can keep v/w/j, l/n/r and p/b apart, and finish a final /l/."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt có các chữ v, d, gi, r, l, n, nhưng cách đọc của chúng khác nhau tùy giọng, nên một số người nói đọc very thành \"yery\", yes thành \"zes\" hoặc red nghe gần như \"zed\" khi nói tiếng Anh. Các tài liệu giảng dạy cho thấy việc lẫn /v w j z/ khá thường gặp (độ tin cậy trung bình); đây là thói quen ánh xạ âm, không phải đặc điểm của một vùng nào.",
+      "en": "Vietnamese has the letters v, d, gi, r, l and n, but how they sound varies between accents, so some speakers say very as \"yery\", yes as \"zes\", or red close to \"zed\" in English. Teaching sources describe /v w j z/ mix-ups as fairly common (medium confidence); it is a habit of sound mapping, not a trait of any one region.",
+      "refs": [
+        "[17]"
+      ]
+    },
+    {
+      "vi": "Tiếng Việt không có âm /l/ ở cuối từ và không có /p/ ở đầu từ bản ngữ, nên ball, school, well hay mất âm cuối hoặc nghe như \"bon\", còn pig dễ nghe như big. Một số người nói cũng lẫn /l/ với /n/, nên light nghe như night (được báo cáo, chưa có số liệu rõ).",
+      "en": "Vietnamese has no final /l/ and no native initial /p/, so ball, school and well often lose the ending or sound like \"bon\", and pig can sound like big. Some speakers also mix /l/ with /n/, so light sounds like night (reported, no clear figures).",
+      "refs": [
+        "[12]",
+        "[14]"
+      ]
+    },
+    {
+      "vi": "Các cặp này làm hai từ trùng nhau (wine/vine, light/right, pig/big) nên ảnh hưởng đến việc hiểu nhau; đây là phụ âm cốt lõi (P2). Phần mềm chỉ tin ở mức trung bình.",
+      "en": "These pairs make two words collide (wine/vine, light/right, pig/big), so they affect understanding; they are core consonants (priority P2). The app's detection confidence is only medium.",
+      "refs": [
+        "[B16]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "/v/: răng trên chạm nhẹ môi dưới, thổi hơi và rung cổ (tay trên cổ thấy rung). /w/: tròn môi như nói \"u\" rồi mở nhanh sang nguyên âm. Hai âm này không giống nhau.",
+      "en": "/v/: upper teeth touch the lower lip, blow and buzz. /w/: round the lips as for \"oo\", then open into the vowel."
+    },
+    {
+      "vi": "/j/ (trong yes): lưỡi nâng gần vòm miệng như bắt đầu nói \"i\", rồi trượt sang nguyên âm. /z/ (trong zoo) rung giữa lưỡi và nướu; /dʒ/ bắt đầu bằng một cú bật nhẹ.",
+      "en": "/j/ (yes): raise the tongue toward the palate as for \"ee\", then glide into the vowel. /z/ (zoo) buzzes; /dʒ/ starts with a small stop."
+    },
+    {
+      "vi": "/l/ đầu từ: đầu lưỡi chạm nướu răng trên, hơi thoát hai bên lưỡi. /n/: cũng chạm nướu nhưng hơi đi ra mũi. /ɹ/: cuộn lưỡi lên, không chạm vào đâu.",
+      "en": "/l/: tongue tip on the ridge, air out the sides. /n/: same touch, air through the nose. /ɹ/: curl the tongue up, touch nothing."
+    },
+    {
+      "vi": "/l/ cuối từ (ball, well): để đầu lưỡi chạm nướu và giữ một chút, đừng dừng ở nguyên âm hay chuyển thành \"n\" hoặc \"u\".",
+      "en": "Final /l/ (ball, well): tongue tip on the ridge, hold it a moment. Do not stop on the vowel or change it to \"n\"."
+    },
+    {
+      "vi": "/p/ đầu từ: mím môi, thả ra kèm một luồng hơi nhỏ (tay trước miệng thấy hơi). /b/ thì rung cổ, ít hơi. Luyện cặp pig–big.",
+      "en": "/p/ at the start: close the lips, release with a small puff on your hand. /b/ buzzes, less air. Try pig–big."
+    }
+  ],
+  "words": [
+    {
+      "text": "very",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "j ɛ ɹ i",
+          "note": {
+            "vi": "Âm đầu thành /j/ (như \"yery\").",
+            "en": "Initial sound became /j/ (\"yery\")."
+          }
+        },
+        {
+          "variantIpa": "w ɛ ɹ i",
+          "note": {
+            "vi": "Âm đầu thành /w/.",
+            "en": "Initial sound became /w/."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "vote",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "w oʊ t",
+          "note": {
+            "vi": "Âm đầu thành /w/.",
+            "en": "Initial sound became /w/."
+          }
+        },
+        {
+          "variantIpa": "b oʊ t",
+          "note": {
+            "vi": "Âm đầu thành /b/.",
+            "en": "Initial sound became /b/."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "wine",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "v aɪ n",
+          "note": {
+            "vi": "Âm đầu thành /v/ (nghe như vine).",
+            "en": "Initial sound became /v/ (like vine)."
+          }
+        },
+        {
+          "variantIpa": "j aɪ n",
+          "note": {
+            "vi": "Âm đầu thành /j/.",
+            "en": "Initial sound became /j/."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "yes",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "z ɛ s",
+          "note": {
+            "vi": "Âm đầu thành /z/ (nghe như \"zes\").",
+            "en": "Initial sound became /z/ (\"zes\")."
+          }
+        },
+        {
+          "variantIpa": "dʒ ɛ s",
+          "note": {
+            "vi": "Âm đầu thành /dʒ/ (nghe như jess).",
+            "en": "Initial sound became /dʒ/ (like jess)."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "zoo",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "dʒ uː",
+          "note": {
+            "vi": "Âm đầu thành /dʒ/.",
+            "en": "Initial sound became /dʒ/."
+          }
+        },
+        {
+          "variantIpa": "j uː",
+          "note": {
+            "vi": "Âm đầu thành /j/.",
+            "en": "Initial sound became /j/."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "red",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "z ɛ d",
+          "note": {
+            "vi": "Âm đầu thành /z/ (nghe như zed).",
+            "en": "Initial sound became /z/ (like zed)."
+          }
+        },
+        {
+          "variantIpa": "l ɛ d",
+          "note": {
+            "vi": "Âm đầu thành /l/ (nghe như led).",
+            "en": "Initial sound became /l/ (like led)."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "light",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "n aɪ t",
+          "note": {
+            "vi": "Âm đầu thành /n/ (nghe như night).",
+            "en": "Initial sound became /n/ (like night)."
+          }
+        },
+        {
+          "variantIpa": "ɹ aɪ t",
+          "note": {
+            "vi": "Âm đầu thành /ɹ/ (nghe như right).",
+            "en": "Initial sound became /ɹ/ (like right)."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "pig",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b ɪ ɡ",
+          "note": {
+            "vi": "Âm đầu thành /b/ (nghe như big).",
+            "en": "Initial sound became /b/ (like big)."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "park",
+      "targets": [
+        {
+          "index": [
+            0
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b ɑː ɹ k",
+          "note": {
+            "vi": "Âm đầu thành /b/ (nghe như bark).",
+            "en": "Initial sound became /b/ (like bark)."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "ball",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "category": "final_consonant"
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b ɔː",
+          "note": {
+            "vi": "Bỏ mất âm cuối /l/.",
+            "en": "Final /l/ dropped."
+          }
+        },
+        {
+          "variantIpa": "b ɔː n",
+          "note": {
+            "vi": "Âm /l/ cuối nghe như /n/.",
+            "en": "Final /l/ sounds like /n/."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "school",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "category": "final_consonant"
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s k uː",
+          "note": {
+            "vi": "Bỏ mất âm cuối /l/.",
+            "en": "Final /l/ dropped."
+          }
+        },
+        {
+          "variantIpa": "s k uː n",
+          "note": {
+            "vi": "Âm /l/ cuối nghe như /n/.",
+            "en": "Final /l/ sounds like /n/."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "well",
+      "targets": [
+        {
+          "index": [
+            -1
+          ],
+          "category": "final_consonant"
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "w ɛ",
+          "note": {
+            "vi": "Bỏ mất âm cuối /l/.",
+            "en": "Final /l/ dropped."
+          }
+        },
+        {
+          "variantIpa": "w ɛ n",
+          "note": {
+            "vi": "Âm /l/ cuối nghe như /n/.",
+            "en": "Final /l/ sounds like /n/."
+          }
+        }
+      ],
+      "vowelIdx": false
+    }
+  ],
+  "pairs": [
+    {
+      "a": "wine",
+      "b": "vine",
+      "type": "substitution"
+    },
+    {
+      "a": "wet",
+      "b": "vet",
+      "type": "substitution"
+    },
+    {
+      "a": "yet",
+      "b": "jet",
+      "type": "substitution"
+    },
+    {
+      "a": "light",
+      "b": "right",
+      "type": "substitution"
+    },
+    {
+      "a": "line",
+      "b": "nine",
+      "type": "substitution"
+    },
+    {
+      "a": "pig",
+      "b": "big",
+      "type": "substitution"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "The yellow lights look very pretty in Hội An.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            0
+          ]
+        }
+      ],
+      "culture": true,
+      "unscored": [
+        "Hội",
+        "An"
+      ]
+    },
+    {
+      "text": "I like the red bridge and the park by the river.",
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 10,
+          "index": [
+            0
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "Yes, the zoo near our school has a big pig.",
+      "targets": [
+        {
+          "word": 0,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 2,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            -1
+          ],
+          "category": "final_consonant"
+        },
+        {
+          "word": 9,
+          "index": [
+            0
+          ]
+        }
+      ],
+      "culture": false
+    },
+    {
+      "text": "I feel well when I walk on the beach at night.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ],
+          "category": "final_consonant"
+        },
+        {
+          "word": 2,
+          "index": [
+            -1
+          ],
+          "category": "final_consonant"
+        },
+        {
+          "word": 3,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            0
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "We eat rice and light soup in Huế, and the food is very good.",
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 4,
+          "index": [
+            0
+          ]
+        },
+        {
+          "word": 12,
+          "index": [
+            0
+          ]
+        }
+      ],
+      "culture": true,
+      "unscored": [
+        "Huế"
+      ]
+    }
+  ],
+  "contrasts": [
+    {
+      "wrong": "j ɛ ɹ i",
+      "right": "v ɛ ɹ i",
+      "note": {
+        "vi": "Very nghe như \"yery\". Đặt răng trên chạm môi dưới và rung cổ, đừng bắt đầu bằng âm \"y\".",
+        "en": "Very sounds like \"yery\". Touch the upper teeth to the lower lip and buzz; do not start with \"y\"."
+      }
+    },
+    {
+      "wrong": "n aɪ t",
+      "right": "l aɪ t",
+      "note": {
+        "vi": "Light nghe như night. Hơi phải thoát hai bên lưỡi, không đi qua mũi (bịt mũi vẫn nói được).",
+        "en": "Light sounds like night. The air goes round the sides of the tongue, not through the nose (it works with a pinched nose)."
+      }
+    },
+    {
+      "wrong": "b ɪ ɡ",
+      "right": "p ɪ ɡ",
+      "note": {
+        "vi": "Pig nghe như big. Mím môi rồi thả kèm luồng hơi nhỏ, không rung cổ.",
+        "en": "Pig sounds like big. Close the lips and release with a small puff, no voice."
+      }
+    },
+    {
+      "wrong": "b ɔː",
+      "right": "b ɔː l",
+      "note": {
+        "vi": "Ball mất /l/ cuối. Sau nguyên âm, đưa đầu lưỡi chạm nướu và giữ lại.",
+        "en": "Ball lost its final /l/. After the vowel, put the tongue tip on the ridge and hold it."
+      }
+    }
+  ],
+  "selfCheck": {
+    "vi": "Ghi âm wine–vine, light–right, pig–big và ball, well. Nghe lại: /v/ có chạm răng–môi không, /l/ cuối có nghe rõ không? Nhờ bạn đoán từ em nói.",
+    "en": "Record wine–vine, light–right, pig–big, then ball and well. Listen back: do you hear the teeth-on-lip /v/, and a clear final /l/? Ask a friend to guess which word you said."
+  },
+  "teacherNotes": {
+    "vi": "Cách đọc các chữ v, d, gi, r, l, n khác nhau giữa các giọng tiếng Việt, và một số người nói có thể lẫn /v w j z/ hoặc /l n/; đây là ảnh hưởng của hệ thống âm quen thuộc, không phải lỗi của một vùng. Một số giọng Anh cũng đọc /l/ cuối rất nhẹ hoặc gần như \"w\"; hãy chấp nhận khi người nghe vẫn hiểu. Phần mềm chủ yếu thấy khi âm bị đổi sang âm khác; không đo độ bật hơi của /p/ hay độ cong lưỡi của /ɹ/. Độ tin cậy phát hiện: trung bình, chưa được đo trên học sinh thật.",
+    "en": "How the letters v, d, gi, r, l and n are pronounced differs between Vietnamese accents, and some speakers may mix /v w j z/ or /l n/; this is an effect of familiar sound habits, not a trait of one region. Some English accents also say a final /l/ very lightly or close to \"w\"; accept it if the listener understands. The app mainly sees a sound replaced by another; it does not measure the puff of /p/ or tongue curl of /ɹ/. Detection confidence: medium, not yet measured on real students."
+  },
+  "id": "U12",
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

@@ -1,0 +1,1093 @@
+{
+  "id": "U19",
+  "level": "C1",
+  "band": "B2-C1",
+  "category": "intonation",
+  "kind": "prosody",
+  "prereq": [
+    "U07",
+    "U17"
+  ],
+  "title": {
+    "vi": "Trọng âm câu và ngữ điệu",
+    "en": "Focus and tunes"
+  },
+  "cando": {
+    "vi": "Em đặt trọng âm chính vào thông tin mới hoặc đối lập, và dùng đúng giọng cho câu hỏi lựa chọn, danh sách và câu hỏi đuôi.",
+    "en": "I can put the main stress on new or contrastive information and use the right tune for choice questions, lists and question tags."
+  },
+  "why": [
+    {
+      "vi": "Trọng âm chính của câu (nucleus) rơi vào từ mang thông tin mới hoặc đối lập: \"I want the RED lantern, not the BLUE one.\" Đổi từ được nhấn là đổi điều người nghe hiểu. Người học Việt thường được báo cáo nhấn đều từng từ hoặc luôn nhấn từ cuối.",
+      "en": "The main stress of a sentence (the nucleus) falls on the word carrying new or contrastive information: \"I want the RED lantern, not the BLUE one.\" Moving the stress changes what the listener understands. Vietnamese learners are often reported to stress every word equally or always stress the last word.",
+      "refs": [
+        "[B1]",
+        "[B8]"
+      ]
+    },
+    {
+      "vi": "Một nghiên cứu (27 người) báo cáo rằng luyện tập có hướng dẫn cải thiện việc chọn từ mang trọng âm câu và giọng lên/xuống. Người học cấp cao hơn được ghi nhận tiến gần người bản ngữ hơn.",
+      "en": "One study (27 learners) reported that guided practice improved the choice of the stressed word and the rise or fall. More advanced learners are reported to come closer to native speakers.",
+      "refs": [
+        "[B8]",
+        "[B1]"
+      ]
+    },
+    {
+      "vi": "Tiếng Việt dùng thanh điệu trên từng âm tiết nên người học thường để giọng tiếng Anh đi theo thanh điệu. Nhìn đường cao độ và bắt chước hình dạng được báo cáo là giúp nhận ra giọng lên/xuống.",
+      "en": "Vietnamese uses tones on each syllable, so learners often let English pitch follow tones. Watching a pitch line and copying its shape is reported to help learners notice rises and falls.",
+      "refs": [
+        "[B4]",
+        "[B11]",
+        "[B12]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Chọn từ quan trọng nhất trong câu rồi nói nó to hơn, dài hơn và có giọng chuyển động: \"My FRIEND lives in Hội An.\" Các từ còn lại nói nhẹ và nhanh.",
+      "en": "Pick the key word and make it louder and longer, with moving pitch: \"My FRIEND lives in Hội An.\" Say the other words lightly."
+    },
+    {
+      "vi": "Khi đối lập, nhấn từ khác nhau: \"I want the RED lantern.\" (không phải màu khác) và \"I want the red LANTERN.\" (không phải đồ vật khác).",
+      "en": "For contrast, stress different words: \"I want the RED lantern.\" (not another colour) and \"I want the red LANTERN.\" (not another object)."
+    },
+    {
+      "vi": "Câu hỏi lựa chọn: lên giọng ở lựa chọn đầu, xuống giọng ở lựa chọn cuối: \"Tea ↗ or coffee ↘?\" Câu hỏi Yes/No \"Tea or coffee?\" kết thúc lên giọng.",
+      "en": "Choice questions: rise on the first option, fall on the last: \"Tea ↗ or coffee ↘?\" A yes/no question \"Tea or coffee?\" ends rising."
+    },
+    {
+      "vi": "Danh sách: lên giọng nhẹ ở mỗi mục, xuống giọng ở mục cuối: \"rice ↗, noodles ↗, and fruit ↘.\"",
+      "en": "Lists: a small rise on each item, a fall on the last one: \"rice ↗, noodles ↗, and fruit ↘.\""
+    },
+    {
+      "vi": "Câu hỏi đuôi: xuống giọng khi em chắc chắn, lên giọng khi em thật sự hỏi: \"It's lovely, isn't it ↘?\" và \"You like it, don't you ↗?\"",
+      "en": "Question tags: fall when you are sure, rise when you really ask: \"It's lovely, isn't it ↘?\" and \"You like it, don't you ↗?\""
+    }
+  ],
+  "perception": {
+    "type": "2afc-tune",
+    "pairIds": [
+      "U19-p01",
+      "U19-p02",
+      "U19-p03",
+      "U19-p04",
+      "U19-p05",
+      "U19-p06"
+    ],
+    "trials": 10,
+    "voices": 3,
+    "criterion": 0.8
+  },
+  "words": [],
+  "pairs": [
+    {
+      "id": "U19-p01",
+      "type": "nucleus",
+      "category": "intonation",
+      "text": "My friend lives in Hội An.",
+      "a": {
+        "nucleus": 1
+      },
+      "b": {
+        "nucleus": 4
+      }
+    },
+    {
+      "id": "U19-p02",
+      "type": "nucleus",
+      "category": "intonation",
+      "text": "I want the red lantern.",
+      "a": {
+        "nucleus": 3
+      },
+      "b": {
+        "nucleus": 4
+      }
+    },
+    {
+      "id": "U19-p03",
+      "type": "nucleus",
+      "category": "intonation",
+      "text": "She bought the small cup.",
+      "a": {
+        "nucleus": 3
+      },
+      "b": {
+        "nucleus": 4
+      }
+    },
+    {
+      "id": "U19-p04",
+      "type": "nucleus",
+      "category": "intonation",
+      "text": "We walked to the market.",
+      "a": {
+        "nucleus": 1
+      },
+      "b": {
+        "nucleus": 4
+      }
+    },
+    {
+      "id": "U19-p05",
+      "type": "tune",
+      "category": "intonation",
+      "text": "Tea or coffee?",
+      "a": {
+        "final": "fall"
+      },
+      "b": {
+        "final": "rise"
+      }
+    },
+    {
+      "id": "U19-p06",
+      "type": "tune",
+      "category": "intonation",
+      "text": "Rice or noodles?",
+      "a": {
+        "final": "fall"
+      },
+      "b": {
+        "final": "rise"
+      }
+    }
+  ],
+  "sentences": [
+    {
+      "id": "U19-s01",
+      "text": "I want the red lantern, not the blue one.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "want",
+          "ipa": [
+            "w",
+            "ɑː",
+            "n",
+            "t"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "red",
+          "ipa": [
+            "ɹ",
+            "ɛ",
+            "d"
+          ]
+        },
+        {
+          "w": "lantern",
+          "ipa": [
+            "l",
+            "æ",
+            "n",
+            "t",
+            "ɚ",
+            "n"
+          ]
+        },
+        {
+          "w": "not",
+          "ipa": [
+            "n",
+            "ɑː",
+            "t"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "blue",
+          "ipa": [
+            "b",
+            "l",
+            "uː"
+          ]
+        },
+        {
+          "w": "one",
+          "ipa": [
+            "w",
+            "ʌ",
+            "n"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            2
+          ],
+          "category": "intonation",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "final": "fall",
+        "nucleus": 3,
+        "type": "statement"
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U19-s02",
+      "text": "We bought a red lantern at the market.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "bought",
+          "ipa": [
+            "b",
+            "ɑː",
+            "t"
+          ]
+        },
+        {
+          "w": "a",
+          "ipa": [
+            "ə"
+          ]
+        },
+        {
+          "w": "red",
+          "ipa": [
+            "ɹ",
+            "ɛ",
+            "d"
+          ]
+        },
+        {
+          "w": "lantern",
+          "ipa": [
+            "l",
+            "æ",
+            "n",
+            "t",
+            "ɚ",
+            "n"
+          ]
+        },
+        {
+          "w": "at",
+          "ipa": [
+            "ə",
+            "t"
+          ],
+          "ipaSource": "author"
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "market",
+          "ipa": [
+            "m",
+            "ɑː",
+            "ɹ",
+            "k",
+            "ə",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 4,
+          "index": [
+            5
+          ],
+          "category": "intonation",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "final": "fall",
+        "nucleus": 4,
+        "type": "statement"
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U19-s03",
+      "text": "My friend lives in Hội An.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "My",
+          "ipa": [
+            "m",
+            "aɪ"
+          ]
+        },
+        {
+          "w": "friend",
+          "ipa": [
+            "f",
+            "ɹ",
+            "ɛ",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "lives",
+          "ipa": [
+            "l",
+            "ɪ",
+            "v",
+            "z"
+          ]
+        },
+        {
+          "w": "in",
+          "ipa": [
+            "ɪ",
+            "n"
+          ]
+        },
+        {
+          "w": "Hội",
+          "ipa": null
+        },
+        {
+          "w": "An",
+          "ipa": null
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            4
+          ],
+          "category": "intonation",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "final": "fall",
+        "nucleus": 1,
+        "type": "statement"
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U19-s04",
+      "text": "Tea or coffee?",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Tea",
+          "ipa": [
+            "t",
+            "iː"
+          ]
+        },
+        {
+          "w": "or",
+          "ipa": [
+            "ɔː",
+            "ɹ"
+          ]
+        },
+        {
+          "w": "coffee",
+          "ipa": [
+            "k",
+            "ɑː",
+            "f",
+            "i"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            3
+          ],
+          "category": "intonation",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "final": "fall",
+        "nucleus": 2,
+        "type": "choice"
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U19-s05",
+      "text": "Tea or coffee?",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Tea",
+          "ipa": [
+            "t",
+            "iː"
+          ]
+        },
+        {
+          "w": "or",
+          "ipa": [
+            "ɔː",
+            "ɹ"
+          ]
+        },
+        {
+          "w": "coffee",
+          "ipa": [
+            "k",
+            "ɑː",
+            "f",
+            "i"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 2,
+          "index": [
+            3
+          ],
+          "category": "intonation",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "final": "rise",
+        "nucleus": 2,
+        "type": "yesno"
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U19-s06",
+      "text": "We ate rice, noodles, and fresh fruit.",
+      "cefr": "A2",
+      "words": [
+        {
+          "w": "We",
+          "ipa": [
+            "w",
+            "iː"
+          ]
+        },
+        {
+          "w": "ate",
+          "ipa": [
+            "eɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "rice",
+          "ipa": [
+            "ɹ",
+            "aɪ",
+            "s"
+          ]
+        },
+        {
+          "w": "noodles",
+          "ipa": [
+            "n",
+            "uː",
+            "d",
+            "ə",
+            "l",
+            "z"
+          ]
+        },
+        {
+          "w": "and",
+          "ipa": [
+            "ə",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "w": "fresh",
+          "ipa": [
+            "f",
+            "ɹ",
+            "ɛ",
+            "ʃ"
+          ]
+        },
+        {
+          "w": "fruit",
+          "ipa": [
+            "f",
+            "ɹ",
+            "uː",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 6,
+          "index": [
+            3
+          ],
+          "category": "intonation",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "final": "fall",
+        "nucleus": 6,
+        "type": "list"
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U19-s07",
+      "text": "Is the weather nice, or is it too hot?",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "weather",
+          "ipa": [
+            "w",
+            "ɛ",
+            "ð",
+            "ɚ"
+          ]
+        },
+        {
+          "w": "nice",
+          "ipa": [
+            "n",
+            "aɪ",
+            "s"
+          ]
+        },
+        {
+          "w": "or",
+          "ipa": [
+            "ɔː",
+            "ɹ"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "it",
+          "ipa": [
+            "ɪ",
+            "t"
+          ]
+        },
+        {
+          "w": "too",
+          "ipa": [
+            "t",
+            "uː"
+          ]
+        },
+        {
+          "w": "hot",
+          "ipa": [
+            "h",
+            "ɑː",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 8,
+          "index": [
+            2
+          ],
+          "category": "intonation",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "final": "fall",
+        "nucleus": 8,
+        "type": "choice"
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U19-s08",
+      "text": "The beach is lovely, isn't it?",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "The",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        },
+        {
+          "w": "is",
+          "ipa": [
+            "ɪ",
+            "z"
+          ]
+        },
+        {
+          "w": "lovely",
+          "ipa": [
+            "l",
+            "ʌ",
+            "v",
+            "l",
+            "i"
+          ]
+        },
+        {
+          "w": "isn't",
+          "ipa": [
+            "ɪ",
+            "z",
+            "ə",
+            "n",
+            "t"
+          ]
+        },
+        {
+          "w": "it",
+          "ipa": [
+            "ɪ",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            4
+          ],
+          "category": "intonation",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "final": "fall",
+        "nucleus": 3,
+        "type": "tag"
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U19-s09",
+      "text": "You like the bridge, don't you?",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "You",
+          "ipa": [
+            "j",
+            "uː"
+          ]
+        },
+        {
+          "w": "like",
+          "ipa": [
+            "l",
+            "aɪ",
+            "k"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "bridge",
+          "ipa": [
+            "b",
+            "ɹ",
+            "ɪ",
+            "dʒ"
+          ]
+        },
+        {
+          "w": "don't",
+          "ipa": [
+            "d",
+            "oʊ",
+            "n",
+            "t"
+          ]
+        },
+        {
+          "w": "you",
+          "ipa": [
+            "j",
+            "uː"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            3
+          ],
+          "category": "intonation",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "final": "rise",
+        "nucleus": 3,
+        "type": "tag"
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U19-s10",
+      "text": "Which lantern do you want?",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "Which",
+          "ipa": [
+            "w",
+            "ɪ",
+            "tʃ"
+          ]
+        },
+        {
+          "w": "lantern",
+          "ipa": [
+            "l",
+            "æ",
+            "n",
+            "t",
+            "ɚ",
+            "n"
+          ]
+        },
+        {
+          "w": "do",
+          "ipa": [
+            "d",
+            "uː"
+          ]
+        },
+        {
+          "w": "you",
+          "ipa": [
+            "j",
+            "uː"
+          ]
+        },
+        {
+          "w": "want",
+          "ipa": [
+            "w",
+            "ɑː",
+            "n",
+            "t"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            5
+          ],
+          "category": "intonation",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "final": "fall",
+        "nucleus": 1,
+        "type": "wh"
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    },
+    {
+      "id": "U19-s11",
+      "text": "I said the bridge, not the beach.",
+      "cefr": "A1",
+      "words": [
+        {
+          "w": "I",
+          "ipa": [
+            "aɪ"
+          ]
+        },
+        {
+          "w": "said",
+          "ipa": [
+            "s",
+            "ɛ",
+            "d"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "bridge",
+          "ipa": [
+            "b",
+            "ɹ",
+            "ɪ",
+            "dʒ"
+          ]
+        },
+        {
+          "w": "not",
+          "ipa": [
+            "n",
+            "ɑː",
+            "t"
+          ]
+        },
+        {
+          "w": "the",
+          "ipa": [
+            "ð",
+            "ə"
+          ]
+        },
+        {
+          "w": "beach",
+          "ipa": [
+            "b",
+            "iː",
+            "tʃ"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "word": 3,
+          "index": [
+            3
+          ],
+          "category": "intonation",
+          "morph": false
+        }
+      ],
+      "prosody": {
+        "final": "fall",
+        "nucleus": 3,
+        "type": "statement"
+      },
+      "detectConfidence": "medium",
+      "source": {
+        "type": "original",
+        "author": "EchoLạc"
+      },
+      "factFrom": null
+    }
+  ],
+  "contrasts": [
+    {
+      "id": "U19-c01",
+      "wrongText": "I want the RED LANTERN, not the BLUE one. (every word equally strong)",
+      "rightText": "I want the RED lantern, not the BLUE one. (only the contrast words are strong)",
+      "note": {
+        "vi": "Nhấn đều mọi từ làm người nghe không biết điều gì là mới. Chỉ nhấn từ đối lập (red/blue); \"lantern\" và \"one\" là thông tin cũ nên nói nhẹ.",
+        "en": "Stressing every word hides what is new. Stress only the contrast words (red/blue); \"lantern\" and \"one\" are old information, so say them lightly."
+      }
+    },
+    {
+      "id": "U19-c02",
+      "wrongText": "Tea or coffee? ↗ ↗ (rises at the end, sounds like yes/no)",
+      "rightText": "Tea ↗ or coffee ↘? (rise on the first option, fall on the last)",
+      "note": {
+        "vi": "Câu hỏi lựa chọn cần xuống giọng ở lựa chọn cuối để người nghe biết danh sách đã hết và phải chọn một.",
+        "en": "A choice question needs a fall on the last option so the listener knows the list is closed and they must pick one."
+      }
+    },
+    {
+      "id": "U19-c03",
+      "wrongText": "We ate rice, noodles, and fruit. ↘ ↘ ↘ (falls on every item)",
+      "rightText": "We ate rice ↗, noodles ↗, and fruit ↘. (rise on each item, fall on the last)",
+      "note": {
+        "vi": "Xuống giọng ở mọi mục nghe như câu đã kết thúc. Lên nhẹ ở các mục đầu để báo hiệu danh sách còn tiếp.",
+        "en": "Falling on every item sounds as if the sentence has ended. A small rise on the early items signals that the list continues."
+      }
+    },
+    {
+      "id": "U19-c04",
+      "wrongText": "The beach is lovely, isn't it? ↗ (sure, but rising)",
+      "rightText": "The beach is lovely, isn't it? ↘ (sure: falls)",
+      "note": {
+        "vi": "Câu hỏi đuôi xuống giọng là xin đồng ý; lên giọng là hỏi thật. Chọn giọng đúng với ý em.",
+        "en": "A falling tag asks for agreement; a rising tag is a real question. Choose the tune that matches what you mean."
+      }
+    }
+  ],
+  "chain": [
+    {
+      "text": "I want the RED lantern. / I want the red LANTERN.",
+      "shadow": [
+        {
+          "vi": "Nghe câu mẫu hai lần, chỉ chú ý từ nào mạnh nhất và giọng đi lên hay xuống ở cuối.",
+          "en": "Listen to the model twice and notice only which word is strongest and whether the voice goes up or down at the end."
+        },
+        {
+          "vi": "Ngân nga (hum) hình dạng đường giọng, không nói chữ.",
+          "en": "Hum the shape of the tune without words."
+        },
+        {
+          "vi": "Thì thầm cùng lúc với âm thanh mẫu, bắt chước hình dạng, không bắt chước giọng.",
+          "en": "Whisper along with the audio, copying the shape, not the voice."
+        },
+        {
+          "vi": "Nói thành tiếng cùng với âm thanh mẫu; nhìn đường cao độ và khớp chỗ đỉnh.",
+          "en": "Speak aloud with the audio; watch the pitch line and match the peak."
+        },
+        {
+          "vi": "Nói một mình, không có âm thanh; so sánh với đường cao độ của mẫu.",
+          "en": "Speak alone with no audio; compare with the model pitch line."
+        }
+      ],
+      "note": {
+        "vi": "Bắt chước hình dạng đường cao độ, không bắt chước giọng của người nói mẫu.",
+        "en": "Copy the shape of the pitch line, not the model speaker's voice."
+      }
+    }
+  ],
+  "selfCheck": {
+    "threshold": 80,
+    "itemsToPass": 0.8,
+    "perceptionToPass": 0.8,
+    "gate": "score",
+    "vi": "Ghi âm \"I want the RED lantern.\" và \"Tea or coffee?\" (xuống giọng ở cuối), rồi nghe lại: từ được nhấn có nổi lên không? Câu lựa chọn có xuống giọng ở cuối không?",
+    "en": "Record \"I want the RED lantern.\" and \"Tea or coffee?\" (falling at the end) and listen back: does the stressed word stand out? Does the choice question fall at the end?"
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói phương ngữ có thanh điệu khác nhau nên đường cao độ có thể khác; đừng cho đó là lỗi nếu người nghe vẫn hiểu ý. Người bản ngữ cũng đặt trọng âm khác nhau tuỳ ngữ cảnh. Phần mềm chỉ ước lượng hướng lên/xuống ở cuối câu (độ tin cậy trung bình, chưa đo trên học sinh thật) và vị trí từ chính (độ tin cậy thấp), nên không dùng điểm này để chặn tiến độ. Tên riêng tiếng Việt (Hội An) không được chấm; ứng dụng không đánh giá ý định, cảm xúc hay nghĩa. Các mục đối chiếu viết bằng chữ vì trọng âm và giọng lên/xuống không biểu diễn được bằng IPA.",
+    "en": "Speakers of some dialects have different tones, so pitch can differ; do not count it as an error if the listener still understands. Native speakers also place the stress differently by context. The app only estimates the final rise or fall (medium confidence, not yet measured on real students) and the nucleus word (low confidence), so the score should not block progress. Vietnamese names (Hội An) are not scored; the app cannot judge intention, attitude or meaning. Contrast items are written as text because stress and tunes cannot be written in IPA."
+  },
+  "verified": true,
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}

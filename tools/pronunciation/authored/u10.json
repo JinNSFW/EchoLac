@@ -1,0 +1,585 @@
+{
+  "cando": {
+    "vi": "Em nói bed khác bet, rise khác rice: giữ rung cổ ở âm cuối và kéo dài nguyên âm trước đó.",
+    "en": "I can make bed and bet, rise and rice sound different: keep the voice on the final sound and lengthen the vowel before it."
+  },
+  "why": [
+    {
+      "vi": "Tiếng Việt chỉ có âm cuối /p t k/ (không bật hơi), không có /b d ɡ v z/ ở cuối, nên bed dễ nghe như \"bét\" và dog như \"dốc\". Các nghiên cứu nhỏ báo cáo lỗi bỏ hoặc vô thanh hóa âm cuối hữu thanh là thường gặp (độ tin cậy trung bình).",
+      "en": "Vietnamese has only unreleased final /p t k/ and no final /b d ɡ v z/, so bed easily sounds like \"bet\" and dog like \"dock\". Small studies report devoicing or dropping voiced finals as common (medium confidence).",
+      "refs": [
+        "[1]",
+        "[12]",
+        "[14]"
+      ]
+    },
+    {
+      "vi": "Khi âm cuối mất rung, hai từ trùng nhau: bed/bet, rise/rice, leave/leaf. Theo ngữ âm học tiếng Anh nói chung, nguyên âm đứng trước âm cuối hữu thanh dài hơn, và người nghe dựa vào đó để phân biệt hai từ.",
+      "en": "When the final loses its voice, two words collide: bed/bet, rise/rice, leave/leaf. In general English phonetics, the vowel before a voiced ending is longer, and listeners use this to tell the words apart.",
+      "refs": [
+        "[B15]"
+      ]
+    },
+    {
+      "vi": "Phần mềm chủ yếu nhận ra âm cuối bị đổi thành âm vô thanh; độ dài nguyên âm khó đo hơn, nên bài này có mức ưu tiên P2 và điểm số chỉ là gợi ý.",
+      "en": "The software mainly detects a final changed to its voiceless pair; vowel length is harder to measure, so this unit is priority P2 and the score is only a hint.",
+      "refs": [
+        "[1]"
+      ]
+    }
+  ],
+  "howTo": [
+    {
+      "vi": "Đặt tay lên cổ. Nói \"sss\" rồi \"zzz\": zzz có rung. Giữ cảm giác rung đó đến hết từ rise, không để tắt trước khi từ kết thúc.",
+      "en": "Put a hand on your throat. Say \"sss\" then \"zzz\": zzz buzzes. Keep that buzz to the very end of rise, not fading early."
+    },
+    {
+      "vi": "Kéo dài nguyên âm trước âm cuối hữu thanh: bed, bag dài hơn một chút so với bet, back. Hãy nói \"bee-d\" chậm rồi rút lại cho gọn.",
+      "en": "Lengthen the vowel before a voiced ending: bed and bag are a little longer than bet and back."
+    },
+    {
+      "vi": "Với /d b ɡ/: lưỡi hoặc môi chạm nhẹ rồi thả, vẫn rung cổ, không bật hơi mạnh. Với /t p k/ thì dừng dứt khoát, không rung.",
+      "en": "For /d b ɡ/: touch tongue or lips lightly, keep the voice on, no strong puff. For /t p k/ stop sharply, no voice."
+    },
+    {
+      "vi": "Với /v/ và /z/: răng trên chạm môi dưới (v) hoặc lưỡi gần nướu răng (z), vừa thổi vừa rung cổ. Đừng đổi thành /f/ hay /s/ ở cuối.",
+      "en": "/v/: upper teeth touch the lower lip. /z/: tongue near the ridge. Blow and buzz together; do not turn them into /f/ or /s/."
+    },
+    {
+      "vi": "Kết thúc từ ngay khi hết rung. Đừng thêm nguyên âm \"ờ\" (bed không phải \"bét-ờ\"). Luyện từng cặp rise–rice, leave–leaf bằng tay trên cổ.",
+      "en": "End the word as the buzz ends. Add no vowel \"uh\" (bed is not \"bed-uh\"). Practise rise–rice and leave–leaf with a hand on your throat."
+    }
+  ],
+  "words": [
+    {
+      "text": "bed",
+      "targets": [
+        {
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b ɛ t",
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "variantIpa": "b ɛ",
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "bag",
+      "targets": [
+        {
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "b æ k",
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "variantIpa": "b æ",
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "dog",
+      "targets": [
+        {
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "d ɔː k",
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "variantIpa": "d ɔː",
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "food",
+      "targets": [
+        {
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "f uː t",
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "variantIpa": "f uː",
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "card",
+      "targets": [
+        {
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "k ɑː ɹ t",
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "variantIpa": "k ɑː ɹ",
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "prize",
+      "targets": [
+        {
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "p ɹ aɪ s",
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "variantIpa": "p ɹ aɪ",
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "leave",
+      "targets": [
+        {
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "l iː f",
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "variantIpa": "l iː",
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "save",
+      "targets": [
+        {
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "s eɪ f",
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "variantIpa": "s eɪ",
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "five",
+      "targets": [
+        {
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "f aɪ f",
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "variantIpa": "f aɪ",
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "eyes",
+      "targets": [
+        {
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "aɪ s",
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "variantIpa": "aɪ",
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "vowelIdx": false,
+      "lemma": "eye"
+    },
+    {
+      "text": "cheese",
+      "targets": [
+        {
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "tʃ iː s",
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "variantIpa": "tʃ iː",
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "vowelIdx": false
+    },
+    {
+      "text": "noise",
+      "targets": [
+        {
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "errors": [
+        {
+          "variantIpa": "n ɔɪ s",
+          "note": {
+            "vi": "Nghe như âm cuối vô thanh (mất rung cổ).",
+            "en": "Sounds like the voiceless pair (the voice is lost)."
+          }
+        },
+        {
+          "variantIpa": "n ɔɪ",
+          "note": {
+            "vi": "Bỏ mất âm cuối.",
+            "en": "Final sound dropped."
+          }
+        }
+      ],
+      "vowelIdx": false
+    }
+  ],
+  "pairs": [
+    {
+      "a": "bed",
+      "b": "bet",
+      "type": "substitution"
+    },
+    {
+      "a": "bag",
+      "b": "back",
+      "type": "substitution"
+    },
+    {
+      "a": "cab",
+      "b": "cap",
+      "type": "substitution"
+    },
+    {
+      "a": "prize",
+      "b": "price",
+      "type": "substitution"
+    },
+    {
+      "a": "rise",
+      "b": "rice",
+      "type": "substitution"
+    },
+    {
+      "a": "leave",
+      "b": "leaf",
+      "type": "substitution"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "The night market is big and I love the cheese.",
+      "targets": [
+        {
+          "word": 4,
+          "index": [
+            -1
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            -1
+          ]
+        },
+        {
+          "word": 9,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "We leave the beach and have rice.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": true
+    },
+    {
+      "text": "My dog sleeps on a red bed.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            -1
+          ]
+        },
+        {
+          "word": 6,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": false
+    },
+    {
+      "text": "The food in Huế is good, and the noise is fun.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            -1
+          ]
+        },
+        {
+          "word": 8,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": true,
+      "unscored": [
+        "Huế"
+      ]
+    },
+    {
+      "text": "He gave his dog a bag of food.",
+      "targets": [
+        {
+          "word": 1,
+          "index": [
+            -1
+          ]
+        },
+        {
+          "word": 3,
+          "index": [
+            -1
+          ]
+        },
+        {
+          "word": 5,
+          "index": [
+            -1
+          ]
+        },
+        {
+          "word": 7,
+          "index": [
+            -1
+          ]
+        }
+      ],
+      "culture": false,
+      "lemmas": {
+        "gave": "give"
+      }
+    }
+  ],
+  "contrasts": [
+    {
+      "wrong": "b ɛ t",
+      "right": "b ɛ d",
+      "note": {
+        "vi": "Bed nghe như bet. Giữ rung cổ và kéo dài /ɛ/ hơn một chút, rồi chạm lưỡi nhẹ cho /d/.",
+        "en": "Bed sounds like bet. Keep the voice on and make /ɛ/ a little longer, then touch the tongue lightly for /d/."
+      }
+    },
+    {
+      "wrong": "ɹ aɪ s",
+      "right": "ɹ aɪ z",
+      "note": {
+        "vi": "Rise nghe như rice. Thổi hơi và rung cổ cùng lúc ở cuối, tay trên cổ phải thấy rung.",
+        "en": "Rise sounds like rice. Blow and buzz together at the end; your hand on the throat should feel it."
+      }
+    },
+    {
+      "wrong": "l iː f",
+      "right": "l iː v",
+      "note": {
+        "vi": "Leave nghe như leaf. Răng trên chạm môi dưới và giữ rung cổ đến hết từ.",
+        "en": "Leave sounds like leaf. Touch upper teeth to the lower lip and keep the voice on to the end."
+      }
+    },
+    {
+      "wrong": "b æ k",
+      "right": "b æ ɡ",
+      "note": {
+        "vi": "Bag nghe như back. Nâng cuối lưỡi nhưng vẫn rung cổ, thả nhẹ, không bật hơi mạnh.",
+        "en": "Bag sounds like back. Raise the back of the tongue but keep the voice on and release softly with no strong puff."
+      }
+    }
+  ],
+  "selfCheck": {
+    "vi": "Ghi âm bed–bet, rise–rice, leave–leaf. Nghe lại: nguyên âm trong từ hữu thanh có dài hơn không, và cổ có rung đến cuối từ không? Nhờ bạn đoán từ em nói.",
+    "en": "Record bed–bet, rise–rice, leave–leaf. Listen back: is the vowel longer in the voiced word, and does the voice last to the end? Ask a friend to guess which word you said."
+  },
+  "teacherNotes": {
+    "vi": "Một số người nói tiếng Anh cũng vô thanh hóa nhẹ âm cuối hữu thanh khi nói nhanh hoặc ở cuối câu, và nhiều giọng chỉ thể hiện sự khác biệt bằng độ dài nguyên âm; hãy chấp nhận khi người nghe vẫn hiểu. Một số học sinh nói âm cuối không bật hơi, điều này bình thường. Phần mềm chủ yếu thấy âm cuối bị đổi sang âm vô thanh hoặc bị mất; không đo độ dài nguyên âm hay mức rung cổ. Độ tin cậy phát hiện: trung bình, chưa được đo trên học sinh thật.",
+    "en": "Some English speakers also partly devoice a final voiced sound in fast speech or at the end of a phrase, and many accents show the difference mainly through vowel length; accept it if the listener understands. Some students release finals very lightly, which is normal. The app mainly sees a final changed to a voiceless sound or dropped; it does not measure vowel length or voicing strength. Detection confidence: medium, not yet measured on real students."
+  },
+  "id": "U10",
+  "reviewedBy": "Giáo viên A",
+  "reviewedAt": "2026-11-22"
+}
