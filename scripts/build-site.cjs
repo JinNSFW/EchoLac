@@ -15,7 +15,9 @@ if (!relative || (inside && relative !== 'dist') || (!inside && (root + path.sep
 if (fs.existsSync(out)) {
   if (fs.lstatSync(out).isSymbolicLink() || !fs.statSync(out).isDirectory()) throw new Error('Build output must be a real directory.');
   const entries = fs.readdirSync(out);
-  if (entries.length && (relative !== 'dist' || !fs.existsSync(path.join(out, marker))
+  // Netlify's throwaway build container may restore an older dist/ (no marker) from its cache; clearing it there is safe.
+  const netlifyDist = process.env.NETLIFY === 'true' && relative === 'dist';
+  if (entries.length && !netlifyDist && (relative !== 'dist' || !fs.existsSync(path.join(out, marker))
     || fs.readFileSync(path.join(out, marker), 'utf8') !== 'EchoLac generated output\n')) {
     throw new Error('Refusing to clear an unowned or nonempty output folder. Use a new empty folder.');
   }
