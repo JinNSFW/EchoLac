@@ -38,6 +38,6 @@ return http.createServer((request, response) => {
 if (require.main === module) {
   const port = Number(process.env.PORT || 4173);
   if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('Invalid PORT');
-  createSiteServer().listen(port, '127.0.0.1', () => console.log(`EchoLạc: http://127.0.0.1:${port}/?demo`));
+  createSiteServer().listen(port, '127.0.0.1', () => console.log(`EchoLạc: http://127.0.0.1:${port}/`));
 }
 module.exports = { createSiteServer };

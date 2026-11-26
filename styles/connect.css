@@ -1,0 +1,58 @@
+/* ---------- Local Guide Connect: Discover, place detail, requests, student Connect (docs/connect-plan.md §4.C) ---------- */
+.c-head { margin: 4px 0 18px; }
+.c-head h1 { font-size: 26px; font-weight: 700; line-height: 1.2; color: var(--navy); text-wrap: balance; }
+.c-head p { margin-top: 6px; max-width: 60ch; }
+.c-slogan { font-size: 15px; font-weight: 700; color: color-mix(in srgb, var(--accent) 70%, var(--navy)); margin-bottom: 6px; }
+
+/* Place grid: large photo, name, one-line description, up to three tags. */
+.c-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+.c-place { display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: #fff; color: var(--navy);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--navy) 9%, transparent); transition: transform .15s ease-out, box-shadow .2s; }
+.c-place:hover { box-shadow: 0 12px 28px color-mix(in srgb, var(--navy) 14%, transparent); }
+.c-place:active { transform: scale(.98); }
+.c-place:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+.c-photo { display: block; aspect-ratio: 4 / 3; background: var(--card-blue); overflow: hidden; }
+.c-photo > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.c-ph { width: 100%; height: 100%; display: grid; place-items: center; }
+.c-ph img { width: 56px; height: 56px; }
+.c-body { display: flex; flex-direction: column; gap: 4px; padding: 12px 14px 14px; }
+.c-body b { font-weight: 700; font-size: 15px; }
+.c-body small { color: var(--muted); font-size: 13px; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.c-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+
+.c-hero { margin-bottom: 8px; }
+.c-hero .c-photo { border-radius: 24px; aspect-ratio: 16 / 10; box-shadow: var(--shadow); }
+.c-hero p { margin-top: 12px; line-height: 1.5; max-width: 65ch; }
+
+.c-list { display: grid; gap: 12px; }
+.c-card, .c-req { padding: 16px; border-radius: 20px; background: #fff; color: var(--text); box-shadow: 0 6px 16px color-mix(in srgb, var(--navy) 7%, transparent); display: grid; gap: 8px; justify-items: start; }
+.c-who b { display: flex; align-items: center; gap: 8px; font-weight: 700; }
+.c-who small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+.c-req .row { width: 100%; gap: 10px; }
+.c-req p { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.c-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.c-why { margin: 0; padding: 10px 12px 10px 28px; border-radius: 14px; font-size: 13px; line-height: 1.4;
+  background: color-mix(in srgb, var(--accent) 14%, white); color: color-mix(in srgb, var(--accent) 45%, var(--navy)); }
+.c-why:empty, .c-why-slot:empty { display: none; }
+.c-why-slot { width: 100%; }
+
+.c-status h2 { font-size: 17px; font-weight: 700; }
+.c-status .row, .section-title .tag { gap: 10px; }
+.c-gate p + p { margin-top: 6px; }
+.c-avail b { display: block; font-weight: 600; margin-bottom: 10px; }
+.c-slots { display: flex; flex-wrap: wrap; gap: 8px; }
+.c-slot { min-height: 40px; padding: 0 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--navy);
+  background: color-mix(in srgb, var(--card-blue) 45%, white); transition: background .2s, color .2s; }
+.c-slot.on { background: var(--navy); color: #fff; }
+.c-slot:focus-visible, .c-actions .btn:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+
+.c-note { display: flex; gap: 8px; align-items: flex-start; margin-top: 20px; padding: 12px 14px; border-radius: 16px; background: color-mix(in srgb, var(--card-blue) 50%, white); color: var(--navy); line-height: 1.45; }
+.c-note .ico { flex: none; margin-top: 2px; }
+.card .c-note { margin-top: 12px; }
+.c-form { display: grid; gap: 8px; }
+.c-form select, .c-form input { width: 100%; min-height: 40px; padding: 6px 10px; border: 1px solid color-mix(in srgb, var(--navy) 20%, white); border-radius: 10px; background: #fff; color: var(--navy); font: inherit; }
+.c-code { font-size: 22px; letter-spacing: .12em; user-select: all; }
+.c-sheet-list { display: grid; gap: 10px; }
+
+@media (max-width: 380px) { .c-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .c-body { padding: 10px 12px 12px; } }
+@media (prefers-reduced-motion: reduce) { .c-place, .c-slot { transition: none; } }

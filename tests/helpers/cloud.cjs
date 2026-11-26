@@ -1,6 +1,6 @@
 const { runtime, scripts, read } = require('./runtime.cjs');
 
-const CLOUD_FILES = ['lib/cloud/config.js', 'lib/cloud/client.js', 'lib/cloud/sync.js'];
+const CLOUD_FILES = ['lib/cloud/config.js', 'lib/cloud/captcha.js', 'lib/cloud/client.js', 'lib/cloud/sync.js'];
 const FAKE = `window.__log = []; window.__rows = []; window.__remote = { profiles: null, error_items: [] }; window.__fail = 0;
 window.__signIns = 0; window.__sessionReads = 0; window.__session = null; window.__queries = [];
 window.__supabaseForTest = {

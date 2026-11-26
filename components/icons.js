@@ -35,6 +35,7 @@ const I = {
   cc: '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 10.2a2.2 2.2 0 1 0 0 3.6M17 10.2a2.2 2.2 0 1 0 0 3.6"/>',
   gauge: '<path d="m12 14 4-4"/><path d="M3.3 19a10 10 0 1 1 17.4 0"/>',
   book: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/>',
+  temple: '<path d="M3 9.5 12 4l9 5.5"/><path d="M4 21h16"/><path d="M5 9.5h14"/><path d="M6.5 10v8M10 10v8M14 10v8M17.5 10v8"/><path d="M5 18h14"/>',
   bookmark: '<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>',
   bolt: '<path d="M13 2 3 14h9l-1 8 10-12h-9z"/>',
   cal: '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',

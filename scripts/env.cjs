@@ -46,10 +46,15 @@ function loadEnv(env = process.env, dir = root) {
   return merged;
 }
 
-// Returns {supabaseUrl, supabaseKey} or {} when unset. Throws on a secret-looking value or a non-https URL.
+// shortcut: Cloudflare's test pairs have 24-character site keys and 35-character secrets; refine if Cloudflare changes key formats.
+const isTurnstileSiteKey = value => /^\dx[A-Za-z0-9_-]{16,26}$/.test(value) && !looksSecret(value);
+
+// Returns {supabaseUrl, supabaseKey[, turnstileSiteKey]} or {} when unset. Throws on a secret-looking value or a non-https URL.
 function cloudConfig(env = loadEnv()) {
   const supabaseUrl = pick(env, ['SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_URL']);
   const supabaseKey = pick(env, ['SUPABASE_PUBLISHABLE_KEY', 'NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY', 'SUPABASE_ANON_KEY']);
+  const turnstileSiteKey = pick(env, ['TURNSTILE_SITE_KEY']);
+  if (turnstileSiteKey && !isTurnstileSiteKey(turnstileSiteKey)) throw new Error('TURNSTILE_SITE_KEY must be the Turnstile site key; the secret key belongs only in the Supabase dashboard.');
   if (!supabaseUrl && !supabaseKey) return {};
   if (!supabaseUrl || !supabaseKey) throw new Error('Set both the Supabase URL and the publishable key, or neither.');
   if (looksSecret(supabaseKey) || looksSecret(supabaseUrl)) throw new Error('Refusing a secret-looking Supabase value: only the publishable key may reach the browser.');
@@ -58,7 +63,7 @@ function cloudConfig(env = loadEnv()) {
   try { url = new URL(supabaseUrl); } catch { throw new Error('The Supabase URL must be a valid https URL.'); }
   if (url.protocol !== 'https:') throw new Error('The Supabase URL must be https.');
   if (url.username || url.password) throw new Error('The Supabase URL must not contain credentials.');
-  return { supabaseUrl: url.origin, supabaseKey };
+  return { supabaseUrl: url.origin, supabaseKey, ...(turnstileSiteKey && { turnstileSiteKey }) };
 }
 
 const configJs = config => `window.ECHOLAC_CONFIG=${JSON.stringify(config)};\n`;

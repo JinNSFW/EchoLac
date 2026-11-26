@@ -33,13 +33,14 @@ function wordsHtml(l) {
   const heard = prog(l.id).w;
   return `
     <div class="row between small reveal"><b>${V('Từ vựng tại chỗ', 'Words for this place')}</b><b id="wcount">${heard.length}/${l.vocab.length}</b></div>
-    <p class="tiny muted mt-8 reveal">${V('Nghe từng từ để hoàn thành phần này. Định nghĩa và câu ví dụ do AI soạn, chờ giáo viên duyệt, không phải thông tin đã kiểm chứng.', 'Listen to each word to finish this part. Definitions and examples are AI-drafted learning content awaiting teacher review, not verified facts.')}</p>
+    <p class="tiny muted mt-8 reveal">${V('Nghe từng từ để hoàn thành phần này. Định nghĩa và câu ví dụ do AI soạn, chờ giáo viên duyệt, không phải thông tin đã kiểm chứng.', 'Listen to each word to finish this part. Definitions and examples are AI-drafted learning content awaiting teacher review, not verified facts.')} ${V('Nút "Giọng thật" phát bản ghi Wiktionary (CC BY-SA) qua dictionaryapi.dev khi có.', '"Real voice" plays a Wiktionary recording (CC BY-SA) via dictionaryapi.dev when one exists.')}</p>
     <div class="mt-16">${l.vocab.map((v, i) => `
       <article class="wcard reveal ${heard.includes(i) ? 'heard' : ''}" id="wc${i}" style="--d:${i * 50}ms">
         <div class="row between" style="align-items:flex-start">
           <div class="grow"><div class="w">${esc(v.word)}<span class="tag green ok">${icon('check', 'sm')} ${V('Đã nghe', 'Heard')}</span></div><div class="ipa">${esc(v.ipa)}</div></div>
           <button class="play" onclick="hearWord('${l.id}',${i})" aria-label="${V('Nghe', 'Listen to')} ${esc(v.word)}">${icon('volume')}</button>
           <button class="btn white sm slow" onclick="hearWord('${l.id}',${i},.6)" aria-label="${V('Nghe chậm', 'Listen slowly to')} ${esc(v.word)}">${V('Chậm', 'Slow')}</button>
+          <button class="btn white sm" onclick="hearRecorded('${l.id}',${i},this)" aria-label="${V('Nghe giọng người thật đọc', 'Hear a real person say')} ${esc(v.word)}">${V('Giọng thật', 'Real voice')}</button>
         </div>
         <p class="def">${esc(v.en)}</p><p class="vi-m">${esc(v.vi)}</p>
         <button class="ex" onclick="hearEx('${l.id}',${i})">${icon('volume', 'sm')}<span>“${esc(v.example)}”</span></button>
@@ -48,8 +49,18 @@ function wordsHtml(l) {
     <button class="btn mt-24" onclick="setLearnTab('practice')">${icon('chat')} ${V('Tiếp: Luyện nói', 'Next: Practice')}</button>`;
 }
 function hearWord(id, i, rate) {
+  speak(loc(id).vocab[i].word, rate ? { rate } : {});
+  markHeard(id, i);
+}
+async function hearRecorded(id, i, btn) {
+  btn.disabled = true;
+  const ok = await playRecording(loc(id).vocab[i].word);
+  btn.disabled = false;
+  if (!ok) return toast(V('Chưa có bản ghi giọng thật cho từ này. Dùng nút loa để nghe giọng máy.', 'No real-voice recording for this word yet. Use the speaker button instead.'));
+  markHeard(id, i);
+}
+function markHeard(id, i) {
   const l = loc(id), p = progW(id);
-  speak(l.vocab[i].word, rate ? { rate } : {});
   if (p.w.includes(i)) return;
   p.w.push(i); save();
   $('#wc' + i)?.classList.add('heard'); $('#wcount').textContent = `${p.w.length}/${l.vocab.length}`;

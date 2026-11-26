@@ -139,3 +139,13 @@ test('accountCard says saved on this device only when cloud is off', () => {
   assert.match(a.run("S.lang='en'; accountCard()"), /Saved on this device only/);
   assert.match(a.run("S.lang='vi'; accountCard()"), /Chỉ lưu trên máy này/);
 });
+
+test('birth date is typed as dd/mm/yyyy and stored as ISO', () => {
+  const app = runtime();
+  assert.equal(app.run("dobIso('12/11/2008')"), '2008-11-12');
+  assert.equal(app.run("dobShow('2008-11-12')"), '12/11/2008');
+  assert.ok(app.run("signupAge('12/11/2008')") >= 17);
+  assert.equal(app.run("signupAge('30/02/2010')"), -1);
+  assert.equal(app.run("signupAge('12/11/08')"), -1);
+  assert.equal(app.run("(() => { const el = { value: '1211a2008' }; maskDob(el); return el.value; })()"), '12/11/2008');
+});

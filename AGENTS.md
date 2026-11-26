@@ -45,6 +45,33 @@ Quy tắc do chủ dự án lập ngày **11/11/2026**. Đây là chính sách p
 | Kiểm toán bảo mật | GPT-6 Astra | xhigh |
 | Review mã nguồn | GPT-6.1 Sol | high; xhigh khi rủi ro hoặc độ phức tạp cao |
 
+### Bảng chọn model theo công cụ (cập nhật 22/11/2026)
+
+Bảng này áp dụng khi giao việc cho agent hoặc sub-agent trong Claude Code hoặc Codex. Nó thay bảng trên khi hai bảng khác nhau.
+
+| # | Việc | Claude Code | Codex | Mức suy luận | Lý do |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Lập kế hoạch tính năng, kế hoạch dự án, PRD, giáo án | Fable 5.2 (thiếu thì Opus 5.5) | GPT-6.2 Astra | high | Sai ở bước này tốn kém nhất. |
+| 2 | Xây tính năng hoặc nội dung đã có kế hoạch | Sonnet 5.5 | GPT-6.2 Sol | medium | Đã có kế hoạch thì model tầm trung là đủ. |
+| 3 | Frontend UI | Opus 5.5 | GPT-6.2 Sol | medium; Sol xhigh | Chất lượng UI cao, giá bằng khoảng nửa Fable. |
+| 4 | Xác thực và thanh toán | Opus 5.5 | GPT-6.2 Sol | xhigh | Không dùng model rẻ: lỗi âm thầm gây mất tiền. |
+| 5 | Tìm kiếm mã nguồn | Haiku 5.5 | GPT-6 Luna | low | Việc đọc rẻ, tốn ít token hơn Opus khoảng 40 lần. |
+| 6 | Đổi tên, mã khung lặp lại | Haiku 5.5 | GPT-6 Luna | low | Sửa cơ học; phải review diff. |
+| 7 | Viết kiểm thử | Sonnet 5.5 | GPT-6.2 Sol | low | Mục tiêu rõ, phản hồi nhanh. |
+| 8 | Lỗi khó | Opus 5.5 | GPT-6.2 Sol | max | Chỉ trả tiền cho suy luận sâu khi bế tắc. |
+| 9 | Kiểm toán bảo mật | Fable 5.2 (thiếu thì Opus 5.5) | GPT-6.2 Astra | xhigh | Dùng model mạnh nhất hiện có. |
+| 10 | Review mã nguồn, nghiệm thu | Opus 5.5 | GPT-6.2 Sol | high; Sol xhigh | Dùng model khác với model đã viết ra sản phẩm. |
+
+Ma trận chọn nhanh:
+
+| | Mức suy luận thấp | Mức suy luận cao |
+| --- | --- | --- |
+| Model rẻ (Haiku · Luna) | Tìm kiếm mã, đổi tên, mã khung | Tóm tắt log hoặc tài liệu dài, tra cứu web nhiều nguồn, phân loại nhiều tệp |
+| Model mạnh (Fable · Astra) | Xin ý kiến thứ hai nhanh về một kế hoạch | Lập kế hoạch tính năng, kiểm toán bảo mật, lỗi không ai tìm ra |
+
+- Không có Fable 5.2 trong môi trường thì dùng Opus 5.5 ở cùng mức suy luận và ghi rõ đã thay thế.
+- Agent điều phối (thường là Opus 5.5 high) giao việc cho sub-agent theo bảng trên và tự nghiệm thu thành phẩm. Không để model đã viết ra sản phẩm tự review sản phẩm đó.
+
 - Chọn đúng loại việc; chỉ tăng mức suy luận khi có lý do cụ thể. Không tự đổi model vì tiện dụng.
 - Markdown không tự chuyển model của phiên. Chỉ báo đã dùng model/mức suy luận khi môi trường thực sự xác nhận.
 - Nếu cấu hình yêu cầu không có trong môi trường, nêu giới hạn và cách tiếp tục; không tuyên bố đã chạy cấu hình đó.

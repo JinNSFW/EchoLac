@@ -3,6 +3,7 @@
 VIEWS.practice = {
     render(id) {
       if (id === 'danang') return danangPracticeHtml();
+      if (id === 'directions') return directionsPracticeHtml();
       const list = sortedErrors(), e = S.errors.find(x => x.id === id) || list[0];
       if (!e) { location.hash = '#tutor'; return ''; }
       const idx = list.indexOf(e), next = list[(idx + 1) % list.length], s = scen(e.scen), sentence = e.word.includes(' ');
@@ -19,14 +20,18 @@ VIEWS.practice = {
         ${e.ipa ? `<div class="ipa-big">${ipaHl(e)}</div>` : ''}
         <div class="small muted mt-8">${e.mean ? esc(e.mean) + ' · ' : ''}${V('từ', 'from')} <a href="#scenario/${s.id}">${L(s.name)}</a></div>
         <div class="row mt-24" style="justify-content:center;gap:10px;flex-wrap:wrap">
-          <button class="btn soft sm" onclick="speak(${esc(JSON.stringify(e.word))})">${icon('volume', 'sm')} ${V('Nghe mẫu', 'Listen')}</button>
-          <button class="btn white sm" onclick="speak(${esc(JSON.stringify(e.word))},{rate:.6})">🐢 ${V('Chậm', 'Slow')}</button>
+          <button class="btn soft sm" onclick="practiceSample(${esc(JSON.stringify(e.word))})">${icon('volume', 'sm')} ${V('Nghe mẫu', 'Listen')}</button>
+          <button class="btn white sm" onclick="practiceSample(${esc(JSON.stringify(e.word))}, .6)">🐢 ${V('Chậm', 'Slow')}</button>
         </div>
+        <p class="small muted mt-8" id="practice-sample-status" role="status"></p>
       </section>
       ${tutorSay(`<b>${V('Cách sửa', 'How to fix it')}</b><br>${esc(L(e.tip))}<br><span class="small muted">${V('Bạn nên nói:', 'You should say:')} “${esc(e.word)}”</span>`, 0, 'mt-24')}
+      ${aiReady() ? `<div class="center mt-8"><button class="btn soft sm" id="ai-tutor-btn" onclick="aiTutor('${e.id}')">${icon('micAi', 'sm')} ${V('Hỏi Gia sư AI', 'Ask the AI tutor')} · ${aiModeLabel(true)}</button></div>
+      <p class="card flat mt-8" id="ai-tutor" aria-live="polite" hidden></p>` : ''}
       <section class="card reveal mt-24 center">
         <div class="score-ring" id="sr">${ringSvg(e.best, 62, 12, scoreColor(e.best), 'var(--line)')}<div class="val"><div><b id="sv">${e.best}</b><span>${V('điểm cao nhất', 'best score')}</span></div></div></div>
         <p class="mt-16" id="fbt">${V('Nhấn micro và đọc to từ trên.', 'Tap the mic and say the word out loud.')}</p>
+        <div class="mt-8" id="pron-box" aria-live="polite"></div>
         <div class="attempts mt-16" id="att">${attemptsHtml(e)}</div>
       </section>
       <section class="card reveal">
@@ -35,7 +40,7 @@ VIEWS.practice = {
       </section>
       <div class="dock mt-16">
         <div class="dock-row" style="justify-content:center;gap:32px">
-          <button class="side" onclick="speak(${esc(JSON.stringify(e.word))})"><span class="icon-btn">${icon('volume')}</span>${V('Nghe', 'Listen')}</button>
+          <button class="side" onclick="practiceSample(${esc(JSON.stringify(e.word))})"><span class="icon-btn">${icon('volume')}</span>${V('Nghe', 'Listen')}</button>
           <button class="mic-btn" id="pmic" onclick="practiceRec('${e.id}')" aria-label="${V('Ghi âm', 'Record')}">${icon('mic')}</button>
           <a class="side" href="#practice/${next.id}"><span class="icon-btn">${icon('right')}</span>${V('Tiếp', 'Next')}</a>
         </div>
@@ -44,5 +49,11 @@ VIEWS.practice = {
     },
     mount(id) {
       if (id === 'danang') mountDanangQuiz();
+      if (id === 'directions') mountDirectionsPractice();
     },
   };
+
+function practiceSample(text, rate) {
+  const status = $('#practice-sample-status');
+  return playPronSample({ text }, state => { status.textContent = pronSampleStatus(state); }, rate);
+}

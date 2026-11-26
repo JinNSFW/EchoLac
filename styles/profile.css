@@ -3,26 +3,32 @@
 .big-avatar { width: 112px; height: 112px; margin: 0 auto; border-radius: 50%; border: 4px solid #fff; background: linear-gradient(145deg, #FFE3C8, #F8B98E); display: grid; place-items: center; position: relative; box-shadow: var(--shadow-lg); }
 .big-avatar img { width: 78px; height: 78px; }
 .big-avatar .lv { position: absolute; right: -12px; bottom: 2px; }
-.stat-tile { background: rgba(255,255,255,.75); border-radius: 22px; padding: 18px; box-shadow: var(--shadow); }
-.stat-tile .ic { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: #fff; }
-.stat-tile .ic .ico { width: 20px; height: 20px; }
-.stat-tile b { display: block; font-size: 26px; font-weight: 700; margin-top: 14px; line-height: 1.1; }
-.stat-tile span { font-size: 13px; color: var(--muted); }
-.g-gold { background: linear-gradient(145deg, #F7C531, #E09A00); }
-.g-orange { background: linear-gradient(145deg, #FF9B4A, #EE5A2B); }
-.g-blue { background: linear-gradient(145deg, #E3B47A, #C08A4A); }
-.g-green { background: linear-gradient(145deg, #3FD38A, #12A15E); }
-.ach { display: flex; align-items: center; gap: 16px; padding: 16px 18px; border-radius: 20px; background: var(--tint); }
-.ach + .ach { margin-top: 12px; }
-.ach .ic { width: 50px; height: 50px; border-radius: 14px; background: var(--tint-2); display: grid; place-items: center; flex: none; }
-.ach .ic img { width: 30px; height: 30px; filter: grayscale(1) opacity(.5); }
-.ach .t { font-weight: 600; color: var(--faint); }
+/* Stats: one dark theme panel with cream type (owner picked style C, 26/11/2026); hairline cross dividers. */
+.stat-panel { gap: 0; padding: 6px; border-radius: 24px; background: var(--navy); color: #FFF8EC;
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--navy) 30%, transparent); }
+.stat-tile { padding: 16px 14px 14px; display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: center; }
+.stat-panel .stat-tile:nth-child(odd) { border-right: 1px solid color-mix(in srgb, #FFF8EC 14%, transparent); }
+.stat-panel .stat-tile:nth-child(-n+2) { border-bottom: 1px solid color-mix(in srgb, #FFF8EC 14%, transparent); }
+.stat-tile .ic { grid-row: 2; width: 16px; height: 16px; margin-top: 8px; display: grid; place-items: center; }
+.stat-tile .ic .ico { width: 16px; height: 16px; stroke-width: 1.8; }
+.stat-tile b { grid-column: 1 / -1; font-size: 30px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.stat-tile > span:last-child { grid-row: 2; font-size: 13px; padding-top: 8px; }
+.stat-panel .stat-tile, .stat-panel .stat-tile b { color: #FFF8EC; }
+.stat-panel .stat-tile .ic, .stat-panel .stat-tile > span:last-child { color: color-mix(in srgb, #FFF8EC 78%, var(--navy)); }
+.stat-panel .stat-tile:first-child b { color: #F6D58A; }
+/* Achievements: one quiet list; only earned items carry the theme accent. */
+.ach { display: flex; align-items: center; gap: 14px; padding: 14px 2px; border-top: 1px solid var(--line); }
+.ach .ic { width: 44px; height: 44px; border-radius: 12px; background: var(--tint); display: grid; place-items: center; flex: none; }
+.ach .ic img { width: 26px; height: 26px; filter: grayscale(1); opacity: .45; }
+.ach .t { font-weight: 600; color: var(--muted); display: flex; align-items: center; gap: 6px; }
 .ach .d { font-size: 13px; color: var(--faint); }
-.ach.on { background: linear-gradient(90deg, #E2F7EC, #EEFBF3); border: 1px solid #C9EFD9; }
-.ach.on .ic { background: linear-gradient(145deg, #3FD38A, #12A15E); }
-.ach.on .ic img { filter: none; }
-.ach.on .t { color: #0E6B42; }
-.ach.on .d { color: #178A55; }
+.ach.on .ic { background: var(--card-blue); }
+.ach.on .ic img { filter: none; opacity: 1; }
+.ach.on .t { color: var(--navy); }
+.ach.on .d { color: var(--muted); }
+.ach-done { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: var(--navy); color: #fff; }
+.ach-done .ico { width: 11px; height: 11px; stroke-width: 2.6; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .set-row { display: flex; align-items: center; gap: 14px; padding: 14px 0; }
 .set-row + .set-row { border-top: 1px solid var(--line); }
 .set-row .ic { width: 40px; height: 40px; border-radius: 12px; background: var(--tint); display: grid; place-items: center; color: var(--navy); flex: none; }

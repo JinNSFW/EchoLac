@@ -1,0 +1,520 @@
+{
+ "dragon": {
+  "place": "Dragon Bridge",
+  "persona": "Liam, Backpacker from Sydney",
+  "level": "A1",
+  "goal": "",
+  "facts": "Opened in 2013, 666 metres long. On Saturday and Sunday nights at 9 pm the head breathes fire and water.",
+  "hello": "G'day! I'm Liam from Sydney. Someone told me this bridge breathes fire. Is that true?",
+  "words": [
+   "dragon",
+   "breathe fire",
+   "weekend",
+   "river"
+  ]
+ },
+ "hoian": {
+  "place": "Hoi An Ancient Town",
+  "persona": "Emma, Tourist from London",
+  "level": "A2",
+  "goal": "",
+  "facts": "A UNESCO World Heritage Site since 1999. Its merchant houses, assembly halls and the Japanese Covered Bridge show how Japanese, Chinese and European traders lived here from the 15th to the 19th century.",
+  "hello": "",
+  "words": [
+   "ancient",
+   "heritage",
+   "lantern",
+   "merchant",
+   "narrow street",
+   "full moon",
+   "tailor",
+   "I recommend"
+  ]
+ },
+ "bridge": {
+  "place": "Japanese Covered Bridge",
+  "persona": "Kenji, Traveller from Osaka",
+  "level": "A2",
+  "goal": "",
+  "facts": "Built by the Japanese community in the 1590s, with a small shrine to Bac De Tran Vu, not to the Buddha. It is pictured on the 20,000-dong banknote.",
+  "hello": "Konnichiwa! I'm Kenji from Osaka. Is this the Japanese Covered Bridge? Why is it called that?",
+  "words": [
+   "bridge",
+   "shrine",
+   "banknote",
+   "century"
+  ]
+ },
+ "han": {
+  "place": "Han Market",
+  "persona": "Priya, Food blogger from Mumbai",
+  "level": "A1",
+  "goal": "",
+  "facts": "A busy indoor market near the Han River selling dried food, local snacks, clothes and souvenirs.",
+  "hello": "Hi! I'm Priya. What should I buy at Han Market as a souvenir?",
+  "words": [
+   "souvenir",
+   "price",
+   "discount",
+   "dried fruit"
+  ]
+ },
+ "food": {
+  "place": "Cao lầu & mì Quảng",
+  "persona": "Tom, Chef from New York",
+  "level": "A1",
+  "goal": "",
+  "facts": "Cao lầu is a Hoi An noodle dish with pork, fresh herbs and crispy crackers. Mì Quảng uses wide turmeric noodles with a little rich broth.",
+  "hello": "Hey, I'm Tom, a chef from New York. What is cao lầu? I really want to try it!",
+  "words": [
+   "noodles",
+   "herbs",
+   "spicy",
+   "delicious"
+  ]
+ },
+ "mykhe": {
+  "place": "My Khe Beach",
+  "persona": "Sofia, Surfer from Spain",
+  "level": "A1",
+  "goal": "",
+  "facts": "A long sandy beach in Da Nang, popular for swimming, surfing and watching the sunrise.",
+  "hello": "Hola! I'm Sofia. Is My Khe Beach good for swimming today?",
+  "words": [
+   "sunrise",
+   "wave",
+   "sunscreen",
+   "seafood"
+  ]
+ },
+ "marble": {
+  "place": "Marble Mountains",
+  "persona": "David, Retired teacher from Canada",
+  "level": "A2",
+  "goal": "",
+  "facts": "Five marble and limestone hills named after the five elements: metal, water, wood, fire and earth. Visitors explore caves and pagodas.",
+  "hello": "Hello, I'm David from Canada. Why are these hills called the Marble Mountains?",
+  "words": [
+   "cave",
+   "pagoda",
+   "climb",
+   "element"
+  ]
+ },
+ "homestay": {
+  "place": "Homestay check-in",
+  "persona": "Anna, Guest from Germany",
+  "level": "A2",
+  "goal": "",
+  "facts": "Welcoming guests: greeting, passport, room rules, Wi-Fi, breakfast time and local tips.",
+  "hello": "Good afternoon! I'm Anna. I have a booking for two nights.",
+  "words": [
+   "check in",
+   "passport",
+   "breakfast",
+   "hotel"
+  ]
+ },
+ "directions": {
+  "place": "Giving directions",
+  "persona": "Lucas, Student from France",
+  "level": "A1",
+  "goal": "",
+  "facts": "Helping visitors find places: turn left or right, go straight, it's next to, it takes five minutes on foot.",
+  "hello": "Excuse me, I'm Lucas. How can I get to Han Market from here?",
+  "words": [
+   "turn left",
+   "straight",
+   "opposite",
+   "on foot"
+  ]
+ },
+ "lantern": {
+  "place": "Lantern making",
+  "persona": "Mia, Artist from Melbourne",
+  "level": "B1",
+  "goal": "",
+  "facts": "Hoi An lanterns are a bamboo frame covered with silk. On the 14th day of each lunar month the old town turns off its lights and glows with lanterns.",
+  "hello": "Hi, I'm Mia. Can you show me how to make a Hoi An lantern?",
+  "words": [
+   "bamboo",
+   "silk",
+   "glue",
+   "shape"
+  ]
+ },
+ "a1-weather": {
+  "place": "Hot and rainy",
+  "persona": "Hana, Tourist from Seoul",
+  "level": "A1",
+  "goal": "Tell a visitor about Da Nang’s weather in very short sentences.",
+  "facts": "Da Nang is warm and humid all year; the average temperature is about 25–26°C. It has two seasons: the dry season (January–August) and the rainy season (September–December).",
+  "hello": "Hi! I’m Hana. Is it hot in Da Nang? When does it rain?",
+  "words": [
+   "hot",
+   "warm",
+   "rain",
+   "sun",
+   "wet",
+   "dry",
+   "season",
+   "month",
+   "humid"
+  ]
+ },
+ "a1-noodles": {
+  "place": "Noodles of Da Nang",
+  "persona": "Lucas, Tourist from Paris",
+  "level": "A1",
+  "goal": "Name local dishes and their ingredients, and say what you like.",
+  "facts": "Local specialties include mì Quảng, fish cake noodle soup (bún chả cá), noodles with fermented anchovy sauce and pork (bún mắm) and pork rolled in rice paper. Mì Quảng noodles are made from rice flour and served with shrimp, pork, fresh herbs, roasted peanuts and spices.",
+  "hello": "Bonjour! I’m Lucas. I’m hungry. What noodles can I eat in Da Nang?",
+  "words": [
+   "noodles",
+   "pork",
+   "fish",
+   "shrimp",
+   "peanuts",
+   "herbs",
+   "soup",
+   "spicy",
+   "rice paper"
+  ]
+ },
+ "a1-dragon-shape": {
+  "place": "The Dragon Bridge shape",
+  "persona": "Sofia, Tourist from Madrid",
+  "level": "A1",
+  "goal": "Describe the bridge with \"It is / It has\": \"The bridge is a dragon. It is long.\"",
+  "facts": "The Dragon Bridge opened on 29 March 2013. It is 666.5 m long with six traffic lanes and crosses the Han River. It depicts a Ly-dynasty dragon reaching toward the sea, and the head breathes fire and water.",
+  "hello": "Hola! I’m Sofia. Why does this bridge look like an animal?",
+  "words": [
+   "bridge",
+   "dragon",
+   "long",
+   "river",
+   "sea",
+   "fire",
+   "water",
+   "night",
+   "lane"
+  ]
+ },
+ "a2-mi-quang": {
+  "place": "How to eat mì Quảng",
+  "persona": "Noah, Tourist from Toronto",
+  "level": "A2",
+  "goal": "Tell a visitor how to eat mì Quảng step by step (first, then, finally).",
+  "facts": "Mì Quảng noodles are made from rice flour, white or yellow. The broth only just covers the noodles; it does not fill the bowl. The noodles sit on fresh vegetables with roasted peanuts on top, and are eaten with crispy grilled rice crackers.",
+  "hello": "Hi, I’m Noah. This bowl has very little soup. How do I eat it?",
+  "words": [
+   "broth",
+   "mix",
+   "add",
+   "pour",
+   "crispy",
+   "rice cracker",
+   "peanuts",
+   "first",
+   "then",
+   "finally"
+  ]
+ },
+ "a2-bridge-rules": {
+  "place": "Hoi An bridge rules",
+  "persona": "Yuki, Tourist from Osaka",
+  "level": "A2",
+  "goal": "Explain the visitor rules at the Japanese Covered Bridge with must and mustn’t.",
+  "facts": "At most 20 visitors may be on the bridge at a time, so you may have to wait. Visitors should dress appropriately, keep order and not litter. The shrine on the bridge honours Bac De Tran Vu, not the Buddha.",
+  "hello": "Hello, I’m Yuki. Can I go on the bridge now? Are there any rules?",
+  "words": [
+   "rule",
+   "must",
+   "mustn’t",
+   "dress properly",
+   "litter",
+   "wait",
+   "visitor",
+   "at a time",
+   "shrine"
+  ]
+ },
+ "b1-climate": {
+  "place": "Beach city, mountain air",
+  "persona": "Olivia, Tourist from Auckland",
+  "level": "B1",
+  "goal": "Compare the coast with the Ba Na mountain climate to help a visitor plan.",
+  "facts": "The coastal lowlands are hot and humid: average humidity is about 83–84% and summer is usually 28–30°C. The top of Ba Na Mountain, about 1,500 metres high, is only about 17–20°C in midsummer, and day and night differ by 8–10°C. Bring a jacket for the mountains.",
+  "hello": "Hi, I’m Olivia. It’s so hot here! Is it cooler in the mountains?",
+  "words": [
+   "humidity",
+   "altitude",
+   "temperature",
+   "lowland",
+   "compared with",
+   "whereas",
+   "cool",
+   "jacket",
+   "degree",
+   "mountain"
+  ]
+ },
+ "b1-tastes": {
+  "place": "Tastes of the Central Coast",
+  "persona": "Ethan, Food blogger from Chicago",
+  "level": "B1",
+  "goal": "Describe the flavours and ingredients of fish cake noodle soup and bún mắm to a visitor.",
+  "facts": "The broth of fish cake noodle soup is simmered with fish and vegetables, so it is naturally light and sweet; it comes with steamed or fried fish cake. Bún mắm uses fermented anchovy sauce mixed with chilli, garlic, sugar, lime and chopped pineapple, which makes it spicy, savoury, sour and slightly sweet.",
+  "hello": "Hey, I’m Ethan. What does bún chả cá taste like? And what is this strong sauce?",
+  "words": [
+   "fermented",
+   "savoury",
+   "tangy",
+   "mild",
+   "aromatic",
+   "balanced",
+   "dipping sauce",
+   "anchovy",
+   "pineapple",
+   "simmer"
+  ]
+ },
+ "b1-landmark-stories": {
+  "place": "Landmarks with a story",
+  "persona": "Grace, Tourist from Singapore",
+  "level": "B1",
+  "goal": "Tell a visitor what the Han River Swing Bridge, the Dragon Bridge and APEC Park stand for.",
+  "facts": "The Han River Swing Bridge opened in 2000 as Vietnam’s first swing bridge; Da Nang residents paid 30% of its cost. The Dragon Bridge depicts a Ly-dynasty dragon reaching toward the sea. APEC Park opened on 9 November 2017 and displays sculptures donated by APEC member economies; its canopy is shaped like a kite soaring high.",
+  "hello": "Hi, I’m Grace. Da Nang has so many bridges! Do they have stories?",
+  "words": [
+   "symbol",
+   "represent",
+   "contribute",
+   "donate",
+   "aspiration",
+   "structure",
+   "swing bridge",
+   "sculpture",
+   "canopy",
+   "kite"
+  ]
+ },
+ "b2-monsoon": {
+  "place": "Monsoon rhythms and daily life",
+  "persona": "Daniel, Tourist from Berlin",
+  "level": "B2",
+  "goal": "Explain how the monsoon shapes a trip and argue for the best season to visit.",
+  "facts": "The climate is tropical monsoon, a transition between the north and the south. The rainy season runs from September to December; October to December bring most of the rain, and storms may come late in the year. Early-season showers usually last only 1–2 hours. In the rainy season there are fewer crowds, Hoi An’s old town is quiet and services are often cheaper.",
+  "hello": "Hi, I’m Daniel. I’m planning a trip in November. Is the rainy season a bad idea?",
+  "words": [
+   "monsoon",
+   "transitional",
+   "tropical depression",
+   "rainfall",
+   "disrupt",
+   "off-season",
+   "shower",
+   "storm",
+   "crowd",
+   "affordable"
+  ]
+ },
+ "b2-pork-rolls": {
+  "place": "Food as culture",
+  "persona": "Isabella, Chef from Milan",
+  "level": "B2",
+  "goal": "Analyse how pork in rice paper is built and explain the place of mì Quảng in local life.",
+  "facts": "Pork in rice paper: boiled pork is sliced thin with the “two-skin” cut, so each slice keeps skin at both ends, then rolled with rice paper, steamed rice-noodle sheets and vegetables. The greens combine sweet cucumber, astringent green banana and aromatic basil and fish mint. The dip is fermented anchovy sauce with chilli, garlic and chopped pineapple: spicy, savoury, sour and slightly sweet. Mì Quảng belongs to the people of Quang Nam and Da Nang and is served at family meals and festive occasions.",
+  "hello": "Buongiorno, I’m Isabella, a chef. What makes this pork roll so special?",
+  "words": [
+   "astringent",
+   "texture",
+   "contrast",
+   "staple",
+   "festive occasion",
+   "regional identity",
+   "slice",
+   "wrap",
+   "balance",
+   "basil"
+  ]
+ },
+ "b2-architecture": {
+  "place": "Architecture and layered influences",
+  "persona": "Henry, Architecture student from Edinburgh",
+  "level": "B2",
+  "goal": "Describe the architecture of Da Nang Museum and the Japanese Covered Bridge and point out their influences.",
+  "facts": "The building at 42 Bach Dang Street (Da Nang Museum) has a three-storey central block designed by a French architect in the Neoclassical style; work began in 1898 and it opened in 1900, first as the office of the Mayor of Tourane. Hoi An’s Japanese Covered Bridge follows the “house above, bridge below” style, with a wooden frame and yin-yang tiles, mixing Vietnamese, Japanese and Chinese traditions. Legend says it helps subdue the Namazu sea monster.",
+  "hello": "Hi, I’m Henry. I study architecture. Which buildings here show different influences?",
+  "words": [
+   "neoclassical",
+   "façade",
+   "tile",
+   "legend",
+   "subdue",
+   "influence",
+   "interaction",
+   "wooden frame",
+   "architect",
+   "storey"
+  ]
+ },
+ "b2-city-culture": {
+  "place": "Stage, library and city culture",
+  "persona": "Chloe, Music teacher from Lyon",
+  "level": "B2",
+  "goal": "Introduce the city’s cultural venues and suggest where to see a performance.",
+  "facts": "Da Nang has three major arts institutions: the Nguyen Hien Dinh Tuong Theatre, Trung Vuong Theatre and the Da Nang Palace of Children’s Culture. Tuong from the Quang region is national intangible cultural heritage. Trung Vuong Theatre hosts many events and festivals of song, dance and music. The General Science Library’s reading room seats about 2,500 readers. The area around the administrative centre is being developed as a cultural space.",
+  "hello": "Hello, I’m Chloe. I’d love to see a traditional performance. Where should I go?",
+  "words": [
+   "theatre",
+   "performance",
+   "institution",
+   "venue",
+   "collection",
+   "reading room",
+   "intangible heritage",
+   "event",
+   "festival",
+   "host"
+  ]
+ },
+ "c1-gateway": {
+  "place": "Geography as destiny",
+  "persona": "Martin, Economics researcher from Boston",
+  "level": "C1",
+  "goal": "Argue why its location has made Da Nang a gateway.",
+  "facts": "Da Nang lies at the midpoint of Vietnam on the north–south road, rail, sea and air axis. Da Nang Bay has deep, safe waters. The city is the end point of the East–West Economic Corridor, which ends at Tien Sa Port; it is a transit gateway for landlocked Laos and an alternative route to the sea for Thailand and Myanmar, and it complements the roles of Hanoi and Ho Chi Minh City.",
+  "hello": "Good afternoon, I’m Martin. I keep hearing that Da Nang is a “gateway”. What makes its location so important?",
+  "words": [
+   "strategic",
+   "corridor",
+   "transit",
+   "hub",
+   "landlocked",
+   "connectivity",
+   "gateway",
+   "complement",
+   "deep-water port",
+   "axis"
+  ]
+ },
+ "c1-conservation": {
+  "place": "Climate, land and conservation",
+  "persona": "Amara, Ecologist from Nairobi",
+  "level": "C1",
+  "goal": "Discuss how climate, landscape and conservation connect as the city grows.",
+  "facts": "Since the 2025 merger, Da Nang stretches from the coastal plains to the western mountains. Planning aims to develop the Son Tra Peninsula as an ecotourism destination tied to nature conservation and biodiversity, while preserving the landscape, the ecological environment and heritage. The source also notes a challenge: wastewater collection and treatment in coastal areas is insufficient.",
+  "hello": "Hello, I’m Amara. I’m curious how Da Nang protects its nature while it grows so fast.",
+  "words": [
+   "ecosystem",
+   "biodiversity",
+   "conservation",
+   "sustainable",
+   "terrain",
+   "impact",
+   "peninsula",
+   "wastewater",
+   "landscape",
+   "ecotourism"
+  ]
+ },
+ "c1-cuisine-identity": {
+  "place": "Cuisine and identity",
+  "persona": "Sebastian, Food writer from Vienna",
+  "level": "C1",
+  "goal": "Analyse food as a mark of regional identity in a short talk.",
+  "facts": "Mì Quảng is a traditional dish of the people of Quang Nam and Da Nang, which were one province until 1997 and merged again in 2025. Its broth uses locally available seafood, livestock and poultry. Fermented anchovy sauce is essential to bún mắm and to pork rolled in rice paper. The dishes combine the savoury richness of meat, shrimp and fish, the nuttiness of peanuts, the heat of spices and fresh herbs.",
+  "hello": "Good evening, I’m Sebastian. I write about food and place. What does a dish like mì Quảng say about this region?",
+  "words": [
+   "terroir",
+   "provenance",
+   "culinary heritage",
+   "shared identity",
+   "adaptation",
+   "locally sourced",
+   "essential",
+   "nuttiness",
+   "livestock",
+   "region"
+  ]
+ },
+ "han-bridge": {
+  "place": "Han River Swing Bridge",
+  "persona": "Mia, Tourist from Melbourne",
+  "level": "A1",
+  "goal": "Introduce the Han River Swing Bridge in short sentences: when it opened and what is special about it.",
+  "facts": "The Han River Swing Bridge opened in 2000. It was Vietnam’s first swing bridge. Da Nang residents paid 30% of its cost.",
+  "hello": "Hi! I’m Mia. This bridge has so many lights. Is it new?",
+  "words": [
+   "bridge",
+   "river",
+   "swing",
+   "turn",
+   "first",
+   "open",
+   "people",
+   "pay",
+   "light"
+  ]
+ },
+ "apec": {
+  "place": "APEC Park",
+  "persona": "Ken, Tourist from Osaka",
+  "level": "A1",
+  "goal": "Describe APEC Park: a canopy like a kite and the sculptures.",
+  "facts": "APEC Park opened on 9 November 2017. Its canopy is shaped like a kite soaring high. The park displays sculptures donated by APEC member economies.",
+  "hello": "Hello! I’m Ken. What is this big white roof?",
+  "words": [
+   "park",
+   "roof",
+   "kite",
+   "white",
+   "sculpture",
+   "gift",
+   "country",
+   "walk",
+   "photo"
+  ]
+ },
+ "lady-buddha": {
+  "place": "Lady Buddha at Linh Ung Pagoda",
+  "persona": "Emma, Tourist from London",
+  "level": "A2",
+  "goal": "Introduce the Lady Buddha statue: its height, where it is, and what people believe.",
+  "facts": "The statue is 67 metres tall, as tall as a 30-floor building. It stands on the Son Tra Peninsula and looks at the sea. Linh Ung Pagoda opened in 2010. There are 17 floors inside the statue. People believe she keeps fishermen safe at sea.",
+  "hello": "Hello! I’m Emma. Wow, this statue is huge! How tall is it?",
+  "words": [
+   "statue",
+   "pagoda",
+   "peninsula",
+   "tall",
+   "sea",
+   "fisherman",
+   "floor",
+   "vase",
+   "kind",
+   "believe"
+  ]
+ },
+ "dragon-carp": {
+  "place": "The Dragon Carp statue",
+  "persona": "Noah, Tourist from Toronto",
+  "level": "A2",
+  "goal": "Retell the carp-becomes-dragon story in short sentences and describe the statue by the Han River.",
+  "facts": "The statue is on the east bank of the Han River, near the Dragon Bridge. It was installed in April 2015. It is 7.5 metres tall, made of white marble and weighs almost 200 tonnes; about 30 artisans from Non Nuoc stone village made it in three months. In the story, a carp jumps over big waves and becomes a dragon. The dragon head can spray water.",
+  "hello": "Hi, I’m Noah. Is that a fish or a dragon?",
+  "words": [
+   "carp",
+   "dragon",
+   "river",
+   "bridge",
+   "marble",
+   "heavy",
+   "wave",
+   "spray",
+   "tail",
+   "luck"
+  ]
+ }
+}

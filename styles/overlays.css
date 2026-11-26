@@ -17,6 +17,7 @@
 .toast:empty { visibility: hidden; }
 .toast { position: fixed; left: 50%; top: calc(env(safe-area-inset-top) + 16px); transform: translate(-50%, calc(-100% - 40px)); background: var(--navy); color: #fff; padding: 12px 20px; border-radius: 16px; font-size: 14px; font-weight: 500; z-index: 60; box-shadow: var(--shadow-lg); transition: transform .35s cubic-bezier(.2,.8,.2,1); max-width: calc(100% - 40px); text-align: center; }
 .toast.on { transform: translate(-50%, 0); }
+.captcha-box { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom) + 16px); transform: translateX(-50%); z-index: 65; max-width: calc(100% - 32px); }
 .confetti { position: fixed; inset: 0; pointer-events: none; z-index: 70; overflow: hidden; }
 .confetti img { position: absolute; width: 34px; height: 34px; animation: fall 1.8s cubic-bezier(.3,.6,.4,1) forwards; }
 @keyframes fall { from { transform: translateY(-60px) rotate(0); opacity: 1; } to { transform: translateY(105vh) rotate(260deg); opacity: .9; } }

@@ -1,0 +1,92 @@
+.directions-practice {
+  display: grid;
+  gap: 14px;
+  color: var(--navy);
+  overflow-wrap: anywhere;
+}
+.directions-practice h2 { font-size: 21px; line-height: 1.25; }
+.directions-practice p { margin: 0; }
+.directions-practice [hidden] { display: none; }
+.directions-practice .btn { min-width: 0; height: auto; min-height: 44px; white-space: normal; text-align: center; }
+.directions-practice :focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+.directions-practice audio { width: 100%; min-width: 0; }
+.directions-map {
+  margin: 0;
+  padding: 12px;
+  border-radius: 16px;
+  background: var(--tint);
+  border: 1px solid var(--line);
+}
+.directions-map figcaption { font-size: 13px; line-height: 1.4; }
+.directions-street {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  isolation: isolate;
+}
+.directions-street::before {
+  content: "";
+  position: absolute;
+  inset: 12px calc(50% - 2px);
+  background: var(--navy);
+  z-index: -1;
+}
+.directions-junction {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.directions-junction::before {
+  content: "";
+  position: absolute;
+  inset: calc(50% - 1px) 12% auto;
+  height: 2px;
+  background: var(--navy);
+  z-index: -1;
+}
+.directions-junction > span, .directions-start {
+  display: grid;
+  place-items: center;
+  min-height: 42px;
+  padding: 4px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.25;
+  border-radius: 9px;
+  background: white;
+  border: 1px solid var(--line);
+}
+.directions-junction > .directions-landmark { font-weight: 700; }
+.directions-junction > .directions-destination {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: white;
+  font-weight: 700;
+}
+.directions-start { display: block; justify-self: center; min-height: 0; padding: 6px 12px; }
+.directions-visitor {
+  padding: 12px 14px;
+  border-inline-start: 3px solid var(--navy);
+  border-radius: 8px;
+  background: var(--tint);
+}
+.directions-listener-form, .directions-listener-form label { display: grid; min-width: 0; gap: 6px; }
+.directions-listener-form { gap: 14px; }
+.directions-listener-form select {
+  min-height: 44px;
+  padding: 6px 10px;
+  width: 100%;
+  font: inherit;
+  font-size: 16px;
+  color: var(--navy);
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.directions-outcomes { display: grid; gap: 10px; margin: 0; }
+.directions-outcomes > div { padding: 10px 12px; background: var(--tint); border-radius: 10px; }
+.directions-outcomes dd { margin: 4px 0 0; font-weight: 700; }

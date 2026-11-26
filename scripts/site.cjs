@@ -16,23 +16,30 @@ const CDN_SCRIPTS = [
   'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js',
   'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js',
 ];
+// On-device speech-to-text: the pinned transformers.js build and its WebAssembly runtime (same dist path), loaded inside lib/asr-worker.js.
+const ASR_LIB = 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.6/dist/';
+// Model weights: huggingface.co redirects to its CDN hosts. connect-src only; weights are fetched by the worker.
+const ASR_MODEL_HOSTS = ['https://huggingface.co', 'https://*.huggingface.co', 'https://*.hf.co'];
+// Turnstile needs its script and iframe origin (Cloudflare's CSP reference); allowed only when a site key is set.
+const TURNSTILE = 'https://challenges.cloudflare.com';
 // Inline event handlers remain in the prototype; inline script elements are blocked.
 // Add model-host and WebAssembly permissions with the phase-1 engine, when its actual requests can be tested.
 const csp = config => [
   "default-src 'self'",
-  ["script-src 'self'", ...CDN_SCRIPTS].join(' '),
+  ["script-src 'self' 'wasm-unsafe-eval'", ...CDN_SCRIPTS, ASR_LIB, config.turnstileSiteKey && TURNSTILE].filter(Boolean).join(' '),
+  config.turnstileSiteKey && `frame-src ${TURNSTILE}`,
   "script-src-attr 'unsafe-inline'",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
   "img-src 'self' data: blob: https:",
-  "media-src 'self' blob:",
-  ['connect-src', "'self'", config.supabaseUrl, 'https://cdn.jsdelivr.net'].filter(Boolean).join(' '),
+  "media-src 'self' blob: https://api.dictionaryapi.dev",
+  ['connect-src', "'self'", config.supabaseUrl, 'https://cdn.jsdelivr.net', ...ASR_MODEL_HOSTS, 'https://api.dictionaryapi.dev'].filter(Boolean).join(' '),
   "worker-src 'self' blob:",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
   "frame-ancestors 'none'",
-].join('; ');
+].filter(Boolean).join('; ');
 
 // The Supabase origin comes from the environment, so headers are built per call (cloudConfig throws on a secret).
 const headers = (config = cloudConfig()) => ({
@@ -50,7 +57,7 @@ const walk = dir => fs.existsSync(path.join(root, dir)) ? fs.readdirSync(path.jo
 // Docs, tests and tooling stay private.
 function siteFiles() {
   // config.js is generated (build writes it, serve.cjs answers it), never a file in the repo tree.
-  const files = new Set(['index.html', 'styles.css', 'da-nang-question-bank.json', ...scripts().filter(f => f !== 'config.js')]);
+  const files = new Set(['index.html', 'styles.css', 'da-nang-question-bank.json', 'lib/asr-worker.js', 'lib/pron-worker.js', ...scripts().filter(f => f !== 'config.js')]);
   for (const f of ['manifest.webmanifest', 'sw.js']) if (fs.existsSync(path.join(root, f))) files.add(f); // PWA files, when present
   for (const m of read('styles.css').matchAll(/@import url\("([^"]+)"\)/g)) files.add(m[1]);
   for (const dir of ['assets', 'model']) walk(dir).filter(f => Object.hasOwn(MIME, path.extname(f))).forEach(f => files.add(f));

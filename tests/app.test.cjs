@@ -4,15 +4,32 @@ const { runtime, templates } = require('./helpers/runtime.cjs');
 
 test('all screens render in Vietnamese and English in script loading order', () => {
   const output = templates(runtime());
-  assert.equal(Object.keys(output).length, 40);
+  assert.equal(Object.keys(output).length, 50);
   for (const [name, html] of Object.entries(output)) {
     assert.ok(html.length > 100, name);
     assert.ok(!html.includes('undefined'), name + ' contains undefined');
   }
   assert.match(output['vi/home'], /Chuỗi học/);
-  assert.match(output['en/home'], /Continue lesson/);
+  assert.doesNotMatch(output['en/home'], /Continue lesson|Today’s mission/);
+  assert.match(output['en/roleplay'], /class="resume-pin/);
   assert.match(output['en/tutor'], /Tutor/);
   assert.notEqual(output['vi/profile'], output['en/profile']);
+});
+
+test('Connect screens follow the server role and never name minors to tourists', () => {
+  const app = runtime();
+  app.run("S.user = { name: 'Lan' }; S.lang = 'en'; S.connect = { ...connectBlank('ready'), me: { id: 'u1', role: 'student' } };");
+  assert.equal(app.run("roleView('tutor')"), 'tutor');
+  assert.equal(app.run("roleView('discover')"), 'connect');
+  app.run(`S.connect = { ...connectBlank('ready'), me: { id: 'u1', role: 'tourist', verification_status: 'unverified', school_id: null },
+    locations: [{ id: 'hoi-an-ancient-town', name_vi: 'Phố cổ Hội An', name_en: 'Hoi An Ancient Town' }] };`);
+  assert.equal(app.run("roleView('tutor')"), 'discover');
+  assert.equal(app.run("roleView('home')"), 'discover');
+  assert.doesNotMatch(app.run('VIEWS.profile.render()'), /Lv\.|Total XP|Achievements|Simulation|>Demo/);
+  const spot = app.run("VIEWS.spot.render('hoi-an-ancient-town')");
+  assert.match(spot, /Not open yet/);
+  assert.doesNotMatch(spot, /Send request|Simulation/);
+  assert.match(app.run("VIEWS.spot.render('nowhere')"), /not on the approved list/);
 });
 
 test('existing contrast, camera matching and language diagnostics pass', () => {
@@ -199,4 +216,37 @@ test('every camera landmark shows a real reference photo, not the sample illustr
     assert.match(url, /^assets\/reference\/.+\.webp$/, id);
     assert.ok(fs.existsSync(path.join(__dirname, '..', url)), url);
   }
+});
+test('scripted roleplay shows examples without recording scores or errors', () => {
+  const app = runtime();
+  const result = JSON.parse(app.run(`(() => {
+    S.lang = 'en';
+    const before = JSON.stringify([S.scores, S.errors]);
+    let example = '';
+    addMsg = (_, html) => { example = html; };
+    confetti = () => {};
+    openSheet = () => {};
+    const sessions = S.sessions;
+    startTalk('hoian', true);
+    T.steps = [{ me: 'Old example', gram: { fix: 'Correct example' }, pron: [['example', 42]] }];
+    T.meTotal = 1;
+    nextStep();
+    completeScriptedTurn();
+    completeScriptedTurn();
+    finishTalk();
+    finishTalk();
+    return JSON.stringify([example, T.meDone, S.sessions - sessions, before === JSON.stringify([S.scores, S.errors])]);
+  })()`));
+  assert.match(result[0], /Model answer.*Correct example/);
+  assert.doesNotMatch(result[0], /Old example|42/);
+  assert.deepEqual(result.slice(1), [1, 1, true]);
+});
+
+test('tourist screens are always English, learners keep their language', () => {
+  const app = runtime();
+  app.run("S.lang = 'vi'; S.connect.me = { role: 'tourist' }");
+  assert.equal(app.run("V('Khám phá', 'Discover')"), 'Discover');
+  assert.equal(app.run("L({ vi: 'Cầu Rồng', en: 'Dragon Bridge' })"), 'Dragon Bridge');
+  app.run("S.connect.me = { role: 'student' }");
+  assert.equal(app.run("V('Khám phá', 'Discover')"), 'Khám phá');
 });

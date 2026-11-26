@@ -8,9 +8,9 @@
 
 | Item | Detail |
 | :---- | :---- |
-| Document version | 1.3 (CEFR range extended to A1–C1; leveled cultural curriculum added) |
+| Document version | 1.6 (Local Guide Connect, server-backed pilot) |
 | Date | 26 October 2026 (original draft) |
-| Last revised | 14 November 2026 — target range extended to CEFR A1–C1 and leveled cultural curriculum requirement (R-13) added; 12 November 2026 — camera model, evaluation and deployment specification updated; no feature implementation implied |
+| Last revised | 26 November 2026 — adds Local Guide Connect (Section 5.9, R-14 to R-18), role-based navigation (C.6), prototype-only safety simulation (Section 9) and new risks (Section 12). 26 November 2026 — Roleplay tab opens a three-option menu; Home drops the practice buttons and the Continue/mission cards; mission moves to Notifications; journey map gets a Continue card. 24 November 2026 — defines the directions pilot slice, its acceptance criteria and the separate validation gates for speech feedback and learning transfer |
 | Submission deadline | 21:00, 28 October 2026 |
 | Idea pitch | 30 October 2026 |
 | Context | National-level science and engineering research competition |
@@ -38,6 +38,8 @@ At the same time, Da Nang and Hoi An welcome large numbers of international visi
 
 A web-based learning platform where learners practise speaking English in realistic local situations with an AI conversation partner, receive personalised correction of their pronunciation and grammar, and see their progress clearly, using content rooted in Vietnamese culture and the landmarks of Da Nang and Hoi An.
 
+The first check of that vision is whether a listener can act on the learner's English in a new local task after practice. In the Da Nang directions slice, the listener must identify a turn, a landmark and a destination. Section 5.8 defines the slice and Section 10.3 defines the study proposal.
+
 ## **1.3 Product Objectives**
 
 The following objectives are proposed so that the project has measurable outcomes the judges can evaluate. Targets in Section 10 are proposals to be confirmed after the pilot design is finalised.
@@ -49,6 +51,7 @@ The following objectives are proposed so that the project has measurable outcome
 | O3 | Enable learners to introduce local culture and landmarks in English. | Teacher-rated storytelling task before and after the pilot. |
 | O4 | Demonstrate that AI scoring is reliable enough to guide learners. | Agreement between AI scores and human teacher ratings. |
 | O5 | Sustain regular voluntary practice. | Weekly active learners, sessions per learner, streak length. |
+| O6 | Transfer targeted speaking practice to a new local communication task. | Number of turn, landmark and destination details understood independently at day 7, compared with fixed-schedule practice (Section 10.3). |
 
 ## **1.4 Product Name and Logo**
 
@@ -67,15 +70,15 @@ Names considered earlier:
 
 ## **1.5 Scientific Contribution and Novelty**
 
-For a national-level science and engineering competition, the project’s contribution goes beyond assembling existing AI services. The points below are the ones the team should emphasise to the judges:
+The proposed research contribution is to test whether practice selected from a learner's observed error improves a new local speaking task. Roleplay, feedback and pronunciation exercises provide the teaching mechanism. Sections 5.8 and 10.3 define the first test and the evidence needed to support the claim.
 
-* **Closed-loop remediation pipeline.** Errors made in free conversation are captured automatically and turned into targeted pronunciation exercises, whose results feed a diagnostic profile that in turn recommends the next practice session. Most apps treat conversation and pronunciation drills as separate tools.
+* **Closed-loop remediation pipeline.** In the target product, verified errors in conversation lead to focused exercises and a new speaking task, with results informing the next recommendation. The first slice uses listener judgement for this step.
 
 * **Vietnamese-learner error taxonomy.** The pronunciation and grammar feedback is organised around error patterns specific to Vietnamese speakers (Section 6\) rather than generic scores.
 
-* **Culturally grounded content.** Scenarios are built on verified information about local landmarks, food and traditions, so learners practise the conversations they will really have.
+* **Culturally grounded tasks.** Local information determines what a listener should understand or do. Real landmark, food and tradition facts used in a released lesson must pass R-04.
 
-* **Measured validity.** The AI scores are compared against human teacher ratings, and learning gains are measured in a pilot study (Sections 7.4 and 10).
+* **Separate validation.** Compare automated feedback with human ratings before relying on it. Measure learning transfer on a new task with a listener who does not know the learner's study assignment (Sections 7.4 and 10).
 
 # **2\. Target Users**
 
@@ -128,6 +131,7 @@ Priorities use the MoSCoW method: Must (required for the competition prototype),
 
 ## Delivery Sequence
 
+0. Run the limited Da Nang directions slice in Section 5.8. Use live listener feedback and the existing static PWA to test the teaching sequence and usability. This slice precedes the full speech and LLM integration.
 1. Prove one scenario through the entire Roleplay → Tutor → Error Radar → Practise this loop with real speech and LLM services.
 2. Polish two or three scenarios for an end-to-end demonstration, then complete the remaining Must items, including the launch scenario count in R-01.
 3. Add Should items, then Could items as time and evidence allow. Won't items remain outside this version. A clickable demo or an existing camera experiment does not change these priorities.
@@ -300,6 +304,57 @@ The first curriculum module is Đà Nẵng. Its draft lesson plan is `Giáo án 
 - **Sensitive topics.** War, colonial history and administrative or political decisions are presented factually and neutrally as background to culture. Activities ask learners to describe and explain, not to judge political decisions.
 - **Level selection.** Placement (X-02) and the estimated band (E-04) choose the default level; learners can open other levels.
 
+## **5.8 Da Nang Directions and Speaking Transfer**
+
+The first slice is for a Da Nang high school learner practising at A2. A2 describes task difficulty. The task uses a clearly labelled fictional map near the Dragon Bridge, with no live directions, GPS or verified claims about streets. Real routes or cultural facts need R-04 verification before being used for a school study. This slice connects R-03, T-03, E-05 and X-03 and has a separate acceptance boundary from the full Must MVP.
+
+| Behaviour | Slice acceptance criteria |
+| :---- | :---- |
+| First speaking task | Learner sees a map, meeting point and English visitor question with no model answer. The learner can speak to a listener or record on an explicit action after a mic explanation. Unsupported, denied or interrupted microphone access leaves the live speaking path available. |
+| Listener checks what they understood | The listener sees no route map or answer key and submits the heard turn, landmark and destination, including an option for unclear answers. Display the number of correct details over three. Solo practice can skip this step, which records no score. |
+| One focused follow-up | After the baseline listener choices are submitted, the listener can classify the target word's final /t/ as present or acceptable, clearly missing, or uncertain. An observed omission offers a short U01-based model and retry. An uncertain, absent or skipped observation offers general practice without a diagnosis. No automatic phoneme classification is enabled in the slice. |
+| Immediate and delayed transfer | A third map is used immediately after the follow-up. The delayed task uses the unused map from the baseline/delayed pair and is available seven days after completing the immediate task. Each run keeps the pair order on reload. Neither transfer map shows a model answer before speaking. Future research must predefine balanced assignment and comparable tasks. |
+| Data and progress | Keep only the versioned map order, listener choices, drill state and delayed unlock time on the device. Local recording is replayable while completing the current task. Stop capture and release audio on leaving or hiding the view, and release it when the current assessment is finished. Persist or transmit neither audio nor transcripts. Keep listener task scores separate from the existing demo Radar, CEFR and XP. |
+| Interface | Vietnamese and English controls and explanations, with English for the practice prompt and model words. The map and listener form are keyboard accessible and usable on a 360px viewport. |
+
+The local prototype does not satisfy the broader requirements for automatic error capture (R-10), timed automated scoring (T-04), four-axis assessment (E-01), real AI conversation (R-03) or the launch count (R-01). Those requirements keep their existing priority and acceptance criteria.
+
+## **5.9 Local Guide Connect (R-14 to R-18)**
+
+Local Guide Connect lets a visiting tourist find a Da Nang student who can talk about an approved landmark, and lets the student practise English with that visitor. Slogan: "Learn Locally. Connect Globally." There is no demo, mock or simulated data: every screen reads Supabase (RLS, RPCs in `0003_connect.sql`, Edge Functions `connect-request` / `connect-respond`), and a part that is not built yet shows **"Chưa mở / Not open yet"** with the reason. Offline or without an account, Connect only explains that it needs both. No chat or payments. Priority is Could and does not change the Must MVP. Contract details for developers are in `docs/connect-plan.md`.
+
+**Roles (R-14).** The role comes from the server profile (`profiles.role`, `verification_status`, `school_id`, `age_group`); no local flag grants anything. A learner picks Student or Tourist once in Profile, which the database allows only while unverified and without a school. Verified `school_admin` and `teacher` accounts get a School tab (`#school`): the admin manages members, verification, age group and minor approval and rotates the invite code (shown once); the teacher creates supervised group sessions at approved places. Students join a school with an invite code (wrong code and lockout are explained).
+
+- **Student:** tabs Học/Home, Nhập vai/Roleplay (existing popup menu), Kết nối/Connect, Hồ sơ/Profile. Tutor and Radar stay reachable from Home shortcuts.
+- **Tourist:** tabs Khám phá/Discover, Kết nối/Connections, Hồ sơ/Profile. A tourist never sees lessons, the Tutor or learning progress; any view outside the tourist set redirects to Discover. A student opening a tourist view is redirected to Connect.
+
+**Journey (R-15).** Tourist: Discover (approved places, large image cards) → place detail → list of matched students → send request → track, cancel, block or report on Connections. Student: Connect shows the safety status, availability per approved place and time slot, and incoming requests to accept or decline. The interface keeps four ideas apart: viewing a public place, finding users, sending a request, and being eligible to meet offline.
+
+**Safety rule (R-16).** A connection is allowed only when: the place is approved AND the tourist is eligible AND the student is eligible AND supervision or approval exists where required. Missing or unverifiable data counts as **not allowed**. Hiding a button is not protection: every action re-runs the check at the moment it happens, including accepting a request that was sent earlier.
+
+- **Approved places** are the existing location list only; none is added.
+- **Account status:** *eligible* = adult and verified. *Supervised-only* = student under 18, verified, with both school and guardian approval; may join supervised group sessions only. *Awaiting approval* = student under 18, verified, missing one approval. *Not eligible* = everything else (unverified, age unknown, tourist under 18).
+- **Under 18 (R-17).** A student under 18 never has a one-to-one connection, even with full approvals. Only a supervised group session that belongs to the student, matches the place and names a supervisor is allowed, and such a student appears to tourists only as "supervised group session". A tourist under 18 is not eligible.
+- **One-to-one** needs an eligible student with availability at that place. **Blocking** by either side stops the connection. **Minimum level** is A2.
+- **Reason codes:** `location-not-approved`, `tourist-not-eligible`, `student-not-eligible`, `student-awaiting-approval`, `minor-one-to-one-blocked`, `session-invalid`, `not-available`, `blocked`, `level-below-minimum`, `unverifiable`. Any error during the check returns `unverifiable` (not allowed). Reasons are shown in plain language.
+
+**Matching (R-18).** Ranked by 3 × shared interests + 2 × availability at the place + 1 × nearby area; ties by id. Only pairs that pass the safety rule appear. Ranking never favours the highest English level. Distance is an approximate label (under 2 km, 2–5 km, over 5 km) from the district centre, never coordinates.
+
+**Privacy.** No exact location, phone number or email is stored or shown. Verification and school approval are set by the school on the server and shown read-only. **Chưa mở (pilot v1):** tourist connections (tourist identity verification is not built; group sessions are visible to school members only, so a place shows "Kết nối với du khách: Chưa mở"), one-to-one meetings, and guardian consent (needs the email phase). Profile lists blocked users; block and report write `public.blocks` / `public.reports`.
+
+| Behaviour | Slice acceptance criteria |
+| :---- | :---- |
+| Roles and navigation | Default role is Student; Profile switches role with a Demo label. Each role shows only its tab set (R-14); a tourist reaching a lesson, Tutor or progress view is redirected to Discover. Works at 360px, in Vietnamese and English, by keyboard |
+| Approved places only | Discover and place detail list only approved places with existing name, description and image; an unapproved id shows a notice and returns to Discover (R-16) |
+| Safety rule at action time | Every send and every accept re-runs the check. Changing the role, place or verification after sending cannot bypass it: an accept after the student's or tourist's eligibility changed is blocked with a reason (R-16) |
+| Under 18 | One-to-one is blocked for any student under 18 even with both approvals; supervised group sessions only, shown as "supervised group session"; a tourist under 18 cannot connect (R-17) |
+| Reasons | Each blocked action shows a plain-language reason mapped from the reason codes; missing data is treated as not allowed |
+| Matching | Results contain no blocked or ineligible person, are ordered by the R-18 score then id, and show name, level, shared interests, approximate distance and a status label |
+| Privacy and labels | No coordinates, phone or email anywhere; no simulated toggle or sample person exists; anything not built shows "Chưa mở" with a reason; blocked users can be listed and requests cancelled (via `connect-respond`), blocked or reported |
+| Tests | Truth-table tests cover each reason code at least once, minor one-to-one always blocked, role change cannot send requests as student, accept re-checks, and stable match order |
+
+This slice does not provide real identity verification, messaging, scheduling, payments, moderation staff or server enforcement; see Section 9 and Section 12.
+
 # **6\. Vietnamese-Learner Pronunciation Error Taxonomy**
 
 Vietnamese is a tonal, syllable-timed language. A syllable has at most one final consonant, final /p t k/ are unreleased, there are no consonant clusters and there is no native /θ ð ʃ ʒ tʃ dʒ/. Vietnamese speakers of English therefore show predictable error patterns. The Tutor classifies each pronunciation error into exactly one of the closed categories below. The stored ids are in code font; the app's Vietnamese and English labels live in `ERR_CAT`. Priority follows intelligibility: P1 errors most often cause misunderstanding, while P3 errors mainly affect naturalness or listening. Evidence, examples and practice items for every category are in the pronunciation lesson plan `docs/giao-an-phat-am.md`; its data is in `content/pronunciation/`.
@@ -425,13 +480,13 @@ The following target choices consolidate the specific stack previously recorded 
 | Model audio (T-04) | Kokoro-82M (Apache-2.0) audio pre-rendered for every lesson-plan item in several en-US and en-GB voices and served as static files |
 | ASR (Roleplay) | `whisper-tiny.en` in the browser for learner turns; character replies stay scripted until an LLM is added |
 | Spaced repetition | `ts-fsrs` |
-| LLM | Deferred to a later stage |
+| LLM | The Supabase Edge Function `converse` uses **Groq** (`llama-3.1-8b-instant`, with Zero Data Retention enabled by the owner) with **Cloudflare Workers AI** (`@cf/google/gemma-4-26b-a4b-it`) as fallback. Live roleplay and Tutor explanations require a signed-in, online account whose adult status was verified and recorded by the server. Current signup provides no age verification, so those accounts use scripted practice. The provider receives the scenario and a screened current input. The app validates the full reply before displaying it. Quota exhaustion and service failure return the learner to scripted practice. |
 
 The camera target uses **MobileNetV3Large image classification with TensorFlow.js inference in the browser**, specified in Section 8.5. Browser MediaDevices supplies camera frames; Geolocation is optional supplementary context, not a prerequisite for recognition. Map or Street View references, if used, must respect licensing, attribution and caching terms. An open phoneme-recognition model remains a research alternative for speech, separate from the landmark classifier.
 
 ## **8.3 Current Prototype Status**
 
-The original repository inspection was on **12 November 2026**; the table includes the testing-stage source updates of **22 November 2026**. Source checks and local tests do not establish a deployed release or device acceptance.
+The original repository inspection was on **12 November 2026**. The table includes the 22 November testing-stage source updates and the 24 November directions slice. Source checks and local tests do not establish a deployed release or device acceptance.
 
 | Area | Current status | What this does not establish |
 | --- | --- | --- |
@@ -439,7 +494,8 @@ The original repository inspection was on **12 November 2026**; the table includ
 | Learner journey | Clickable screens, two-step onboarding, place themes, sample conversations, Tutor and radar templates | Production authentication, measured speech scores or a connected LLM |
 | Curriculum content (R-13) | As of 14 November 2026, the library holds the 10 original scenarios plus 15 lesson-derived scenarios (A1–C1) from the Đà Nẵng lesson plan. Each has a can-do goal, 9–10 words with IPA, a pronunciation focus word, scripted model turns and source line references, and every one is unverified. Since 16 November 2026, four A1–A2 camera landmark scenarios (Cầu Sông Hàn, Công viên APEC, Tượng Quan Âm, Tượng Cá chép hoá Rồng) give each camera class its own lesson; their facts cite lesson B1-05 or `docs/research-quan-am-ca-chep.md` and are unverified | Teacher verification, the other 15 lessons, journey placement (the journey still shows the original 10 stops) or a level filter in the library |
 | Persistence | Local-first anonymous Supabase client, profile synchronization, error-row helpers and five RLS-controlled table definitions. Migration 0002 restricts table privileges to RLS-controlled CRUD. Two-identity SQL checks pass locally on embedded PostgreSQL; the hosted 0001 setup is reported in Claude's handoff, while 0002 has not been applied there in this turn | Hosted revalidation after 0002, complete pronunciation-progress integration, cross-device recovery, or research retention automation. No audio storage is implemented |
-| Speech | Browser speech playback and simulated roleplay/Tutor scores | Azure ASR, phoneme assessment, neural TTS integration or validated accuracy |
+| Speech | Browser speech playback and simulated scores in the original Roleplay and Tutor. The separate directions slice uses browser mic capture and temporary local replay. | Azure ASR, automated phoneme assessment, neural TTS integration or validated accuracy |
+| Directions slice (Section 5.8) | Fictional A2 directions maps, live listener form and local task outcomes. The follow-up selects a final /t/ activity after a human observation and gives an immediate and delayed new-map task. | Accuracy of automated feedback, effectiveness of the activity, or school pilot approval |
 | Camera — repository integration | Since 16 November 2026: model v4 (MobileNetV3Large, 5 classes: Cá chép rồng, Cầu Rồng, Cầu Sông Hàn, Công viên APEC, Tượng Quan Âm – Chùa Linh Ứng) exported to a TensorFlow.js graph model in `model/` (float16, about 6 MB), run with TensorFlow.js 4.22. Live scan and photo matching both apply a 0.85 threshold and the 20-point top-1/top-2 margin (C-04); classes are mapped by name only, and each opens its own lesson. Four matching location records were added (unverified). Separate labelled simulation modes remain | A trained khac class, 25-landmark coverage, a field test on phones, measured latency or teacher-verified facts for the new places |
 | Verification | Automated checks cover templates, existing diagnostics, saved state and navigation recommendations | Device permissions, measured latency, a completed pilot or visual approval at every supported size |
 
@@ -468,7 +524,7 @@ No full 26-class training, independent field-test result, phone latency/memory m
 | Response time | AI voice reply starts within about 3 seconds of the learner finishing a turn; pronunciation score within about 3 seconds. |
 | Connectivity | First installation, anonymous account enrollment and cloud synchronization require internet. After successful service-worker installation, the static shell is available offline and changes stay local until reconnection. Large images/models and lesson resources are not all precached; remote scoring always needs internet. Full offline learning remains deferred. |
 | Devices | Works on recent Android and iOS phone browsers and on desktop Chrome/Edge; usable on a 360px-wide screen. |
-| Cost control | Enforce per-learner daily AI-minute limits on the server. Set monthly provider spend limits to keep API costs predictable. Numerical daily caps and budgets remain to be set by the team. |
+| Cost control | Testing uses free plans. The `converse` Edge Function reserves up to 40 AI turns per eligible account and 100 turns across the project per UTC day (migrations 0004 and 0006). A reservation counts even if the provider fails. Each reply has an output cap of 180 tokens. The app falls back to scripted practice when the daily quota is exhausted or the providers are unavailable. The app's caps are independent of the provider quotas, which may change. |
 | Accessibility | Subtitles, adjustable speech rate, touch targets ≥44px, text contrast ≥4.5:1, readable font sizes and reduced-motion support. Detailed visual and interaction requirements are in Appendix C. |
 | Interface states | Relevant screens provide loading, empty and error states. Recording always visibly distinguishes idle, listening, processing and scored. |
 | Camera performance | Measure cold model-download/load time, warm inference latency, live sampling rate and peak memory on named target phones/browsers, with model version and network conditions. Acceptance budgets remain to be set; the speech-response target above is not a measured camera result. |
@@ -546,6 +602,8 @@ Adding a recognition class requires labelled data, classifier retraining/fine-tu
 
 Most primary users are under 18, and the product records their voices, so privacy and safety must be designed in from the start.
 
+> **Owner decision, 26/11/2026: adults only for the public launch.** Signup keeps the guardian-consent box for under-18 test accounts, and the server marks every account adult (`app_metadata.echolac_verified_adult`, migration 0007), so live AI (Groq, Cloudflare) is open to all accounts within the quota. The under-18 rules below (guardian consent, R-17 supervision) stay in the code for school accounts and apply again if minors are admitted later; that requires real age verification first.
+
 * **Consent:** obtain approval from the school and consent from parents or guardians before students take part in the pilot, in line with Vietnam’s personal data protection regulations.
 
 * **Data minimisation:** store transcripts, scores and error categories. **In the testing stage no raw audio is stored anywhere.** Pronunciation scoring runs in the browser where possible. Sending a recording to the remote scoring server (Section 8.2) requires the learner's explicit consent, shown before the first upload and revocable in Profile; the recording is used only to compute the score and is not stored or logged by EchoLạc. The server is a Hugging Face Space hosted outside Vietnam. A later `keep_audio_for_research` flow needs separate guardian consent and is not part of this stage.
@@ -554,11 +612,13 @@ Most primary users are under 18, and the product records their voices, so privac
 
 * **Camera and location:** explain the purpose before requesting camera permission, and request it only when the learner opens capture. Run landmark inference locally; do not upload or retain photographs, probability vectors or continuous footage by default. GPS is separately consented and optional; denying it does not block image recognition. Do not store precise location history or expose the learner's location to others. Learners can delete their learning history. A separate, explicit contribution/research consent is required before reusing learner photographs as training data; document image rights and handling of identifiable people.
 
-* **AI guardrails:** AI characters stay on the scenario topic, keep language age-appropriate and decline unrelated or inappropriate requests.
+* **AI guardrails:** AI characters stay on the scenario topic, keep language age-appropriate and decline unrelated or inappropriate requests. The current signup route does not verify age. Learners under 18 and accounts of unverified age use scripted practice without sending their speech or typed replies to an AI provider. The server checks current eligibility before processing a live turn, screens current input and the complete reply for recognised contact details and unsafe requests, and discards client-supplied conversation history before the provider call. Screening is limited to recognised patterns.
 
 * **Anonymised reporting:** results presented at the competition use aggregated or anonymised data only.
 
 * **Access control:** row-level security applies to every learner-data table. Learners, including anonymous accounts, read and write only their own rows. There is no teacher or class access in this version (X-05).
+
+* **Local Guide Connect (R-14 to R-18):** role, verification, age group, school approval and the connection check come from the server only (no on-device simulation); tourist identity verification and guardian consent are not built and show "Chưa mở". The checks run on the server (Supabase RLS policies and an Edge Function re-evaluating the R-16 rule on every request and acceptance), with real identity and age verification, school and guardian approval records, an audit log, and moderation of blocks and reports. Share no exact location, phone number or email; students under 18 never get one-to-one contact. Without those controls the feature must not be used with real tourists or students.
 
 * **Microphone explanation:** before the browser permission prompt, show a short Vietnamese/English explanation of why audio access is needed.
 
@@ -587,6 +647,14 @@ Most primary users are under 18, and the product records their voices, so privac
 | Learners practising at least 3 days per week | O5 | 60% or more of participants in week 4 |
 
 *These targets are proposals for planning. The team should present whatever results the pilot actually produces, including any targets that were not met and why.*
+
+## **10.3 Directions Slice Feasibility and Study**
+
+1. Check the task first with a small group after school approval and the applicable permissions in Section 9. Check whether a final /t/ omission is observable and useful to address in this task. Revisit the target if vocabulary or map comprehension causes most difficulty.
+2. Before enabling automatic error reports, have two teachers independently label acceptable variants, confirmed omissions and unclear tokens. Keep validation speakers separate from calibration speakers. Predefine tolerances and report false error flags, recall of labelled omissions, abstentions, and device latency with denominators. Assess on target Android/iOS devices and keep human feedback or self-practice available if the automatic option fails the gate.
+3. For the learning study, use parallel map forms, counterbalanced order and group assignment after baseline where practical. Match speaking opportunities, practice time and vocabulary exposure between arms. The intervention selects a drill using the learner's error, and the active control follows a fixed drill schedule. Study administration is external to the first slice. It uses Section 9's approval and consent process and a live listener procedure compatible with no retained audio.
+4. Primary outcome is the count of three instruction details independently understood on a new map at day 7. A reader of the map who does not know the study assignment marks turn, landmark and destination. Secondary outcomes include immediate transfer, production of previously unpractised target words and learner confidence. Predefine a useful effect and how missing results will be handled. Report counts, listener agreement, between-group change, uncertainty, dropouts and feasibility limits. Without a comparison arm, report feasibility and observed change.
+5. Expand scenarios and calibrated error categories once there is credible new-task improvement and the feedback is usable on target devices. Rework the drill if gains appear only in practised words. Camera recognition and its contribution to finding a lesson have a separate evidence track.
 
 # **11\. Social Impact and Sustainability**
 
@@ -623,6 +691,9 @@ Phase 2 funding options are future directions requiring a later scope decision. 
 | Model is slow or memory-heavy on phones | Camera stalls or model fails to load | Measure the complete download, cold loading, warm latency and peak memory on target devices; adjust sampling and export settings only with measured accuracy/performance evidence |
 | Location catalogue grows without retraining the classifier | New destinations appear selectable but cannot be recognised | Separate content management from recognition coverage; retrain and publish a paired model/labels release for new classes. Keep embedding retrieval as a future research option |
 | Reference imagery is used outside its licence | Legal and attribution problems | Use supported APIs and permitted references; do not scrape or permanently copy Street View imagery; use team-owned photographs where possible |
+| Local Guide Connect puts a minor in contact with an adult stranger (R-14 to R-18) | Child-safety harm; pilot and school approval withdrawn | Under-18 students: supervised group sessions only, never one-to-one; adult-and-verified rule for tourists; check re-run at every action; missing data means not allowed; server enforcement, real verification and moderation required before real use (Section 9) |
+| An unbuilt check is mistaken for a real one | False sense of safety; unsafe real-world meetings | No simulated checks in the app; eligibility comes only from the server; unbuilt parts (tourist verification, guardian consent, one-to-one) show "Chưa mở" and stay off |
+| Matching or place detail leaks exact location or contact details | Privacy harm to students | Distance as approximate band only; no coordinates, phone or email stored or shown; approved places only |
 | AI response delay breaks the conversation | Poor experience | Stream replies; show subtitles as soon as text arrives; choose fast models |
 | API costs exceed budget | Service limits during pilot | Daily usage caps; cache TTS for fixed sentences such as vocabulary audio |
 | Privacy concerns about recording minors | Pilot not approved | Consent process, short audio retention, anonymised reporting (Section 9\) |
@@ -637,6 +708,7 @@ Phase 2 funding options are future directions requiring a later scope decision. 
 | :---- | :---- | :---- |
 | 0 – Proposal | By 28 Oct 2026 | This PRD submitted |
 | 0 – Pitch | 30 Oct 2026 | Idea pitch with demo or clickable prototype of the full loop |
+| Testing-stage directions slice | Before full service integration | Working learner/listener flow, one targeted follow-up, immediate and day-7 maps. Study readiness and automated feedback have separate gates in §10.3. |
 | 1 – MVP | \[Team to set\] | All Must requirements; 8 scenarios; working radar chart |
 | 2 – Pilot | \[Team to set\] | 4-week pilot at Phan Chau Trinh High School; scoring validity study |
 | 3 – Extension | After pilot | Should and Could features; remaining A1–C1 curriculum scenarios (R-13); tourism-worker scenarios; teacher dashboard |
@@ -817,11 +889,11 @@ Theme acceptance:
 
 | Reference pattern | EchoLạc screen |
 | :-- | :-- |
-| Full-width bottom bar (Figma "Home", 390×844): icon + label per tab, a short navy bar marks the current tab, white 94% with blur | 5 tabs: **Trang chủ/Home, Nhập vai/Roleplay, Gia sư/Tutor, Bản đồ lỗi/Radar, Hồ sơ/Profile** |
+| Full-width bottom bar (Figma "Home", 390×844): icon + label per tab, a short navy bar marks the current tab, white 94% with blur | Tab bar by role (§5.9, R-14). **Student:** 4 tabs **Học/Home `#home`, Nhập vai/Roleplay, Kết nối/Connect `#connect`, Hồ sơ/Profile `#profile`**; Tutor and Radar open from Home shortcuts. **Tourist:** 3 tabs **Khám phá/Discover `#discover`, Kết nối/Connections `#connections`, Hồ sơ/Profile**. Earlier 5-tab layout (Home, Roleplay, Tutor, Radar, Profile) is replaced. Existing detail follows. **Nhập vai/Roleplay** (and the Home "Nhập vai" shortcut) opens a small popup menu instead of navigating: **Luyện tập/Practice** (Da Nang question bank, `#practice/danang`), **Luyện tập nói/Speaking practice** (Da Nang directions slice, `#practice/directions`, §5.8), **Nhập vai văn hoá/Cultural roleplay** (landmark journey, `#roleplay`). The menu has a close button and closes on outside tap or Escape |
 | Auth form: label above the field, icon at the start, inline green check, terms checkbox, gradient CTA enabled once the form is valid | Onboarding step 1 (see **Onboarding** above). **Testing stage:** no email or social sign-in; returning on the same device continues the anonymous account (X-01) |
 | "Welcome!" success screen with a check badge and 3 feature rows | Not used. Onboarding goes straight from step 2 to Home |
-| Home (Figma file 4gfregjNxYiakVtWeSTKiD, "Screens & Motion"): floating cards over the place scene: initials avatar + bell; "Chuỗi học" card (streak days · XP); location pill naming the scene on screen; 4 round shortcuts (Roleplay, AI Tutor, Camera, Error map); "Tiếp tục bài học" card with progress bar and round play button; "Nhiệm vụ hôm nay" card | Mission card = today's "Practise this" recommendation. The streak row, calendar and 2×2 ring cards follow below. Cards: radius 28, white 92% + blur 10, soft navy shadow |
-| Journey path: winding line, numbered nodes, padlocked locked nodes, "Your Progress" summary card | **Landmark journey**: scenarios as stops across Da Nang and Hoi An; streaks unlock new stops (T-07) |
+| Home (Figma file 4gfregjNxYiakVtWeSTKiD, "Screens & Motion"): floating cards over the place scene: initials avatar + bell; "Chuỗi học" card (streak days · XP); location pill naming the scene on screen; 4 round shortcuts (Roleplay, AI Tutor, Camera, Error map) | Home has no full-width "Luyện tập: Đà Nẵng" or "Luyện nói: Chỉ đường ở Đà Nẵng" buttons and no "Tiếp tục bài học" or "Nhiệm vụ hôm nay" cards. "Nhiệm vụ hôm nay / Today's mission" (today's "Practise this" recommendation from the learner's weakest skill) appears in the Notifications panel opened from the bell. The streak row, calendar and 2×2 ring cards follow below. Cards: radius 28, white 92% + blur 10, soft navy shadow |
+| Journey path: winding line, numbered nodes, padlocked locked nodes, "Your Progress" summary card | **Landmark journey**: scenarios as stops across Da Nang and Hoi An; streaks unlock new stops (T-07). A compact **Tiếp tục/Continue** card with a progress bar (today's minutes toward the 15-minute goal) and a play button sits beside the next unlocked node and opens that lesson |
 | Search bar + filter chips + image cards with a duration badge | Scenario library, filtered by landmark / food / hospitality / difficulty (R-01) |
 | Course details: header card with progress, "Continue Learning" card, expandable unit list | Scenario detail + vocabulary prep list: word, IPA, play button, Vietnamese meaning (R-02) |
 | Lesson screen: media header, summary card with tags, soft full-width CTA | Scenario intro: landmark photo, short fact summary, vocab tags, "Start talking" |

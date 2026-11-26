@@ -13,12 +13,19 @@ Cài Node.js 20 trở lên, rồi chạy tại thư mục dự án:
 npm start
 ```
 
-Mở `http://127.0.0.1:4173`. Thêm `?demo` để vào tài khoản mẫu, hoặc `?demo&test`
+Mở `http://127.0.0.1:4173`. Không còn chế độ `?demo`: tạo tài khoản ở màn đăng ký. Thêm `?test`
 để chạy chẩn đoán độ tương phản và nhận diện trong console. Không cần `npm install`.
 Máy chủ phát triển chỉ phục vụ tệp ứng dụng, tài nguyên và model.
 Trong **Trang chủ → Luyện tập: Đà Nẵng**, bộ câu hỏi tải khi mở mục này và lưu lượt
 đang làm trong trình duyệt. Khi đổi nội dung ngân hàng, tăng `pack.version` trong JSON
 để tiến trình cũ không bị áp vào đáp án mới.
+
+**Trang chủ → Luyện nói: Chỉ đường ở Đà Nẵng** (`#practice/directions`) mở bài thử trong
+PRD §5.8. Dùng bản đồ mô phỏng để nói bằng tiếng Anh. Có thể nói trực tiếp với người nghe
+hoặc bật micro để thu tối đa 30 giây và nghe lại trên thiết bị. Người nghe đánh dấu hướng rẽ,
+mốc và đích, còn chế độ tự luyện bỏ qua điểm. Sau phần luyện ngắn và bản đồ mới, bài kiểm tra
+mở sau 7 ngày. Tiến độ được lưu trên trình duyệt, không đồng bộ.
+Ứng dụng loại bỏ bản ghi khi rời bài, ẩn tab hoặc kết thúc phần đánh giá.
 Nếu PowerShell chặn `npm.ps1`, thay `npm` bằng `npm.cmd` trong các lệnh dưới đây và lệnh khởi động.
 
 ```sh
@@ -46,15 +53,43 @@ Khởi động lại `npm start` sau khi đổi cấu hình. Bỏ cả hai biế
 `npm start` trả `/config.js` từ bộ nhớ; `build-site.cjs` ghi `dist/config.js`.
 Chỉ URL và khoá công khai được xuất ra. `scripts/env.cjs` từ chối khoá bí mật,
 JWT service role, chuỗi khoá không đúng loại và URL chứa thông tin đăng nhập.
+
+**Chống bot (Cloudflare Turnstile), tuỳ chọn.** Đặt thêm `TURNSTILE_SITE_KEY` (khoá *site*,
+công khai) trong `.env.local` hoặc biến Netlify. Khi có khoá, app hiện widget Turnstile
+(chỉ hiện khi Cloudflare cần người dùng bấm) trước khi tạo tài khoản ẩn danh và gửi
+`captchaToken` cho Supabase; CSP chỉ mở `https://challenges.cloudflare.com` khi đó. Không
+đặt thì mọi thứ chạy như cũ. `scripts/env.cjs` từ chối giá trị giống khoá *secret*.
+Kiểm tra thử bằng khoá mẫu của Cloudflare (`1x00000000000000000000AA`).
+Việc chủ dự án làm (không ghi giá trị bí mật vào repo, chat hay log):
+
+- [ ] Cloudflare Dashboard → Turnstile → Add widget: chế độ Managed, thêm hostname
+      `*.netlify.app` của site (và `localhost` nếu thử ở máy); chép site key và secret key.
+- [ ] Đặt `TURNSTILE_SITE_KEY` trên Netlify (và `.env.local` nếu thử ở máy), deploy lại.
+- [ ] Supabase Dashboard → Settings → Authentication → Bot and Abuse Protection →
+      Enable CAPTCHA protection: chọn Turnstile, dán **secret key** ở đó (chỉ ở đó), Save.
+- [ ] Thứ tự: deploy bản có site key trước, rồi mới bật CAPTCHA trong Supabase; bật trước
+      thì đăng nhập ẩn danh của bản cũ sẽ bị từ chối.
+- [ ] Thử trên điện thoại: tạo tài khoản mới, Hồ sơ hiện "Đã đồng bộ".
+
 Tài khoản là **ẩn danh** (PRD X-01): không email, không mật khẩu; đổi máy hoặc xoá dữ liệu
 trình duyệt thì mất liên kết. Cài bảng và RLS xem [docs/supabase-setup.md](docs/supabase-setup.md).
 Mã đồng bộ ở `lib/cloud/`: hàng đợi `lt:sync-queue`, ghi máy trước rồi đẩy lên khi có phiên.
-Chế độ `?demo` không tạo phiên hay gửi dữ liệu lên Supabase. Hồ sơ, nơi đã chọn,
+Chưa đồng ý điều khoản thì không tạo phiên hay gửi dữ liệu lên Supabase. Hồ sơ, nơi đã chọn,
 giọng đọc và đồng ý gửi giọng nói được đồng bộ; chỉ báo thành công sau xác nhận của cloud.
 Ngày sinh đầy đủ và giới tính ở trên máy; cloud chỉ nhận năm sinh. Các hàm đồng bộ
 mục lỗi đã có, nhưng điểm và tiến độ luyện nói hiện vẫn là dữ liệu demo, chưa phải
 vòng học phát âm Đợt 1. Đăng xuất yêu cầu xác nhận, xoá dữ liệu `lt:` trừ ngôn ngữ;
 không xoá hồ sơ trên server hay bảo đảm huỷ ngay một request server đã nhận.
+
+**Kết nối (PRD §5.9)** chỉ dùng dữ liệu server (`data/connect-state.js`, cần migration 0003 và
+Edge Function `connect-respond`): vai trò, xác minh, trường và nhóm tuổi đọc từ `profiles`;
+học viên chọn Học sinh/Du khách một lần khi chưa xác minh và chưa vào trường; học sinh vào trường
+bằng mã mời (`join_school`), lịch rảnh ghi `availability`, yêu cầu đọc `connection_requests`;
+chặn/báo cáo ghi `blocks`/`reports`; `#school` cho quản trị trường (`school_members`,
+`school_set_member`, `school_set_minor_approval`, mã mời hiện một lần) và giáo viên (tạo
+`group_sessions`). **Chưa mở:** du khách kết nối (cần xác minh danh tính du khách), gặp 1-1,
+đồng ý phụ huynh (cần luồng email). Ngoại tuyến hoặc chưa đăng ký thì màn Kết nối chỉ giải thích,
+không có dữ liệu mẫu.
 Thu hồi đồng ý gửi giọng nói có hiệu lực trên máy ngay; bản cloud được cập nhật khi có mạng.
 PWA: `manifest.webmanifest`, `sw.js` (không cache tài nguyên khác domain, `config.js`,
 API, POST hay request âm thanh dạng range), `lib/pwa.js`. Cache chỉ chứa tệp ứng dụng
@@ -64,6 +99,47 @@ Khi service worker cài thành công, nó tải sẵn HTML, script, CSS và icon
 lớn vẫn tải theo nhu cầu; chưa tải trước thì không bảo đảm dùng offline. Cài PWA cần
 HTTPS hoặc localhost; gợi ý thêm vào Màn hình chính
 có trên iOS. `?test` bỏ qua đăng ký service worker. Khi đổi tệp app, tăng `VERSION` trong `sw.js`.
+
+## AI hội thoại (Roleplay và Gia sư)
+
+Khi online, màn Talk và nút "Hỏi Gia sư AI" dùng Edge Function `supabase/functions/converse`
+cho tài khoản có cờ `echolac_verified_adult: true` trong `app_metadata` do máy chủ quản lý.
+Luồng đăng ký hiện tại chưa xác minh tuổi nên mặc định mở hội thoại theo kịch bản, không thu âm
+hoặc tạo điểm ở chế độ này. Edge Function kiểm tra lại quyền trước khi đọc nội dung và giới hạn 40 lượt
+mỗi tài khoản, 100 lượt toàn dự án mỗi ngày UTC. Phản hồi của Groq hoặc Cloudflare Workers AI được kiểm tra
+xong rồi mới hiển thị. Lời học viên có số điện thoại, email, liên kết, `@` hoặc câu hỏi/khai thông tin cá nhân thì bị từ chối (400) trước khi trừ lượt; lịch sử lời nhân vật do trình duyệt gửi không bao giờ chuyển cho nhà cung cấp; cả câu trả lời bị giữ lại nếu hỏi tên, trường, liên lạc hoặc chỗ ở (`converse-safety.ts`). Trần toàn dự án hết thì báo "bận" (503), không phải "hết lượt". Hết lượt hoặc dịch vụ lỗi thì chuyển sang luyện theo kịch bản. Logic ở `supabase/functions/_shared/`,
+test ở `tests/ai-converse.test.cjs` (fetch giả, không gọi mạng). Đổi kịch bản thì chạy
+`node scripts/ai-scenarios.cjs` để sinh lại `_shared/scenarios.json`.
+
+### Nói trong AI Talk (nhận giọng nói trên máy, 5a)
+
+Chạm micro lần đầu: hộp xác nhận nêu dung lượng (khoảng 65 MB một lần: trọng số
+`onnx-community/whisper-tiny.en` q8 ≈ 41 MB, revision ghim trong `lib/asr-worker.js`, và runtime WebAssembly ≈ 22 MB),
+rồi tải với thanh tiến độ MB. Thư viện `@huggingface/transformers@3.7.6` nạp từ jsDelivr bên trong Web Worker
+`lib/asr-worker.js` (không có ở trang chính, chỉ khi chạm micro; `import()` động nên không gắn SRI, CSP chỉ mở
+đúng đường dẫn đã ghim và `'wasm-unsafe-eval'`). Mô hình nằm trong Cache API của trình duyệt (`transformers-cache`),
+lần sau không tải lại. Thu âm tối đa 15 giây (`lib/asr-device.js`, 16 kHz đơn kênh), bản chép hiện trong ô gõ để
+học viên kiểm tra rồi bấm Gửi. Quyền riêng tư: âm thanh không bao giờ rời thiết bị, không lưu, bộ đệm bị xoá ngay
+sau khi chép; micro được nhả khi dừng, khi ẩn tab và khi rời màn. Thiết bị không có Worker/WebAssembly/micro,
+hết bộ nhớ hoặc tải lỗi thì chỉ còn ô gõ kèm thông báo; không bao giờ tự bịa bản chép.
+Máy trạng thái ở `lib/asr-input.js`, test `tests/asr.test.cjs` (bộ chép giả, không tải mô hình).
+
+Việc của chủ dự án (chưa làm; không ghi giá trị khoá vào repo, chat hay log):
+- [ ] Groq: tạo API key tại console.groq.com; bật **Zero Data Retention** trong Settings → Data Controls.
+- [ ] Cloudflare: lấy Account ID; tạo API token chỉ có quyền **Workers AI** (Read và Edit). Giữ gói Workers Free.
+- [ ] Sau các migration 0001–0005, xác minh `supabase/migrations/0006_ai_privacy.sql`, rồi `0006_audit_fixes.sql` (khoá `display_name` sau xác minh, cấm số/`@`/liên kết trong tên, vô hiệu policy `own_delete` cũ) và `rls_check.sql` trên môi trường thử nghiệm trước khi triển khai bản Edge Function này.
+- [ ] Đặt secret cho Edge Function: Dashboard → Edge Functions → Secrets, hoặc
+  `supabase secrets set GROQ_API_KEY=… CLOUDFLARE_ACCOUNT_ID=… CLOUDFLARE_AI_TOKEN=…`.
+  `SUPABASE_URL` và `SUPABASE_SERVICE_ROLE_KEY` được Supabase cấp sẵn cho function.
+- [ ] Deploy: `supabase functions deploy converse` (giữ xác minh JWT mặc định), rồi thử một vòng Talk khi đã đăng nhập.
+
+### Chấm phát âm trên máy (5b)
+
+- **Cách chấm:** `lib/pron-worker.js` chạy `onnx-community/wav2vec2-lv-60-espeak-cv-ft-ONNX` (revision ghim `c69750f`, trọng số int8) bằng transformers.js 3.7.6 như Whisper, ghi âm ≤6 s, 16 kHz mono. Worker chỉ trả id âm vị và xác suất; `lib/pron/` giải mã CTC, chuẩn hoá theo `content/pronunciation/tokens.json`, căn chỉnh Levenshtein có trọng số, phân loại lỗi (expectedErrors trước, rồi thứ tự PRD §6) và cho điểm 0–100. Mọi ngưỡng ở `lib/pron/constants.js`. Nhóm tin cậy thấp chỉ là điểm tham khảo; clip không nghe rõ thì yêu cầu nói lại, không bao giờ bịa điểm.
+- **Dung lượng:** khoảng **318 MB** tải một lần sau khi người dùng bấm đồng ý, lưu trong Cache API của trình duyệt. Máy không chạy được hiện "Thiết bị chưa hỗ trợ chấm tự động" và giữ tự kiểm tra. Đường HF Space từ xa vẫn **Chưa mở** (chưa có luồng đồng ý).
+- **Quyền riêng tư:** âm thanh chỉ nằm trong bộ nhớ, bị xoá sau khi chấm, không lưu, không tải lên; micro được nhả khi xong, ẩn tab hoặc rời trang.
+- **Độ chính xác:** chưa được kiểm chứng với điểm giáo viên (PRD §7.4); trọng số và ngưỡng là giả định thí điểm.
+- **Chưa thử trên máy thật:** tải mô hình, độ trễ và bộ nhớ trên Android, iPhone, máy tính; chỉ có test thuần (`tests/pron.test.cjs`).
 
 ## Triển khai
 
@@ -92,6 +168,8 @@ hoặc kiểm tra quyền camera trên thiết bị thật.
 | `components/` | Markup và hành vi dùng chung: biểu đồ, lịch, Tutor, theme, bottom sheet |
 | `data/` | localStorage, trạng thái và tiến độ bài học; giữ nguyên khóa `lt:` |
 | `content/` | Tình huống, đoạn hội thoại mẫu và dữ liệu tiến độ mẫu |
+| `content/directions-practice.js`, `data/directions-progress.js` | Ba bản đồ mô phỏng cho bài chỉ đường, đáp án, kết quả người nghe và thời điểm mở lại |
+| `lib/directions-practice.js`, `lib/directions-recording.js` | Điều phối bài chỉ đường, microphone và nghe lại bằng bộ nhớ tạm |
 | `content/curriculum/` | Chương trình học Đà Nẵng A1–C1 (PRD R-13): kịch bản lấy từ giáo án, và `landmarks.js` gồm bài riêng cho từng lớp của model camera; có nguồn, chưa được xác minh |
 | `content/pronunciation/` | Dữ liệu giáo án phát âm (PRD §6): 20 bài A1–C1, IPA từ CMUdict; dữ liệu ghi đã được Giáo viên A duyệt ngày 22/11/2026 theo bàn giao. Chưa có giao diện lộ trình phát âm. Tài liệu: `docs/giao-an-phat-am.md` (tạo tự động từ cùng dữ liệu) |
 | `lib/` | Điều hướng, giọng nói, luyện tập và xử lý nhận diện camera |
@@ -108,7 +186,9 @@ Giữ thứ tự import CSS để tránh thay đổi cascade. Mỗi tệp ứng 
 
 ## Giới hạn hiện tại
 
-Hội thoại và điểm luyện nói vẫn là demo; đăng nhập là tài khoản ẩn danh Supabase thật khi có cấu hình. Phát giọng nói dùng trình duyệt;
+Hội thoại và điểm Tutor/Radar cũ vẫn là demo. Bài chỉ đường ghi giọng thật trên thiết bị và
+dùng phản hồi của người nghe. Chưa có nhận diện âm vị tự động hoặc kết quả pilot.
+Đăng nhập là tài khoản ẩn danh Supabase thật khi có cấu hình. Phát giọng nói dùng trình duyệt;
 nhận diện ảnh dùng model v4 thật (TensorFlow.js), tải thư viện từ CDN khi cần.
 Thông tin địa danh vẫn cần giáo viên xác minh. Không xem số liệu mẫu là kết quả
 nghiên cứu hoặc điểm đo thực tế.
@@ -123,8 +203,8 @@ công cụ điều khiển trình duyệt dừng vì không xác định đượ
 Migration `0002_table_privileges.sql` và bản kiểm tra RLS mở rộng đã được kiểm tra trên
 PostgreSQL nhúng chạy trong bộ nhớ; chưa áp dụng/chạy lại trên project Supabase thật.
 Chủ dự án cần áp dụng migration đó, chạy lại kiểm tra RLS, đặt biến Netlify và kiểm tra
-trên điện thoại trước nghiệm thu. Frontend chưa tích hợp CAPTCHA; không bật yêu cầu
-CAPTCHA khi chưa thêm widget/token (xem hướng dẫn Supabase).
+trên điện thoại trước nghiệm thu. Turnstile mới được kiểm bằng widget giả lập trong
+`tests/captcha.test.cjs`; chưa chạy với Cloudflare và Supabase thật (xem danh sách việc ở trên).
 
 ## Bộ sinh giáo án phát âm
 
