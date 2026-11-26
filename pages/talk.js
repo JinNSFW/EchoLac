@@ -8,7 +8,7 @@ VIEWS.talk = {
         <div class="talk-top">
           <div class="topbar">
             <a class="icon-btn" href="#scenario/${s.id}" aria-label="${V('Thoát', 'Leave')}">${icon('left')}</a>
-            <div class="grow"><h1>${L(s.name)}</h1><div class="who">${V('Đang nói chuyện với', 'Talking with')} ${s.persona.name} · ${L(s.persona)}</div></div>
+            <div class="grow"><h1>${L(s.name)}</h1><div class="who">${V('Đang nói chuyện với', 'Talking with')} ${s.persona.name} · ${L(s.persona)} · <span class="tag" id="talk-mode">${aiModeLabel(aiReady())}</span></div></div>
             <button class="icon-btn" onclick="talkSettings()" aria-label="${V('Cài đặt giọng nói', 'Voice settings')}">${icon('sliders')}</button>
           </div>
           <div class="turns"><span id="turn-lbl"></span><div class="track light"><i id="turn-bar" style="width:0;background:var(--primary)"></i></div></div>
@@ -17,9 +17,14 @@ VIEWS.talk = {
         <div class="dock">
           <div class="dock-row">
             <button class="side" onclick="helpMe()"><span class="icon-btn">${icon('bulb')}</span>${V('Gợi ý', 'Help me')}</button>
-            <button class="mic-btn" id="mic" onclick="micTap()" disabled aria-label="${V('Nhấn để nói', 'Tap to speak')}">${icon('mic')}</button>
+            <button class="mic-btn" id="mic" onclick="aiMicTap()" hidden disabled aria-label="${V('Nhấn để nói', 'Tap to speak')}">${icon('mic')}</button>
+            <button class="btn sm" id="script-next" onclick="completeScriptedTurn()" disabled>${V('Xong lượt', 'Done')}</button>
             <button class="side" onclick="toggleSubs()"><span class="icon-btn" id="cc-btn" style="${S.settings.subs ? 'background:var(--navy);color:#fff' : ''}">${icon('cc')}</span>${V('Phụ đề', 'Subtitles')}</button>
           </div>
+          <form class="row mt-8" id="ai-form" style="gap:8px" onsubmit="return aiSend(event)" hidden>
+            <input class="grow" id="ai-text" maxlength="400" autocomplete="off" aria-label="${V('Câu trả lời của bạn', 'Your reply')}" placeholder="${V('Gõ bằng tiếng Anh…', 'Type in English…')}">
+            <button class="btn sm" id="ai-send" disabled>${V('Gửi', 'Send')}</button>
+          </form>
           <div class="hint" id="mic-hint">${V('Đợi nhân vật nói xong…', 'Wait for your partner…')}</div>
           <div class="disclaimer">${V('Thông tin địa danh lấy từ fact sheet có nguồn, đang chờ giáo viên xác minh.', 'Landmark facts come from a sourced fact sheet awaiting teacher verification.')}</div>
         </div>

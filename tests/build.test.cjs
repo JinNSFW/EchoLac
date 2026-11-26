@@ -34,8 +34,12 @@ test('config is {} when unset, accepts aliases, refuses secrets', () => {
 test('CSP allows the configured cloud, without unused phase-1 hosts or eval', () => {
   const csp = headers({ supabaseUrl: 'https://a.supabase.co' })['Content-Security-Policy'];
   assert.match(csp, /connect-src 'self' https:\/\/a\.supabase\.co https:\/\/cdn\.jsdelivr\.net/);
-  assert.doesNotMatch(csp, /huggingface|hf\.space|unsafe-eval/);
+  assert.match(csp, /connect-src [^;]*https:\/\/huggingface\.co https:\/\/\*\.huggingface\.co https:\/\/\*\.hf\.co/);
+  assert.doesNotMatch(csp, /hf\.space|'unsafe-eval'/);
   const script = csp.split('; ').find(s => s.startsWith('script-src '));
+  // Speech-to-text: the exact pinned library path and wasm compile only; model hosts never serve scripts.
+  assert.match(script, /'wasm-unsafe-eval'.*@huggingface\/transformers@3\.7\.6\/dist\//);
+  assert.doesNotMatch(script, /\*|huggingface\.co|hf\.co/);
   assert.doesNotMatch(script, /unsafe-inline/);
   assert.match(csp, /script-src-attr 'unsafe-inline'/);
   assert.match(script, /@supabase\/supabase-js@2\.119\.0\/dist\/umd\/supabase\.js/);

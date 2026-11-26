@@ -3,6 +3,7 @@
 VIEWS.scenario = {
     render(id) {
       const s = scen(id);
+      const directions = s.id === 'directions';
       return `
       <div class="topbar centered reveal">
         <a class="icon-btn" href="#roleplay" aria-label="${V('Quay lại', 'Back')}">${icon('left')}</a>
@@ -41,12 +42,21 @@ VIEWS.scenario = {
           </div>`).join('')}</div>
       </section>
       <section class="card reveal">
-        <div class="unit-head"><span class="unit-num">2</span><div class="grow"><div class="small muted">${V('Bước 2', 'Step 2')}</div><b>${V(`Trò chuyện với ${s.persona.name}`, `Talk with ${s.persona.name}`)}</b></div>${icon('chat')}</div>
-        <p class="small muted mt-8">${V('Khoảng 6–10 lượt nói. AI tự ghi lại lỗi phát âm và ngữ pháp.', 'About 6–10 turns. The AI notes your pronunciation and grammar slips automatically.')}</p>
+        <div class="unit-head"><span class="unit-num">2</span><div class="grow"><div class="small muted">${V('Bước 2', 'Step 2')}</div><b>${directions
+          ? V('Chỉ đường cho người nghe', 'Give directions to a listener')
+          : V(`Trò chuyện với ${s.persona.name}`, `Talk with ${s.persona.name}`)}</b></div>${icon('chat')}</div>
+        <p class="small muted mt-8">${directions
+          ? V('Dùng bản đồ mô phỏng. Người nghe đánh dấu hướng rẽ, mốc và điểm đến.', 'Use a fictional map. The listener marks the turn, landmark and destination.')
+          : V('Trả lời thành tiếng rồi nghe và so sánh với câu mẫu.', 'Answer aloud, then compare with a model answer.')}</p>
       </section>
       <section class="card reveal">
-        <div class="unit-head"><span class="unit-num">3</span><div class="grow"><div class="small muted">${V('Bước 3', 'Step 3')}</div><b>${V('Sửa lỗi trong Gia sư', 'Fix them in Tutor')}</b></div>${icon('micAi')}</div>
+        <div class="unit-head"><span class="unit-num">3</span><div class="grow"><div class="small muted">${V('Bước 3', 'Step 3')}</div><b>${directions
+          ? V('Luyện ngắn rồi thử bản đồ mới', 'Practise briefly and try a new map')
+          : V('Luyện phát âm trong Gia sư', 'Practise pronunciation in Tutor')}</b></div>${icon(directions ? 'mic' : 'micAi')}</div>
       </section>
-      <div class="sticky-cta reveal"><a class="btn" href="#talk/${s.id}">${icon('mic')} ${V('Bắt đầu nói', 'Start talking')}</a></div>`;
+      <div class="sticky-cta reveal">${directions
+        ? `<a class="btn" href="#practice/directions">${icon('mic')} ${V('Luyện chỉ đường', 'Practise giving directions')}</a>
+          <a class="btn soft mt-8" href="#talk/directions">${V('Luyện hội thoại theo kịch bản', 'Practise the scripted conversation')}</a>`
+        : `<a class="btn" href="#talk/${s.id}">${icon('mic')} ${V('Bắt đầu nói', 'Start talking')}</a>`}</div>`;
     },
   };

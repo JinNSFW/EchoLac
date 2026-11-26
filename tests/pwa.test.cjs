@@ -79,7 +79,7 @@ test('PWA only deletes its own old caches and does not read unrelated caches', a
 
 test('PWA keeps a shared offline shell and uses cache-first for sample audio', async () => {
   const w = worker();
-  const online = await w.fetch('/?demo');
+  const online = await w.fetch('/');
   assert.deepEqual(w.writes, ['https://app.test/index.html']);
   const audio = await w.fetch('/assets/audio/pron/a.mp3');
   const fetched = w.state.fetches;

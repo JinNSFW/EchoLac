@@ -1,6 +1,14 @@
 'use strict';
 // signup screen (X-01 step 1): no email or password; the account is anonymous and tied to this device.
+// The field shows dd/mm/yyyy (Vietnamese order); the app stores ISO yyyy-mm-dd as before.
+const dobIso = v => { const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(v); return m ? `${m[3]}-${m[2]}-${m[1]}` : v; };
+const dobShow = v => (/^\d{4}-\d{2}-\d{2}$/.test(v || '') ? v.split('-').reverse().join('/') : v || '');
+function maskDob(el) {
+  const d = el.value.replace(/\D/g, '').slice(0, 8);
+  el.value = [d.slice(0, 2), d.slice(2, 4), d.slice(4)].filter(Boolean).join('/');
+}
 function signupAge(dob) {
+  dob = dobIso(dob);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(dob)) return -1;
   const [year, month, day] = dob.split('-').map(Number), today = new Date();
   const birth = new Date(year, month - 1, day);
@@ -17,7 +25,7 @@ VIEWS.signup = {
       ${authHead(V('Tạo tài khoản', 'Create Account'), V('Kể chuyện quê hương bằng ngoại ngữ', 'Tell your hometown’s story in another language'), 'event.preventDefault();location.reload()')}
       <form id="f" class="mt-32" novalidate>
         ${field('name', V('Họ và tên', 'Full name'), 'person', 'text', V('Nhập họ và tên', 'Enter your full name'), 0, { ac: 'name', attrs: 'maxlength="60"' })}
-        ${field('dob', V('Ngày sinh', 'Date of birth'), 'cal', 'date', '', 60, { ac: 'bday', attrs: `min="1920-01-01" max="${iso()}"` })}
+        ${field('dob', V('Ngày sinh', 'Date of birth'), 'cal', 'text', 'dd/mm/yyyy', 60, { ac: 'bday', attrs: 'inputmode="numeric" maxlength="10" oninput="maskDob(this)"' })}
         <div class="field reveal" style="--d:120ms"><span class="label" id="g-lbl">${V('Giới tính (không bắt buộc)', 'Gender (optional)')}</span>
           <div class="choice-row" role="radiogroup" aria-labelledby="g-lbl" onkeydown="radioKeys(event)">${GENDERS.map(([k, vi, en], i) => `<button type="button" class="choice ${F.gender === k ? 'on' : ''}" role="radio" aria-checked="${F.gender === k}" tabindex="${F.gender === k || (!F.gender && i === 0) ? 0 : -1}" data-v="${k}" onclick="pickGender('${k}')">${V(vi, en)}</button>`).join('')}</div>
         </div>
@@ -31,7 +39,7 @@ VIEWS.signup = {
       if (S.user?.placeId) return;
       const f = $('#f'), val = id => $('#' + id).value.trim(), u = S.user;
       if (u) { // back from step 2: keep everything already typed
-        $('#name').value = u.name || ''; $('#dob').value = u.dob || '';
+        $('#name').value = u.name || ''; $('#dob').value = dobShow(u.dob);
         if (u.gender) pickGender(u.gender);
         $('#terms').checked = !!u.consent?.terms; $('#guardian').checked = !!u.consent?.guardian;
       }
@@ -50,7 +58,7 @@ VIEWS.signup = {
         e.preventDefault(); if (!check()) return;
         const minor = signupAge($('#dob').value) < 18;
         // dob stays on this device; the cloud profile gets the birth year only
-        S.user = { ...(S.user || {}), name: val('name'), dob: $('#dob').value, gender: F.gender, consent: { terms: true, guardian: minor && $('#guardian').checked } };
+        S.user = { ...(S.user || {}), name: val('name'), dob: dobIso($('#dob').value), gender: F.gender, consent: { terms: true, guardian: minor && $('#guardian').checked } };
         save(); location.hash = '#place'; syncAccount();
       });
     },

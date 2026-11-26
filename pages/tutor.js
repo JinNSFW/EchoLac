@@ -7,6 +7,7 @@ VIEWS.tutor = {
       const first = open[0];
       return `
       <div class="topbar reveal">
+        <a class="icon-btn" href="#home" aria-label="${V('Quay lại', 'Back')}">${icon('left')}</a>
         <div class="grow"><h1>${V('Gia sư phát âm', 'Pronunciation Tutor')}</h1><p class="small muted">${V('Lỗi tự động lưu từ các cuộc trò chuyện', 'Errors saved automatically from your conversations')}</p></div>
         <div class="stats-mini"><span style="color:var(--lantern-b)">${img('fire')} ${streakNow()}</span></div>
       </div>
@@ -21,6 +22,8 @@ VIEWS.tutor = {
         ${cats.map(c => `<button class="chip ${S.tutorCat === c ? 'active' : ''}" onclick="setTutorCat('${c}')">${L(ERR_CAT[c])}</button>`).join('')}
       </div>
       <div class="mt-8" id="tq">${tutorList()}</div>
+      ${pronCardHtml()}
       ${open.length ? '' : `<a class="btn mt-24 reveal" href="#roleplay">${icon('chat')} ${V('Đi trò chuyện', 'Start a conversation')}</a>`}`;
     },
+    mount() { return pronCardMount(); },
   };

@@ -1,0 +1,1185 @@
+{
+  "version": 1,
+  "model": "Kokoro-82M v1.0",
+  "recipe": "kokoro-onnx-0.6.1-ort-1.32.0-lameenc-1.8.1-48kbps",
+  "modelSha256": "beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a",
+  "voicesSha256": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
+  "voices": {
+    "en-US": "af_heart",
+    "en-GB": "bf_emma"
+  },
+  "items": {
+    "U01-w01": [
+      "cat",
+      "35bb62158cc954332a6b"
+    ],
+    "U01-w02": [
+      "kite",
+      "527c732983362b4d1c72"
+    ],
+    "U01-w03": [
+      "map",
+      "1847701ccf28143f04c2"
+    ],
+    "U01-w04": [
+      "bike",
+      "287e6ec8945a09062a4b"
+    ],
+    "U01-w05": [
+      "book",
+      "e6a235f11fda2ebcfda7"
+    ],
+    "U01-w06": [
+      "night",
+      "61f59366187498061b09"
+    ],
+    "U01-w07": [
+      "cup",
+      "11f401805da54e1c8ddf"
+    ],
+    "U01-w08": [
+      "boat",
+      "5b7c62cdc3f8ddbee5ee"
+    ],
+    "U01-w09": [
+      "white",
+      "9a27f930377ebc37bdd0"
+    ],
+    "U01-w10": [
+      "lake",
+      "f1899ff592699e7719d5"
+    ],
+    "U01-w11": [
+      "nice",
+      "19c6dda065ca7cce5dfe"
+    ],
+    "U01-w12": [
+      "rice",
+      "e05181b5fd4aec93bd3b"
+    ],
+    "U01-s01": [
+      "I like the night market.",
+      "3ca48a356f989e80dea0"
+    ],
+    "U01-s02": [
+      "The beach is nice and quiet.",
+      "939338a8d35bf95b440c"
+    ],
+    "U01-s03": [
+      "Let's eat rice and fish.",
+      "a134dba65d7e496d33d0"
+    ],
+    "U01-s04": [
+      "We take a bike to Hội An.",
+      "1a2274fbeda5dd1e779c"
+    ],
+    "U01-s05": [
+      "Please put the cup on the map.",
+      "85af0f088244c9b8c0dd"
+    ],
+    "U02-w01": [
+      "books",
+      "97376e328f2d1d4fc737"
+    ],
+    "U02-w02": [
+      "maps",
+      "b008590b3e7e7f60b3fa"
+    ],
+    "U02-w03": [
+      "cats",
+      "7bb79e54551f4f6c720e"
+    ],
+    "U02-w04": [
+      "bikes",
+      "447b8d6175d415f3574b"
+    ],
+    "U02-w05": [
+      "bags",
+      "7e18b2cc3dc9c26948db"
+    ],
+    "U02-w06": [
+      "rooms",
+      "bd670eb0c7b3a07a3d5b"
+    ],
+    "U02-w07": [
+      "trees",
+      "d46bf36cbeee6f83028a"
+    ],
+    "U02-w08": [
+      "goes",
+      "800ce22bb0e6125ca21d"
+    ],
+    "U02-w09": [
+      "likes",
+      "8bc87c019221b54bc604"
+    ],
+    "U02-w10": [
+      "bridges",
+      "2e8d129a898fe843e852"
+    ],
+    "U02-w11": [
+      "beaches",
+      "45757d35c578657cd657"
+    ],
+    "U02-w12": [
+      "dishes",
+      "efba806a644a66f65d9d"
+    ],
+    "U02-s01": [
+      "I like the bridges and the beaches.",
+      "724d65ea9da65599ae30"
+    ],
+    "U02-s02": [
+      "The market sells fresh fruits and eggs.",
+      "527dc5144b7e1b266c7e"
+    ],
+    "U02-s03": [
+      "My friends play games on the beach.",
+      "53dd9bed0eb02fc144c8"
+    ],
+    "U02-s04": [
+      "She goes to the bridge with her friends.",
+      "71b2e2149b0618e10738"
+    ],
+    "U02-s05": [
+      "The bikes and books are on the table.",
+      "2d34b4dd44d4a6acd1e9"
+    ],
+    "U03-w01": [
+      "think",
+      "77d2677130f543558587"
+    ],
+    "U03-w02": [
+      "thank",
+      "f1ec24425c13677c4bd3"
+    ],
+    "U03-w03": [
+      "three",
+      "f9e72db0272f3ce6dfad"
+    ],
+    "U03-w04": [
+      "thing",
+      "03243bf10d64dfc0000c"
+    ],
+    "U03-w05": [
+      "mouth",
+      "3f55dde9a6403c0e2219"
+    ],
+    "U03-w06": [
+      "month",
+      "8759bd138d9dc50d4307"
+    ],
+    "U03-w07": [
+      "bath",
+      "a7b32d2efce0acbbf546"
+    ],
+    "U03-w08": [
+      "birthday",
+      "2f76648026c4b8237bfb"
+    ],
+    "U03-w09": [
+      "this",
+      "eb253b908eceefa374ab"
+    ],
+    "U03-w10": [
+      "that",
+      "e5f171e299938c0bff5d"
+    ],
+    "U03-w11": [
+      "they",
+      "2425d8130bfc4b4ed19e"
+    ],
+    "U03-w12": [
+      "mother",
+      "d71c7d552d685548b581"
+    ],
+    "U03-s01": [
+      "I think the weather is nice at the beach.",
+      "8e27aa0496bf327e9abd"
+    ],
+    "U03-s02": [
+      "They think this bridge is nice.",
+      "39b0aa651460becb771f"
+    ],
+    "U03-s03": [
+      "Thank you, my mother likes the market.",
+      "028026c9dbc4bb1e74ba"
+    ],
+    "U03-s04": [
+      "Thank them for the three cups of tea.",
+      "7872d1343e4b7d4adbfa"
+    ],
+    "U04-w01": [
+      "ship",
+      "30d595189600e7ff0cfe"
+    ],
+    "U04-w02": [
+      "she",
+      "cb4c06d24bbb31ab0e66"
+    ],
+    "U04-w03": [
+      "shoe",
+      "074748797ef661bf4d9e"
+    ],
+    "U04-w04": [
+      "fish",
+      "55d60d51b0b338e82a74"
+    ],
+    "U04-w05": [
+      "fresh",
+      "d7e96058505408d2ae7c"
+    ],
+    "U04-w06": [
+      "sugar",
+      "1242ef6efe96cb37ad16"
+    ],
+    "U04-w07": [
+      "shell",
+      "bc587988fc1848a1a330"
+    ],
+    "U04-w08": [
+      "cheese",
+      "0a20b84d5e2537a3e2ce"
+    ],
+    "U04-w09": [
+      "chair",
+      "6559be65a0181bd5fc61"
+    ],
+    "U04-w10": [
+      "beach",
+      "9115f61e96a95161c595"
+    ],
+    "U04-w11": [
+      "juice",
+      "774914c1c053e973791c"
+    ],
+    "U04-w12": [
+      "job",
+      "8535fd94169ea960c8d8"
+    ],
+    "U04-s01": [
+      "She sells fresh fish at the market.",
+      "241cf4412135d641965b"
+    ],
+    "U04-s02": [
+      "We choose fresh juice at the market.",
+      "13c1c10f32467445aa1f"
+    ],
+    "U04-s03": [
+      "She shops for shoes near the beach.",
+      "080dd2864ee70c225ce1"
+    ],
+    "U04-s04": [
+      "The ship is near the bridge.",
+      "d69c12fe2c1f1679ab6a"
+    ],
+    "U05-w01": [
+      "sheep",
+      "dd8be9b45c879e8768f3"
+    ],
+    "U05-w02": [
+      "leave",
+      "a0e68565a2bfcdbaa1de"
+    ],
+    "U05-w03": [
+      "feel",
+      "4177597b7ad59617dbbb"
+    ],
+    "U05-w04": [
+      "seat",
+      "ed0f115eac76d2a2ca18"
+    ],
+    "U05-w05": [
+      "green",
+      "514b34bf6d88c81c4ff3"
+    ],
+    "U05-w06": [
+      "pool",
+      "6e4e937154cdf9d9cc28"
+    ],
+    "U05-w07": [
+      "food",
+      "7048f41b6c6b00820041"
+    ],
+    "U05-w08": [
+      "school",
+      "6430654e91df9dab24dc"
+    ],
+    "U05-w09": [
+      "full",
+      "936283fd2436084dca29"
+    ],
+    "U05-w10": [
+      "good",
+      "08d182228fc1d4170d3b"
+    ],
+    "U05-w11": [
+      "look",
+      "0eaed57491e3616640fd"
+    ],
+    "U05-w12": [
+      "cook",
+      "c5c93b728888065be513"
+    ],
+    "U05-s01": [
+      "We feel good at the beach.",
+      "9397f8325177d839967b"
+    ],
+    "U05-s02": [
+      "The food at the market is good.",
+      "ccfe3a055d6e5c888c28"
+    ],
+    "U05-s03": [
+      "I like to cook and read a book.",
+      "aebfe956fb7d604acb89"
+    ],
+    "U05-s04": [
+      "The green pool is full of fish.",
+      "c2505a3dde2221ad39a3"
+    ],
+    "U05-s05": [
+      "Sit on the seat and look at the sea.",
+      "402a4aa03c048b1f8e0a"
+    ],
+    "U06-w01": [
+      "hotel",
+      "6aee1ddec243b34a91fb"
+    ],
+    "U06-w02": [
+      "banana",
+      "06fa6c7fde84b9e9ddbe"
+    ],
+    "U06-w03": [
+      "museum",
+      "de4238a45c268429ef41"
+    ],
+    "U06-w04": [
+      "delicious",
+      "4623f1405866aa73eb3e"
+    ],
+    "U06-w05": [
+      "computer",
+      "950c12b7f670b1a9287f"
+    ],
+    "U06-w06": [
+      "tomato",
+      "d99a58adaaaba1d47e19"
+    ],
+    "U06-w07": [
+      "tonight",
+      "dfdb5e94161a7040d6ee"
+    ],
+    "U06-w08": [
+      "coffee",
+      "274ace74d33b2079c7aa"
+    ],
+    "U06-w09": [
+      "mountain",
+      "8a6e9aab9ffcef1e416e"
+    ],
+    "U06-w10": [
+      "festival",
+      "743d35d1510622f65128"
+    ],
+    "U06-w11": [
+      "market",
+      "caf99d4fd54294faa5ff"
+    ],
+    "U06-w12": [
+      "beautiful",
+      "097bbfc94b7878119b3a"
+    ],
+    "U06-s01": [
+      "I love the coffee at the market.",
+      "b8a876feac061de76f41"
+    ],
+    "U06-s02": [
+      "Tonight we eat a delicious dinner.",
+      "95e5cecf70086aee5013"
+    ],
+    "U06-s03": [
+      "The festival by the river is beautiful.",
+      "e372f4b5f66202774e0e"
+    ],
+    "U06-s04": [
+      "My hotel is near the beach and the mountain.",
+      "28636dfe0e31406e3adb"
+    ],
+    "U06-s05": [
+      "The banana and tomato are fresh.",
+      "de355b2ad3c94db4df00"
+    ],
+    "U07-s01": [
+      "It's hot.",
+      "47d25ab6509c3f15fab0"
+    ],
+    "U07-s02": [
+      "It's hot?",
+      "b47a16e09b4f1de89556"
+    ],
+    "U07-s03": [
+      "You like it.",
+      "4dfb94c21ca63d31fc48"
+    ],
+    "U07-s04": [
+      "You like it?",
+      "67ab1ba6de1aa935d3dd"
+    ],
+    "U07-s05": [
+      "Where is the market?",
+      "3a676efd66bce3064faa"
+    ],
+    "U07-s06": [
+      "What do you like?",
+      "65a9b8794f9e5943afe6"
+    ],
+    "U07-s07": [
+      "Is the beach clean?",
+      "62c0e9b879470fb21b24"
+    ],
+    "U07-s08": [
+      "The bridge is nice at night.",
+      "3e6556f24c7548259d7d"
+    ],
+    "U07-s09": [
+      "Do you like the river?",
+      "722b4f3cbd09e6003d7d"
+    ],
+    "U07-s10": [
+      "How is the weather in Hội An?",
+      "d012eafe3c0334b69b3c"
+    ],
+    "U07-s11": [
+      "The food is cheap.",
+      "4b0817eacb3190921a72"
+    ],
+    "U08-w01": [
+      "street",
+      "306326bd0a6f3b68d955"
+    ],
+    "U08-w02": [
+      "spring",
+      "91b2c612c08764ae49bc"
+    ],
+    "U08-w03": [
+      "strong",
+      "b04b065ae5f8c40680c9"
+    ],
+    "U08-w04": [
+      "stop",
+      "6d7cf33af85410d39deb"
+    ],
+    "U08-w05": [
+      "spoon",
+      "7b26a78e210e45a2290e"
+    ],
+    "U08-w06": [
+      "sky",
+      "f63e7be587bc02f4e5db"
+    ],
+    "U08-w07": [
+      "small",
+      "12b7da511e3027fc46a5"
+    ],
+    "U08-w08": [
+      "play",
+      "05cac064609a31054fb2"
+    ],
+    "U08-w09": [
+      "black",
+      "f131543dc423fdf36ceb"
+    ],
+    "U08-w10": [
+      "clean",
+      "af72a56ce44e0b38cc4f"
+    ],
+    "U08-w11": [
+      "train",
+      "1b45d2c74f1386d91b07"
+    ],
+    "U08-w12": [
+      "friend",
+      "26598f3768678bc531d2"
+    ],
+    "U08-s01": [
+      "We stop for fresh street food near the bridge.",
+      "da1f3f2776efaf774d33"
+    ],
+    "U08-s02": [
+      "Black clouds hide the sky over the beach.",
+      "9fde9b62c3fdf40eba70"
+    ],
+    "U08-s03": [
+      "I play with my friend on the clean beach.",
+      "118c067052bcb7991da3"
+    ],
+    "U08-s04": [
+      "The spring wind is strong near the river.",
+      "1139d6a81d0b3a5146e0"
+    ],
+    "U09-w01": [
+      "walked",
+      "388fc2be552d94cd2682"
+    ],
+    "U09-w02": [
+      "cooked",
+      "16c52d5ec479f237818f"
+    ],
+    "U09-w03": [
+      "stopped",
+      "40987ef257f05efb85f3"
+    ],
+    "U09-w04": [
+      "watched",
+      "06c910e11c04e8b69e01"
+    ],
+    "U09-w05": [
+      "played",
+      "7d703fcd3dceb5ebdf8a"
+    ],
+    "U09-w06": [
+      "cleaned",
+      "0ec48b6d5d6c1780e9ef"
+    ],
+    "U09-w07": [
+      "rained",
+      "d66f21ae833ab329adf5"
+    ],
+    "U09-w08": [
+      "visited",
+      "6c294c827a03977d6b67"
+    ],
+    "U09-w09": [
+      "wanted",
+      "4d377005d7bd7e84bdbe"
+    ],
+    "U09-w10": [
+      "painted",
+      "b71f5f03e8f6b6de468d"
+    ],
+    "U09-s01": [
+      "We walked along the beach and watched the boats.",
+      "0e25a83ed7bdee10d07a"
+    ],
+    "U09-s02": [
+      "It rained in Huế, but we played games and watched the river.",
+      "185bf01c98c86ff62dc7"
+    ],
+    "U09-s03": [
+      "We walked across the bridge and visited a market in Hội An.",
+      "1b612de535536d0c8165"
+    ],
+    "U09-s04": [
+      "My mother cooked fish and cleaned the table.",
+      "fbceab30c36da1112feb"
+    ],
+    "U09-s05": [
+      "He started the lesson and wanted to listen.",
+      "51470fb1073592bc6bc2"
+    ],
+    "U10-w01": [
+      "bed",
+      "8142007156bf95f43773"
+    ],
+    "U10-w02": [
+      "bag",
+      "a579246ea486744267df"
+    ],
+    "U10-w03": [
+      "dog",
+      "f02f18c423dbeaf89f11"
+    ],
+    "U10-w04": [
+      "food",
+      "7048f41b6c6b00820041"
+    ],
+    "U10-w05": [
+      "card",
+      "2547f4f1d9fa4ba77a1f"
+    ],
+    "U10-w06": [
+      "prize",
+      "76647a119cf9ed378932"
+    ],
+    "U10-w07": [
+      "leave",
+      "a0e68565a2bfcdbaa1de"
+    ],
+    "U10-w08": [
+      "save",
+      "8b2e2e5a5970b7d46e11"
+    ],
+    "U10-w09": [
+      "five",
+      "869b1206999042f13a08"
+    ],
+    "U10-w10": [
+      "eyes",
+      "433925cb72c8e0f5a830"
+    ],
+    "U10-w11": [
+      "cheese",
+      "0a20b84d5e2537a3e2ce"
+    ],
+    "U10-w12": [
+      "noise",
+      "6bdb3993c5c8c1849431"
+    ],
+    "U10-s01": [
+      "The night market is big and I love the cheese.",
+      "8ba56e26e2130786d490"
+    ],
+    "U10-s02": [
+      "We leave the beach and have rice.",
+      "43cfaf1eebc0b1263200"
+    ],
+    "U10-s03": [
+      "My dog sleeps on a red bed.",
+      "32c7bd392643b10d8dcd"
+    ],
+    "U10-s04": [
+      "The food in Huế is good, and the noise is fun.",
+      "7558170be2e23c3becbb"
+    ],
+    "U10-s05": [
+      "He gave his dog a bag of food.",
+      "6f5b8b8a3fa1bed47ef2"
+    ],
+    "U11-w01": [
+      "cat",
+      "35bb62158cc954332a6b"
+    ],
+    "U11-w02": [
+      "bag",
+      "a579246ea486744267df"
+    ],
+    "U11-w03": [
+      "bed",
+      "8142007156bf95f43773"
+    ],
+    "U11-w04": [
+      "pen",
+      "25d61a8c7eaef3dfed5e"
+    ],
+    "U11-w05": [
+      "cup",
+      "11f401805da54e1c8ddf"
+    ],
+    "U11-w06": [
+      "run",
+      "e1f8587afb34678491d7"
+    ],
+    "U11-w07": [
+      "fun",
+      "50d5e0768669317d7bd0"
+    ],
+    "U11-w08": [
+      "day",
+      "6d437d53eac939aff322"
+    ],
+    "U11-w09": [
+      "late",
+      "b4d03eba2bc2be92c2f3"
+    ],
+    "U11-w10": [
+      "rain",
+      "311f859767914fadb28f"
+    ],
+    "U11-w11": [
+      "go",
+      "2422d32931a783fd2bb2"
+    ],
+    "U11-w12": [
+      "home",
+      "dcc7812afa0035ad1337"
+    ],
+    "U11-s01": [
+      "We go home by boat on the Hàn River.",
+      "3570a042d60e1aac7f0f"
+    ],
+    "U11-s02": [
+      "The man at the Hội An market has a bag and a hat.",
+      "4015d5442d883e65e124"
+    ],
+    "U11-s03": [
+      "On a rainy day in Huế, I stay at home and drink hot tea.",
+      "94e842f4db94273f810f"
+    ],
+    "U11-s04": [
+      "I like to run on the beach in the rain.",
+      "0d63c9c187e9a436a1a8"
+    ],
+    "U11-s05": [
+      "I can get a pen and a cup at the shop.",
+      "d047dd9b91fffecf92c9"
+    ],
+    "U12-w01": [
+      "very",
+      "f96c9356ea091f0300cd"
+    ],
+    "U12-w02": [
+      "vote",
+      "a045ab9714e17296c629"
+    ],
+    "U12-w03": [
+      "wine",
+      "a61ad25cc8fc87c03e6f"
+    ],
+    "U12-w04": [
+      "yes",
+      "7d21913958409e548785"
+    ],
+    "U12-w05": [
+      "zoo",
+      "2d54a79ea63d433e93ea"
+    ],
+    "U12-w06": [
+      "red",
+      "f79ac5870a808b2269cb"
+    ],
+    "U12-w07": [
+      "light",
+      "e08ea63178518e88bc9d"
+    ],
+    "U12-w08": [
+      "pig",
+      "a8be8fcce6f111dc44b2"
+    ],
+    "U12-w09": [
+      "park",
+      "04b2aa17b0e271e559c8"
+    ],
+    "U12-w10": [
+      "ball",
+      "e740d3f031d47c447692"
+    ],
+    "U12-w11": [
+      "school",
+      "6430654e91df9dab24dc"
+    ],
+    "U12-w12": [
+      "well",
+      "b0aa0a37e6537e89cec0"
+    ],
+    "U12-s01": [
+      "The yellow lights look very pretty in Hội An.",
+      "d56c784ecefcd04853c5"
+    ],
+    "U12-s02": [
+      "I like the red bridge and the park by the river.",
+      "f1085da3760b078a51ea"
+    ],
+    "U12-s03": [
+      "Yes, the zoo near our school has a big pig.",
+      "d93cc4c5c4b8f62e779a"
+    ],
+    "U12-s04": [
+      "I feel well when I walk on the beach at night.",
+      "54ba5cca17cee91c7bed"
+    ],
+    "U12-s05": [
+      "We eat rice and light soup in Huế, and the food is very good.",
+      "2762fc99bd9e1d8b0785"
+    ],
+    "U13-s01": [
+      "Pick it up.",
+      "2cb9281df09b7be33a73"
+    ],
+    "U13-s02": [
+      "I want an apple.",
+      "adff1ffbae9d1252cec8"
+    ],
+    "U13-s03": [
+      "Look at the old bridge over the river.",
+      "077659f61d6b368acec3"
+    ],
+    "U13-s04": [
+      "Turn off the light.",
+      "35ede343771818ac30be"
+    ],
+    "U13-s05": [
+      "Come in, please.",
+      "a962e40959c62c24c348"
+    ],
+    "U13-s06": [
+      "Hold on a moment.",
+      "f95f76e279a21e79750d"
+    ],
+    "U13-s07": [
+      "Let's go out tonight.",
+      "bb9092a216e4be8dcc23"
+    ],
+    "U13-s08": [
+      "This is the end of the day.",
+      "c174ae4a3265a85789ce"
+    ],
+    "U13-s09": [
+      "Hội An is old and quiet.",
+      "cc2a25012b217d53aa40"
+    ],
+    "U13-s10": [
+      "We eat an ice cream on the beach in Đà Nẵng.",
+      "9b395988051a8a0c2974"
+    ],
+    "U13-s11": [
+      "Try a bowl of mì Quảng at the market.",
+      "812f948f0c5ed6826a24"
+    ],
+    "U14-w01": [
+      "seafood",
+      "d8a01c75de7ad33a5ce4"
+    ],
+    "U14-w02": [
+      "sunset",
+      "206c28e9cf8d053063fc"
+    ],
+    "U14-w03": [
+      "sunrise",
+      "74f31fff245b25d7cb08"
+    ],
+    "U14-w04": [
+      "bookshop",
+      "aebb2db3c0bddf8f3271"
+    ],
+    "U14-w05": [
+      "greenhouse",
+      "3e310163d354cea78e57"
+    ],
+    "U14-w06": [
+      "blackboard",
+      "c7afb5fbe58a0b09610f"
+    ],
+    "U14-w07": [
+      "weekend",
+      "ac6f787766e85df815f0"
+    ],
+    "U14-w08": [
+      "airport",
+      "b8e757ce2a45e0c9a34e"
+    ],
+    "U14-s01": [
+      "I like the night market by the river.",
+      "4f3e691d0a65ba264e2a"
+    ],
+    "U14-s02": [
+      "We eat fresh seafood on the beach.",
+      "bf46de2f7173fc93e8c5"
+    ],
+    "U14-s03": [
+      "Hội An is an old town by a quiet river.",
+      "48eb7c4ad14c31e52cdb"
+    ],
+    "U14-s04": [
+      "We wait at the bus stop for the weekend bus.",
+      "e0dd8dc541c16486d3d0"
+    ],
+    "U14-s05": [
+      "The green house is near the market.",
+      "b29c1f78a4567570a45c"
+    ],
+    "U15-w01": [
+      "texts",
+      "86b1372c7fa84c0b765d"
+    ],
+    "U15-w02": [
+      "months",
+      "9ce661282571fa150630"
+    ],
+    "U15-w03": [
+      "landmarks",
+      "353000b0978b3976a378"
+    ],
+    "U15-w04": [
+      "crafts",
+      "017d7bda566a77ef4494"
+    ],
+    "U15-w05": [
+      "helped",
+      "2346908ff796f09e28fe"
+    ],
+    "U15-w06": [
+      "jumped",
+      "a845c31abfd74c4dcafe"
+    ],
+    "U15-w07": [
+      "guests",
+      "a23d15e324fa581f2a84"
+    ],
+    "U15-w08": [
+      "tasks",
+      "e71e644ae90c0190620f"
+    ],
+    "U15-w09": [
+      "desks",
+      "2ec3e3f8451f3d2a0a4c"
+    ],
+    "U15-w10": [
+      "lamps",
+      "02459d642844b42c1d78"
+    ],
+    "U15-w11": [
+      "hands",
+      "2d90a1213508b11da01f"
+    ],
+    "U15-w12": [
+      "next",
+      "688491a74f092a027f43"
+    ],
+    "U15-s01": [
+      "Hội An is full of lamps and crafts by the river.",
+      "21b5e62dbe279a26e3e2"
+    ],
+    "U15-s02": [
+      "The guests helped carry the boats down to the river.",
+      "3682f001bdfbd7ff5fdf"
+    ],
+    "U15-s03": [
+      "Next month the weather in Huế may be wet and cold.",
+      "f5babe635cff43d34c11"
+    ],
+    "U15-s04": [
+      "Please put the desks next to the lamps.",
+      "3b673f2164a3b88ec5ae"
+    ],
+    "U15-s05": [
+      "She jumped off the step and I helped her stand.",
+      "d161d04d2f4510d22a00"
+    ],
+    "U16-s01": [
+      "I like to walk to the beach.",
+      "3f399d893490a0ba992e"
+    ],
+    "U16-s02": [
+      "The bridge is lovely at night.",
+      "a0630135e1ea901e23ad"
+    ],
+    "U16-s03": [
+      "A cup of tea and some fruit.",
+      "1834833bf6e6ac8e87ea"
+    ],
+    "U16-s04": [
+      "We can eat fish and rice from the market.",
+      "1c5cf1aecf63ba422e59"
+    ],
+    "U16-s05": [
+      "She was happy to see them.",
+      "8727b14dff6e066758db"
+    ],
+    "U16-s06": [
+      "The lights in Hội An are lovely at night.",
+      "6f8557001e012bdfda8b"
+    ],
+    "U16-s07": [
+      "Some friends can swim to the island.",
+      "a81246b49211e59a20d3"
+    ],
+    "U16-s08": [
+      "Let's go to the river and look at the boats.",
+      "4464d12942459e496fdb"
+    ],
+    "U16-s09": [
+      "Can you wait for a minute?",
+      "2f8ba73e96665a69f4ad"
+    ],
+    "U16-s10": [
+      "The weather was hot and sunny at the beach.",
+      "f1ef4ea9eafc9d72b9d1"
+    ],
+    "U16-s11": [
+      "I bought a gift for them from the market.",
+      "ccb1b05015f5777b4a53"
+    ],
+    "U17-s01": [
+      "Cats eat fish.",
+      "1e2d0e62dd422d95e862"
+    ],
+    "U17-s02": [
+      "The cats eat fish.",
+      "6cffcd2d2fd468db8d3a"
+    ],
+    "U17-s03": [
+      "The cats will eat the fish.",
+      "1d3226bc6f7b0f6a787c"
+    ],
+    "U17-s04": [
+      "Lanterns light streets.",
+      "4354c8c37370cd8be06b"
+    ],
+    "U17-s05": [
+      "The lanterns light the streets.",
+      "6b6858565f3f1fbd5a74"
+    ],
+    "U17-s06": [
+      "The lanterns will light the streets at night.",
+      "9f35db6838cd05a4035d"
+    ],
+    "U17-s07": [
+      "Cooks make noodles.",
+      "4060fddeeb18f98bf241"
+    ],
+    "U17-s08": [
+      "The cooks will make the noodles for them.",
+      "4389ea886aa31be195b9"
+    ],
+    "U17-s09": [
+      "The market sells fresh fruit and fish.",
+      "152c7970cd3999d23221"
+    ],
+    "U17-s10": [
+      "Walk by the river and watch the boats at sunset.",
+      "d5de99ae7c78e3e0fec4"
+    ],
+    "U18-w01": [
+      "photograph",
+      "c4d1973fa6617c30f932"
+    ],
+    "U18-w02": [
+      "photography",
+      "32da43eae207cd9aedb7"
+    ],
+    "U18-w03": [
+      "photographer",
+      "40a86c618ab20f810ba3"
+    ],
+    "U18-w04": [
+      "history",
+      "953ed471533e1c572467"
+    ],
+    "U18-w05": [
+      "historical",
+      "90df12e5abac2145eb9b"
+    ],
+    "U18-w06": [
+      "economy",
+      "94b6f23289e320b03b73"
+    ],
+    "U18-w07": [
+      "economic",
+      "191fd571e3e24e058a0a"
+    ],
+    "U18-w08": [
+      "celebrate",
+      "6731eb91d55cdc07af04"
+    ],
+    "U18-w09": [
+      "celebration",
+      "6b2cc7b111b837cd44b6"
+    ],
+    "U18-w10": [
+      "communication",
+      "2d3b3d0ff48d6bec82df"
+    ],
+    "U18-w11": [
+      "tradition",
+      "5ebce9c1b329a68acc0e"
+    ],
+    "U18-w12": [
+      "traditional",
+      "b22367afe1d98491f176"
+    ],
+    "U18-s01": [
+      "The traditional celebration by the river is lovely.",
+      "d1898e89e75bc8c9ea51"
+    ],
+    "U18-s02": [
+      "The photographer likes to photograph the bridge at night.",
+      "2f9444ae59f8b0d95df7"
+    ],
+    "U18-s03": [
+      "The history lesson was interesting, but the economic news was boring.",
+      "8e1d43446c1a44a4971a"
+    ],
+    "U18-s04": [
+      "Please record the traditional music at the market.",
+      "1e3673761744061941df"
+    ],
+    "U18-s05": [
+      "Good communication helps me present my ideas clearly.",
+      "817bf47c2e0eae65ad92"
+    ],
+    "U19-s01": [
+      "I want the red lantern, not the blue one.",
+      "a54c7f2947f8982aa23e"
+    ],
+    "U19-s02": [
+      "We bought a red lantern at the market.",
+      "d8156125219fb9582756"
+    ],
+    "U19-s03": [
+      "My friend lives in Hội An.",
+      "d0d98ce9cd7f992463c0"
+    ],
+    "U19-s04": [
+      "Tea or coffee?",
+      "f02f086da29803cef584"
+    ],
+    "U19-s05": [
+      "Tea or coffee?",
+      "f02f086da29803cef584"
+    ],
+    "U19-s06": [
+      "We ate rice, noodles, and fresh fruit.",
+      "0325edd3348a87aac70f"
+    ],
+    "U19-s07": [
+      "Is the weather nice, or is it too hot?",
+      "db116c001c57279f4495"
+    ],
+    "U19-s08": [
+      "The beach is lovely, isn't it?",
+      "0c6545d788de7aac842b"
+    ],
+    "U19-s09": [
+      "You like the bridge, don't you?",
+      "61eba155c94df27504a9"
+    ],
+    "U19-s10": [
+      "Which lantern do you want?",
+      "ef37e65ca8e6e1788b90"
+    ],
+    "U19-s11": [
+      "I said the bridge, not the beach.",
+      "cfa21ba04173d2ad2398"
+    ],
+    "U20-s01": [
+      "I will see you next day.",
+      "45794aa28c0da06f03b5"
+    ],
+    "U20-s02": [
+      "It was the last time.",
+      "035385c1f2299673d59b"
+    ],
+    "U20-s03": [
+      "We walked through the old town in Hội An.",
+      "1577cba40751ed9eedb3"
+    ],
+    "U20-s04": [
+      "This lantern is handmade in Hội An.",
+      "85d41b859c05806414de"
+    ],
+    "U20-s05": [
+      "He is a good boy.",
+      "9231ffce28ebf9369e87"
+    ],
+    "U20-s06": [
+      "Ten people waited by the river.",
+      "87fcfa4824e6f62515c8"
+    ],
+    "U20-s07": [
+      "We walked in the green park.",
+      "9d65952bba26fc56efd6"
+    ],
+    "U20-s08": [
+      "I want a hot dog.",
+      "1ce6bd51b2054ac16a7c"
+    ],
+    "U20-s09": [
+      "Fish sauce is great with noodles in Đà Nẵng.",
+      "9bb02932f3a4579031ee"
+    ],
+    "U20-s10": [
+      "Next day, the beach near Đà Nẵng was quiet.",
+      "bd7a11ecf00271ddebaa"
+    ]
+  }
+}

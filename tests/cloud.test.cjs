@@ -13,6 +13,25 @@ test('disabled without config: no queue, no network', async () => {
   assert.equal(a.run('window.__sessionReads'), 0);
 });
 
+test('live AI requires a bound session with server-managed verified age', async () => {
+  const a = app(ON);
+  await a.run('ensureSession()');
+  a.run(`window.__session.access_token = 'test-token';
+    window.__session.user.user_metadata = { echolac_verified_adult: true };
+    fetch = () => { throw new Error('Unexpected provider request'); };`);
+  await a.run('ensureSession()');
+  assert.equal(a.run('aiReady()'), false);
+  await assert.rejects(a.run('aiConverse({})'), /privacy/);
+
+  a.run('window.__session.user.app_metadata = { echolac_verified_adult: true };');
+  await a.run('ensureSession()');
+  assert.equal(a.run('aiReady()'), true);
+  a.run('window.__session.user.app_metadata.echolac_verified_adult = false;');
+  await assert.rejects(a.run('aiConverse({})'), /privacy/);
+  await a.run('cloudSignOut()');
+  assert.equal(a.run('aiReady()'), false);
+});
+
 test('queue keeps order, coalesces by key, flushes and empties', async () => {
   const a = app(ON);
   a.run("queueUpsert('error_items', { id: 'a', best: 1 }); queueUpsert('error_items', { id: 'b' }); queueUpsert('error_items', { id: 'a', best: 9 })");
@@ -68,12 +87,9 @@ test('pull: newer remote wins, older remote keeps local, unknown remote is added
   ]);
 });
 
-test('cloud accepts neither a demo session nor a profile without terms', async () => {
+test('cloud does not accept a profile without terms', async () => {
   const a = app(ON);
-  a.run("location.search = '?demo'");
-  assert.equal(await a.run('ensureSession()'), null);
-  await a.run('syncProfile()');
-  a.run("location.search = ''; S.user.consent.terms = false");
+  a.run('S.user.consent.terms = false');
   assert.equal(await a.run('ensureSession()'), null);
   await a.run('syncProfile()');
   assert.equal(a.run('window.__signIns'), 0);

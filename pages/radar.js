@@ -6,6 +6,7 @@ VIEWS.radar = {
       const best = CRIT.reduce((b, c) => (S.scores[c.k] - PREV[c.k] > S.scores[b.k] - PREV[b.k] ? c : b));
       return `
       <div class="topbar reveal">
+        <a class="icon-btn" href="#home" aria-label="${V('Quay lại', 'Back')}">${icon('left')}</a>
         <div class="grow"><h1>${V('Bản đồ lỗi', 'Error Radar')}</h1><p class="small muted">${V('Trung bình 5 phiên gần nhất', 'Average of your last 5 sessions')}</p></div>
         <span class="pill navy">${band} · ${V('ước tính', 'estimate')}</span>
       </div>

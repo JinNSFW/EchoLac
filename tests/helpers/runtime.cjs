@@ -29,7 +29,7 @@ function runtime(files = scripts(), seed = {}) {
     document, console: { ...console, table() {}, warn() {}, assert(ok, ...args) {
       if (!ok) throw new Error(args.join(' '));
     } },
-    location: { search: '?demo', hash: '', reload() {} },
+    location: { search: '', hash: '', reload() {} },
     localStorage: { getItem: k => storage.get(k) ?? null, setItem: (k, v) => storage.set(k, v) },
     navigator: { onLine: true }, URLSearchParams, URL,
     Date: class extends Date {
@@ -42,6 +42,8 @@ function runtime(files = scripts(), seed = {}) {
   sandbox.window = sandbox;
   const context = vm.createContext(sandbox);
   for (const file of files) new vm.Script(read(file), { filename: file }).runInContext(context);
+  // A signed-in learner in memory by default (replaces the removed ?demo mode); seed user: null to start signed out.
+  if (!('user' in seed)) vm.runInContext("if (typeof S === 'object' && !S.user) S.user = { name: 'Nguyễn Thị Lan' };", context);
   return { run: source => vm.runInContext(source, context), document, storage };
 }
 

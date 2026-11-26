@@ -19,7 +19,6 @@ const S = {
   rpMode: 'journey', libCat: 'all', tutorCat: 'all', weekOff: 0, heard: new Set(), learnTab: 'discover',
 };
 if (S.today.date !== iso()) S.today = { date: iso(), min: 0 };
-if (!S.user && new URLSearchParams(location.search).has('demo')) S.user = { name: 'Nguyễn Thị Lan' }; // ?demo skips sign-in for pitch demos
 const save = () => ['lang', 'user', 'settings', 'errors', 'scores', 'xp', 'sessions', 'minutes', 'done', 'today', 'place', 'cam'].forEach(k => store.set(k, S[k]));
 const level = () => Math.floor(S.xp / 250) + 1;
 const streakNow = () => S.streak + (S.today.min > 0 ? 1 : 0);

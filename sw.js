@@ -1,6 +1,6 @@
 'use strict';
 // Offline shell. Bump VERSION when shipping so old caches are dropped.
-const VERSION = 'echolac-v2';
+const VERSION = 'echolac-v11';
 const CACHE_PREFIX = 'echolac-';
 // Only public app files may enter this cache. Runtime config and API routes never do.
 const STATIC = /^\/(?:app\.js|styles\.css|manifest\.webmanifest|da-nang-question-bank\.json|(?:assets|model|content|pages|components|lib|data|styles)\/.+\.(?:js|css|json|svg|png|webp|bin|txt|mp3|m4a))$/;
