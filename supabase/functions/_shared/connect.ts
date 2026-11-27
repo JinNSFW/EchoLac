@@ -12,7 +12,7 @@ export type Row = { id: string; tourist_id: string; student_id: string | null; l
 // Attempts per user per rolling hour, both functions together, counted from audit_log.
 export const CONNECT_LIMITS = { perHour: 20 };
 const ACTIONS = ['connect_request', 'connect_respond'];
-// Reason codes the guard trigger raises as its message (migrations 0003, 0005).
+// Reason codes the guard trigger raises as its message (migrations 0005, 0008).
 const DB_REASONS = ['location-not-approved', 'tourist-not-eligible', 'student-not-eligible', 'blocked', 'minor-one-to-one-blocked',
   'session-invalid', 'student-awaiting-approval', 'session-full'];
 // A tourist learns nothing about a student: student-side reasons are reported as session-invalid,
@@ -95,20 +95,23 @@ const one = <T>(rows: unknown): T | null => (Array.isArray(rows) && rows.length 
 // Loads every row canConnect needs, fresh from the database.
 async function facts(db: Db, a: { touristId: string; studentId: string | null; locationId: string; mode: string; sessionId: string | null }, now: number): Promise<ConnectInput> {
   const { touristId: t, studentId: s } = a;
-  const [locs, sessions, seats, approvals, blocks] = await Promise.all([
+  const [locs, sessions, seats, blocks] = await Promise.all([
     db(`locations?select=id,approved&id=eq.${a.locationId}`),
-    a.sessionId ? db(`group_sessions?select=id,school_id,location_id,created_by,status,ends_at,capacity&id=eq.${a.sessionId}`) : [],
+    a.sessionId ? db(`group_sessions?select=id,location_id,created_by,status,ends_at,capacity&id=eq.${a.sessionId}`) : [],
     a.sessionId ? db(`connection_requests?select=tourist_id&session_id=eq.${a.sessionId}&status=eq.accepted`) : [],
-    s ? db(`minor_approvals?select=student_id,school_id,school_approved_at,guardian_consent_at,revoked_at&student_id=eq.${s}&revoked_at=is.null`) : [],
     s ? db(`blocks?select=blocker_id,blocked_id&or=(and(blocker_id.eq.${t},blocked_id.eq.${s}),and(blocker_id.eq.${s},blocked_id.eq.${t}))`) : [],
   ]);
   const session = one<NonNullable<ConnectInput['session']>>(sessions);
-  const ids = [t, s, session?.created_by].filter(Boolean);
-  const profiles: Profile[] = await db(`profiles?select=id,role,age_group,verification_status,school_id,level&id=in.(${ids.join(',')})`);
+  const ids = [t, s].filter(Boolean);
+  const [profiles, supervisor]: [Profile[], unknown] = await Promise.all([
+    db(`profiles?select=id,role,age_group,verification_status,level&id=in.(${ids.join(',')})`),
+    // The supervisor is the admin who created the session; admin status lives in auth.users (0008).
+    session ? db('rpc/is_admin_account', { method: 'POST', body: JSON.stringify({ p_user: session.created_by }) }) : false,
+  ]);
   const byId = (id?: string | null) => (id && Array.isArray(profiles) && profiles.find(p => p.id === id)) || null;
   return {
     tourist: byId(t), studentId: s, student: byId(s), locationId: a.locationId, location: one(locs),
-    mode: a.mode, sessionId: a.sessionId, session, teacher: byId(session?.created_by), approvals, blocks, now,
+    mode: a.mode, sessionId: a.sessionId, session, supervisorIsAdmin: supervisor === true, blocks, now,
     taken: new Set((seats as { tourist_id: string }[]).map(x => x.tourist_id).filter(x => x !== t)).size,
   };
 }

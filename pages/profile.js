@@ -18,7 +18,7 @@ VIEWS.profile = {
         <h2 class="center mt-16" style="font-size:24px;font-weight:700">${esc(S.user.name)}</h2>
         ${tourist ? `<p class="center muted">${V('Du khách', 'Tourist')}</p>` : `<p class="center muted">${S.place !== 'other'
           ? `${S.user.placeType === 'destination' ? V('Điểm đến', 'Destination') : V('Quê hương', 'Hometown')}: ${L(theme(S.place).name)}`
-          : S.connect.school ? esc(S.connect.school.name) : V('Học viên', 'Learner')}</p>
+          : V('Học viên', 'Learner')}</p>
         <div class="row between small muted mt-24"><span>Level ${lv}</span><span>${toNext} ${V('XP để lên cấp', 'XP to next level')}</span></div>
         <div class="track mt-8"><i data-w="${pct}%"></i></div>`}
       </div>

@@ -145,6 +145,26 @@ Chưa commit, push, tạo PR, deploy hay triển khai Đợt 1/Đợt 2. Không 
 - UI: Hồ sơ dùng khung thống kê kiểu C (nền navy, chữ kem); thanh dưới học sinh = Học | Nhập vai | Kết nối | Hồ sơ (Gia sư, Bản đồ lỗi mở từ Trang chủ, có nút quay lại); sw.js = echolac-v9.
 - Đang chạy: giai đoạn 5b (chấm phát âm wav2vec2 trên máy). Sau đó: 5c (âm mẫu Kokoro), giai đoạn 6 (Playwright smoke + kiểm toán bảo mật Opus xhigh chỉ đọc), rồi phần email/pháp lý/deploy theo lệnh chủ dự án.
 
+### Bàn giao cho Codex 27/11/2026 (Claude hết giới hạn 5 giờ)
+Trạng thái: `npm.cmd run check` sạch, `npm.cmd test` 147/147. `main` đã deploy tới commit 7a93c04 (Netlify KHÔNG tự build từ GitHub: deploy bằng `git archive main | tar -x -C <thư mục tạm>` rồi chạy lệnh từ công cụ Netlify `deploy-site` trong thư mục đó). Netlify env đã có SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, TURNSTILE_SITE_KEY. Supabase production đã áp tới 0007.
+
+Chưa commit (đều nằm trong working tree):
+- 5c giọng Kokoro: `lib/line-audio.js`, `assets/audio/lines/` (1.200 mp3, 17 MB), `scripts/list-fixed-lines.cjs`, `scripts/render-lines.py`, `tests/line-audio.test.cjs`. Xong, test đạt.
+- Admin thay giáo viên: `supabase/migrations/0008_admin.sql`, `admin/`, `scripts/admin-serve.cjs`, `tests/admin.test.cjs`, bỏ `pages/school.js`, sửa connect/router/profile. Xong, test đạt, CHƯA review và CHƯA áp lên production.
+- Email OTP: XONG (27/11, Claude). `lib/cloud/email.js`, `components/email-otp.js`, nối vào Hồ sơ và #signin; `tests/email-otp.test.cjs` (5 test); README có mục "Email và mã một lần". Toàn bộ 152/152. Chưa thử gửi email thật. → Bỏ qua bước 3 bên dưới.
+
+CẬP NHẬT 27/11 (Claude): 0008 ĐÃ ÁP lên production (connector nhận cả dòng drop not null). Đã thử thật: vai học viên và vai giả claim admin+aal2 (không có phiên MFA) đều bị từ chối ở admin_audit_log, group_sessions, admin_set_learner, admin_create_session, insert audit, tự xác minh; publishable key không đăng nhập: 401/42501 ở mọi bảng và RPC admin. Advisors chỉ còn 3 ngoại lệ đã duyệt. Review độc lập bằng model khác vẫn NÊN làm (bước 1, chỉ đọc). Lưu ý: sau 0008 người không phải admin không đọc được group_sessions; khi mở Kết nối cần thêm RPC kiểu safe_sessions cho du khách xem buổi nhóm.
+→ Bước 2 và 3 bên dưới đã xong.
+
+Việc còn lại, theo thứ tự:
+1. Review 0008 + admin/ (GPT-6.2 Astra xhigh, chỉ đọc; khác model đã viết). Tiêu chí: admin = app_metadata.role='admin' VÀ aal2; is_admin() SECURITY DEFINER search_path ''; mọi bảng/RPC admin từ chối anon, học viên, du khách, admin chưa aal2 kể cả gọi REST trực tiếp; admin_audit_log chỉ ghi thêm; không service_role trong trình duyệt; admin không lọt vào dist/. Sửa lỗi Critical/High.
+2. Áp 0008 lên production (project mwzkkiavjqdbdfppvmaz). Connector Supabase từ chối DROP: dòng `alter column school_id drop not null` có thể phải chạy riêng trong SQL Editor. Sau đó chạy `supabase/tests/rls_check.sql`, thử bằng publishable key với tài khoản ẩn danh (phải bị từ chối), chạy Security Advisors; 3 ngoại lệ đã được chủ dự án duyệt (anonymous sign-ins, SECURITY DEFINER cho authenticated, leaked-password chỉ có ở gói Pro), các cảnh báo khác phải sửa.
+3. Hoàn tất email OTP (GPT-6.2 Sol xhigh, vì là xác thực). Dashboard đã cấu hình: SMTP Resend (người gửi tạm onboarding@resend.dev, chỉ gửi tới chủ tài khoản Resend cho tới khi xác minh tên miền), mẫu Magic link / Confirm sign up / Change email address gửi `{{ .Token }}`, OTP dài 8 số, hết hạn 3600 s, mật khẩu tối thiểu 12 ký tự gồm chữ thường, hoa, số, ký hiệu. Luồng: gắn email cho tài khoản ẩn danh trong Hồ sơ (`updateUser({email})` → `verifyOtp` type `email_change`); đăng nhập máy khác (`signInWithOtp({email, options:{shouldCreateUser:false, captchaToken}})` → `verifyOtp` type `email`, rồi kéo hồ sơ). Ô mã nhận 6–10 số, gửi lại sau 60 s, báo lỗi rõ (sai/hết hạn mã, 429, mất mạng). Không log email/mã. Có test.
+4. Tăng `VERSION` trong sw.js, quét secret (sbp_, gsk_, sk-ant-, JWT, sb_secret_) trên diff đã stage, commit, merge vào main, push, deploy như trên. LUẬT của chủ dự án: không token/key nào được nằm trong file commit.
+5. Giai đoạn 6: Playwright smoke test ở 360 px cho học viên, du khách và trang admin (đã có skill `playwright-cli`; được phép thêm devDependency `@playwright/test`).
+6. Hướng dẫn chủ dự án: tạo tài khoản admin trong Supabase (Add user, auto-confirm), nâng quyền bằng SQL trong README, chạy `npm.cmd run admin`, đăng ký TOTP.
+Sau đó: bỏ `'unsafe-inline'` khỏi CSP; deploy connect-request/connect-respond và mở `ECHOLAC_CONNECT_PILOT_OPEN` khi chủ dự án đồng ý; xác minh tên miền cho Resend.
+
 ### Cập nhật 26/11/2026 (khuya)
 - Xong 5b (chấm phát âm trên máy). Giao diện du khách luôn tiếng Anh (`uiLang()` trong lib/helpers.js). sw.js = echolac-v11.
 - Production: đã áp 0006_ai_privacy (trần 100 lượt AI/ngày toàn dự án, `ai_project_quota_take`, hàm cũ `ai_quota_take` trả null) và 0006_audit_fixes (khoá display_name sau xác minh, CHECK chặn số điện thoại/@/link, đã VALIDATE; `own_delete` = false). converse = v2.

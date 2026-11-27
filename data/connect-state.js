@@ -1,19 +1,17 @@
 'use strict';
 // Local Guide Connect, server data only (docs/real-launch-prompt.md "SẢN PHẨM CHÍNH THỨC").
-// Role, verification, school and approvals come from Supabase (RLS, RPCs in 0003_connect.sql, Edge Functions).
+// Role and verification come from Supabase (RLS in 0003/0008, set by an admin; Edge Functions for requests).
 // Nothing here is saved on the device, and no local value ever grants eligibility.
 
-const CONNECT_VIEWS = ['connect', 'discover', 'spot', 'connections', 'school', 'profile'];
-const connectBlank = status => ({ status, me: null, school: null, approval: null, locations: [], availability: [],
-  requests: [], blocks: [], sessions: [], people: {}, members: [], approvals: [] });
+const CONNECT_VIEWS = ['connect', 'discover', 'spot', 'connections', 'profile'];
+const connectBlank = status => ({ status, me: null, locations: [], availability: [], requests: [], blocks: [], people: {} });
 S.connect = connectBlank('idle'); // idle = loading; then ready | signed-out | offline | error
 // Last server role, kept only to pick the tab set while offline or loading. Never used for eligibility.
-let connectHint = ['student', 'tourist', 'staff'].includes(store.get('connect-role', null)) ? store.get('connect-role', null) : null;
+let connectHint = ['student', 'tourist'].includes(store.get('connect-role', null)) ? store.get('connect-role', null) : null;
 let connectLoading = null;
 
 const cxRows = r => { if (r?.error) throw r.error; return r?.data ?? null; };
 const currentView = () => (location.hash.slice(1) || '').split('/')[0];
-const isStaff = (me, roles = ['teacher', 'school_admin']) => !!me?.school_id && roles.includes(me.role) && me.verification_status === 'verified';
 
 async function connectClient() {
   if (!canUseCloud()) return { why: 'signed-out' };
@@ -27,7 +25,7 @@ async function fetchConnect() {
   const { c, uid, why } = await connectClient();
   if (!c) return connectBlank(why);
   const next = connectBlank('ready');
-  next.me = cxRows(await c.from('profiles').select('id,display_name,level,role,age_group,verification_status,school_id').eq('id', uid).maybeSingle());
+  next.me = cxRows(await c.from('profiles').select('id,display_name,level,role,age_group,verification_status').eq('id', uid).maybeSingle());
   if (!next.me) return connectBlank('error'); // profile not on the server yet
   const [locs, avail, reqs, blocks] = (await Promise.all([
     c.from('locations').select('id,name_vi,name_en').eq('approved', true),
@@ -36,17 +34,6 @@ async function fetchConnect() {
     c.from('blocks').select('blocked_id').eq('blocker_id', uid),
   ])).map(cxRows);
   Object.assign(next, { locations: locs || [], availability: avail || [], requests: reqs || [], blocks: (blocks || []).map(b => b.blocked_id) });
-  const sid = next.me.school_id;
-  if (sid) {
-    const [school, sessions, approvals, members] = (await Promise.all([
-      c.from('schools').select('id,name').eq('id', sid).maybeSingle(),
-      c.from('group_sessions').select('*').eq('school_id', sid).order('starts_at', { ascending: true }),
-      c.from('minor_approvals').select('student_id,school_approved_at,guardian_consent_at,revoked_at').is('revoked_at', null),
-      isStaff(next.me, ['school_admin']) ? c.rpc('school_members', { p_school: sid }) : { data: [] },
-    ])).map(cxRows);
-    Object.assign(next, { school, sessions: sessions || [], approvals: approvals || [], members: members || [] });
-    next.approval = next.approvals.find(a => a.student_id === uid) || null;
-  }
   // safe_profiles returns verified adults only, so minors are never named to anyone.
   const ids = [...new Set([...next.requests.flatMap(r => [r.tourist_id, r.student_id]), ...next.blocks])].filter(id => id && id !== uid);
   if (ids.length) for (const p of cxRows(await c.rpc('safe_profiles', { p_ids: ids })) || []) next.people[p.id] = p;
@@ -79,19 +66,10 @@ async function connectAct(task) {
 }
 
 /* ---- Learner ---- */
-// The DB guard allows student <-> tourist only while unverified and without a school.
-const canChooseRole = me => !!me && ['student', 'tourist'].includes(me.role) && me.verification_status === 'unverified' && !me.school_id;
+// The DB guard allows student <-> tourist only while unverified.
+const canChooseRole = me => !!me && ['student', 'tourist'].includes(me.role) && me.verification_status === 'unverified';
 const chooseRole = role => (['student', 'tourist'].includes(role) && canChooseRole(S.connect.me)
   ? connectAct((c, uid) => c.from('profiles').update({ role }).eq('id', uid).then(cxRows)) : Promise.resolve({ ok: false, why: 'denied' }));
-
-async function joinSchool(code) {
-  code = String(code || '').trim();
-  if (!code || code.length > 64) return { ok: false, why: 'wrong-code' };
-  const r = await connectAct(c => c.rpc('join_school', { p_code: code }).then(cxRows));
-  if (r.ok && !r.data) return { ok: false, why: 'wrong-code' };
-  if (!r.ok && /too many/i.test(r.message || '')) return { ok: false, why: 'locked' };
-  return r;
-}
 
 const approvedPlace = id => S.connect.locations.find(l => l.id === id) || null;
 const hasSlot = (l, s) => S.connect.availability.some(a => a.location_id === l && a.slot === s);
@@ -121,13 +99,5 @@ async function respondConnect(requestId, decision) {
 const blockPerson = id => connectAct(c => c.from('blocks').insert({ blocked_id: id }).then(cxRows));
 const reportPerson = (id, requestId, reason) => connectAct(c => c.from('reports')
   .insert({ reported_id: id || null, request_id: requestId || null, reason: String(reason).slice(0, 500) }).then(cxRows));
-
-/* ---- School (verified school_admin / teacher; the RPCs check the role again) ---- */
-const setMember = (id, role, verification, ageGroup) => connectAct(c => c.rpc('school_set_member',
-  { p_user: id, p_role: role, p_verification: verification, p_age_group: ageGroup || null }).then(cxRows));
-const setMinorApproval = (id, approved) => connectAct(c => c.rpc('school_set_minor_approval', { p_student: id, p_approved: approved === true }).then(cxRows));
-const rotateInvite = () => connectAct(c => c.rpc('school_rotate_invite_code', { p_school: S.connect.me.school_id }).then(cxRows));
-const createSession = ({ location_id, starts_at, ends_at, capacity }) => connectAct(c => c.from('group_sessions')
-  .insert({ school_id: S.connect.me.school_id, location_id, starts_at, ends_at, capacity }).then(cxRows));
 
 setTimeout(() => loadConnect(), 0); // after every deferred script has loaded

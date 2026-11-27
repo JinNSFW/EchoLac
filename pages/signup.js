@@ -1,5 +1,5 @@
 'use strict';
-// signup screen (X-01 step 1): no email or password; the account is anonymous and tied to this device.
+// signup screen (X-01 step 1): no email or password; the account starts anonymous on this device (email is added later in Profile).
 // The field shows dd/mm/yyyy (Vietnamese order); the app stores ISO yyyy-mm-dd as before.
 const dobIso = v => { const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(v); return m ? `${m[3]}-${m[2]}-${m[1]}` : v; };
 const dobShow = v => (/^\d{4}-\d{2}-\d{2}$/.test(v || '') ? v.split('-').reverse().join('/') : v || '');
@@ -34,7 +34,8 @@ VIEWS.signup = {
         <label class="check-box" id="guardian-box" hidden><input type="checkbox" id="guardian"><span>${V('Mình dưới 18 tuổi và cha mẹ hoặc người giám hộ đã đồng ý cho mình dùng EchoLạc.', 'I am under 18 and my parent or guardian agrees to me using EchoLạc.')}</span></label>
         <button class="btn mt-24 reveal" id="submit" disabled>${V('Tạo tài khoản', 'Create Account')} ${icon('right')}</button>
       </form>
-      ${deviceNote()}`,
+      ${deviceNote()}
+      ${S.user ? '' : `<div class="switch-auth reveal">${V('Đã gắn email trên máy khác?', 'Added an email on another device?')} <a href="#signin">${V('Đăng nhập', 'Sign in')}</a></div>`}`,
     mount() {
       if (S.user?.placeId) return;
       const f = $('#f'), val = id => $('#' + id).value.trim(), u = S.user;

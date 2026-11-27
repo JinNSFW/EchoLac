@@ -81,15 +81,50 @@ mục lỗi đã có, nhưng điểm và tiến độ luyện nói hiện vẫn 
 vòng học phát âm Đợt 1. Đăng xuất yêu cầu xác nhận, xoá dữ liệu `lt:` trừ ngôn ngữ;
 không xoá hồ sơ trên server hay bảo đảm huỷ ngay một request server đã nhận.
 
-**Kết nối (PRD §5.9)** chỉ dùng dữ liệu server (`data/connect-state.js`, cần migration 0003 và
-Edge Function `connect-respond`): vai trò, xác minh, trường và nhóm tuổi đọc từ `profiles`;
-học viên chọn Học sinh/Du khách một lần khi chưa xác minh và chưa vào trường; học sinh vào trường
-bằng mã mời (`join_school`), lịch rảnh ghi `availability`, yêu cầu đọc `connection_requests`;
-chặn/báo cáo ghi `blocks`/`reports`; `#school` cho quản trị trường (`school_members`,
-`school_set_member`, `school_set_minor_approval`, mã mời hiện một lần) và giáo viên (tạo
-`group_sessions`). **Chưa mở:** du khách kết nối (cần xác minh danh tính du khách), gặp 1-1,
-đồng ý phụ huynh (cần luồng email). Ngoại tuyến hoặc chưa đăng ký thì màn Kết nối chỉ giải thích,
+**Kết nối (PRD §5.9)** chỉ dùng dữ liệu server (`data/connect-state.js`, cần migration 0003–0008 và
+Edge Function `connect-respond`): vai trò, xác minh, trình độ và nhóm tuổi đọc từ `profiles`;
+học viên chọn Học sinh/Du khách một lần khi chưa xác minh; lịch rảnh ghi `availability`, yêu cầu đọc
+`connection_requests`; chặn/báo cáo ghi `blocks`/`reports`. Không còn trường, mã mời hay giáo viên
+(0008): **admin** toàn cục xác minh học viên và giám sát buổi nhóm, chỉ từ trang quản trị cục bộ
+(mục dưới). **Chưa mở:** du khách kết nối (cần xác minh danh tính du khách), gặp 1-1, học sinh dưới 18
+(đợt thí điểm chỉ cho người từ 18 tuổi, 0007). Ngoại tuyến hoặc chưa đăng ký thì màn Kết nối chỉ giải thích,
 không có dữ liệu mẫu.
+
+### Email và mã một lần (OTP)
+
+Tài khoản bắt đầu ẩn danh. **Hồ sơ → Gắn email** gửi mã (`updateUser({ email })`, xác nhận bằng
+`verifyOtp` loại `email_change`), nên tài khoản và tiến độ giữ nguyên. Trên máy khác, **Đăng nhập → Đăng
+nhập bằng email** (`signInWithOtp` với `shouldCreateUser: false`, rồi `verifyOtp` loại `email`) và kéo hồ sơ
+từ đám mây. Mã: `lib/cloud/email.js`, giao diện: `components/email-otp.js`, test: `tests/email-otp.test.cjs`.
+Cấu hình trên dashboard: SMTP qua Resend; mẫu Magic link, Confirm sign up, Change email address gửi
+`{{ .Token }}`; mã 8 số, hết hạn 1 giờ. **Giới hạn:** người gửi `onboarding@resend.dev` chỉ gửi được tới
+chủ tài khoản Resend cho tới khi xác minh một tên miền riêng trong Resend.
+
+### Trang quản trị cục bộ (`admin/`, không bao giờ deploy)
+
+`npm run admin` (PowerShell: `npm.cmd run admin`) mở `http://127.0.0.1:4174/` (đổi cổng bằng `ADMIN_PORT`).
+`scripts/admin-serve.cjs` chỉ nghe trên 127.0.0.1, chỉ trả 4 tệp trong `admin/` và `config.js` sinh từ
+`SUPABASE_URL` + `SUPABASE_PUBLISHABLE_KEY` trong `.env.local` (qua `scripts/env.cjs`, từ chối khoá bí mật),
+với CSP chặt (`default-src 'none'`, không inline). supabase-js tải từ jsDelivr, ghim phiên bản và SRI.
+`scripts/site.cjs` không liệt kê `admin/`, nên Netlify và `npm start` không bao giờ phục vụ nó
+(`tests/admin.test.cjs` build thử vào thư mục tạm để kiểm tra). Không có khoá `service_role` nào ở trang này:
+quyền đến từ RLS và các RPC `admin_*` (migration 0008), cần vai trò admin **và** phiên MFA (aal2).
+
+Chủ dự án tạo admin (không có luồng đăng ký admin ở đâu cả):
+1. Supabase Dashboard → Authentication → Sign In / Providers → **Email** bật (để đăng nhập bằng mật khẩu).
+   Authentication → Policies/Passwords: độ dài tối thiểu **12**, bắt buộc chữ hoa, chữ thường, số và ký hiệu.
+2. Authentication → Users → **Add user** → Create new user: email + mật khẩu mạnh, chọn **Auto Confirm User**.
+3. SQL Editor (vai `postgres`), thay email:
+   `update auth.users set raw_app_meta_data = raw_app_meta_data || '{"role":"admin"}' where email = 'admin@example.com';`
+   Thu hồi: `update auth.users set raw_app_meta_data = raw_app_meta_data - 'role' where email = '...';` (có hiệu lực ngay).
+4. `npm run admin`, đăng nhập. Lần đầu trang hiện mã QR TOTP: quét bằng ứng dụng xác thực, nhập mã 6 số.
+   Những lần sau chỉ hỏi mã. Trang không đọc dữ liệu nào trước khi phiên đạt aal2; database cũng từ chối như vậy.
+5. Các tab: **Học viên** (xác minh, trình độ, nhóm tuổi), **Buổi nhóm** (tạo tại địa điểm đã duyệt, đóng buổi),
+   **Yêu cầu & báo cáo** (xem yêu cầu và danh sách chặn; đánh dấu báo cáo đã xem/đóng), **Nhật ký** (chỉ đọc `admin_audit_log`).
+   Phiên chỉ nằm trong tab (`sessionStorage`); đóng tab là đăng xuất trên máy này.
+
+Nếu bật CAPTCHA của Supabase Auth, đăng nhập mật khẩu cũng cần `captchaToken`; trang quản trị chưa nạp Turnstile
+(script của Cloudflare không ghim SRI được), nên khi đó chưa đăng nhập admin được (xem Giới hạn).
 Thu hồi đồng ý gửi giọng nói có hiệu lực trên máy ngay; bản cloud được cập nhật khi có mạng.
 PWA: `manifest.webmanifest`, `sw.js` (không cache tài nguyên khác domain, `config.js`,
 API, POST hay request âm thanh dạng range), `lib/pwa.js`. Cache chỉ chứa tệp ứng dụng
@@ -153,7 +188,7 @@ thư mục trống ngoài dự án; build từ chối xoá thư mục không thu
 Tài liệu (PRD, AGENTS, README, giáo án), `tests/`, `scripts/` và `outputs/` không được
 publish. Danh sách tệp và header bảo mật nằm ở một nơi, `scripts/site.cjs`, được dùng chung
 cho máy chủ phát triển và bản build. Vì vậy chạy `npm start` cũng áp dụng cùng CSP như site thật.
-Khi đổi phiên bản thư viện CDN trong `lib/camera/model.js`, cập nhật lại hash `integrity`. Khi train lại model, xuất sang `model/` bằng `model v3/diagnosis/export_tfjs.py model` (cách cài ghi ở đầu tệp) và chạy lại `eval.py` cạnh đó. Các kiểm thử kiểm tra render của 16 màn hình bằng hai ngôn ngữ,
+Khi đổi phiên bản thư viện CDN trong `lib/camera/model.js` hoặc `lib/cloud/client.js`, cập nhật lại hash `integrity` (kể cả trong `admin/index.html` và CSP của `scripts/admin-serve.cjs`). Khi train lại model, xuất sang `model/` bằng `model v3/diagnosis/export_tfjs.py model` (cách cài ghi ở đầu tệp) và chạy lại `eval.py` cạnh đó. Các kiểm thử kiểm tra render của 16 màn hình bằng hai ngôn ngữ,
 biến thể thư viện/bài học, lưu trạng thái, chọn giao diện và các chẩn đoán sẵn có.
 Kiểm thử dùng DOM giả lập tối thiểu; không thay thế kiểm tra giao diện trên trình duyệt
 hoặc kiểm tra quyền camera trên thiết bị thật.
@@ -178,6 +213,7 @@ hoặc kiểm tra quyền camera trên thiết bị thật.
 | `assets/` | Logo, minh hoạ, dữ liệu địa danh gốc. `assets/icons/{ui,lesson,place}/` và `assets/landmarks/` là icon nét do nhóm vẽ, tô màu theo theme bằng CSS mask (`components/icons.js`); `assets/scenes/<theme>/` là 26 ảnh cảnh 2.5D làm nền khi chọn địa điểm |
 | `model/` | Model nhận diện v4 (TF.js, 5 địa danh) chạy trên thiết bị; script đánh giá và xuất model ở `model v3/diagnosis/` |
 | `scripts/`, `tests/` | Máy chủ phát triển và các bước kiểm tra |
+| `admin/` | Trang quản trị cục bộ (đăng nhập, MFA, xác minh học viên, buổi nhóm, báo cáo, nhật ký); chạy bằng `npm run admin`, không bao giờ build hay deploy |
 
 Các script dùng chung phạm vi toàn cục để giữ tương thích với sự kiện inline của
 prototype và cách triển khai tĩnh hiện tại. Khi thêm tệp, khai báo nó trong
@@ -185,6 +221,8 @@ prototype và cách triển khai tĩnh hiện tại. Khi thêm tệp, khai báo 
 Giữ thứ tự import CSS để tránh thay đổi cascade. Mỗi tệp ứng dụng tối đa 300 dòng.
 
 ## Giới hạn hiện tại
+
+Trang quản trị (`admin/`) và migration 0008 mới chạy với PostgreSQL nhúng (PGlite) có `auth.jwt()`/`auth.sessions` giả lập và test Node; chưa áp dụng trên project Supabase thật, chưa thử đăng nhập/MFA thật trên trình duyệt. Chưa hỗ trợ CAPTCHA khi đăng nhập admin. Admin chưa huỷ được một yêu cầu kết nối riêng lẻ (đóng buổi sẽ huỷ mọi yêu cầu đang mở của buổi đó).
 
 Hội thoại và điểm Tutor/Radar cũ vẫn là demo. Bài chỉ đường ghi giọng thật trên thiết bị và
 dùng phản hồi của người nghe. Chưa có nhận diện âm vị tự động hoặc kết quả pilot.

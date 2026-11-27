@@ -1,8 +1,14 @@
 'use strict';
-// signin screen = "continue on this device": anonymous accounts live in this browser, so there is no email, password or class code (X-01).
+// signin screen (X-01): with an account on this device, "continue on this device"; without one, sign in with an
+// email one-time code (components/email-otp.js). There is no password or class code.
 VIEWS.signin = {
-    init() { if (!S.user) location.replace('#signup'); }, // no account on this device yet
-    render: () => (!S.user ? '' : `
+    render: () => (!S.user ? `
+      ${authHead(V('Đăng nhập bằng email', 'Sign in with email'), V('Dùng email bạn đã gắn trong Hồ sơ', 'Use the email you added in Profile'))}
+      <section class="card mt-32 reveal">
+        ${otpBox('signin')}
+        <p class="tiny muted mt-16">${V('Đăng nhập là bạn tiếp tục đồng ý lưu và đồng bộ dữ liệu như khi tạo tài khoản.', 'By signing in you keep agreeing to the data saving and syncing you accepted when you created the account.')}</p>
+      </section>
+      <div class="switch-auth reveal">${V('Chưa có tài khoản?', 'New here?')} <a href="#signup">${V('Tạo tài khoản', 'Create account')}</a></div>` : `
       ${authHead(V('Tiếp tục trên máy này', 'Continue on this device'), V('Chào mừng trở lại! Tiếp tục luyện nói nhé', 'Welcome back! Keep practising'))}
       <section class="card mt-32 reveal">
         <div class="row"><span class="ic">${icon('user')}</span><b id="acct-name" class="grow" style="font-size:18px">${esc(S.user.name)}</b></div>

@@ -49,9 +49,6 @@
 .c-note { display: flex; gap: 8px; align-items: flex-start; margin-top: 20px; padding: 12px 14px; border-radius: 16px; background: color-mix(in srgb, var(--card-blue) 50%, white); color: var(--navy); line-height: 1.45; }
 .c-note .ico { flex: none; margin-top: 2px; }
 .card .c-note { margin-top: 12px; }
-.c-form { display: grid; gap: 8px; }
-.c-form select, .c-form input { width: 100%; min-height: 40px; padding: 6px 10px; border: 1px solid color-mix(in srgb, var(--navy) 20%, white); border-radius: 10px; background: #fff; color: var(--navy); font: inherit; }
-.c-code { font-size: 22px; letter-spacing: .12em; user-select: all; }
 .c-sheet-list { display: grid; gap: 10px; }
 
 @media (max-width: 380px) { .c-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .c-body { padding: 10px 12px 12px; } }

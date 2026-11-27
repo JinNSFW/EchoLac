@@ -4,7 +4,7 @@ const { runtime, templates } = require('./helpers/runtime.cjs');
 
 test('all screens render in Vietnamese and English in script loading order', () => {
   const output = templates(runtime());
-  assert.equal(Object.keys(output).length, 50);
+  assert.equal(Object.keys(output).length, 48); // 24 views x 2 languages (the school view was removed with schools, 0008)
   for (const [name, html] of Object.entries(output)) {
     assert.ok(html.length > 100, name);
     assert.ok(!html.includes('undefined'), name + ' contains undefined');
@@ -21,7 +21,7 @@ test('Connect screens follow the server role and never name minors to tourists',
   app.run("S.user = { name: 'Lan' }; S.lang = 'en'; S.connect = { ...connectBlank('ready'), me: { id: 'u1', role: 'student' } };");
   assert.equal(app.run("roleView('tutor')"), 'tutor');
   assert.equal(app.run("roleView('discover')"), 'connect');
-  app.run(`S.connect = { ...connectBlank('ready'), me: { id: 'u1', role: 'tourist', verification_status: 'unverified', school_id: null },
+  app.run(`S.connect = { ...connectBlank('ready'), me: { id: 'u1', role: 'tourist', verification_status: 'unverified' },
     locations: [{ id: 'hoi-an-ancient-town', name_vi: 'Phố cổ Hội An', name_en: 'Hoi An Ancient Town' }] };`);
   assert.equal(app.run("roleView('tutor')"), 'discover');
   assert.equal(app.run("roleView('home')"), 'discover');

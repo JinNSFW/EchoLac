@@ -6,26 +6,21 @@ const { runtime } = require('./helpers/runtime.cjs');
 
 const load = () => Promise.all([import('../supabase/functions/_shared/connect-policy.ts'), import('../supabase/functions/_shared/connect.ts')]);
 const id = n => `00000000-0000-4000-8000-${String(n).padStart(12, '0')}`;
-const [T, S, TEACH, SESSION, SCH_A, SCH_B, REQ] = [1, 2, 3, 4, 5, 6, 7].map(id);
-const SCHOOL = { A: SCH_A, B: SCH_B };
+const [T, S, ADMIN, SESSION, REQ] = [1, 2, 3, 4, 7].map(id);
 const NOW = Date.parse('2026-11-26T00:00:00Z');
 
 // One abstract case, two shapes. The base tourist is verified, which v1 cannot produce yet (no tourist verification),
 // so in production every tourist gets 'tourist-not-eligible'; the base case shows the rule once verification exists.
 const base = () => ({
   tourist: { role: 'tourist', age: 'adult', verified: true },
-  student: { role: 'student', age: 'adult', verified: true, level: 'B1', school: 'A', approval: null },
+  student: { role: 'student', age: 'adult', verified: true, level: 'B1' },
   place: 'dragon-bridge', mode: 'supervised-group', sessionId: SESSION, slots: false, block: null, brokenBlocks: false,
-  session: { at: 'dragon-bridge', school: 'A', teacher: true, status: 'scheduled', past: false },
+  session: { at: 'dragon-bridge', admin: true, status: 'scheduled', past: false },
 });
-const minor = (approval) => ({ student: { ...base().student, age: 'minor', approval } });
-const FULL = { school: true, guardian: true, revoked: false };
+const minor = () => ({ student: { ...base().student, age: 'minor' } });
 const CASES = [
   ['adult student, supervised group', {}, []],
-  ['minor with school approval and guardian consent', minor(FULL), []],
-  ['minor with school approval only', minor({ ...FULL, guardian: false }), ['student-awaiting-approval']],
-  ['minor with revoked approval', minor({ ...FULL, revoked: true }), ['student-awaiting-approval']],
-  ['minor without approval', minor(null), ['student-awaiting-approval']],
+  ['minor student (no approval path in the adults-only pilot)', minor(), ['student-awaiting-approval']],
   ['unverified student', { student: { ...base().student, verified: false } }, ['student-not-eligible']],
   ['student account is a tourist', { student: { ...base().student, role: 'tourist' } }, ['student-not-eligible']],
   ['student without age group', { student: { ...base().student, age: null } }, ['student-not-eligible']],
@@ -34,50 +29,35 @@ const CASES = [
   ['tourist account is a student', { tourist: { role: 'student', age: 'adult', verified: true } }, ['tourist-not-eligible']],
   ['place not approved', { place: 'fake-place' }, ['location-not-approved', 'session-invalid']],
   ['session at another place', { place: 'han-market' }, ['session-invalid']],
-  ['session of another school', { session: { ...base().session, school: 'B' } }, ['session-invalid']],
-  ['student without school', { student: { ...base().student, school: null } }, ['session-invalid']],
-  ['session teacher not verified', { session: { ...base().session, teacher: false } }, ['session-invalid']],
+  ['session supervisor is not an admin', { session: { ...base().session, admin: false } }, ['session-invalid']],
   ['session cancelled', { session: { ...base().session, status: 'cancelled' } }, ['session-invalid']],
   ['session already over', { session: { ...base().session, past: true } }, ['session-invalid']],
   ['unknown session id', { sessionId: id(99) }, ['session-invalid']],
   ['no session', { session: null, sessionId: null }, ['session-invalid']],
   ['unknown mode', { mode: 'walk' }, ['session-invalid']],
   ['one-to-one, adult with free slots', { mode: 'one-to-one', sessionId: null, slots: true }, ['one-to-one-disabled']],
-  ['one-to-one, approved minor', { ...minor(FULL), mode: 'one-to-one', sessionId: null }, ['one-to-one-disabled', 'minor-one-to-one-blocked', 'not-available']],
+  ['one-to-one, minor', { ...minor(), mode: 'one-to-one', sessionId: null }, ['student-awaiting-approval', 'one-to-one-disabled', 'minor-one-to-one-blocked', 'not-available']],
   ['tourist blocked the student', { block: 'by-tourist' }, ['blocked']],
   ['student blocked the tourist', { block: 'by-student' }, ['blocked']],
   ['level A1', { student: { ...base().student, level: 'A1' } }, ['level-below-minimum']],
   ['no level', { student: { ...base().student, level: null } }, ['level-below-minimum']],
-  ['several at once', { tourist: { role: 'tourist', age: 'adult', verified: false }, ...minor(null), block: 'by-student' },
+  ['several at once', { tourist: { role: 'tourist', age: 'adult', verified: false }, ...minor(), block: 'by-student' },
     ['tourist-not-eligible', 'student-awaiting-approval', 'blocked']],
   ['blocks unreadable', { brokenBlocks: true }, ['unverifiable']],
 ];
 
-function toClient(c) {
-  const g = c.session, ap = c.student.approval, live = ap && !ap.revoked;
-  const own = g && g.status === 'scheduled' && !g.past && c.student.school && g.school === c.student.school;
-  const user = (uid, p) => ({ id: uid, role: p.role, ageGroup: p.age ?? undefined, verified: p.verified });
-  return {
-    tourist: user(T, c.tourist),
-    student: { ...user(S, c.student), level: c.student.level ?? undefined,
-      approvals: { school: !!(live && ap.school), guardian: !!(live && ap.guardian) },
-      availability: c.slots ? { [c.place]: ['sat-am'] } : {},
-      groupSessions: own ? [{ id: SESSION, locationId: g.at, supervisor: g.teacher ? 'Teacher' : '' }] : [] },
-    locationId: c.place, mode: c.mode, sessionId: c.sessionId,
-    blocks: c.brokenBlocks ? null : c.block === 'by-tourist' ? [S] : c.block === 'by-student' ? [T] : [],
-  };
-}
+// The client hint sees only the student's own account.
+const toClient = c => ({ id: S, role: c.student.role, ageGroup: c.student.age ?? undefined, verified: c.student.verified, level: c.student.level ?? undefined });
 
 function toServer(c) {
-  const g = c.session, ap = c.student.approval;
-  const prof = (uid, p, school) => ({ id: uid, role: p.role, age_group: p.age, verification_status: p.verified ? 'verified' : 'unverified', school_id: school ?? null, level: p.level ?? null });
+  const g = c.session;
+  const prof = (uid, p) => ({ id: uid, role: p.role, age_group: p.age, verification_status: p.verified ? 'verified' : 'unverified', level: p.level ?? null });
   return {
-    tourist: prof(T, c.tourist), studentId: S, student: prof(S, c.student, SCHOOL[c.student.school]),
+    tourist: prof(T, c.tourist), studentId: S, student: prof(S, c.student),
     locationId: c.place, location: c.place === 'fake-place' ? null : { id: c.place, approved: true },
     mode: c.mode, sessionId: c.sessionId,
-    session: g && { id: SESSION, school_id: SCHOOL[g.school], location_id: g.at, created_by: TEACH, status: g.status, ends_at: g.past ? '2026-01-01T00:00:00Z' : '2027-01-01T00:00:00Z', capacity: 10 },
-    teacher: g && { id: TEACH, role: 'teacher', age_group: 'adult', verification_status: g.teacher ? 'verified' : 'unverified', school_id: SCHOOL[g.school] },
-    approvals: ap ? [{ student_id: S, school_id: SCHOOL[c.student.school], school_approved_at: ap.school ? '2026-11-01' : null, guardian_consent_at: ap.guardian ? '2026-11-01' : null, revoked_at: ap.revoked ? '2026-11-20' : null }] : [],
+    session: g && { id: SESSION, location_id: g.at, created_by: ADMIN, status: g.status, ends_at: g.past ? '2026-01-01T00:00:00Z' : '2027-01-01T00:00:00Z', capacity: 10 },
+    supervisorIsAdmin: !!g?.admin,
     availability: c.slots ? [{ location_id: c.place, slot: 'sat-am' }] : [],
     blocks: c.brokenBlocks ? null : c.block === 'by-tourist' ? [{ blocker_id: T, blocked_id: S }] : c.block === 'by-student' ? [{ blocker_id: S, blocked_id: T }] : [],
     now: NOW,
@@ -93,10 +73,10 @@ test('server policy verdicts, and the client account hint agrees on every case',
     const server = canConnect(toServer(c));
     assert.deepEqual(server, { ok: expected.length === 0, reasons: expected }, `server: ${name}`);
     if (c.brokenBlocks) continue;
-    const st = toClient(c).student;
+    const st = toClient(c);
     const hint = st.role === 'student' ? app.run(`accountEligibility(${JSON.stringify(st)}).status`) : 'not-eligible';
     const want = expected.includes('student-not-eligible') || expected.includes('level-below-minimum') ? 'not-eligible'
-      : expected.includes('student-awaiting-approval') ? 'awaiting-approval' : st.ageGroup === 'minor' ? 'supervised-only' : 'eligible';
+      : expected.includes('student-awaiting-approval') ? 'awaiting-approval' : 'eligible';
     assert.equal(hint, want, `client hint: ${name}`);
   }
 });
@@ -105,14 +85,11 @@ test('server policy: rows that only exist on the server fail closed', async () =
   const [{ canConnect }] = await load();
   const s = over => canConnect({ ...toServer(base()), ...over }).reasons;
   assert.deepEqual(s({ location: { id: 'dragon-bridge', approved: false } }), ['location-not-approved']);
-  assert.deepEqual(s({ student: null }), ['student-not-eligible', 'session-invalid', 'level-below-minimum']); // student_id given, row missing
+  assert.deepEqual(s({ student: null }), ['student-not-eligible', 'level-below-minimum']); // student_id given, row missing
   assert.deepEqual(s({ studentId: null, student: null }), []); // whole-session request: the trigger allows it too
   assert.deepEqual(s({ tourist: null }), ['tourist-not-eligible']);
-  assert.deepEqual(s({ teacher: null }), ['session-invalid']);
-  assert.deepEqual(s({ teacher: { ...toServer(base()).teacher, school_id: SCH_B } }), ['session-invalid']);
-  const other = toServer({ ...base(), ...minor(FULL) });
-  other.approvals[0].school_id = SCH_B; // approval from a previous school
-  assert.deepEqual(canConnect(other).reasons, ['student-awaiting-approval']);
+  assert.deepEqual(s({ supervisorIsAdmin: undefined }), ['session-invalid']); // supervisor unknown = not allowed
+  assert.deepEqual(s({ supervisorIsAdmin: 'true' }), ['session-invalid']);
   assert.deepEqual(canConnect(undefined).reasons, ['unverifiable']);
   // Seats: distinct other tourists already accepted; a missing capacity counts as full.
   assert.deepEqual(s({ taken: 9 }), []);
@@ -149,7 +126,7 @@ const TOKENS = { 'tok-tourist': T, 'tok-student': S };
 function server(over = {}) {
   const c = toServer(base());
   const db = {
-    profiles: [c.tourist, c.student, c.teacher], locations: [c.location], group_sessions: [c.session], minor_approvals: [], blocks: [],
+    profiles: [c.tourist, c.student], locations: [c.location], group_sessions: [c.session], blocks: [], admins: [ADMIN],
     audit: [], requests: [], open: [], fail: {}, insertError: null, ...over,
   };
   const calls = [];
@@ -168,6 +145,7 @@ function server(over = {}) {
       return json(200, db.audit.slice(0, 20));
     }
     if (table === 'profiles') return json(200, db.profiles.filter(p => query.includes(p.id)));
+    if (table === 'rpc/is_admin_account') return json(200, method === 'POST' && db.admins.includes(JSON.parse(init.body).p_user));
     if (table === 'connection_requests') {
       if (method === 'POST') {
         if (db.insertError) return json(db.insertError === 'dup' ? 409 : 400, db.insertError === 'dup'
@@ -267,7 +245,13 @@ test('connect-request: success, duplicate, trigger refusal, rate limit and datab
   const since = busy.calls.find(x => x.url.includes('audit_log')).url;
   assert.match(since, /actor_id=eq\.00000000-0000-4000-8000-000000000001&action=in\.\(connect_request,connect_respond\)&created_at=gt\.2026-11-25T23:00:00\.000Z&limit=20$/);
 
-  for (const table of ['profiles', 'audit_log']) {
+  // The supervisor must still be an admin; the check is an RPC on auth.users (0008).
+  const noAdmin = server({ admins: [] });
+  assert.deepEqual(await call(connectRequest, ASK, 'tok-tourist', noAdmin), { status: 403, ok: false, reasons: ['session-invalid'], request: null });
+  assert.deepEqual(noAdmin.calls.find(x => x.url.endsWith('/rpc/is_admin_account')).body, { p_user: ADMIN });
+  assert.equal(noAdmin.db.requests.length, 0);
+
+  for (const table of ['profiles', 'audit_log', 'rpc/is_admin_account']) {
     const down = server({ fail: { [table]: true } });
     assert.deepEqual(await call(connectRequest, ASK, 'tok-tourist', down), { status: 503, ok: false, reasons: ['unverifiable'], request: null });
     assert.equal(down.db.requests.length, 0);

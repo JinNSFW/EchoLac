@@ -15,8 +15,7 @@ test('account eligibility fails closed and never shows a student below A2 as eli
   assert.equal(status({ ...adult, level: undefined }), 'not-eligible');
   assert.equal(status({ ...adult, verified: 'true' }), 'not-eligible');
   assert.equal(status({ ...adult, ageGroup: undefined }), 'not-eligible');
-  assert.equal(status({ ...adult, ageGroup: 'minor', approvals: { school: true, guardian: true } }), 'supervised-only');
-  assert.equal(status({ ...adult, ageGroup: 'minor', approvals: { school: true } }), 'awaiting-approval');
+  assert.equal(status({ ...adult, ageGroup: 'minor' }), 'awaiting-approval'); // adults-only pilot: no approval path for minors
   assert.equal(status({ role: 'tourist', ageGroup: 'minor', verified: true }), 'not-eligible');
   assert.equal(app.run('accountEligibility(null).status'), 'not-eligible');
   assert.equal(app.run('[typeof canConnect, typeof matchStudents, typeof MOCK_STUDENTS].join()'), 'undefined,undefined,undefined');
@@ -43,7 +42,7 @@ window.__supabaseForTest = {
   rpc: async (name, args) => { window.__calls.push(['rpc', name, args]); return window.__rpc[name] ? window.__rpc[name](args) : { data: [], error: null }; },
   functions: { invoke: async (name, opts) => { window.__calls.push(['fn', name, opts.body]); return window.__fn(name, opts.body); } },
 };`;
-const ME = { id: 'u1', display_name: 'Lan', level: 'B1', role: 'student', age_group: null, verification_status: 'unverified', school_id: null };
+const ME = { id: 'u1', display_name: 'Lan', level: 'B1', role: 'student', age_group: null, verification_status: 'unverified' };
 const LOC_ROWS = [{ id: 'han-market', name_vi: 'Chợ Hàn', name_en: 'Han Market', approved: true }, { id: 'hoi-an-ancient-town', name_vi: 'Phố cổ Hội An', name_en: 'Hoi An Ancient Town', approved: true }];
 async function server(db) {
   const a = cloudApp(ON);
@@ -62,7 +61,7 @@ test('signed out or offline: Connect explains it needs an account and a network,
   await local.run('loadConnect()');
   assert.equal(local.run('S.connect.status'), 'signed-out'); // cloud off: never fake data
   local.run("S.lang = 'en'");
-  for (const v of ['connect', 'discover', 'connections', 'school']) assert.match(local.run(`VIEWS.${v}.render()`), /needs a synced EchoLạc account/);
+  for (const v of ['connect', 'discover', 'connections']) assert.match(local.run(`VIEWS.${v}.render()`), /needs a synced EchoLạc account/);
   assert.equal(local.storage.has('lt:connect'), false);
   const a = cloudApp(ON);
   a.run(FAKE); a.run('navigator.onLine = false');
@@ -75,15 +74,9 @@ test('student actions call the server', async () => {
   a.run("S.lang = 'en'");
   assert.equal(a.run('S.connect.status + connectRole()'), 'readystudent');
   const html = a.run('VIEWS.connect.render()');
-  assert.match(html, /Join your school/);
   assert.match(html, /Not yet eligible/);
-  a.run("window.__rpc.join_school = () => ({ data: null, error: null })");
-  assert.equal((await a.run("joinSchool('WRONG')")).why, 'wrong-code');
-  a.run("window.__rpc.join_school = () => ({ data: null, error: { message: 'join_school: too many wrong codes, try again later' } })");
-  assert.equal((await a.run("joinSchool('X')")).why, 'locked');
-  a.run("window.__rpc.join_school = () => ({ data: 'sch1', error: null })");
-  assert.equal((await a.run("joinSchool(' GOOD ')")).ok, true);
-  assert.deepEqual(calls(a, 'rpc').filter(c => c[1] === 'join_school').map(c => c[2].p_code), ['WRONG', 'X', 'GOOD']);
+  assert.match(html, /Wait for an EchoLạc admin to verify/);
+  assert.doesNotMatch(html, /school|invite code|teacher/i);
   assert.equal((await a.run("toggleAvailability('han-market', 'sat-am')")).ok, true);
   assert.equal((await a.run("toggleAvailability('not-approved', 'sat-am')")).why, 'denied');
   assert.deepEqual(calls(a, 'insert'), [['insert', 'availability', { location_id: 'han-market', slot: 'sat-am' }]]);
@@ -114,14 +107,13 @@ test('the last server role picks the tabs while offline, without granting anythi
   assert.equal(fresh.run("roleView('discover') + roleView('connect')"), 'discoverconnect'); // unknown role: no redirect
 });
 
-test('no local flag grants eligibility; a verified or school member cannot pick a role', async () => {
-  const a = await server({ profiles: [{ ...ME, school_id: 'sch1', verification_status: 'verified', age_group: 'minor' }], schools: [{ id: 'sch1', name: 'THPT A' }],
-    minor_approvals: [{ student_id: 'u1', school_approved_at: '2026-11-20', guardian_consent_at: null, revoked_at: null }] });
+test('no local flag grants eligibility; a verified account cannot pick a role', async () => {
+  const a = await server({ profiles: [{ ...ME, verification_status: 'verified', age_group: 'minor' }] });
   a.run("S.lang = 'en'");
   assert.equal(a.run('accountEligibility(serverAccount(S.connect.me)).status'), 'awaiting-approval');
   const html = a.run('VIEWS.connect.render()');
-  assert.match(html, /THPT A/);
-  assert.match(html, /Guardian consent: <b>Not open yet/);
+  assert.match(html, /Verified by an admin/);
+  assert.match(html, /You are under 18/);
   assert.equal((await a.run("chooseRole('tourist')")).why, 'denied');
   assert.equal(a.run("store.get('connect', 'none')"), 'none');
   a.run("S.connect.me.age_group = 'adult'");
@@ -145,32 +137,9 @@ test('tourist: approved places only, connecting is not open, block and report re
   assert.deepEqual(calls(a, 'insert'), [['insert', 'blocks', { blocked_id: 's9' }], ['insert', 'reports', { reported_id: 's9', request_id: 'r1', reason: 'spam' }]]);
 });
 
-test('school admin and teacher pages use the RPCs and RLS inserts', async () => {
-  const admin = { ...ME, role: 'school_admin', verification_status: 'verified', age_group: 'adult', school_id: 'sch1' };
-  const members = [{ id: 'm1', display_name: 'Minh', role: 'student', age_group: 'minor', verification_status: 'verified' }];
-  const a = await server({ profiles: [admin], schools: [{ id: 'sch1', name: 'THPT A' }], minor_approvals: [] });
-  a.run(`window.__rpc.school_members = () => ({ data: ${JSON.stringify(members)}, error: null }); window.__rpc.school_rotate_invite_code = () => ({ data: 'K7Q2-9XPA', error: null });`);
-  await a.run('loadConnect(true)');
-  a.run("S.lang = 'en'");
-  assert.equal(a.run('connectRole()'), 'staff');
-  const html = a.run('VIEWS.school.render()');
-  assert.match(html, /Minh/);
-  assert.match(html, /Approve minor/);
-  assert.match(html, /Guardian consent: Not open yet/);
-  assert.equal((await a.run("setMember('m1', 'student', 'verified', 'minor')")).ok, true);
-  assert.equal((await a.run("setMinorApproval('m1', true)")).ok, true);
-  assert.equal((await a.run('rotateInvite()')).data, 'K7Q2-9XPA');
-  assert.deepEqual(calls(a, 'rpc').filter(c => c[1].startsWith('school_set')).map(c => [c[1], c[2]]), [
-    ['school_set_member', { p_user: 'm1', p_role: 'student', p_verification: 'verified', p_age_group: 'minor' }],
-    ['school_set_minor_approval', { p_student: 'm1', p_approved: true }]]);
-
-  const t = await server({ profiles: [{ ...admin, role: 'teacher' }], schools: [{ id: 'sch1', name: 'THPT A' }] });
-  t.run("S.lang = 'en'");
-  assert.match(t.run('VIEWS.school.render()'), /Create session/);
-  assert.equal((await t.run("createSession({ location_id: 'han-market', starts_at: '2026-12-01T01:00:00Z', ends_at: '2026-12-01T03:00:00Z', capacity: 8 })")).ok, true);
-  assert.deepEqual(calls(t, 'insert'), [['insert', 'group_sessions', { school_id: 'sch1', location_id: 'han-market', starts_at: '2026-12-01T01:00:00Z', ends_at: '2026-12-01T03:00:00Z', capacity: 8 }]]);
-
-  const s = await server({ profiles: [ME] });
-  s.run("S.lang = 'en'");
-  assert.match(s.run('VIEWS.school.render()'), /only for verified teachers/);
+test('the public app has no school, teacher or admin screens or RPCs', async () => {
+  const a = await server({ profiles: [{ ...ME, role: 'student', verification_status: 'verified', age_group: 'adult' }] });
+  assert.equal(a.run("Object.hasOwn(VIEWS, 'school') || typeof isStaff + typeof joinSchool + typeof createSession !== 'undefinedundefinedundefined'"), false);
+  assert.equal(a.run('JSON.stringify(ROLE_TABS)').includes('school'), false);
+  assert.deepEqual(calls(a, 'rpc').map(c => c[1]).filter(n => /school|admin/.test(n)), []);
 });

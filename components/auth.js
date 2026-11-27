@@ -1,5 +1,5 @@
 'use strict';
-// Shared onboarding fields, headings and the anonymous-account status (X-01).
+// Shared onboarding fields, headings and the account status: anonymous, optionally with a linked email (X-01).
 
 /* ================= Views ================= */
 const field = (id, label, ico, type, ph, d, opts = {}) => `
@@ -25,14 +25,20 @@ const isSynced = () => typeof cloudProfileSynced === 'function' && cloudProfileS
 const acctStatus = () => `${isSynced()
   ? `<span class="tag green">${icon('check', 'sm')} ${V('Đã đồng bộ', 'Synced')}</span>`
   : `<span class="tag">${cloudId() ? V('Có thay đổi chưa đồng bộ', 'Changes not synced yet') : V('Chỉ lưu trên máy này', 'Saved on this device only')}</span>`}${cloudId() ? ` <span class="tiny muted">ID ${esc(cloudId().slice(0, 8))}</span>` : ''}`;
-const deviceNote = () => `<div class="tutor-note mt-16 reveal">${icon('shield', 'sm')}<p>${V(
-  'Không cần email hay mật khẩu: tiến độ gắn với máy và trình duyệt này (tài khoản ẩn danh). Đổi máy hoặc xoá dữ liệu trình duyệt sẽ mất liên kết tiến độ.',
-  'No email or password: your progress is tied to this device and browser (anonymous account). Changing device or clearing browser data loses the link to your progress.')}</p></div>`;
+const deviceNote = () => `<div class="tutor-note mt-16 reveal">${icon('shield', 'sm')}<p>${S.user?.email
+  ? V('Đã gắn email: đăng nhập bằng email này trên máy khác để tiếp tục học.', 'Email linked: sign in with this email on another device to keep learning.')
+  : V('Không cần email để bắt đầu: tiến độ chỉ lưu trên máy và trình duyệt này cho đến khi bạn gắn email trong Hồ sơ. Chưa gắn email mà đổi máy hoặc xoá dữ liệu trình duyệt sẽ mất tiến độ.',
+    'No email needed to start: your progress stays on this device and browser until you add an email in Profile. Without one, changing device or clearing browser data loses your progress.')}</p></div>`;
+// Linked email, or the "Add email" one-time-code form (components/email-otp.js) when cloud sync is on.
+const emailRow = () => S.user.email
+  ? `<div class="set-row"><span class="ic">${icon('mail')}</span><div class="grow"><div>Email</div><div class="tiny muted mt-8">${esc(S.user.email)}</div></div><span class="tag green">${icon('check', 'sm')} ${V('Đã gắn', 'Linked')}</span></div>`
+  : cloudReady() && typeof otpBox === 'function' ? `<div class="set-row" style="display:block">${otpBox('link')}</div>` : '';
 // Profile card: status, device warning, voice-upload consent (PRD §9, revocable here) and sign-out
 const accountCard = () => {
   const voice = !!S.user.voiceConsentAt, voiceLbl = V('Cho phép gửi giọng nói tới máy chủ chấm điểm', 'Allow sending my voice to the scoring server');
   return `<section class="card reveal">
-    <div class="set-row"><span class="ic">${icon('user')}</span><div class="grow"><div>${V('Tài khoản ẩn danh', 'Anonymous account')}</div><div id="acct-status" class="mt-8" role="status">${acctStatus()}</div></div></div>
+    <div class="set-row"><span class="ic">${icon('user')}</span><div class="grow"><div>${S.user.email ? V('Tài khoản email', 'Email account') : V('Tài khoản ẩn danh', 'Anonymous account')}</div><div id="acct-status" class="mt-8" role="status">${acctStatus()}</div></div></div>
+    ${emailRow()}
     ${deviceNote()}
     <div class="set-row mt-16"><span class="ic">${icon('mic')}</span><div class="grow"><div>${voiceLbl}</div><div class="tiny muted mt-8">${V('Máy chủ đặt ngoài Việt Nam. Bản ghi chỉ dùng để chấm điểm, không được lưu. Tắt bất cứ lúc nào.', 'The server is outside Vietnam. Recordings are used only for scoring and are never stored. Turn off at any time.')}</div></div>
       <button id="acct-voice" class="toggle ${voice ? 'on' : ''}" onclick="setVoiceConsent(this.getAttribute('aria-pressed') !== 'true')" aria-label="${voiceLbl}" aria-pressed="${voice}"></button></div>

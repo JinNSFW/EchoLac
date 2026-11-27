@@ -1,5 +1,5 @@
 'use strict';
-// Tourist place detail. Group sessions are visible only to school members (RLS), so tourists see no people here.
+// Tourist place detail. Group sessions are visible only to admins (RLS, 0008), so tourists see no people here.
 VIEWS.spot = {
   render(id) {
     const back = `<a class="icon-btn" href="#discover" aria-label="${V('Quay lại', 'Back')}">${icon('left')}</a>`;
@@ -11,7 +11,7 @@ VIEWS.spot = {
     <section class="c-hero"><span class="c-photo">${locPhoto(id)}</span>
       <p>${esc(L(loc(id)?.description) || '')}</p>
       <p class="tiny muted">${V('Thông tin công khai, ai cũng xem được.', 'Public information anyone can view.')}</p></section>
-    ${notOpen(V('Kết nối với du khách', 'Connecting with tourists'), V('Cần xác minh danh tính du khách (sắp có). Hiện chỉ có buổi nhóm do trường tổ chức cho học sinh.', 'Tourist identity verification is needed (coming soon). For now only school-run group sessions for students exist.'))}
+    ${notOpen(V('Kết nối với du khách', 'Connecting with tourists'), V('Cần xác minh danh tính du khách (sắp có). Hiện chỉ có buổi nhóm do quản trị viên EchoLạc giám sát.', 'Tourist identity verification is needed (coming soon). For now only admin-supervised group sessions exist.'))}
     ${safetyNote()}`;
   },
   mount: () => connectMount(),

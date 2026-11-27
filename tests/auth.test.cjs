@@ -30,12 +30,13 @@ function signup(a) {
   };
 }
 
-test('signup has no email/password/Google/class-code and shows the device warning', () => {
+test('signup needs no email/password/Google/class-code and says progress stays here until an email is added', () => {
   for (const lang of ['vi', 'en']) {
     const a = app({ user: null });
     const html = a.run(`S.lang='${lang}'; VIEWS.signup.render()`);
-    assert.doesNotMatch(html, /id="email"|id="pw"|googleSignIn|class-?code/i);
-    assert.match(html, lang === 'vi' ? /Không cần email hay mật khẩu/ : /No email or password/);
+    assert.doesNotMatch(html, /id="email"|id="otp-email"|id="pw"|googleSignIn|class-?code/i);
+    assert.match(html, lang === 'vi' ? /cho đến khi bạn gắn email trong Hồ sơ/ : /until you add an email in Profile/);
+    assert.match(html, /href="#signin"/);
   }
 });
 
@@ -86,10 +87,11 @@ test('signup requires guardian consent until the eighteenth birthday', () => {
   assert.equal(a.run('location.hash'), '#place');
 });
 
-test('signin redirects to #signup without a user; renders escaped name with one', () => {
+test('signin offers email sign-in without a user; renders escaped name with one', () => {
   const a = app({});
-  a.run("S.user = null; let to; location.replace = h => { to = h; }; VIEWS.signin.init(); globalThis.to = to");
-  assert.equal(a.run('to'), '#signup');
+  const signedOut = a.run("S.user = null; S.lang = 'en'; VIEWS.signin.render()");
+  assert.match(signedOut, /id="otp-email"[^>]*autocomplete="email"/);
+  assert.match(signedOut, /Sign in with email/);
   a.run("S.user = { name: '<b>x</b>', consent: { terms: true } }");
   const html = a.run('VIEWS.signin.render()');
   assert.ok(html.includes('&lt;b&gt;x&lt;/b&gt;') && !html.includes('<b>x</b>'));

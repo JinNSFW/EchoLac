@@ -4,12 +4,11 @@
 const CONNECT_SLOGAN = 'Learn Locally. Connect Globally.';
 const ELIGIBILITY_NAMES = {
   eligible: ['Đủ điều kiện', 'Eligible'],
-  'supervised-only': ['Đủ điều kiện cho hoạt động có giám sát', 'Eligible for supervised activities'],
   'awaiting-approval': ['Đang chờ phê duyệt', 'Awaiting approval'],
   'not-eligible': ['Chưa đủ điều kiện kết nối offline', 'Not yet eligible to meet offline'],
 };
-const VERIFY_NAMES = { unverified: ['Chưa xác minh', 'Not verified'], verified: ['Nhà trường đã xác minh', 'Verified by the school'], rejected: ['Bị từ chối xác minh', 'Verification rejected'] };
-const ROLE_NAMES = { student: ['Học sinh', 'Student'], tourist: ['Du khách', 'Tourist'], teacher: ['Giáo viên', 'Teacher'], school_admin: ['Quản trị trường', 'School admin'] };
+const VERIFY_NAMES = { unverified: ['Chưa xác minh', 'Not verified'], verified: ['Quản trị viên đã xác minh', 'Verified by an admin'], rejected: ['Bị từ chối xác minh', 'Verification rejected'] };
+const ROLE_NAMES = { student: ['Học sinh', 'Student'], tourist: ['Du khách', 'Tourist'] };
 const AGE_NAMES = { adult: ['Từ 18 tuổi', '18 or older'], minor: ['Dưới 18 tuổi', 'Under 18'] };
 const REQUEST_STATUS = { pending: ['Đang chờ', 'Pending'], accepted: ['Đã chấp nhận', 'Accepted'], declined: ['Đã từ chối', 'Declined'], cancelled: ['Đã huỷ', 'Cancelled'], blocked: ['Đã chặn', 'Blocked'] };
 const REPORT_REASONS = [['unsafe', 'Hành vi không an toàn', 'Unsafe behaviour'], ['inappropriate', 'Nội dung không phù hợp', 'Inappropriate content'], ['spam', 'Spam hoặc lừa đảo', 'Spam or scam'], ['contact', 'Đòi thông tin liên lạc riêng', 'Asked for private contact details']];
@@ -30,9 +29,8 @@ const actFail = r => toast(cLabel(ACT_FAIL, r?.why || 'error'));
 const notOpen = (what, why) => `<div class="card c-gate"><p><b>${what}: ${V('Chưa mở', 'Not open yet')}</b></p><p class="small muted">${why}</p></div>`;
 const connectGate = () => (S.connect.status === 'ready' ? '' : `<div class="card c-gate" role="status"><p>${cLabel(CONNECT_GATE, S.connect.status)}</p>
   ${S.connect.status === 'idle' ? '' : `<button class="btn white sm mt-16" onclick="loadConnect(true)">${icon('refresh', 'sm')} ${V('Thử lại', 'Try again')}</button>`}</div>`);
-// policy.js reads the server profile; approvals come from public.minor_approvals.
-const serverAccount = me => (me ? { id: me.id, role: me.role, ageGroup: me.age_group, verified: me.verification_status === 'verified', level: me.level,
-  approvals: { school: !!S.connect.approval?.school_approved_at, guardian: !!S.connect.approval?.guardian_consent_at } } : null);
+// policy.js reads the server profile only.
+const serverAccount = me => (me ? { id: me.id, role: me.role, ageGroup: me.age_group, verified: me.verification_status === 'verified', level: me.level } : null);
 const eligTone = s => (s === 'eligible' ? 'green' : s === 'not-eligible' ? '' : 'amber');
 const eligTag = me => { const s = accountEligibility(serverAccount(me)).status; return `<span class="tag ${eligTone(s)}">${cLabel(ELIGIBILITY_NAMES, s)}</span>`; };
 const locPhoto = id => { const l = loc(id); return l?.referenceImages?.[0]?.url
@@ -95,13 +93,13 @@ function connectProfileCards() {
   <section class="card">
     <p class="c-slogan">${CONNECT_SLOGAN}</p>
     ${choose ? `<div class="seg mt-8" role="group" aria-label="${V('Vai trò', 'Role')}">${['student', 'tourist'].map(k => `<button class="${me.role === k ? 'on' : ''}" aria-pressed="${me.role === k}" data-k="role-${k}" onclick="pickConnectRole('${k}')">${cLabel(ROLE_NAMES, k)}</button>`).join('')}</div>
-      <p class="tiny muted mt-8">${V('Chọn một lần. Sau khi vào trường hoặc được xác minh, vai trò do nhà trường quản lý.', 'Choose once. After you join a school or get verified, the school manages your role.')}</p>`
-      : `<p class="mt-8"><b>${cLabel(ROLE_NAMES, me.role)}</b>${S.connect.school ? ` · ${esc(S.connect.school.name)}` : ''}</p><p class="tiny muted">${V('Vai trò do nhà trường và máy chủ xác nhận.', 'Your role is confirmed by the school and the server.')}</p>`}
+      <p class="tiny muted mt-8">${V('Chọn một lần. Sau khi được xác minh, vai trò được khoá.', 'Choose once. Once you are verified, your role is locked.')}</p>`
+      : `<p class="mt-8"><b>${cLabel(ROLE_NAMES, me.role)}</b></p><p class="tiny muted">${V('Vai trò do quản trị viên và máy chủ xác nhận.', 'Your role is confirmed by an admin and the server.')}</p>`}
   </section>
   <div class="section-title"><span>${V('An toàn & quyền riêng tư', 'Safety & privacy')}</span>${eligTag(me)}</div>
   <section class="card">
     <div class="set-row"><span class="grow">${V('Xác minh', 'Verification')}</span><b>${cLabel(VERIFY_NAMES, me.verification_status)}</b></div>
-    <div class="set-row"><span class="grow">${V('Nhóm tuổi', 'Age group')}</span><b>${me.age_group ? cLabel(AGE_NAMES, me.age_group) : V('Nhà trường chưa xác nhận', 'Not confirmed by the school')}</b></div>
+    <div class="set-row"><span class="grow">${V('Nhóm tuổi', 'Age group')}</span><b>${me.age_group ? cLabel(AGE_NAMES, me.age_group) : V('Quản trị viên chưa xác nhận', 'Not confirmed by an admin')}</b></div>
     <div class="set-row" style="display:block"><span>${V('Đã chặn', 'Blocked')}</span>
       <p class="small muted mt-8">${blocked.length ? blocked.map(personName).join(', ') : V('Chưa chặn ai.', 'Nobody blocked.')}</p></div>
     ${safetyNote()}

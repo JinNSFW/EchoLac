@@ -1,5 +1,7 @@
 # Local Guide Connect: kế hoạch triển khai và brief cho agent
 
+> **27/11/2026:** trường, mã mời, giáo viên, school_admin và trạng thái `supervised-only` đã bỏ. Admin toàn cục làm từ trang cục bộ `admin/` (migration 0008, PRD §5.9 R-14). Các đoạn nói về trường/giáo viên bên dưới là lịch sử; nguồn chuẩn là PRD và `docs/supabase-setup.md`.
+
 Nguồn yêu cầu: spec "EchoLạc – Local Guide Connect & Learning Experience" do chủ dự án đưa ngày 26/11/2026.
 Tệp này là hợp đồng chung. Mỗi agent chỉ làm phần của mình và dùng đúng tên hàm, khoá dữ liệu bên dưới.
 Prototype tĩnh, không có backend kết nối: mọi kiểm tra an toàn là **mô phỏng trên thiết bị** và phải được ghi nhãn như vậy.

@@ -65,8 +65,10 @@ window.addEventListener('storage', event => {
 
 // An anonymous account cannot be recovered once its browser session is gone.
 async function signOut() {
-  if (!S.user || !confirm(V('Đăng xuất sẽ xoá tiến độ trên máy này và mất liên kết với tài khoản ẩn danh. Không thể khôi phục. Tiếp tục?',
-    'Signing out deletes your progress on this device and the link to your anonymous account. This cannot be undone. Continue?'))) return;
+  if (!S.user || !confirm(S.user.email
+    ? V('Đăng xuất sẽ xoá dữ liệu trên máy này. Đăng nhập lại bằng email đã gắn để tải lại dữ liệu đã đồng bộ. Tiếp tục?', 'Signing out clears this device. Sign in again with your linked email to restore what was synced. Continue?')
+    : V('Đăng xuất sẽ xoá tiến độ trên máy này và mất liên kết với tài khoản ẩn danh. Không thể khôi phục. Tiếp tục?',
+      'Signing out deletes your progress on this device and the link to your anonymous account. This cannot be undone. Continue?'))) return;
   const closing = typeof cloudSignOut === 'function' ? cloudSignOut() : null;
   S.user = null;
   $('#app').inert = true;
