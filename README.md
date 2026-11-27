@@ -31,6 +31,7 @@ Nếu PowerShell chặn `npm.ps1`, thay `npm` bằng `npm.cmd` trong các lệnh
 ```sh
 npm run check
 npm test
+npm run test:e2e   # Playwright, Chromium 360 px: học viên, du khách, trang admin (lần đầu: npx playwright install chromium)
 ```
 
 `check` kiểm tra cú pháp JavaScript, đường dẫn tài nguyên và giới hạn 300 dòng của

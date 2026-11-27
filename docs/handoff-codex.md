@@ -1,6 +1,6 @@
 # Bàn giao cho Codex — tích hợp giáo án phát âm vào app EchoLạc
 
-Cập nhật: 22/11/2026. Nhánh: `feat/pronunciation-app` (chưa commit, chưa push). Người bàn giao: Claude (Opus 5.5 high, agent điều phối).
+Cập nhật: 27/11/2026. Nhánh làm việc: `main` (đã push tới f7b76a6, đã deploy). Người bàn giao: Claude (Opus 5.5, agent điều phối). Mục 1 là quyết định mới nhất; việc còn lại xem mục 8 "Bàn giao cho Codex 27/11/2026".
 
 **Bản ghi gốc của Claude:** các mốc “xong”, 40/40 và thao tác trên project thật ở mục 1–6
 là thông tin tại lúc bàn giao. Kết quả tiếp quản mới nhất của Codex nằm ở **mục 7**;
@@ -10,22 +10,42 @@ mục đó thay danh sách việc còn lại của Đợt 0 bên dưới.
 
 Ánh xạ model cho Codex (AGENTS §3): lập kế hoạch → GPT-6.2 Astra high; xây theo kế hoạch → GPT-6.2 Sol medium; UI → GPT-6.2 Sol medium/xhigh; auth/RLS → GPT-6.2 Sol xhigh; tìm mã → GPT-6 Luna low; test → GPT-6.2 Sol low; kiểm toán bảo mật → GPT-6.2 Astra xhigh; review → GPT-6.2 Sol xhigh (khác model đã viết).
 
-## 1. Quyết định đã chốt với chủ dự án (không bàn lại)
+## 1. Quyết định đã chốt với chủ dự án (không bàn lại) — cập nhật 27/11/2026
 
-- Giữ prototype **JavaScript tĩnh** (không chuyển Next.js). Thêm PWA. Ưu tiên web trên điện thoại. Giai đoạn **thử nghiệm**, vài người test.
-- **Supabase đăng nhập ẩn danh** (không email, không Google, không mã lớp). "Giáo viên" chỉ là người duyệt nội dung. Dữ liệu ghi `lt:` localStorage trước, đồng bộ khi có session. **Không lưu audio** ở bất kỳ đâu.
-- Chấm phát âm: `onnx-community/wav2vec2-lv-60-espeak-cv-ft-ONNX`. Chạy **trên máy** nếu thiết bị đủ sức; không thì gửi lên **Space Gradio ZeroGPU miễn phí** `JinSaF/echolac-pron-scorer` **chỉ khi người dùng đồng ý**; không được nữa thì tự kiểm tra, không bịa điểm. Giao diện `scoreAttempt(audio,item)` cắm-rút engine. Chưa chặn người lạ dùng Space (chấp nhận ở giai đoạn thử nghiệm, đã ghi rủi ro PRD §12).
-- Repo model HF của dự án: `JinSaF/echolac-wav2vec2-espeak-onnx`, `JinSaF/echolac-whisper-tiny-en-onnx`. Chủ dự án tự đẩy (đã đăng nhập HF). Agent không đăng nhập thay.
-- Âm mẫu: **Kokoro-82M tạo sẵn** cho mọi mục giáo án (≥3 giọng en-US, ≥1 en-GB, bản chậm cho A1–A2), file nhỏ host Netlify. Không tải TTS về điện thoại.
-- Nhóm tin cậy thấp (rhythm, weak_form, linking, nucleus): **điểm tham khảo** có nhãn, không vào radar/mục lỗi/điều kiện qua bài (PRD §6 đã sửa).
-- Mở bài theo cấp tự chọn (bài xếp lớp tuỳ chọn); cấp cao hơn có nút **"Thử sức"**.
-- Roleplay đợt 2: `whisper-tiny.en` trên máy; nhân vật vẫn theo kịch bản; LLM để sau.
-- Git: mỗi đợt một PR; chỉ merge khi chủ dự án đồng ý; không push bí mật.
+Mục này thay bản 22/11. Nguồn: các phiên trò chuyện 22–27/11 và bộ nhớ của Claude.
+
+**Sản phẩm và chi phí**
+- **Sản phẩm chính thức, không demo, không giả lập, không "thử nghiệm" trong app.** Tính năng nào chưa thật thì hiện "Chưa mở" kèm lý do; không dữ liệu mẫu, không điểm bịa.
+- **Chỉ dùng gói miễn phí** (Supabase Free, Netlify, Cloudflare, Groq, Resend, Hugging Face). Chạm giới hạn thì báo rõ và giảm chức năng, không sinh phí.
+- Giữ **JavaScript tĩnh + PWA** (không chuyển Next.js), ưu tiên điện thoại. Mỗi lần đổi UI phải tăng `VERSION` trong `sw.js`.
+- Pháp lý (G2, G3) để cuối, chỉ làm khi chủ dự án ra lệnh.
+
+**Tài khoản và tuổi**
+- Mặc định **tài khoản ẩn danh**. **Email + mã OTP qua Resend** (SMTP trong Supabase): gắn email trong Hồ sơ, đăng nhập máy khác ở #signin. OTP 8 số, hết hạn 1 giờ. Người gửi tạm `onboarding@resend.dev` (chỉ tới chủ tài khoản Resend cho tới khi xác minh tên miền).
+- **Người dùng thật đều từ 18 tuổi.** Ô "phụ huynh đồng ý" vẫn giữ để chủ dự án test; **không** đánh dấu dưới 18 ở đâu để Supabase hay AI nhận ra. Mọi tài khoản được đánh dấu người lớn (`app_metadata.echolac_verified_adult`, trigger 0007).
+- **Bỏ giáo viên và trường.** Thay bằng **admin toàn hệ thống**: `app_metadata.role = 'admin'` (chỉ server đặt) **và** phiên MFA TOTP (aal2); tạo tay trong Supabase dashboard; làm việc **chỉ ở trang admin chạy trên máy** (`admin/`, `npm run admin`, 127.0.0.1, publishable key, không service_role); mọi thao tác qua RPC có `is_admin()` và ghi `admin_audit_log` chỉ-ghi-thêm. supabase-js cho admin lấy từ CDN, ghim phiên bản + SRI.
+- 3 ngoại lệ Advisors đã duyệt (ghi trong `docs/supabase-setup.md`): anonymous sign-ins, SECURITY DEFINER cho authenticated, leaked-password (chỉ gói Pro; bù bằng mật khẩu ≥12 ký tự đủ loại + MFA).
+- Turnstile: site key đã đặt trên Netlify; **chưa bật captcha trong Supabase** (cần đổi secret; trang admin không tải Turnstile nên bật captcha sẽ khoá đăng nhập admin, phải xử lý trước).
+
+**AI và giọng nói**
+- AI hội thoại: **Groq `llama-3.1-8b-instant`** trước, **Cloudflare Workers AI** dự phòng, rồi về kịch bản. Không OpenRouter. 40 lượt/người/ngày, 100 lượt/dự án/ngày. Văn bản chứa liên hệ/thông tin cá nhân bị từ chối.
+- Nghe: `whisper-tiny.en` trên máy. Chấm phát âm: wav2vec2 trên máy (~318 MB, tải khi người dùng đồng ý), không bịa điểm. Âm mẫu: **Kokoro tạo sẵn** (giáo án + câu cố định), thiếu thì dùng giọng trình duyệt. **Không lưu audio.**
+
+**Giao diện**
+- Học viên: Học | Nhập vai | Kết nối | Hồ sơ. Nút Nhập vai mở menu trượt lên (Luyện tập, Luyện nói, Nhập vai văn hoá). Bản đồ lỗi bỏ khỏi thanh dưới, mở từ Trang chủ, có nút quay lại. Nhiệm vụ hôm nay nằm trong chuông. Ngày sinh dd/mm/yyyy. Hồ sơ: khung thống kê kiểu C, không màu/emoji kiểu AI.
+- **Du khách: giao diện luôn tiếng Anh**, thanh dưới Khám phá | Kết nối | Hồ sơ.
+- Kết nối: chỉ **buổi nhóm có admin giám sát** tại điểm đã duyệt; tắt gặp 1-1; công tắc `ECHOLAC_CONNECT_PILOT_OPEN` đang đóng; `connect-request`/`connect-respond` chưa deploy; du khách chưa có cách xác minh.
+
+**Quy trình**
+- **LUẬT:** không token/key nào được nằm trong file commit. Quét diff đã stage trước mọi commit (sbp_, gsk_, sk-ant-, re_, JWT, sb_secret_).
+- Commit/push/deploy khi chủ dự án yêu cầu; migration production được phép theo chỉ thị "tự làm hết". Connector Supabase từ chối DROP → dùng ALTER POLICY / bản không DROP.
+- Netlify **không** tự build khi push: deploy bằng `git archive main` ra thư mục tạm rồi chạy lệnh từ công cụ Netlify `deploy-site`.
+- Không dùng Fable (thay bằng Opus). Tiết kiệm token. Claude chạm ~45% giới hạn tuần thì chuyển việc cho Codex qua file này.
 
 ## 2. Khoá và môi trường
 
 - `.env.local` (git bỏ qua) đã có `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` (khoá publishable — công khai theo thiết kế) và `MAPTILER_KEY` (khoá trình duyệt, chưa dùng; chủ dự án cần giới hạn Allowed HTTP origins trên MapTiler). Không chép giá trị vào tài liệu, commit, log.
-- `scripts/env.cjs` đọc env/.env.local/.env, chấp nhận tên `NEXT_PUBLIC_*`, **từ chối** khoá `sb_secret_`/`service_role`. `build-site.cjs` sinh `dist/config.js` (`window.ECHOLAC_CONFIG`); `serve.cjs` trả `/config.js` từ bộ nhớ. Netlify cần đặt 2 biến `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`.
+- `scripts/env.cjs` đọc env/.env.local/.env, chấp nhận tên `NEXT_PUBLIC_*`, **từ chối** khoá `sb_secret_`/`service_role`. `build-site.cjs` sinh `dist/config.js` (`window.ECHOLAC_CONFIG`); `serve.cjs` trả `/config.js` từ bộ nhớ. Netlify đã đặt (27/11) `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `TURNSTILE_SITE_KEY`.
 - Trước PR: quét `sk-ant-`, `sb_secret_`, `service_role`, `Bearer `, `AZURE`.
 
 ## 3. Trạng thái Đợt 0 (hạ tầng)
@@ -155,6 +175,7 @@ Chưa commit (đều nằm trong working tree):
 
 CẬP NHẬT 27/11 (Claude): 0008 ĐÃ ÁP lên production (connector nhận cả dòng drop not null). Đã thử thật: vai học viên và vai giả claim admin+aal2 (không có phiên MFA) đều bị từ chối ở admin_audit_log, group_sessions, admin_set_learner, admin_create_session, insert audit, tự xác minh; publishable key không đăng nhập: 401/42501 ở mọi bảng và RPC admin. Advisors chỉ còn 3 ngoại lệ đã duyệt. Review độc lập bằng model khác vẫn NÊN làm (bước 1, chỉ đọc). Lưu ý: sau 0008 người không phải admin không đọc được group_sessions; khi mở Kết nối cần thêm RPC kiểu safe_sessions cho du khách xem buổi nhóm.
 → Bước 2 và 3 bên dưới đã xong. Bước 4 cũng xong: commit f7b76a6 (5c + admin + email) đã push main và deploy; web thật echolac-v14, /admin/index.html trả 404, quét secret 0 kết quả. Còn lại: bước 1 (review độc lập), 5 (Playwright), 6 (hướng dẫn admin).
+→ Bước 5 XONG (27/11): `playwright.config.js`, `e2e/smoke.spec.js`, `npm run test:e2e`, 4/4 đạt trên Chromium 360 px (đăng ký, học viên 4 tab + menu nhập vai + hồ sơ, du khách tiếng Anh 3 tab, trang admin CSP + chỉ có form đăng nhập + /admin/index.html 404 trên site). Test chạy với cloud tắt (config.js stub) nên không tạo tài khoản thật. Chưa có test luồng email OTP và AI thật trên trình duyệt.
 
 Việc còn lại, theo thứ tự:
 1. Review 0008 + admin/ (GPT-6.2 Astra xhigh, chỉ đọc; khác model đã viết). Tiêu chí: admin = app_metadata.role='admin' VÀ aal2; is_admin() SECURITY DEFINER search_path ''; mọi bảng/RPC admin từ chối anon, học viên, du khách, admin chưa aal2 kể cả gọi REST trực tiếp; admin_audit_log chỉ ghi thêm; không service_role trong trình duyệt; admin không lọt vào dist/. Sửa lỗi Critical/High.

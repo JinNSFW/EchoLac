@@ -7,9 +7,13 @@
     "start": "node scripts/serve.cjs",
     "admin": "node scripts/admin-serve.cjs",
     "check": "node scripts/check.cjs",
+    "test:e2e": "playwright test",
     "test": "node --test tests/app.test.cjs tests/dictionary.test.cjs tests/directions-practice.test.cjs tests/connect.test.cjs tests/connect-server.test.cjs tests/pronunciation-content.test.cjs tests/cloud.test.cjs tests/cloud-safety.test.cjs tests/captcha.test.cjs tests/auth.test.cjs tests/build.test.cjs tests/pwa.test.cjs tests/server.test.cjs tests/ai-converse.test.cjs tests/asr.test.cjs tests/pron.test.cjs tests/line-audio.test.cjs tests/admin.test.cjs tests/email-otp.test.cjs"
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1"
   }
 }

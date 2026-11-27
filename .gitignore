@@ -16,3 +16,7 @@ node_modules/
 # Pronunciation generator
 tools/pronunciation/.cache/
 __pycache__/
+
+# Playwright output
+test-results/
+playwright-report/
