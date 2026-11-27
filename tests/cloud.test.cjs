@@ -63,7 +63,7 @@ test('profile and error rows map from S', async () => {
   assert.equal(Object.hasOwn(r, 'dob'), false);
   assert.equal(Object.hasOwn(r, 'gender'), false);
   assert.doesNotMatch(JSON.stringify(r), /2001-05-06/);
-  assert.equal(J(a, "errorRow(S.errors[0])").source, 'seed');
+  assert.equal(J(a, "errorRow(SEED_ERRORS[0])").source, 'seed');
   assert.equal(J(a, "errorRow({ id: 'x1', word: 'w', cat: 'c', best: 5, attempts: [1, 2], status: 'open' })").source, 'pron');
 });
 
@@ -168,6 +168,7 @@ test('the newest voice consent survives an in-flight write and an offline retry'
 
 test('a restored session for a different account cannot upload the retained queue', async () => {
   const a = app(ON, {
+    user: { name: 'Lan', consent: { terms: true } },
     'cloud-owner': 'old-user',
     'sync-queue': [{ table: 'error_items', row: { id: 'old-item' }, op: 'upsert', owner: 'old-user' }],
   });

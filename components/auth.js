@@ -26,7 +26,7 @@ const acctStatus = () => `${isSynced()
   ? `<span class="tag green">${icon('check', 'sm')} ${V('Đã đồng bộ', 'Synced')}</span>`
   : `<span class="tag">${cloudId() ? V('Có thay đổi chưa đồng bộ', 'Changes not synced yet') : V('Chỉ lưu trên máy này', 'Saved on this device only')}</span>`}${cloudId() ? ` <span class="tiny muted">ID ${esc(cloudId().slice(0, 8))}</span>` : ''}`;
 const deviceNote = () => `<div class="tutor-note mt-16 reveal">${icon('shield', 'sm')}<p>${S.user?.email
-  ? V('Đã gắn email: đăng nhập bằng email này trên máy khác để tiếp tục học.', 'Email linked: sign in with this email on another device to keep learning.')
+  ? V('Đăng nhập lại trên trình duyệt này để mở toàn bộ tiến độ đã lưu. Trên máy khác, bạn có thể tải hồ sơ và lỗi đã đồng bộ.', 'Sign in again in this browser to reopen your saved progress. On another device, you can restore your synced profile and review words.')
   : V('Không cần email để bắt đầu: tiến độ chỉ lưu trên máy và trình duyệt này cho đến khi bạn gắn email trong Hồ sơ. Chưa gắn email mà đổi máy hoặc xoá dữ liệu trình duyệt sẽ mất tiến độ.',
     'No email needed to start: your progress stays on this device and browser until you add an email in Profile. Without one, changing device or clearing browser data loses your progress.')}</p></div>`;
 // Linked email, or the "Add email" one-time-code form (components/email-otp.js) when cloud sync is on.
@@ -42,6 +42,6 @@ const accountCard = () => {
     ${deviceNote()}
     <div class="set-row mt-16"><span class="ic">${icon('mic')}</span><div class="grow"><div>${voiceLbl}</div><div class="tiny muted mt-8">${V('Máy chủ đặt ngoài Việt Nam. Bản ghi chỉ dùng để chấm điểm, không được lưu. Tắt bất cứ lúc nào.', 'The server is outside Vietnam. Recordings are used only for scoring and are never stored. Turn off at any time.')}</div></div>
       <button id="acct-voice" class="toggle ${voice ? 'on' : ''}" onclick="setVoiceConsent(this.getAttribute('aria-pressed') !== 'true')" aria-label="${voiceLbl}" aria-pressed="${voice}"></button></div>
-    <div class="set-row"><span class="ic" style="color:var(--danger)">${icon('logout')}</span><button class="grow" style="text-align:left;color:var(--danger);font-weight:600" onclick="signOut()">${V('Đăng xuất và xoá dữ liệu trên máy', 'Sign out and clear this device')}</button></div>
+    <div class="set-row"><span class="ic" style="color:var(--danger)">${icon('logout')}</span><button class="grow" style="text-align:left;color:var(--danger);font-weight:600" onclick="signOut()">${S.user.email ? V('Đăng xuất', 'Sign out') : V('Đăng xuất và xoá tiến độ trên máy', 'Sign out and clear local progress')}</button></div>
   </section>`;
 };

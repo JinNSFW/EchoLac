@@ -3,12 +3,13 @@
 
 /* ================= View parts ================= */
 function weekDays(off) {
-  const now = new Date(), mon = new Date(now); mon.setDate(now.getDate() - ((now.getDay() + 6) % 7) + off * 7);
+  const activeDate = studyDate(), now = new Date(activeDate + 'T12:00:00'), mon = new Date(now);
+  mon.setDate(now.getDate() - ((now.getDay() + 6) % 7) + off * 7);
   const names = S.lang === 'vi' ? ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'] : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   return names.map((lbl, i) => {
     const d = new Date(mon); d.setDate(mon.getDate() + i);
-    const k = iso(d), today = k === iso(), back = Math.round((new Date(iso()) - new Date(k)) / 864e5);
-    return { lbl, date: d, today, on: (back >= 1 && back <= S.streak) || (today && S.today.min > 0) };
+    const k = iso(d);
+    return { lbl, date: d, today: k === activeDate, on: S['study-days'].includes(k) };
   });
 }
 function calendarHtml() {

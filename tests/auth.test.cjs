@@ -41,7 +41,7 @@ test('signup needs no email/password/Google/class-code and says progress stays h
 });
 
 test('signup validates name, birth date and terms before saving an adult offline', () => {
-  const a = app({});
+  const a = app({ user: null });
   const form = signup(a);
   assert.equal(form.blocked(), true);
   form.change('name', ' L ');
@@ -70,7 +70,7 @@ test('signup validates name, birth date and terms before saving an adult offline
 });
 
 test('signup requires guardian consent until the eighteenth birthday', () => {
-  const a = app({});
+  const a = app({ user: null });
   const form = signup(a);
   form.change('name', 'Lan');
   form.change('dob', '2008-11-13');
@@ -99,7 +99,7 @@ test('signin offers email sign-in without a user; renders escaped name with one'
 
 test('setVoiceConsent stores an ISO string, then null', () => {
   const a = app({});
-  a.run("S.user = { name: 'Lan' }; route = () => {}; show = () => {}");
+  a.run("S.user.name = 'Lan'; route = () => {}; show = () => {}");
   a.run('setVoiceConsent(true)');
   const granted = a.run('S.user.voiceConsentAt');
   assert.match(granted, /^\d{4}-\d\d-\d\dT[\d:.]+Z$/);
@@ -111,7 +111,7 @@ test('setVoiceConsent stores an ISO string, then null', () => {
 
 test('signOut: cancel changes nothing; confirm wipes lt: keys except lt:lang', async () => {
   const a = app({ user: USER, lang: 'en', progress: { x: 1 }, 'sync-queue': [], 'sb-auth': { t: 1 } });
-  a.run('globalThis.calls = []; location.replace = h => calls.push("r" + h); location.reload = () => calls.push("reload"); cloudSignOut = async () => { calls.push("cloud"); }; S.user = ' + JSON.stringify(USER));
+  a.run('globalThis.calls = []; location.replace = h => calls.push("r" + h); location.reload = () => calls.push("reload"); cloudSignOut = async () => { calls.push("cloud"); };');
   const before = keys(a);
   a.run('confirm = () => false');
   await a.run('signOut()');
@@ -131,13 +131,16 @@ test('resetDemo keeps the anonymous identity, profile receipt and pending queue'
   });
   a.run('globalThis.n = 0; location.reload = () => { n++; }');
   a.run('resetDemo()');
-  assert.deepEqual(keys(a), ['lt:cloud-owner', 'lt:lang', 'lt:profile-synced', 'lt:sb-auth', 'lt:sync-queue', 'lt:user']);
+  assert.ok(keys(a).includes('lt:learning:u1:sync-queue'));
+  assert.ok(keys(a).includes('lt:cloud-owner'));
+  assert.ok(keys(a).includes('lt:profile-synced'));
+  assert.equal(a.run("store.get('xp', 0)"), 0);
   assert.equal(a.run('n'), 1);
 });
 
 test('accountCard says saved on this device only when cloud is off', () => {
   const a = app({ user: USER });
-  a.run("S.user = " + JSON.stringify(USER));
+  a.run("Object.assign(S.user, " + JSON.stringify(USER) + ")");
   assert.match(a.run("S.lang='en'; accountCard()"), /Saved on this device only/);
   assert.match(a.run("S.lang='vi'; accountCard()"), /Chỉ lưu trên máy này/);
 });

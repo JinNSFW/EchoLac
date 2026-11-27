@@ -36,11 +36,11 @@ window.__supabaseForTest = {
 };`;
 function app(cfg, seed) {
   // index.html loads the cloud files too; load them here only after the test config, so CLOUD sees it.
-  const a = runtime(scripts().filter(f => !CLOUD_FILES.includes(f)), seed);
+  const a = runtime(scripts().filter(f => !CLOUD_FILES.includes(f)), { user: null, ...seed });
   if (cfg) a.run(`window.ECHOLAC_CONFIG = ${JSON.stringify(cfg)}`);
   a.run(FAKE);
-  a.run("location.search = ''; S.lang = 'en'; S.user = { name: 'Lan', consent: { terms: true } };");
   for (const f of CLOUD_FILES) a.run(read(f));
+  a.run("location.search = ''; S.lang = 'en'; if (!S.user) startLearningAccount({ name: 'Lan', consent: { terms: true } });");
   return a;
 }
 const ON = { supabaseUrl: 'https://x.supabase.co', supabaseKey: 'sb_publishable_x' };

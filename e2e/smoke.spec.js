@@ -43,6 +43,40 @@ test('learner: four tabs, roleplay menu slides up, no sideways scroll at 360 px'
   expect(errors).toEqual([]);
 });
 
+test('same browser: account B starts empty after signing out of account A', async ({ page }) => {
+  const errors = await open(page);
+  await page.goto(SITE);
+  const signup = async name => {
+    await page.fill('#name', name);
+    await page.fill('#dob', '01011995');
+    await page.check('#terms');
+    await page.click('#submit');
+    await expect(page).toHaveURL(/#place/);
+    await page.getByRole('button', { name: 'Bỏ qua' }).click();
+    await expect(page).toHaveURL(/#home/);
+  };
+  await signup('Tài khoản A');
+  await page.evaluate(() => {
+    S.xp = 30;
+    recordStudy(1);
+    savePronCardResult({ score: 51, errors: [{ cat: 'final_consonant' }] }, { id: 'U01-w01', text: 'cap' });
+  });
+  await page.reload();
+  await expect(page.locator('.streak-card')).toContainText('1 ngày · 30 XP');
+  await page.goto(SITE + '#tutor');
+  await expect(page.locator('#tq')).toContainText('cap');
+  await page.goto(SITE + '#profile');
+  page.once('dialog', dialog => dialog.accept());
+  await page.getByRole('button', { name: /Đăng xuất/ }).click();
+  await expect(page.locator('#name')).toBeVisible();
+  await signup('Tài khoản B');
+  await page.reload();
+  await expect(page.locator('.streak-card')).toContainText('0 ngày · 0 XP');
+  await page.goto(SITE + '#tutor');
+  await expect(page.locator('#tq .err-item')).toHaveCount(0);
+  expect(errors).toEqual([]);
+});
+
 test('tourist: English screens, three tabs, learning pages redirect to Discover', async ({ page }) => {
   const errors = await open(page, { ...LEARNER, 'connect-role': 'tourist' });
   await page.goto(SITE + '#home'); // the router renders Discover in place of #home; the hash stays

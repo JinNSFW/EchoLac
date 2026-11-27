@@ -11,6 +11,6 @@ const refreshProg = l => { const el = $('#lprog'); if (el) el.innerHTML = progHt
 function checkComplete(l) {
   const p = progW(l.id);
   if (p.done || !parts(l).every(Boolean)) return;
-  p.done = 1; S.xp += 30; save(); confetti();
+  p.done = 1; S.xp += 30; recordStudy(1); save(); confetti();
   toast(V(`Hoàn thành bài học ${l.name.vi} · +30 XP`, `${l.name.en} lesson complete · +30 XP`));
 }

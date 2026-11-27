@@ -2,7 +2,7 @@ const vm = require('node:vm');
 const { root, read, scripts } = require('../../scripts/project.cjs');
 
 // A small DOM stand-in for template and state tests; browser layout is not simulated.
-function runtime(files = scripts(), seed = {}) {
+function runtime(files = scripts(), seed = {}, sharedStorage) {
   const elements = new Map();
   const element = () => ({
     innerHTML: '', textContent: '', value: '', dataset: {}, style: {}, hidden: false,
@@ -15,7 +15,8 @@ function runtime(files = scripts(), seed = {}) {
     setAttribute() {},
     append() {}, remove() {}, focus() {},
   });
-  const storage = new Map(Object.entries(seed).map(([k, v]) => ['lt:' + k, JSON.stringify(v)]));
+  const learner = { name: 'Nguyễn Thị Lan', consent: { terms: true } };
+  const storage = sharedStorage || new Map(Object.entries({ user: learner, ...seed }).map(([k, v]) => ['lt:' + k, JSON.stringify(v)]));
   const document = {
     querySelector(selector) {
       if (!elements.has(selector)) elements.set(selector, element());
@@ -30,7 +31,7 @@ function runtime(files = scripts(), seed = {}) {
       if (!ok) throw new Error(args.join(' '));
     } },
     location: { search: '', hash: '', reload() {} },
-    localStorage: { getItem: k => storage.get(k) ?? null, setItem: (k, v) => storage.set(k, v) },
+    localStorage: { getItem: k => storage.get(k) ?? null, setItem: (k, v) => storage.set(k, v), removeItem: k => storage.delete(k) },
     navigator: { onLine: true }, URLSearchParams, URL,
     Date: class extends Date {
       constructor(...args) { super(...(args.length ? args : ['2026-11-12T05:00:00Z'])); }
@@ -42,20 +43,18 @@ function runtime(files = scripts(), seed = {}) {
   sandbox.window = sandbox;
   const context = vm.createContext(sandbox);
   for (const file of files) new vm.Script(read(file), { filename: file }).runInContext(context);
-  // A signed-in learner in memory by default (replaces the removed ?demo mode); seed user: null to start signed out.
-  if (!('user' in seed)) vm.runInContext("if (typeof S === 'object' && !S.user) S.user = { name: 'Nguyễn Thị Lan' };", context);
   return { run: source => vm.runInContext(source, context), document, storage };
 }
 
 function templates(app) {
   return app.run(`(() => {
     const output = {};
-    S.user = { name: 'Nguyễn Thị Lan', email: 'lan@gmail.com' };
+    Object.assign(S.user, { email: 'lan@example.com' });
     G.gps = gpsMatch({ lat: loc('dragon-bridge').lat, lng: loc('dragon-bridge').lng, acc: 20 });
     for (const lang of ['vi', 'en']) {
       S.lang = lang;
       for (const [name, view] of Object.entries(VIEWS)) {
-        const arg = name === 'learn' ? 'dragon-bridge' : name === 'practice' ? 'w-nice' : 'hoian';
+        const arg = name === 'learn' ? 'dragon-bridge' : name === 'practice' ? 'danang' : 'hoian';
         output[lang + '/' + name] = view.render(arg);
       }
       S.rpMode = 'library'; output[lang + '/library'] = VIEWS.roleplay.render(); S.rpMode = 'journey';

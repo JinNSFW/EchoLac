@@ -59,7 +59,14 @@ VIEWS.signup = {
         e.preventDefault(); if (!check()) return;
         const minor = signupAge($('#dob').value) < 18;
         // dob stays on this device; the cloud profile gets the birth year only
-        S.user = { ...(S.user || {}), name: val('name'), dob: dobIso($('#dob').value), gender: F.gender, consent: { terms: true, guardian: minor && $('#guardian').checked } };
+        const user = { ...S.user, name: val('name'), dob: dobIso($('#dob').value), gender: F.gender, consent: { terms: true, guardian: minor && $('#guardian').checked } };
+        if (S.user) {
+          if (!learningSessionCurrent()) return;
+          S.user = user;
+        } else {
+          if (store.get('user', null)) return;
+          startLearningAccount(user);
+        }
         save(); location.hash = '#place'; syncAccount();
       });
     },

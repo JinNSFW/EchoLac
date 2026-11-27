@@ -11,7 +11,7 @@ VIEWS.tutor = {
         <div class="grow"><h1>${V('Gia sư phát âm', 'Pronunciation Tutor')}</h1><p class="small muted">${V('Lỗi tự động lưu từ các cuộc trò chuyện', 'Errors saved automatically from your conversations')}</p></div>
         <div class="stats-mini"><span style="color:var(--lantern-b)">${img('fire')} ${streakNow()}</span></div>
       </div>
-      ${tutorSay(first ? V(`Bạn có <b>${open.length}</b> mục cần luyện. Bắt đầu với “<b>${esc(first.word)}</b>” nhé — chỉ mất 1 phút thôi!`, `You have <b>${open.length}</b> items to practise. Let’s start with “<b>${esc(first.word)}</b>” — it takes one minute!`) : V('Không còn lỗi nào! Đi trò chuyện để tìm thử thách mới nhé.', 'Nothing to fix! Go have a conversation to find new challenges.'), 60)}
+      ${tutorSay(first ? V(`Bạn có <b>${open.length}</b> mục cần luyện. Bắt đầu với “<b>${esc(first.word)}</b>” nhé — chỉ mất 1 phút thôi!`, `You have <b>${open.length}</b> items to practise. Let’s start with “<b>${esc(first.word)}</b>” — it takes one minute!`) : V('Chưa có từ cần luyện lại. Hãy thử bài chấm phát âm bên dưới.', 'No words to review yet. Try the pronunciation check below.'), 60)}
       <div class="stat3 mt-24">
         <div class="card reveal"><b style="color:var(--lantern-b)">${open.length}</b><span>${V('Cần luyện', 'To practise')}</span></div>
         <div class="card reveal" style="--d:60ms"><b>${mastered.filter(e => e.days.at(-1) <= day(3)).length}</b><span>${V('Ôn hôm nay', 'Review today')}</span></div>

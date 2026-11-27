@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('online', refreshAccount);
 
 function setVoiceConsent(on) {
-  if (!S.user) return;
+  if (!S.user || !learningSessionCurrent()) return;
   const value = on ? new Date().toISOString() : null;
   if (typeof recordVoiceConsent === 'function') recordVoiceConsent(value);
   else S.user.voiceConsentAt = value;
@@ -46,13 +46,20 @@ function setVoiceConsent(on) {
 }
 
 function forgetAccount() {
+  learningId = learningOwner = null;
   S.user = null;
+  $('#app').innerHTML = '';
   location.replace('#signup');
   location.reload();
 }
 
 window.addEventListener('storage', event => {
   if (!S.user) return;
+  if ((event.key === null || event.key === 'lt:user') && store.get('user', null)?.learningId !== S.user.learningId) {
+    stopCloudWork();
+    forgetAccount();
+    return;
+  }
   if (event.key === 'lt:voice-consent' && typeof currentVoiceConsent === 'function') {
     S.user.voiceConsentAt = currentVoiceConsent();
     paintAccountStatus();
@@ -65,14 +72,27 @@ window.addEventListener('storage', event => {
 
 // An anonymous account cannot be recovered once its browser session is gone.
 async function signOut() {
+  if (S.user && !learningSessionCurrent()) {
+    stopCloudWork();
+    forgetAccount();
+    return;
+  }
   if (!S.user || !confirm(S.user.email
-    ? V('Đăng xuất sẽ xoá dữ liệu trên máy này. Đăng nhập lại bằng email đã gắn để tải lại dữ liệu đã đồng bộ. Tiếp tục?', 'Signing out clears this device. Sign in again with your linked email to restore what was synced. Continue?')
+    ? V('Đăng nhập lại bằng email này để mở tiến độ của bạn. Tiến độ trên trình duyệt này được giữ riêng cho tài khoản. Tiếp tục?', 'Sign in again with this email to reopen your progress. This browser keeps your progress for this account. Continue?')
     : V('Đăng xuất sẽ xoá tiến độ trên máy này và mất liên kết với tài khoản ẩn danh. Không thể khôi phục. Tiếp tục?',
       'Signing out deletes your progress on this device and the link to your anonymous account. This cannot be undone. Continue?'))) return;
+  if (!S.user.email) clearLearningProgress(true);
+  else if (learningSessionCurrent()) store.set('sync-queue', queued().filter(item => item.table !== 'profiles'));
   const closing = typeof cloudSignOut === 'function' ? cloudSignOut() : null;
+  learningId = learningOwner = null;
   S.user = null;
   $('#app').inert = true;
-  try { Object.keys(localStorage).filter(k => k.startsWith('lt:') && k !== 'lt:lang').forEach(k => localStorage.removeItem(k)); } catch { /* storage blocked: nothing was persisted */ }
+  $('#app').innerHTML = '';
+  $('#sheet-root').innerHTML = '';
+  try {
+    Object.keys(localStorage).filter(k => k.startsWith('lt:') && k !== 'lt:lang'
+      && !k.startsWith('lt:learning:')).forEach(k => localStorage.removeItem(k));
+  } catch { /* storage blocked */ }
   if (closing) {
     let timeout;
     await Promise.race([closing, new Promise(resolve => { timeout = setTimeout(resolve, 3000); })]).catch(() => {});
@@ -81,5 +101,7 @@ async function signOut() {
   forgetAccount();
 }
 
-// Keep account linkage and unsent changes when clearing local demo progress.
-function resetDemo() { try { Object.keys(localStorage).filter(k => k.startsWith('lt:') && !/^lt:(?:user|lang|sync-queue|cloud-owner|profile-synced|profile-dirty|voice-consent|sb-.*)$/.test(k)).forEach(k => localStorage.removeItem(k)); } catch { /* ignore */ } location.reload(); }
+function resetDemo() {
+  clearLearningProgress();
+  location.reload();
+}

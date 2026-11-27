@@ -62,7 +62,7 @@ test('the listener sees choices without the map and the drill depends on observe
 });
 
 test('recorder events produce only a temporary clip and late permission is cleaned up', async () => {
-  const app = runtime();
+  const app = runtime(undefined, { user: null });
   await app.run(`(async () => {
     globalThis.audioEvents = [];
     globalThis.released = 0;
@@ -96,5 +96,5 @@ test('recorder events produce only a temporary clip and late permission is clean
   })()`);
   assert.equal(app.run('audioEvents.join(",")'), 'requesting,recording,finishing,blob:temporary,revoked:blob:temporary,idle,requesting,idle');
   assert.equal(app.run('released'), 2);
-  assert.equal(app.storage.size, 0);
+  assert.deepEqual([...app.storage.keys()], ['lt:user']);
 });

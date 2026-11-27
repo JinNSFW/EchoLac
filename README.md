@@ -74,13 +74,15 @@ Việc chủ dự án làm (không ghi giá trị bí mật vào repo, chat hay 
 
 Tài khoản là **ẩn danh** (PRD X-01): không email, không mật khẩu; đổi máy hoặc xoá dữ liệu
 trình duyệt thì mất liên kết. Cài bảng và RLS xem [docs/supabase-setup.md](docs/supabase-setup.md).
-Mã đồng bộ ở `lib/cloud/`: hàng đợi `lt:sync-queue`, ghi máy trước rồi đẩy lên khi có phiên.
+Mã đồng bộ ở `lib/cloud/`: hàng đợi cùng không gian lưu trữ `lt:learning:<owner>:`
+với tiến độ, ghi trên máy trước rồi đẩy lên khi có phiên.
 Chưa đồng ý điều khoản thì không tạo phiên hay gửi dữ liệu lên Supabase. Hồ sơ, nơi đã chọn,
 giọng đọc và đồng ý gửi giọng nói được đồng bộ; chỉ báo thành công sau xác nhận của cloud.
-Ngày sinh đầy đủ và giới tính ở trên máy; cloud chỉ nhận năm sinh. Các hàm đồng bộ
-mục lỗi đã có, nhưng điểm và tiến độ luyện nói hiện vẫn là dữ liệu demo, chưa phải
-vòng học phát âm Đợt 1. Đăng xuất yêu cầu xác nhận, xoá dữ liệu `lt:` trừ ngôn ngữ;
-không xoá hồ sơ trên server hay bảo đảm huỷ ngay một request server đã nhận.
+Ngày sinh đầy đủ và giới tính ở trên máy. Cloud nhận năm sinh.
+Tài khoản mới bắt đầu với 0 XP, streak 0 ngày và danh sách lỗi trống.
+Tiến độ cục bộ thuộc tài khoản đang dùng. Đăng xuất tài khoản đã gắn email giữ tiến độ
+riêng trên trình duyệt để có thể mở lại sau khi xác thực. Đăng xuất tài khoản ẩn danh
+xoá tiến độ cục bộ và liên kết với tài khoản đó.
 
 **Kết nối (PRD §5.9)** chỉ dùng dữ liệu server (`data/connect-state.js`, cần migration 0003–0008 và
 Edge Function `connect-respond`): vai trò, xác minh, trình độ và nhóm tuổi đọc từ `profiles`;
@@ -96,7 +98,8 @@ không có dữ liệu mẫu.
 Tài khoản bắt đầu ẩn danh. **Hồ sơ → Gắn email** gửi mã (`updateUser({ email })`, xác nhận bằng
 `verifyOtp` loại `email_change`), nên tài khoản và tiến độ giữ nguyên. Trên máy khác, **Đăng nhập → Đăng
 nhập bằng email** (`signInWithOtp` với `shouldCreateUser: false`, rồi `verifyOtp` loại `email`) và kéo hồ sơ
-từ đám mây. Mã: `lib/cloud/email.js`, giao diện: `components/email-otp.js`, test: `tests/email-otp.test.cjs`.
+từ đám mây cùng các lỗi phát âm đã đồng bộ. XP, streak và tiến độ bài học hiện lưu riêng
+trên từng trình duyệt. Mã: `lib/cloud/email.js`, giao diện: `components/email-otp.js`, test: `tests/email-otp.test.cjs`.
 Cấu hình trên dashboard: SMTP qua Resend; mẫu Magic link, Confirm sign up, Change email address gửi
 `{{ .Token }}`; mã 8 số, hết hạn 1 giờ. **Giới hạn:** người gửi `onboarding@resend.dev` chỉ gửi được tới
 chủ tài khoản Resend cho tới khi xác minh một tên miền riêng trong Resend.
@@ -225,8 +228,9 @@ Giữ thứ tự import CSS để tránh thay đổi cascade. Mỗi tệp ứng 
 
 Migration 0008 đã được áp dụng lên Supabase production theo [bàn giao ngày 27/11](docs/handoff-codex.md). Bàn giao ghi nhận các lần kiểm tra từ chối truy cập khi thiếu quyền hoặc phiên MFA. Kiểm thử Node xác nhận trang quản trị bị loại khỏi bản build công khai. Trạng thái đăng nhập và TOTP trên trình duyệt được theo dõi trong bước smoke test của bàn giao. Trang quản trị chưa hỗ trợ CAPTCHA. Để huỷ các yêu cầu đang mở của một buổi nhóm, admin có thể đóng buổi đó. Trang chưa có thao tác huỷ riêng từng yêu cầu.
 
-Hội thoại và điểm Tutor/Radar cũ vẫn là demo. Bài chỉ đường ghi giọng thật trên thiết bị và
-dùng phản hồi của người nghe. Chưa có nhận diện âm vị tự động hoặc kết quả pilot.
+Nhập vai theo kịch bản cấp XP hoàn thành bài. Tutor ghi nhận điểm từ bài chấm phát âm
+trên thiết bị khi kết quả đủ tin cậy. Radar chỉ hiển thị điểm đã có. Bài chỉ đường ghi
+giọng thật trên thiết bị và dùng phản hồi của người nghe. Chưa có kết quả pilot.
 Đăng nhập là tài khoản ẩn danh Supabase thật khi có cấu hình. Phát giọng nói dùng trình duyệt;
 nhận diện ảnh dùng model v4 thật (TensorFlow.js), tải thư viện từ CDN khi cần.
 Thông tin địa danh vẫn cần giáo viên xác minh. Không xem số liệu mẫu là kết quả

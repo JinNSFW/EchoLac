@@ -44,7 +44,7 @@ test('a wrong or expired code maps to a plain message and changes nothing', asyn
 
 test('sign-in on another device never creates an account', async () => {
   const a = otpApp();
-  a.run('S.user = null');
+  a.run("S.user = null; rawStore.remove('user')");
   await a.run("sendEmailCode('signin', 'a@b.co')");
   const [name, args] = J(a, 'window.__otp[0]');
   assert.equal(name, 'signInWithOtp');
@@ -53,6 +53,26 @@ test('sign-in on another device never creates an account', async () => {
   await a.run("verifyEmailCode('signin', 'a@b.co', '12345678')");
   assert.deepEqual(J(a, 'window.__otp[1]'), ['verifyOtp', 'email', 'a@b.co']);
   assert.equal(a.run('cloudOwner()'), 'u1');
+});
+
+test('linking preserves earned progress, and verified re-entry opens only that account’s data', async () => {
+  const a = otpApp();
+  a.run(`S.xp = 30; recordStudy(1); save();
+    savePronCardResult({ score: 52, errors: [{ cat: 'final_consonant' }] }, { id: 'U01-w01', text: 'cap' });
+    store.set('practice:da-nang', { version: 'test', active: 'A1-01' });`);
+  await a.run("sendEmailCode('link', 'a@b.co')");
+  await a.run("verifyEmailCode('link', 'a@b.co', '12345678')");
+  assert.deepEqual(J(a, "[S.xp, streakNow(), S.errors.map(e => e.word), store.get('practice:da-nang').active]"), [30, 1, ['cap'], 'A1-01']);
+
+  a.run(`S.user = null; rawStore.remove('user'); rawStore.remove('cloud-owner');
+    startLearningAccount({ name: 'New learner', consent: { terms: true } });
+    S.xp = 5; save();`);
+  assert.deepEqual(J(a, "[S.xp, streakNow(), S.errors, store.get('practice:da-nang', null)]"), [5, 0, [], null]);
+
+  a.run("S.user = null; rawStore.remove('user')");
+  await a.run("verifyEmailCode('signin', 'a@b.co', '12345678')");
+  await a.run('finishEmailSignIn()');
+  assert.deepEqual(J(a, "[S.xp, streakNow(), S.errors.map(e => e.word), store.get('practice:da-nang').active]"), [30, 1, ['cap'], 'A1-01']);
 });
 
 test('resend waits for the cooldown', () => {

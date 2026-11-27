@@ -30,12 +30,12 @@ function closePlayMenu() {
 }
 function playMenuKey(e) { if (e.key === 'Escape') closePlayMenu(); }
 
-// Today's mission lives in the notifications panel, built from the weakest skill.
+// Today's mission uses the learner's review queue and journey.
 function todayMission() {
-  const w = weakest(), s = nextScen(), open = S.errors.filter(e => e.status === 'open').length;
-  return w.k === 'pron'
-    ? { href: '#tutor', text: V(`Âm cuối đang là điểm yếu nhất. Luyện ${open} từ trong Gia sư để giữ chuỗi ngày học nhé!`, `Final sounds are your weakest point. Practise ${open} words in Tutor to keep your streak!`) }
-    : { href: '#scenario/' + s.id, text: V(`${L(w.name)} là điểm yếu nhất. Hãy trò chuyện ở "${L(s.name)}" hôm nay.`, `${L(w.name)} is your weakest area. Try "${L(s.name)}" today.`) };
+  const s = nextScen(), open = S.errors.filter(e => e.status === 'open').length;
+  return open
+    ? { href: '#tutor', text: V(`Luyện lại ${open} mục trong Gia sư.`, `Review ${open} items in Tutor.`) }
+    : { href: '#scenario/' + s.id, text: V(`Thử tình huống “${L(s.name)}” hôm nay.`, `Try “${L(s.name)}” today.`) };
 }
 function openNotices() {
   const m = todayMission();

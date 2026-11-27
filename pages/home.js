@@ -32,7 +32,7 @@ VIEWS.home = {
         ${CRIT.map((c, i) => `
           <a class="skill-card reveal" style="--d:${i * 70}ms" href="#radar">
             ${img(c.icon, 'peek')}
-            <div class="ring">${ringSvg(S.scores[c.k])}<b>${S.scores[c.k]}%</b></div>
+            <div class="ring">${ringSvg(S.scores[c.k] ?? 0)}<b>${skillScoreText(c.k)}</b></div>
             <h3>${L(c.name)}</h3><p>${L(c.d)}</p>
           </a>`).join('')}
       </div>

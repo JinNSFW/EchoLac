@@ -38,7 +38,7 @@ test('existing contrast, camera matching and language diagnostics pass', () => {
 
 test('onboarding previews do not persist until the journey starts', () => {
   const app = runtime();
-  app.run("S.user = { name: 'Lan' }; previewPlace('hoian');");
+  app.run("S.user.name = 'Lan'; previewPlace('hoian');");
   assert.equal(app.run('S.place'), 'other');
   assert.ok(!app.storage.has('lt:place'));
   app.run('startJourney()');
@@ -53,8 +53,24 @@ test('saved state retains the existing browser storage keys', () => {
   assert.equal(app.run('S.lang'), 'en');
   assert.equal(app.run('S.place'), 'hue');
   app.run('S.xp += 25; save()');
-  assert.equal(app.storage.get('lt:xp'), '150');
+  assert.equal(app.run("store.get('xp')"), 150);
   assert.ok(![...app.storage.keys()].some(k => /gps|photo/.test(k)));
+});
+
+test('legacy progress keeps earned XP and actual errors while dropping demo defaults', () => {
+  const app = runtime(undefined, {
+    xp: 1270, sessions: 12, minutes: 96, done: ['dragon'],
+    scores: { fluency: 62, vocab: 71, grammar: 58, pron: 49 },
+    errors: [
+      { id: 'w-nice', attempts: [41, 52] },
+      { id: 'pron-U01-w01', word: 'cap', attempts: [50] },
+    ],
+  });
+  assert.equal(app.run('S.xp'), 30);
+  assert.equal(app.run('streakNow()'), 0);
+  assert.equal(app.run('S.done.length'), 0);
+  assert.equal(app.run('S.errors.map(e => e.word).join()'), 'cap');
+  assert.equal(app.run('avgScore()'), null);
 });
 
 test('practice recommendations preserve the learning loop', () => {
@@ -109,9 +125,7 @@ test('Da Nang progress restores drafts and submitted responses without grading t
   const app = runtime();
   app.run(prepare + `const run = danangRun(node); run.draft = ['0'];
     saveDanangProgress({version: bank.version, active: node.id, runs: {[node.id]: run}});`);
-  const reopen = previous => runtime(undefined, {
-    'practice:da-nang': JSON.parse(previous.storage.get('lt:practice:da-nang'))
-  });
+  const reopen = previous => runtime(undefined, {}, previous.storage);
   const draft = reopen(app);
   draft.run(prepare + `const progress = restoreDanangProgress(bank), run = progress.runs[progress.active];`);
   assert.equal(draft.run('run.draft[0]'), '0');

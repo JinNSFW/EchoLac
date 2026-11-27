@@ -43,9 +43,12 @@ async function fetchConnect() {
 // force: start a fresh read even when one is running (after a write).
 function loadConnect(force = false) {
   if (connectLoading && !force) return connectLoading;
+  const account = S.user;
   const run = (connectLoading || Promise.resolve()).catch(() => {}).then(async () => {
     const role = connectRole();
-    try { S.connect = await fetchConnect(); } catch { S.connect = connectBlank(navigator.onLine === false ? 'offline' : 'error'); }
+    const next = await fetchConnect().catch(() => connectBlank(navigator.onLine === false ? 'offline' : 'error'));
+    if (S.user !== account || (account?.learningId && !learningSessionCurrent())) return S.connect;
+    S.connect = next;
     if (S.connect.me) { connectHint = connectRole(); store.set('connect-role', connectHint); }
     if (S.user && (connectRole() !== role || CONNECT_VIEWS.includes(currentView()))) rerender();
     return S.connect;
@@ -100,4 +103,4 @@ const blockPerson = id => connectAct(c => c.from('blocks').insert({ blocked_id: 
 const reportPerson = (id, requestId, reason) => connectAct(c => c.from('reports')
   .insert({ reported_id: id || null, request_id: requestId || null, reason: String(reason).slice(0, 500) }).then(cxRows));
 
-setTimeout(() => loadConnect(), 0); // after every deferred script has loaded
+document.addEventListener('DOMContentLoaded', () => loadConnect());
