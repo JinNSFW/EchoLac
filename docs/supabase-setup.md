@@ -22,7 +22,9 @@
 
 Lượt 26/11/2026: 0003, 0004 và `rls_check.sql` mở rộng chỉ được chạy trên PostgreSQL nhúng (PGlite 0.3.14) với auth giả lập, **chưa chạy trên project Supabase thật**.
 ### Admin toàn cục (0008, PRD R-14 đến R-18)
-Chạy `supabase/migrations/0008_admin.sql` sau 0001–0007 (không có câu lệnh DROP, chạy lại được; mệnh đề duy nhất có chữ DROP là `alter column school_id drop not null`, chỉ bỏ ràng buộc NOT NULL). Sau đó chạy lại `rls_check.sql`. Tạo và nâng quyền admin, bật MFA, chạy trang `admin/`: xem README (mục Trang quản trị cục bộ). Lượt 27/11/2026: 0008 và `rls_check.sql` mới chỉ chạy trên PGlite với `auth.jwt()`, `auth.users`, `auth.sessions` giả lập, **chưa chạy trên project thật**.
+Khi dựng môi trường mới, chạy `supabase/migrations/0008_admin.sql` sau 0001–0007. Migration có thể chạy lại và dùng `alter column school_id drop not null` để gỡ ràng buộc NOT NULL. Chạy `rls_check.sql` trên cơ sở dữ liệu thử nghiệm. Hướng dẫn tạo admin, cấp quyền và bật MFA nằm trong [README](../README.md#trang-quản-trị-cục-bộ-admin-không-bao-giờ-deploy).
+
+Theo [bàn giao ngày 27/11/2026](handoff-codex.md), production đã áp dụng 0008 và đã kiểm tra từ chối truy cập Admin khi thiếu quyền hoặc phiên MFA. Kết quả của bộ `rls_check.sql` đầy đủ được ghi nhận trên PGlite với `auth.jwt()`, `auth.users` và `auth.sessions` giả lập.
 
 **Danh tính admin** = `auth.jwt()->'app_metadata'->>'role' = 'admin'` **và** `aal = 'aal2'`, kiểm tra trong `private.is_admin()` (SECURITY DEFINER, `search_path = ''`). Hàm còn đọc lại `auth.users.raw_app_meta_data` và `auth.sessions` (đúng `session_id`, `aal2`, chưa hết hạn), nên hạ quyền, đăng xuất hay gỡ MFA có hiệu lực ngay, không chờ JWT hết hạn. Không bao giờ dùng `user_metadata` (người dùng tự sửa được); `rls_check.sql` thất bại nếu policy hay hàm nào nhắc tới nó.
 
