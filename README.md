@@ -222,7 +222,7 @@ Giữ thứ tự import CSS để tránh thay đổi cascade. Mỗi tệp ứng 
 
 ## Giới hạn hiện tại
 
-Trang quản trị (`admin/`) và migration 0008 mới chạy với PostgreSQL nhúng (PGlite) có `auth.jwt()`/`auth.sessions` giả lập và test Node; chưa áp dụng trên project Supabase thật, chưa thử đăng nhập/MFA thật trên trình duyệt. Chưa hỗ trợ CAPTCHA khi đăng nhập admin. Admin chưa huỷ được một yêu cầu kết nối riêng lẻ (đóng buổi sẽ huỷ mọi yêu cầu đang mở của buổi đó).
+Migration 0008 đã được áp dụng lên Supabase production theo [bàn giao ngày 27/11](docs/handoff-codex.md). Bàn giao ghi nhận các lần kiểm tra từ chối truy cập khi thiếu quyền hoặc phiên MFA. Kiểm thử Node xác nhận trang quản trị bị loại khỏi bản build công khai. Trạng thái đăng nhập và TOTP trên trình duyệt được theo dõi trong bước smoke test của bàn giao. Trang quản trị chưa hỗ trợ CAPTCHA. Để huỷ các yêu cầu đang mở của một buổi nhóm, admin có thể đóng buổi đó. Trang chưa có thao tác huỷ riêng từng yêu cầu.
 
 Hội thoại và điểm Tutor/Radar cũ vẫn là demo. Bài chỉ đường ghi giọng thật trên thiết bị và
 dùng phản hồi của người nghe. Chưa có nhận diện âm vị tự động hoặc kết quả pilot.

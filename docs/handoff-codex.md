@@ -154,7 +154,7 @@ Chưa commit (đều nằm trong working tree):
 - Email OTP: XONG (27/11, Claude). `lib/cloud/email.js`, `components/email-otp.js`, nối vào Hồ sơ và #signin; `tests/email-otp.test.cjs` (5 test); README có mục "Email và mã một lần". Toàn bộ 152/152. Chưa thử gửi email thật. → Bỏ qua bước 3 bên dưới.
 
 CẬP NHẬT 27/11 (Claude): 0008 ĐÃ ÁP lên production (connector nhận cả dòng drop not null). Đã thử thật: vai học viên và vai giả claim admin+aal2 (không có phiên MFA) đều bị từ chối ở admin_audit_log, group_sessions, admin_set_learner, admin_create_session, insert audit, tự xác minh; publishable key không đăng nhập: 401/42501 ở mọi bảng và RPC admin. Advisors chỉ còn 3 ngoại lệ đã duyệt. Review độc lập bằng model khác vẫn NÊN làm (bước 1, chỉ đọc). Lưu ý: sau 0008 người không phải admin không đọc được group_sessions; khi mở Kết nối cần thêm RPC kiểu safe_sessions cho du khách xem buổi nhóm.
-→ Bước 2 và 3 bên dưới đã xong.
+→ Bước 2 và 3 bên dưới đã xong. Bước 4 cũng xong: commit f7b76a6 (5c + admin + email) đã push main và deploy; web thật echolac-v14, /admin/index.html trả 404, quét secret 0 kết quả. Còn lại: bước 1 (review độc lập), 5 (Playwright), 6 (hướng dẫn admin).
 
 Việc còn lại, theo thứ tự:
 1. Review 0008 + admin/ (GPT-6.2 Astra xhigh, chỉ đọc; khác model đã viết). Tiêu chí: admin = app_metadata.role='admin' VÀ aal2; is_admin() SECURITY DEFINER search_path ''; mọi bảng/RPC admin từ chối anon, học viên, du khách, admin chưa aal2 kể cả gọi REST trực tiếp; admin_audit_log chỉ ghi thêm; không service_role trong trình duyệt; admin không lọt vào dist/. Sửa lỗi Critical/High.
