@@ -330,7 +330,7 @@ select public.admin_set_learner('00000000-0000-0000-0000-0000000000d1', 'verifie
 select public.admin_set_learner('00000000-0000-0000-0000-0000000000d2', 'verified', 'B1', 'adult');
 select pg_temp.deny($q$select public.admin_set_learner('00000000-0000-0000-0000-0000000000d3', 'approved', 'B1', 'adult')$q$, 'unknown verification value', '22023');
 select pg_temp.deny($q$select public.admin_set_learner('00000000-0000-0000-0000-0000000000d3', 'verified', 'B1', null)$q$, 'verified without an age group', '22023');
-select pg_temp.deny($q$select public.admin_set_learner('00000000-0000-0000-0000-0000000000d3', 'verified', 'Z9', 'adult')$q$, 'invalid level', '23514');
+select pg_temp.deny($q$select public.admin_set_learner('00000000-0000-0000-0000-0000000000d3', 'verified', 'Z9', 'adult')$q$, 'invalid level', '22023'); -- 0009 validates before the column check
 select pg_temp.deny($q$select public.admin_set_learner('00000000-0000-0000-0000-0000000000e2', 'verified', 'B1', 'adult')$q$, 'admin verifies a non-learner', 'P0002');
 select pg_temp.expect($q$select 1 from public.profiles where verification_status = 'verified' and display_name in ('T', 'M', 'S')$q$, 3, 'admin verification saved');
 -- Sessions: approved places only, future times, capacity 1 to 50; the admin is the supervisor; no school.
@@ -338,7 +338,7 @@ select set_config('test.s1', public.admin_create_session('dragon-bridge', now() 
 select set_config('test.s2', public.admin_create_session('dragon-bridge', now() + interval '2 days', now() + interval '2 days 2 hours', 1)::text, true);
 select pg_temp.deny($q$select public.admin_create_session('han-market', now() + interval '1 day', now() + interval '1 day 2 hours', 5)$q$, 'admin session at an unapproved place', '23514', 'location-not-approved');
 select pg_temp.deny($q$select public.admin_create_session('dragon-bridge', now() - interval '3 hours', now() - interval '1 hour', 5)$q$, 'admin session in the past', '22023');
-select pg_temp.deny($q$select public.admin_create_session('dragon-bridge', now() + interval '1 day', now() + interval '1 day 2 hours', 99)$q$, 'admin session over capacity', '23514');
+select pg_temp.deny($q$select public.admin_create_session('dragon-bridge', now() + interval '1 day', now() + interval '1 day 2 hours', 99)$q$, 'admin session over capacity', '22023'); -- 0009 validates capacity
 select pg_temp.expect($q$select 1 from public.group_sessions where created_by = auth.uid() and school_id is null$q$, 2, 'admin supervises the sessions');
 select pg_temp.deny($q$insert into public.group_sessions (location_id, starts_at, ends_at) values ('dragon-bridge', now(), now() + interval '2 hours')$q$, 'admin writes sessions directly');
 

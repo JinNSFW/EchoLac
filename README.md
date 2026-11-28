@@ -121,9 +121,13 @@ Chủ dự án tạo admin (không có luồng đăng ký admin ở đâu cả):
 3. SQL Editor (vai `postgres`), thay email:
    `update auth.users set raw_app_meta_data = raw_app_meta_data || '{"role":"admin"}' where email = 'admin@example.com';`
    Thu hồi: `update auth.users set raw_app_meta_data = raw_app_meta_data - 'role' where email = '...';` (có hiệu lực ngay).
-4. `npm run admin`, đăng nhập. Lần đầu trang hiện mã QR TOTP: quét bằng ứng dụng xác thực, nhập mã 6 số.
-   Những lần sau chỉ hỏi mã. Trang không đọc dữ liệu nào trước khi phiên đạt aal2; database cũng từ chối như vậy.
-5. Các tab: **Học viên** (xác minh, trình độ, nhóm tuổi), **Buổi nhóm** (tạo tại địa điểm đã duyệt, đóng buổi),
+4. **Ngay sau bước 3** (để không ai khác kịp đăng ký mã trước): `npm run admin`, đăng nhập. Lần đầu trang hiện
+   mã QR TOTP: quét bằng ứng dụng xác thực, nhập mã 6 số. Những lần sau chỉ hỏi mã. Trang không đọc dữ liệu nào
+   trước khi phiên đạt aal2; database cũng từ chối như vậy. Phiên admin chỉ có hiệu lực 12 giờ kể từ lúc đăng nhập (0009).
+5. Đăng ký xong: Authentication → **Multi-Factor** → TOTP chọn **Verify enabled** (chỉ xác minh, không cho đăng ký
+   mã mới). Nếu không, ai có mật khẩu admin có thể gọi API đăng ký thêm một mã TOTP thứ hai và tự lên aal2.
+   Đổi máy xác thực: tạm bật lại **Enabled**, đăng ký, rồi chuyển về **Verify enabled**.
+6. Các tab: **Học viên** (xác minh, trình độ, nhóm tuổi), **Buổi nhóm** (tạo tại địa điểm đã duyệt, đóng buổi),
    **Yêu cầu & báo cáo** (xem yêu cầu và danh sách chặn; đánh dấu báo cáo đã xem/đóng), **Nhật ký** (chỉ đọc `admin_audit_log`).
    Phiên chỉ nằm trong tab (`sessionStorage`); đóng tab là đăng xuất trên máy này.
 
