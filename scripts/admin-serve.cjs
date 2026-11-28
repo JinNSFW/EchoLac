@@ -12,16 +12,21 @@ const FILES = { 'index.html': 'text/html; charset=utf-8', 'admin.js': 'text/java
   'views.js': 'text/javascript; charset=utf-8', 'admin.css': 'text/css; charset=utf-8' };
 const SUPABASE_JS = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js';
 
+// Cloudflare forbids pinning Turnstile's api.js, so it is allowed by origin only, and only when a site key is set
+// (Supabase Auth captcha then also applies to admin sign-in).
+const TURNSTILE = 'https://challenges.cloudflare.com';
+
 // No inline script, style or handler anywhere; the TOTP QR code is an SVG data URL.
-const adminCsp = supabaseUrl => [
-  "default-src 'none'", `script-src 'self' ${SUPABASE_JS}`, "style-src 'self'", "img-src 'self' data:",
-  `connect-src ${supabaseUrl}`, "base-uri 'none'", "form-action 'none'", "frame-ancestors 'none'", "object-src 'none'",
+const adminCsp = (supabaseUrl, turnstile) => [
+  "default-src 'none'", `script-src 'self' ${SUPABASE_JS}${turnstile ? ' ' + TURNSTILE : ''}`, "style-src 'self'", "img-src 'self' data:",
+  `connect-src ${supabaseUrl}`, ...(turnstile ? [`frame-src ${TURNSTILE}`] : []),
+  "base-uri 'none'", "form-action 'none'", "frame-ancestors 'none'", "object-src 'none'",
 ].join('; ');
 
-function createAdminServer({ supabaseUrl, supabaseKey }) {
+function createAdminServer({ supabaseUrl, supabaseKey, turnstileSiteKey }) {
   if (!supabaseUrl || !supabaseKey) throw new Error('Set SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY in .env.local first.');
   const headers = {
-    'Content-Security-Policy': adminCsp(supabaseUrl), 'X-Frame-Options': 'DENY', 'X-Content-Type-Options': 'nosniff',
+    'Content-Security-Policy': adminCsp(supabaseUrl, !!turnstileSiteKey), 'X-Frame-Options': 'DENY', 'X-Content-Type-Options': 'nosniff',
     'Referrer-Policy': 'no-referrer', 'Cross-Origin-Opener-Policy': 'same-origin', 'Cache-Control': 'no-store',
   };
   const server = http.createServer((request, response) => {
@@ -36,7 +41,7 @@ function createAdminServer({ supabaseUrl, supabaseKey }) {
       response.writeHead(200, { ...headers, 'Content-Type': type });
       response.end(request.method === 'HEAD' ? undefined : body);
     };
-    if (name === 'config.js') return send(FILES['admin.js'], configJs({ supabaseUrl, supabaseKey }));
+    if (name === 'config.js') return send(FILES['admin.js'], configJs({ supabaseUrl, supabaseKey, ...(turnstileSiteKey && { turnstileSiteKey }) }));
     if (!Object.hasOwn(FILES, name)) { response.writeHead(404).end(); return; }
     fs.readFile(path.join(DIR, name), (error, body) => (error ? response.writeHead(404).end() : send(FILES[name], body)));
   });

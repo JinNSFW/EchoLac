@@ -127,6 +127,8 @@ Chủ dự án tạo admin (không có luồng đăng ký admin ở đâu cả):
 5. Đăng ký xong: Authentication → **Multi-Factor** → TOTP chọn **Verify enabled** (chỉ xác minh, không cho đăng ký
    mã mới). Nếu không, ai có mật khẩu admin có thể gọi API đăng ký thêm một mã TOTP thứ hai và tự lên aal2.
    Đổi máy xác thực: tạm bật lại **Enabled**, đăng ký, rồi chuyển về **Verify enabled**.
+   Khi bật Captcha (Turnstile) trong Supabase Auth: trang admin tự chạy Turnstile trước khi đăng nhập nếu
+   `.env.local` có `TURNSTILE_SITE_KEY`; widget trong Cloudflare phải có hostname `127.0.0.1` (và `echolac.netlify.app`).
 6. Các tab: **Học viên** (xác minh, trình độ, nhóm tuổi), **Buổi nhóm** (tạo tại địa điểm đã duyệt, đóng buổi),
    **Yêu cầu & báo cáo** (xem yêu cầu và danh sách chặn; đánh dấu báo cáo đã xem/đóng), **Nhật ký** (chỉ đọc `admin_audit_log`).
    Phiên chỉ nằm trong tab (`sessionStorage`); đóng tab là đăng xuất trên máy này.

@@ -86,3 +86,16 @@ test('admin server: loopback only, strict CSP, publishable config, nothing outsi
   } finally { server.close(); }
   assert.throws(() => listenAdmin({}, 0), /SUPABASE_URL/);
 });
+
+test('admin server with Turnstile: allows only challenges.cloudflare.com and serves the site key', async () => {
+  const cfg = { supabaseUrl: 'https://a.supabase.co', supabaseKey: 'sb_publishable_test', turnstileSiteKey: '0x4AAAAAAAtest' };
+  const server = await new Promise(ok => { const s = listenAdmin(cfg, 0, () => ok(s)); });
+  try {
+    const get = p => fetch(`http://127.0.0.1:${server.address().port}${p}`);
+    const csp = (await get('/')).headers.get('content-security-policy');
+    assert.match(csp, /script-src 'self' \S+supabase\.js https:\/\/challenges\.cloudflare\.com;/);
+    assert.match(csp, /frame-src https:\/\/challenges\.cloudflare\.com;/);
+    assert.doesNotMatch(csp, /unsafe-inline|unsafe-eval|\*/);
+    assert.match(await (await get('/config.js')).text(), /"turnstileSiteKey":"0x4AAAAAAAtest"/);
+  } finally { server.close(); }
+});

@@ -9,6 +9,24 @@ const show = html => { app.innerHTML = html; app.querySelector('input')?.focus()
 const fail = (e, fallback = 'Có lỗi.') => String(e?.message || fallback).slice(0, 300);
 const rows = r => { if (r.error) throw r.error; return r.data || []; };
 
+// Turnstile token for Supabase Auth captcha, only when a site key is configured (same widget as the public app).
+// The widget's hostname list in Cloudflare must include 127.0.0.1 for this local page.
+async function captcha(form) {
+  if (!CFG.turnstileSiteKey) return undefined;
+  if (!window.turnstile?.render) {
+    await new Promise((ok, no) => document.head.append(Object.assign(document.createElement('script'),
+      { src: 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit', async: true, onload: ok, onerror: no })));
+  }
+  const box = form.appendChild(document.createElement('div'));
+  let id;
+  try {
+    return await new Promise((ok, no) => {
+      id = window.turnstile.render(box, { sitekey: CFG.turnstileSiteKey, language: 'vi', callback: ok,
+        'error-callback': no, 'expired-callback': no, 'timeout-callback': no, 'unsupported-callback': no });
+    });
+  } finally { if (id !== undefined) window.turnstile.remove(id); box.remove(); }
+}
+
 function boot() {
   if (!/^https:\/\//.test(CFG.supabaseUrl || '') || !CFG.supabaseKey || !window.supabase?.createClient) {
     return show(`<p class="msg">Thiếu cấu hình Supabase (.env.local) hoặc thư viện supabase-js chưa tải.</p>`);
@@ -73,7 +91,9 @@ app.addEventListener('submit', async e => {
   const f = e.target, v = n => f.elements[n]?.value.trim();
   f.querySelector('button').disabled = true;
   if (f.id === 'login') {
-    const { error } = await sb.auth.signInWithPassword({ email: v('email'), password: f.elements.password.value });
+    let captchaToken;
+    try { captchaToken = await captcha(f); } catch { return gate('Chưa qua bước kiểm tra Turnstile. Thử lại.'); }
+    const { error } = await sb.auth.signInWithPassword({ email: v('email'), password: f.elements.password.value, options: { captchaToken } });
     return gate(error ? fail(error) : '');
   }
   if (f.id === 'mfa') {
